@@ -1,3 +1,0 @@
-[D-BUS Service]
-Name=org.voria.SamsungTools.Session
-Exec=/usr/lib/samsung-tools/backend/samsung-tools-backend.py

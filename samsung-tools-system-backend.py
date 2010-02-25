@@ -7,16 +7,12 @@ import dbus
 import dbus.service
 import dbus.mainloop.glib
 
-from bluetooth import Bluetooth
-from webcam import Webcam
-from wireless import Wireless
+from backends.globals import *
+from backends.system.bluetooth import Bluetooth
+from backends.system.webcam import Webcam
+from backends.system.wireless import Wireless
 
 mainloop = None
-
-SYSTEM_INTERFACE_NAME = "org.voria.SamsungTools.System"
-
-#class SamsungToolsSystemException(dbus.DBusException):
-#	_dbus_error_name = "org.voria.SamsungToolsSystemException"
 
 class General(dbus.service.Object):
 	def __init__(self, conn = None, object_path = None, bus_name = None):
@@ -34,10 +30,10 @@ if __name__ == '__main__':
 	bus = dbus.SystemBus()
 	name = dbus.service.BusName(SYSTEM_INTERFACE_NAME, bus)
     
-	General(bus, '/')
-	Bluetooth(bus, '/Bluetooth')
-	Webcam(bus, '/Webcam')
-	Wireless(bus, '/Wireless')
+	General(bus, SYSTEM_OBJECT_PATH_GENERAL)
+	Bluetooth(bus, SYSTEM_OBJECT_PATH_BLUETOOTH)
+	Webcam(bus, SYSTEM_OBJECT_PATH_WEBCAM)
+	Wireless(bus, SYSTEM_OBJECT_PATH_WIRELESS)
 	
 	mainloop = gobject.MainLoop()
 	mainloop.run()

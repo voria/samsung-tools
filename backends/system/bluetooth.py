@@ -3,7 +3,7 @@
 import subprocess
 import dbus.service
 
-SYSTEM_INTERFACE_NAME = "org.voria.SamsungTools.System"
+from backends.globals import *
 
 class Bluetooth(dbus.service.Object):
 	""" Control bluetooth """

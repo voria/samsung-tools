@@ -2,7 +2,7 @@ import pynotify
 
 class Notification():
 	def __init__(self, title = None, message = None, icon = None, urgency = "normal"):
-		if not pynotify.init("Notification"):
+		if not pynotify.init("Samsung-Tools Notification System"):
 			return None
 		# Create a new notification
 		self.notify = pynotify.Notification(" ")
@@ -38,12 +38,4 @@ class Notification():
 		if self.urgency != None:
 			self.notify.set_urgency(self.urgency)
 		self.notify.show()
-
-if __name__ == "__main__":
-	# Test routine
-	n = Notification()
-	n.setTitle("Title")
-	n.setMessage("Message")
-	n.setIcon("info")
-	n.setUrgency("critical")
-	n.show()
+		
