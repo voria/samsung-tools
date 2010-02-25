@@ -20,4 +20,5 @@
 # <http://www.gnu.org/licenses/gpl.txt>
 
 ERROR_ICON = "error"
+BLUETOOTH_ICON = "bluetooth"
 WEBCAM_ICON = "camera-web"

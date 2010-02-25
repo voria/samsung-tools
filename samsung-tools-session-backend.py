@@ -26,6 +26,7 @@ import dbus.service
 import dbus.mainloop.glib
 
 from backends.globals import *
+from backends.session.bluetooth import Bluetooth
 from backends.session.webcam import Webcam
 from backends.session.notifications import Notification
 
@@ -52,7 +53,8 @@ if __name__ == '__main__':
 	name = dbus.service.BusName(SESSION_INTERFACE_NAME, session_bus)
     
 	General(session_bus, '/')
-	Webcam(notify, session_bus, SESSION_OBJECT_PATH_WEBCAM)	
+	Bluetooth(notify, session_bus, SESSION_OBJECT_PATH_BLUETOOTH)
+	Webcam(notify, session_bus, SESSION_OBJECT_PATH_WEBCAM)
 	
 	mainloop = gobject.MainLoop()
 	mainloop.run()

@@ -19,6 +19,14 @@
 # See the GNU General Public License for more details.
 # <http://www.gnu.org/licenses/gpl.txt>
 
+BLUETOOTH_TITLE = "Bluetooth"
+BLUETOOTH_STATUS_ENABLED = "Bluetooth is currently enabled"
+BLUETOOTH_STATUS_DISABLED = "Bluetooth is currently disabled"
+BLUETOOTH_ENABLED = "Bluetooth enabled"
+BLUETOOTH_DISABLED = "Bluetooth disabled"
+BLUETOOTH_ENABLING_ERROR = "Error while enabling bluetooth!"
+BLUETOOTH_DISABLING_ERROR = "Error while disabling bluetooth!"
+
 WEBCAM_TITLE = "Webcam"
 WEBCAM_STATUS_ENABLED = "Webcam is currently enabled"
 WEBCAM_STATUS_DISABLED = "Webcam is currently disabled"
