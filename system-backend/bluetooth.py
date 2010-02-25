@@ -8,7 +8,7 @@ class Bluetooth(dbus.service.Object):
 	def __init__(self, conn = None, object_path = None, bus_name = None):
 		dbus.service.Object.__init__(self, conn, object_path, bus_name)
 	
-	@dbus.service.method("org.voria.SamsungTools.System", in_signature = None, out_signature = 'b',
+	@dbus.service.method("org.voria.SamsungTools.System.Bluetooth", in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def IsEnabled(self, sender = None, conn = None):
 		""" Check if bluetooth is enabled by parsing the output of lsmod. """
@@ -20,7 +20,7 @@ class Bluetooth(dbus.service.Object):
 				return True
 		return False
 	
-	@dbus.service.method("org.voria.SamsungTools.System", in_signature = None, out_signature = 'b',
+	@dbus.service.method("org.voria.SamsungTools.System.Bluetooth", in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Enable(self, sender = None, conn = None):
 		""" Enable bluetooth. """
@@ -44,7 +44,7 @@ class Bluetooth(dbus.service.Object):
 			return False
 		return True
 	
-	@dbus.service.method("org.voria.SamsungTools.System", in_signature = None, out_signature = 'b',
+	@dbus.service.method("org.voria.SamsungTools.System.Bluetooth", in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Disable(self, sender = None, conn = None):
 		""" Disable bluetooth. """
@@ -68,7 +68,7 @@ class Bluetooth(dbus.service.Object):
 			return False
 		return True
 	
-	@dbus.service.method("org.voria.SamsungTools.System", in_signature = None, out_signature = 'b',
+	@dbus.service.method("org.voria.SamsungTools.System.Bluetooth", in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Toggle(self, sender = None, conn = None):
 		""" Toggle bluetooth. """

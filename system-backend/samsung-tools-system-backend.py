@@ -7,8 +7,9 @@ import dbus
 import dbus.service
 import dbus.mainloop.glib
 
-from wireless import Wireless
 from bluetooth import Bluetooth
+from webcam import Webcam
+from wireless import Wireless
 
 mainloop = None
 
@@ -32,8 +33,9 @@ if __name__ == '__main__':
 	name = dbus.service.BusName('org.voria.SamsungTools.System', bus)
     
 	General(bus, '/')
-	Wireless(bus, '/Wireless')
 	Bluetooth(bus, '/Bluetooth')
+	Webcam(bus, '/Webcam')
+	Wireless(bus, '/Wireless')
 	
 	mainloop = gobject.MainLoop()
 	mainloop.run()
