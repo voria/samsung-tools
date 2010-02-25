@@ -3,7 +3,7 @@
 import subprocess
 import dbus.service
 
-WEBCAM_INTERFACE_NAME = "org.voria.SamsungTools.System.Webcam"
+SYSTEM_WEBCAM_INTERFACE_NAME = "org.voria.SamsungTools.System.Webcam"
 
 class Webcam(dbus.service.Object):
 	""" Control webcam """
@@ -22,7 +22,7 @@ class Webcam(dbus.service.Object):
 				return True
 		return False
 	
-	@dbus.service.method(WEBCAM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
+	@dbus.service.method(SYSTEM_WEBCAM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Enable(self, sender = None, conn = None):
 		""" Enable webcam. """
@@ -36,7 +36,7 @@ class Webcam(dbus.service.Object):
 			return False
 		return True
 	
-	@dbus.service.method(WEBCAM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
+	@dbus.service.method(SYSTEM_WEBCAM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Disable(self, sender = None, conn = None):
 		""" Disable webcam. """
@@ -50,7 +50,7 @@ class Webcam(dbus.service.Object):
 			return False
 		return True
 	
-	@dbus.service.method(WEBCAM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
+	@dbus.service.method(SYSTEM_WEBCAM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Toggle(self, sender = None, conn = None):
 		""" Toggle webcam. """
