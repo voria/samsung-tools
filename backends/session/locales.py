@@ -1,0 +1,7 @@
+WEBCAM_TITLE = "Webcam"
+WEBCAM_STATUS_ENABLED = "Webcam is currently enabled"
+WEBCAM_STATUS_DISABLED = "Webcam is currently disabled"
+WEBCAM_ENABLED = "Webcam enabled"
+WEBCAM_DISABLED = "Webcam disabled"
+WEBCAM_ENABLING_ERROR = "Error while enabling webcam!"
+WEBCAM_DISABLING_ERROR = "Error while disabling webcam!"

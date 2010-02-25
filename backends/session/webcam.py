@@ -3,6 +3,8 @@
 import dbus.service
 
 from backends.globals import *
+from backends.session.locales import *
+from backends.session.icons import *
 
 class Webcam(dbus.service.Object):
 	""" Control webcam """
@@ -26,13 +28,67 @@ class Webcam(dbus.service.Object):
 		self.__connect()
 		enabled = self.interface.IsEnabled()
 		if self.notify != None:
-			self.notify.setTitle("Webcam")
-			self.notify.setIcon("info")
-			self.notify.setUrgency("normal")
+			self.notify.setTitle(WEBCAM_TITLE)
+			self.notify.setIcon(WEBCAM_ICON)
+			self.notify.setUrgency("critical")
 			if enabled:
-				self.notify.setMessage("Webcam is enabled")
+				self.notify.setMessage(WEBCAM_STATUS_ENABLED)
 			else:
-				self.notify.setMessage("Webcam is disabled")
+				self.notify.setMessage(WEBCAM_STATUS_DISABLED)
 			self.notify.show()
 		return enabled
 	
+	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = None, out_signature = 'b',
+						sender_keyword = 'sender', connection_keyword = 'conn')
+	def Enable(self, sender = None, conn = None):
+		""" Enable webcam. """
+		""" Return 'True' on success, 'False' otherwise. """
+		self.__connect()
+		result = self.interface.Enable()
+		if self.notify != None:
+			self.notify.setTitle(WEBCAM_TITLE)
+			self.notify.setUrgency("critical")
+			if result == 1:
+				self.notify.setIcon(WEBCAM_ICON)
+				self.notify.setMessage(WEBCAM_ENABLED)
+			else:
+				self.notify.setIcon(ERROR_ICON)
+				self.notify.setMessage(WEBCAM_ENABLING_ERROR)
+			self.notify.show()
+		return result
+	
+	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = None, out_signature = 'b',
+						sender_keyword = 'sender', connection_keyword = 'conn')
+	def Disable(self, sender = None, conn = None):
+		""" Disable webcam. """
+		""" Return 'True' on success, 'False' otherwise. """
+		self.__connect()
+		result = self.interface.Disable()
+		if self.notify != None:
+			self.notify.setTitle(WEBCAM_TITLE)
+			self.notify.setUrgency("critical")
+			if result == 1:
+				self.notify.setIcon(WEBCAM_ICON)
+				self.notify.setMessage(WEBCAM_DISABLED)
+			else:
+				self.notify.setIcon(ERROR_ICON)
+				self.notify.setMessage(WEBCAM_DISABLING_ERROR)
+			self.notify.show()
+		return result
+
+	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = None, out_signature = 'b',
+						sender_keyword = 'sender', connection_keyword = 'conn')
+	def Toggle(self, sender = None, conn = None):
+		""" Toggle webcam. """
+		""" Return 'True' on success, 'False' otherwise. """
+		# Temporary disable notifications
+		n = self.notify
+		self.notify = None
+		enabled = self.IsEnabled()
+		# Re-enable notifications
+		self.notify = n
+		if enabled:
+			return self.Disable()
+		else:
+			return self.Enable()
+		
