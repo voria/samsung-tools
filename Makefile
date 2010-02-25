@@ -1,10 +1,14 @@
 install:
 	mkdir -p $(DESTDIR)/usr/lib/samsung-tools/system-backend/
 	cp system-backend/*.py $(DESTDIR)/usr/lib/samsung-tools/system-backend/
+	mkdir -p $(DESTDIR)/usr/lib/samsung-tools/session-backend/
+	cp session-backend/*.py $(DESTDIR)/usr/lib/samsung-tools/session-backend/
 	mkdir -p $(DESTDIR)/etc/dbus-1/system.d/
 	cp system-backend/*.conf $(DESTDIR)/etc/dbus-1/system.d/
 	mkdir -p $(DESTDIR)/usr/share/dbus-1/system-services/
 	cp system-backend/*.service $(DESTDIR)/usr/share/dbus-1/system-services/
+	mkdir -p $(DESTDIR)/usr/share/dbus-1/services/
+	cp session-backend/*.service $(DESTDIR)/usr/share/dbus-1/services/
 
 uninstall:
 	rm -rf $(DESTDIR)/usr/lib/samsung-tools/
