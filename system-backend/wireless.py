@@ -3,14 +3,14 @@
 import subprocess
 import dbus.service
 
-SYSTEM_WIRELESS_INTERFACE_NAME = "org.voria.SamsungTools.System.Wireless"
+SYSTEM_INTERFACE_NAME = "org.voria.SamsungTools.System"
 
 class Wireless(dbus.service.Object):
 	""" Control wireless """
 	def __init__(self, conn = None, object_path = None, bus_name = None):
 		dbus.service.Object.__init__(self, conn, object_path, bus_name)	
 	
-	@dbus.service.method(SYSTEM_WIRELESS_INTERFACE_NAME, in_signature = None, out_signature = 'b',
+	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def IsEnabled(self, sender = None, conn = None):
 		""" Check if wireless is enabled. """
@@ -27,7 +27,7 @@ class Wireless(dbus.service.Object):
 				return False
 		return True
 	
-	@dbus.service.method(SYSTEM_WIRELESS_INTERFACE_NAME, in_signature = None, out_signature = 'b',
+	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Enable(self, sender = None, conn = None):
 		""" Enable wireless. """
@@ -41,7 +41,7 @@ class Wireless(dbus.service.Object):
 			return False
 		return True
 	
-	@dbus.service.method(SYSTEM_WIRELESS_INTERFACE_NAME, in_signature = None, out_signature = 'b',
+	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Disable(self, sender = None, conn = None):
 		""" Disable wireless. """
@@ -55,7 +55,7 @@ class Wireless(dbus.service.Object):
 			return False
 		return True
 	
-	@dbus.service.method(SYSTEM_WIRELESS_INTERFACE_NAME, in_signature = None, out_signature = 'b',
+	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Toggle(self, sender = None, conn = None):
 		""" Toggle wireless. """

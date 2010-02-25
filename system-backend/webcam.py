@@ -3,18 +3,19 @@
 import subprocess
 import dbus.service
 
-SYSTEM_WEBCAM_INTERFACE_NAME = "org.voria.SamsungTools.System.Webcam"
+SYSTEM_INTERFACE_NAME = "org.voria.SamsungTools.System"
 
 class Webcam(dbus.service.Object):
 	""" Control webcam """
 	def __init__(self, conn = None, object_path = None, bus_name = None):
 		dbus.service.Object.__init__(self, conn, object_path, bus_name)
 	
-	@dbus.service.method(SYSTEM_WEBCAM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
+	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def IsEnabled(self, sender = None, conn = None):
 		""" Check if webcam is enabled by parsing the output of lsmod. """
 		""" Return 'True' if enabled, 'False' if disabled. """
+		
 		lsmod = subprocess.Popen(['lsmod'], stdout = subprocess.PIPE)
 		output = lsmod.communicate()[0].split()
 		for word in output:
@@ -22,7 +23,7 @@ class Webcam(dbus.service.Object):
 				return True
 		return False
 	
-	@dbus.service.method(SYSTEM_WEBCAM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
+	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Enable(self, sender = None, conn = None):
 		""" Enable webcam. """
@@ -36,7 +37,7 @@ class Webcam(dbus.service.Object):
 			return False
 		return True
 	
-	@dbus.service.method(SYSTEM_WEBCAM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
+	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Disable(self, sender = None, conn = None):
 		""" Disable webcam. """
@@ -50,7 +51,7 @@ class Webcam(dbus.service.Object):
 			return False
 		return True
 	
-	@dbus.service.method(SYSTEM_WEBCAM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
+	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Toggle(self, sender = None, conn = None):
 		""" Toggle webcam. """
