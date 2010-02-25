@@ -13,6 +13,8 @@ from wireless import Wireless
 
 mainloop = None
 
+GENERAL_INTERFACE_NAME = "org.voria.SamsungTools.System"
+
 #class SamsungToolsSystemException(dbus.DBusException):
 #	_dbus_error_name = "org.voria.SamsungToolsSystemException"
 
@@ -21,7 +23,7 @@ class General(dbus.service.Object):
 		dbus.service.Object.__init__(self, conn, object_path, bus_name)
 		self.mainloop = None
 	
-	@dbus.service.method("org.voria.SamsungTools.System", in_signature = None, out_signature = None,
+	@dbus.service.method(GENERAL_INTERFACE_NAME, in_signature = None, out_signature = None,
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Exit(self, sender = None, conn = None):
 		mainloop.quit()
@@ -30,7 +32,7 @@ if __name__ == '__main__':
 	dbus.mainloop.glib.DBusGMainLoop(set_as_default = True)
 
 	bus = dbus.SystemBus()
-	name = dbus.service.BusName('org.voria.SamsungTools.System', bus)
+	name = dbus.service.BusName(GENERAL_INTERFACE_NAME, bus)
     
 	General(bus, '/')
 	Bluetooth(bus, '/Bluetooth')
