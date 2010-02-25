@@ -15,7 +15,7 @@ class Bluetooth(dbus.service.Object):
 	def IsEnabled(self, sender = None, conn = None):
 		""" Check if bluetooth is enabled by parsing the output of lsmod. """
 		""" Return 'True' if enabled, 'False' if disabled. """
-		lsmod = subprocess.Popen(['lsmod'], stdout = subprocess.PIPE)
+		lsmod = subprocess.Popen(['/sbin/lsmod'], stdout = subprocess.PIPE)
 		output = lsmod.communicate()[0].split()
 		for word in output:
 			if word == "btusb":
@@ -29,20 +29,20 @@ class Bluetooth(dbus.service.Object):
 		""" Return 'True' on success, 'False' otherwise. """
 		if self.IsEnabled():
 			return True
-		modprobe = subprocess.Popen(['modprobe', 'btusb'])
+		modprobe = subprocess.Popen(['/sbin/modprobe', 'btusb'])
 		modprobe.communicate()
 		if modprobe.returncode != 0:
-			print "ERROR: Bluetooth.Enable() - modprobe btusb"
+			print "ERROR: Bluetooth.Enable() - /sbin/modprobe btusb"
 			return False
-		service = subprocess.Popen(['service', 'bluetooth', 'start'])
+		service = subprocess.Popen(['/usr/sbin/service', 'bluetooth', 'start'])
 		service.communicate()
 		if service.returncode != 0:
-			print "ERROR: Bluetooth.Enable() - service bluetooth start"
+			print "ERROR: Bluetooth.Enable() - /usr/sbin/service bluetooth start"
 			return False
-		hciconfig = subprocess.Popen(['hciconfig', 'hci0', 'up'])
+		hciconfig = subprocess.Popen(['/usr/sbin/hciconfig', 'hci0', 'up'])
 		hciconfig.communicate()
 		if hciconfig.returncode != 0:
-			print "ERROR: Bluetooth.Enable() - hciconfig hci0 up"
+			print "ERROR: Bluetooth.Enable() - /usr/sbin/hciconfig hci0 up"
 			return False
 		return True
 	
@@ -53,20 +53,20 @@ class Bluetooth(dbus.service.Object):
 		""" Return 'True' on success, 'False' otherwise. """
 		if not self.IsEnabled():
 			return True
-		hciconfig = subprocess.Popen(['hciconfig', 'hci0', 'down'])
+		hciconfig = subprocess.Popen(['/usr/sbin/hciconfig', 'hci0', 'down'])
 		hciconfig.communicate()
 		if hciconfig.returncode != 0:
-			print "ERROR: Bluetooth.Disable() - hciconfig hci0 down"
+			print "ERROR: Bluetooth.Disable() - /usr/sbin/hciconfig hci0 down"
 			return False
-		service = subprocess.Popen(['service', 'bluetooth', 'stop'])
+		service = subprocess.Popen(['/usr/sbin/service', 'bluetooth', 'stop'])
 		service.communicate()
 		if service.returncode != 0:
-			print "ERROR: Bluetooth.Disable() - service bluetooth stop"
+			print "ERROR: Bluetooth.Disable() - /usr/sbin/service bluetooth stop"
 			return False
-		modprobe = subprocess.Popen(['modprobe', '-r', 'btusb'])
+		modprobe = subprocess.Popen(['/sbin/modprobe', '-r', 'btusb'])
 		modprobe.communicate()
 		if modprobe.returncode != 0:
-			print "ERROR: Bluetooth.Disable() - modprobe -r btusb"
+			print "ERROR: Bluetooth.Disable() - /sbin/modprobe -r btusb"
 			return False
 		return True
 	
