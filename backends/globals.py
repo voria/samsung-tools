@@ -19,13 +19,15 @@
 # See the GNU General Public License for more details.
 # <http://www.gnu.org/licenses/gpl.txt>
 
+CONFIG_FILE = "/etc/samsung-tools/samsung-tools.conf"
+
 SESSION_INTERFACE_NAME = "org.voria.SamsungTools.Session"
-SESSION_OBJECT_PATH_BLUETOOTH = "/Devices/Bluetooth"
-SESSION_OBJECT_PATH_WEBCAM = "/Devices/Webcam"
-SESSION_OBJECT_PATH_WIRELESS = "/Devices/Wireless"
+SESSION_OBJECT_PATH_BLUETOOTH = "/Device/Bluetooth"
+SESSION_OBJECT_PATH_WEBCAM = "/Device/Webcam"
+SESSION_OBJECT_PATH_WIRELESS = "/Device/Wireless"
 
 SYSTEM_INTERFACE_NAME = "org.voria.SamsungTools.System"
 SYSTEM_OBJECT_PATH_GENERAL = "/"
-SYSTEM_OBJECT_PATH_BLUETOOTH = "/Devices/Bluetooth"
-SYSTEM_OBJECT_PATH_WEBCAM = "/Devices/Webcam"
-SYSTEM_OBJECT_PATH_WIRELESS = "/Devices/Wireless"
+SYSTEM_OBJECT_PATH_BLUETOOTH = "/Device/Bluetooth"
+SYSTEM_OBJECT_PATH_WEBCAM = "/Device/Webcam"
+SYSTEM_OBJECT_PATH_WIRELESS = "/Device/Wireless"

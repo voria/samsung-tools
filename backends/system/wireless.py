@@ -23,11 +23,16 @@ import subprocess
 import dbus.service
 
 from backends.globals import *
+from backends.config import Config
 
 class Wireless(dbus.service.Object):
 	""" Control wireless """
 	def __init__(self, conn = None, object_path = None, bus_name = None):
-		dbus.service.Object.__init__(self, conn, object_path, bus_name)	
+		dbus.service.Object.__init__(self, conn, object_path, bus_name)
+		# Set wireless toggling method to use
+		config = Config()
+		self.method = config.getWirelessMethod()
+		self.module = config.getWirelessModule()
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
@@ -48,13 +53,17 @@ class Wireless(dbus.service.Object):
 		""" Return 'True' if enabled, 'False' if disabled. """
 		if not self.IsAvailable():
 			return False
-		process = subprocess.Popen(['/sbin/iwconfig', 'wlan0'],
-								stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-		output = process.communicate()[0].split()
-		if "Tx-Power=off" in output:
-			return False
+		if self.method == "iwconfig":
+			process = subprocess.Popen(['/sbin/iwconfig', 'wlan0'],
+									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+			output = process.communicate()[0].split()
+			if "Tx-Power=off" in output:
+				return False
+			else:
+				return True
 		else:
-			return True
+			print "DEBUG: '" + self.method + "'method not yet impemented"
+			return False
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
@@ -65,13 +74,17 @@ class Wireless(dbus.service.Object):
 			return False
 		if self.IsEnabled():
 			return True
-		process = subprocess.Popen(['/sbin/iwconfig', 'wlan0', 'txpower', 'auto'],
-								stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-		process.communicate()
-		if process.returncode != 0:
-			print "ERROR: Wireless.Enable() - iwconfig wlan0 txpower auto"
+		if self.method == "iwconfig":
+			process = subprocess.Popen(['/sbin/iwconfig', 'wlan0', 'txpower', 'auto'],
+									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+			process.communicate()
+			if process.returncode != 0:
+				print "ERROR: Wireless.Enable() - iwconfig wlan0 txpower auto"
+				return False
+			return True
+		else:
+			print "DEBUG: '" + self.method + "'method not yet impemented"
 			return False
-		return True
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
@@ -82,14 +95,18 @@ class Wireless(dbus.service.Object):
 			return False
 		if not self.IsEnabled():
 			return True
-		process = subprocess.Popen(['/sbin/iwconfig', 'wlan0', 'txpower', 'off'],
-								stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-		process.communicate()
-		if process.returncode != 0:
-			print "ERROR: Wireless.Disable() - iwconfig wlan0 txpower off"
+		if self.method == "iwconfig":
+			process = subprocess.Popen(['/sbin/iwconfig', 'wlan0', 'txpower', 'off'],
+									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+			process.communicate()
+			if process.returncode != 0:
+				print "ERROR: Wireless.Disable() - iwconfig wlan0 txpower off"
+				return False
+			return True
+		else:
+			print "DEBUG: '" + self.method + "'method not yet impemented"
 			return False
-		return True
-	
+			
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Toggle(self, sender = None, conn = None):
