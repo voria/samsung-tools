@@ -40,7 +40,7 @@ class Log():
 	
 	def __get_time(self):
 		""" Return current time string. """
-		return time.strftime("%a %d (%H:%M:%S) : ")
+		return time.strftime("%a %d %H:%M:%S : ")
 	
 	def write(self, message):
 		self.__open()
