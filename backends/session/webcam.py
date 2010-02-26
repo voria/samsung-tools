@@ -35,15 +35,37 @@ class Webcam(dbus.service.Object):
 		self.notify = notify
 	
 	def __connect(self):
+		""" Enable connection to system backend """
 		self.system_bus = dbus.SystemBus()
 		self.proxy = self.system_bus.get_object(SYSTEM_INTERFACE_NAME, SYSTEM_OBJECT_PATH_WEBCAM)
 		self.interface = dbus.Interface(self.proxy, SYSTEM_INTERFACE_NAME)
-		
+	
+	def __not_available(self):
+		""" Inform the user that the webcam is not available. """
+		""" Return always 'False'. """
+		if self.notify != None:
+			self.notify.setTitle(WEBCAM_TITLE)
+			self.notify.setMessage(WEBCAM_NOT_AVAILABLE)
+			self.notify.setIcon(STOP_ICON)
+			self.notify.setUrgency("critical")
+			self.notify.show()
+		return False
+	
+	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = None, out_signature = 'b',
+						sender_keyword = 'sender', connection_keyword = 'conn')
+	def IsAvailable(self, sender = None, conn = None):
+		""" Check if webcam is available. """
+		""" Return 'True' if available, 'False' if disabled. """
+		self.__connect()
+		return self.interface.IsAvailable()
+	
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def IsEnabled(self, sender = None, conn = None):
 		""" Check if webcam is enabled. """
 		""" Return 'True' if enabled, 'False' if disabled. """
+		if not self.IsAvailable():
+			return self.__not_available()
 		self.__connect()
 		enabled = self.interface.IsEnabled()
 		if self.notify != None:
@@ -62,6 +84,8 @@ class Webcam(dbus.service.Object):
 	def Enable(self, sender = None, conn = None):
 		""" Enable webcam. """
 		""" Return 'True' on success, 'False' otherwise. """
+		if not self.IsAvailable():
+			return self.__not_available()
 		self.__connect()
 		result = self.interface.Enable()
 		if self.notify != None:
@@ -81,6 +105,8 @@ class Webcam(dbus.service.Object):
 	def Disable(self, sender = None, conn = None):
 		""" Disable webcam. """
 		""" Return 'True' on success, 'False' otherwise. """
+		if not self.IsAvailable():
+			return self.__not_available()
 		self.__connect()
 		result = self.interface.Disable()
 		if self.notify != None:
@@ -100,6 +126,8 @@ class Webcam(dbus.service.Object):
 	def Toggle(self, sender = None, conn = None):
 		""" Toggle webcam. """
 		""" Return 'True' on success, 'False' otherwise. """
+		if not self.IsAvailable():
+			return self.__not_available()
 		# Temporary disable notifications
 		n = self.notify
 		self.notify = None

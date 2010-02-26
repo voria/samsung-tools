@@ -35,6 +35,7 @@ WEBCAM_ENABLED = "Webcam enabled"
 WEBCAM_DISABLED = "Webcam disabled"
 WEBCAM_ENABLING_ERROR = "Error while enabling webcam!"
 WEBCAM_DISABLING_ERROR = "Error while disabling webcam!"
+WEBCAM_NOT_AVAILABLE = "Webcam control is not available"
 
 WIRELESS_TITLE = "Wireless"
 WIRELESS_STATUS_ENABLED = "Wireless is currently enabled"

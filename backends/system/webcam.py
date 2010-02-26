@@ -19,6 +19,7 @@
 # See the GNU General Public License for more details.
 # <http://www.gnu.org/licenses/gpl.txt>
 
+import os
 import subprocess
 import dbus.service
 
@@ -31,9 +32,24 @@ class Webcam(dbus.service.Object):
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
+	def IsAvailable(self, sender = None, conn = None):
+		""" Check if a webcam is available. """
+		""" Return 'True' if available, 'False' otherwise. """
+		process = subprocess.Popen(['/bin/dmesg'],
+								stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+		output = process.communicate()[0]
+		for line in output:
+			if "uvcvideo: Found" in line:
+				return True
+		return False
+	
+	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
+						sender_keyword = 'sender', connection_keyword = 'conn')
 	def IsEnabled(self, sender = None, conn = None):
 		""" Check if webcam is enabled by parsing the output of lsmod. """
 		""" Return 'True' if enabled, 'False' if disabled. """
+		if not self.IsAvailable():
+			return False
 		process = subprocess.Popen(['/sbin/lsmod'],
 								stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 		output = process.communicate()[0].split()
@@ -47,6 +63,8 @@ class Webcam(dbus.service.Object):
 	def Enable(self, sender = None, conn = None):
 		""" Enable webcam. """
 		""" Return 'True' on success, 'False' otherwise. """
+		if not self.IsAvailable():
+			return False
 		if self.IsEnabled():
 			return True
 		process = subprocess.Popen(['/sbin/modprobe', 'uvcvideo'],
@@ -62,6 +80,8 @@ class Webcam(dbus.service.Object):
 	def Disable(self, sender = None, conn = None):
 		""" Disable webcam. """
 		""" Return 'True' on success, 'False' otherwise. """
+		if not self.IsAvailable():
+			return False
 		if not self.IsEnabled():
 			return True
 		process = subprocess.Popen(['/sbin/modprobe', '-r', 'uvcvideo'],
@@ -77,6 +97,8 @@ class Webcam(dbus.service.Object):
 	def Toggle(self, sender = None, conn = None):
 		""" Toggle webcam. """
 		""" Return 'True' on success, 'False' otherwise. """
+		if not self.IsAvailable():
+			return False
 		if self.IsEnabled():
 			return self.Disable()
 		else:
