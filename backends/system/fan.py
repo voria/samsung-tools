@@ -57,15 +57,15 @@ class Fan(dbus.service.Object):
 	def Status(self, sender = None, conn = None):
 		""" Check current mode. """
 		"""Return 0 if 'normal', 1 if 'silent', 2 if 'speed'. """
-		""" Return -1 if any error. """
+		""" Return 3 if any error. """
 		if not self.IsAvailable():
-			return - 1
+			return 3
 		try:
 			with open('/proc/easy_slow_down_manager', 'r') as file:
 				return int(file.read(1))
 		except:
 			log_system.write("ERROR: 'Fan.Status()' - cannot read from '/proc/easy_slow_down_manager'.")
-			return - 1
+			return 3
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
@@ -126,4 +126,5 @@ class Fan(dbus.service.Object):
 			return self.SetSpeed()
 		if current == 2:
 			return self.SetNormal()
+		return False
 	

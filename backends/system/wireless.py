@@ -103,15 +103,14 @@ class Wireless(dbus.service.Object):
 				return False
 		else: # self.method == "esdm":
 			try:
-				process = subprocess.Popen(['/bin/cat', '/proc/easy_wifi_kill'],
-										stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-				output = process.communicate()[0].strip()
-				if output == "0":
-					return False
-				else:
-					return True
+				with open('/proc/easy_wifi_kill', 'r') as file:
+					result = int(file.read(1))
+					if result == 0:
+						return False
+					else:
+						return True
 			except:
-				log_system.write("ERROR: 'Wireless.IsEnabled()' - 'cat /proc/easy_wifi_kill' - Exception thrown.")
+				log_system.write("ERROR: 'Wireless.IsEnabled()' - cannot read from '/proc/easy_wifi_kill'.")
 				return False
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',

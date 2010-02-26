@@ -61,22 +61,28 @@ class Backlight(dbus.service.Object):
 		""" Check if backlight is enabled. """
 		""" Return 'True' if enabled, 'False' if disabled. """
 		if self.method == "esdm":
-			process = subprocess.Popen(['/bin/cat', '/proc/easy_backlight'],
-									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-			output = process.communicate()[0].strip()
-			if output == "0":
-				return False
-			else:
+			try:
+				with open('/proc/easy_backlight', 'r') as file:
+					status = int(file.read(1))
+					if status == 1:
+						return True
+					else:
+						return False
+			except:
+				log_system.write("ERROR: 'Backlight.IsEnabled()' - cannot read from '/proc/easy_slow_down_manager'.")
 				return True
 		if self.method == "vbetool":
 			if not os.path.exists(VBETOOL_TEMP_FILE):
 				return True
-			process = subprocess.Popen(['/bin/cat', VBETOOL_TEMP_FILE],
-									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-			output = process.communicate()[0].strip()
-			if output == "0":
-				return False
-			else:
+			try:
+				with open(VBETOOL_TEMP_FILE, 'r') as file:
+					status = int(file.read(1))
+					if status == 1:
+						return True
+					else:
+						return False
+			except:
+				log_system.write("ERROR: 'Backlight.IsEnabled()' - cannot read from '" + VBETOOL_TEMP_FILE + "'.")
 				return True
 		return True
 	
