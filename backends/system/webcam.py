@@ -53,7 +53,7 @@ class Webcam(dbus.service.Object):
 								stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 		process.communicate()
 		if process.returncode != 0:
-			log.write("ERROR: Webcam.Enable() - modprobe uvcvideo")
+			log_system.write("ERROR: 'Webcam.Enable()' - COMMAND: 'modprobe uvcvideo'")
 			return False
 		return True
 	
@@ -68,7 +68,7 @@ class Webcam(dbus.service.Object):
 								stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 		process.communicate()
 		if process.returncode != 0:
-			log.write("ERROR: Webcam.Disable() - modprobe -r uvcvideo")
+			log_system.write("ERROR: 'Webcam.Disable()' - COMMAND: 'modprobe -r uvcvideo'")
 			return False
 		return True
 	

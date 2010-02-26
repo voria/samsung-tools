@@ -31,7 +31,7 @@ class Wireless(dbus.service.Object):
 	def __init__(self, conn = None, object_path = None, bus_name = None):
 		dbus.service.Object.__init__(self, conn, object_path, bus_name)
 		# Set wireless toggling method to use
-		config = Config()
+		config = Config(SYSTEM_CONFIG_FILE)
 		self.method = config.getWirelessMethod()
 		self.device = config.getWirelessDevice()
 		self.module = config.getWirelessModule()
@@ -54,7 +54,7 @@ class Wireless(dbus.service.Object):
 											stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 					process.communicate()
 					if process.returncode != 0:
-						log.write("ERROR: Wireless.IsAvailable() - modprobe easy-slow-down-manager")
+						log_system.write("ERROR: 'Wireless.IsAvailable()' - COMMAND: 'modprobe easy-slow-down-manager'")
 						return False
 					else:
 						return True
@@ -110,7 +110,7 @@ class Wireless(dbus.service.Object):
 									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 			process.communicate()
 			if process.returncode != 0:
-				log.write("ERROR: Wireless.Enable() - iwconfig " + self.device + " txpower auto")
+				log_system.write("ERROR: 'Wireless.Enable()' - COMMAND: 'iwconfig " + self.device + " txpower auto'")
 				return False
 			return True
 		if self.method == "module":
@@ -118,7 +118,7 @@ class Wireless(dbus.service.Object):
 								stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 			process.communicate()
 			if process.returncode != 0:
-				log.write("ERROR: Wireless.Enable() - modprobe " + self.module)
+				log_system.write("ERROR: 'Wireless.Enable()' - COMMAND: 'modprobe " + self.module + "'")
 				return False
 			return True
 		if self.method == "esdm":
@@ -144,7 +144,7 @@ class Wireless(dbus.service.Object):
 									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 			process.communicate()
 			if process.returncode != 0:
-				log.write("ERROR: Wireless.Disable() - iwconfig " + self.device + " txpower off")
+				log_system.write("ERROR: 'Wireless.Disable()' - COMMAND: 'iwconfig " + self.device + " txpower off'")
 				return False
 			return True
 		if self.method == "module":
@@ -152,7 +152,7 @@ class Wireless(dbus.service.Object):
 								stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 			process.communicate()
 			if process.returncode != 0:
-				log.write("ERROR: Wireless.Disable() - modprobe -r " + self.module)
+				log_system.write("ERROR: 'Wireless.Disable()' - COMMAND: 'modprobe -r " + self.module + "'")
 				return False
 			return True
 		if self.method == "esdm":

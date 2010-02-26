@@ -21,10 +21,10 @@
 
 from backends.log import Log
 
-CONFIG_FILE = "/etc/samsung-tools/samsung-tools.conf"
-LOG_FILE = "/var/log/samsung-tools.log"
+SYSTEM_CONFIG_FILE = "/etc/samsung-tools/samsung-tools.conf"
+SYSTEM_LOG_FILE = "/var/log/samsung-tools.log"
 
-log = Log(LOG_FILE)
+log_system = Log(SYSTEM_LOG_FILE)
 
 SESSION_INTERFACE_NAME = "org.voria.SamsungTools.Session"
 SESSION_OBJECT_PATH_GENERAL = "/"
