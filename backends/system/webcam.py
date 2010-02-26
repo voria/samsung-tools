@@ -37,9 +37,9 @@ class Webcam(dbus.service.Object):
 		""" Return 'True' if available, 'False' otherwise. """
 		process = subprocess.Popen(['/bin/dmesg'],
 								stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-		output = process.communicate()[0]
+		output = process.communicate()[0].split('\n')
 		for line in output:
-			if "uvcvideo: Found" in line:
+			if len(line.split("uvcvideo: Found")) > 1:
 				return True
 		return False
 	
