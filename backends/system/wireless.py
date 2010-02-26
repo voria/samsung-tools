@@ -19,6 +19,7 @@
 # See the GNU General Public License for more details.
 # <http://www.gnu.org/licenses/gpl.txt>
 
+import os
 import subprocess
 import dbus.service
 
@@ -43,8 +44,22 @@ class Wireless(dbus.service.Object):
 		process = subprocess.Popen(['/usr/bin/lspci'], stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 		output = process.communicate()[0].split()
 		if "Wireless" in output:
-			return True
+			# if method is to use easy-slow-down-manager, check if it's actually available
+			if self.method == "esdm":
+				if os.path.exists('/proc/easy_wifi_kill'):
+					return True
+				else:
+					# Try to load easy-slow-down-manager module
+					process = subprocess.Popen(['/sbin/modprobe', 'easy-slow-down-manager'],
+											stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+					process.communicate()
+					if process.returncode != 0:
+						log.write("ERROR: Wireless.IsAvailable() - modprobe easy-slow-down-manager")
+						return False
+					else:
+						return True					
 		else:
+			# no wireless card is available
 			return False
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
@@ -71,7 +86,13 @@ class Wireless(dbus.service.Object):
 			else:
 				return False
 		if self.method == "esdm":
-			pass # TODO
+			process = subprocess.Popen(['/bin/cat', '/proc/easy_wifi_kill'],
+									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+			output = process.communicate()[0].strip()
+			if output == "0":
+				return False
+			else:
+				return True
 		return False
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
@@ -100,7 +121,12 @@ class Wireless(dbus.service.Object):
 				return False
 			return True
 		if self.method == "esdm":
-			pass # TODO
+			try:
+				with open('/proc/easy_wifi_kill', 'w') as file:
+					file.write('1')
+				return True
+			except:
+				return False
 		return False
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
@@ -129,7 +155,12 @@ class Wireless(dbus.service.Object):
 				return False
 			return True
 		if self.method == "esdm":
-			pass # TODO
+			try:
+				with open('/proc/easy_wifi_kill', 'w') as file:
+					file.write('0')
+				return True
+			except:
+				return False
 		return False
 			
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
