@@ -6,7 +6,7 @@ install:
 	cp backends/*.py $(DESTDIR)/usr/lib/samsung-tools/backends/
 	
 	mkdir -p $(DESTDIR)/usr/lib/samsung-tools/backends/session/
-	cp backends/session/* $(DESTDIR)/usr/lib/samsung-tools/backends/session/
+	cp -r backends/session/* $(DESTDIR)/usr/lib/samsung-tools/backends/session/
 	
 	mkdir -p $(DESTDIR)/usr/lib/samsung-tools/backends/system/
 	cp backends/system/* $(DESTDIR)/usr/lib/samsung-tools/backends/system/

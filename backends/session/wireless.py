@@ -22,8 +22,8 @@
 import dbus.service
 
 from backends.globals import *
-from backends.session.locales import *
-from backends.session.icons import *
+from backends.session.util.locales import *
+from backends.session.util.icons import *
 
 class Wireless(dbus.service.Object):
 	""" Control wireless """
