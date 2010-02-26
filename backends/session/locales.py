@@ -26,6 +26,7 @@ BLUETOOTH_ENABLED = "Bluetooth enabled"
 BLUETOOTH_DISABLED = "Bluetooth disabled"
 BLUETOOTH_ENABLING_ERROR = "Error while enabling bluetooth!"
 BLUETOOTH_DISABLING_ERROR = "Error while disabling bluetooth!"
+BLUETOOTH_NOT_AVAILABLE = "Bluetooth is not available"
 
 WEBCAM_TITLE = "Webcam"
 WEBCAM_STATUS_ENABLED = "Webcam is currently enabled"
