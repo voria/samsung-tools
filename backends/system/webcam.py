@@ -53,7 +53,7 @@ class Webcam(dbus.service.Object):
 								stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 		process.communicate()
 		if process.returncode != 0:
-			print "ERROR: Webcam.Enable() - modprobe uvcvideo"
+			log.write("ERROR: Webcam.Enable() - modprobe uvcvideo")
 			return False
 		return True
 	
@@ -68,7 +68,7 @@ class Webcam(dbus.service.Object):
 								stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 		process.communicate()
 		if process.returncode != 0:
-			print "ERROR: Bluetooth.Disable() - modprobe -r uvcvideo"
+			log.write("ERROR: Bluetooth.Disable() - modprobe -r uvcvideo")
 			return False
 		return True
 	

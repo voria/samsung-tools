@@ -61,9 +61,7 @@ class Wireless(dbus.service.Object):
 				return False
 			else:
 				return True
-		else:
-			print "DEBUG: '" + self.method + "'method not yet impemented"
-			return False
+		return False
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
@@ -79,12 +77,10 @@ class Wireless(dbus.service.Object):
 									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 			process.communicate()
 			if process.returncode != 0:
-				print "ERROR: Wireless.Enable() - iwconfig wlan0 txpower auto"
+				log.write("ERROR: Wireless.Enable() - iwconfig wlan0 txpower auto")
 				return False
 			return True
-		else:
-			print "DEBUG: '" + self.method + "'method not yet impemented"
-			return False
+		return False
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
@@ -100,12 +96,10 @@ class Wireless(dbus.service.Object):
 									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 			process.communicate()
 			if process.returncode != 0:
-				print "ERROR: Wireless.Disable() - iwconfig wlan0 txpower off"
+				log.write("ERROR: Wireless.Disable() - iwconfig wlan0 txpower off")
 				return False
 			return True
-		else:
-			print "DEBUG: '" + self.method + "'method not yet impemented"
-			return False
+		return False
 			
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')

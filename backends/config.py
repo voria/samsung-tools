@@ -34,14 +34,14 @@ class Config():
 		except:
 			# configfile not found?
 			# Use default options
-			print "WARNING: " + configfile + "' not found. Use default values for options."
+			log.write("WARNING: Config() - " + configfile + "' not found. Using default values for options.")
 			self.config.add_section("Main")
 			self.config.set("Main", "WIRELESS_TOGGLE_METHOD", WIRELESS_TOGGLE_METHOD_DEFAULT)
 			self.config.set("Main", "WIRELESS_MODULE", WIRELESS_MODULE_DEFAULT)
 		# Options sanity check
 		if self.config.get("Main", "WIRELESS_TOGGLE_METHOD") not in ["iwconfig", "module"]:
 			# Option is invalid, set default value
-			print "WARNING: 'WIRELESS_TOGGLE_METHOD' is invalid. Using default value."
+			log.write("WARNING: Config() - 'WIRELESS_TOGGLE_METHOD' option is invalid. Using default value.")
 			self.config.set("Main", "WIRELESS_TOGGLE_METHOD", WIRELESS_TOGGLE_METHOD_DEFAULT)
 		
 	def getWirelessMethod(self):

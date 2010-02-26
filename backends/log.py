@@ -19,21 +19,33 @@
 # See the GNU General Public License for more details.
 # <http://www.gnu.org/licenses/gpl.txt>
 
-from backends.log import Log
+import time
 
-CONFIG_FILE = "/etc/samsung-tools/samsung-tools.conf"
-LOG_FILE = "/var/log/samsung-tools.log"
-
-log = Log(LOG_FILE)
-
-SESSION_INTERFACE_NAME = "org.voria.SamsungTools.Session"
-SESSION_OBJECT_PATH_GENERAL = "/"
-SESSION_OBJECT_PATH_BLUETOOTH = "/Device/Bluetooth"
-SESSION_OBJECT_PATH_WEBCAM = "/Device/Webcam"
-SESSION_OBJECT_PATH_WIRELESS = "/Device/Wireless"
-
-SYSTEM_INTERFACE_NAME = "org.voria.SamsungTools.System"
-SYSTEM_OBJECT_PATH_GENERAL = "/"
-SYSTEM_OBJECT_PATH_BLUETOOTH = "/Device/Bluetooth"
-SYSTEM_OBJECT_PATH_WEBCAM = "/Device/Webcam"
-SYSTEM_OBJECT_PATH_WIRELESS = "/Device/Wireless"
+class Log():
+	def __init__(self, logfile):
+		self.logfile = logfile
+		self.log = None
+	
+	def __open(self):
+		""" Open log file for writing. """
+		try:
+			self.log = open(self.logfile, "a")
+		except:
+			self.log = None
+	
+	def __close(self):
+		""" Close log file. """
+		if self.log != None:
+			self.log.close()
+	
+	def __get_time(self):
+		""" Return current time string. """
+		return time.strftime("%a %d (%H:%M:%S) : ")
+	
+	def write(self, message):
+		self.__open()
+		if self.log == None:
+			return
+		line = self.__get_time() + message + "\n"
+		self.log.write(line)
+		self.__close()

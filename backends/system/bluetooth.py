@@ -71,19 +71,18 @@ class Bluetooth(dbus.service.Object):
 								stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 		process.communicate()
 		if process.returncode != 0:
-			# TODO: debug class(es)
-			print "ERROR: Bluetooth.Enable() - modprobe btusb"
+			log.write("ERROR: Bluetooth.Enable() - modprobe btusb")
 			return False
 		process = subprocess.Popen(['/usr/sbin/service', 'bluetooth', 'start'])
 		process.communicate()
 		if process.returncode != 0:
-			print "ERROR: Bluetooth.Enable() - service bluetooth start"
+			log.write("ERROR: Bluetooth.Enable() - service bluetooth start")
 			return False
 		process = subprocess.Popen(['/usr/sbin/hciconfig', 'hci0', 'up'],
 								stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 		process.communicate()
 		if process.returncode != 0:
-			print "ERROR: Bluetooth.Enable() - hciconfig hci0 up"
+			log.write("ERROR: Bluetooth.Enable() - hciconfig hci0 up")
 			return False
 		return True
 	
@@ -100,17 +99,17 @@ class Bluetooth(dbus.service.Object):
 								stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 		process.communicate()
 		if process.returncode != 0:
-			print "ERROR: Bluetooth.Disable() - hciconfig hci0 down"
+			log.write("ERROR: Bluetooth.Disable() - hciconfig hci0 down")
 			return False
 		process = subprocess.Popen(['/usr/sbin/service', 'bluetooth', 'stop'])
 		process.communicate()
 		if process.returncode != 0:
-			print "ERROR: Bluetooth.Disable() - service bluetooth stop"
+			log.write("ERROR: Bluetooth.Disable() - service bluetooth stop")
 			return False
 		process = subprocess.Popen(['/sbin/modprobe', '-r', 'btusb'])
 		process.communicate()
 		if process.returncode != 0:
-			print "ERROR: Bluetooth.Disable() - modprobe -r btusb"
+			log.write("ERROR: Bluetooth.Disable() - modprobe -r btusb")
 			return False
 		return True
 	

@@ -41,6 +41,13 @@ class General(dbus.service.Object):
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = None, out_signature = None,
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Exit(self, sender = None, conn = None):
+		# Exit the system service too, while developing.
+		# TODO: remember to remove this code.
+		system_bus = dbus.SystemBus()
+		proxy = system_bus.get_object(SYSTEM_INTERFACE_NAME, SYSTEM_OBJECT_PATH_GENERAL)
+		interface = dbus.Interface(proxy, SYSTEM_INTERFACE_NAME)
+		interface.Exit()
+		#		
 		mainloop.quit()
 
 if __name__ == '__main__':
