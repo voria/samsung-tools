@@ -26,6 +26,7 @@ import dbus.service
 import dbus.mainloop.glib
 
 from backends.globals import *
+from backends.session.backlight import Backlight
 from backends.session.bluetooth import Bluetooth
 from backends.session.webcam import Webcam
 from backends.session.wireless import Wireless
@@ -61,6 +62,7 @@ if __name__ == '__main__':
 	name = dbus.service.BusName(SESSION_INTERFACE_NAME, session_bus)
     
 	General(session_bus, '/')
+	Backlight(session_bus, SESSION_OBJECT_PATH_BACKLIGHT)
 	Bluetooth(notify, session_bus, SESSION_OBJECT_PATH_BLUETOOTH)
 	Webcam(notify, session_bus, SESSION_OBJECT_PATH_WEBCAM)
 	Wireless(notify, session_bus, SESSION_OBJECT_PATH_WIRELESS)
