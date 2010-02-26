@@ -28,6 +28,7 @@ import dbus.mainloop.glib
 from backends.globals import *
 from backends.session.backlight import Backlight
 from backends.session.bluetooth import Bluetooth
+from backends.session.fan import Fan
 from backends.session.webcam import Webcam
 from backends.session.wireless import Wireless
 from backends.session.notifications import Notification
@@ -44,10 +45,13 @@ class General(dbus.service.Object):
 	def Exit(self, sender = None, conn = None):
 		# Exit the system service too, while developing.
 		# TODO: remember to remove this code.
-		system_bus = dbus.SystemBus()
-		proxy = system_bus.get_object(SYSTEM_INTERFACE_NAME, SYSTEM_OBJECT_PATH_GENERAL)
-		interface = dbus.Interface(proxy, SYSTEM_INTERFACE_NAME)
-		interface.Exit()
+		try:
+			system_bus = dbus.SystemBus()
+			proxy = system_bus.get_object(SYSTEM_INTERFACE_NAME, SYSTEM_OBJECT_PATH_GENERAL)
+			interface = dbus.Interface(proxy, SYSTEM_INTERFACE_NAME)
+			interface.Exit()
+		except:
+			pass
 		#		
 		mainloop.quit()
 
@@ -64,6 +68,7 @@ if __name__ == '__main__':
 	General(session_bus, '/')
 	Backlight(session_bus, SESSION_OBJECT_PATH_BACKLIGHT)
 	Bluetooth(notify, session_bus, SESSION_OBJECT_PATH_BLUETOOTH)
+	Fan(notify, session_bus, SESSION_OBJECT_PATH_FAN)
 	Webcam(notify, session_bus, SESSION_OBJECT_PATH_WEBCAM)
 	Wireless(notify, session_bus, SESSION_OBJECT_PATH_WIRELESS)
 	

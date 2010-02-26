@@ -28,6 +28,14 @@ BLUETOOTH_ENABLING_ERROR = "Error while enabling bluetooth!"
 BLUETOOTH_DISABLING_ERROR = "Error while disabling bluetooth!"
 BLUETOOTH_NOT_AVAILABLE = "Bluetooth control is not available"
 
+FAN_TITLE = "" # TODO
+FAN_SWITCHED_NORMAL = "" # TODO
+FAN_SWITCHED_SILENT = "" # TODO
+FAN_SWITCHED_SPEED = "" # TODO
+FAN_STATUS_NORMAL = "" # TODO
+FAN_STATUS_SILENT = "" # TODO
+FAN_STATUS_SPEED = "" # TODO
+
 WEBCAM_TITLE = "Webcam"
 WEBCAM_STATUS_ENABLED = "Webcam is currently enabled"
 WEBCAM_STATUS_DISABLED = "Webcam is currently disabled"

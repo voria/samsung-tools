@@ -22,6 +22,9 @@
 ERROR_ICON = "error"
 STOP_ICON = "stop"
 BLUETOOTH_ICON = "bluetooth"
+FAN_NORMAL_ICON = "" #TODO
+FAN_SILENT_ICON = "" # TODO
+FAN_SPEED_ICON = "" # TODO
 WEBCAM_ICON = "camera-web"
 WIRELESS_ENABLED_ICON = "notification-network-wireless-none"
-WIRELESS_DISABLED_ICON = "notification-network-wireless-disconnected" 
+WIRELESS_DISABLED_ICON = "notification-network-wireless-disconnected"
