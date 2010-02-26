@@ -109,7 +109,7 @@ class Fan(dbus.service.Object):
 				file.write('2')
 			return True
 		except:
-			log_system.write("ERROR: 'Fan.SetSpees()' - cannot write to '/proc/easy_slow_down_manager'.")
+			log_system.write("ERROR: 'Fan.SetSpeed()' - cannot write to '/proc/easy_slow_down_manager'.")
 			return False
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
@@ -121,9 +121,9 @@ class Fan(dbus.service.Object):
 			return False
 		current = self.Status()
 		if current == 0:
-			self.SetSilent()
-		elif current == 1:
-			self.SetSpeed()
-		else:
-			self.SetNormal()
+			return self.SetSilent()
+		if current == 1:
+			return self.SetSpeed()
+		if current == 2:
+			return self.SetNormal()
 	
