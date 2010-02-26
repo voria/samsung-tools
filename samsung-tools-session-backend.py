@@ -28,6 +28,7 @@ import dbus.mainloop.glib
 from backends.globals import *
 from backends.session.bluetooth import Bluetooth
 from backends.session.webcam import Webcam
+from backends.session.wireless import Wireless
 from backends.session.notifications import Notification
 
 mainloop = None
@@ -55,6 +56,8 @@ if __name__ == '__main__':
 	General(session_bus, '/')
 	Bluetooth(notify, session_bus, SESSION_OBJECT_PATH_BLUETOOTH)
 	Webcam(notify, session_bus, SESSION_OBJECT_PATH_WEBCAM)
+	Wireless(notify, session_bus, SESSION_OBJECT_PATH_WIRELESS)
+	
 	
 	mainloop = gobject.MainLoop()
 	mainloop.run()
