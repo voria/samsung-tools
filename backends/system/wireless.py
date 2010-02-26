@@ -52,16 +52,16 @@ class Wireless(dbus.service.Object):
 					else:
 						# Try to load easy-slow-down-manager module
 						try:
-							process = subprocess.Popen(['/sbin/modprobe', 'easy-slow-down-manager'],
+							process = subprocess.Popen(['/sbin/modprobe', 'easy_slow_down_manager'],
 													stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 							process.communicate()
 							if process.returncode != 0:
-								log_system.write("ERROR: 'Wireless.IsAvailable()' - COMMAND: 'modprobe easy-slow-down-manager' FAILED.")
+								log_system.write("ERROR: 'Wireless.IsAvailable()' - COMMAND: 'modprobe easy_slow_down_manager' FAILED.")
 								return False
 							else:
 								return True
 						except:
-							log_system.write("ERROR: 'Wireless.IsAvailable()' - COMMAND: 'modprobe easy-slow-down-manager' - Exception thrown.")
+							log_system.write("ERROR: 'Wireless.IsAvailable()' - COMMAND: 'modprobe easy_slow_down_manager' - Exception thrown.")
 							return False			
 				return True	# other control methods should be always available
 			else: # "Wireless" NOT in output, no wireless card is available

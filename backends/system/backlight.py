@@ -38,7 +38,7 @@ class Backlight(dbus.service.Object):
 			self.method = "esdm"
 		else:
 			# Try to load easy-slow-down-manager module
-			process = subprocess.Popen(['/sbin/modprobe', 'easy-slow-down-manager'],
+			process = subprocess.Popen(['/sbin/modprobe', 'easy_slow_down_manager'],
 									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 			process.communicate()
 			if process.returncode == 0:
