@@ -52,7 +52,7 @@ class Fan(dbus.service.Object):
 				log_system.write("ERROR: 'Fan.IsAvailable()' - COMMAND: 'modprobe easy_slow_down_manager' - Exception thrown.")
 				return False	
 	
-	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
+	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'i',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Status(self, sender = None, conn = None):
 		""" Check current mode. """
@@ -62,7 +62,7 @@ class Fan(dbus.service.Object):
 			return - 1
 		try:
 			with open('/proc/easy_slow_down_manager', 'r') as file:
-				return file.read(1)
+				return int(file.read(1))
 		except:
 			log_system.write("ERROR: 'Fan.Status()' - cannot read from '/proc/easy_slow_down_manager'.")
 			return - 1
