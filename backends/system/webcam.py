@@ -34,7 +34,8 @@ class Webcam(dbus.service.Object):
 	def IsEnabled(self, sender = None, conn = None):
 		""" Check if webcam is enabled by parsing the output of lsmod. """
 		""" Return 'True' if enabled, 'False' if disabled. """
-		process = subprocess.Popen(['/sbin/lsmod'], stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+		process = subprocess.Popen(['/sbin/lsmod'],
+								stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 		output = process.communicate()[0].split()
 		if "uvcvideo" in output:
 			return True
@@ -48,7 +49,8 @@ class Webcam(dbus.service.Object):
 		""" Return 'True' on success, 'False' otherwise. """
 		if self.IsEnabled():
 			return True
-		process = subprocess.Popen(['/sbin/modprobe', 'uvcvideo'], stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+		process = subprocess.Popen(['/sbin/modprobe', 'uvcvideo'],
+								stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 		process.communicate()
 		if process.returncode != 0:
 			print "ERROR: Webcam.Enable() - modprobe uvcvideo"
@@ -62,7 +64,8 @@ class Webcam(dbus.service.Object):
 		""" Return 'True' on success, 'False' otherwise. """
 		if not self.IsEnabled():
 			return True
-		process = subprocess.Popen(['/sbin/modprobe', '-r', 'uvcvideo'], stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+		process = subprocess.Popen(['/sbin/modprobe', '-r', 'uvcvideo'],
+								stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 		process.communicate()
 		if process.returncode != 0:
 			print "ERROR: Bluetooth.Disable() - modprobe -r uvcvideo"

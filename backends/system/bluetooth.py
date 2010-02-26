@@ -35,7 +35,8 @@ class Bluetooth(dbus.service.Object):
 	def IsAvailable(self, sender = None, conn = None):
 		""" Check if bluetooth is available. """
 		""" Return 'True' if available, 'False' if disabled. """
-		process = subprocess.Popen(['/usr/sbin/lsusb', '-v'], stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+		process = subprocess.Popen(['/usr/sbin/lsusb', '-v'],
+								stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 		output = process.communicate()[0].split()
 		if "Bluetooth" in output:
 			return True
@@ -49,7 +50,8 @@ class Bluetooth(dbus.service.Object):
 		""" Return 'True' if enabled, 'False' if disabled. """
 		if not self.IsAvailable():
 			return False
-		process = subprocess.Popen(['/sbin/lsmod'], stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+		process = subprocess.Popen(['/sbin/lsmod'],
+								stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 		output = process.communicate()[0].split()
 		if "btusb" in output:
 			return True
@@ -65,7 +67,8 @@ class Bluetooth(dbus.service.Object):
 			return False
 		if self.IsEnabled():
 			return True
-		process = subprocess.Popen(['/sbin/modprobe', 'btusb'], stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+		process = subprocess.Popen(['/sbin/modprobe', 'btusb'],
+								stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 		process.communicate()
 		if process.returncode != 0:
 			# TODO: debug class(es)
@@ -76,7 +79,8 @@ class Bluetooth(dbus.service.Object):
 		if process.returncode != 0:
 			print "ERROR: Bluetooth.Enable() - service bluetooth start"
 			return False
-		process = subprocess.Popen(['/usr/sbin/hciconfig', 'hci0', 'up'], stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+		process = subprocess.Popen(['/usr/sbin/hciconfig', 'hci0', 'up'],
+								stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 		process.communicate()
 		if process.returncode != 0:
 			print "ERROR: Bluetooth.Enable() - hciconfig hci0 up"
@@ -92,7 +96,8 @@ class Bluetooth(dbus.service.Object):
 			return False
 		if not self.IsEnabled():
 			return True
-		process = subprocess.Popen(['/usr/sbin/hciconfig', 'hci0', 'down'], stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+		process = subprocess.Popen(['/usr/sbin/hciconfig', 'hci0', 'down'],
+								stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 		process.communicate()
 		if process.returncode != 0:
 			print "ERROR: Bluetooth.Disable() - hciconfig hci0 down"

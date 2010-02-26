@@ -31,32 +31,45 @@ class Wireless(dbus.service.Object):
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
+	def IsAvailable(self, sender = None, conn = None):
+		""" Check if wireless is available. """
+		""" Return 'True' if available, 'False' otherwise. """
+		process = subprocess.Popen(['/usr/bin/lspci'], stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+		output = process.communicate()[0].split()
+		if "Wireless" in output:
+			return True
+		else:
+			return False
+	
+	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
+						sender_keyword = 'sender', connection_keyword = 'conn')
 	def IsEnabled(self, sender = None, conn = None):
 		""" Check if wireless is enabled. """
 		""" Return 'True' if enabled, 'False' if disabled. """
-		iwconfig = subprocess.Popen(['/sbin/iwconfig', 'wlan0'], stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-		output = iwconfig.communicate()
-		stdout = output[0].split()
-		stderr = output[1]
-		if len(stderr) != 0:
-			print "ERROR: Wireless.IsEnabled() - /sbin/iwconfig wlan0"
+		if not self.IsAvailable():
 			return False
-		for word in stdput:
-			if word == "Tx-Power=off":
-				return False
-		return True
+		process = subprocess.Popen(['/sbin/iwconfig', 'wlan0'],
+								stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+		output = process.communicate()[0].split()
+		if "Tx-Power=off" in output:
+			return False
+		else:
+			return True
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Enable(self, sender = None, conn = None):
 		""" Enable wireless. """
 		""" Return 'True' on success, 'False' otherwise. """
+		if not self.IsAvailable():
+			return False
 		if self.IsEnabled():
 			return True
-		iwconfig = subprocess.Popen(['/sbin/iwconfig', 'wlan0', 'txpower', 'auto'])
-		iwconfig.communicate()
-		if iwconfig.returncode != 0:
-			print "ERROR: Wireless.Enable() - /sbin/iwconfig wlan0 txpower auto"
+		process = subprocess.Popen(['/sbin/iwconfig', 'wlan0', 'txpower', 'auto'],
+								stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+		process.communicate()
+		if process.returncode != 0:
+			print "ERROR: Wireless.Enable() - iwconfig wlan0 txpower auto"
 			return False
 		return True
 	
@@ -65,12 +78,15 @@ class Wireless(dbus.service.Object):
 	def Disable(self, sender = None, conn = None):
 		""" Disable wireless. """
 		""" Return 'True' on success, 'False' otherwise. """
+		if not self.IsAvailable():
+			return False
 		if not self.IsEnabled():
 			return True
-		iwconfig = subprocess.Popen(['/sbin/iwconfig', 'wlan0', 'txpower', 'off'])
-		iwconfig.communicate()
-		if iwconfig.returncode != 0:
-			print "ERROR: Wireless.Disable() - /sbin/iwconfig wlan0 txpower off"
+		process = subprocess.Popen(['/sbin/iwconfig', 'wlan0', 'txpower', 'off'],
+								stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+		process.communicate()
+		if process.returncode != 0:
+			print "ERROR: Wireless.Disable() - iwconfig wlan0 txpower off"
 			return False
 		return True
 	
@@ -79,6 +95,8 @@ class Wireless(dbus.service.Object):
 	def Toggle(self, sender = None, conn = None):
 		""" Toggle wireless. """
 		""" Return 'True' on success, 'False' otherwise. """
+		if not self.IsAvailable():
+			return False
 		if self.IsEnabled():
 			return self.Disable()
 		else:
