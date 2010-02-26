@@ -12,7 +12,7 @@ install:
 	cp backends/system/* $(DESTDIR)/usr/lib/samsung-tools/backends/system/
 	
 	mkdir -p $(DESTDIR)/etc/dbus-1/system.d/
-	cp conf/* $(DESTDIR)/etc/dbus-1/system.d/
+	cp busconfig/* $(DESTDIR)/etc/dbus-1/system.d/
 	
 	mkdir -p $(DESTDIR)/usr/share/dbus-1/system-services/
 	cp services/org.voria.SamsungTools.System.service $(DESTDIR)/usr/share/dbus-1/system-services/
