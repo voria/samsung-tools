@@ -28,13 +28,14 @@ BLUETOOTH_ENABLING_ERROR = "Error while enabling bluetooth!"
 BLUETOOTH_DISABLING_ERROR = "Error while disabling bluetooth!"
 BLUETOOTH_NOT_AVAILABLE = "Bluetooth control is not available"
 
-FAN_TITLE = "" # TODO
-FAN_SWITCHED_NORMAL = "" # TODO
-FAN_SWITCHED_SILENT = "" # TODO
-FAN_SWITCHED_SPEED = "" # TODO
-FAN_STATUS_NORMAL = "" # TODO
-FAN_STATUS_SILENT = "" # TODO
-FAN_STATUS_SPEED = "" # TODO
+FAN_TITLE = "CPU Fan"
+FAN_SWITCH_NORMAL = "'normal' mode enabled"
+FAN_SWITCH_SILENT = "'silent' mode enabled"
+FAN_SWITCH_SPEED = "'speed' mode enabled"
+FAN_STATUS_NORMAL = "Mode: 'normal'"
+FAN_STATUS_SILENT = "Mode: 'silent'"
+FAN_STATUS_SPEED = "Mode: 'speed'"
+FAN_NOT_AVAILABLE = "CPU fan control is not available"
 
 WEBCAM_TITLE = "Webcam"
 WEBCAM_STATUS_ENABLED = "Webcam is currently enabled"

@@ -22,9 +22,9 @@
 ERROR_ICON = "error"
 STOP_ICON = "stop"
 BLUETOOTH_ICON = "bluetooth"
-FAN_NORMAL_ICON = "" #TODO
-FAN_SILENT_ICON = "" # TODO
-FAN_SPEED_ICON = "" # TODO
+FAN_NORMAL_ICON = "/usr/share/pixmaps/cpufreq-applet/cpufreq-50.png"
+FAN_SILENT_ICON = "/usr/share/pixmaps/cpufreq-applet/cpufreq-25.png"
+FAN_SPEED_ICON = "/usr/share/pixmaps/cpufreq-applet/cpufreq-100.png"
 WEBCAM_ICON = "camera-web"
 WIRELESS_ENABLED_ICON = "notification-network-wireless-none"
 WIRELESS_DISABLED_ICON = "notification-network-wireless-disconnected"

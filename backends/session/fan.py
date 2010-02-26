@@ -44,7 +44,11 @@ class Fan(dbus.service.Object):
 		""" Inform the user that the CPU fan control is not available. """
 		""" Return always 'False'. """
 		if self.notify != None:
-			pass # TODO
+			self.notify.setTitle(FAN_TITLE)
+			self.notify.setMessage(FAN_NOT_AVAILABLE)
+			self.notify.setIcon(STOP_ICON)
+			self.notify.setUrgency("critical")
+			self.notify.show()
 		return False
 	
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = None, out_signature = 'b',
@@ -67,7 +71,21 @@ class Fan(dbus.service.Object):
 		self.__connect()
 		status = self.interface.Status()
 		if self.notify != None:
-			pass # TODO
+			self.notify.setTitle(FAN_TITLE)
+			self.notify.setUrgency("critical")
+			if status == 0:
+				self.notify.setMessage(FAN_STATUS_NORMAL)
+				self.notify.setIcon(FAN_NORMAL_ICON)
+			elif status == 1:
+				self.notify.setMessage(FAN_STATUS_SILENT)
+				self.notify.setIcon(FAN_SILENT_ICON)
+			elif status == 2:
+				self.notify.setMessage(FAN_STATUS_SPEED)
+				self.notify.setIcon(FAN_SPEED_ICON)
+			else: # status == 3
+				self.notify.setMessage(FAN_NOT_AVAILABLE)
+				self.notify.setIcon(STOP_ICON)
+			self.notify.show()
 		return status
 			
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = None, out_signature = 'b',
@@ -80,7 +98,15 @@ class Fan(dbus.service.Object):
 		self.__connect()
 		result = self.interface.SetNormal()
 		if self.notify != None:
-			pass # TODO
+			self.notify.setTitle(FAN_TITLE)
+			self.notify.setUrgency("critical")
+			if result == True:
+				self.notify.setMessage(FAN_SWITCH_NORMAL)
+				self.notify.setIcon(FAN_NORMAL_ICON)
+			else:
+				self.notify.setMessage(FAN_NOT_AVAILABLE)
+				self.notify.setIcon(STOP_ICON)
+			self.notify.show()
 		return result
 		
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = None, out_signature = 'b',
@@ -93,7 +119,15 @@ class Fan(dbus.service.Object):
 		self.__connect()
 		result = self.interface.SetSilent()
 		if self.notify != None:
-			pass # TODO
+			self.notify.setTitle(FAN_TITLE)
+			self.notify.setUrgency("critical")
+			if result == True:
+				self.notify.setMessage(FAN_SWITCH_SILENT)
+				self.notify.setIcon(FAN_SILENT_ICON)
+			else:
+				self.notify.setMessage(FAN_NOT_AVAILABLE)
+				self.notify.setIcon(STOP_ICON)
+			self.notify.show()
 		return result
 		
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = None, out_signature = 'b',
@@ -106,7 +140,15 @@ class Fan(dbus.service.Object):
 		self.__connect()
 		result = self.interface.SetSpeed()
 		if self.notify != None:
-			pass # TODO
+			self.notify.setTitle(FAN_TITLE)
+			self.notify.setUrgency("critical")
+			if result == True:
+				self.notify.setMessage(FAN_SWITCH_SPEED)
+				self.notify.setIcon(FAN_SPEED_ICON)
+			else:
+				self.notify.setMessage(FAN_NOT_AVAILABLE)
+				self.notify.setIcon(STOP_ICON)
+			self.notify.show()
 		return result
 	
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = None, out_signature = 'b',
@@ -119,5 +161,28 @@ class Fan(dbus.service.Object):
 		self.__connect()
 		result = self.interface.Cycle()
 		if self.notify != None:
-			pass # TODO
+			self.notify.setTitle(FAN_TITLE)
+			self.notify.setUrgency("critical")
+			if result == True:
+				# Temporary disable notifications
+				n = self.notify
+				self.notify = None
+				status = self.Status()
+				self.notify = n # Re-enable notifications
+				if status == 0:
+					self.notify.setMessage(FAN_SWITCH_NORMAL)
+					self.notify.setIcon(FAN_NORMAL_ICON)
+				elif status == 1:
+					self.notify.setMessage(FAN_SWITCH_SILENT)
+					self.notify.setIcon(FAN_SILENT_ICON)
+				elif status == 2:
+					self.notify.setMessage(FAN_SWITCH_SPEED)
+					self.notify.setIcon(FAN_SPEED_ICON)
+				else: # status == 3
+					self.notify.setMessage(FAN_NOT_AVAILABLE)
+					self.notify.setIcon(STOP_ICON)
+			else: # result == False
+				self.notify.setMessage(FAN_NOT_AVAILABLE)
+				self.notify.setIcon(STOP_ICON)
+			self.notify.show()
 		return result
