@@ -63,7 +63,7 @@ class Wireless(dbus.service.Object):
 						except:
 							log_system.write("ERROR: 'Wireless.IsAvailable()' - COMMAND: 'modprobe easy_slow_down_manager' - Exception thrown.")
 							return False			
-				return True	# other control methods should be always available
+				return True	# other control methods should always be available
 			else: # "Wireless" NOT in output, no wireless card is available
 				return False
 		except:

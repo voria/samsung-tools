@@ -28,6 +28,7 @@ import dbus.mainloop.glib
 from backends.globals import *
 from backends.system.backlight import Backlight
 from backends.system.bluetooth import Bluetooth
+from backends.system.fan import Fan
 from backends.system.webcam import Webcam
 from backends.system.wireless import Wireless
 
@@ -51,6 +52,7 @@ if __name__ == '__main__':
 	General(bus, SYSTEM_OBJECT_PATH_GENERAL)
 	Backlight(bus, SYSTEM_OBJECT_PATH_BACKLIGHT)
 	Bluetooth(bus, SYSTEM_OBJECT_PATH_BLUETOOTH)
+	Fan(bus, SYSTEM_OBJECT_PATH_FAN)
 	Webcam(bus, SYSTEM_OBJECT_PATH_WEBCAM)
 	Wireless(bus, SYSTEM_OBJECT_PATH_WIRELESS)
 	
