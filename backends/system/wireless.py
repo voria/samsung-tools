@@ -32,6 +32,7 @@ class Wireless(dbus.service.Object):
 		# Set wireless toggling method to use
 		config = Config()
 		self.method = config.getWirelessMethod()
+		self.device = config.getWirelessDevice()
 		self.module = config.getWirelessModule()
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
@@ -54,13 +55,23 @@ class Wireless(dbus.service.Object):
 		if not self.IsAvailable():
 			return False
 		if self.method == "iwconfig":
-			process = subprocess.Popen(['/sbin/iwconfig', 'wlan0'],
+			process = subprocess.Popen(['/sbin/iwconfig', self.device],
 									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 			output = process.communicate()[0].split()
 			if "Tx-Power=off" in output:
 				return False
 			else:
 				return True
+		if self.method == "module":
+			process = subprocess.Popen(['/sbin/lsmod'],
+								stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+			output = process.communicate()[0].split()
+			if self.module in output:
+				return True
+			else:
+				return False
+		if self.method == "esdm":
+			pass # TODO
 		return False
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
@@ -73,13 +84,23 @@ class Wireless(dbus.service.Object):
 		if self.IsEnabled():
 			return True
 		if self.method == "iwconfig":
-			process = subprocess.Popen(['/sbin/iwconfig', 'wlan0', 'txpower', 'auto'],
+			process = subprocess.Popen(['/sbin/iwconfig', self.device, 'txpower', 'auto'],
 									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 			process.communicate()
 			if process.returncode != 0:
-				log.write("ERROR: Wireless.Enable() - iwconfig wlan0 txpower auto")
+				log.write("ERROR: Wireless.Enable() - iwconfig " + self.device + " txpower auto")
 				return False
 			return True
+		if self.method == "module":
+			process = subprocess.Popen(['/sbin/modprobe', self.module],
+								stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+			process.communicate()
+			if process.returncode != 0:
+				log.write("ERROR: Wireless.Enable() - modprobe " + self.module)
+				return False
+			return True
+		if self.method == "esdm":
+			pass # TODO
 		return False
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
@@ -92,13 +113,23 @@ class Wireless(dbus.service.Object):
 		if not self.IsEnabled():
 			return True
 		if self.method == "iwconfig":
-			process = subprocess.Popen(['/sbin/iwconfig', 'wlan0', 'txpower', 'off'],
+			process = subprocess.Popen(['/sbin/iwconfig', self.device, 'txpower', 'off'],
 									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 			process.communicate()
 			if process.returncode != 0:
-				log.write("ERROR: Wireless.Disable() - iwconfig wlan0 txpower off")
+				log.write("ERROR: Wireless.Disable() - iwconfig " + self.device + " txpower off")
 				return False
 			return True
+		if self.method == "module":
+			process = subprocess.Popen(['/sbin/modprobe', '-r', self.module],
+								stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+			process.communicate()
+			if process.returncode != 0:
+				log.write("ERROR: Wireless.Disable() - modprobe -r " + self.module)
+				return False
+			return True
+		if self.method == "esdm":
+			pass # TODO
 		return False
 			
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
