@@ -35,12 +35,16 @@ class Bluetooth(dbus.service.Object):
 	def IsAvailable(self, sender = None, conn = None):
 		""" Check if bluetooth is available. """
 		""" Return 'True' if available, 'False' if disabled. """
-		process = subprocess.Popen(['/usr/sbin/lsusb', '-v'],
-								stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-		output = process.communicate()[0].split()
-		if "Bluetooth" in output:
-			return True
-		else:
+		try:
+			process = subprocess.Popen(['/usr/sbin/lsusb', '-v'],
+									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+			output = process.communicate()[0].split()
+			if "Bluetooth" in output:
+				return True
+			else:
+				return False
+		except:
+			log_system.write("ERROR: 'Bluetooth.IsAvailable()' - Exception thrown.")
 			return False
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
@@ -50,12 +54,16 @@ class Bluetooth(dbus.service.Object):
 		""" Return 'True' if enabled, 'False' if disabled. """
 		if not self.IsAvailable():
 			return False
-		process = subprocess.Popen(['/sbin/lsmod'],
-								stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-		output = process.communicate()[0].split()
-		if "btusb" in output:
-			return True
-		else:
+		try:
+			process = subprocess.Popen(['/sbin/lsmod'],
+									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+			output = process.communicate()[0].split()
+			if "btusb" in output:
+				return True
+			else:
+				return False
+		except:
+			log_system.write("ERROR: 'Bluetooth.IsEnabled()' - Exception thrown.")
 			return False
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
@@ -67,22 +75,35 @@ class Bluetooth(dbus.service.Object):
 			return False
 		if self.IsEnabled():
 			return True
-		process = subprocess.Popen(['/sbin/modprobe', 'btusb'],
-								stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-		process.communicate()
-		if process.returncode != 0:
-			log_system.write("ERROR: 'Bluetooth.Enable()' - COMMAND: 'modprobe btusb'")
+		try:
+			process = subprocess.Popen(['/sbin/modprobe', 'btusb'],
+									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+			process.communicate()
+			if process.returncode != 0:
+				log_system.write("ERROR: 'Bluetooth.Enable()' - COMMAND: 'modprobe btusb' FAILED.")
+				return False
+		except:
+			log_system.write("ERROR: 'Bluetooth.Enable()' - COMMAND: 'modprobe btusb' - Exception thrown.")
 			return False
-		process = subprocess.Popen(['/usr/sbin/service', 'bluetooth', 'start'])
-		process.communicate()
-		if process.returncode != 0:
-			log_system.write("ERROR: 'Bluetooth.Enable()' - COMMAND: 'service bluetooth start'")
+		try:
+			process = subprocess.Popen(['/usr/sbin/service', 'bluetooth', 'start'],
+									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+			process.communicate()
+			if process.returncode != 0:
+				log_system.write("ERROR: 'Bluetooth.Enable()' - COMMAND: 'service bluetooth start' FAILED.")
+				return False
+		except:
+			log_system.write("ERROR: 'Bluetooth.Enable()' - COMMAND: 'service bluetooth start' - Exception thrown.")
 			return False
-		process = subprocess.Popen(['/usr/sbin/hciconfig', 'hci0', 'up'],
-								stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-		process.communicate()
-		if process.returncode != 0:
-			log_system.write("ERROR: 'Bluetooth.Enable()' - COMMAND: 'hciconfig hci0 up'")
+		try:
+			process = subprocess.Popen(['/usr/sbin/hciconfig', 'hci0', 'up'],
+									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+			process.communicate()
+			if process.returncode != 0:
+				log_system.write("ERROR: 'Bluetooth.Enable()' - COMMAND: 'hciconfig hci0 up' FAILED.")
+				return False
+		except:
+			log_system.write("ERROR: 'Bluetooth.Enable()' - COMMAND: 'hciconfig hci0 up' - Exception thrown.")
 			return False
 		return True
 	
@@ -95,21 +116,35 @@ class Bluetooth(dbus.service.Object):
 			return False
 		if not self.IsEnabled():
 			return True
-		process = subprocess.Popen(['/usr/sbin/hciconfig', 'hci0', 'down'],
-								stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-		process.communicate()
-		if process.returncode != 0:
-			log_system.write("ERROR: 'Bluetooth.Disable()' - COMMAND: 'hciconfig hci0 down'")
+		try:
+			process = subprocess.Popen(['/usr/sbin/hciconfig', 'hci0', 'down'],
+									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+			process.communicate()
+			if process.returncode != 0:
+				log_system.write("ERROR: 'Bluetooth.Disable()' - COMMAND: 'hciconfig hci0 down' FAILED.")
+				return False
+		except:
+			log_system.write("ERROR: 'Bluetooth.Disable()' - COMMAND: 'hciconfig hci0 down' - Exception thrown.")
 			return False
-		process = subprocess.Popen(['/usr/sbin/service', 'bluetooth', 'stop'])
-		process.communicate()
-		if process.returncode != 0:
-			log_system.write("ERROR: 'Bluetooth.Disable()' - COMMAND: 'service bluetooth stop'")
+		try:
+			process = subprocess.Popen(['/usr/sbin/service', 'bluetooth', 'stop'],
+									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+			process.communicate()
+			if process.returncode != 0:
+				log_system.write("ERROR: 'Bluetooth.Disable()' - COMMAND: 'service bluetooth stop' FAILED.")
+				return False
+		except:
+			log_system.write("ERROR: 'Bluetooth.Disable()' - COMMAND: 'service bluetooth stop' - Exception thrown.")
 			return False
-		process = subprocess.Popen(['/sbin/modprobe', '-r', 'btusb'])
-		process.communicate()
-		if process.returncode != 0:
-			log_system.write("ERROR: 'Bluetooth.Disable()' - COMMAND: 'modprobe -r btusb'")
+		try:
+			process = subprocess.Popen(['/sbin/modprobe', '-r', 'btusb'],
+									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+			process.communicate()
+			if process.returncode != 0:
+				log_system.write("ERROR: 'Bluetooth.Disable()' - COMMAND: 'modprobe -r btusb' FAILED.")
+				return False
+		except:
+			log_system.write("ERROR: 'Bluetooth.Disable()' - COMMAND: 'modprobe -r btusb' - Exception thrown.")
 			return False
 		return True
 	

@@ -41,26 +41,33 @@ class Wireless(dbus.service.Object):
 	def IsAvailable(self, sender = None, conn = None):
 		""" Check if wireless is available. """
 		""" Return 'True' if available, 'False' otherwise. """
-		process = subprocess.Popen(['/usr/bin/lspci'], stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-		output = process.communicate()[0].split()
-		if "Wireless" in output:
-			# if method is to use easy-slow-down-manager, check if it's actually available
-			if self.method == "esdm":
-				if os.path.exists('/proc/easy_wifi_kill'):
-					return True
-				else:
-					# Try to load easy-slow-down-manager module
-					process = subprocess.Popen(['/sbin/modprobe', 'easy-slow-down-manager'],
-											stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-					process.communicate()
-					if process.returncode != 0:
-						log_system.write("ERROR: 'Wireless.IsAvailable()' - COMMAND: 'modprobe easy-slow-down-manager'")
-						return False
-					else:
+		try:
+			process = subprocess.Popen(['/usr/bin/lspci'], stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+			output = process.communicate()[0].split()
+			if "Wireless" in output:
+				# if method is to use easy-slow-down-manager, check if it's actually available
+				if self.method == "esdm":
+					if os.path.exists('/proc/easy_wifi_kill'):
 						return True
-			return True				
-		else:
-			# no wireless card is available
+					else:
+						# Try to load easy-slow-down-manager module
+						try:
+							process = subprocess.Popen(['/sbin/modprobe', 'easy-slow-down-manager'],
+													stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+							process.communicate()
+							if process.returncode != 0:
+								log_system.write("ERROR: 'Wireless.IsAvailable()' - COMMAND: 'modprobe easy-slow-down-manager' FAILED.")
+								return False
+							else:
+								return True
+						except:
+							log_system.write("ERROR: 'Wireless.IsAvailable()' - COMMAND: 'modprobe easy-slow-down-manager' - Exception thrown.")
+							return False			
+				return True	# other control methods should be always available
+			else: # "Wireless" NOT in output, no wireless card is available
+				return False
+		except:
+			log_system.write("ERROR: 'Wireless.IsAvailable()' - COMMAND: 'lspci' - Exception thrown.")
 			return False
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
@@ -71,30 +78,41 @@ class Wireless(dbus.service.Object):
 		if not self.IsAvailable():
 			return False
 		if self.method == "iwconfig":
-			process = subprocess.Popen(['/sbin/iwconfig', self.device],
-									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-			output = process.communicate()[0].split()
-			if "Tx-Power=off" in output:
+			try:
+				process = subprocess.Popen(['/sbin/iwconfig', self.device],
+										stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+				output = process.communicate()[0].split()
+				if "Tx-Power=off" in output:
+					return False
+				else:
+					return True
+			except:
+				log_system.write("ERROR: 'Wireless.IsEnabled()' - 'iwconfig " + self.device + "' - Exception thrown.")
 				return False
-			else:
-				return True
-		if self.method == "module":
-			process = subprocess.Popen(['/sbin/lsmod'],
-								stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-			output = process.communicate()[0].split()
-			if self.module in output:
-				return True
-			else:
+		elif self.method == "module":
+			try:
+				process = subprocess.Popen(['/sbin/lsmod'],
+										stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+				output = process.communicate()[0].split()
+				if self.module in output:
+					return True
+				else:
+					return False
+			except:
+				log_system.write("ERROR: 'Wireless.IsEnabled()' - 'lsmod' - Exception thrown.")
 				return False
-		if self.method == "esdm":
-			process = subprocess.Popen(['/bin/cat', '/proc/easy_wifi_kill'],
-									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-			output = process.communicate()[0].strip()
-			if output == "0":
+		else: # self.method == "esdm":
+			try:
+				process = subprocess.Popen(['/bin/cat', '/proc/easy_wifi_kill'],
+										stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+				output = process.communicate()[0].strip()
+				if output == "0":
+					return False
+				else:
+					return True
+			except:
+				log_system.write("ERROR: 'Wireless.IsEnabled()' - 'cat /proc/easy_wifi_kill' - Exception thrown.")
 				return False
-			else:
-				return True
-		return False
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
@@ -106,29 +124,39 @@ class Wireless(dbus.service.Object):
 		if self.IsEnabled():
 			return True
 		if self.method == "iwconfig":
-			process = subprocess.Popen(['/sbin/iwconfig', self.device, 'txpower', 'auto'],
-									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-			process.communicate()
-			if process.returncode != 0:
-				log_system.write("ERROR: 'Wireless.Enable()' - COMMAND: 'iwconfig " + self.device + " txpower auto'")
+			try:
+				process = subprocess.Popen(['/sbin/iwconfig', self.device, 'txpower', 'auto'],
+										stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+				process.communicate()
+				if process.returncode != 0:
+					log_system.write("ERROR: 'Wireless.Enable()' - COMMAND: 'iwconfig " + self.device + " txpower auto' FAILED.")
+					return False
+				else:
+					return True
+			except:
+				log_system.write("ERROR: 'Wireless.Enable()' - COMMAND: 'iwconfig " + self.device + " txpower auto' - Exception thrown.")
 				return False
-			return True
-		if self.method == "module":
-			process = subprocess.Popen(['/sbin/modprobe', self.module],
-								stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-			process.communicate()
-			if process.returncode != 0:
-				log_system.write("ERROR: 'Wireless.Enable()' - COMMAND: 'modprobe " + self.module + "'")
+		elif self.method == "module":
+			try:
+				process = subprocess.Popen(['/sbin/modprobe', self.module],
+										stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+				process.communicate()
+				if process.returncode != 0:
+					log_system.write("ERROR: 'Wireless.Enable()' - COMMAND: 'modprobe " + self.module + "' FAILED.")
+					return False
+				else:
+					return True
+			except:
+				log_system.write("ERROR: 'Wireless.Enable()' - COMMAND: 'modprobe " + self.module + "' - Exception thrown.")
 				return False
-			return True
-		if self.method == "esdm":
+		else: # self.method == "esdm":
 			try:
 				with open('/proc/easy_wifi_kill', 'w') as file:
 					file.write('1')
 				return True
 			except:
+				log_system.write("ERROR: 'Wireless.Enable()' - cannot write to '/proc/easy_wifi_kill'.")
 				return False
-		return False
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
@@ -140,29 +168,39 @@ class Wireless(dbus.service.Object):
 		if not self.IsEnabled():
 			return True
 		if self.method == "iwconfig":
-			process = subprocess.Popen(['/sbin/iwconfig', self.device, 'txpower', 'off'],
-									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-			process.communicate()
-			if process.returncode != 0:
-				log_system.write("ERROR: 'Wireless.Disable()' - COMMAND: 'iwconfig " + self.device + " txpower off'")
+			try:
+				process = subprocess.Popen(['/sbin/iwconfig', self.device, 'txpower', 'off'],
+										stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+				process.communicate()
+				if process.returncode != 0:
+					log_system.write("ERROR: 'Wireless.Disable()' - COMMAND: 'iwconfig " + self.device + " txpower off' FAILED.")
+					return False
+				else:
+					return True
+			except:
+				log_system.write("ERROR: 'Wireless.Disable()' - COMMAND: 'iwconfig " + self.device + " txpower off' - Exception thrown.")
 				return False
-			return True
-		if self.method == "module":
-			process = subprocess.Popen(['/sbin/modprobe', '-r', self.module],
-								stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-			process.communicate()
-			if process.returncode != 0:
-				log_system.write("ERROR: 'Wireless.Disable()' - COMMAND: 'modprobe -r " + self.module + "'")
+		elif self.method == "module":
+			try:
+				process = subprocess.Popen(['/sbin/modprobe', '-r', self.module],
+										stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+				process.communicate()
+				if process.returncode != 0:
+					log_system.write("ERROR: 'Wireless.Disable()' - COMMAND: 'modprobe -r " + self.module + "' FAILED.")
+					return False
+				else:
+					return True
+			except:
+				log_system.write("ERROR: 'Wireless.Disable()' - COMMAND: 'modprobe -r " + self.module + "' - Exception thrown.")
 				return False
-			return True
-		if self.method == "esdm":
+		else: # self.method == "esdm":
 			try:
 				with open('/proc/easy_wifi_kill', 'w') as file:
 					file.write('0')
 				return True
 			except:
+				log_system.write("ERROR: 'Wireless.Disable()' - cannot write to '/proc/easy_wifi_kill'.")
 				return False
-		return False
 			
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
