@@ -34,13 +34,12 @@ class Webcam(dbus.service.Object):
 	def IsEnabled(self, sender = None, conn = None):
 		""" Check if webcam is enabled by parsing the output of lsmod. """
 		""" Return 'True' if enabled, 'False' if disabled. """
-		
-		lsmod = subprocess.Popen(['/sbin/lsmod'], stdout = subprocess.PIPE)
-		output = lsmod.communicate()[0].split()
-		for word in output:
-			if word == "uvcvideo":
-				return True
-		return False
+		process = subprocess.Popen(['/sbin/lsmod'], stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+		output = process.communicate()[0].split()
+		if "uvcvideo" in output:
+			return True
+		else:
+			return False
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
@@ -49,11 +48,10 @@ class Webcam(dbus.service.Object):
 		""" Return 'True' on success, 'False' otherwise. """
 		if self.IsEnabled():
 			return True
-		
-		modprobe = subprocess.Popen(['/sbin/modprobe', 'uvcvideo'])
-		modprobe.communicate()
-		if modprobe.returncode != 0:
-			print "ERROR: Webcam.Enable() - /sbin/modprobe uvcvideo"
+		process = subprocess.Popen(['/sbin/modprobe', 'uvcvideo'], stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+		process.communicate()
+		if process.returncode != 0:
+			print "ERROR: Webcam.Enable() - modprobe uvcvideo"
 			return False
 		return True
 	
@@ -64,10 +62,10 @@ class Webcam(dbus.service.Object):
 		""" Return 'True' on success, 'False' otherwise. """
 		if not self.IsEnabled():
 			return True
-		modprobe = subprocess.Popen(['/sbin/modprobe', '-r', 'uvcvideo'])
-		modprobe.communicate()
-		if modprobe.returncode != 0:
-			print "ERROR: Bluetooth.Disable() - /sbin/modprobe -r uvcvideo"
+		process = subprocess.Popen(['/sbin/modprobe', '-r', 'uvcvideo'], stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+		process.communicate()
+		if process.returncode != 0:
+			print "ERROR: Bluetooth.Disable() - modprobe -r uvcvideo"
 			return False
 		return True
 	
