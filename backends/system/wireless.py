@@ -57,7 +57,8 @@ class Wireless(dbus.service.Object):
 						log.write("ERROR: Wireless.IsAvailable() - modprobe easy-slow-down-manager")
 						return False
 					else:
-						return True					
+						return True
+			return True				
 		else:
 			# no wireless card is available
 			return False
