@@ -357,7 +357,7 @@ def usage(option = None, opt = None, value = None, parser = None):
 	print "   %s -B off -w off -W off" % os.path.basename(sys.argv[0])	
 	sys.exit()
 
-if __name__ == "__main__":
+def main():
 	usage_string = "Usage: %s <interface> <option> ..." % os.path.basename(sys.argv[0])
 	parser = OptionParser(usage_string, add_help_option = False)
 	parser.add_option('-h', '--help',
@@ -412,3 +412,6 @@ if __name__ == "__main__":
 	general = dbus.Interface(general_proxy, SESSION_INTERFACE_NAME)
 	# Quit the session service
 	general.Exit()
+
+if __name__ == "__main__":
+	main()
