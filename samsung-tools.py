@@ -30,299 +30,301 @@ import dbus
 from backends.globals import *
 
 class Backlight():
-	def __init__(self):
+	def __init__(self, option, use_notify = False):
+		self.option = option
+		self.use_notify = use_notify
 		bus = dbus.SessionBus()
-		self.proxy = bus.get_object(SESSION_INTERFACE_NAME, SESSION_OBJECT_PATH_BACKLIGHT)
-		self.interface = dbus.Interface(self.proxy, SESSION_INTERFACE_NAME)
+		proxy = bus.get_object(SESSION_INTERFACE_NAME, SESSION_OBJECT_PATH_BACKLIGHT)
+		self.interface = dbus.Interface(proxy, SESSION_INTERFACE_NAME)
 		
-	def on(self):
+	def __on(self):
 		return self.interface.Enable()
 	
-	def off(self):
+	def __off(self):
 		return self.interface.Disable()
 	
-	def status(self):
+	def __status(self):
 		return self.interface.IsEnabled()
 	
-	def toggle(self):
-		return self.interface.Toggle()	
-
+	def __toggle(self):
+		return self.interface.Toggle()
+	
+	def apply(self):
+		if self.option == None:
+			return
+		if self.option == "on":
+			result = self.__on()
+			if result == 1:
+				print "Backlight enabled."
+			else:
+				print "ERROR: Backlight cannot be enabled."
+		if self.option == "off":
+			result = self.__off()
+			if result == 1:
+				print "Backlight disabled."
+			else:
+				print "ERROR: Backlight cannot be disabled."
+		if self.ption == "toggle":
+			result = self.__toggle()
+			if result == 1:
+				print "Backlight toggled."
+			else:
+				print "ERROR: Backlight cannot be toggled."
+		if self.option == "status":
+			result = self.__status()
+			if result == 1:
+				print "Backlight is currently enabled."
+			else:
+				print "Backlight is currently disabled."
+	
 class Bluetooth():
-	def __init__(self):
+	def __init__(self, option, use_notify = False):
+		self.option = option
+		self.use_notify = use_notify
 		bus = dbus.SessionBus()
-		self.proxy = bus.get_object(SESSION_INTERFACE_NAME, SESSION_OBJECT_PATH_BLUETOOTH)
-		self.interface = dbus.Interface(self.proxy, SESSION_INTERFACE_NAME)
-	
-	def is_available(self):
+		proxy = bus.get_object(SESSION_INTERFACE_NAME, SESSION_OBJECT_PATH_BLUETOOTH)
+		self.interface = dbus.Interface(proxy, SESSION_INTERFACE_NAME)
+			
+	def __is_available(self):
 		return self.interface.IsAvailable()
 	
-	def on(self):
+	def __on(self):
 		return self.interface.Enable()
 	
-	def off(self):
+	def __off(self):
 		return self.interface.Disable()
 	
-	def toggle(self):
+	def __toggle(self):
 		return self.interface.Toggle()
 		
-	def status(self):
+	def __status(self):
 		return self.interface.IsEnabled()
-		
-class Fan():
-	def __init__(self):
-		bus = dbus.SessionBus()
-		self.proxy = bus.get_object(SESSION_INTERFACE_NAME, SESSION_OBJECT_PATH_FAN)
-		self.interface = dbus.Interface(self.proxy, SESSION_INTERFACE_NAME)
 	
-	def is_available(self):
-		return self.interface.IsAvailable()
-	
-	def normal(self):
-		return self.interface.SetNormal()
-	
-	def silent(self):
-		return self.interface.SetSilent()
-	
-	def speed(self):
-		return self.interface.SetSpeed()
-	
-	def cycle(self):
-		return self.interface.Cycle()
-	
-	def status(self):
-		return self.interface.Status()
-		
-class Webcam():
-	def __init__(self):
-		bus = dbus.SessionBus()
-		self.proxy = bus.get_object(SESSION_INTERFACE_NAME, SESSION_OBJECT_PATH_WEBCAM)
-		self.interface = dbus.Interface(self.proxy, SESSION_INTERFACE_NAME)
-	
-	def is_available(self):
-		return self.interface.IsAvailable()
-	
-	def on(self):
-		return self.interface.Enable()
-	
-	def off(self):
-		return self.interface.Disable()
-	
-	def toggle(self):
-		return self.interface.Toggle()
-		
-	def status(self):
-		return self.interface.IsEnabled()
-
-class Wireless():
-	def __init__(self):
-		# Connect to session bus
-		bus = dbus.SessionBus()
-		# Get proxy from samsung-tools' session service
-		self.proxy = bus.get_object(SESSION_INTERFACE_NAME, SESSION_OBJECT_PATH_WIRELESS)
-		# Get interface from proxy
-		self.interface = dbus.Interface(self.proxy, SESSION_INTERFACE_NAME)
-	
-	def is_available(self):
-		return self.interface.IsAvailable()
-	
-	def on(self):
-		return self.interface.Enable()
-	
-	def off(self):
-		return self.interface.Disable()
-	
-	def toggle(self):
-		return self.interface.Toggle()
-		
-	def status(self):
-		return self.interface.IsEnabled()
-
-def manage_backlight(option):
-	if option == None:
-		return	
-	backlight = Backlight()
-	if option == "on":
-		result = backlight.on()
-		if result == 1:
-			print "Backlight enabled."
-		else:
-			print "ERROR: Backlight cannot be enabled."
-	if option == "off":
-		result = backlight.off()
-		if result == 1:
-			print "Backlight disabled."
-		else:
-			print "ERROR: Backlight cannot be disabled."
-	if option == "toggle":
-		result = backlight.toggle()
-		if result == 1:
-			print "Backlight toggled."
-		else:
-			print "ERROR: Backlight cannot be toggled."
-	if option == "status":
-		result = backlight.status()
-		if result == 1:
-			print "Backlight is currently enabled."
-		else:
-			print "Backlight is currently disabled."
-	
-def manage_bluetooth(option):
-	if option == None:
-		return
-	bluetooth = Bluetooth()
-	if not bluetooth.is_available():
-		print "Bluetooth control is not available."
-		return
-	if option == "on":
-		result = bluetooth.on()
-		if result == 1:
-			print "Bluetooth enabled."
-		else:
-			print "ERROR: Bluetooth cannot be enabled."
-	if option == "off":
-		result = bluetooth.off()
-		if result == 1:
-			print "Bluetooth disabled."
-		else:
-			print "ERROR: Bluetooth cannot be disabled."
-	if option == "toggle":
-		result = bluetooth.toggle()
-		if result == 1:
-			status = bluetooth.status()
-			if status == 1:
+	def apply(self):
+		if self.option == None:
+			return
+		if not self.__is_available():
+			print "Bluetooth control is not available."
+			return
+		if self.option == "on":
+			result = self.__on()
+			if result == 1:
 				print "Bluetooth enabled."
 			else:
+				print "ERROR: Bluetooth cannot be enabled."
+		if self.option == "off":
+			result = self.__off()
+			if result == 1:
 				print "Bluetooth disabled."
-		else:
-			print "ERROR: Bluetooth cannot be toggled."
-	if option == "status":
-		result = bluetooth.status()
-		if result == 1:
-			print "Bluetooth is currently enabled."
-		else:
-			print "Bluetooth is currently disabled."
+			else:
+				print "ERROR: Bluetooth cannot be disabled."
+		if self.option == "toggle":
+			result = self.__toggle()
+			if result == 1:
+				status = self.__status()
+				if status == 1:
+					print "Bluetooth enabled."
+				else:
+					print "Bluetooth disabled."
+			else:
+				print "ERROR: Bluetooth cannot be toggled."
+		if self.option == "status":
+			result = self.__status()
+			if result == 1:
+				print "Bluetooth is currently enabled."
+			else:
+				print "Bluetooth is currently disabled."
+		
+class CPUFan():
+	def __init__(self, option, use_notify = False):
+		self.option = option
+		self.use_notify = use_notify
+		bus = dbus.SessionBus()
+		proxy = bus.get_object(SESSION_INTERFACE_NAME, SESSION_OBJECT_PATH_FAN)
+		self.interface = dbus.Interface(proxy, SESSION_INTERFACE_NAME)
 	
-def manage_cpufan(option):
-	if option == None:
-		return
-	fan = Fan()
-	if not fan.is_available():
-		print "CPU fan control is not available."
-		return
-	if option == "normal":
-		result = fan.normal()
-		if result == 1:
-			print "CPU fan 'normal' mode enabled."
-		else:
-			print "ERROR: CPU fan 'normal' mode cannot be enabled."
-	if option == "silent":
-		result = fan.silent()
-		if result == 1:
-			print "CPU fan 'silent' mode enabled."
-		else:
-			print "ERROR: CPU fan 'silent' mode cannot be enabled."
-	if option == "speed":
-		result = fan.speed()
-		if result == 1:
-			print "CPU fan 'speed' mode enabled."
-		else:
-			print "ERROR: CPU fan 'speed' mode cannot be enabled."
-	if option == "cycle":
-		result = fan.cycle()
-		if result == 1:
-			mode = fan.status()
-			if mode == 0:
-				print "CPU fan mode switched to 'normal'."
-			if mode == 1:
-				print "CPU fan mode switched to 'silent'."
-			if mode == 2:
-				print "CPU fan mode switched to 'speed'."
-			if mode == 3:
-				print "ERROR: Cannot get new CPU fan status."
-		else:
-			print "ERROR: CPU fan mode cannot be switched." 
-	if option == "status":
-		result = fan.status()
-		if result == 0:
-			print "CPU fan current mode is 'normal'."
-		if result == 1:
-			print "CPU fan current mode is 'silent'."
-		if result == 2:
-			print "CPU fan current mode is 'speed'."
-		if result == 3:
-			print "ERROR: Cannot get current CPU fan status."  
+	def __is_available(self):
+		return self.interface.IsAvailable()
 	
-def manage_webcam(option):
-	if option == None:
-		return
-	webcam = Webcam()
-	if not webcam.is_available():
-		print "Webcam control is not available."
-		return
-	if option == "on":
-		result = webcam.on()
-		if result == 1:
-			print "Webcam enabled."
-		else:
-			print "ERROR: Webcam cannot be enabled."
-	if option == "off":
-		result = webcam.off()
-		if result == 1:
-			print "Webcam disabled."
-		else:
-			print "ERROR: Webcam cannot be disabled."
-	if option == "toggle":
-		result = webcam.toggle()
-		if result == 1:
-			status = webcam.status()
-			if status == 1:
+	def __normal(self):
+		return self.interface.SetNormal()
+	
+	def __silent(self):
+		return self.interface.SetSilent()
+	
+	def __speed(self):
+		return self.interface.SetSpeed()
+	
+	def __cycle(self):
+		return self.interface.Cycle()
+	
+	def __status(self):
+		return self.interface.Status()
+	
+	def apply(self):
+		if self.option == None:
+			return
+		if not self.__is_available():
+			print "CPU fan control is not available."
+			return
+		if self.option == "normal":
+			result = self.__normal()
+			if result == 1:
+				print "CPU fan 'normal' mode enabled."
+			else:
+				print "ERROR: CPU fan 'normal' mode cannot be enabled."
+		if self.option == "silent":
+			result = self.__silent()
+			if result == 1:
+				print "CPU fan 'silent' mode enabled."
+			else:
+				print "ERROR: CPU fan 'silent' mode cannot be enabled."
+		if self.option == "speed":
+			result = self.__speed()
+			if result == 1:
+				print "CPU fan 'speed' mode enabled."
+			else:
+				print "ERROR: CPU fan 'speed' mode cannot be enabled."
+		if self.option == "cycle":
+			result = self.__cycle()
+			if result == 1:
+				mode = self.__status()
+				if mode == 0:
+					print "CPU fan mode switched to 'normal'."
+				if mode == 1:
+					print "CPU fan mode switched to 'silent'."
+				if mode == 2:
+					print "CPU fan mode switched to 'speed'."
+				if mode == 3:
+					print "ERROR: Cannot get new CPU fan status."
+			else:
+				print "ERROR: CPU fan mode cannot be switched." 
+		if self.option == "status":
+			result = self.__status()
+			if result == 0:
+				print "CPU fan current mode is 'normal'."
+			if result == 1:
+				print "CPU fan current mode is 'silent'."
+			if result == 2:
+				print "CPU fan current mode is 'speed'."
+			if result == 3:
+				print "ERROR: Cannot get current CPU fan status."  
+		
+class Webcam():
+	def __init__(self, option, use_notify = False):
+		self.option = option
+		self.use_notify = use_notify
+		bus = dbus.SessionBus()
+		proxy = bus.get_object(SESSION_INTERFACE_NAME, SESSION_OBJECT_PATH_WEBCAM)
+		self.interface = dbus.Interface(proxy, SESSION_INTERFACE_NAME)
+	
+	def __is_available(self):
+		return self.interface.IsAvailable()
+	
+	def __on(self):
+		return self.interface.Enable()
+	
+	def __off(self):
+		return self.interface.Disable()
+	
+	def __toggle(self):
+		return self.interface.Toggle()
+		
+	def __status(self):
+		return self.interface.IsEnabled()
+	
+	def apply(self):
+		if self.option == None:
+			return
+		if not self.__is_available():
+			print "Webcam control is not available."
+			return
+		if self.option == "on":
+			result = self.__on()
+			if result == 1:
 				print "Webcam enabled."
 			else:
+				print "ERROR: Webcam cannot be enabled."
+		if self.option == "off":
+			result = self.__off()
+			if result == 1:
 				print "Webcam disabled."
-		else:
-			print "ERROR: Webcam cannot be toggled."
-	if option == "status":
-		result = webcam.status()
-		if result == 1:
-			print "Webcam is currently enabled."
-		else:
-			print "Webcam is currently disabled."
+			else:
+				print "ERROR: Webcam cannot be disabled."
+		if self.option == "toggle":
+			result = self.__toggle()
+			if result == 1:
+				status = self.__status()
+				if status == 1:
+					print "Webcam enabled."
+				else:
+					print "Webcam disabled."
+			else:
+				print "ERROR: Webcam cannot be toggled."
+		if self.option == "status":
+			result = self.__status()
+			if result == 1:
+				print "Webcam is currently enabled."
+			else:
+				print "Webcam is currently disabled."
+
+class Wireless():
+	def __init__(self, option, use_notify = False):
+		self.option = option
+		self.use_notify = use_notify 
+		bus = dbus.SessionBus()
+		proxy = bus.get_object(SESSION_INTERFACE_NAME, SESSION_OBJECT_PATH_WIRELESS)
+		self.interface = dbus.Interface(proxy, SESSION_INTERFACE_NAME)
 	
-def manage_wireless(option):
-	if option == None:
-		return
-	wireless = Wireless()
-	if not wireless.is_available():
-		print "Wireless control is not available."
-		return
-	if option == "on":
-		result = wireless.on()
-		if result == 1:
-			print "Wireless enabled."
-		else:
-			print "ERROR: Wireless cannot be enabled."
-	if option == "off":
-		result = wireless.off()
-		if result == 1:
-			print "Wireless disabled."
-		else:
-			print "ERROR: Wireless cannot be disabled."
-	if option == "toggle":
-		result = wireless.toggle()
-		if result == 1:
-			status = wireless.status()
-			if status == 1:
+	def __is_available(self):
+		return self.interface.IsAvailable()
+	
+	def __on(self):
+		return self.interface.Enable()
+	
+	def __off(self):
+		return self.interface.Disable()
+	
+	def __toggle(self):
+		return self.interface.Toggle()
+		
+	def __status(self):
+		return self.interface.IsEnabled()
+
+	def apply(self):
+		if self.option == None:
+			return
+		if not self.__is_available():
+			print "Wireless control is not available."
+			return
+		if self.option == "on":
+			result = self.__on()
+			if result == 1:
 				print "Wireless enabled."
 			else:
+				print "ERROR: Wireless cannot be enabled."
+		if self.option == "off":
+			result = self.__off()
+			if result == 1:
 				print "Wireless disabled."
-		else:
-			print "ERROR: Wireless cannot be toggled."
-	if option == "status":
-		result = wireless.status()
-		if result == 1:
-			print "Wireless is currently enabled."
-		else:
-			print "Wireless is currently disabled."
+			else:
+				print "ERROR: Wireless cannot be disabled."
+		if self.option == "toggle":
+			result = self.__toggle()
+			if result == 1:
+				status = self.__status()
+				if status == 1:
+					print "Wireless enabled."
+				else:
+					print "Wireless disabled."
+			else:
+				print "ERROR: Wireless cannot be toggled."
+		if self.option == "status":
+			result = self.__status()
+			if result == 1:
+				print "Wireless is currently enabled."
+			else:
+				print "Wireless is currently disabled."
 
 def usage(option = None, opt = None, value = None, parser = None):
 	print "Samsung-Tools - Command Line Utility"
@@ -396,11 +398,11 @@ def main():
 		print "Use --help for instructions."
 		sys.exit(1)
 	
-	manage_backlight(options.backlight)
-	manage_bluetooth(options.bluetooth)
-	manage_cpufan(options.cpufan)
-	manage_webcam(options.webcam)
-	manage_wireless(options.wireless)
+	Backlight(options.backlight).apply()
+	Bluetooth(options.bluetooth).apply()
+	CPUFan(options.cpufan).apply()
+	Webcam(options.webcam).apply()
+	Wireless(options.wireless).apply()
 
 	## The following code kill session service, for developing purposes
 	## TODO: Remember to remove it.
