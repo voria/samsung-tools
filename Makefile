@@ -8,6 +8,7 @@ install:
 	$(install_file) backends/session/*.py $(DESTDIR)/usr/lib/samsung-tools/backends/session/
 	$(install_dir) $(DESTDIR)/usr/lib/samsung-tools/backends/system/
 	$(install_file) backends/system/*.py $(DESTDIR)/usr/lib/samsung-tools/backends/system/
+	$(install_file) backends/*.py $(DESTDIR)/usr/lib/samsung-tools/backends/
 	$(install_script) *backend.py $(DESTDIR)/usr/lib/samsung-tools/
 	$(install_dir) $(DESTDIR)/usr/bin/
 	$(install_script) samsung-tools.py $(DESTDIR)/usr/bin/samsung-tools
