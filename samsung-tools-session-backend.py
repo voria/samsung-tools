@@ -31,7 +31,7 @@ from backends.session.bluetooth import Bluetooth
 from backends.session.fan import Fan
 from backends.session.webcam import Webcam
 from backends.session.wireless import Wireless
-from backends.session.notifications import Notification
+from backends.session.util.notifications import Notification
 
 mainloop = None
 
