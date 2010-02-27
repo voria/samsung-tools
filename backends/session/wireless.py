@@ -40,10 +40,10 @@ class Wireless(dbus.service.Object):
 		self.proxy = self.system_bus.get_object(SYSTEM_INTERFACE_NAME, SYSTEM_OBJECT_PATH_WIRELESS)
 		self.interface = dbus.Interface(self.proxy, SYSTEM_INTERFACE_NAME)
 	
-	def __not_available(self):
-		""" Inform the user that wireless is not available. """
+	def __not_available(self, show_notify = True):
+		""" If show_notify == True, inform the user that wireless is not available. """
 		""" Return always 'False'. """
-		if self.notify != None:
+		if self.notify != None and show_notify:
 			self.notify.setTitle(WIRELESS_TITLE)
 			self.notify.setMessage(WIRELESS_NOT_AVAILABLE)
 			self.notify.setIcon(STOP_ICON)
@@ -59,16 +59,16 @@ class Wireless(dbus.service.Object):
 		self.__connect()
 		return self.interface.IsAvailable()
 			
-	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = None, out_signature = 'b',
+	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 'b', out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
-	def IsEnabled(self, sender = None, conn = None):
+	def IsEnabled(self, show_notify = True, sender = None, conn = None):
 		""" Check if wireless is enabled. """
 		""" Return 'True' if enabled, 'False' if disabled. """
 		if not self.IsAvailable():
-			return self.__not_available()
+			return self.__not_available(show_notify)
 		self.__connect()
 		enabled = self.interface.IsEnabled()
-		if self.notify != None:
+		if self.notify != None and show_notify:
 			self.notify.setTitle(WIRELESS_TITLE)
 			self.notify.setUrgency("critical")
 			if enabled:
@@ -80,16 +80,16 @@ class Wireless(dbus.service.Object):
 			self.notify.show()
 		return enabled
 	
-	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = None, out_signature = 'b',
+	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 'b', out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
-	def Enable(self, sender = None, conn = None):
+	def Enable(self, show_notify = True, sender = None, conn = None):
 		""" Enable wireless. """
 		""" Return 'True' on success, 'False' otherwise. """
 		if not self.IsAvailable():
-			return self.__not_available()
+			return self.__not_available(show_notify)
 		self.__connect()
 		result = self.interface.Enable()
-		if self.notify != None:
+		if self.notify != None and show_notify:
 			self.notify.setTitle(WIRELESS_TITLE)
 			self.notify.setUrgency("critical")
 			if result == 1:
@@ -101,16 +101,16 @@ class Wireless(dbus.service.Object):
 			self.notify.show()
 		return result
 	
-	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = None, out_signature = 'b',
+	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 'b', out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
-	def Disable(self, sender = None, conn = None):
+	def Disable(self, show_notify = True, sender = None, conn = None):
 		""" Disable wireless. """
 		""" Return 'True' on success, 'False' otherwise. """
 		if not self.IsAvailable():
-			return self.__not_available()
+			return self.__not_available(show_notify)
 		self.__connect()
 		result = self.interface.Disable()
-		if self.notify != None:
+		if self.notify != None and show_notify:
 			self.notify.setTitle(WIRELESS_TITLE)
 			self.notify.setIcon(WIRELESS_DISABLED_ICON)
 			self.notify.setUrgency("critical")
@@ -121,20 +121,15 @@ class Wireless(dbus.service.Object):
 			self.notify.show()
 		return result
 
-	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = None, out_signature = 'b',
+	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 'b', out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
-	def Toggle(self, sender = None, conn = None):
+	def Toggle(self, show_notify = True, sender = None, conn = None):
 		""" Toggle bluetooth. """
 		""" Return 'True' on success, 'False' otherwise. """
 		if not self.IsAvailable():
-			return self.__not_available()
-		# Temporary disable notifications
-		n = self.notify
-		self.notify = None
-		enabled = self.IsEnabled()
-		# Re-enable notifications
-		self.notify = n
+			return self.__not_available(show_notify)
+		enabled = self.IsEnabled(False) # Do not show notification
 		if enabled:
-			return self.Disable()
+			return self.Disable(show_notify)
 		else:
-			return self.Enable()
+			return self.Enable(show_notify)

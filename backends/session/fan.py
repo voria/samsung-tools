@@ -40,10 +40,10 @@ class Fan(dbus.service.Object):
 		self.proxy = self.system_bus.get_object(SYSTEM_INTERFACE_NAME, SYSTEM_OBJECT_PATH_FAN)
 		self.interface = dbus.Interface(self.proxy, SYSTEM_INTERFACE_NAME)
 	
-	def __not_available(self):
-		""" Inform the user that the CPU fan control is not available. """
+	def __not_available(self, show_notify = True):
+		""" If show_notify == True, inform the user that the CPU fan control is not available. """
 		""" Return always 'False'. """
-		if self.notify != None:
+		if self.notify != None and show_notify:
 			self.notify.setTitle(FAN_TITLE)
 			self.notify.setMessage(FAN_NOT_AVAILABLE)
 			self.notify.setIcon(STOP_ICON)
@@ -59,18 +59,18 @@ class Fan(dbus.service.Object):
 		self.__connect()
 		return self.interface.IsAvailable()
 	
-	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = None, out_signature = 'i',
+	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 'b', out_signature = 'i',
 						sender_keyword = 'sender', connection_keyword = 'conn')
-	def Status(self, sender = None, conn = None):
+	def Status(self, show_notify = True, sender = None, conn = None):
 		""" Check current mode. """
 		"""Return 0 if 'normal', 1 if 'silent', 2 if 'speed'. """
 		""" Return 3 if any error. """
 		if not self.IsAvailable():
-			self.__not_available()
+			self.__not_available(show_notify)
 			return 3
 		self.__connect()
 		status = self.interface.Status()
-		if self.notify != None:
+		if self.notify != None and show_notify:
 			self.notify.setTitle(FAN_TITLE)
 			self.notify.setUrgency("critical")
 			if status == 0:
@@ -88,16 +88,16 @@ class Fan(dbus.service.Object):
 			self.notify.show()
 		return status
 			
-	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = None, out_signature = 'b',
+	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 'b', out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
-	def SetNormal(self, sender = None, conn = None):
+	def SetNormal(self, show_notify = True, sender = None, conn = None):
 		""" Turn to 'normal' mode. """
 		""" Return 'True' on success, 'False' otherwise. """
 		if not self.IsAvailable():
-			return self.__not_available()
+			return self.__not_available(show_notify)
 		self.__connect()
 		result = self.interface.SetNormal()
-		if self.notify != None:
+		if self.notify != None and show_notify:
 			self.notify.setTitle(FAN_TITLE)
 			self.notify.setUrgency("critical")
 			if result == True:
@@ -109,16 +109,16 @@ class Fan(dbus.service.Object):
 			self.notify.show()
 		return result
 		
-	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = None, out_signature = 'b',
+	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 'b', out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
-	def SetSilent(self, sender = None, conn = None):
+	def SetSilent(self, show_notify = True, sender = None, conn = None):
 		""" Turn to 'silent' mode. """
 		""" Return 'True' on success, 'False' otherwise. """
 		if not self.IsAvailable():
-			return self.__not_available()
+			return self.__not_available(show_notify)
 		self.__connect()
 		result = self.interface.SetSilent()
-		if self.notify != None:
+		if self.notify != None and show_notify:
 			self.notify.setTitle(FAN_TITLE)
 			self.notify.setUrgency("critical")
 			if result == True:
@@ -130,16 +130,16 @@ class Fan(dbus.service.Object):
 			self.notify.show()
 		return result
 		
-	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = None, out_signature = 'b',
+	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 'b', out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
-	def SetSpeed(self, sender = None, conn = None):
+	def SetSpeed(self, show_notify = True, sender = None, conn = None):
 		""" Turn to 'speed' mode. """
 		""" Return 'True' on success, 'False' otherwise. """
 		if not self.IsAvailable():
-			return self.__not_available()
+			return self.__not_available(show_notify)
 		self.__connect()
 		result = self.interface.SetSpeed()
-		if self.notify != None:
+		if self.notify != None and show_notify:
 			self.notify.setTitle(FAN_TITLE)
 			self.notify.setUrgency("critical")
 			if result == True:
@@ -151,24 +151,20 @@ class Fan(dbus.service.Object):
 			self.notify.show()
 		return result
 	
-	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = None, out_signature = 'b',
+	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 'b', out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
-	def Cycle(self, sender = None, conn = None):
+	def Cycle(self, show_notify = True, sender = None, conn = None):
 		""" Set the next mode in a cyclic way. """
 		""" Return 'True' on success, 'False' otherwise. """
 		if not self.IsAvailable():
-			return self.__not_available()
+			return self.__not_available(show_notify)
 		self.__connect()
 		result = self.interface.Cycle()
-		if self.notify != None:
+		if self.notify != None and show_notify:
 			self.notify.setTitle(FAN_TITLE)
 			self.notify.setUrgency("critical")
 			if result == True:
-				# Temporary disable notifications
-				n = self.notify
-				self.notify = None
-				status = self.Status()
-				self.notify = n # Re-enable notifications
+				status = self.Status(False) # Do not show notification				
 				if status == 0:
 					self.notify.setMessage(FAN_SWITCH_NORMAL)
 					self.notify.setIcon(FAN_NORMAL_ICON)
