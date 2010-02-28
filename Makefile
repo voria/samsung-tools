@@ -18,8 +18,8 @@ install:
 	$(install_file) services/org.voria.SamsungTools.System.service $(DESTDIR)/usr/share/dbus-1/system-services/
 	$(install_dir) $(DESTDIR)/usr/share/dbus-1/services/
 	$(install_file) services/org.voria.SamsungTools.Session.service $(DESTDIR)/usr/share/dbus-1/services/
-	$(install_dir) $(DESTDIR)/etc/
-	$(install_file) samsung-tools.conf $(DESTDIR)/etc/
+	$(install_dir) $(DESTDIR)/etc/samsung-tools/
+	$(install_file) configs/system.conf $(DESTDIR)/etc/samsung-tools/
 
 uninstall:
 	rm -rf $(DESTDIR)/usr/bin/samsung-tools
