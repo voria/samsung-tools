@@ -433,16 +433,16 @@ def main():
 	Webcam(options.webcam, options.show_notify).apply()
 	Wireless(options.wireless, options.show_notify).apply()
 
-#	## The following code kill session service, for developing purposes
-#	## TODO: Remember to remove it.
-#	#Connect to session bus
-#	bus = dbus.SessionBus()
-#	# Get proxy from session service
-#	general_proxy = bus.get_object(SESSION_INTERFACE_NAME, SESSION_OBJECT_PATH_GENERAL)
-#	# Get interface from proxy
-#	general = dbus.Interface(general_proxy, SESSION_INTERFACE_NAME)
-#	# Quit the session service
-#	general.Exit()
+	## The following code kill session service, for developing purposes
+	## TODO: Remember to remove it.
+	#Connect to session bus
+	bus = dbus.SessionBus()
+	# Get proxy from session service
+	general_proxy = bus.get_object(SESSION_INTERFACE_NAME, SESSION_OBJECT_PATH_GENERAL)
+	# Get interface from proxy
+	general = dbus.Interface(general_proxy, SESSION_INTERFACE_NAME)
+	# Quit the session service
+	general.Exit()
 
 if __name__ == "__main__":
 	main()

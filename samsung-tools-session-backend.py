@@ -19,6 +19,9 @@
 # See the GNU General Public License for more details.
 # <http://www.gnu.org/licenses/gpl.txt>
 
+import os
+import shutil
+
 import gobject
 
 import dbus
@@ -26,6 +29,7 @@ import dbus.service
 import dbus.mainloop.glib
 
 from backends.globals import *
+from backends.session.hotkeys import Hotkeys
 from backends.session.backlight import Backlight
 from backends.session.bluetooth import Bluetooth
 from backends.session.fan import Fan
@@ -58,6 +62,16 @@ class General(dbus.service.Object):
 if __name__ == '__main__':
 	dbus.mainloop.glib.DBusGMainLoop(set_as_default = True)
 
+	# Check if user's directory exists
+	if not os.path.exists(USER_DIRECTORY):
+		os.mkdir(USER_DIRECTORY)
+		shutil.copy(SESSION_CONFIG_FILE, USER_CONFIG_FILE)
+	else:
+		# Directory exists; check if config file exists too
+		if not os.path.exists(USER_CONFIG_FILE):
+			shutil.copy(SESSION_CONFIG_FILE, USER_CONFIG_FILE)
+	# Everything's ok
+			
 	# Initialize notification system
 	notify = Notification()
 
@@ -67,11 +81,11 @@ if __name__ == '__main__':
     
 	General(session_bus, SESSION_OBJECT_PATH_GENERAL)
 	Backlight(session_bus, SESSION_OBJECT_PATH_BACKLIGHT)
+	Hotkeys(session_bus, SESSION_OBJECT_PATH_HOTKEYS)
 	Bluetooth(notify, session_bus, SESSION_OBJECT_PATH_BLUETOOTH)
 	Fan(notify, session_bus, SESSION_OBJECT_PATH_FAN)
 	Webcam(notify, session_bus, SESSION_OBJECT_PATH_WEBCAM)
 	Wireless(notify, session_bus, SESSION_OBJECT_PATH_WIRELESS)
-	
 	
 	mainloop = gobject.MainLoop()
 	mainloop.run()

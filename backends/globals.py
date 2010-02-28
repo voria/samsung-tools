@@ -19,16 +19,25 @@
 # See the GNU General Public License for more details.
 # <http://www.gnu.org/licenses/gpl.txt>
 
+import os
+
 from backends.log import Log
 
 SYSTEM_CONFIG_FILE = "/etc/samsung-tools/system.conf"
-SESSION_CONFIG_FILE = "/etc/samsung-tools/session.conf"
 SYSTEM_LOG_FILE = "/var/log/samsung-tools.log"
+
+SESSION_CONFIG_FILE = "/etc/samsung-tools/session.conf"
+try: # system service fails when trying to join $HOME, anyway this is needed only by session service
+	USER_DIRECTORY = os.path.join(os.getenv('HOME'), ".samsung-tools")
+	USER_CONFIG_FILE = os.path.join(USER_DIRECTORY, os.path.basename(SESSION_CONFIG_FILE))
+except:
+	pass
 
 log_system = Log(SYSTEM_LOG_FILE)
 
 SESSION_INTERFACE_NAME = "org.voria.SamsungTools.Session"
 SESSION_OBJECT_PATH_GENERAL = "/"
+SESSION_OBJECT_PATH_HOTKEYS = "/Hotkeys"
 SESSION_OBJECT_PATH_BACKLIGHT = "/Device/Backlight"
 SESSION_OBJECT_PATH_BLUETOOTH = "/Device/Bluetooth"
 SESSION_OBJECT_PATH_FAN = "/Device/Fan"
