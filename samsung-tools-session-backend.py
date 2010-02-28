@@ -65,7 +65,7 @@ if __name__ == '__main__':
 	session_bus = dbus.SessionBus()
 	name = dbus.service.BusName(SESSION_INTERFACE_NAME, session_bus)
     
-	General(session_bus, '/')
+	General(session_bus, SESSION_OBJECT_PATH_GENERAL)
 	Backlight(session_bus, SESSION_OBJECT_PATH_BACKLIGHT)
 	Bluetooth(notify, session_bus, SESSION_OBJECT_PATH_BLUETOOTH)
 	Fan(notify, session_bus, SESSION_OBJECT_PATH_FAN)
