@@ -27,7 +27,7 @@ WIRELESS_TOGGLE_METHOD_DEFAULT = "iwconfig"
 WIRELESS_DEVICE_DEFAULT = "wlan0"
 WIRELESS_MODULE_DEFAULT = "ath5k"
 
-class Config():
+class SystemConfig():
 	def __init__(self, configfile):
 		self.config = ConfigParser.SafeConfigParser()
 		try:
@@ -35,7 +35,7 @@ class Config():
 		except:
 			# configfile not found?
 			# Use default options
-			log_system.write("WARNING: 'Config()' - '" + configfile + "' not found. Using default values for all options.")
+			log_system.write("WARNING: 'SystemConfig()' - '" + configfile + "' not found. Using default values for all options.")
 			self.config.add_section("Main")
 			self.config.set("Main", "WIRELESS_TOGGLE_METHOD", WIRELESS_TOGGLE_METHOD_DEFAULT)
 			self.config.set("Main", "WIRELESS_DEVICE", WIRELESS_DEVICE_DEFAULT)
@@ -43,11 +43,11 @@ class Config():
 		# Options sanity check
 		if self.config.get("Main", "WIRELESS_TOGGLE_METHOD") not in ["iwconfig", "module", "esdm"]:
 			# Option is invalid, set default value
-			log_system.write("WARNING: 'Config()' - 'WIRELESS_TOGGLE_METHOD' option specified in '" + configfile + 
+			log_system.write("WARNING: 'SystemConfig()' - 'WIRELESS_TOGGLE_METHOD' option specified in '" + configfile + 
 					"' is invalid. Using default value ('" + WIRELESS_TOGGLE_METHOD_DEFAULT + "').")
 			self.config.set("Main", "WIRELESS_TOGGLE_METHOD", WIRELESS_TOGGLE_METHOD_DEFAULT)
 		
-	def getWirelessMethod(self):
+	def getWirelessToggleMethod(self):
 		return self.config.get("Main", "WIRELESS_TOGGLE_METHOD") 
 	
 	def getWirelessDevice(self):

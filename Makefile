@@ -6,20 +6,21 @@ install:
 	$(install_dir) $(DESTDIR)/usr/lib/samsung-tools/backends/session/util/
 	$(install_file) backends/session/util/*.py $(DESTDIR)/usr/lib/samsung-tools/backends/session/util/
 	$(install_file) backends/session/*.py $(DESTDIR)/usr/lib/samsung-tools/backends/session/
-	$(install_dir) $(DESTDIR)/usr/lib/samsung-tools/backends/system/
+	$(install_dir) $(DESTDIR)/usr/lib/samsung-tools/backends/system/util/
+	$(install_file) backends/system/util/*.py $(DESTDIR)/usr/lib/samsung-tools/backends/system/util/
 	$(install_file) backends/system/*.py $(DESTDIR)/usr/lib/samsung-tools/backends/system/
 	$(install_file) backends/*.py $(DESTDIR)/usr/lib/samsung-tools/backends/
 	$(install_script) *backend.py $(DESTDIR)/usr/lib/samsung-tools/
 	$(install_dir) $(DESTDIR)/usr/bin/
 	$(install_script) samsung-tools.py $(DESTDIR)/usr/bin/samsung-tools
 	$(install_dir) $(DESTDIR)/etc/dbus-1/system.d/
-	$(install_file) busconfig/* $(DESTDIR)/etc/dbus-1/system.d/
+	$(install_file) busconfig/*.conf $(DESTDIR)/etc/dbus-1/system.d/
 	$(install_dir) $(DESTDIR)/usr/share/dbus-1/system-services/
 	$(install_file) services/org.voria.SamsungTools.System.service $(DESTDIR)/usr/share/dbus-1/system-services/
 	$(install_dir) $(DESTDIR)/usr/share/dbus-1/services/
 	$(install_file) services/org.voria.SamsungTools.Session.service $(DESTDIR)/usr/share/dbus-1/services/
 	$(install_dir) $(DESTDIR)/etc/samsung-tools/
-	$(install_file) configs/system.conf $(DESTDIR)/etc/samsung-tools/
+	$(install_file) configs/*.conf $(DESTDIR)/etc/samsung-tools/
 
 uninstall:
 	rm -rf $(DESTDIR)/usr/bin/samsung-tools

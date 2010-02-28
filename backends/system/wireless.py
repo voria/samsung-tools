@@ -24,15 +24,15 @@ import subprocess
 import dbus.service
 
 from backends.globals import *
-from backends.config import Config
+from backends.system.util.config import SystemConfig
 
 class Wireless(dbus.service.Object):
 	""" Control wireless """
 	def __init__(self, conn = None, object_path = None, bus_name = None):
 		dbus.service.Object.__init__(self, conn, object_path, bus_name)
 		# Set wireless toggling method to use
-		config = Config(SYSTEM_CONFIG_FILE)
-		self.method = config.getWirelessMethod()
+		config = SystemConfig(SYSTEM_CONFIG_FILE)
+		self.method = config.getWirelessToggleMethod()
 		self.device = config.getWirelessDevice()
 		self.module = config.getWirelessModule()
 	

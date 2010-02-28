@@ -22,6 +22,7 @@
 from backends.log import Log
 
 SYSTEM_CONFIG_FILE = "/etc/samsung-tools/system.conf"
+SESSION_CONFIG_FILE = "/etc/samsung-tools/session.conf"
 SYSTEM_LOG_FILE = "/var/log/samsung-tools.log"
 
 log_system = Log(SYSTEM_LOG_FILE)
