@@ -73,7 +73,7 @@ class Backlight(dbus.service.Object):
 				return True
 		if self.method == "vbetool":
 			if not os.path.exists(VBETOOL_TEMP_FILE):
-				return True
+				return True # assume backlight is enabled
 			try:
 				with open(VBETOOL_TEMP_FILE, 'r') as file:
 					status = int(file.read(1))
@@ -91,6 +91,8 @@ class Backlight(dbus.service.Object):
 	def Enable(self, sender = None, conn = None):
 		""" Enable backlight. """
 		""" Return 'True' on success, 'False' otherwise. """
+		if self.IsEnabled():
+			return True
 		if self.method == "esdm":
 			try:
 				with open('/proc/easy_backlight', 'w') as file:
@@ -116,6 +118,8 @@ class Backlight(dbus.service.Object):
 	def Disable(self, sender = None, conn = None):
 		""" Disable backlight. """
 		""" Return 'True' on success, 'False' otherwise. """
+		if not self.IsEnabled():
+			return False
 		if self.method == "esdm":
 			try:
 				with open('/proc/easy_backlight', 'w') as file:
