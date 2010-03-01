@@ -172,7 +172,7 @@ class CPUFan():
 		if not self.__is_available():
 			print "CPU fan control is not available."
 			self.__status()
-		#	return
+			return
 		if self.option == "normal":
 			result = self.__normal()
 			if result == 1:
