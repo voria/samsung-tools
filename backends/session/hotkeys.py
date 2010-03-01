@@ -123,9 +123,9 @@ class Hotkeys(dbus.service.Object):
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def SetBacklightHotkey(self, hotkey, sender = None, conn = None):
 		""" Set the hotkey for backlight control. """
-		""" If hotkey == None, hotkey will be disabled. """
+		""" If hotkey == "None" (as a string), hotkey will be disabled. """
 		gconf_client = gconf.client_get_default()
-		if hotkey != None:
+		if hotkey != "None":
 			gconf_client.set_string(BACKLIGHT_GCONF_KEY_COMMAND, BACKLIGHT_COMMAND)
 			gconf_client.set_string(BACKLIGHT_GCONF_KEY_RUN, hotkey)
 		else:
@@ -138,9 +138,9 @@ class Hotkeys(dbus.service.Object):
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def SetBluetoothHotkey(self, hotkey, sender = None, conn = None):
 		""" Set the hotkey for bluetooth control. """
-		""" If hotkey == None, hotkey will be disabled. """
+		""" If hotkey == "None" (as a string), hotkey will be disabled. """
 		gconf_client = gconf.client_get_default()
-		if hotkey != None:
+		if hotkey != "None":
 			gconf_client.set_string(BLUETOOTH_GCONF_KEY_COMMAND, BLUETOOTH_COMMAND)
 			gconf_client.set_string(BLUETOOTH_GCONF_KEY_RUN, hotkey)
 		else:
@@ -153,9 +153,9 @@ class Hotkeys(dbus.service.Object):
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def SetFanHotkey(self, hotkey, sender = None, conn = None):
 		""" Set the hotkey for CPU fan control. """
-		""" If hotkey == None, hotkey will be disabled. """
+		""" If hotkey == "None" (as a string), hotkey will be disabled. """
 		gconf_client = gconf.client_get_default()
-		if hotkey != None:
+		if hotkey != "None":
 			gconf_client.set_string(FAN_GCONF_KEY_COMMAND, FAN_COMMAND)
 			gconf_client.set_string(FAN_GCONF_KEY_RUN, hotkey)
 		else:
@@ -168,9 +168,9 @@ class Hotkeys(dbus.service.Object):
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def SetWebcamHotkey(self, hotkey, sender = None, conn = None):
 		""" Set the hotkey for webcam control. """
-		""" If hotkey == None, hotkey will be disabled. """
+		""" If hotkey == "None" (as a string), hotkey will be disabled. """
 		gconf_client = gconf.client_get_default()
-		if hotkey != None:
+		if hotkey != "None":
 			gconf_client.set_string(WEBCAM_GCONF_KEY_COMMAND, WEBCAM_COMMAND)
 			gconf_client.set_string(WEBCAM_GCONF_KEY_RUN, hotkey)
 		else:
@@ -183,9 +183,9 @@ class Hotkeys(dbus.service.Object):
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def SetWirelessHotkey(self, hotkey, sender = None, conn = None):
 		""" Set the hotkey for wireless control. """
-		""" If hotkey == None, hotkey will be disabled. """
+		""" If hotkey == "None" (as a string), hotkey will be disabled. """
 		gconf_client = gconf.client_get_default()
-		if hotkey != None:
+		if hotkey != "None":
 			gconf_client.set_string(WIRELESS_GCONF_KEY_COMMAND, WIRELESS_COMMAND)
 			gconf_client.set_string(WIRELESS_GCONF_KEY_RUN, hotkey)
 		else:

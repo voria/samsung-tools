@@ -33,12 +33,12 @@ WIRELESS_HOTKEY_DEFAULT = "XF86WLAN"
 class SessionConfig():
 	def __init__(self, configfile):
 		self.config = ConfigParser.SafeConfigParser()
+		self.configfile = configfile
 		try:
 			self.config.readfp(open(configfile))
 		except:
 			# configfile not found?
 			# Use default options
-			log_system.write("WARNING: 'SessionConfig()' - '" + configfile + "' not found. Using default values for all options.")
 			self.config.add_section("Main")
 			self.config.set("Main", "LAST_STATUS_RESTORE", LAST_STATUS_RESTORE_DEFAULT)
 			self.config.set("Main", "BACKLIGHT_HOTKEY", BACKLIGHT_HOTKEY_DEFAULT)
@@ -46,13 +46,61 @@ class SessionConfig():
 			self.config.set("Main", "FAN_HOTKEY", FAN_HOTKEY_DEFAULT)
 			self.config.set("Main", "WEBCAM_HOTKEY", WEBCAM_HOTKEY_DEFAULT)
 			self.config.set("Main", "WIRELESS_HOTKEY", WIRELESS_HOTKEY_DEFAULT)
+		# Check if all options are specified in the config file
+		try:
+			self.config.get("Main", "LAST_STATUS_RESTORE")
+		except:
+			self.config.set("Main", "LAST_STATUS_RESTORE", LAST_STATUS_RESTORE_DEFAULT)
+		try:
+			self.config.get("Main", "BACKLIGHT_HOTKEY")
+		except:
+			self.config.set("Main", "BACKLIGHT_HOTKEY", BACKLIGHT_HOTKEY_DEFAULT)
+		try:
+			self.config.get("Main", "BLUETOOTH_HOTKEY")
+		except:
+			self.config.set("Main", "BLUETOOTH_HOTKEY", BLUETOOTH_HOTKEY_DEFAULT)
+		try:
+			self.config.get("Main", "FAN_HOTKEY")
+		except:
+			self.config.set("Main", "FAN_HOTKEY", FAN_HOTKEY_DEFAULT)
+		try:
+			self.config.get("Main", "WEBCAM_HOTKEY")
+		except:
+			self.config.set("Main", "WEBCAM_HOTKEY", WEBCAM_HOTKEY_DEFAULT)
+		try:
+			self.config.get("Main", "WIRELESS_HOTKEY")
+		except:
+			self.config.set("Main", "WIRELESS_HOTKEY", WIRELESS_HOTKEY_DEFAULT)
+		
 		# Options sanity check
 		if self.config.get("Main", "LAST_STATUS_RESTORE") not in ["true", "false"]:
 			# Option is invalid, set default value
-			log_system.write("WARNING: 'SessionConfig()' - 'LAST_STATUS_RESTORE' option specified in '" + configfile + 
-					"' is invalid. Using default value ('" + LAST_STATUS_RESTORE_DEFAULT + "').")
 			self.config.set("Main", "LAST_STATUS_RESTORE", LAST_STATUS_RESTORE_DEFAULT)
-		
+	
+	def __write(self):
+		""" Write on disk the config file. """
+		# We don't use the ConfigParser builtin write function,
+		# because it seems to be impossible to add comments to config file.
+		text = [
+			"#\n",
+			"# Configuration file for samsung-tools - session service\n",
+			"#\n",
+			"\n",
+			"[Main]\n",
+			"# Set this to 'false' if you don't want the last status for bluetooth,\n",
+			"# webcam and wireless restored after a suspend/hibernate/reboot cycle.\n",
+			"LAST_STATUS_RESTORE=%s\n" % self.config.get("Main", "LAST_STATUS_RESTORE"),
+			"\n",
+			"# Hotkeys configuration\n",
+			"BACKLIGHT_HOTKEY=%s\n" % self.config.get("Main", "BACKLIGHT_HOTKEY"),
+			"BLUETOOTH_HOTKEY=%s\n" % self.config.get("Main", "BLUETOOTH_HOTKEY"),
+			"FAN_HOTKEY=%s\n" % self.config.get("Main", "FAN_HOTKEY"),
+			"WEBCAM_HOTKEY=%s\n" % self.config.get("Main", "WEBCAM_HOTKEY"),
+			"WIRELESS_HOTKEY=%s\n" % self.config.get("Main", "WIRELESS_HOTKEY")
+			]	
+		with open(self.configfile, "w") as config:
+			config.writelines(text)			
+	
 	def getLastStatusRestore(self):
 		return self.config.get("Main", "LAST_STATUS_RESTORE") 
 	
@@ -71,17 +119,26 @@ class SessionConfig():
 	def getWirelessHotkey(self):
 		return self.config.get("Main", "WIRELESS_HOTKEY")
 	
+	def setLastStatusRestore(self, value):
+		self.config.set("Main", "LAST_STATUS_RESTORE", value)
+		self.__write()
+	
 	def setBacklightHotkey(self, hotkey):
 		self.config.set("Main", "BACKLIGHT_HOTKEY", hotkey)
+		self.__write()
 	
 	def setBluetoothHotkey(self, hotkey):
 		self.config.set("Main", "BLUETOOTH_HOTKEY", hotkey)
+		self.__write()
 		
 	def setFanHotkey(self, hotkey):
 		self.config.set("Main", "FAN_HOTKEY", hotkey)
+		self.__write()
 		
 	def setWebcamHotkey(self, hotkey):
 		self.config.set("Main", "WEBCAM_HOTKEY", hotkey)
+		self.__write()
 		
 	def setWirelessHotkey(self, hotkey):
 		self.config.set("Main", "WIRELESS_HOTKEY", hotkey)
+		self.__write()
