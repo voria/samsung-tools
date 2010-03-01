@@ -211,23 +211,19 @@ class CPUFan():
 			else:
 				print "ERROR: CPU fan mode cannot be switched."
 		if self.option == "hotkey":
+			from time import sleep
 			tempfile = os.path.join(USER_DIRECTORY, ".samsung-tools_hotkey-tempfile")
 			if os.path.exists(tempfile):
 				CPUFan("cycle", self.use_notify).apply()
-				try:
-					os.remove(tempfile)
-				except:
-					pass
 			else:
 				CPUFan("status", self.use_notify).apply()
 				file = open(tempfile, "w") # create temp file
 				file.close()
-				from time import sleep
-				sleep(3)
-				try:
-					os.remove(tempfile)
-				except:
-					pass
+			sleep(5)
+			try:
+				os.remove(tempfile)
+			except:
+				pass
 		if self.option == "status":
 			result = self.__status()
 			if result == 0:
