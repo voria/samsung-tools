@@ -42,7 +42,7 @@ WIRELESS_GCONF_KEY_RUN = GCONF_KEY_RUN + "12"
 
 BACKLIGHT_COMMAND = "samsung-tools -b toggle --show-notify"
 BLUETOOTH_COMMAND = "samsung-tools -B toggle --show-notify"
-FAN_COMMAND = "samsung-tools -f cycle --show-notify"
+FAN_COMMAND = "samsung-tools -f hotkey --show-notify"
 WEBCAM_COMMAND = "samsung-tools -w toggle --show-notify"
 WIRELESS_COMMAND = "samsung-tools -W toggle --show-notify"
 

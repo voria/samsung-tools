@@ -68,7 +68,7 @@ class Backlight():
 			if result == 1:
 				print "Backlight toggled."
 			else:
-				print "ERROR: Backlight cannot be toggled."
+				print "ERROR: Backlight cannot be toggled."				
 		if self.option == "status":
 			result = self.__status()
 			if result == 1:
@@ -172,7 +172,7 @@ class CPUFan():
 		if not self.__is_available():
 			print "CPU fan control is not available."
 			self.__status()
-			return
+		#	return
 		if self.option == "normal":
 			result = self.__normal()
 			if result == 1:
@@ -209,7 +209,25 @@ class CPUFan():
 				if mode == 3:
 					print "ERROR: Cannot get new CPU fan status."
 			else:
-				print "ERROR: CPU fan mode cannot be switched." 
+				print "ERROR: CPU fan mode cannot be switched."
+		if self.option == "hotkey":
+			tempfile = os.path.join(USER_DIRECTORY, ".samsung-tools_hotkey-tempfile")
+			if os.path.exists(tempfile):
+				CPUFan("cycle", self.use_notify).apply()
+				try:
+					os.remove(tempfile)
+				except:
+					pass
+			else:
+				CPUFan("status", self.use_notify).apply()
+				file = open(tempfile, "w") # create temp file
+				file.close()
+				from time import sleep
+				sleep(3)
+				try:
+					os.remove(tempfile)
+				except:
+					pass
 		if self.option == "status":
 			result = self.__status()
 			if result == 0:
@@ -362,7 +380,7 @@ def usage(option = None, opt = None, value = None, parser = None):
 	print "\tOptions:\ton | off | toggle | status"
 	print "CPU Fan:"
 	print "\tInterface:\t-f | --cpufan"
-	print "\tOptions:\tnormal | silent | speed | cycle | status"
+	print "\tOptions:\tnormal | silent | speed | cycle | hotkey | status"
 	print "Webcam:"
 	print "\tInterface:\t-w | --webcam"
 	print "\tOptions:\ton | off | toggle | status"
@@ -382,6 +400,13 @@ def usage(option = None, opt = None, value = None, parser = None):
 	print
 	print " - Disable bluetooth, webcam and wireless:"
 	print " %s -B off -w off -W off" % os.path.basename(sys.argv[0])
+	print
+	print "Visit the 'Linux On My Samsung' forum for more informations, at:"
+	print
+	print " - http://www.voria.org/forum"
+	print
+	print "Copyleft by: Fortunato Ventre (voRia) - vorione@gmail.com"
+	print "Released under GPLv3 license."
 	sys.exit()
 
 def main():
@@ -401,7 +426,7 @@ def main():
 	parser.add_option('-f', '--cpufan',
 					dest = "cpufan",
 					type = "choice",
-					choices = ['normal', 'silent', 'speed', 'cycle', 'status'])
+					choices = ['normal', 'silent', 'speed', 'cycle', 'hotkey', 'status'])
 	parser.add_option('-w', '--webcam',
 					dest = "webcam",
 					type = "choice",
@@ -440,13 +465,9 @@ def main():
 	if options.debug == True:
 		## The following code kill session service, for developing purposes
 		## TODO: Remember to remove it.
-		#Connect to session bus
 		bus = dbus.SessionBus()
-		# Get proxy from session service
 		general_proxy = bus.get_object(SESSION_INTERFACE_NAME, SESSION_OBJECT_PATH_GENERAL)
-		# Get interface from proxy
 		general = dbus.Interface(general_proxy, SESSION_INTERFACE_NAME)
-		# Quit the session service
 		general.Exit()
 
 if __name__ == "__main__":
