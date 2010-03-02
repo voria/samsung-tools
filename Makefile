@@ -10,19 +10,19 @@ install:
 	$(install_file) backends/system/util/*.py $(DESTDIR)/usr/lib/samsung-tools/backends/system/util/
 	$(install_file) backends/system/*.py $(DESTDIR)/usr/lib/samsung-tools/backends/system/
 	$(install_file) backends/*.py $(DESTDIR)/usr/lib/samsung-tools/backends/
-	$(install_script) *backend.py $(DESTDIR)/usr/lib/samsung-tools/
+	$(install_script) *-service.py $(DESTDIR)/usr/lib/samsung-tools/
 	$(install_dir) $(DESTDIR)/usr/bin/
-	$(install_script) samsung-tools.py $(DESTDIR)/usr/bin/samsung-tools
+	$(install_script) samsung-tools $(DESTDIR)/usr/bin/
 	$(install_dir) $(DESTDIR)/etc/dbus-1/system.d/
-	$(install_file) busconfig/*.conf $(DESTDIR)/etc/dbus-1/system.d/
+	$(install_file) bus/config/*.conf $(DESTDIR)/etc/dbus-1/system.d/
 	$(install_dir) $(DESTDIR)/usr/share/dbus-1/system-services/
-	$(install_file) services/org.voria.SamsungTools.System.service $(DESTDIR)/usr/share/dbus-1/system-services/
+	$(install_file) bus/services/org.voria.SamsungTools.System.service $(DESTDIR)/usr/share/dbus-1/system-services/
 	$(install_dir) $(DESTDIR)/usr/share/dbus-1/services/
-	$(install_file) services/org.voria.SamsungTools.Session.service $(DESTDIR)/usr/share/dbus-1/services/
+	$(install_file) bus/services/org.voria.SamsungTools.Session.service $(DESTDIR)/usr/share/dbus-1/services/
 	$(install_dir) $(DESTDIR)/etc/samsung-tools/
 	$(install_file) configs/*.conf $(DESTDIR)/etc/samsung-tools/
 	$(install_dir) $(DESTDIR)/etc/pm/sleep.d/
-	$(install_script) sleep.d/20_samsung-tools $(DESTDIR)/etc/pm/sleep.d/
+	$(install_script) sleep.d/* $(DESTDIR)/etc/pm/sleep.d/
 
 uninstall:
 	rm -rf $(DESTDIR)/usr/bin/samsung-tools
