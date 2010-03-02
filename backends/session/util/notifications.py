@@ -19,9 +19,12 @@
 # See the GNU General Public License for more details.
 # <http://www.gnu.org/licenses/gpl.txt>
 
+from backends.globals import *
+
 try:
 	import pynotify
 except:
+	log_session.write("ERROR: 'notifications'  - cannot import pynotify.")
 	pass
 
 class Notification():
@@ -30,6 +33,7 @@ class Notification():
 		try:
 			if not pynotify.init("Samsung-Tools Notification System"):
 				self.initialized = False
+				log_session.write("ERROR: 'Notification()'  - cannot initialize pynotify.")
 				return
 		except:
 			self.initialized = False
@@ -78,4 +82,3 @@ class Notification():
 		if self.urgency != None:
 			self.notify.set_urgency(self.urgency)
 		self.notify.show()
-		

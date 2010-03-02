@@ -36,6 +36,8 @@ SESSION_CONFIG_FILE = "/etc/samsung-tools/session.conf"
 try: # system service fails when trying to join $HOME, anyway this is needed only by session service
 	USER_DIRECTORY = os.path.join(os.getenv('HOME'), ".samsung-tools")
 	USER_CONFIG_FILE = os.path.join(USER_DIRECTORY, os.path.basename(SESSION_CONFIG_FILE))
+	SESSION_LOG_FILE = os.path.join(USER_DIRECTORY, "log")
+	log_session = Log(SESSION_LOG_FILE)
 except:
 	pass
 
