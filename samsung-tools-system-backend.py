@@ -19,6 +19,7 @@
 # See the GNU General Public License for more details.
 # <http://www.gnu.org/licenses/gpl.txt>
 
+import os
 import gobject
 
 import dbus
@@ -26,6 +27,7 @@ import dbus.service
 import dbus.mainloop.glib
 
 from backends.globals import *
+from backends.system.util.config import SystemConfig
 from backends.system.backlight import Backlight
 from backends.system.bluetooth import Bluetooth
 from backends.system.fan import Fan
@@ -34,9 +36,39 @@ from backends.system.wireless import Wireless
 
 mainloop = None
 
+backlight = None
+bluetooth = None
+fan = None
+webcam = None
+wireless = None
+
 class General(dbus.service.Object):
 	def __init__(self, conn = None, object_path = None, bus_name = None):
 		dbus.service.Object.__init__(self, conn, object_path, bus_name)
+	
+	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = None,
+						sender_keyword = 'sender', connection_keyword = 'conn')
+	def RestoreLastStatus(self, sender = None, conn = None):
+		""" Restore last status for webcam, bluetooth, wireless. """
+		""" Return nothing. """
+		config = SystemConfig(SYSTEM_CONFIG_FILE)
+		if config.getLastStatusRestore() == "false":
+			return
+		# Restore last status for bluetooth
+		if os.path.exists(SYSTEM_DEVICE_STATUS_BLUETOOTH):
+			bluetooth.Disable()
+		else:
+			bluetooth.Enable()
+		# Restore last status for webcam
+		if os.path.exists(SYSTEM_DEVICE_STATUS_WEBCAM):
+			webcam.Disable()
+		else:
+			webcam.Enable()
+		# Restore last status for wireless
+		if os.path.exists(SYSTEM_DEVICE_STATUS_WIRELESS):
+			wireless.Disable()
+		else:
+			wireless.Enable()
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = None,
 						sender_keyword = 'sender', connection_keyword = 'conn')
@@ -46,15 +78,19 @@ class General(dbus.service.Object):
 if __name__ == '__main__':
 	dbus.mainloop.glib.DBusGMainLoop(set_as_default = True)
 
+	# Make sure the directory for last devices status exist
+	if not os.path.exists(SYSTEM_DEVICE_STATUS_DIRECTORY):
+		os.mkdir(SYSTEM_DEVICE_STATUS_DIRECTORY)
+
 	bus = dbus.SystemBus()
 	name = dbus.service.BusName(SYSTEM_INTERFACE_NAME, bus)
     
 	General(bus, SYSTEM_OBJECT_PATH_GENERAL)
-	Backlight(bus, SYSTEM_OBJECT_PATH_BACKLIGHT)
-	Bluetooth(bus, SYSTEM_OBJECT_PATH_BLUETOOTH)
-	Fan(bus, SYSTEM_OBJECT_PATH_FAN)
-	Webcam(bus, SYSTEM_OBJECT_PATH_WEBCAM)
-	Wireless(bus, SYSTEM_OBJECT_PATH_WIRELESS)
+	backlight = Backlight(bus, SYSTEM_OBJECT_PATH_BACKLIGHT)
+	bluetooth = Bluetooth(bus, SYSTEM_OBJECT_PATH_BLUETOOTH)
+	fan = Fan(bus, SYSTEM_OBJECT_PATH_FAN)
+	webcam = Webcam(bus, SYSTEM_OBJECT_PATH_WEBCAM)
+	wireless = Wireless(bus, SYSTEM_OBJECT_PATH_WIRELESS)
 	
 	mainloop = gobject.MainLoop()
 	mainloop.run()

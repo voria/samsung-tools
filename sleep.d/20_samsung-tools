@@ -1,0 +1,9 @@
+#!/bin/bash
+
+case ${1} in
+	resume|thaw)
+		dbus-send --system --dest='org.voria.SamsungTools.System' '/' org.voria.SamsungTools.System.RestoreLastStatus
+		;;
+esac
+
+exit 0

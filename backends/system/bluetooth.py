@@ -149,6 +149,12 @@ class Bluetooth(dbus.service.Object):
 		except:
 			log_system.write("ERROR: 'Bluetooth.Enable()' - COMMAND: 'hciconfig hci0 up' - Exception thrown.")
 			return False
+		# Set last status
+		try:
+			file = open(SYSTEM_DEVICE_STATUS_BLUETOOTH, "w")
+			file.close()
+		except:
+			log_system.write("ERROR: 'Bluetooth.Enable()' - Cannot save last status.")
 		return True
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
@@ -190,6 +196,11 @@ class Bluetooth(dbus.service.Object):
 		except:
 			log_system.write("ERROR: 'Bluetooth.Disable()' - COMMAND: 'modprobe -r btusb' - Exception thrown.")
 			return False
+		# Set last status
+		try:
+			os.remove(SYSTEM_DEVICE_STATUS_BLUETOOTH)
+		except:
+			pass
 		return True
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',

@@ -23,8 +23,14 @@ import os
 
 from backends.log import Log
 
+SYSTEM_DIRECTORY = "/usr/lib/samsung-tools/"
+SYSTEM_DEVICE_STATUS_DIRECTORY = os.path.join(SYSTEM_DIRECTORY, "devices-status")
+SYSTEM_DEVICE_STATUS_BLUETOOTH = os.path.join(SYSTEM_DEVICE_STATUS_DIRECTORY, "bluetooth") 
+SYSTEM_DEVICE_STATUS_WEBCAM = os.path.join(SYSTEM_DEVICE_STATUS_DIRECTORY, "webcam")
+SYSTEM_DEVICE_STATUS_WIRELESS = os.path.join(SYSTEM_DEVICE_STATUS_DIRECTORY, "wireless")
 SYSTEM_CONFIG_FILE = "/etc/samsung-tools/system.conf"
 SYSTEM_LOG_FILE = "/var/log/samsung-tools.log"
+log_system = Log(SYSTEM_LOG_FILE)
 
 SESSION_CONFIG_FILE = "/etc/samsung-tools/session.conf"
 try: # system service fails when trying to join $HOME, anyway this is needed only by session service
@@ -32,8 +38,6 @@ try: # system service fails when trying to join $HOME, anyway this is needed onl
 	USER_CONFIG_FILE = os.path.join(USER_DIRECTORY, os.path.basename(SESSION_CONFIG_FILE))
 except:
 	pass
-
-log_system = Log(SYSTEM_LOG_FILE)
 
 SESSION_INTERFACE_NAME = "org.voria.SamsungTools.Session"
 SESSION_OBJECT_PATH_GENERAL = "/"

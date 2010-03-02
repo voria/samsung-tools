@@ -131,6 +131,12 @@ class Wireless(dbus.service.Object):
 					log_system.write("ERROR: 'Wireless.Enable()' - COMMAND: 'iwconfig " + self.device + " txpower auto' FAILED.")
 					return False
 				else:
+					# Save last status
+					try:
+						file = open(SYSTEM_DEVICE_STATUS_WIRELESS, "w")
+						file.close()
+					except:
+						log_system.write("ERROR: 'Wireless.Enable()' - Cannot save last status.")
 					return True
 			except:
 				log_system.write("ERROR: 'Wireless.Enable()' - COMMAND: 'iwconfig " + self.device + " txpower auto' - Exception thrown.")
@@ -144,6 +150,12 @@ class Wireless(dbus.service.Object):
 					log_system.write("ERROR: 'Wireless.Enable()' - COMMAND: 'modprobe " + self.module + "' FAILED.")
 					return False
 				else:
+					# Save last status
+					try:
+						file = open(SYSTEM_DEVICE_STATUS_WIRELESS, "w")
+						file.close()
+					except:
+						log_system.write("ERROR: 'Wireless.Enable()' - Cannot save last status.")
 					return True
 			except:
 				log_system.write("ERROR: 'Wireless.Enable()' - COMMAND: 'modprobe " + self.module + "' - Exception thrown.")
@@ -152,6 +164,12 @@ class Wireless(dbus.service.Object):
 			try:
 				with open('/proc/easy_wifi_kill', 'w') as file:
 					file.write('1')
+				# Save last status
+				try:
+					file = open(SYSTEM_DEVICE_STATUS_WIRELESS, "w")
+					file.close()
+				except:
+					log_system.write("ERROR: 'Wireless.Enable()' - Cannot save last status.")
 				return True
 			except:
 				log_system.write("ERROR: 'Wireless.Enable()' - cannot write to '/proc/easy_wifi_kill'.")
@@ -175,6 +193,11 @@ class Wireless(dbus.service.Object):
 					log_system.write("ERROR: 'Wireless.Disable()' - COMMAND: 'iwconfig " + self.device + " txpower off' FAILED.")
 					return False
 				else:
+					# Set last status
+					try:
+						os.remove(SYSTEM_DEVICE_STATUS_WIRELESS)
+					except:
+						pass
 					return True
 			except:
 				log_system.write("ERROR: 'Wireless.Disable()' - COMMAND: 'iwconfig " + self.device + " txpower off' - Exception thrown.")
@@ -188,6 +211,11 @@ class Wireless(dbus.service.Object):
 					log_system.write("ERROR: 'Wireless.Disable()' - COMMAND: 'modprobe -r " + self.module + "' FAILED.")
 					return False
 				else:
+					# Set last status
+					try:
+						os.remove(SYSTEM_DEVICE_STATUS_WIRELESS)
+					except:
+						pass
 					return True
 			except:
 				log_system.write("ERROR: 'Wireless.Disable()' - COMMAND: 'modprobe -r " + self.module + "' - Exception thrown.")
@@ -196,6 +224,11 @@ class Wireless(dbus.service.Object):
 			try:
 				with open('/proc/easy_wifi_kill', 'w') as file:
 					file.write('0')
+				# Set last status
+				try:
+					os.remove(SYSTEM_DEVICE_STATUS_WIRELESS)
+				except:
+					pass
 				return True
 			except:
 				log_system.write("ERROR: 'Wireless.Disable()' - cannot write to '/proc/easy_wifi_kill'.")

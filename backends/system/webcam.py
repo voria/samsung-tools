@@ -81,6 +81,12 @@ class Webcam(dbus.service.Object):
 				log_system.write("ERROR: 'Webcam.Enable()' - COMMAND: 'modprobe uvcvideo' FAILED.")
 				return False
 			else:
+				# Set last status
+				try:
+					file = open(SYSTEM_DEVICE_STATUS_WEBCAM, "w")
+					file.close()
+				except:
+					log_system.write("Error: 'Webcam.Enable()' - Cannot save last status.")
 				return True
 		except:
 			log_system.write("ERROR: 'Webcam.Enable()' - COMMAND: 'modprobe uvcvideo' - Exception thrown.")
@@ -103,6 +109,11 @@ class Webcam(dbus.service.Object):
 				log_system.write("ERROR: 'Webcam.Disable()' - COMMAND: 'modprobe -r uvcvideo' FAILED.")
 				return False
 			else:
+				# Set last status
+				try:
+					os.remove(SYSTEM_DEVICE_STATUS_WEBCAM)
+				except:
+					pass
 				return True
 		except:
 			log_system.write("ERROR: 'Webcam.Disable()' - COMMAND: 'modprobe -r uvcvideo' - Exception thrown.")
