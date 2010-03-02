@@ -23,7 +23,6 @@ import ConfigParser
 
 from backends.globals import *
 
-LAST_STATUS_RESTORE_DEFAULT = "true"
 BACKLIGHT_HOTKEY_DEFAULT = "XF86Launch1"
 BLUETOOTH_HOTKEY_DEFAULT = "XF86Launch2"
 FAN_HOTKEY_DEFAULT = "XF86Launch3"
@@ -40,17 +39,12 @@ class SessionConfig():
 			# configfile not found?
 			# Use default options
 			self.config.add_section("Main")
-			self.config.set("Main", "LAST_STATUS_RESTORE", LAST_STATUS_RESTORE_DEFAULT)
 			self.config.set("Main", "BACKLIGHT_HOTKEY", BACKLIGHT_HOTKEY_DEFAULT)
 			self.config.set("Main", "BLUETOOTH_HOTKEY", BLUETOOTH_HOTKEY_DEFAULT)
 			self.config.set("Main", "FAN_HOTKEY", FAN_HOTKEY_DEFAULT)
 			self.config.set("Main", "WEBCAM_HOTKEY", WEBCAM_HOTKEY_DEFAULT)
 			self.config.set("Main", "WIRELESS_HOTKEY", WIRELESS_HOTKEY_DEFAULT)
 		# Check if all options are specified in the config file
-		try:
-			self.config.get("Main", "LAST_STATUS_RESTORE")
-		except:
-			self.config.set("Main", "LAST_STATUS_RESTORE", LAST_STATUS_RESTORE_DEFAULT)
 		try:
 			self.config.get("Main", "BACKLIGHT_HOTKEY")
 		except:
@@ -72,11 +66,6 @@ class SessionConfig():
 		except:
 			self.config.set("Main", "WIRELESS_HOTKEY", WIRELESS_HOTKEY_DEFAULT)
 		
-		# Options sanity check
-		if self.config.get("Main", "LAST_STATUS_RESTORE") not in ["true", "false"]:
-			# Option is invalid, set default value
-			self.config.set("Main", "LAST_STATUS_RESTORE", LAST_STATUS_RESTORE_DEFAULT)
-	
 	def __write(self):
 		""" Write on disk the config file. """
 		# We don't use the ConfigParser builtin write function,
@@ -87,10 +76,6 @@ class SessionConfig():
 			"#\n",
 			"\n",
 			"[Main]\n",
-			"# Set this to 'false' if you don't want the last status for bluetooth,\n",
-			"# webcam and wireless restored after a suspend/hibernate/reboot cycle.\n",
-			"LAST_STATUS_RESTORE=%s\n" % self.config.get("Main", "LAST_STATUS_RESTORE"),
-			"\n",
 			"# Hotkeys configuration\n",
 			"BACKLIGHT_HOTKEY=%s\n" % self.config.get("Main", "BACKLIGHT_HOTKEY"),
 			"BLUETOOTH_HOTKEY=%s\n" % self.config.get("Main", "BLUETOOTH_HOTKEY"),
@@ -100,9 +85,6 @@ class SessionConfig():
 			]	
 		with open(self.configfile, "w") as config:
 			config.writelines(text)			
-	
-	def getLastStatusRestore(self):
-		return self.config.get("Main", "LAST_STATUS_RESTORE") 
 	
 	def getBacklightHotkey(self):
 		return self.config.get("Main", "BACKLIGHT_HOTKEY")
@@ -118,10 +100,6 @@ class SessionConfig():
 	
 	def getWirelessHotkey(self):
 		return self.config.get("Main", "WIRELESS_HOTKEY")
-	
-	def setLastStatusRestore(self, value):
-		self.config.set("Main", "LAST_STATUS_RESTORE", value)
-		self.__write()
 	
 	def setBacklightHotkey(self, hotkey):
 		self.config.set("Main", "BACKLIGHT_HOTKEY", hotkey)

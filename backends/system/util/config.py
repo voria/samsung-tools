@@ -26,6 +26,7 @@ from backends.globals import *
 WIRELESS_TOGGLE_METHOD_DEFAULT = "iwconfig"
 WIRELESS_DEVICE_DEFAULT = "wlan0"
 WIRELESS_MODULE_DEFAULT = "ath5k"
+LAST_STATUS_RESTORE_DEFAULT = "true"
 
 class SystemConfig():
 	def __init__(self, configfile):
@@ -40,13 +41,39 @@ class SystemConfig():
 			self.config.set("Main", "WIRELESS_TOGGLE_METHOD", WIRELESS_TOGGLE_METHOD_DEFAULT)
 			self.config.set("Main", "WIRELESS_DEVICE", WIRELESS_DEVICE_DEFAULT)
 			self.config.set("Main", "WIRELESS_MODULE", WIRELESS_MODULE_DEFAULT)
+			self.config.set("Main", "LAST_STATUS_RESTORE", LAST_STATUS_RESTORE_DEFAULT)
+		# Check if all options are specified in the config file
+		try:
+			self.config.get("Main", "WIRELESS_TOGGLE_METHOD")
+		except:
+			self.config.set("Main", "WIRELESS_TOGGLE_METHOD", WIRELESS_TOGGLE_METHOD_DEFAULT)
+		try:
+			self.config.get("Main", "WIRELESS_DEVICE")
+		except:
+			self.config.set("Main", "WIRELESS_DEVICE", WIRELESS_DEVICE_DEFAULT)
+		try:
+			self.config.get("Main", "WIRELESS_MODULE")
+		except:
+			self.config.set("Main", "WIRELESS_MODULE", WIRELESS_MODULE_DEFAULT)
+		try:
+			self.config.get("Main", "LAST_STATUS_RESTORE")
+		except:
+			self.config.set("Main", "LAST_STATUS_RESTORE", LAST_STATUS_RESTORE_DEFAULT)
 		# Options sanity check
 		if self.config.get("Main", "WIRELESS_TOGGLE_METHOD") not in ["iwconfig", "module", "esdm"]:
 			# Option is invalid, set default value
 			log_system.write("WARNING: 'SystemConfig()' - 'WIRELESS_TOGGLE_METHOD' option specified in '" + configfile + 
 					"' is invalid. Using default value ('" + WIRELESS_TOGGLE_METHOD_DEFAULT + "').")
 			self.config.set("Main", "WIRELESS_TOGGLE_METHOD", WIRELESS_TOGGLE_METHOD_DEFAULT)
-		
+		if self.config.get("Main", "LAST_STATUS_RESTORE") not in ["true", "false"]:
+			# Option is invalid, set default value
+			log_system.write("WARNING: 'SystemConfig()' - 'LAST_STATUS_RESTORE' option specified in '" + configfile + 
+					"' is invalid. Using default value ('" + LAST_STATUS_RESTORE_DEFAULT + "').")
+			self.config.set("Main", "LAST_STATUS_RESTORE", LAST_STATUS_RESTORE_DEFAULT)
+	
+	def getLastStatusRestore():
+		return self.config.get("Main", "LAST_STATUS_RESTORE")
+	
 	def getWirelessToggleMethod(self):
 		return self.config.get("Main", "WIRELESS_TOGGLE_METHOD") 
 	
@@ -55,4 +82,3 @@ class SystemConfig():
 	
 	def getWirelessModule(self):
 		return self.config.get("Main", "WIRELESS_MODULE")
-		
