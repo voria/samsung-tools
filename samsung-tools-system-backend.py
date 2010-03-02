@@ -54,21 +54,27 @@ class General(dbus.service.Object):
 		config = SystemConfig(SYSTEM_CONFIG_FILE)
 		if config.getLastStatusRestore() == "false":
 			return
-		# Restore last status for bluetooth
+		# Get last status for devices
+		bluetooth_status = False
+		webcam_status = False
+		wireless_status = False
 		if os.path.exists(SYSTEM_DEVICE_STATUS_BLUETOOTH):
-			bluetooth.Disable()
-		else:
-			bluetooth.Enable()
-		# Restore last status for webcam
+			bluetooth_status = True
 		if os.path.exists(SYSTEM_DEVICE_STATUS_WEBCAM):
-			webcam.Disable()
-		else:
-			webcam.Enable()
-		# Restore last status for wireless
+			webcam_status = True
 		if os.path.exists(SYSTEM_DEVICE_STATUS_WIRELESS):
+			wireless_status = True
+		# Enable all devices
+		bluetooth.Enable()
+		webcam.Enable()
+		wireless.Enable()
+		# Then disable the ones that have to be disabled
+		if bluetooth_status == False:
+			bluetooth.Disable()
+		if webcam_status == False:
+			webcam.Disable()
+		if wireless_status == False:
 			wireless.Disable()
-		else:
-			wireless.Enable()
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = None,
 						sender_keyword = 'sender', connection_keyword = 'conn')

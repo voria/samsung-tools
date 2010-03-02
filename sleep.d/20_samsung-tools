@@ -2,7 +2,7 @@
 
 case ${1} in
 	resume|thaw)
-		dbus-send --system --dest='org.voria.SamsungTools.System' '/' org.voria.SamsungTools.System.RestoreLastStatus
+		dbus-send --system --print-reply --dest='org.voria.SamsungTools.System' '/' org.voria.SamsungTools.System.RestoreLastStatus > /dev/null
 		;;
 esac
 
