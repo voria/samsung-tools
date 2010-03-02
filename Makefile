@@ -11,8 +11,11 @@ install:
 	$(install_file) backends/system/*.py $(DESTDIR)/usr/lib/samsung-tools/backends/system/
 	$(install_file) backends/*.py $(DESTDIR)/usr/lib/samsung-tools/backends/
 	$(install_script) *-service.py $(DESTDIR)/usr/lib/samsung-tools/
+	$(install_dir) $(DESTDIR)/usr/lib/samsung-tools/gui/glade/
+	$(install_file) gui/glade/*.glade $(DESTDIR)/usr/lib/samsung-tools/gui/glade/
 	$(install_dir) $(DESTDIR)/usr/bin/
 	$(install_script) samsung-tools $(DESTDIR)/usr/bin/
+	$(install_script) samsung-tools-preferences $(DESTDIR)/usr/bin/
 	$(install_dir) $(DESTDIR)/etc/dbus-1/system.d/
 	$(install_file) bus/config/org.voria.SamsungTools.System.conf $(DESTDIR)/etc/dbus-1/system.d/
 	$(install_dir) $(DESTDIR)/usr/share/dbus-1/system-services/

@@ -1,0 +1,337 @@
+#!/usr/bin/env python
+# coding=UTF-8
+#
+# Samsung-Tools
+# 
+# Part of the 'Linux On My Samsung' project - <http://www.voria.org/forum>
+#
+# Copyleft (C) 2010 by
+# Fortunato Ventre (voRia) - <vorione@gmail.com> - <http://www.voria.org>
+#
+# 'Samsung-Tools' is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the GNU General Public License for more details.
+# <http://www.gnu.org/licenses/gpl.txt>
+
+import time
+import gtk
+import gobject
+import dbus
+
+WORK_DIR = "/usr/lib/samsung-tools/"
+
+import sys
+sys.path.append(WORK_DIR)
+
+from backends.globals import *
+
+# Popup (based on code from compizconfig-settings-manager)
+class Popup (gtk.Window):
+	def __init__ (self, text, title, parent = None):
+		gtk.Window.__init__(self, gtk.WINDOW_TOPLEVEL)
+		self.set_type_hint(gtk.gdk.WINDOW_TYPE_HINT_UTILITY)
+		self.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
+		self.set_title(title)
+		if parent:
+			self.set_transient_for(parent.get_toplevel())
+		self.set_modal(True)
+		self.set_decorated(True)
+		self.set_property("skip-taskbar-hint", True)
+		label = gtk.Label(text)
+		align = gtk.Alignment()
+		align.set_padding(20, 20, 20, 20)
+		align.add(label)
+		self.add(align)
+
+# Key Grabber (based on code from compizconfig-settings-manager)
+class KeyGrabber(gtk.Button):
+	__gsignals__ = {"changed" : (gobject.SIGNAL_RUN_FIRST,
+								gobject.TYPE_NONE,
+								[gobject.TYPE_INT, gobject.TYPE_INT]),
+					"current-changed" : (gobject.SIGNAL_RUN_FIRST,
+										gobject.TYPE_NONE,
+										[gobject.TYPE_INT, gobject.TYPE_INT])}
+	key = 0
+	mods = 0
+	handler = None
+	popup = None
+	label = None
+	def __init__ (self, label = None, popup_title = None):
+		"""Prepare widget"""
+		super(KeyGrabber, self).__init__()
+		self.label = label
+		self.popup_title = popup_title
+		self.connect("clicked", self.begin_key_grab)
+		self.set_label()
+
+	def begin_key_grab(self, widget):
+		self.add_events(gtk.gdk.KEY_PRESS_MASK)
+		self.popup = Popup("Please press the new key combination", self.popup_title, self)
+		self.popup.show_all()
+		self.handler = self.popup.connect("key-press-event", self.on_key_press_event)
+		while gtk.gdk.keyboard_grab(self.popup.window) != gtk.gdk.GRAB_SUCCESS:
+			time.sleep(0.1)
+
+	def end_key_grab(self):
+		gtk.gdk.keyboard_ungrab(gtk.get_current_event_time())
+		self.popup.disconnect(self.handler)
+		self.popup.destroy()
+
+	def on_key_press_event(self, widget, event):
+		mods = event.state & gtk.accelerator_get_default_mod_mask()
+
+		if event.keyval in (gtk.keysyms.Escape, gtk.keysyms.Return) and not mods:
+			if event.keyval == gtk.keysyms.Escape:
+				self.emit("changed", self.key, self.mods)
+			self.end_key_grab()
+			self.set_label()
+			return
+
+		key = gtk.gdk.keyval_to_lower(event.keyval)
+		if (key == gtk.keysyms.ISO_Left_Tab):
+			key = gtk.keysyms.Tab
+
+		if gtk.accelerator_valid(key, mods) or (key == gtk.keysyms.Tab and mods):
+			self.set_label(key, mods)
+			self.end_key_grab()
+			self.key = key
+			self.mods = mods
+			self.emit("changed", self.key, self.mods)
+			return
+
+		self.set_label(key, mods)
+
+	def set_label(self, key = None, mods = None):
+		if self.label:
+			if key != None and mods != None:
+				self.emit("current-changed", key, mods)
+			gtk.Button.set_label(self, self.label)
+			return
+		if key == None and mods == None:
+			key = self.key
+			mods = self.mods
+		label = gtk.accelerator_name(key, mods)
+		if not len(label):
+			label = "Disabled"
+		gtk.Button.set_label(self, label)
+	
+	def set_label_custom(self, custom_label):
+		if custom_label == "none":
+			custom_label = "Disabled"
+		gtk.Button.set_label(self, custom_label)
+		self.emit("changed", self.key, self.mods)
+	
+class Main():
+	def __init__(self):
+		# Get interface for D-Bus session service's hotkeys module
+		hotkeys = self.__connect_session()
+
+		# Setup GUI
+		self.builder = gtk.Builder()
+		self.builder.add_from_file(os.path.join(WORK_DIR, "gui/glade/samsung-tools-preferences.glade"))
+		
+		self.mainWindow = self.builder.get_object("mainWindow")
+		self.closeButton = self.builder.get_object("closeButton")
+		
+		###
+		### Session configuration
+		###
+		self.sessionTable = self.builder.get_object("sessionTable")
+		# Set backlight hotkey grabber
+		self.backlightHotkeyButton = KeyGrabber(popup_title = "Backlight control")
+		self.backlightHotkeyButton.set_label_custom(hotkeys.GetBacklightHotkey())
+		self.sessionTable.attach(self.backlightHotkeyButton, 1, 2, 0, 1)
+		self.backlightHotkeyButton.connect("changed", self.on_backlightHotkeyButton_changed)
+		self.backlightHotkeyButton.show()
+		# Set bluetooth hotkey grabber
+		self.bluetoothHotkeyButton = KeyGrabber(popup_title = "Bluetooth control")
+		self.bluetoothHotkeyButton.set_label_custom(hotkeys.GetBluetoothHotkey())
+		self.sessionTable.attach(self.bluetoothHotkeyButton, 1, 2, 1, 2)
+		self.bluetoothHotkeyButton.connect("changed", self.on_bluetoothHotkeyButton_changed)
+		self.bluetoothHotkeyButton.show()
+		# Set cpufan hotkey grabber
+		self.cpufanHotkeyButton = KeyGrabber(popup_title = "CPU fan control")
+		self.cpufanHotkeyButton.set_label_custom(hotkeys.GetFanHotkey())
+		self.sessionTable.attach(self.cpufanHotkeyButton, 1, 2, 2, 3)
+		self.cpufanHotkeyButton.connect("changed", self.on_cpufanHotkeyButton_changed)
+		self.cpufanHotkeyButton.show()
+		# Set webcam hotkey grabber
+		self.webcamHotkeyButton = KeyGrabber(popup_title = "Webcam control")
+		self.webcamHotkeyButton.set_label_custom(hotkeys.GetWebcamHotkey())
+		self.sessionTable.attach(self.webcamHotkeyButton, 1, 2, 3, 4)
+		self.webcamHotkeyButton.connect("changed", self.on_webcamHotkeyButton_changed)
+		self.webcamHotkeyButton.show()
+		# Set wireless hotkey grabber
+		self.wirelessHotkeyButton = KeyGrabber(popup_title = "Wireless control")
+		self.wirelessHotkeyButton.set_label_custom(hotkeys.GetWirelessHotkey())
+		self.sessionTable.attach(self.wirelessHotkeyButton, 1, 2, 4, 5)
+		self.wirelessHotkeyButton.connect("changed", self.on_wirelessHotkeyButton_changed)
+		self.wirelessHotkeyButton.show()
+		# Set clean buttons for keygrabbers
+		self.backlightHotkeyCleanButton = self.builder.get_object("backlightHotkeyCleanButton")
+		self.backlightHotkeyCleanButton.set_image(gtk.image_new_from_stock(gtk.STOCK_DELETE, gtk.ICON_SIZE_MENU))
+		self.backlightHotkeyCleanButton.connect("clicked", self.on_backlightHotkeyCleanButton_clicked)
+		self.bluetoothHotkeyCleanButton = self.builder.get_object("bluetoothHotkeyCleanButton")
+		self.bluetoothHotkeyCleanButton.set_image(gtk.image_new_from_stock(gtk.STOCK_DELETE, gtk.ICON_SIZE_MENU))
+		self.bluetoothHotkeyCleanButton.connect("clicked", self.on_bluetoothHotkeyCleanButton_clicked)
+		self.cpufanHotkeyCleanButton = self.builder.get_object("cpufanHotkeyCleanButton")
+		self.cpufanHotkeyCleanButton.set_image(gtk.image_new_from_stock(gtk.STOCK_DELETE, gtk.ICON_SIZE_MENU))
+		self.cpufanHotkeyCleanButton.connect("clicked", self.on_cpufanHotkeyCleanButton_clicked)
+		self.webcamHotkeyCleanButton = self.builder.get_object("webcamHotkeyCleanButton")
+		self.webcamHotkeyCleanButton.set_image(gtk.image_new_from_stock(gtk.STOCK_DELETE, gtk.ICON_SIZE_MENU))
+		self.webcamHotkeyCleanButton.connect("clicked", self.on_webcamHotkeyCleanButton_clicked)
+		self.wirelessHotkeyCleanButton = self.builder.get_object("wirelessHotkeyCleanButton")
+		self.wirelessHotkeyCleanButton.set_image(gtk.image_new_from_stock(gtk.STOCK_DELETE, gtk.ICON_SIZE_MENU))
+		self.wirelessHotkeyCleanButton.connect("clicked", self.on_wirelessHotkeyCleanButton_clicked)
+		# Set default buttons for keygrabbers
+		self.backlightHotkeyDefaultButton = self.builder.get_object("backlightHotkeyDefaultButton")
+		self.backlightHotkeyDefaultButton.set_image(gtk.image_new_from_stock(gtk.STOCK_CLEAR, gtk.ICON_SIZE_MENU))
+		self.backlightHotkeyDefaultButton.connect("clicked", self.on_backlightHotkeyDefaultButton_clicked)
+		self.bluetoothHotkeyDefaultButton = self.builder.get_object("bluetoothHotkeyDefaultButton")
+		self.bluetoothHotkeyDefaultButton.set_image(gtk.image_new_from_stock(gtk.STOCK_CLEAR, gtk.ICON_SIZE_MENU))
+		self.bluetoothHotkeyDefaultButton.connect("clicked", self.on_bluetoothHotkeyDefaultButton_clicked)
+		self.cpufanHotkeyDefaultButton = self.builder.get_object("cpufanHotkeyDefaultButton")
+		self.cpufanHotkeyDefaultButton.set_image(gtk.image_new_from_stock(gtk.STOCK_CLEAR, gtk.ICON_SIZE_MENU))
+		self.cpufanHotkeyDefaultButton.connect("clicked", self.on_cpufanHotkeyDefaultButton_clicked)
+		self.webcamHotkeyDefaultButton = self.builder.get_object("webcamHotkeyDefaultButton")
+		self.webcamHotkeyDefaultButton.set_image(gtk.image_new_from_stock(gtk.STOCK_CLEAR, gtk.ICON_SIZE_MENU))
+		self.webcamHotkeyDefaultButton.connect("clicked", self.on_webcamHotkeyDefaultButton_clicked)
+		self.wirelessHotkeyDefaultButton = self.builder.get_object("wirelessHotkeyDefaultButton")
+		self.wirelessHotkeyDefaultButton.set_image(gtk.image_new_from_stock(gtk.STOCK_CLEAR, gtk.ICON_SIZE_MENU))
+		self.wirelessHotkeyDefaultButton.connect("clicked", self.on_wirelessHotkeyDefaultButton_clicked)
+		
+		###
+		### System configuration
+		###
+		self.lastStatusRestoreCombobox = self.builder.get_object("lastStatusRestoreCombobox")
+		self.wirelessToggleMethodCombobox = self.builder.get_object("wirelessToggleMethodCombobox")
+		self.wirelessDeviceEntry = self.builder.get_object("wirelessDeviceEntry")
+		self.wirelessModuleEntry = self.builder.get_object("wirelessModuleEntry")
+		
+		# Set cell renderer for 'last status restore' combobox
+		self.lastStatusRestoreComboboxCR = gtk.CellRendererText()
+		self.lastStatusRestoreCombobox.pack_start(self.lastStatusRestoreComboboxCR)
+		self.lastStatusRestoreCombobox.add_attribute(self.lastStatusRestoreComboboxCR, 'text', 0)
+		
+		# Set cell renderer for 'wireless toggle method' combobox
+		self.wirelessToggleMethodComboboxCR = gtk.CellRendererText()
+		self.wirelessToggleMethodCombobox.pack_start(self.wirelessToggleMethodComboboxCR)
+		self.wirelessToggleMethodCombobox.add_attribute(self.wirelessToggleMethodComboboxCR, 'text', 0)
+			
+		# Connect signals		
+		self.mainWindow.connect("delete-event", self.quit)
+		self.closeButton.connect("clicked", self.quit)
+		self.lastStatusRestoreCombobox.connect("changed", self.on_lastStatusRestoreCombobox_changed)
+		self.wirelessToggleMethodCombobox.connect("changed", self.on_wirelessToggleMethodCombobox_changed)
+		
+		self.mainWindow.show()
+	
+	def __connect_session(self):
+		bus = dbus.SessionBus()
+		proxy = bus.get_object(SESSION_INTERFACE_NAME, SESSION_OBJECT_PATH_HOTKEYS)
+		return dbus.Interface(proxy, SESSION_INTERFACE_NAME)
+	
+	def on_backlightHotkeyButton_changed(self, button = None, key = None, mods = None):
+		label = button.get_label()
+		if label == "Disabled":
+			new = "none"
+		else:
+			new = label
+		hotkeys = self.__connect_session()
+		hotkeys.SetBacklightHotkey(new)
+		
+	
+	def on_bluetoothHotkeyButton_changed(self, button = None, key = None, mods = None):
+		label = button.get_label()
+		if label == "Disabled":
+			new = "none"
+		else:
+			new = label
+		hotkeys = self.__connect_session()
+		hotkeys.SetBluetoothHotkey(new)
+		
+	def on_cpufanHotkeyButton_changed(self, button = None, key = None, mods = None):
+		label = button.get_label()
+		if label == "Disabled":
+			new = "none"
+		else:
+			new = label
+		hotkeys = self.__connect_session()
+		hotkeys.SetFanHotkey(new)
+		
+	def on_webcamHotkeyButton_changed(self, button = None, key = None, mods = None):
+		label = button.get_label()
+		if label == "Disabled":
+			new = "none"
+		else:
+			new = label
+		hotkeys = self.__connect_session()
+		hotkeys.SetWebcamHotkey(new)
+		
+	def on_wirelessHotkeyButton_changed(self, button = None, key = None, mods = None):
+		label = button.get_label()
+		if label == "Disabled":
+			new = "none"
+		else:
+			new = label
+		hotkeys = self.__connect_session()
+		hotkeys.SetWirelessHotkey(new)
+	
+	def on_backlightHotkeyCleanButton_clicked(self, button = None):
+		self.backlightHotkeyButton.set_label_custom("Disabled")
+	
+	def on_bluetoothHotkeyCleanButton_clicked(self, button = None):
+		self.bluetoothHotkeyButton.set_label_custom("Disabled")
+	
+	def on_cpufanHotkeyCleanButton_clicked(self, button = None):
+		self.cpufanHotkeyButton.set_label_custom("Disabled")
+	
+	def on_webcamHotkeyCleanButton_clicked(self, button = None):
+		self.webcamHotkeyButton.set_label_custom("Disabled")
+	
+	def on_wirelessHotkeyCleanButton_clicked(self, button = None):
+		self.wirelessHotkeyButton.set_label_custom("Disabled")
+	
+	def on_backlightHotkeyDefaultButton_clicked(self, button = None):
+		hotkeys = self.__connect_session()
+		hotkeys.SetBacklightHotkey("default")
+		self.backlightHotkeyButton.set_label_custom(hotkeys.GetBacklightHotkey())
+	
+	def on_bluetoothHotkeyDefaultButton_clicked(self, button = None):
+		hotkeys = self.__connect_session()
+		hotkeys.SetBluetoothHotkey("default")
+		self.bluetoothHotkeyButton.set_label_custom(hotkeys.GetBluetoothHotkey())
+	
+	def on_cpufanHotkeyDefaultButton_clicked(self, button = None):
+		hotkeys = self.__connect_session()
+		hotkeys.SetFanHotkey("default")
+		self.cpufanHotkeyButton.set_label_custom(hotkeys.GetFanHotkey())
+	
+	def on_webcamHotkeyDefaultButton_clicked(self, button = None):
+		hotkeys = self.__connect_session()
+		hotkeys.SetWebcamHotkey("default")
+		self.webcamHotkeyButton.set_label_custom(hotkeys.GetWebcamHotkey())
+	
+	def on_wirelessHotkeyDefaultButton_clicked(self, button = None):
+		hotkeys = self.__connect_session()
+		hotkeys.SetWirelessHotkey("default")
+		self.wirelessHotkeyButton.set_label_custom(hotkeys.GetWirelessHotkey())
+	
+	def on_lastStatusRestoreCombobox_changed(self, combobox = None):
+		pass
+	
+	def on_wirelessToggleMethodCombobox_changed(self, combobox = None):
+		pass
+	
+	def quit(self, widget = None, event = None):
+		gtk.main_quit()
+	
+if __name__ == "__main__":
+	Main()
+	gtk.main()

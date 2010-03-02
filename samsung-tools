@@ -20,8 +20,11 @@
 # <http://www.gnu.org/licenses/gpl.txt>
 
 import os
+
+WORK_DIR = "/usr/lib/samsung-tools"
+
 import sys
-sys.path.append('/usr/lib/samsung-tools')
+sys.path.append(WORK_DIR)
 
 from optparse import OptionParser
 
