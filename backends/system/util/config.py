@@ -71,6 +71,36 @@ class SystemConfig():
 					"' is invalid. Using default value ('" + LAST_STATUS_RESTORE_DEFAULT + "').")
 			self.config.set("Main", "LAST_STATUS_RESTORE", LAST_STATUS_RESTORE_DEFAULT)
 	
+	def __write(self):
+		""" Write on disk the config file. """
+		# We don't use the ConfigParser builtin write function,
+		# because it seems to be impossible to add comments to config file.
+		text = [
+			"#\n",
+			"# Configuration file for samsung-tools - system service\n",
+			"#\n",
+			"\n",
+			"[Main]\n",
+			"# Method for enabling/disabling wireless.\n",
+			"# Valid values are:\n",
+			"# 'iwconfig' - use iwconfig commands\n",
+			"# 'module' - use kernel module removal\n",
+			"# 'esdm' - use easy-slow-down-manager interface\n"
+			"WIRELESS_TOGGLE_METHOD=%s\n" % self.config.get("Main", "WIRELESS_TOGGLE_METHOD"),
+			"\n",
+			"# Wireless device to control, when WIRELESS_TOGGLE_METHOD=iwconfig\n",
+			"WIRELESS_DEVICE=%s\n" % self.config.get("Main", "WIRELESS_DEVICE"),
+			"\n",
+			"# Kernel module to control, when WIRELESS_TOGGLE_METHOD=module\n",
+			"WIRELESS_MODULE=%s\n" % self.config.get("Main", "WIRELESS_MODULE"),
+			"\n",
+			"# Set this to 'false' if you don't want the last status for bluetooth,\n",
+			"# webcam and wireless restored after a suspend/hibernate/reboot cycle.\n",
+			"LAST_STATUS_RESTORE=%s\n" % self.config.get("Main", "LAST_STATUS_RESTORE")
+			]
+		with open(self.configfile, "w") as config:
+			config.writelines(text)	
+	
 	def getLastStatusRestore(self):
 		return self.config.get("Main", "LAST_STATUS_RESTORE")
 	
@@ -82,3 +112,21 @@ class SystemConfig():
 	
 	def getWirelessModule(self):
 		return self.config.get("Main", "WIRELESS_MODULE")
+	
+	def setLastStatusRestore(self, value):
+		if value != "false" and value != "true":
+			return
+		self.config.set("Main", "LAST_STATUS_RESTORE", value)
+		self.__write()
+	
+	def setWirelessToggleMethod(self, value):
+		self.config.set("Main", "WIRELESS_TOGGLE_METHOD", value)
+		self.__write()
+	
+	def setWirelessDevice(self, value):
+		self.config.set("Main", "WIRELESS_DEVICE", value)
+		self.__write()
+		
+	def setWirelessModule(self, value):
+		self.config.set("Main", "WIRELESS_MODULE", value)
+		self.__write()
