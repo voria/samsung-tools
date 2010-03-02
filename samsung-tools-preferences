@@ -138,6 +138,7 @@ class Main():
 		
 		self.mainWindow = self.builder.get_object("mainWindow")
 		self.closeButton = self.builder.get_object("closeButton")
+		self.aboutButton = self.builder.get_object("aboutButton")
 		
 		###
 		### Session configuration
@@ -227,6 +228,7 @@ class Main():
 		# Connect signals		
 		self.mainWindow.connect("delete-event", self.quit)
 		self.closeButton.connect("clicked", self.quit)
+		self.aboutButton.connect("clicked", self.about)
 		self.lastStatusRestoreCombobox.connect("changed", self.on_lastStatusRestoreCombobox_changed)
 		self.wirelessToggleMethodCombobox.connect("changed", self.on_wirelessToggleMethodCombobox_changed)
 		
@@ -328,6 +330,17 @@ class Main():
 	
 	def on_wirelessToggleMethodCombobox_changed(self, combobox = None):
 		pass
+	
+	def about(self, button = None):
+		dialog = gtk.AboutDialog()
+		dialog.set_name(APP_NAME)
+		dialog.set_version(APP_VERSION)
+		copyright = "Released under GPLv3 terms\n\nCopyleft by\nFortunato Ventre (voRia)\nvorione@gmail.com"
+		dialog.set_copyright(copyright)
+		dialog.set_website("http://www.voria.org/forum")
+		dialog.set_website_label("Linux On My Samsung")
+		dialog.run()
+		dialog.destroy()
 	
 	def quit(self, widget = None, event = None):
 		gtk.main_quit()

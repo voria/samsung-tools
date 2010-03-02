@@ -23,6 +23,9 @@ import os
 
 from backends.log import Log
 
+APP_NAME = "Samsung Tools"
+APP_VERSION = "0.1-alpha"
+
 SYSTEM_DIRECTORY = "/usr/lib/samsung-tools/"
 SYSTEM_DEVICE_STATUS_DIRECTORY = os.path.join(SYSTEM_DIRECTORY, "devices-status")
 SYSTEM_DEVICE_STATUS_BLUETOOTH = os.path.join(SYSTEM_DEVICE_STATUS_DIRECTORY, "bluetooth") 
