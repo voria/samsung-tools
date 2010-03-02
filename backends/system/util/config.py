@@ -71,7 +71,7 @@ class SystemConfig():
 					"' is invalid. Using default value ('" + LAST_STATUS_RESTORE_DEFAULT + "').")
 			self.config.set("Main", "LAST_STATUS_RESTORE", LAST_STATUS_RESTORE_DEFAULT)
 	
-	def getLastStatusRestore():
+	def getLastStatusRestore(self):
 		return self.config.get("Main", "LAST_STATUS_RESTORE")
 	
 	def getWirelessToggleMethod(self):
