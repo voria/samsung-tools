@@ -45,14 +45,54 @@ wireless = None
 class General(dbus.service.Object):
 	def __init__(self, conn = None, object_path = None, bus_name = None):
 		dbus.service.Object.__init__(self, conn, object_path, bus_name)
+		self.config = SystemConfig(SYSTEM_CONFIG_FILE)
+	
+	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 's',
+						sender_keyword = 'sender', connection_keyword = 'conn')
+	def GetLastStatusRestoreOption(self, sender = None, conn = None):
+		return self.config.getLastStatusRestore()
+	
+	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 's',
+						sender_keyword = 'sender', connection_keyword = 'conn')
+	def GetWirelessToggleMethodOption(self, sender = None, conn = None):
+		return self.config.getWirelessToggleMethod()
+	
+	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 's',
+						sender_keyword = 'sender', connection_keyword = 'conn')
+	def GetWirelessDeviceOption(self, sender = None, conn = None):
+		return self.config.getWirelessDevice()
+	
+	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 's',
+						sender_keyword = 'sender', connection_keyword = 'conn')
+	def GetWirelessModuleOption(self, sender = None, conn = None):
+		return self.config.getWirelessModule()
+	
+	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = 's', out_signature = None,
+						sender_keyword = 'sender', connection_keyword = 'conn')
+	def SetLastStatusRestoreOption(self, value, sender = None, conn = None):
+		self.config.setLastStatusRestore(value)
+	
+	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = 's', out_signature = None,
+						sender_keyword = 'sender', connection_keyword = 'conn')
+	def SetWirelessToggleMethodOption(self, value, sender = None, conn = None):
+		self.config.setWirelessToggleMethod(value)
+	
+	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = 's', out_signature = None,
+						sender_keyword = 'sender', connection_keyword = 'conn')
+	def SetWirelessDeviceOption(self, value, sender = None, conn = None):
+		self.config.setWirelessDevice(value)
+	
+	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = 's', out_signature = None,
+						sender_keyword = 'sender', connection_keyword = 'conn')
+	def SetWirelessModuleOption(self, value, sender = None, conn = None):
+		self.config.setWirelessModule(value)
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = None,
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def RestoreLastStatus(self, sender = None, conn = None):
 		""" Restore last status for webcam, bluetooth, wireless. """
 		""" Return nothing. """
-		config = SystemConfig(SYSTEM_CONFIG_FILE)
-		if config.getLastStatusRestore() == "false":
+		if self.config.getLastStatusRestore() == "false":
 			return
 		# Get last status for devices
 		bluetooth_status = False

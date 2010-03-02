@@ -30,6 +30,7 @@ LAST_STATUS_RESTORE_DEFAULT = "true"
 
 class SystemConfig():
 	def __init__(self, configfile):
+		self.configfile = configfile
 		self.config = ConfigParser.SafeConfigParser()
 		try:
 			self.config.readfp(open(configfile))
@@ -114,19 +115,29 @@ class SystemConfig():
 		return self.config.get("Main", "WIRELESS_MODULE")
 	
 	def setLastStatusRestore(self, value):
+		if value == "": # set default
+			value = LAST_STATUS_RESTORE_DEFAULT
 		if value != "false" and value != "true":
 			return
 		self.config.set("Main", "LAST_STATUS_RESTORE", value)
 		self.__write()
 	
 	def setWirelessToggleMethod(self, value):
+		if value == "": # set default
+			value = WIRELESS_TOGGLE_METHOD_DEFAULT
+		if value != "iwconfig" and value != "module" and value != "esdm":
+			return
 		self.config.set("Main", "WIRELESS_TOGGLE_METHOD", value)
 		self.__write()
 	
 	def setWirelessDevice(self, value):
+		if value == "": # set default
+			value = WIRELESS_DEVICE_DEFAULT
 		self.config.set("Main", "WIRELESS_DEVICE", value)
 		self.__write()
 		
 	def setWirelessModule(self, value):
+		if value == "": # set default
+			value = WIRELESS_MODULE_DEFAULT
 		self.config.set("Main", "WIRELESS_MODULE", value)
 		self.__write()
