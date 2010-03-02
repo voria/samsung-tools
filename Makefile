@@ -31,6 +31,7 @@ install:
 
 uninstall:
 	rm -rf $(DESTDIR)/usr/bin/samsung-tools
+	rm -rf $(DESTDIR)/usr/bin/samsung-tools-preferences
 	rm -rf $(DESTDIR)/usr/lib/samsung-tools/
 	rm -rf $(DESTDIR)/etc/dbus-1/system.d/org.voria.SamsungTools.System.conf
 	rm -rf $(DESTDIR)/usr/share/dbus-1/system-services/org.voria.SamsungTools.System.service
