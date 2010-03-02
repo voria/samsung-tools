@@ -14,7 +14,7 @@ install:
 	$(install_dir) $(DESTDIR)/usr/bin/
 	$(install_script) samsung-tools $(DESTDIR)/usr/bin/
 	$(install_dir) $(DESTDIR)/etc/dbus-1/system.d/
-	$(install_file) bus/config/*.conf $(DESTDIR)/etc/dbus-1/system.d/
+	$(install_file) bus/config/org.voria.SamsungTools.System.conf $(DESTDIR)/etc/dbus-1/system.d/
 	$(install_dir) $(DESTDIR)/usr/share/dbus-1/system-services/
 	$(install_file) bus/services/org.voria.SamsungTools.System.service $(DESTDIR)/usr/share/dbus-1/system-services/
 	$(install_dir) $(DESTDIR)/usr/share/dbus-1/services/
@@ -22,7 +22,9 @@ install:
 	$(install_dir) $(DESTDIR)/etc/samsung-tools/
 	$(install_file) configs/*.conf $(DESTDIR)/etc/samsung-tools/
 	$(install_dir) $(DESTDIR)/etc/pm/sleep.d/
-	$(install_script) sleep.d/* $(DESTDIR)/etc/pm/sleep.d/
+	$(install_script) sleep.d/20_samsung-tools $(DESTDIR)/etc/pm/sleep.d/
+	$(install_dir) $(DESTDIR)/etc/init/
+	$(install_file) upstart/samsung-tools.conf $(DESTDIR)/etc/init/ 
 
 uninstall:
 	rm -rf $(DESTDIR)/usr/bin/samsung-tools
@@ -32,3 +34,4 @@ uninstall:
 	rm -rf $(DESTDIR)/usr/share/dbus-1/services/org.voria.SamsungTools.Session.service
 	rm -rf $(DESTDIR)/etc/samsung-tools/
 	rm -rf $(DESTDIR)/etc/pm/sleep.d/20_samsung-tools
+	rm -rf $(DESTDIR)/etc/init/samsung-tools.conf
