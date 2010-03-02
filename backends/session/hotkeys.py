@@ -50,6 +50,12 @@ FAN_COMMAND = "samsung-tools -f hotkey --show-notify"
 WEBCAM_COMMAND = "samsung-tools -w toggle --show-notify"
 WIRELESS_COMMAND = "samsung-tools -W toggle --show-notify"
 
+BACKLIGHT_HOTKEY_DEFAULT = "XF86Launch1"
+BLUETOOTH_HOTKEY_DEFAULT = "XF86Launch2"
+FAN_HOTKEY_DEFAULT = "XF86Launch3"
+WEBCAM_HOTKEY_DEFAULT = "<Shift><Control><Alt>w"
+WIRELESS_HOTKEY_DEFAULT = "XF86WLAN"
+
 class Hotkeys(dbus.service.Object):
 	""" Control hotkeys """
 	def __init__(self, conn = None, object_path = None, bus_name = None):
@@ -137,6 +143,9 @@ class Hotkeys(dbus.service.Object):
 	def SetBacklightHotkey(self, hotkey, sender = None, conn = None):
 		""" Set the hotkey for backlight control. """
 		""" If hotkey == "none" (as a string), hotkey will be disabled. """
+		""" If hotkey == "default", hotkey will be set to default value. """
+		if hotkey == "default":
+			hotkey = BACKLIGHT_HOTKEY_DEFAULT
 		try:
 			gconf_client = gconf.client_get_default()
 			if hotkey != "none":
@@ -156,6 +165,9 @@ class Hotkeys(dbus.service.Object):
 	def SetBluetoothHotkey(self, hotkey, sender = None, conn = None):
 		""" Set the hotkey for bluetooth control. """
 		""" If hotkey == "none" (as a string), hotkey will be disabled. """
+		""" If hotkey == "default", hotkey will be set to default value. """
+		if hotkey == "default":
+			hotkey = BLUETOOTH_HOTKEY_DEFAULT
 		try:
 			gconf_client = gconf.client_get_default()
 			if hotkey != "none":
@@ -175,6 +187,9 @@ class Hotkeys(dbus.service.Object):
 	def SetFanHotkey(self, hotkey, sender = None, conn = None):
 		""" Set the hotkey for CPU fan control. """
 		""" If hotkey == "none" (as a string), hotkey will be disabled. """
+		""" If hotkey == "default", hotkey will be set to default value. """
+		if hotkey == "default":
+			hotkey = FAN_HOTKEY_DEFAULT
 		try:
 			gconf_client = gconf.client_get_default()
 			if hotkey != "none":
@@ -194,6 +209,9 @@ class Hotkeys(dbus.service.Object):
 	def SetWebcamHotkey(self, hotkey, sender = None, conn = None):
 		""" Set the hotkey for webcam control. """
 		""" If hotkey == "none" (as a string), hotkey will be disabled. """
+		""" If hotkey == "default", hotkey will be set to default value. """
+		if hotkey == "default":
+			hotkey = WEBCAM_HOTKEY_DEFAULT
 		try:
 			gconf_client = gconf.client_get_default()
 			if hotkey != "none":
@@ -213,6 +231,9 @@ class Hotkeys(dbus.service.Object):
 	def SetWirelessHotkey(self, hotkey, sender = None, conn = None):
 		""" Set the hotkey for wireless control. """
 		""" If hotkey == "none" (as a string), hotkey will be disabled. """
+		""" If hotkey == "default", hotkey will be set to default value. """
+		if hotkey == "default":
+			hotkey = WIRELESS_HOTKEY_DEFAULT
 		try:
 			gconf_client = gconf.client_get_default()
 			if hotkey != "none":
