@@ -136,10 +136,16 @@ class Main():
 		self.builder = gtk.Builder()
 		self.builder.add_from_file(os.path.join(WORK_DIR, "gui/glade/samsung-tools-preferences.glade"))
 		
+		###
+		### Main widgets
+		###
 		self.mainWindow = self.builder.get_object("mainWindow")
+		self.mainWindow.connect("delete-event", self.quit)
 		self.closeButton = self.builder.get_object("closeButton")
+		self.closeButton.connect("clicked", self.quit)
 		self.aboutButton = self.builder.get_object("aboutButton")
-		
+		self.aboutButton.connect("clicked", self.about)
+	
 		###
 		### Session configuration
 		###
@@ -210,28 +216,26 @@ class Main():
 		###
 		### System configuration
 		###
+		# Last status restore
 		self.lastStatusRestoreCombobox = self.builder.get_object("lastStatusRestoreCombobox")
-		self.wirelessToggleMethodCombobox = self.builder.get_object("wirelessToggleMethodCombobox")
-		self.wirelessDeviceEntry = self.builder.get_object("wirelessDeviceEntry")
-		self.wirelessModuleEntry = self.builder.get_object("wirelessModuleEntry")
-		
 		# Set cell renderer for 'last status restore' combobox
 		self.lastStatusRestoreComboboxCR = gtk.CellRendererText()
 		self.lastStatusRestoreCombobox.pack_start(self.lastStatusRestoreComboboxCR)
 		self.lastStatusRestoreCombobox.add_attribute(self.lastStatusRestoreComboboxCR, 'text', 0)
-		
+		self.lastStatusRestoreCombobox.connect("changed", self.on_lastStatusRestoreCombobox_changed)
+		# Wireless toggle method
+		self.wirelessToggleMethodCombobox = self.builder.get_object("wirelessToggleMethodCombobox")
 		# Set cell renderer for 'wireless toggle method' combobox
 		self.wirelessToggleMethodComboboxCR = gtk.CellRendererText()
 		self.wirelessToggleMethodCombobox.pack_start(self.wirelessToggleMethodComboboxCR)
 		self.wirelessToggleMethodCombobox.add_attribute(self.wirelessToggleMethodComboboxCR, 'text', 0)
-			
-		# Connect signals		
-		self.mainWindow.connect("delete-event", self.quit)
-		self.closeButton.connect("clicked", self.quit)
-		self.aboutButton.connect("clicked", self.about)
-		self.lastStatusRestoreCombobox.connect("changed", self.on_lastStatusRestoreCombobox_changed)
 		self.wirelessToggleMethodCombobox.connect("changed", self.on_wirelessToggleMethodCombobox_changed)
+		# Wireless device
+		self.wirelessDeviceEntry = self.builder.get_object("wirelessDeviceEntry")
+		# Wireless module
+		self.wirelessModuleEntry = self.builder.get_object("wirelessModuleEntry")
 		
+		# All ready
 		self.mainWindow.show()
 	
 	def __connect_session(self):
