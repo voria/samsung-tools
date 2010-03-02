@@ -19,12 +19,16 @@
 # See the GNU General Public License for more details.
 # <http://www.gnu.org/licenses/gpl.txt>
 
-import gconf
-
-import dbus.service
-
 from backends.globals import *
 from backends.session.util.config import SessionConfig
+
+try:
+	import gconf
+except:
+	log_session.write("ERROR: 'hotkeys'  - cannot import gconf.")
+	pass
+
+import dbus.service
 
 GCONF_KEY_COMMAND = "/apps/metacity/keybinding_commands/command_"
 BACKLIGHT_GCONF_KEY_COMMAND = GCONF_KEY_COMMAND + "8"
@@ -57,42 +61,46 @@ class Hotkeys(dbus.service.Object):
 		self.webcam = self.config.getWebcamHotkey()
 		self.wireless = self.config.getWirelessHotkey()
 		## Set hotkeys in gconf
-		gconf_client = gconf.client_get_default()
-		if self.backlight != "none":
-			gconf_client.set_string(BACKLIGHT_GCONF_KEY_COMMAND, BACKLIGHT_COMMAND)
-			gconf_client.set_string(BACKLIGHT_GCONF_KEY_RUN, self.backlight)
-		else:
-			if gconf_client.get_string(BACKLIGHT_GCONF_KEY_COMMAND) == BACKLIGHT_COMMAND:
-				gconf_client.unset(BACKLIGHT_GCONF_KEY_COMMAND)
-				gconf_client.unset(BACKLIGHT_GCONF_KEY_RUN)
-		if self.bluetooth != "none":
-			gconf_client.set_string(BLUETOOTH_GCONF_KEY_COMMAND, BLUETOOTH_COMMAND)
-			gconf_client.set_string(BLUETOOTH_GCONF_KEY_RUN, self.bluetooth)
-		else:
-			if gconf_client.get_string(BLUETOOTH_GCONF_KEY_COMMAND) == BLUETOOTH_COMMAND:
-				gconf_client.unset(BLUETOOTH_GCONF_KEY_COMMAND)
-				gconf_client.unset(BLUETOOTH_GCONF_KEY_RUN)
-		if self.fan != "none":
-			gconf_client.set_string(FAN_GCONF_KEY_COMMAND, FAN_COMMAND)
-			gconf_client.set_string(FAN_GCONF_KEY_RUN, self.fan)
-		else:
-			if gconf_client.get_string(FAN_GCONF_KEY_COMMAND) == FAN_COMMAND:
-				gconf_client.unset(FAN_GCONF_KEY_COMMAND)
-				gconf_client.unset(FAN_GCONF_KEY_RUN)
-		if self.webcam != "none":
-			gconf_client.set_string(WEBCAM_GCONF_KEY_COMMAND, WEBCAM_COMMAND)
-			gconf_client.set_string(WEBCAM_GCONF_KEY_RUN, self.webcam)
-		else:
-			if gconf_client.get_string(WEBCAM_GCONF_KEY_COMMAND) == WEBCAM_COMMAND:
-				gconf_client.unset(WEBCAM_GCONF_KEY_COMMAND)
-				gconf_client.unset(WEBCAM_GCONF_KEY_RUN)
-		if self.wireless != "none":
-			gconf_client.set_string(WIRELESS_GCONF_KEY_COMMAND, WIRELESS_COMMAND)
-			gconf_client.set_string(WIRELESS_GCONF_KEY_RUN, self.wireless)
-		else:
-			if gconf_client.get_string(WIRELESS_GCONF_KEY_COMMAND) == WIRELESS_COMMAND:
-				gconf_client.unset(WIRELESS_GCONF_KEY_COMMAND)
-				gconf_client.unset(WIRELESS_GCONF_KEY_RUN)
+		try:
+			gconf_client = gconf.client_get_default()
+			if self.backlight != "none":
+				gconf_client.set_string(BACKLIGHT_GCONF_KEY_COMMAND, BACKLIGHT_COMMAND)
+				gconf_client.set_string(BACKLIGHT_GCONF_KEY_RUN, self.backlight)
+			else:
+				if gconf_client.get_string(BACKLIGHT_GCONF_KEY_COMMAND) == BACKLIGHT_COMMAND:
+					gconf_client.unset(BACKLIGHT_GCONF_KEY_COMMAND)
+					gconf_client.unset(BACKLIGHT_GCONF_KEY_RUN)
+			if self.bluetooth != "none":
+				gconf_client.set_string(BLUETOOTH_GCONF_KEY_COMMAND, BLUETOOTH_COMMAND)
+				gconf_client.set_string(BLUETOOTH_GCONF_KEY_RUN, self.bluetooth)
+			else:
+				if gconf_client.get_string(BLUETOOTH_GCONF_KEY_COMMAND) == BLUETOOTH_COMMAND:
+					gconf_client.unset(BLUETOOTH_GCONF_KEY_COMMAND)
+					gconf_client.unset(BLUETOOTH_GCONF_KEY_RUN)
+			if self.fan != "none":
+				gconf_client.set_string(FAN_GCONF_KEY_COMMAND, FAN_COMMAND)
+				gconf_client.set_string(FAN_GCONF_KEY_RUN, self.fan)
+			else:
+				if gconf_client.get_string(FAN_GCONF_KEY_COMMAND) == FAN_COMMAND:
+					gconf_client.unset(FAN_GCONF_KEY_COMMAND)
+					gconf_client.unset(FAN_GCONF_KEY_RUN)
+			if self.webcam != "none":
+				gconf_client.set_string(WEBCAM_GCONF_KEY_COMMAND, WEBCAM_COMMAND)
+				gconf_client.set_string(WEBCAM_GCONF_KEY_RUN, self.webcam)
+			else:
+				if gconf_client.get_string(WEBCAM_GCONF_KEY_COMMAND) == WEBCAM_COMMAND:
+					gconf_client.unset(WEBCAM_GCONF_KEY_COMMAND)
+					gconf_client.unset(WEBCAM_GCONF_KEY_RUN)
+			if self.wireless != "none":
+				gconf_client.set_string(WIRELESS_GCONF_KEY_COMMAND, WIRELESS_COMMAND)
+				gconf_client.set_string(WIRELESS_GCONF_KEY_RUN, self.wireless)
+			else:
+				if gconf_client.get_string(WIRELESS_GCONF_KEY_COMMAND) == WIRELESS_COMMAND:
+					gconf_client.unset(WIRELESS_GCONF_KEY_COMMAND)
+					gconf_client.unset(WIRELESS_GCONF_KEY_RUN)
+		except:
+			log_session.write("ERROR: 'Hotkeys()'  - cannot set hotkeys in gconf.")
+			pass
 	
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = None, out_signature = 's',
 						sender_keyword = 'sender', connection_keyword = 'conn')
@@ -129,28 +137,36 @@ class Hotkeys(dbus.service.Object):
 	def SetBacklightHotkey(self, hotkey, sender = None, conn = None):
 		""" Set the hotkey for backlight control. """
 		""" If hotkey == "none" (as a string), hotkey will be disabled. """
-		gconf_client = gconf.client_get_default()
-		if hotkey != "none":
-			gconf_client.set_string(BACKLIGHT_GCONF_KEY_COMMAND, BACKLIGHT_COMMAND)
-			gconf_client.set_string(BACKLIGHT_GCONF_KEY_RUN, hotkey)
-		else:
-			gconf_client.unset(BACKLIGHT_GCONF_KEY_RUN)
-			gconf_client.unset(BACKLIGHT_GCONF_KEY_COMMAND)
+		try:
+			gconf_client = gconf.client_get_default()
+			if hotkey != "none":
+				gconf_client.set_string(BACKLIGHT_GCONF_KEY_COMMAND, BACKLIGHT_COMMAND)
+				gconf_client.set_string(BACKLIGHT_GCONF_KEY_RUN, hotkey)
+			else:
+				gconf_client.unset(BACKLIGHT_GCONF_KEY_RUN)
+				gconf_client.unset(BACKLIGHT_GCONF_KEY_COMMAND)
+		except:
+			log_session.write("ERROR: 'Hotkeys.SetBacklightHotkey()'  - cannot set hotkey in gconf.")
+			pass
 		self.backlight = hotkey
-		self.config.setBacklightHotkey(hotkey)		
+		self.config.setBacklightHotkey(hotkey)
 
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 's', out_signature = None,
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def SetBluetoothHotkey(self, hotkey, sender = None, conn = None):
 		""" Set the hotkey for bluetooth control. """
 		""" If hotkey == "none" (as a string), hotkey will be disabled. """
-		gconf_client = gconf.client_get_default()
-		if hotkey != "none":
-			gconf_client.set_string(BLUETOOTH_GCONF_KEY_COMMAND, BLUETOOTH_COMMAND)
-			gconf_client.set_string(BLUETOOTH_GCONF_KEY_RUN, hotkey)
-		else:
-			gconf_client.unset(BLUETOOTH_GCONF_KEY_RUN)
-			gconf_client.unset(BLUETOOTH_GCONF_KEY_COMMAND)
+		try:
+			gconf_client = gconf.client_get_default()
+			if hotkey != "none":
+				gconf_client.set_string(BLUETOOTH_GCONF_KEY_COMMAND, BLUETOOTH_COMMAND)
+				gconf_client.set_string(BLUETOOTH_GCONF_KEY_RUN, hotkey)
+			else:
+				gconf_client.unset(BLUETOOTH_GCONF_KEY_RUN)
+				gconf_client.unset(BLUETOOTH_GCONF_KEY_COMMAND)
+		except:
+			log_session.write("ERROR: 'Hotkeys.SetBluetoothHotkey()'  - cannot set hotkey in gconf.")
+			pass
 		self.bluetooth = hotkey
 		self.config.setBluetoothHotkey(hotkey)
 
@@ -159,13 +175,17 @@ class Hotkeys(dbus.service.Object):
 	def SetFanHotkey(self, hotkey, sender = None, conn = None):
 		""" Set the hotkey for CPU fan control. """
 		""" If hotkey == "none" (as a string), hotkey will be disabled. """
-		gconf_client = gconf.client_get_default()
-		if hotkey != "none":
-			gconf_client.set_string(FAN_GCONF_KEY_COMMAND, FAN_COMMAND)
-			gconf_client.set_string(FAN_GCONF_KEY_RUN, hotkey)
-		else:
-			gconf_client.unset(FAN_GCONF_KEY_RUN)
-			gconf_client.unset(FAN_GCONF_KEY_COMMAND)
+		try:
+			gconf_client = gconf.client_get_default()
+			if hotkey != "none":
+				gconf_client.set_string(FAN_GCONF_KEY_COMMAND, FAN_COMMAND)
+				gconf_client.set_string(FAN_GCONF_KEY_RUN, hotkey)
+			else:
+				gconf_client.unset(FAN_GCONF_KEY_RUN)
+				gconf_client.unset(FAN_GCONF_KEY_COMMAND)
+		except:
+			log_session.write("ERROR: 'Hotkeys.SetFanHotkey()'  - cannot set hotkey in gconf.")
+			pass
 		self.fan = hotkey
 		self.config.setFanHotkey(hotkey)
 
@@ -174,13 +194,17 @@ class Hotkeys(dbus.service.Object):
 	def SetWebcamHotkey(self, hotkey, sender = None, conn = None):
 		""" Set the hotkey for webcam control. """
 		""" If hotkey == "none" (as a string), hotkey will be disabled. """
-		gconf_client = gconf.client_get_default()
-		if hotkey != "none":
-			gconf_client.set_string(WEBCAM_GCONF_KEY_COMMAND, WEBCAM_COMMAND)
-			gconf_client.set_string(WEBCAM_GCONF_KEY_RUN, hotkey)
-		else:
-			gconf_client.unset(WEBCAM_GCONF_KEY_RUN)
-			gconf_client.unset(WEBCAM_GCONF_KEY_COMMAND)
+		try:
+			gconf_client = gconf.client_get_default()
+			if hotkey != "none":
+				gconf_client.set_string(WEBCAM_GCONF_KEY_COMMAND, WEBCAM_COMMAND)
+				gconf_client.set_string(WEBCAM_GCONF_KEY_RUN, hotkey)
+			else:
+				gconf_client.unset(WEBCAM_GCONF_KEY_RUN)
+				gconf_client.unset(WEBCAM_GCONF_KEY_COMMAND)
+		except:
+			log_session.write("ERROR: 'Hotkeys.SetWebcamHotkey()'  - cannot set hotkey in gconf.")
+			pass
 		self.webcam = hotkey
 		self.config.setWebcamHotkey(hotkey)
 	
@@ -189,12 +213,16 @@ class Hotkeys(dbus.service.Object):
 	def SetWirelessHotkey(self, hotkey, sender = None, conn = None):
 		""" Set the hotkey for wireless control. """
 		""" If hotkey == "none" (as a string), hotkey will be disabled. """
-		gconf_client = gconf.client_get_default()
-		if hotkey != "none":
-			gconf_client.set_string(WIRELESS_GCONF_KEY_COMMAND, WIRELESS_COMMAND)
-			gconf_client.set_string(WIRELESS_GCONF_KEY_RUN, hotkey)
-		else:
-			gconf_client.unset(WIRELESS_GCONF_KEY_RUN)
-			gconf_client.unset(WIRELESS_GCONF_KEY_COMMAND)
+		try:
+			gconf_client = gconf.client_get_default()
+			if hotkey != "none":
+				gconf_client.set_string(WIRELESS_GCONF_KEY_COMMAND, WIRELESS_COMMAND)
+				gconf_client.set_string(WIRELESS_GCONF_KEY_RUN, hotkey)
+			else:
+				gconf_client.unset(WIRELESS_GCONF_KEY_RUN)
+				gconf_client.unset(WIRELESS_GCONF_KEY_COMMAND)
+		except:
+			log_session.write("ERROR: 'Hotkeys.SetWirelessHotkey()'  - cannot set hotkey in gconf.")
+			pass
 		self.wireless = hotkey
 		self.config.setWirelessHotkey(hotkey)
