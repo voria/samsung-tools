@@ -29,9 +29,60 @@ class Bluetooth(dbus.service.Object):
 	""" Control bluetooth """
 	def __init__(self, conn = None, object_path = None, bus_name = None):
 		dbus.service.Object.__init__(self, conn, object_path, bus_name)
+	
+	def __is_module_loaded(self):
+		""" Check if bluetooth kernel module is loaded. """
+		""" Return 'True' if it's loaded, 'False' otherwise. """
+		try:
+			process = subprocess.Popen(['/sbin/lsmod'],
+									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+			output = process.communicate()[0].split()
+			if "btusb" in output:
+				return True
+			else:
+				return False
+		except:
+			log_system.write("ERROR: 'Bluetooth.__is_module_loaded()' - Exception thrown.")
+			return False
+	
+	def __is_service_started(self):
+		""" Check if bluetooth service is started. """
+		""" Return 'True' if it is, 'False' otherwise. """
+		try:
+			process = subprocess.Popen(['/usr/sbin/service', 'bluetooth', 'status'],
+									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+			output = process.communicate()[0]
+			if process.returncode != 0:
+				log_system.write("ERROR: 'Bluetooth.__is_service_started()' - COMMAND: 'service bluetooth status' FAILED.")
+				return False
+			if "not" in output:
+				return False
+			else:
+				return True			
+		except:
+			log_system.write("ERROR: 'Bluetooth.__is_service_started()' - COMMAND: 'service bluetooth status' - Exception thrown.")
+			return False
 		
+	def __is_radio_enabled(self):
+		""" Check if bluetooth radio is enabled. """
+		""" Return 'True' if it is, 'False' otherwise. """
+		try:
+			process = subprocess.Popen(['/usr/sbin/hciconfig', 'hci0'],
+									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+			output = process.communicate()[0].split()
+			if process.returncode != 0:
+				log_system.write("ERROR: 'Bluetooth.__is_radio_enabled()' - COMMAND: 'hciconfig hci0' FAILED.")
+				return False
+			if "DOWN" in output:
+				return False
+			else:
+				return True			
+		except:
+			log_system.write("ERROR: 'Bluetooth.__is_radio_enabled()' - COMMAND: 'hciconfig hci0' - Exception thrown.")
+			return False
+	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
-						sender_keyword = 'sender', connection_keyword = 'conn')
+						sender_keyword = 'sender', connection_keyword = 'conn')	
 	def IsAvailable(self, sender = None, conn = None):
 		""" Check if bluetooth is available. """
 		""" Return 'True' if available, 'False' if disabled. """
@@ -54,16 +105,9 @@ class Bluetooth(dbus.service.Object):
 		""" Return 'True' if enabled, 'False' if disabled. """
 		if not self.IsAvailable():
 			return False
-		try:
-			process = subprocess.Popen(['/sbin/lsmod'],
-									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-			output = process.communicate()[0].split()
-			if "btusb" in output:
-				return True
-			else:
-				return False
-		except:
-			log_system.write("ERROR: 'Bluetooth.IsEnabled()' - Exception thrown.")
+		if self.__is_module_loaded() and self.__is_service_started() and self.__is_radio_enabled():
+			return True
+		else:
 			return False
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
