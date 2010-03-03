@@ -19,9 +19,11 @@
 # See the GNU General Public License for more details.
 # <http://www.gnu.org/licenses/gpl.txt>
 
+import os
 import time
 import gtk
 import gobject
+import subprocess
 import dbus
 
 WORK_DIR = "/usr/lib/samsung-tools/"
@@ -252,8 +254,12 @@ class Main():
 		self.wirelessToggleMethodCombobox.connect("changed", self.on_wirelessToggleMethodCombobox_changed)
 		# Wireless device
 		self.wirelessDeviceEntry = self.builder.get_object("wirelessDeviceEntry")
+		self.wirelessDeviceEntry.set_text(system.GetWirelessDeviceOption())
+		self.wirelessDeviceEntry.connect("focus-out-event", self.on_wirelessDeviceEntry_focus_out_event)
 		# Wireless module
 		self.wirelessModuleEntry = self.builder.get_object("wirelessModuleEntry")
+		self.wirelessModuleEntry.set_text(system.GetWirelessModuleOption())
+		self.wirelessModuleEntry.connect("focus-out-event", self.on_wirelessModuleEntry_focus_out_event)
 		# Set clean buttons
 		self.lastStatusRestoreCleanButton = self.builder.get_object("lastStatusRestoreCleanButton")
 		self.lastStatusRestoreCleanButton.set_image(gtk.image_new_from_stock(gtk.STOCK_CLEAR, gtk.ICON_SIZE_MENU))
@@ -263,8 +269,10 @@ class Main():
 		self.wirelessToggleMethodCleanButton.connect("clicked", self.on_wirelessToggleMethodCleanButton_clicked)
 		self.wirelessDeviceCleanButton = self.builder.get_object("wirelessDeviceCleanButton")
 		self.wirelessDeviceCleanButton.set_image(gtk.image_new_from_stock(gtk.STOCK_CLEAR, gtk.ICON_SIZE_MENU))
+		self.wirelessDeviceCleanButton.connect("clicked", self.on_wirelessDeviceCleanButton_clicked)
 		self.wirelessModuleCleanButton = self.builder.get_object("wirelessModuleCleanButton")
 		self.wirelessModuleCleanButton.set_image(gtk.image_new_from_stock(gtk.STOCK_CLEAR, gtk.ICON_SIZE_MENU))
+		self.wirelessModuleCleanButton.connect("clicked", self.on_wirelessModuleCleanButton_clicked)
 		
 		# All ready
 		self.mainWindow.show()
@@ -387,6 +395,26 @@ class Main():
 		else:
 			system.SetWirelessToggleMethodOption("esdm")
 	
+	def on_wirelessDeviceEntry_focus_out_event(self, widget = None, event = None):
+		new = widget.get_text()
+		system = self.__connect_system()
+		if new == "":
+			widget.set_text(system.GetWirelessDeviceOption())
+			return
+		old = system.GetWirelessDeviceOption()
+		if new != old:
+			system.SetWirelessDeviceOption(new)
+	
+	def on_wirelessModuleEntry_focus_out_event(self, widget = None, event = None):
+		new = widget.get_text()
+		system = self.__connect_system()
+		if new == "":
+			widget.set_text(system.GetWirelessModuleOption())
+			return
+		old = system.GetWirelessModuleOption()
+		if new != old:
+			system.SetWirelessModuleOption(new)
+	
 	def on_lastStatusRestoreCleanButton_clicked(self, button = None):
 		if self.lastStatusRestoreCombobox.get_active() != 0:
 			self.lastStatusRestoreCombobox.set_active(0)
@@ -394,6 +422,16 @@ class Main():
 	def on_wirelessToggleMethodCleanButton_clicked(self, button = None):
 		if self.wirelessToggleMethodCombobox.get_active() != 0:
 			self.wirelessToggleMethodCombobox.set_active(0)
+	
+	def on_wirelessDeviceCleanButton_clicked(self, button = None):
+		system = self.__connect_system()
+		system.SetWirelessDeviceOption("default")
+		self.wirelessDeviceEntry.set_text(system.GetWirelessDeviceOption())
+	
+	def on_wirelessModuleCleanButton_clicked(self, button = None):
+		system = self.__connect_system()
+		system.SetWirelessModuleOption("default")
+		self.wirelessModuleEntry.set_text(system.GetWirelessModuleOption())
 	
 	def about(self, button = None):
 		dialog = gtk.AboutDialog()

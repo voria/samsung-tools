@@ -115,7 +115,7 @@ class SystemConfig():
 		return self.config.get("Main", "WIRELESS_MODULE")
 	
 	def setLastStatusRestore(self, value):
-		if value == "": # set default
+		if value == "default": # set default
 			value = LAST_STATUS_RESTORE_DEFAULT
 		if value != "false" and value != "true":
 			return
@@ -123,7 +123,7 @@ class SystemConfig():
 		self.__write()
 	
 	def setWirelessToggleMethod(self, value):
-		if value == "": # set default
+		if value == "default": # set default
 			value = WIRELESS_TOGGLE_METHOD_DEFAULT
 		if value != "iwconfig" and value != "module" and value != "esdm":
 			return
@@ -131,13 +131,13 @@ class SystemConfig():
 		self.__write()
 	
 	def setWirelessDevice(self, value):
-		if value == "": # set default
+		if value == "default": # set default
 			value = WIRELESS_DEVICE_DEFAULT
 		self.config.set("Main", "WIRELESS_DEVICE", value)
 		self.__write()
 		
 	def setWirelessModule(self, value):
-		if value == "": # set default
+		if value == "default": # set default
 			value = WIRELESS_MODULE_DEFAULT
 		self.config.set("Main", "WIRELESS_MODULE", value)
 		self.__write()
