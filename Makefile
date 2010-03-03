@@ -27,7 +27,9 @@ install:
 	$(install_dir) $(DESTDIR)/etc/pm/sleep.d/
 	$(install_script) sleep.d/20_samsung-tools $(DESTDIR)/etc/pm/sleep.d/
 	$(install_dir) $(DESTDIR)/etc/init/
-	$(install_file) upstart/samsung-tools.conf $(DESTDIR)/etc/init/ 
+	$(install_file) upstart/samsung-tools.conf $(DESTDIR)/etc/init/
+	$(install_dir) $(DESTDIR)/usr/share/applications/
+	$(install_file) desktop/*.desktop $(DESTDIR)/usr/share/applications/
 
 uninstall:
 	rm -rf $(DESTDIR)/usr/bin/samsung-tools
@@ -39,3 +41,4 @@ uninstall:
 	rm -rf $(DESTDIR)/etc/samsung-tools/
 	rm -rf $(DESTDIR)/etc/pm/sleep.d/20_samsung-tools
 	rm -rf $(DESTDIR)/etc/init/samsung-tools.conf
+	rm -rf $(DESTDIR)/usr/share/applications/samsung-tools-preferences.desktop

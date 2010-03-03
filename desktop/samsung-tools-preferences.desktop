@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Samsung Tools Preferences
+Comment=Configure Samsung Tools
+Exec=samsung-tools-preferences
+Terminal=false
+Type=Application
+Categories=Settings;X-GNOME-SystemSettings;
+OnlyShowIn=GNOME;XFCE;
+StartupNotify=true
