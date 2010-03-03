@@ -115,14 +115,22 @@ class KeyGrabber(gtk.Button):
 		if not len(label):
 			label = "Disabled"
 		else:
+			if label == "XF86Sleep":
+				label = "Fn-Esc"
+			if label == "XF86Battery":
+				label = "Fn-F2"
+			if label == "<Alt>KP_Insert":
+				label = "Fn-F3"
+			if label == "XF86Launch4":
+				label = "Fn-F4"
 			if label == "XF86Launch1":
 				label = "Fn-F5"
+			if label == "XF86AudioMute":
+				label = "Fn-F6"
 			if label == "XF86Launch2":
 				label = "Fn-F7"
 			if label == "XF86Launch3":
 				label = "Fn-F8"
-			if label == "XF86Launch4":
-				label = "Fn-F4"
 			if label == "XF86WLAN":
 				label = "Fn-F9"
 		gtk.Button.set_label(self, label)
