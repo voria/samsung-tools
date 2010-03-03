@@ -20,6 +20,7 @@
             <child>
               <object class="GtkTable" id="sessionTable">
                 <property name="visible">True</property>
+                <property name="border_width">5</property>
                 <property name="n_rows">6</property>
                 <property name="n_columns">4</property>
                 <property name="column_spacing">5</property>
@@ -27,66 +28,61 @@
                 <child>
                   <object class="GtkLabel" id="wirelessHotkeyLabel">
                     <property name="visible">True</property>
-                    <property name="label" translatable="yes">Wireless control:</property>
+                    <property name="label" translatable="yes">Wireless:</property>
                   </object>
                   <packing>
                     <property name="top_attach">5</property>
                     <property name="bottom_attach">6</property>
                     <property name="x_options"></property>
                     <property name="y_options"></property>
-                    <property name="x_padding">5</property>
                   </packing>
                 </child>
                 <child>
                   <object class="GtkLabel" id="webcamHotkeyLabel">
                     <property name="visible">True</property>
-                    <property name="label" translatable="yes">Webcam control:</property>
+                    <property name="label" translatable="yes">Webcam:</property>
                   </object>
                   <packing>
                     <property name="top_attach">4</property>
                     <property name="bottom_attach">5</property>
                     <property name="x_options"></property>
                     <property name="y_options"></property>
-                    <property name="x_padding">5</property>
                   </packing>
                 </child>
                 <child>
                   <object class="GtkLabel" id="cpufanHotkeyLabel">
                     <property name="visible">True</property>
-                    <property name="label" translatable="yes">CPU fan control:</property>
+                    <property name="label" translatable="yes">CPU fan:</property>
                   </object>
                   <packing>
                     <property name="top_attach">3</property>
                     <property name="bottom_attach">4</property>
                     <property name="x_options"></property>
                     <property name="y_options"></property>
-                    <property name="x_padding">5</property>
                   </packing>
                 </child>
                 <child>
                   <object class="GtkLabel" id="bluetoothHotkeyLabel">
                     <property name="visible">True</property>
-                    <property name="label" translatable="yes">Bluetooth control:</property>
+                    <property name="label" translatable="yes">Bluetooth:</property>
                   </object>
                   <packing>
                     <property name="top_attach">2</property>
                     <property name="bottom_attach">3</property>
                     <property name="x_options"></property>
                     <property name="y_options"></property>
-                    <property name="x_padding">5</property>
                   </packing>
                 </child>
                 <child>
                   <object class="GtkLabel" id="backlightHotkeyLabel">
                     <property name="visible">True</property>
-                    <property name="label" translatable="yes">Backlight control:</property>
+                    <property name="label" translatable="yes">Backlight:</property>
                   </object>
                   <packing>
                     <property name="top_attach">1</property>
                     <property name="bottom_attach">2</property>
                     <property name="x_options"></property>
                     <property name="y_options"></property>
-                    <property name="x_padding">5</property>
                   </packing>
                 </child>
                 <child>
@@ -102,7 +98,6 @@
                     <property name="bottom_attach">6</property>
                     <property name="x_options"></property>
                     <property name="y_options"></property>
-                    <property name="x_padding">5</property>
                   </packing>
                 </child>
                 <child>
@@ -118,7 +113,6 @@
                     <property name="bottom_attach">5</property>
                     <property name="x_options"></property>
                     <property name="y_options"></property>
-                    <property name="x_padding">5</property>
                   </packing>
                 </child>
                 <child>
@@ -134,7 +128,6 @@
                     <property name="bottom_attach">4</property>
                     <property name="x_options"></property>
                     <property name="y_options"></property>
-                    <property name="x_padding">5</property>
                   </packing>
                 </child>
                 <child>
@@ -150,7 +143,6 @@
                     <property name="bottom_attach">3</property>
                     <property name="x_options"></property>
                     <property name="y_options"></property>
-                    <property name="x_padding">5</property>
                   </packing>
                 </child>
                 <child>
@@ -167,7 +159,6 @@
                     <property name="bottom_attach">2</property>
                     <property name="x_options"></property>
                     <property name="y_options"></property>
-                    <property name="x_padding">5</property>
                   </packing>
                 </child>
                 <child>
@@ -183,7 +174,6 @@
                     <property name="bottom_attach">6</property>
                     <property name="x_options"></property>
                     <property name="y_options"></property>
-                    <property name="x_padding">5</property>
                   </packing>
                 </child>
                 <child>
@@ -199,7 +189,6 @@
                     <property name="bottom_attach">5</property>
                     <property name="x_options"></property>
                     <property name="y_options"></property>
-                    <property name="x_padding">5</property>
                   </packing>
                 </child>
                 <child>
@@ -215,7 +204,6 @@
                     <property name="bottom_attach">4</property>
                     <property name="x_options"></property>
                     <property name="y_options"></property>
-                    <property name="x_padding">5</property>
                   </packing>
                 </child>
                 <child>
@@ -231,7 +219,6 @@
                     <property name="bottom_attach">3</property>
                     <property name="x_options"></property>
                     <property name="y_options"></property>
-                    <property name="x_padding">5</property>
                   </packing>
                 </child>
                 <child>
@@ -247,13 +234,13 @@
                     <property name="bottom_attach">2</property>
                     <property name="x_options"></property>
                     <property name="y_options"></property>
-                    <property name="x_padding">5</property>
                   </packing>
                 </child>
                 <child>
                   <object class="GtkLabel" id="hotkeysConfigurationLabel">
                     <property name="visible">True</property>
-                    <property name="ypad">2</property>
+                    <property name="xalign">0</property>
+                    <property name="xpad">5</property>
                     <property name="label" translatable="yes">&lt;b&gt;Hotkeys&lt;/b&gt;</property>
                     <property name="use_markup">True</property>
                   </object>
@@ -291,6 +278,7 @@
             <child>
               <object class="GtkTable" id="systemTable">
                 <property name="visible">True</property>
+                <property name="border_width">5</property>
                 <property name="n_rows">6</property>
                 <property name="n_columns">3</property>
                 <property name="column_spacing">5</property>
@@ -305,7 +293,6 @@
                     <property name="bottom_attach">2</property>
                     <property name="x_options"></property>
                     <property name="y_options"></property>
-                    <property name="x_padding">5</property>
                   </packing>
                 </child>
                 <child>
@@ -320,7 +307,6 @@
                     <property name="top_attach">1</property>
                     <property name="bottom_attach">2</property>
                     <property name="y_options"></property>
-                    <property name="x_padding">5</property>
                   </packing>
                 </child>
                 <child>
@@ -337,13 +323,13 @@
                     <property name="bottom_attach">2</property>
                     <property name="x_options"></property>
                     <property name="y_options"></property>
-                    <property name="x_padding">5</property>
                   </packing>
                 </child>
                 <child>
                   <object class="GtkLabel" id="generalConfigurationLabel">
                     <property name="visible">True</property>
-                    <property name="ypad">2</property>
+                    <property name="xalign">0</property>
+                    <property name="xpad">5</property>
                     <property name="label" translatable="yes">&lt;b&gt;General&lt;/b&gt;</property>
                     <property name="use_markup">True</property>
                   </object>
@@ -355,40 +341,37 @@
                 <child>
                   <object class="GtkLabel" id="wirelessModuleLabel">
                     <property name="visible">True</property>
-                    <property name="label" translatable="yes">Wireless Module:</property>
+                    <property name="label" translatable="yes">Kernel Module:</property>
                   </object>
                   <packing>
                     <property name="top_attach">5</property>
                     <property name="bottom_attach">6</property>
                     <property name="x_options"></property>
                     <property name="y_options"></property>
-                    <property name="x_padding">5</property>
                   </packing>
                 </child>
                 <child>
                   <object class="GtkLabel" id="wirelessDeviceLabel">
                     <property name="visible">True</property>
-                    <property name="label" translatable="yes">Wireless Device:</property>
+                    <property name="label" translatable="yes">Device:</property>
                   </object>
                   <packing>
                     <property name="top_attach">4</property>
                     <property name="bottom_attach">5</property>
                     <property name="x_options"></property>
                     <property name="y_options"></property>
-                    <property name="x_padding">5</property>
                   </packing>
                 </child>
                 <child>
                   <object class="GtkLabel" id="wirelessToggleMethodLabel">
                     <property name="visible">True</property>
-                    <property name="label" translatable="yes">Wireless Toggle Method:</property>
+                    <property name="label" translatable="yes">Toggle Method:</property>
                   </object>
                   <packing>
                     <property name="top_attach">3</property>
                     <property name="bottom_attach">4</property>
                     <property name="x_options"></property>
                     <property name="y_options"></property>
-                    <property name="x_padding">5</property>
                   </packing>
                 </child>
                 <child>
@@ -403,7 +386,6 @@
                     <property name="top_attach">5</property>
                     <property name="bottom_attach">6</property>
                     <property name="y_options"></property>
-                    <property name="x_padding">5</property>
                   </packing>
                 </child>
                 <child>
@@ -419,7 +401,6 @@
                     <property name="bottom_attach">6</property>
                     <property name="x_options"></property>
                     <property name="y_options"></property>
-                    <property name="x_padding">5</property>
                   </packing>
                 </child>
                 <child>
@@ -434,7 +415,6 @@
                     <property name="top_attach">4</property>
                     <property name="bottom_attach">5</property>
                     <property name="y_options"></property>
-                    <property name="x_padding">5</property>
                   </packing>
                 </child>
                 <child>
@@ -450,7 +430,6 @@
                     <property name="bottom_attach">5</property>
                     <property name="x_options"></property>
                     <property name="y_options"></property>
-                    <property name="x_padding">5</property>
                   </packing>
                 </child>
                 <child>
@@ -466,7 +445,6 @@
                     <property name="bottom_attach">4</property>
                     <property name="x_options"></property>
                     <property name="y_options"></property>
-                    <property name="x_padding">5</property>
                   </packing>
                 </child>
                 <child>
@@ -481,13 +459,13 @@
                     <property name="top_attach">3</property>
                     <property name="bottom_attach">4</property>
                     <property name="y_options"></property>
-                    <property name="x_padding">5</property>
                   </packing>
                 </child>
                 <child>
                   <object class="GtkLabel" id="wirelessConfigurationLabel">
                     <property name="visible">True</property>
-                    <property name="ypad">2</property>
+                    <property name="xalign">0</property>
+                    <property name="xpad">5</property>
                     <property name="label" translatable="yes">&lt;b&gt;Wireless&lt;/b&gt;</property>
                     <property name="use_markup">True</property>
                   </object>
