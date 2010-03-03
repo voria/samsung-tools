@@ -28,6 +28,7 @@
                 <child>
                   <object class="GtkLabel" id="wirelessHotkeyLabel">
                     <property name="visible">True</property>
+                    <property name="tooltip_text" translatable="yes">Hotkey used for wireless control</property>
                     <property name="label" translatable="yes">Wireless:</property>
                   </object>
                   <packing>
@@ -40,6 +41,7 @@
                 <child>
                   <object class="GtkLabel" id="webcamHotkeyLabel">
                     <property name="visible">True</property>
+                    <property name="tooltip_text" translatable="yes">Hotkey used for webcam control</property>
                     <property name="label" translatable="yes">Webcam:</property>
                   </object>
                   <packing>
@@ -52,6 +54,7 @@
                 <child>
                   <object class="GtkLabel" id="cpufanHotkeyLabel">
                     <property name="visible">True</property>
+                    <property name="tooltip_text" translatable="yes">Hotkey used for CPU fan control</property>
                     <property name="label" translatable="yes">CPU fan:</property>
                   </object>
                   <packing>
@@ -64,6 +67,7 @@
                 <child>
                   <object class="GtkLabel" id="bluetoothHotkeyLabel">
                     <property name="visible">True</property>
+                    <property name="tooltip_text" translatable="yes">Hotkey used for bluetooth control</property>
                     <property name="label" translatable="yes">Bluetooth:</property>
                   </object>
                   <packing>
@@ -76,6 +80,7 @@
                 <child>
                   <object class="GtkLabel" id="backlightHotkeyLabel">
                     <property name="visible">True</property>
+                    <property name="tooltip_text" translatable="yes">Hotkey used for backlight control</property>
                     <property name="label" translatable="yes">Backlight:</property>
                   </object>
                   <packing>
@@ -90,6 +95,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Click here to disable the hotkey</property>
                   </object>
                   <packing>
                     <property name="left_attach">2</property>
@@ -105,6 +111,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Click here to disable the hotkey</property>
                   </object>
                   <packing>
                     <property name="left_attach">2</property>
@@ -120,6 +127,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Click here to disable the hotkey</property>
                   </object>
                   <packing>
                     <property name="left_attach">2</property>
@@ -135,6 +143,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Click here to disable the hotkey</property>
                   </object>
                   <packing>
                     <property name="left_attach">2</property>
@@ -150,6 +159,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Click here to disable the hotkey</property>
                     <property name="image_position">top</property>
                   </object>
                   <packing>
@@ -166,6 +176,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Click here to set the default hotkey</property>
                   </object>
                   <packing>
                     <property name="left_attach">3</property>
@@ -181,6 +192,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Click here to set the default hotkey</property>
                   </object>
                   <packing>
                     <property name="left_attach">3</property>
@@ -196,6 +208,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Click here to set the default hotkey</property>
                   </object>
                   <packing>
                     <property name="left_attach">3</property>
@@ -211,6 +224,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Click here to set the default hotkey</property>
                   </object>
                   <packing>
                     <property name="left_attach">3</property>
@@ -226,6 +240,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Click here to set the default hotkey</property>
                   </object>
                   <packing>
                     <property name="left_attach">3</property>
@@ -286,6 +301,7 @@
                 <child>
                   <object class="GtkLabel" id="lastStatusRestoreLabel">
                     <property name="visible">True</property>
+                    <property name="tooltip_text" translatable="yes">If enabled, the status of all devices will be restored after a suspend/hibernate/reboot cycle</property>
                     <property name="label" translatable="yes">Last Status Restore:</property>
                   </object>
                   <packing>
@@ -298,6 +314,7 @@
                 <child>
                   <object class="GtkComboBox" id="lastStatusRestoreCombobox">
                     <property name="visible">True</property>
+                    <property name="tooltip_text" translatable="yes">If enabled, the status of all devices will be restored after a suspend/hibernate/reboot cycle</property>
                     <property name="model">lastStatusRestoreListstore</property>
                     <property name="active">0</property>
                   </object>
@@ -314,6 +331,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Click here to set the default value</property>
                     <property name="image_position">top</property>
                   </object>
                   <packing>
@@ -341,6 +359,10 @@
                 <child>
                   <object class="GtkLabel" id="wirelessModuleLabel">
                     <property name="visible">True</property>
+                    <property name="tooltip_text" translatable="yes">The kernel module to be managed.
+
+Note:
+this option is only used when 'Toggle Method' is set to 'module'.</property>
                     <property name="label" translatable="yes">Kernel Module:</property>
                   </object>
                   <packing>
@@ -353,6 +375,10 @@
                 <child>
                   <object class="GtkLabel" id="wirelessDeviceLabel">
                     <property name="visible">True</property>
+                    <property name="tooltip_text" translatable="yes">The wireless device to use.
+
+Note:
+this option is only used when 'Toggle Method' is set to 'iwconfig'.</property>
                     <property name="label" translatable="yes">Device:</property>
                   </object>
                   <packing>
@@ -365,6 +391,11 @@
                 <child>
                   <object class="GtkLabel" id="wirelessToggleMethodLabel">
                     <property name="visible">True</property>
+                    <property name="tooltip_text" translatable="yes">How the wireless is toggled.
+
+'iwconfig' - Use iwconfig commands.
+'module' - Insert/remove kernel module.
+'esdm' - Use the 'easy slow down manager' interface.</property>
                     <property name="label" translatable="yes">Toggle Method:</property>
                   </object>
                   <packing>
@@ -378,6 +409,10 @@
                   <object class="GtkEntry" id="wirelessModuleEntry">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
+                    <property name="tooltip_text" translatable="yes">The kernel module to be managed.
+
+Note:
+this option is only used when 'Toggle Method' is set to 'module'.</property>
                     <property name="invisible_char">&#x2022;</property>
                   </object>
                   <packing>
@@ -393,6 +428,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Click here to set the default value</property>
                   </object>
                   <packing>
                     <property name="left_attach">2</property>
@@ -407,6 +443,10 @@
                   <object class="GtkEntry" id="wirelessDeviceEntry">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
+                    <property name="tooltip_text" translatable="yes">The wireless device to use.
+
+Note:
+this option is only used when 'Toggle Method' is set to 'iwconfig'.</property>
                     <property name="invisible_char">&#x2022;</property>
                   </object>
                   <packing>
@@ -422,6 +462,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Click here to set the default value</property>
                   </object>
                   <packing>
                     <property name="left_attach">2</property>
@@ -437,6 +478,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Click here to set the default value</property>
                   </object>
                   <packing>
                     <property name="left_attach">2</property>
@@ -450,6 +492,11 @@
                 <child>
                   <object class="GtkComboBox" id="wirelessToggleMethodCombobox">
                     <property name="visible">True</property>
+                    <property name="tooltip_text" translatable="yes">How the wireless is toggled.
+
+'iwconfig' - Use iwconfig commands.
+'module' - Insert/remove kernel module.
+'esdm' - Use the 'easy slow down manager' interface.</property>
                     <property name="model">wirelessToggleMethodListstore</property>
                     <property name="active">0</property>
                   </object>
@@ -549,13 +596,13 @@
     </columns>
     <data>
       <row>
-        <col id="0" translatable="yes">Use iwconfig commands</col>
+        <col id="0" translatable="yes">iwconfig</col>
       </row>
       <row>
-        <col id="0" translatable="yes">Remove kernel module</col>
+        <col id="0" translatable="yes">module</col>
       </row>
       <row>
-        <col id="0" translatable="yes">Use easy-slow-down-manager interface</col>
+        <col id="0" translatable="yes">esdm</col>
       </row>
     </data>
   </object>
