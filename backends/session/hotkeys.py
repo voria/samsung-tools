@@ -53,7 +53,7 @@ WIRELESS_COMMAND = "samsung-tools -W toggle --show-notify"
 BACKLIGHT_HOTKEY_DEFAULT = "XF86Launch1"
 BLUETOOTH_HOTKEY_DEFAULT = "XF86Launch2"
 FAN_HOTKEY_DEFAULT = "XF86Launch3"
-WEBCAM_HOTKEY_DEFAULT = "<Shift><Control><Alt>w"
+WEBCAM_HOTKEY_DEFAULT = "<Alt>KP_Insert"
 WIRELESS_HOTKEY_DEFAULT = "XF86WLAN"
 
 class Hotkeys(dbus.service.Object):
