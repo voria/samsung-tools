@@ -124,6 +124,10 @@ class KeyGrabber(gtk.Button):
 	def set_label_custom(self, custom_label):
 		if custom_label == "none":
 			custom_label = "Disabled"
+			self.key = 0
+			self.mods = 0
+		else:
+			(self.key, self.mods) = gtk.accelerator_parse(custom_label)
 		gtk.Button.set_label(self, custom_label)
 		self.emit("changed", self.key, self.mods)
 	
