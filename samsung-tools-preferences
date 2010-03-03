@@ -388,10 +388,12 @@ class Main():
 			system.SetWirelessToggleMethodOption("esdm")
 	
 	def on_lastStatusRestoreCleanButton_clicked(self, button = None):
-		self.lastStatusRestoreCombobox.set_active(0)
+		if self.lastStatusRestoreCombobox.get_active() != 0:
+			self.lastStatusRestoreCombobox.set_active(0)
 	
 	def on_wirelessToggleMethodCleanButton_clicked(self, button = None):
-		self.wirelessToggleMethodCombobox.set_active(0)
+		if self.wirelessToggleMethodCombobox.get_active() != 0:
+			self.wirelessToggleMethodCombobox.set_active(0)
 	
 	def about(self, button = None):
 		dialog = gtk.AboutDialog()
