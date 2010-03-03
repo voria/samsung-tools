@@ -133,8 +133,9 @@ class KeyGrabber(gtk.Button):
 	
 class Main():
 	def __init__(self):
-		# Get interface for D-Bus session service's hotkeys module
-		hotkeys = self.__connect_session()
+		# Get interfaces for D-Bus services
+		session = self.__connect_session()
+		system = self.__connect_system()
 
 		# Setup GUI
 		self.builder = gtk.Builder()
@@ -156,32 +157,32 @@ class Main():
 		self.sessionTable = self.builder.get_object("sessionTable")
 		# Set backlight hotkey grabber
 		self.backlightHotkeyButton = KeyGrabber(popup_title = "Backlight control")
-		self.backlightHotkeyButton.set_label_custom(hotkeys.GetBacklightHotkey())
-		self.sessionTable.attach(self.backlightHotkeyButton, 1, 2, 0, 1)
+		self.backlightHotkeyButton.set_label_custom(session.GetBacklightHotkey())
+		self.sessionTable.attach(self.backlightHotkeyButton, 1, 2, 1, 2, yoptions = 0)
 		self.backlightHotkeyButton.connect("changed", self.on_backlightHotkeyButton_changed)
 		self.backlightHotkeyButton.show()
 		# Set bluetooth hotkey grabber
 		self.bluetoothHotkeyButton = KeyGrabber(popup_title = "Bluetooth control")
-		self.bluetoothHotkeyButton.set_label_custom(hotkeys.GetBluetoothHotkey())
-		self.sessionTable.attach(self.bluetoothHotkeyButton, 1, 2, 1, 2)
+		self.bluetoothHotkeyButton.set_label_custom(session.GetBluetoothHotkey())
+		self.sessionTable.attach(self.bluetoothHotkeyButton, 1, 2, 2, 3, yoptions = 0)
 		self.bluetoothHotkeyButton.connect("changed", self.on_bluetoothHotkeyButton_changed)
 		self.bluetoothHotkeyButton.show()
 		# Set cpufan hotkey grabber
 		self.cpufanHotkeyButton = KeyGrabber(popup_title = "CPU fan control")
-		self.cpufanHotkeyButton.set_label_custom(hotkeys.GetFanHotkey())
-		self.sessionTable.attach(self.cpufanHotkeyButton, 1, 2, 2, 3)
+		self.cpufanHotkeyButton.set_label_custom(session.GetFanHotkey())
+		self.sessionTable.attach(self.cpufanHotkeyButton, 1, 2, 3, 4, yoptions = 0)
 		self.cpufanHotkeyButton.connect("changed", self.on_cpufanHotkeyButton_changed)
 		self.cpufanHotkeyButton.show()
 		# Set webcam hotkey grabber
 		self.webcamHotkeyButton = KeyGrabber(popup_title = "Webcam control")
-		self.webcamHotkeyButton.set_label_custom(hotkeys.GetWebcamHotkey())
-		self.sessionTable.attach(self.webcamHotkeyButton, 1, 2, 3, 4)
+		self.webcamHotkeyButton.set_label_custom(session.GetWebcamHotkey())
+		self.sessionTable.attach(self.webcamHotkeyButton, 1, 2, 4, 5, yoptions = 0)
 		self.webcamHotkeyButton.connect("changed", self.on_webcamHotkeyButton_changed)
 		self.webcamHotkeyButton.show()
 		# Set wireless hotkey grabber
 		self.wirelessHotkeyButton = KeyGrabber(popup_title = "Wireless control")
-		self.wirelessHotkeyButton.set_label_custom(hotkeys.GetWirelessHotkey())
-		self.sessionTable.attach(self.wirelessHotkeyButton, 1, 2, 4, 5)
+		self.wirelessHotkeyButton.set_label_custom(session.GetWirelessHotkey())
+		self.sessionTable.attach(self.wirelessHotkeyButton, 1, 2, 5, 6, yoptions = 0)
 		self.wirelessHotkeyButton.connect("changed", self.on_wirelessHotkeyButton_changed)
 		self.wirelessHotkeyButton.show()
 		# Set clean buttons for keygrabbers
@@ -226,6 +227,10 @@ class Main():
 		self.lastStatusRestoreComboboxCR = gtk.CellRendererText()
 		self.lastStatusRestoreCombobox.pack_start(self.lastStatusRestoreComboboxCR)
 		self.lastStatusRestoreCombobox.add_attribute(self.lastStatusRestoreComboboxCR, 'text', 0)
+		if system.GetLastStatusRestoreOption() == "true":
+			self.lastStatusRestoreCombobox.set_active(0)
+		else: # laststatusrestore == "false"
+			self.lastStatusRestoreCombobox.set_active(1)
 		self.lastStatusRestoreCombobox.connect("changed", self.on_lastStatusRestoreCombobox_changed)
 		# Wireless toggle method
 		self.wirelessToggleMethodCombobox = self.builder.get_object("wirelessToggleMethodCombobox")
@@ -233,11 +238,29 @@ class Main():
 		self.wirelessToggleMethodComboboxCR = gtk.CellRendererText()
 		self.wirelessToggleMethodCombobox.pack_start(self.wirelessToggleMethodComboboxCR)
 		self.wirelessToggleMethodCombobox.add_attribute(self.wirelessToggleMethodComboboxCR, 'text', 0)
+		wirelesstogglemethod = system.GetWirelessToggleMethodOption()
+		if wirelesstogglemethod == "iwconfig":
+			self.wirelessToggleMethodCombobox.set_active(0)
+		elif wirelesstogglemethod == "module":
+			self.wirelessToggleMethodCombobox.set_active(1)
+		else: # wirelesstogglemethod == "esdm"
+			self.wirelessToggleMethodCombobox.set_active(2)
 		self.wirelessToggleMethodCombobox.connect("changed", self.on_wirelessToggleMethodCombobox_changed)
 		# Wireless device
 		self.wirelessDeviceEntry = self.builder.get_object("wirelessDeviceEntry")
 		# Wireless module
 		self.wirelessModuleEntry = self.builder.get_object("wirelessModuleEntry")
+		# Set clean buttons
+		self.lastStatusRestoreCleanButton = self.builder.get_object("lastStatusRestoreCleanButton")
+		self.lastStatusRestoreCleanButton.set_image(gtk.image_new_from_stock(gtk.STOCK_CLEAR, gtk.ICON_SIZE_MENU))
+		self.lastStatusRestoreCleanButton.connect("clicked", self.on_lastStatusRestoreCleanButton_clicked)
+		self.wirelessToggleMethodCleanButton = self.builder.get_object("wirelessToggleMethodCleanButton")
+		self.wirelessToggleMethodCleanButton.set_image(gtk.image_new_from_stock(gtk.STOCK_CLEAR, gtk.ICON_SIZE_MENU))
+		self.wirelessToggleMethodCleanButton.connect("clicked", self.on_wirelessToggleMethodCleanButton_clicked)
+		self.wirelessDeviceCleanButton = self.builder.get_object("wirelessDeviceCleanButton")
+		self.wirelessDeviceCleanButton.set_image(gtk.image_new_from_stock(gtk.STOCK_CLEAR, gtk.ICON_SIZE_MENU))
+		self.wirelessModuleCleanButton = self.builder.get_object("wirelessModuleCleanButton")
+		self.wirelessModuleCleanButton.set_image(gtk.image_new_from_stock(gtk.STOCK_CLEAR, gtk.ICON_SIZE_MENU))
 		
 		# All ready
 		self.mainWindow.show()
@@ -247,14 +270,19 @@ class Main():
 		proxy = bus.get_object(SESSION_INTERFACE_NAME, SESSION_OBJECT_PATH_HOTKEYS)
 		return dbus.Interface(proxy, SESSION_INTERFACE_NAME)
 	
+	def __connect_system(self):
+		bus = dbus.SystemBus()
+		proxy = bus.get_object(SYSTEM_INTERFACE_NAME, SYSTEM_OBJECT_PATH_GENERAL)
+		return dbus.Interface(proxy, SYSTEM_INTERFACE_NAME)
+	
 	def on_backlightHotkeyButton_changed(self, button = None, key = None, mods = None):
 		label = button.get_label()
 		if label == "Disabled":
 			new = "none"
 		else:
 			new = label
-		hotkeys = self.__connect_session()
-		hotkeys.SetBacklightHotkey(new)
+		session = self.__connect_session()
+		session.SetBacklightHotkey(new)
 		
 	
 	def on_bluetoothHotkeyButton_changed(self, button = None, key = None, mods = None):
@@ -263,8 +291,8 @@ class Main():
 			new = "none"
 		else:
 			new = label
-		hotkeys = self.__connect_session()
-		hotkeys.SetBluetoothHotkey(new)
+		session = self.__connect_session()
+		session.SetBluetoothHotkey(new)
 		
 	def on_cpufanHotkeyButton_changed(self, button = None, key = None, mods = None):
 		label = button.get_label()
@@ -272,8 +300,8 @@ class Main():
 			new = "none"
 		else:
 			new = label
-		hotkeys = self.__connect_session()
-		hotkeys.SetFanHotkey(new)
+		session = self.__connect_session()
+		session.SetFanHotkey(new)
 		
 	def on_webcamHotkeyButton_changed(self, button = None, key = None, mods = None):
 		label = button.get_label()
@@ -281,8 +309,8 @@ class Main():
 			new = "none"
 		else:
 			new = label
-		hotkeys = self.__connect_session()
-		hotkeys.SetWebcamHotkey(new)
+		session = self.__connect_session()
+		session.SetWebcamHotkey(new)
 		
 	def on_wirelessHotkeyButton_changed(self, button = None, key = None, mods = None):
 		label = button.get_label()
@@ -290,8 +318,8 @@ class Main():
 			new = "none"
 		else:
 			new = label
-		hotkeys = self.__connect_session()
-		hotkeys.SetWirelessHotkey(new)
+		session = self.__connect_session()
+		session.SetWirelessHotkey(new)
 	
 	def on_backlightHotkeyCleanButton_clicked(self, button = None):
 		self.backlightHotkeyButton.set_label_custom("Disabled")
@@ -309,35 +337,52 @@ class Main():
 		self.wirelessHotkeyButton.set_label_custom("Disabled")
 	
 	def on_backlightHotkeyDefaultButton_clicked(self, button = None):
-		hotkeys = self.__connect_session()
-		hotkeys.SetBacklightHotkey("default")
-		self.backlightHotkeyButton.set_label_custom(hotkeys.GetBacklightHotkey())
+		session = self.__connect_session()
+		session.SetBacklightHotkey("default")
+		self.backlightHotkeyButton.set_label_custom(session.GetBacklightHotkey())
 	
 	def on_bluetoothHotkeyDefaultButton_clicked(self, button = None):
-		hotkeys = self.__connect_session()
-		hotkeys.SetBluetoothHotkey("default")
-		self.bluetoothHotkeyButton.set_label_custom(hotkeys.GetBluetoothHotkey())
+		session = self.__connect_session()
+		session.SetBluetoothHotkey("default")
+		self.bluetoothHotkeyButton.set_label_custom(session.GetBluetoothHotkey())
 	
 	def on_cpufanHotkeyDefaultButton_clicked(self, button = None):
-		hotkeys = self.__connect_session()
-		hotkeys.SetFanHotkey("default")
-		self.cpufanHotkeyButton.set_label_custom(hotkeys.GetFanHotkey())
+		session = self.__connect_session()
+		session.SetFanHotkey("default")
+		self.cpufanHotkeyButton.set_label_custom(session.GetFanHotkey())
 	
 	def on_webcamHotkeyDefaultButton_clicked(self, button = None):
-		hotkeys = self.__connect_session()
-		hotkeys.SetWebcamHotkey("default")
-		self.webcamHotkeyButton.set_label_custom(hotkeys.GetWebcamHotkey())
+		session = self.__connect_session()
+		session.SetWebcamHotkey("default")
+		self.webcamHotkeyButton.set_label_custom(session.GetWebcamHotkey())
 	
 	def on_wirelessHotkeyDefaultButton_clicked(self, button = None):
-		hotkeys = self.__connect_session()
-		hotkeys.SetWirelessHotkey("default")
-		self.wirelessHotkeyButton.set_label_custom(hotkeys.GetWirelessHotkey())
+		session = self.__connect_session()
+		session.SetWirelessHotkey("default")
+		self.wirelessHotkeyButton.set_label_custom(session.GetWirelessHotkey())
 	
 	def on_lastStatusRestoreCombobox_changed(self, combobox = None):
-		pass
+		system = self.__connect_system()
+		if combobox.get_active() == 0:
+			system.SetLastStatusRestoreOption("true")
+		else:
+			system.SetLastStatusRestoreOption("false")
 	
 	def on_wirelessToggleMethodCombobox_changed(self, combobox = None):
-		pass
+		system = self.__connect_system()
+		active = combobox.get_active()
+		if active == 0:
+			system.SetWirelessToggleMethodOption("iwconfig")
+		elif active == 1:
+			system.SetWirelessToggleMethodOption("module")
+		else:
+			system.SetWirelessToggleMethodOption("esdm")
+	
+	def on_lastStatusRestoreCleanButton_clicked(self, button = None):
+		self.lastStatusRestoreCombobox.set_active(0)
+	
+	def on_wirelessToggleMethodCleanButton_clicked(self, button = None):
+		self.wirelessToggleMethodCombobox.set_active(0)
 	
 	def about(self, button = None):
 		dialog = gtk.AboutDialog()
