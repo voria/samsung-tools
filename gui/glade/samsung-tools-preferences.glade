@@ -395,7 +395,9 @@ this option is only used when 'Toggle Method' is set to 'iwconfig'.</property>
 
 'iwconfig' - Use iwconfig commands.
 'module' - Insert/remove kernel module.
-'esdm' - Use the 'easy slow down manager' interface.</property>
+'esdm' - Use the 'easy slow down manager' interface.
+
+Note: the new setting will be applied after a reboot.</property>
                     <property name="label" translatable="yes">Toggle Method:</property>
                   </object>
                   <packing>
@@ -496,7 +498,9 @@ this option is only used when 'Toggle Method' is set to 'iwconfig'.</property>
 
 'iwconfig' - Use iwconfig commands.
 'module' - Insert/remove kernel module.
-'esdm' - Use the 'easy slow down manager' interface.</property>
+'esdm' - Use the 'easy slow down manager' interface.
+
+Note: the new setting will be applied after a reboot.</property>
                     <property name="model">wirelessToggleMethodListstore</property>
                     <property name="active">0</property>
                   </object>
