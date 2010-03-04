@@ -109,6 +109,29 @@ class Hotkeys():
 		shutil.move(XBINDKEYS_CONFIG_FILE + ".new", XBINDKEYS_CONFIG_FILE)
 		return True
 	
+	def __remove_hotkey(self, command):
+		""" Remove the hotkey for 'command' (and 'command' too, of course). """
+		""" Return 'True' on success, 'False' otherwise. """
+		oldfile = open(XBINDKEYS_CONFIG_FILE, "r")
+		newfile = open(XBINDKEYS_CONFIG_FILE + ".new", "w")
+		commandfound = False
+		skipnextline = False
+		for line in oldfile:
+			if skipnextline != True:
+				if line != '"' + command + '"\n':
+					newfile.write(line)
+				else:
+					commandfound = True
+					skipnextline = True
+			else:
+				skipnextline = False
+		oldfile.close()
+		newfile.close()
+		if commandfound == True:
+			os.remove(XBINDKEYS_CONFIG_FILE)
+			shutil.move(XBINDKEYS_CONFIG_FILE + ".new", XBINDKEYS_CONFIG_FILE)
+		return True
+	
 	def startHotkeys(self):
 		""" Start the 'xbindkeys' command line utility, if it's not already running. """
 		# Check if xbindkeys is already started
