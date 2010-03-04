@@ -93,7 +93,8 @@ class Wireless(dbus.service.Object):
 		""" Return 'True' if enabled, 'False' if disabled. """
 		if not self.IsAvailable():
 			return False
-		if self.method == "iwconfig":
+		method = systemconfig.getWirelessToggleMethod()
+		if method == "iwconfig":
 			device = systemconfig.getWirelessDevice()
 			try:
 				process = subprocess.Popen([COMMAND_IWCONFIG, device],
@@ -111,7 +112,7 @@ class Wireless(dbus.service.Object):
 				command = COMMAND_IWCONFIG + " " + device
 				systemlog.write("ERROR: 'Wireless.IsEnabled()' - COMMAND: '" + command + "' - Exception thrown.")
 				return False
-		elif self.method == "module":
+		elif method == "module":
 			module = systemconfig.getWirelessModule()
 			try:
 				process = subprocess.Popen([COMMAND_LSMOD],
@@ -127,7 +128,7 @@ class Wireless(dbus.service.Object):
 			except:
 				systemlog.write("ERROR: 'Wireless.IsEnabled()' - COMMAND: '" + COMMAND_LSMOD + "' - Exception thrown.")
 				return False
-		else: # self.method == "esdm":
+		else: # method == "esdm":
 			try:
 				with open(ESDM_PATH_WIRELESS, 'r') as file:
 					result = int(file.read(1))
@@ -148,7 +149,8 @@ class Wireless(dbus.service.Object):
 			return False
 		if self.IsEnabled():
 			return True
-		if self.method == "iwconfig":
+		method = systemconfig.getWirelessToggleMethod()
+		if method == "iwconfig":
 			try:
 				device = systemconfig.getWirelessDevice()
 				process = subprocess.Popen([COMMAND_IWCONFIG, device, 'txpower', 'auto'],
@@ -162,7 +164,7 @@ class Wireless(dbus.service.Object):
 				command = COMMAND_IWCONFIG + " " + device + " txpower auto"
 				systemlog.write("ERROR: 'Wireless.Enable()' - COMMAND: '" + command + "' - Exception thrown.")
 				return False
-		elif self.method == "module":
+		elif method == "module":
 			try:
 				module = systemconfig.getWirelessModule()
 				process = subprocess.Popen([COMMAND_MODPROBE, module],
@@ -175,7 +177,7 @@ class Wireless(dbus.service.Object):
 			except:
 				log_system.write("ERROR: 'Wireless.Enable()' - COMMAND: 'modprobe " + self.module + "' - Exception thrown.")
 				return False
-		else: # self.method == "esdm":
+		else: # method == "esdm":
 			try:
 				with open(ESDM_PATH_WIRELESS, 'w') as file:
 					file.write('1')
@@ -195,7 +197,8 @@ class Wireless(dbus.service.Object):
 			return False
 		if not self.IsEnabled():
 			return True
-		if self.method == "iwconfig":
+		method = systemconfig.getWirelessToggleMethod()
+		if method == "iwconfig":
 			try:
 				device = systemconfig.getWirelessDevice()
 				process = subprocess.Popen([COMMAND_IWCONFIG, device, 'txpower', 'off'],
@@ -209,7 +212,7 @@ class Wireless(dbus.service.Object):
 				command = COMMAND_IWCONFIG + " " + device + " txpower off"
 				systemlog.write("ERROR: 'Wireless.Disable()' - COMMAND: '" + command + "' - Exception thrown.")
 				return False
-		elif self.method == "module":
+		elif method == "module":
 			try:
 				module = systemconfig.getWirelessModule()
 				process = subprocess.Popen([COMMAND_MODPROBE, '-r', module],
@@ -223,7 +226,7 @@ class Wireless(dbus.service.Object):
 				command = COMMAND_MODPROBE + " -r " + module
 				systemlog.write("ERROR: 'Wireless.Disable()' - COMMAND: '" + command + "' - Exception thrown.")
 				return False
-		else: # self.method == "esdm":
+		else: # method == "esdm":
 			try:
 				with open(ESDM_PATH_WIRELESS, 'w') as file:
 					file.write('0')
