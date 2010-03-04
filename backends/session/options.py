@@ -30,7 +30,7 @@ class Options(dbus.service.Object):
 		dbus.service.Object.__init__(self, conn, object_path, bus_name)
 		self.hotkeys = Hotkeys()
 		if sessionconfig.getUseHotkeys() == "true":
-			self.hotkeys.restartHotkeys()
+			self.hotkeys.startHotkeys()
 	
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')

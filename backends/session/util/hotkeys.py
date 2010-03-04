@@ -34,7 +34,7 @@ WIRELESS_COMMAND = "samsung-tools -W toggle --show-notify"
 BACKLIGHT_HOTKEY_DEFAULT = "XF86Launch1"
 BLUETOOTH_HOTKEY_DEFAULT = "XF86Launch2"
 FAN_HOTKEY_DEFAULT = "XF86Launch3"
-WEBCAM_HOTKEY_DEFAULT = "Alt + KP_Insert"
+WEBCAM_HOTKEY_DEFAULT = "Alt+KP_Insert"
 WIRELESS_HOTKEY_DEFAULT = "XF86WLAN"
 
 XBINDKEYS_CONFIG_FILE = os.path.join(os.getenv('HOME'), ".xbindkeysrc")
@@ -154,12 +154,15 @@ class Hotkeys():
 	
 	def stopHotkeys(self):
 		""" Stop the 'xbindkeys' command line utility. """
-		# FIXME: Stop all the 'xbindkeys' processes, if there are more than one 
-		process = subprocess.Popen(['killall', 'xbindkeys'], stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-		process.communicate()
+		returncode = 0
+		while returncode == 0:
+			process = subprocess.Popen(['killall', 'xbindkeys'], stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+			process.communicate()
+			returncode = process.returncode
 	
 	def restartHotkeys(self):
 		""" Restart the 'xbindkeys' command line utility. """
+		return
 		self.stopHotkeys()
 		self.startHotkeys()
 	
