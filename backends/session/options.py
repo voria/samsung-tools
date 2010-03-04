@@ -29,7 +29,7 @@ class Options(dbus.service.Object):
 	def __init__(self, conn = None, object_path = None, bus_name = None):
 		dbus.service.Object.__init__(self, conn, object_path, bus_name)
 		self.hotkeys = Hotkeys()
-		if sessionconfig.getUseHotkeys() == "true":
+		if self.GetUseHotkeys() == "true": # Start xbindkeys at start
 			self.hotkeys.startHotkeys()
 	
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = None, out_signature = 'b',
@@ -87,7 +87,8 @@ class Options(dbus.service.Object):
 	def SetBacklightHotkey(self, hotkey, sender = None, conn = None):
 		""" Return 'True' on success, 'False' otherwise. """
 		result = self.hotkeys.setBacklightHotkey(hotkey)
-		if result == True:
+		usehotkeys = sessionconfig.getUseHotkeys()
+		if result == True and usehotkeys == True:
 			self.hotkeys.restartHotkeys()
 		return result
 
@@ -96,7 +97,8 @@ class Options(dbus.service.Object):
 	def SetBluetoothHotkey(self, hotkey, sender = None, conn = None):
 		""" Return 'True' on success, 'False' otherwise. """
 		result = self.hotkeys.setBluetoothHotkey(hotkey)
-		if result == True:
+		usehotkeys = sessionconfig.getUseHotkeys()
+		if result == True and usehotkeys == True:
 			self.hotkeys.restartHotkeys()
 		return result
 	
@@ -105,7 +107,8 @@ class Options(dbus.service.Object):
 	def SetFanHotkey(self, hotkey, sender = None, conn = None):
 		""" Return 'True' on success, 'False' otherwise. """
 		result = self.hotkeys.setFanHotkey(hotkey)
-		if result == True:
+		usehotkeys = sessionconfig.getUseHotkeys()
+		if result == True and usehotkeys == True:
 			self.hotkeys.restartHotkeys()
 		return result
 
@@ -114,15 +117,17 @@ class Options(dbus.service.Object):
 	def SetWebcamHotkey(self, hotkey, sender = None, conn = None):
 		""" Return 'True' on success, 'False' otherwise. """
 		result = self.hotkeys.setWebcamHotkey(hotkey)
-		if result == True:
+		usehotkeys = sessionconfig.getUseHotkeys()
+		if result == True and usehotkeys == True:
 			self.hotkeys.restartHotkeys()
 		return result
-
+	
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 's', out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def SetWirelessHotkey(self, hotkey, sender = None, conn = None):
 		""" Return 'True' on success, 'False' otherwise. """
 		result = self.hotkeys.setWirelessHotkey(hotkey)
-		if result == True:
+		usehotkeys = sessionconfig.getUseHotkeys()
+		if result == True and usehotkeys == True:
 			self.hotkeys.restartHotkeys()
 		return result

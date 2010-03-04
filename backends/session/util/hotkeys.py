@@ -162,7 +162,6 @@ class Hotkeys():
 	
 	def restartHotkeys(self):
 		""" Restart the 'xbindkeys' command line utility. """
-		return
 		self.stopHotkeys()
 		self.startHotkeys()
 	

@@ -86,6 +86,10 @@ class SessionConfig():
 		""" Return 'True' on success, 'False' otherwise. """
 		if value == "default": # set default
 			value = USE_HOTKEYS_DEFAULT
+		if value == True:
+			value = "true"
+		if value == False:
+			value = "false"
 		if value not in USE_HOTKEYS_ACCEPTED_VALUES:
 			return False
 		self.config.set("Main", "USE_HOTKEYS", value)
