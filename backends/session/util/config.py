@@ -76,7 +76,10 @@ class SessionConfig():
 	
 	def getUseHotkeys(self):
 		""" Return the USE_HOTKEYS option. """
-		return self.config.get("Main", "USE_HOTKEYS")
+		if self.config.get("Main", "USE_HOTKEYS") == "true":
+			return True
+		else:
+			return False
 	
 	def setUseHotkeys(self, value):
 		""" Set the USE_HOTKEYS option. """
