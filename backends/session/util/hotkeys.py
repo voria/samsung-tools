@@ -177,6 +177,9 @@ class Hotkeys():
 	def setBacklightHotkey(self, hotkey):
 		""" Set the new hotkey. """
 		""" Return 'True' on success, 'False' otherwise. """
+		if hotkey == "disable":
+			self.__remove_hotkey(BACKLIGHT_COMMAND)
+			return True
 		if hotkey == "default":
 			hotkey = BACKLIGHT_HOTKEY_DEFAULT
 		return self.__update_hotkey(BACKLIGHT_COMMAND, hotkey)
@@ -184,6 +187,9 @@ class Hotkeys():
 	def setBluetoothHotkey(self, hotkey):
 		""" Set the new hotkey. """
 		""" Return 'True' on success, 'False' otherwise. """
+		if hotkey == "disable":
+			self.__remove_hotkey(BLUETOOTH_COMMAND)
+			return True
 		if hotkey == "default":
 			hotkey = BLUETOOTH_HOTKEY_DEFAULT
 		return self.__update_hotkey(BLUETOOTH_COMMAND, hotkey)
@@ -191,6 +197,9 @@ class Hotkeys():
 	def setFanHotkey(self, hotkey):
 		""" Set the new hotkey. """
 		""" Return 'True' on success, 'False' otherwise. """
+		if hotkey == "disable":
+			self.__remove_hotkey(FAN_COMMAND)
+			return True
 		if hotkey == "default":
 			hotkey = FAN_HOTKEY_DEFAULT
 		return self.__update_hotkey(FAN_COMMAND, hotkey)
@@ -198,6 +207,9 @@ class Hotkeys():
 	def setWebcamHotkey(self, hotkey):
 		""" Set the new hotkey. """
 		""" Return 'True' on success, 'False' otherwise. """
+		if hotkey == "disable":
+			self.__remove_hotkey(WEBCAM_COMMAND)
+			return True
 		if hotkey == "default":
 			hotkey = WEBCAM_HOTKEY_DEFAULT
 		return self.__update_hotkey(WEBCAM_COMMAND, hotkey)
@@ -205,6 +217,9 @@ class Hotkeys():
 	def setWirelessHotkey(self, hotkey):
 		""" Set the new hotkey. """
 		""" Return 'True' on success, 'False' otherwise. """
+		if hotkey == "disable":
+			self.__remove_hotkey(WIRELESS_COMMAND)
+			return True
 		if hotkey == "default":
 			hotkey = WIRELESS_HOTKEY_DEFAULT
 		return self.__update_hotkey(WIRELESS_COMMAND, hotkey)
