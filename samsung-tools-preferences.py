@@ -26,10 +26,10 @@ import gobject
 import subprocess
 import dbus
 
-WORK_DIR = "/usr/lib/samsung-tools/"
+WORK_DIRECTORY = "/usr/lib/samsung-tools/"
 
 import sys
-sys.path.append(WORK_DIR)
+sys.path.append(WORK_DIRECTORY)
 
 from backends.globals import *
 
@@ -143,7 +143,7 @@ class Main():
 
 		# Setup GUI
 		self.builder = gtk.Builder()
-		self.builder.add_from_file(os.path.join(WORK_DIR, "gui/glade/samsung-tools-preferences.glade"))
+		self.builder.add_from_file(os.path.join(WORK_DIRECTORY, "gui/glade/samsung-tools-preferences.glade"))
 		
 		###
 		### Main widgets
@@ -162,7 +162,7 @@ class Main():
 		# Set backlight hotkey grabber
 		self.backlightHotkeyButton = KeyGrabber(popup_title = "Backlight control")
 		hotkey = session.GetBacklightHotkey()
-		(key, mods) = gtk.accelerator_parse(hotkey)
+		(key, mods) = gtk.accelerator_parse(self.__convert_xbindkeys_to_gtk(hotkey))
 		self.backlightHotkeyButton.set_label(key, mods, True)
 		self.backlightHotkeyButton.set_tooltip_text(self.builder.get_object("backlightHotkeyLabel").get_tooltip_text())
 		self.sessionTable.attach(self.backlightHotkeyButton, 1, 2, 1, 2, yoptions = 0)
@@ -171,7 +171,7 @@ class Main():
 		# Set bluetooth hotkey grabber
 		self.bluetoothHotkeyButton = KeyGrabber(popup_title = "Bluetooth control")
 		hotkey = session.GetBluetoothHotkey()
-		(key, mods) = gtk.accelerator_parse(hotkey)
+		(key, mods) = gtk.accelerator_parse(self.__convert_xbindkeys_to_gtk(hotkey))
 		self.bluetoothHotkeyButton.set_label(key, mods, True)
 		self.bluetoothHotkeyButton.set_tooltip_text(self.builder.get_object("bluetoothHotkeyLabel").get_tooltip_text())
 		self.sessionTable.attach(self.bluetoothHotkeyButton, 1, 2, 2, 3, yoptions = 0)
@@ -180,7 +180,7 @@ class Main():
 		# Set cpufan hotkey grabber
 		self.cpufanHotkeyButton = KeyGrabber(popup_title = "CPU fan control")
 		hotkey = session.GetFanHotkey()
-		(key, mods) = gtk.accelerator_parse(hotkey)
+		(key, mods) = gtk.accelerator_parse(self.__convert_xbindkeys_to_gtk(hotkey))
 		self.cpufanHotkeyButton.set_label(key, mods, True)
 		self.cpufanHotkeyButton.set_tooltip_text(self.builder.get_object("cpufanHotkeyLabel").get_tooltip_text())
 		self.sessionTable.attach(self.cpufanHotkeyButton, 1, 2, 3, 4, yoptions = 0)
@@ -189,7 +189,7 @@ class Main():
 		# Set webcam hotkey grabber
 		self.webcamHotkeyButton = KeyGrabber(popup_title = "Webcam control")
 		hotkey = session.GetWebcamHotkey()
-		(key, mods) = gtk.accelerator_parse(hotkey)
+		(key, mods) = gtk.accelerator_parse(self.__convert_xbindkeys_to_gtk(hotkey))
 		self.webcamHotkeyButton.set_label(key, mods, True)
 		self.webcamHotkeyButton.set_tooltip_text(self.builder.get_object("webcamHotkeyLabel").get_tooltip_text())
 		self.sessionTable.attach(self.webcamHotkeyButton, 1, 2, 4, 5, yoptions = 0)
@@ -198,7 +198,7 @@ class Main():
 		# Set wireless hotkey grabber
 		self.wirelessHotkeyButton = KeyGrabber(popup_title = "Wireless control")
 		hotkey = session.GetWirelessHotkey()
-		(key, mods) = gtk.accelerator_parse(hotkey)
+		(key, mods) = gtk.accelerator_parse(self.__convert_xbindkeys_to_gtk(hotkey))
 		self.wirelessHotkeyButton.set_label(key, mods, True)
 		self.wirelessHotkeyButton.set_tooltip_text(self.builder.get_object("wirelessHotkeyLabel").get_tooltip_text())
 		self.sessionTable.attach(self.wirelessHotkeyButton, 1, 2, 5, 6, yoptions = 0)
@@ -246,7 +246,7 @@ class Main():
 		self.lastStatusRestoreComboboxCR = gtk.CellRendererText()
 		self.lastStatusRestoreCombobox.pack_start(self.lastStatusRestoreComboboxCR)
 		self.lastStatusRestoreCombobox.add_attribute(self.lastStatusRestoreComboboxCR, 'text', 0)
-		if system.GetLastStatusRestoreOption() == "true":
+		if system.GetLastStatusRestore() == "true":
 			self.lastStatusRestoreCombobox.set_active(0)
 		else: # laststatusrestore == "false"
 			self.lastStatusRestoreCombobox.set_active(1)
@@ -257,7 +257,7 @@ class Main():
 		self.wirelessToggleMethodComboboxCR = gtk.CellRendererText()
 		self.wirelessToggleMethodCombobox.pack_start(self.wirelessToggleMethodComboboxCR)
 		self.wirelessToggleMethodCombobox.add_attribute(self.wirelessToggleMethodComboboxCR, 'text', 0)
-		wirelesstogglemethod = system.GetWirelessToggleMethodOption()
+		wirelesstogglemethod = system.GetWirelessToggleMethod()
 		if wirelesstogglemethod == "iwconfig":
 			self.wirelessToggleMethodCombobox.set_active(0)
 		elif wirelesstogglemethod == "module":
@@ -267,11 +267,11 @@ class Main():
 		self.wirelessToggleMethodCombobox.connect("changed", self.on_wirelessToggleMethodCombobox_changed)
 		# Wireless device
 		self.wirelessDeviceEntry = self.builder.get_object("wirelessDeviceEntry")
-		self.wirelessDeviceEntry.set_text(system.GetWirelessDeviceOption())
+		self.wirelessDeviceEntry.set_text(system.GetWirelessDevice())
 		self.wirelessDeviceEntry.connect("focus-out-event", self.on_wirelessDeviceEntry_focus_out_event)
 		# Wireless module
 		self.wirelessModuleEntry = self.builder.get_object("wirelessModuleEntry")
-		self.wirelessModuleEntry.set_text(system.GetWirelessModuleOption())
+		self.wirelessModuleEntry.set_text(system.GetWirelessModule())
 		self.wirelessModuleEntry.connect("focus-out-event", self.on_wirelessModuleEntry_focus_out_event)
 		# Set clean buttons
 		self.lastStatusRestoreCleanButton = self.builder.get_object("lastStatusRestoreCleanButton")
@@ -309,54 +309,78 @@ class Main():
 	
 	def __connect_session(self):
 		bus = dbus.SessionBus()
-		proxy = bus.get_object(SESSION_INTERFACE_NAME, SESSION_OBJECT_PATH_HOTKEYS)
+		proxy = bus.get_object(SESSION_INTERFACE_NAME, SESSION_OBJECT_PATH_OPTIONS)
 		return dbus.Interface(proxy, SESSION_INTERFACE_NAME)
 	
 	def __connect_system(self):
 		bus = dbus.SystemBus()
-		proxy = bus.get_object(SYSTEM_INTERFACE_NAME, SYSTEM_OBJECT_PATH_GENERAL)
+		proxy = bus.get_object(SYSTEM_INTERFACE_NAME, SYSTEM_OBJECT_PATH_OPTIONS)
 		return dbus.Interface(proxy, SYSTEM_INTERFACE_NAME)
+	
+	def __convert_gtk_to_xbindkeys(self, hotkey):
+		keys = hotkey.replace('<', "").split('>')
+		result = ""
+		for key in keys:
+			if key == "Super":
+				key = "Mod4"
+			result += key + "+"
+		result = result[0:len(result) - 1] # Remove the '+' at the end
+		return result
+	
+	def __convert_xbindkeys_to_gtk(self, hotkey):
+		keys = hotkey.split('+')
+		result = ""
+		for key in keys:
+			key = key.strip()
+			if key == "Mod4":
+				key = "Super"
+			if key == "Control" or key == "Shift" or key == "Alt" or key == "Super":
+				result += "<"
+			result += key
+			if key == "Control" or key == "Shift" or key == "Alt" or key == "Super":
+				result += ">"
+		return result
 	
 	def on_backlightHotkeyButton_changed(self, button = None, key = None, mods = None):
 		if key == 0 and mods == 0:
-			new = "none"
+			new = "disable"
 		else:
 			new = gtk.accelerator_name(key, mods)
 		session = self.__connect_session()
-		session.SetBacklightHotkey(new)
+		session.SetBacklightHotkey(self.__convert_gtk_to_xbindkeys(new))
 		
 	
 	def on_bluetoothHotkeyButton_changed(self, button = None, key = None, mods = None):
 		if key == 0 and mods == 0:
-			new = "none"
+			new = "disable"
 		else:
 			new = gtk.accelerator_name(key, mods) 
 		session = self.__connect_session()
-		session.SetBluetoothHotkey(new)
+		session.SetBluetoothHotkey(self.__convert_gtk_to_xbindkeys(new))
 		
 	def on_cpufanHotkeyButton_changed(self, button = None, key = None, mods = None):
 		if key == 0 and mods == 0:
-			new = "none"
+			new = "disable"
 		else:
 			new = gtk.accelerator_name(key, mods) 
 		session = self.__connect_session()
-		session.SetFanHotkey(new)
+		session.SetFanHotkey(self.__convert_gtk_to_xbindkeys(new))
 		
 	def on_webcamHotkeyButton_changed(self, button = None, key = None, mods = None):
 		if key == 0 and mods == 0:
-			new = "none"
+			new = "disable"
 		else:
 			new = gtk.accelerator_name(key, mods) 
 		session = self.__connect_session()
-		session.SetWebcamHotkey(new)
+		session.SetWebcamHotkey(self.__convert_gtk_to_xbindkeys(new))
 		
 	def on_wirelessHotkeyButton_changed(self, button = None, key = None, mods = None):
 		if key == 0 and mods == 0:
-			new = "none"
+			new = "disable"
 		else:
 			new = gtk.accelerator_name(key, mods) 
 		session = self.__connect_session()
-		session.SetWirelessHotkey(new)
+		session.SetWirelessHotkey(self.__convert_gtk_to_xbindkeys(new))
 	
 	def on_backlightHotkeyCleanButton_clicked(self, button = None):
 		self.backlightHotkeyButton.set_label(0, 0, True)
@@ -377,61 +401,61 @@ class Main():
 		session = self.__connect_session()
 		session.SetBacklightHotkey("default")
 		hotkey = session.GetBacklightHotkey()
-		(key, mods) = gtk.accelerator_parse(hotkey)
+		(key, mods) = gtk.accelerator_parse(self.__convert_xbindkeys_to_gtk(hotkey))
 		self.backlightHotkeyButton.set_label(key, mods, True)
 	
 	def on_bluetoothHotkeyDefaultButton_clicked(self, button = None):
 		session = self.__connect_session()
 		session.SetBluetoothHotkey("default")
 		hotkey = session.GetBluetoothHotkey()
-		(key, mods) = gtk.accelerator_parse(hotkey)
+		(key, mods) = gtk.accelerator_parse(self.__convert_xbindkeys_to_gtk(hotkey))
 		self.bluetoothHotkeyButton.set_label(key, mods, True)
 	
 	def on_cpufanHotkeyDefaultButton_clicked(self, button = None):
 		session = self.__connect_session()
 		session.SetFanHotkey("default")
 		hotkey = session.GetFanHotkey()
-		(key, mods) = gtk.accelerator_parse(hotkey)
+		(key, mods) = gtk.accelerator_parse(self.__convert_xbindkeys_to_gtk(hotkey))
 		self.cpufanHotkeyButton.set_label(key, mods, True)
 	
 	def on_webcamHotkeyDefaultButton_clicked(self, button = None):
 		session = self.__connect_session()
 		session.SetWebcamHotkey("default")
 		hotkey = session.GetWebcamHotkey()
-		(key, mods) = gtk.accelerator_parse(hotkey)
+		(key, mods) = gtk.accelerator_parse(self.__convert_xbindkeys_to_gtk(hotkey))
 		self.webcamHotkeyButton.set_label(key, mods, True)
 	
 	def on_wirelessHotkeyDefaultButton_clicked(self, button = None):
 		session = self.__connect_session()
 		session.SetWirelessHotkey("default")
 		hotkey = session.GetWirelessHotkey()
-		(key, mods) = gtk.accelerator_parse(hotkey)
+		(key, mods) = gtk.accelerator_parse(self.__convert_xbindkeys_to_gtk(hotkey))
 		self.wirelessHotkeyButton.set_label(key, mods, True)
 	
 	def on_lastStatusRestoreCombobox_changed(self, combobox = None):
 		system = self.__connect_system()
 		if combobox.get_active() == 0:
-			system.SetLastStatusRestoreOption("true")
+			system.SetLastStatusRestore("true")
 		else:
-			system.SetLastStatusRestoreOption("false")
+			system.SetLastStatusRestore("false")
 	
 	def on_wirelessToggleMethodCombobox_changed(self, combobox = None):
 		system = self.__connect_system()
 		active = combobox.get_active()
 		if active == 0:
-			system.SetWirelessToggleMethodOption("iwconfig")
+			system.SetWirelessToggleMethod("iwconfig")
 			self.wirelessDeviceEntry.set_sensitive(True)
 			self.wirelessDeviceCleanButton.set_sensitive(True)
 			self.wirelessModuleEntry.set_sensitive(False)
 			self.wirelessModuleCleanButton.set_sensitive(False)
 		elif active == 1:
-			system.SetWirelessToggleMethodOption("module")
+			system.SetWirelessToggleMethod("module")
 			self.wirelessDeviceEntry.set_sensitive(False)
 			self.wirelessDeviceCleanButton.set_sensitive(False)
 			self.wirelessModuleEntry.set_sensitive(True)
 			self.wirelessModuleCleanButton.set_sensitive(True)
 		else:
-			system.SetWirelessToggleMethodOption("esdm")
+			system.SetWirelessToggleMethod("esdm")
 			self.wirelessDeviceEntry.set_sensitive(False)
 			self.wirelessDeviceCleanButton.set_sensitive(False)
 			self.wirelessModuleEntry.set_sensitive(False)
@@ -441,21 +465,21 @@ class Main():
 		new = widget.get_text()
 		system = self.__connect_system()
 		if new == "":
-			widget.set_text(system.GetWirelessDeviceOption())
+			widget.set_text(system.GetWirelessDevice())
 			return
-		old = system.GetWirelessDeviceOption()
+		old = system.GetWirelessDevice()
 		if new != old:
-			system.SetWirelessDeviceOption(new)
+			system.SetWirelessDevice(new)
 	
 	def on_wirelessModuleEntry_focus_out_event(self, widget = None, event = None):
 		new = widget.get_text()
 		system = self.__connect_system()
 		if new == "":
-			widget.set_text(system.GetWirelessModuleOption())
+			widget.set_text(system.GetWirelessModule())
 			return
-		old = system.GetWirelessModuleOption()
+		old = system.GetWirelessModule()
 		if new != old:
-			system.SetWirelessModuleOption(new)
+			system.SetWirelessModule(new)
 	
 	def on_lastStatusRestoreCleanButton_clicked(self, button = None):
 		if self.lastStatusRestoreCombobox.get_active() != 0:
@@ -467,13 +491,13 @@ class Main():
 	
 	def on_wirelessDeviceCleanButton_clicked(self, button = None):
 		system = self.__connect_system()
-		system.SetWirelessDeviceOption("default")
-		self.wirelessDeviceEntry.set_text(system.GetWirelessDeviceOption())
+		system.SetWirelessDevice("default")
+		self.wirelessDeviceEntry.set_text(system.GetWirelessDevice())
 	
 	def on_wirelessModuleCleanButton_clicked(self, button = None):
 		system = self.__connect_system()
-		system.SetWirelessModuleOption("default")
-		self.wirelessModuleEntry.set_text(system.GetWirelessModuleOption())
+		system.SetWirelessModule("default")
+		self.wirelessModuleEntry.set_text(system.GetWirelessModule())
 	
 	def about(self, button = None):
 		dialog = gtk.AboutDialog()
