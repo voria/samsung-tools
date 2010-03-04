@@ -52,12 +52,19 @@ class Hotkeys():
 			self.setWebcamHotkey("default")
 			self.setWirelessHotkey("default")
 	
+	def __touch_config_file(self):
+		""" Make sure the XBINDKEYS_CONFIG_FILE exists. """
+		if not os.path.exists(XBINDKEYS_CONFIG_FILE):
+			file = open(XBINDKEYS_CONFIG_FILE, 'w')
+			file.close()
+	
 	def __get_hotkey(self, command):
 		""" Return the hotkey for 'command'. """
 		""" If 'command' is not found in XBINDKEYS_CONFIG_FILE, """
 		""" add it with the default hotkey, which is returned. """
 		hotkey = None
 		found = False
+		self.__touch_config_file()
 		file = open(XBINDKEYS_CONFIG_FILE, "r")
 		for line in file:
 			if found == True:
@@ -85,6 +92,7 @@ class Hotkeys():
 		""" Update the hotkey for 'command' to 'hotkey'. """
 		""" If 'command' is not found, add it with the new 'hotkey'. """
 		""" Return 'True' on success, 'False' otherwise. """
+		self.__touch_config_file()
 		oldfile = open(XBINDKEYS_CONFIG_FILE, "r")
 		newfile = open(XBINDKEYS_CONFIG_FILE + ".new", "w")
 		# Search for command
@@ -112,6 +120,7 @@ class Hotkeys():
 	def __remove_hotkey(self, command):
 		""" Remove the hotkey for 'command' (and 'command' too, of course). """
 		""" Return 'True' on success, 'False' otherwise. """
+		self.__touch_config_file()
 		oldfile = open(XBINDKEYS_CONFIG_FILE, "r")
 		newfile = open(XBINDKEYS_CONFIG_FILE + ".new", "w")
 		commandfound = False
