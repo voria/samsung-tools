@@ -21,6 +21,8 @@
 
 import ConfigParser
 
+from backends.globals import *
+
 # Options defaults
 WIRELESS_TOGGLE_METHOD_DEFAULT = "iwconfig"
 WIRELESS_DEVICE_DEFAULT = "wlan0"

@@ -21,12 +21,16 @@
 
 import ConfigParser
 
+from backends.globals import *
+
 # Options defaults
+USE_HOTKEYS_DEFAULT = "true"
 BACKLIGHT_HOTKEY_DEFAULT = "XF86Launch1"
 BLUETOOTH_HOTKEY_DEFAULT = "XF86Launch2"
 FAN_HOTKEY_DEFAULT = "XF86Launch3"
 WEBCAM_HOTKEY_DEFAULT = "<Alt>KP_Insert"
 WIRELESS_HOTKEY_DEFAULT = "XF86WLAN"
+USE_HOTKEYS_ACCEPTED_VALUES = ['true', 'false']
 
 class SessionConfig():
 	""" Manage session service configuration file """
@@ -40,12 +44,17 @@ class SessionConfig():
 			# Use default options
 			sessionlog.write("WARNING: 'SessionConfig()' - '" + configfile + "' not found. Using default values for all options.")
 			self.config.add_section("Main")
+			self.config.set("Main", "USE_HOTKEYS", USE_HOTKEYS_DEFAULT)
 			self.config.set("Main", "BACKLIGHT_HOTKEY", BACKLIGHT_HOTKEY_DEFAULT)
 			self.config.set("Main", "BLUETOOTH_HOTKEY", BLUETOOTH_HOTKEY_DEFAULT)
 			self.config.set("Main", "FAN_HOTKEY", FAN_HOTKEY_DEFAULT)
 			self.config.set("Main", "WEBCAM_HOTKEY", WEBCAM_HOTKEY_DEFAULT)
 			self.config.set("Main", "WIRELESS_HOTKEY", WIRELESS_HOTKEY_DEFAULT)
 		# Check if all options are specified in the config file
+		try:
+			self.config.get("Main", "USE_HOTKEYS")
+		except:
+			self.config.set("Main", "USE_HOTKEYS", USE_HOTKEYS_DEFAULT)
 		try:
 			self.config.get("Main", "BACKLIGHT_HOTKEY")
 		except:
@@ -66,6 +75,12 @@ class SessionConfig():
 			self.config.get("Main", "WIRELESS_HOTKEY")
 		except:
 			self.config.set("Main", "WIRELESS_HOTKEY", WIRELESS_HOTKEY_DEFAULT)
+		# Options sanity check
+		if self.config.get("Main", "USE_HOTKEYS") not in USE_HOTKEYS_ACCEPTED_VALUES:
+			# Option is invalid, set default value
+			sessionlog.write("WARNING: 'SessionConfig()' - 'USE_HOTKEYS' option specified in '" + configfile + 
+					"' is invalid. Using default value ('" + USE_HOTKEYS_DEFAULT + "').")
+			self.config.set("Main", "USE_HOTKEYS", USE_HOTKEYS_DEFAULT)
 		
 	def __write(self):
 		""" Write on disk the config file. """
@@ -79,6 +94,7 @@ class SessionConfig():
 			"\n",
 			"[Main]\n",
 			"# Hotkeys configuration\n",
+			"USE_HOTKEYS=%s\n" % self.config.get("Main", "USE_HOTKEYS"),
 			"BACKLIGHT_HOTKEY=%s\n" % self.config.get("Main", "BACKLIGHT_HOTKEY"),
 			"BLUETOOTH_HOTKEY=%s\n" % self.config.get("Main", "BLUETOOTH_HOTKEY"),
 			"FAN_HOTKEY=%s\n" % self.config.get("Main", "FAN_HOTKEY"),
@@ -92,6 +108,10 @@ class SessionConfig():
 		except:
 			sessionlog.write("ERROR: 'SessionConfig().__write()' - cannot write new config file.")
 			return False
+	
+	def getUseHotkeys(self):
+		""" Return the USE_HOTKEYS option. """
+		return self.config.get("Main", "USE_HOTKEYS")
 	
 	def getBacklightHotkey(self):
 		""" Return the BACKLIGHT_HOTKEY option. """
@@ -112,6 +132,16 @@ class SessionConfig():
 	def getWirelessHotkey(self):
 		""" Return the WIRELESS_HOTKEY option. """
 		return self.config.get("Main", "WIRELESS_HOTKEY")
+	
+	def setUseHotkeys(self, value):
+		""" Set the USE_HOTKEYS option. """
+		""" Return 'True' on success, 'False' otherwise. """
+		if value == "default": # set default
+			value = USE_HOTKEYS_DEFAULT
+		if value not in USE_HOTKEYS_ACCEPTED_VALUES:
+			return False
+		self.config.set("Main", "USE_HOTKEYS", value)
+		return self.__write()
 	
 	def setBacklightHotkey(self, hotkey):
 		""" Set the BACKLIGHT_HOTKEY option. """

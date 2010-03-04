@@ -28,6 +28,15 @@ class Options(dbus.service.Object):
 	def __init__(self, conn = None, object_path = None, bus_name = None):
 		dbus.service.Object.__init__(self, conn, object_path, bus_name)
 	
+	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = None, out_signature = 'b',
+						sender_keyword = 'sender', connection_keyword = 'conn')
+	def GetUseHotkeys(self, sender = None, conn = None):
+		""" Return 'True' if hotkeys are enabled, 'False' otherwise. """
+		if sessionconfig.getUseHotkeys() == "true":
+			return True
+		else:
+			return False
+	
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = None, out_signature = 's',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def GetBacklightHotkey(self, sender = None, conn = None):
@@ -57,6 +66,16 @@ class Options(dbus.service.Object):
 	def GetWirelessHotkey(self, sender = None, conn = None):
 		""" Return the current hotkey for wireless control. """
 		return sessionconfig.getWirelessHotkey()
+	
+	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 'b', out_signature = 'b',
+						sender_keyword = 'sender', connection_keyword = 'conn')
+	def SetUseHotkeys(self, value, sender = None, conn = None):
+		""" Return 'True' on success, 'False' otherwise. """
+		# TODO: enable/disable hotkey (using xbindkeys?)
+		if value == True:
+			return sessionconfig.setUseHotkeys("true")
+		else:
+			return sessionconfig.setUseHotkeys("false")
 	
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 's', out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
