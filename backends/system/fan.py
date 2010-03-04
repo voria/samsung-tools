@@ -35,21 +35,23 @@ class Fan(dbus.service.Object):
 	def IsAvailable(self, sender = None, conn = None):
 		""" Check if the CPU fan control is available. """
 		""" Return 'True' if available, 'False' otherwise. """
-		if os.path.exists('/proc/easy_slow_down_manager'):
+		if os.path.exists(ESDM_PATH_FAN):
 			return True
 		else:
 			# Try to load easy-slow-down-manager module
 			try:
-				process = subprocess.Popen(['/sbin/modprobe', 'easy_slow_down_manager'],
+				process = subprocess.Popen([COMMAND_MODPROBE, ESDM_MODULE],
 										stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 				process.communicate()
 				if process.returncode != 0:
-					log_system.write("ERROR: 'Fan.IsAvailable()' - COMMAND: 'modprobe easy_slow_down_manager' FAILED.")
+					command = COMMAND_MODPROBE + " " + ESDM_MODULE
+					systemlog.write("ERROR: 'Fan.IsAvailable()' - COMMAND: '" + command + "' FAILED.")
 					return False
 				else:
 					return True
 			except:
-				log_system.write("ERROR: 'Fan.IsAvailable()' - COMMAND: 'modprobe easy_slow_down_manager' - Exception thrown.")
+				command = COMMAND_MODPROBE + " " + ESDM_MODULE
+				systemlog.write("ERROR: 'Fan.IsAvailable()' - COMMAND: '" + command + "' - Exception thrown.")
 				return False	
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'i',
@@ -61,55 +63,55 @@ class Fan(dbus.service.Object):
 		if not self.IsAvailable():
 			return 3
 		try:
-			with open('/proc/easy_slow_down_manager', 'r') as file:
+			with open(ESDM_PATH_FAN, 'r') as file:
 				return int(file.read(1))
 		except:
-			log_system.write("ERROR: 'Fan.Status()' - cannot read from '/proc/easy_slow_down_manager'.")
+			systemlog.write("ERROR: 'Fan.Status()' - cannot read from '" + ESDM_PATH_FAN + "'.")
 			return 3
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def SetNormal(self, sender = None, conn = None):
-		""" Turn to 'normal' mode. """
+		""" Set 'normal' mode. """
 		""" Return 'True' on success, 'False' otherwise. """
 		if not self.IsAvailable():
 			return False
 		try:
-			with open('/proc/easy_slow_down_manager', 'w') as file:
+			with open(ESDM_PATH_FAN, 'w') as file:
 				file.write('0')
 			return True
 		except:
-			log_system.write("ERROR: 'Fan.SetNormal()' - cannot write to '/proc/easy_slow_down_manager'.")
+			systemlog.write("ERROR: 'Fan.SetNormal()' - cannot write to '" + ESDM_PATH_FAN + "'.")
 			return False
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def SetSilent(self, sender = None, conn = None):
-		""" Turn to 'silent' mode. """
+		""" Set 'silent' mode. """
 		""" Return 'True' on success, 'False' otherwise. """
 		if not self.IsAvailable():
 			return False
 		try:
-			with open('/proc/easy_slow_down_manager', 'w') as file:
+			with open(ESDM_PATH_FAN, 'w') as file:
 				file.write('1')
 			return True
 		except:
-			log_system.write("ERROR: 'Fan.SetSilent()' - cannot write to '/proc/easy_slow_down_manager'.")
+			systemlog.write("ERROR: 'Fan.SetSilent()' - cannot write to '" + ESDM_PATH_FAN + "'.")
 			return False
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def SetSpeed(self, sender = None, conn = None):
-		""" Turn to 'speed' mode. """
+		""" Set 'speed' mode. """
 		""" Return 'True' on success, 'False' otherwise. """
 		if not self.IsAvailable():
 			return False
 		try:
-			with open('/proc/easy_slow_down_manager', 'w') as file:
+			with open(ESDM_PATH_FAN, 'w') as file:
 				file.write('2')
 			return True
 		except:
-			log_system.write("ERROR: 'Fan.SetSpeed()' - cannot write to '/proc/easy_slow_down_manager'.")
+			systemlog.write("ERROR: 'Fan.SetSpeed()' - cannot write to '" + ESDM_PATH_FAN + "'.")
 			return False
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
@@ -127,4 +129,3 @@ class Fan(dbus.service.Object):
 		if current == 2:
 			return self.SetNormal()
 		return False
-	

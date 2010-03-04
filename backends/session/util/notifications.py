@@ -23,46 +23,44 @@ from backends.globals import *
 
 try:
 	import pynotify
+	method = "pynotify"
 except:
-	log_session.write("ERROR: 'notifications'  - cannot import pynotify.")
+	sessionlog.write("ERROR: 'notifications'  - cannot import pynotify.")
+	method = None
 	pass
 
 class Notification():
+	""" Show user's notifications. """
 	def __init__(self, title = None, message = None, icon = None, urgency = "normal"):
-		self.initialized = True
-		try:
+		self.initialized = False # Is notification system initialized
+		if method == "pynotify":
 			if not pynotify.init("Samsung-Tools Notification System"):
-				self.initialized = False
-				log_session.write("ERROR: 'Notification()'  - cannot initialize pynotify.")
+				sessionlog.write("ERROR: 'Notification()'  - cannot initialize pynotify.")
 				return
-		except:
-			self.initialized = False
-			return
-		# Create a new notification
-		self.notify = pynotify.Notification(" ")
-		# Set initial values
-		self.setTitle(title)
-		self.setMessage(message)
-		self.setIcon(icon)
-		self.setUrgency(urgency)
+			# Create a new notification
+			self.notify = pynotify.Notification(" ")
+			# Set initial values
+			self.setTitle(title)
+			self.setMessage(message)
+			self.setIcon(icon)
+			self.setUrgency(urgency)
+			self.initialized = True
 
 	def setTitle(self, title):
-		if not self.initialized:
-			return
+		""" Set notification's title. """ 
 		self.title = title
 
 	def setMessage(self, message):
-		if not self.initialized:
-			return
+		""" Set notification's message. """
 		self.message = message
 
 	def setIcon(self, icon):
-		if not self.initialized:
-			return
+		""" Set notification's icon. """
 		self.icon = icon
 
 	def setUrgency(self, urgency):
-		if not self.initialized:
+		""" Set notification's urgency. """
+		if method != "pynotify":
 			return
 		if urgency == "low":
 			self.urgency = pynotify.URGENCY_LOW
@@ -74,11 +72,10 @@ class Notification():
 			self.urgency = None
 	
 	def show(self):
-		if not self.initialized:
+		if not self.initialized or method == None or self.title == None or self.message == None:
 			return
-		if self.title == None or self.message == None:
-			return
-		self.notify.update(self.title, self.message, self.icon)
-		if self.urgency != None:
-			self.notify.set_urgency(self.urgency)
-		self.notify.show()
+		if method == "pynotify":
+			self.notify.update(self.title, self.message, self.icon)
+			if self.urgency != None:
+				self.notify.set_urgency(self.urgency)
+			self.notify.show()

@@ -24,50 +24,66 @@ import subprocess
 import dbus.service
 
 from backends.globals import *
-from backends.system.util.config import SystemConfig
 
 class Wireless(dbus.service.Object):
 	""" Control wireless """
 	def __init__(self, conn = None, object_path = None, bus_name = None):
 		dbus.service.Object.__init__(self, conn, object_path, bus_name)
-		# Set wireless toggling method to use
-		config = SystemConfig(SYSTEM_CONFIG_FILE)
-		self.method = config.getWirelessToggleMethod()
-		self.device = config.getWirelessDevice()
-		self.module = config.getWirelessModule()
+		# Try to load the easy-slow-down-manager interface.
+		# Even if it may not be used for wireless, it's used for other devices.
+			
+	def __load_esdm_module(self):
+		""" Load the easy-slow-down-manager kernel module. """
+		""" Return 'True' on success, 'False' otherwise. """
+		if os.path.exists(ESDM_PATH_WIRELESS):
+			return True # already loaded
+		try:
+			process = subprocess.Popen([COMMAND_MODPROBE, ESDM_MODULE],
+									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+			process.communicate()
+			if process.returncode != 0:
+				command = COMMAND_MODPROBE + " " + ESDM_MODULE
+				systemlog.write("ERROR: 'Wireless.__load_esdm_module()' - COMMAND: '" + command + "' FAILED.")
+				return False
+			else:
+				return True
+		except:
+			command = COMMAND_MODPROBE + " " + ESDM_MODULE
+			systemlog.write("ERROR: 'Wireless.__load_esdm_module()' - COMMAND: '" + command + "' - Exception thrown.")
+			return False
+	
+	def __save_last_status(self, status):
+		""" Save wireless last status. """
+		try:
+			if status == True:
+				if os.path.exists(LAST_DEVICE_STATUS_WIRELESS):
+					os.remove(LAST_DEVICE_STATUS_WIRELESS)
+			else:
+				file = open(SYSTEM_DEVICE_STATUS_WIRELESS, "w")
+				file.close()
+		except:
+			systemlog.write("WARNING: 'Wireless.__save_last_status()' - Cannot save last status.")
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def IsAvailable(self, sender = None, conn = None):
 		""" Check if wireless is available. """
 		""" Return 'True' if available, 'False' otherwise. """
+		if self.__load_esdm_module() == True:
+			return True
+		# FIXME: Find a better way to check if wireless is available
 		try:
-			process = subprocess.Popen(['/usr/bin/lspci'], stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+			process = subprocess.Popen([COMMAND_LSPCI], stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 			output = process.communicate()[0].split()
-			if "Wireless" in output:
-				# if method is to use easy-slow-down-manager, check if it's actually available
-				if self.method == "esdm":
-					if os.path.exists('/proc/easy_wifi_kill'):
-						return True
-					else:
-						# Try to load easy-slow-down-manager module
-						try:
-							process = subprocess.Popen(['/sbin/modprobe', 'easy_slow_down_manager'],
-													stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-							process.communicate()
-							if process.returncode != 0:
-								log_system.write("ERROR: 'Wireless.IsAvailable()' - COMMAND: 'modprobe easy_slow_down_manager' FAILED.")
-								return False
-							else:
-								return True
-						except:
-							log_system.write("ERROR: 'Wireless.IsAvailable()' - COMMAND: 'modprobe easy_slow_down_manager' - Exception thrown.")
-							return False			
-				return True	# other control methods should always be available
-			else: # "Wireless" NOT in output, no wireless card is available
+			if process.returncode != 0:
+				systemlog.write("ERROR: 'Wireless.IsAvailable()' - COMMAND: '" + COMMAND_LSPCI + "' FAILED.")
+				return False			
+			if not "Wireless" in output:
 				return False
+			else:
+				return True
 		except:
-			log_system.write("ERROR: 'Wireless.IsAvailable()' - COMMAND: 'lspci' - Exception thrown.")
+			systemlog.write("ERROR: 'Wireless.IsAvailable()' - COMMAND: '" + COMMAND_LSPCI + "' - Exception thrown.")
 			return False
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
@@ -78,39 +94,49 @@ class Wireless(dbus.service.Object):
 		if not self.IsAvailable():
 			return False
 		if self.method == "iwconfig":
+			device = systemconfig.getWirelessDevice()
 			try:
-				process = subprocess.Popen(['/sbin/iwconfig', self.device],
+				process = subprocess.Popen([COMMAND_IWCONFIG, device],
 										stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 				output = process.communicate()[0].split()
+				if process.returncode != 0:
+					command = COMMAND_IWCONFIG + " " + device
+					systemlog.write("ERROR: 'Wireless.IsEnabled()' - COMMAND: '" + command + "' FAILED.")
+					return False
 				if "Tx-Power=off" in output:
 					return False
 				else:
 					return True
 			except:
-				log_system.write("ERROR: 'Wireless.IsEnabled()' - 'iwconfig " + self.device + "' - Exception thrown.")
+				command = COMMAND_IWCONFIG + " " + device
+				systemlog.write("ERROR: 'Wireless.IsEnabled()' - COMMAND: '" + command + "' - Exception thrown.")
 				return False
 		elif self.method == "module":
+			module = systemconfig.getWirelessModule()
 			try:
-				process = subprocess.Popen(['/sbin/lsmod'],
+				process = subprocess.Popen([COMMAND_LSMOD],
 										stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 				output = process.communicate()[0].split()
-				if self.module in output:
+				if process.returncode != 0:
+					systemlog.write("ERROR: 'Wireless.IsEnabled()' - COMMAND: '" + COMMAND_LSMOD + "' FAILED.")
+					return False
+				if module in output:
 					return True
 				else:
 					return False
 			except:
-				log_system.write("ERROR: 'Wireless.IsEnabled()' - 'lsmod' - Exception thrown.")
+				systemlog.write("ERROR: 'Wireless.IsEnabled()' - COMMAND: '" + COMMAND_LSMOD + "' - Exception thrown.")
 				return False
 		else: # self.method == "esdm":
 			try:
-				with open('/proc/easy_wifi_kill', 'r') as file:
+				with open(ESDM_PATH_WIRELESS, 'r') as file:
 					result = int(file.read(1))
 					if result == 0:
 						return False
 					else:
 						return True
 			except:
-				log_system.write("ERROR: 'Wireless.IsEnabled()' - cannot read from '/proc/easy_wifi_kill'.")
+				systemlog.write("ERROR: 'Wireless.IsEnabled()' - cannot read from '" + ESDM_PATH_WIRELESS + "'.")
 				return False
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
@@ -124,56 +150,41 @@ class Wireless(dbus.service.Object):
 			return True
 		if self.method == "iwconfig":
 			try:
-				process = subprocess.Popen(['/sbin/iwconfig', self.device, 'txpower', 'auto'],
+				device = systemconfig.getWirelessDevice()
+				process = subprocess.Popen([COMMAND_IWCONFIG, device, 'txpower', 'auto'],
 										stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 				process.communicate()
 				if process.returncode != 0:
-					log_system.write("ERROR: 'Wireless.Enable()' - COMMAND: 'iwconfig " + self.device + " txpower auto' FAILED.")
+					command = COMMAND_IWCONFIG + " " + device + " txpower auto"
+					systemlog.write("ERROR: 'Wireless.Enable()' - COMMAND: '" + command + "' FAILED.")
 					return False
-				else:
-					# Save last status
-					try:
-						file = open(SYSTEM_DEVICE_STATUS_WIRELESS, "w")
-						file.close()
-					except:
-						log_system.write("ERROR: 'Wireless.Enable()' - Cannot save last status.")
-					return True
 			except:
-				log_system.write("ERROR: 'Wireless.Enable()' - COMMAND: 'iwconfig " + self.device + " txpower auto' - Exception thrown.")
+				command = COMMAND_IWCONFIG + " " + device + " txpower auto"
+				systemlog.write("ERROR: 'Wireless.Enable()' - COMMAND: '" + command + "' - Exception thrown.")
 				return False
 		elif self.method == "module":
 			try:
-				process = subprocess.Popen(['/sbin/modprobe', self.module],
+				module = systemconfig.getWirelessModule()
+				process = subprocess.Popen([COMMAND_MODPROBE, module],
 										stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 				process.communicate()
 				if process.returncode != 0:
-					log_system.write("ERROR: 'Wireless.Enable()' - COMMAND: 'modprobe " + self.module + "' FAILED.")
+					command = COMMAND_MODPROBE + " " + module
+					systemlog.write("ERROR: 'Wireless.Enable()' - COMMAND: '" + command + "' FAILED.")
 					return False
-				else:
-					# Save last status
-					try:
-						file = open(SYSTEM_DEVICE_STATUS_WIRELESS, "w")
-						file.close()
-					except:
-						log_system.write("ERROR: 'Wireless.Enable()' - Cannot save last status.")
-					return True
 			except:
 				log_system.write("ERROR: 'Wireless.Enable()' - COMMAND: 'modprobe " + self.module + "' - Exception thrown.")
 				return False
 		else: # self.method == "esdm":
 			try:
-				with open('/proc/easy_wifi_kill', 'w') as file:
+				with open(ESDM_PATH_WIRELESS, 'w') as file:
 					file.write('1')
-				# Save last status
-				try:
-					file = open(SYSTEM_DEVICE_STATUS_WIRELESS, "w")
-					file.close()
-				except:
-					log_system.write("ERROR: 'Wireless.Enable()' - Cannot save last status.")
-				return True
 			except:
-				log_system.write("ERROR: 'Wireless.Enable()' - cannot write to '/proc/easy_wifi_kill'.")
+				systemlog.write("ERROR: 'Wireless.Enable()' - cannot write to '" + ESDM_PATH_WIRELESS + "'.")
 				return False
+		# Save wireless status
+		self.__save_last_status(True)
+		return True
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
@@ -186,53 +197,42 @@ class Wireless(dbus.service.Object):
 			return True
 		if self.method == "iwconfig":
 			try:
-				process = subprocess.Popen(['/sbin/iwconfig', self.device, 'txpower', 'off'],
+				device = systemconfig.getWirelessDevice()
+				process = subprocess.Popen([COMMAND_IWCONFIG, device, 'txpower', 'off'],
 										stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 				process.communicate()
 				if process.returncode != 0:
-					log_system.write("ERROR: 'Wireless.Disable()' - COMMAND: 'iwconfig " + self.device + " txpower off' FAILED.")
+					command = COMMAND_IWCONFIG + " " + device + " txpower off"
+					systemlog.write("ERROR: 'Wireless.Disable()' - COMMAND: '" + command + "' FAILED.")
 					return False
-				else:
-					# Set last status
-					try:
-						os.remove(SYSTEM_DEVICE_STATUS_WIRELESS)
-					except:
-						pass
-					return True
 			except:
-				log_system.write("ERROR: 'Wireless.Disable()' - COMMAND: 'iwconfig " + self.device + " txpower off' - Exception thrown.")
+				command = COMMAND_IWCONFIG + " " + device + " txpower off"
+				systemlog.write("ERROR: 'Wireless.Disable()' - COMMAND: '" + command + "' - Exception thrown.")
 				return False
 		elif self.method == "module":
 			try:
-				process = subprocess.Popen(['/sbin/modprobe', '-r', self.module],
+				module = systemconfig.getWirelessModule()
+				process = subprocess.Popen([COMMAND_MODPROBE, '-r', module],
 										stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 				process.communicate()
 				if process.returncode != 0:
-					log_system.write("ERROR: 'Wireless.Disable()' - COMMAND: 'modprobe -r " + self.module + "' FAILED.")
+					command = COMMAND_MODPROBE + " -r " + module
+					systemlog.write("ERROR: 'Wireless.Disable()' - COMMAND: '" + command + "' FAILED.")
 					return False
-				else:
-					# Set last status
-					try:
-						os.remove(SYSTEM_DEVICE_STATUS_WIRELESS)
-					except:
-						pass
-					return True
 			except:
-				log_system.write("ERROR: 'Wireless.Disable()' - COMMAND: 'modprobe -r " + self.module + "' - Exception thrown.")
+				command = COMMAND_MODPROBE + " -r " + module
+				systemlog.write("ERROR: 'Wireless.Disable()' - COMMAND: '" + command + "' - Exception thrown.")
 				return False
 		else: # self.method == "esdm":
 			try:
-				with open('/proc/easy_wifi_kill', 'w') as file:
+				with open(ESDM_PATH_WIRELESS, 'w') as file:
 					file.write('0')
-				# Set last status
-				try:
-					os.remove(SYSTEM_DEVICE_STATUS_WIRELESS)
-				except:
-					pass
-				return True
 			except:
-				log_system.write("ERROR: 'Wireless.Disable()' - cannot write to '/proc/easy_wifi_kill'.")
+				systemlog.write("ERROR: 'Wireless.Disable()' - cannot write to '" + ESDM_PATH_WIRELESS + "'.")
 				return False
+		# Save wireless status
+		self.__save_last_status(False)
+		return True
 			
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')

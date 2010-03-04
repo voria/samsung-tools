@@ -19,9 +19,6 @@
 # See the GNU General Public License for more details.
 # <http://www.gnu.org/licenses/gpl.txt>
 
-import os
-import shutil
-
 import gobject
 
 import dbus
@@ -29,7 +26,7 @@ import dbus.service
 import dbus.mainloop.glib
 
 from backends.globals import *
-from backends.session.hotkeys import Hotkeys
+from backends.session.options import Options
 from backends.session.backlight import Backlight
 from backends.session.bluetooth import Bluetooth
 from backends.session.fan import Fan
@@ -42,12 +39,21 @@ mainloop = None
 class General(dbus.service.Object):
 	def __init__(self, conn = None, object_path = None, bus_name = None):
 		dbus.service.Object.__init__(self, conn, object_path, bus_name)
-		self.mainloop = None
+		# Check if user's directory exists
+		import os
+		import shutil
+		if not os.path.exists(USER_DIRECTORY):
+			os.mkdir(USER_DIRECTORY)
+			shutil.copy(SESSION_CONFIG_FILE, USER_CONFIG_FILE)
+		else:
+			# Directory exists; check if config file exists too
+			if not os.path.exists(USER_CONFIG_FILE):
+				shutil.copy(SESSION_CONFIG_FILE, USER_CONFIG_FILE)
 	
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = None, out_signature = None,
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Exit(self, sender = None, conn = None):
-		# Exit the system service too, while developing.
+		# Exit the system service too, for developing purposes.
 		# TODO: remember to remove this code.
 		try:
 			system_bus = dbus.SystemBus()
@@ -61,16 +67,6 @@ class General(dbus.service.Object):
 
 if __name__ == '__main__':
 	dbus.mainloop.glib.DBusGMainLoop(set_as_default = True)
-
-	# Check if user's directory exists
-	if not os.path.exists(USER_DIRECTORY):
-		os.mkdir(USER_DIRECTORY)
-		shutil.copy(SESSION_CONFIG_FILE, USER_CONFIG_FILE)
-	else:
-		# Directory exists; check if config file exists too
-		if not os.path.exists(USER_CONFIG_FILE):
-			shutil.copy(SESSION_CONFIG_FILE, USER_CONFIG_FILE)
-	# Everything's ok
 			
 	# Initialize notification system
 	notify = Notification()
@@ -81,7 +77,7 @@ if __name__ == '__main__':
     
 	General(session_bus, SESSION_OBJECT_PATH_GENERAL)
 	Backlight(session_bus, SESSION_OBJECT_PATH_BACKLIGHT)
-	Hotkeys(session_bus, SESSION_OBJECT_PATH_HOTKEYS)
+	Options(session_bus, SESSION_OBJECT_PATH_OPTIONS)
 	Bluetooth(notify, session_bus, SESSION_OBJECT_PATH_BLUETOOTH)
 	Fan(notify, session_bus, SESSION_OBJECT_PATH_FAN)
 	Webcam(notify, session_bus, SESSION_OBJECT_PATH_WEBCAM)

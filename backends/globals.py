@@ -19,44 +19,75 @@
 # See the GNU General Public License for more details.
 # <http://www.gnu.org/licenses/gpl.txt>
 
-import os
+from backends.session.util.config import SessionConfig
+from backends.system.util.config import SystemConfig
 
 from backends.log import Log
 
 APP_NAME = "Samsung Tools"
-APP_VERSION = "0.1-alpha"
+APP_VERSION = "0.1-alpha1"
+WORK_DIRECTORY = "/usr/lib/samsung-tools/"
 
-SYSTEM_DIRECTORY = "/usr/lib/samsung-tools/"
-SYSTEM_DEVICE_STATUS_DIRECTORY = os.path.join(SYSTEM_DIRECTORY, "devices-status")
-SYSTEM_DEVICE_STATUS_BLUETOOTH = os.path.join(SYSTEM_DEVICE_STATUS_DIRECTORY, "bluetooth") 
-SYSTEM_DEVICE_STATUS_WEBCAM = os.path.join(SYSTEM_DEVICE_STATUS_DIRECTORY, "webcam")
-SYSTEM_DEVICE_STATUS_WIRELESS = os.path.join(SYSTEM_DEVICE_STATUS_DIRECTORY, "wireless")
-SYSTEM_CONFIG_FILE = "/etc/samsung-tools/system.conf"
-SYSTEM_LOG_FILE = "/var/log/samsung-tools.log"
-log_system = Log(SYSTEM_LOG_FILE)
-
+###
+### Session service
+###
 SESSION_CONFIG_FILE = "/etc/samsung-tools/session.conf"
-try: # system service fails when trying to join $HOME, anyway this is needed only by session service
+try: # system service fails when trying to get $HOME environment variable. It doesn't need these infos anyway
+	import os
 	USER_DIRECTORY = os.path.join(os.getenv('HOME'), ".samsung-tools")
 	USER_CONFIG_FILE = os.path.join(USER_DIRECTORY, os.path.basename(SESSION_CONFIG_FILE))
 	SESSION_LOG_FILE = os.path.join(USER_DIRECTORY, "log")
-	log_session = Log(SESSION_LOG_FILE)
+	sessionlog = Log(SESSION_LOG_FILE)
+	sessionconfig = SessionConfig(USER_CONFIG_FILE)
 except:
-	pass
-
+	pass 
+# Interface/Objects
 SESSION_INTERFACE_NAME = "org.voria.SamsungTools.Session"
 SESSION_OBJECT_PATH_GENERAL = "/"
-SESSION_OBJECT_PATH_HOTKEYS = "/Hotkeys"
+SESSION_OBJECT_PATH_OPTIONS = "/Options"
 SESSION_OBJECT_PATH_BACKLIGHT = "/Device/Backlight"
 SESSION_OBJECT_PATH_BLUETOOTH = "/Device/Bluetooth"
 SESSION_OBJECT_PATH_FAN = "/Device/Fan"
 SESSION_OBJECT_PATH_WEBCAM = "/Device/Webcam"
 SESSION_OBJECT_PATH_WIRELESS = "/Device/Wireless"
 
+###
+### System service
+###
+# Interface/Objects
 SYSTEM_INTERFACE_NAME = "org.voria.SamsungTools.System"
 SYSTEM_OBJECT_PATH_GENERAL = "/"
+SYSTEM_OBJECT_PATH_OPTIONS = "/Options"
 SYSTEM_OBJECT_PATH_BACKLIGHT = "/Device/Backlight"
 SYSTEM_OBJECT_PATH_BLUETOOTH = "/Device/Bluetooth"
 SYSTEM_OBJECT_PATH_FAN = "/Device/Fan"
 SYSTEM_OBJECT_PATH_WEBCAM = "/Device/Webcam"
 SYSTEM_OBJECT_PATH_WIRELESS = "/Device/Wireless"
+
+SYSTEM_CONFIG_FILE = "/etc/samsung-tools/system.conf"
+SYSTEM_LOG_FILE = "/var/log/samsung-tools.log"
+systemlog = Log(SYSTEM_LOG_FILE)
+systemconfig = SystemConfig(SYSTEM_CONFIG_FILE)
+# Last devices' status files
+LAST_DEVICES_STATUS_DIRECTORY = os.path.join(WORK_DIRECTORY, "devices-status")
+LAST_DEVICE_STATUS_BACKLIGHT = os.path.join(LAST_DEVICES_STATUS_DIRECTORY, "backlight")
+LAST_DEVICE_STATUS_BLUETOOTH = os.path.join(LAST_DEVICES_STATUS_DIRECTORY, "bluetooth") 
+LAST_DEVICE_STATUS_WEBCAM = os.path.join(LAST_DEVICES_STATUS_DIRECTORY, "webcam")
+LAST_DEVICE_STATUS_WIRELESS = os.path.join(LAST_DEVICES_STATUS_DIRECTORY, "wireless")
+# Commands:
+# system service needs commands to be specified with absolute paths,
+# or else it will fail to find them.
+COMMAND_MODPROBE = "/sbin/modprobe"
+COMMAND_VBETOOL = "/usr/sbin/vbetool"
+COMMAND_LSMOD = "/sbin/lsmod"
+COMMAND_LSUSB = "/usr/sbin/lsusb"
+COMMAND_LSPCI = "/usr/bin/lspci"
+COMMAND_DMESG = "/bin/dmesg"
+COMMAND_SERVICE = "/usr/sbin/service"
+COMMAND_HCICONFIG = "/usr/sbin/hciconfig"
+COMMAND_IWCONFIG = "/sbin/iwconfig"
+# Easy slow down manager interface
+ESDM_MODULE = "easy_slow_down_manager"
+ESDM_PATH_BACKLIGHT = "/proc/easy_backlight"
+ESDM_PATH_FAN = "/proc/easy_slow_down_manager"
+ESDM_PATH_WIRELESS = "/proc/easy_wifi_kill"

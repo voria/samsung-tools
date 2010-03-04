@@ -91,7 +91,7 @@ class Fan(dbus.service.Object):
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 'b', out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def SetNormal(self, show_notify = True, sender = None, conn = None):
-		""" Turn to 'normal' mode. """
+		""" Set 'normal' mode. """
 		""" Return 'True' on success, 'False' otherwise. """
 		if not self.IsAvailable():
 			return self.__not_available(show_notify)
@@ -112,7 +112,7 @@ class Fan(dbus.service.Object):
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 'b', out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def SetSilent(self, show_notify = True, sender = None, conn = None):
-		""" Turn to 'silent' mode. """
+		""" Set 'silent' mode. """
 		""" Return 'True' on success, 'False' otherwise. """
 		if not self.IsAvailable():
 			return self.__not_available(show_notify)
@@ -133,7 +133,7 @@ class Fan(dbus.service.Object):
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 'b', out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def SetSpeed(self, show_notify = True, sender = None, conn = None):
-		""" Turn to 'speed' mode. """
+		""" Set 'speed' mode. """
 		""" Return 'True' on success, 'False' otherwise. """
 		if not self.IsAvailable():
 			return self.__not_available(show_notify)
@@ -164,7 +164,7 @@ class Fan(dbus.service.Object):
 			self.notify.setTitle(FAN_TITLE)
 			self.notify.setUrgency("critical")
 			if result == True:
-				status = self.Status(False) # Do not show notification				
+				status = self.interface.Status()				
 				if status == 0:
 					self.notify.setMessage(FAN_SWITCH_NORMAL)
 					self.notify.setIcon(FAN_NORMAL_ICON)

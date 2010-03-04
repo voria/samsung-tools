@@ -66,8 +66,5 @@ class Backlight(dbus.service.Object):
 	def Toggle(self, sender = None, conn = None):
 		""" Toggle backlight. """
 		""" Return 'True' on success, 'False' otherwise. """
-		if self.IsEnabled():
-			return self.Disable()
-		else:
-			return self.Enable()
-		
+		self.__connect()
+		return self.interface.Toggle()

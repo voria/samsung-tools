@@ -92,7 +92,7 @@ class Wireless(dbus.service.Object):
 		if self.notify != None and show_notify:
 			self.notify.setTitle(WIRELESS_TITLE)
 			self.notify.setUrgency("critical")
-			if result == 1:
+			if result == True:
 				self.notify.setIcon(WIRELESS_ENABLED_ICON)
 				self.notify.setMessage(WIRELESS_ENABLED)
 			else:
@@ -114,7 +114,7 @@ class Wireless(dbus.service.Object):
 			self.notify.setTitle(WIRELESS_TITLE)
 			self.notify.setIcon(WIRELESS_DISABLED_ICON)
 			self.notify.setUrgency("critical")
-			if result == 1:
+			if result == True:
 				self.notify.setMessage(WIRELESS_DISABLED)
 			else:
 				self.notify.setMessage(WIRELESS_DISABLING_ERROR)
@@ -124,12 +124,12 @@ class Wireless(dbus.service.Object):
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 'b', out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Toggle(self, show_notify = True, sender = None, conn = None):
-		""" Toggle bluetooth. """
+		""" Toggle wireless. """
 		""" Return 'True' on success, 'False' otherwise. """
 		if not self.IsAvailable():
 			return self.__not_available(show_notify)
-		enabled = self.IsEnabled(False) # Do not show notification
-		if enabled:
+		self.__connect()
+		if self.interface.IsEnabled():
 			return self.Disable(show_notify)
 		else:
 			return self.Enable(show_notify)

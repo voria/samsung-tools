@@ -2,20 +2,18 @@ install_dir=install -d -m 755
 install_file=install -m 644
 install_script=install -m 755
 
-install:
-	$(install_dir) $(DESTDIR)/usr/lib/samsung-tools/backends/session/util/
-	$(install_file) backends/session/util/*.py $(DESTDIR)/usr/lib/samsung-tools/backends/session/util/
-	$(install_file) backends/session/*.py $(DESTDIR)/usr/lib/samsung-tools/backends/session/
+install: install_services install_cli install_gui
+	
+install_services:
+	$(install_dir) $(DESTDIR)/usr/lib/samsung-tools/backends/
+	$(install_file) backends/*.py $(DESTDIR)/usr/lib/samsung-tools/backends/
 	$(install_dir) $(DESTDIR)/usr/lib/samsung-tools/backends/system/util/
 	$(install_file) backends/system/util/*.py $(DESTDIR)/usr/lib/samsung-tools/backends/system/util/
 	$(install_file) backends/system/*.py $(DESTDIR)/usr/lib/samsung-tools/backends/system/
-	$(install_file) backends/*.py $(DESTDIR)/usr/lib/samsung-tools/backends/
+	$(install_dir) $(DESTDIR)/usr/lib/samsung-tools/backends/session/util/
+	$(install_file) backends/session/util/*.py $(DESTDIR)/usr/lib/samsung-tools/backends/session/util/
+	$(install_file) backends/session/*.py $(DESTDIR)/usr/lib/samsung-tools/backends/session/
 	$(install_script) *-service.py $(DESTDIR)/usr/lib/samsung-tools/
-	$(install_dir) $(DESTDIR)/usr/lib/samsung-tools/gui/glade/
-	$(install_file) gui/glade/*.glade $(DESTDIR)/usr/lib/samsung-tools/gui/glade/
-	$(install_dir) $(DESTDIR)/usr/bin/
-	$(install_script) samsung-tools $(DESTDIR)/usr/bin/
-	$(install_script) samsung-tools-preferences $(DESTDIR)/usr/bin/
 	$(install_dir) $(DESTDIR)/etc/dbus-1/system.d/
 	$(install_file) bus/config/org.voria.SamsungTools.System.conf $(DESTDIR)/etc/dbus-1/system.d/
 	$(install_dir) $(DESTDIR)/usr/share/dbus-1/system-services/
@@ -28,6 +26,16 @@ install:
 	$(install_script) sleep.d/20_samsung-tools $(DESTDIR)/etc/pm/sleep.d/
 	$(install_dir) $(DESTDIR)/etc/init/
 	$(install_file) upstart/samsung-tools.conf $(DESTDIR)/etc/init/
+	
+install_cli: install_services
+	$(install_dir) $(DESTDIR)/usr/bin/
+	$(install_script) samsung-tools.py $(DESTDIR)/usr/bin/samsung-tools
+
+install_gui: install_cli
+	$(install_dir) $(DESTDIR)/usr/lib/samsung-tools/gui/glade/
+	$(install_file) gui/glade/*.glade $(DESTDIR)/usr/lib/samsung-tools/gui/glade/
+	$(install_dir) $(DESTDIR)/usr/bin/
+	$(install_script) samsung-tools-preferences.py $(DESTDIR)/usr/bin/samsung-tools-preferences
 	$(install_dir) $(DESTDIR)/usr/share/applications/
 	$(install_file) desktop/*.desktop $(DESTDIR)/usr/share/applications/
 

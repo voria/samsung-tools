@@ -21,15 +21,15 @@
 
 import ConfigParser
 
-from backends.globals import *
-
+# Options defaults
 BACKLIGHT_HOTKEY_DEFAULT = "XF86Launch1"
 BLUETOOTH_HOTKEY_DEFAULT = "XF86Launch2"
 FAN_HOTKEY_DEFAULT = "XF86Launch3"
-WEBCAM_HOTKEY_DEFAULT = "<Shift><Control><Alt>w"
+WEBCAM_HOTKEY_DEFAULT = "<Alt>KP_Insert"
 WIRELESS_HOTKEY_DEFAULT = "XF86WLAN"
 
 class SessionConfig():
+	""" Manage session service configuration file """
 	def __init__(self, configfile):
 		self.config = ConfigParser.SafeConfigParser()
 		self.configfile = configfile
@@ -38,6 +38,7 @@ class SessionConfig():
 		except:
 			# configfile not found?
 			# Use default options
+			sessionlog.write("WARNING: 'SessionConfig()' - '" + configfile + "' not found. Using default values for all options.")
 			self.config.add_section("Main")
 			self.config.set("Main", "BACKLIGHT_HOTKEY", BACKLIGHT_HOTKEY_DEFAULT)
 			self.config.set("Main", "BLUETOOTH_HOTKEY", BLUETOOTH_HOTKEY_DEFAULT)
@@ -68,6 +69,7 @@ class SessionConfig():
 		
 	def __write(self):
 		""" Write on disk the config file. """
+		""" Return "True" on success, "False" otherwise. """
 		# We don't use the ConfigParser builtin write function,
 		# because it seems to be impossible to add comments to config file.
 		text = [
@@ -82,41 +84,71 @@ class SessionConfig():
 			"FAN_HOTKEY=%s\n" % self.config.get("Main", "FAN_HOTKEY"),
 			"WEBCAM_HOTKEY=%s\n" % self.config.get("Main", "WEBCAM_HOTKEY"),
 			"WIRELESS_HOTKEY=%s\n" % self.config.get("Main", "WIRELESS_HOTKEY")
-			]	
-		with open(self.configfile, "w") as config:
-			config.writelines(text)			
+			]
+		try:
+			with open(self.configfile, "w") as config:
+				config.writelines(text)
+			return True
+		except:
+			sessionlog.write("ERROR: 'SessionConfig().__write()' - cannot write new config file.")
+			return False
 	
 	def getBacklightHotkey(self):
+		""" Return the BACKLIGHT_HOTKEY option. """
 		return self.config.get("Main", "BACKLIGHT_HOTKEY")
 	
 	def getBluetoothHotkey(self):
+		""" Return the BLUETOOTH_HOTKEY option. """
 		return self.config.get("Main", "BLUETOOTH_HOTKEY")
 	
 	def getFanHotkey(self):
+		""" Return the FAN_HOTKEY option. """
 		return self.config.get("Main", "FAN_HOTKEY")
 	
 	def getWebcamHotkey(self):
+		""" Return the WEBCAM_HOTKEY option. """
 		return self.config.get("Main", "WEBCAM_HOTKEY")
 	
 	def getWirelessHotkey(self):
+		""" Return the WIRELESS_HOTKEY option. """
 		return self.config.get("Main", "WIRELESS_HOTKEY")
 	
 	def setBacklightHotkey(self, hotkey):
+		""" Set the BACKLIGHT_HOTKEY option. """
+		""" Return 'True' on success, 'False' otherwise. """
+		if hotkey == "default": # set default
+			hotkey = BACKLIGHT_HOTKEY_DEFAULT
 		self.config.set("Main", "BACKLIGHT_HOTKEY", hotkey)
-		self.__write()
+		return self.__write()
 	
 	def setBluetoothHotkey(self, hotkey):
+		""" Set the BLUETOOTH_HOTKEY option. """
+		""" Return 'True' on success, 'False' otherwise. """
+		if hotkey == "default": # set default
+			hotkey = BLUETOOTH_HOTKEY_DEFAULT
 		self.config.set("Main", "BLUETOOTH_HOTKEY", hotkey)
-		self.__write()
+		return self.__write()
 		
 	def setFanHotkey(self, hotkey):
+		""" Set the FAN_HOTKEY option. """
+		""" Return 'True' on success, 'False' otherwise. """
+		if hotkey == "default": # set default
+			hotkey = FAN_HOTKEY_DEFAULT
 		self.config.set("Main", "FAN_HOTKEY", hotkey)
-		self.__write()
+		return self.__write()
 		
 	def setWebcamHotkey(self, hotkey):
+		""" Set the WEBCAM_HOTKEY option. """
+		""" Return 'True' on success, 'False' otherwise. """
+		if hotkey == "default": # set default
+			hotkey = WEBCAM_HOTKEY_DEFAULT
 		self.config.set("Main", "WEBCAM_HOTKEY", hotkey)
-		self.__write()
+		return self.__write()
 		
 	def setWirelessHotkey(self, hotkey):
+		""" Set the WIRELESS_HOTKEY option. """
+		""" Return 'True' on success, 'False' otherwise. """
+		if hotkey == "default": # set default
+			hotkey = WIRELESS_HOTKEY_DEFAULT
 		self.config.set("Main", "WIRELESS_HOTKEY", hotkey)
-		self.__write()
+		return self.__write()

@@ -30,38 +30,57 @@ class Webcam(dbus.service.Object):
 	def __init__(self, conn = None, object_path = None, bus_name = None):
 		dbus.service.Object.__init__(self, conn, object_path, bus_name)
 	
+	def __save_last_status(self, status):
+		""" Save webcam last status. """
+		try:
+			if status == True:
+				if os.path.exists(LAST_DEVICE_STATUS_WEBCAM):
+					os.remove(LAST_DEVICE_STATUS_WEBCAM)
+			else:
+				file = open(SYSTEM_DEVICE_STATUS_WEBCAM, "w")
+				file.close()
+		except:
+			systemlog.write("WARNING: 'Webcam.__save_last_status()' - Cannot save last status.")
+	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def IsAvailable(self, sender = None, conn = None):
-		""" Check if a webcam is available by parsing the output of dmesg. """
+		""" Check if a webcam is available. """
 		""" Return 'True' if available, 'False' otherwise. """
+		# FIXME: Find a better way to check if webcam is available
 		try:
-			process = subprocess.Popen(['/bin/dmesg'], stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+			process = subprocess.Popen([COMMAND_DMESG], stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 			output = process.communicate()[0].split('\n')
+			if process.returncode != 0:
+				systemlog.write("ERROR: 'Webcam.IsAvailable()' - COMMAND: '" + COMMAND_DMESG + "' FAILED.")
+				return False
 			for line in output:
 				if len(line.split("uvcvideo: Found")) > 1:
 					return True
 			return False
 		except:
-			log_system.write("ERROR: 'Webcam.IsAvailable()' - Exception thrown.")
+			systemlog.write("ERROR: 'Webcam.IsAvailable()' - Exception thrown.")
 			return False
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def IsEnabled(self, sender = None, conn = None):
-		""" Check if webcam is enabled by parsing the output of lsmod. """
+		""" Check if webcam is enabled. """
 		""" Return 'True' if enabled, 'False' if disabled. """
 		if not self.IsAvailable():
 			return False
 		try:
-			process = subprocess.Popen(['/sbin/lsmod'], stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+			process = subprocess.Popen([COMMAND_LSMOD], stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 			output = process.communicate()[0].split()
+			if process.returncode != 0:
+				systemlog.write("ERROR: 'Webcam.IsEnabled()' - COMMAND: '" + COMMAND_LSMOD + "' FAILED.")
+				return False
 			if "uvcvideo" in output:
 				return True
 			else:
 				return False
 		except:
-			log_system.write("ERROR: 'Webcam.IsEnabled()' - Exception thrown.")
+			systemlog.write("ERROR: 'Webcam.IsEnabled()' - Exception thrown.")
 			return False
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
@@ -74,22 +93,19 @@ class Webcam(dbus.service.Object):
 		if self.IsEnabled():
 			return True
 		try:
-			process = subprocess.Popen(['/sbin/modprobe', 'uvcvideo'],
+			process = subprocess.Popen([COMMAND_MODPROBE, 'uvcvideo'],
 									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 			process.communicate()
 			if process.returncode != 0:
-				log_system.write("ERROR: 'Webcam.Enable()' - COMMAND: 'modprobe uvcvideo' FAILED.")
+				command = COMMAND_MODPROBE + " uvcvideo"
+				systemlog.write("ERROR: 'Webcam.Enable()' - COMMAND: '" + command + "' FAILED.")
 				return False
-			else:
-				# Set last status
-				try:
-					file = open(SYSTEM_DEVICE_STATUS_WEBCAM, "w")
-					file.close()
-				except:
-					log_system.write("Error: 'Webcam.Enable()' - Cannot save last status.")
-				return True
+			# Save webcam status
+			self.__save_last_status(True)
+			return True
 		except:
-			log_system.write("ERROR: 'Webcam.Enable()' - COMMAND: 'modprobe uvcvideo' - Exception thrown.")
+			command = COMMAND_MODPROBE + " uvcvideo"
+			systemlog.write("ERROR: 'Webcam.Enable()' - COMMAND: '" + command + "' - Exception thrown.")
 			return False
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
@@ -102,21 +118,19 @@ class Webcam(dbus.service.Object):
 		if not self.IsEnabled():
 			return True
 		try:
-			process = subprocess.Popen(['/sbin/modprobe', '-r', 'uvcvideo'],
+			process = subprocess.Popen([COMMAND_MODPROBE, '-r', 'uvcvideo'],
 									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 			process.communicate()
 			if process.returncode != 0:
-				log_system.write("ERROR: 'Webcam.Disable()' - COMMAND: 'modprobe -r uvcvideo' FAILED.")
+				command = COMMAND_MODPROBE + " -r uvcvideo"
+				systemlog.write("ERROR: 'Webcam.Disable()' - COMMAND: '" + command + "' FAILED.")
 				return False
-			else:
-				# Set last status
-				try:
-					os.remove(SYSTEM_DEVICE_STATUS_WEBCAM)
-				except:
-					pass
-				return True
+			# Save webcam status
+			self.__save_last_status(False)
+			return True
 		except:
-			log_system.write("ERROR: 'Webcam.Disable()' - COMMAND: 'modprobe -r uvcvideo' - Exception thrown.")
+			command = COMMAND_MODPROBE + " -r uvcvideo"
+			systemlog.write("ERROR: 'Webcam.Disable()' - COMMAND: '" + command + "' - Exception thrown.")
 			return False
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',

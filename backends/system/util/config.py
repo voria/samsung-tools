@@ -21,14 +21,16 @@
 
 import ConfigParser
 
-from backends.globals import *
-
+# Options defaults
 WIRELESS_TOGGLE_METHOD_DEFAULT = "iwconfig"
 WIRELESS_DEVICE_DEFAULT = "wlan0"
 WIRELESS_MODULE_DEFAULT = "ath5k"
 LAST_STATUS_RESTORE_DEFAULT = "true"
+WIRELESS_TOGGLE_METHOD_ACCEPTED_VALUES = ['iwconfig', 'module', 'esdm']
+LAST_STATUS_RESTORE_ACCEPTED_VALUES = ['true', 'false']
 
 class SystemConfig():
+	""" Manage system service configuration file """
 	def __init__(self, configfile):
 		self.configfile = configfile
 		self.config = ConfigParser.SafeConfigParser()
@@ -37,7 +39,7 @@ class SystemConfig():
 		except:
 			# configfile not found?
 			# Use default options
-			log_system.write("WARNING: 'SystemConfig()' - '" + configfile + "' not found. Using default values for all options.")
+			systemlog.write("WARNING: 'SystemConfig()' - '" + configfile + "' not found. Using default values for all options.")
 			self.config.add_section("Main")
 			self.config.set("Main", "WIRELESS_TOGGLE_METHOD", WIRELESS_TOGGLE_METHOD_DEFAULT)
 			self.config.set("Main", "WIRELESS_DEVICE", WIRELESS_DEVICE_DEFAULT)
@@ -61,19 +63,20 @@ class SystemConfig():
 		except:
 			self.config.set("Main", "LAST_STATUS_RESTORE", LAST_STATUS_RESTORE_DEFAULT)
 		# Options sanity check
-		if self.config.get("Main", "WIRELESS_TOGGLE_METHOD") not in ["iwconfig", "module", "esdm"]:
+		if self.config.get("Main", "WIRELESS_TOGGLE_METHOD") not in WIRELESS_TOGGLE_METHOD_ACCEPTED_VALUES:
 			# Option is invalid, set default value
-			log_system.write("WARNING: 'SystemConfig()' - 'WIRELESS_TOGGLE_METHOD' option specified in '" + configfile + 
+			systemlog.write("WARNING: 'SystemConfig()' - 'WIRELESS_TOGGLE_METHOD' option specified in '" + configfile + 
 					"' is invalid. Using default value ('" + WIRELESS_TOGGLE_METHOD_DEFAULT + "').")
 			self.config.set("Main", "WIRELESS_TOGGLE_METHOD", WIRELESS_TOGGLE_METHOD_DEFAULT)
-		if self.config.get("Main", "LAST_STATUS_RESTORE") not in ["true", "false"]:
+		if self.config.get("Main", "LAST_STATUS_RESTORE") not in LAST_STATUS_RESTORE_ACCEPTED_VALUES:
 			# Option is invalid, set default value
-			log_system.write("WARNING: 'SystemConfig()' - 'LAST_STATUS_RESTORE' option specified in '" + configfile + 
+			systemlog.write("WARNING: 'SystemConfig()' - 'LAST_STATUS_RESTORE' option specified in '" + configfile + 
 					"' is invalid. Using default value ('" + LAST_STATUS_RESTORE_DEFAULT + "').")
 			self.config.set("Main", "LAST_STATUS_RESTORE", LAST_STATUS_RESTORE_DEFAULT)
 	
 	def __write(self):
 		""" Write on disk the config file. """
+		""" Return "True" on success, "False" otherwise. """
 		# We don't use the ConfigParser builtin write function,
 		# because it seems to be impossible to add comments to config file.
 		text = [
@@ -95,49 +98,67 @@ class SystemConfig():
 			"# Kernel module to control, when WIRELESS_TOGGLE_METHOD=module\n",
 			"WIRELESS_MODULE=%s\n" % self.config.get("Main", "WIRELESS_MODULE"),
 			"\n",
-			"# Set this to 'false' if you don't want the last status for bluetooth,\n",
-			"# webcam and wireless restored after a suspend/hibernate/reboot cycle.\n",
+			"# Set this to 'false' if you don't want the last status for devices\n",
+			"# to be restored after a suspend/hibernate/reboot cycle.\n",
 			"LAST_STATUS_RESTORE=%s\n" % self.config.get("Main", "LAST_STATUS_RESTORE")
 			]
-		with open(self.configfile, "w") as config:
-			config.writelines(text)	
+		try:
+			with open(self.configfile, "w") as config:
+				config.writelines(text)
+			return True
+		except:
+			systemlog.write("ERROR: 'SystemConfig().__write()' - cannot write new config file.")
+			return False	
 	
 	def getLastStatusRestore(self):
+		""" Return the LAST_STATUS_RESTORE option. """
 		return self.config.get("Main", "LAST_STATUS_RESTORE")
 	
 	def getWirelessToggleMethod(self):
+		""" Return the WIRELESS_TOGGLE_METHOD option. """
 		return self.config.get("Main", "WIRELESS_TOGGLE_METHOD") 
 	
 	def getWirelessDevice(self):
+		""" Return the WIRELESS_DEVICE option. """
 		return self.config.get("Main", "WIRELESS_DEVICE")
 	
 	def getWirelessModule(self):
+		""" Return the WIRELESS_MODULE option. """
 		return self.config.get("Main", "WIRELESS_MODULE")
 	
 	def setLastStatusRestore(self, value):
+		""" Set the LAST_STATUS_RESTORE option. """
+		""" Return 'True' on success, 'False' otherwise. """
 		if value == "default": # set default
 			value = LAST_STATUS_RESTORE_DEFAULT
-		if value != "false" and value != "true":
-			return
+		if value not in LAST_STATUS_RESTORE_ACCEPTED_VALUES:
+			return False
 		self.config.set("Main", "LAST_STATUS_RESTORE", value)
-		self.__write()
+		return self.__write()
 	
 	def setWirelessToggleMethod(self, value):
+		""" Set the WIRELESS_TOGGLE_METHOD option. """
+		""" Return 'True' on success, 'False' otherwise. """
 		if value == "default": # set default
 			value = WIRELESS_TOGGLE_METHOD_DEFAULT
-		if value != "iwconfig" and value != "module" and value != "esdm":
-			return
+		if value not in WIRELESS_TOGGLE_METHOD_ACCEPTED_VALUES:
+			return False
 		self.config.set("Main", "WIRELESS_TOGGLE_METHOD", value)
-		self.__write()
+		return self.__write()
 	
 	def setWirelessDevice(self, value):
+		""" Set the WIRELESS_DEVICE option. """
+		""" Return 'True' on success, 'False' otherwise. """
 		if value == "default": # set default
 			value = WIRELESS_DEVICE_DEFAULT
 		self.config.set("Main", "WIRELESS_DEVICE", value)
-		self.__write()
+		return self.__write()
 		
 	def setWirelessModule(self, value):
+		""" Set the WIRELESS_MODULE option. """
+		""" Return 'True' on success, 'False' otherwise. """
 		if value == "default": # set default
 			value = WIRELESS_MODULE_DEFAULT
 		self.config.set("Main", "WIRELESS_MODULE", value)
-		self.__write()
+		return self.__write()
+	

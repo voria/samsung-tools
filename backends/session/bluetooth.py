@@ -91,7 +91,7 @@ class Bluetooth(dbus.service.Object):
 		if self.notify != None and show_notify:
 			self.notify.setTitle(BLUETOOTH_TITLE)
 			self.notify.setUrgency("critical")
-			if result == 1:
+			if result == True:
 				self.notify.setIcon(BLUETOOTH_ICON)
 				self.notify.setMessage(BLUETOOTH_ENABLED)
 			else:
@@ -112,7 +112,7 @@ class Bluetooth(dbus.service.Object):
 		if self.notify != None and show_notify:
 			self.notify.setTitle(BLUETOOTH_TITLE)
 			self.notify.setUrgency("critical")
-			if result == 1:
+			if result == True:
 				self.notify.setIcon(BLUETOOTH_ICON)
 				self.notify.setMessage(BLUETOOTH_DISABLED)
 			else:
@@ -128,8 +128,7 @@ class Bluetooth(dbus.service.Object):
 		""" Return 'True' on success, 'False' otherwise. """
 		if not self.IsAvailable():
 			return self.__not_available(show_notify)
-		enabled = self.IsEnabled(False) # Do not show notification
-		if enabled:
+		if self.interface.IsEnabled():
 			return self.Disable(show_notify)
 		else:
 			return self.Enable(show_notify)

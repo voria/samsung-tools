@@ -20,11 +20,9 @@
 # <http://www.gnu.org/licenses/gpl.txt>
 
 import os
-
-WORK_DIR = "/usr/lib/samsung-tools"
-
 import sys
-sys.path.append(WORK_DIR)
+WORK_DIRECTORY = "/usr/lib/samsung-tools"
+sys.path.append(WORK_DIRECTORY)
 
 from optparse import OptionParser
 
@@ -463,7 +461,7 @@ def main():
 
 	if options.debug == True:
 		## The following code kill session service, for developing purposes
-		## TODO: Remember to remove it.
+		# TODO: Remember to remove it.
 		bus = dbus.SessionBus()
 		general_proxy = bus.get_object(SESSION_INTERFACE_NAME, SESSION_OBJECT_PATH_GENERAL)
 		general = dbus.Interface(general_proxy, SESSION_INTERFACE_NAME)
