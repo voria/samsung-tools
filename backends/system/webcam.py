@@ -37,7 +37,7 @@ class Webcam(dbus.service.Object):
 				if os.path.exists(LAST_DEVICE_STATUS_WEBCAM):
 					os.remove(LAST_DEVICE_STATUS_WEBCAM)
 			else:
-				file = open(SYSTEM_DEVICE_STATUS_WEBCAM, "w")
+				file = open(LAST_DEVICE_STATUS_WEBCAM, "w")
 				file.close()
 		except:
 			systemlog.write("WARNING: 'Webcam.__save_last_status()' - Cannot save last status.")

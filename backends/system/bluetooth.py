@@ -92,7 +92,7 @@ class Bluetooth(dbus.service.Object):
 				if os.path.exists(LAST_DEVICE_STATUS_BLUETOOTH):
 					os.remove(LAST_DEVICE_STATUS_BLUETOOTH)
 			else:
-				file = open(SYSTEM_DEVICE_STATUS_BLUETOOTH, "w")
+				file = open(LAST_DEVICE_STATUS_BLUETOOTH, "w")
 				file.close()
 		except:
 			systemlog.write("WARNING: 'Bluetooth.__save_last_status()' - Cannot save last status.")

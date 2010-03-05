@@ -59,7 +59,7 @@ class Wireless(dbus.service.Object):
 				if os.path.exists(LAST_DEVICE_STATUS_WIRELESS):
 					os.remove(LAST_DEVICE_STATUS_WIRELESS)
 			else:
-				file = open(SYSTEM_DEVICE_STATUS_WIRELESS, "w")
+				file = open(LAST_DEVICE_STATUS_WIRELESS, "w")
 				file.close()
 		except:
 			systemlog.write("WARNING: 'Wireless.__save_last_status()' - Cannot save last status.")
