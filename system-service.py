@@ -58,11 +58,11 @@ class General(dbus.service.Object):
 		bluetooth_status = False
 		webcam_status = False
 		wireless_status = False
-		if os.path.exists(LAST_DEVICE_STATUS_BLUETOOTH):
+		if not os.path.exists(LAST_DEVICE_STATUS_BLUETOOTH):
 			bluetooth_status = True
-		if os.path.exists(LAST_DEVICE_STATUS_WEBCAM):
+		if not os.path.exists(LAST_DEVICE_STATUS_WEBCAM):
 			webcam_status = True
-		if os.path.exists(LAST_DEVICE_STATUS_WIRELESS):
+		if not os.path.exists(LAST_DEVICE_STATUS_WIRELESS):
 			wireless_status = True
 		# Enable all devices
 		bluetooth.Enable()
