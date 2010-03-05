@@ -37,6 +37,9 @@ class Hotkeys():
 	def __init__(self):
 		# Make sure the xindkeys configuration file exists
 		self.__touch_config_file()
+		# Add a dummy command to xbindkeys configuration file.
+		# If the file is empty, xbindkeys will quit ungracefully.
+		self.__update_hotkey("SamsungToolsDummyCommand", "Control+Alt+Shift+Mod4+F1+F2+F3")
 		# Set hotkeys
 		if sessionconfig.getUseHotkeys() == "true":
 			self.setBacklightHotkey(sessionconfig.getBacklightHotkey())
