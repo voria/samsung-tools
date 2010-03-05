@@ -21,23 +21,10 @@
               <object class="GtkTable" id="sessionTable">
                 <property name="visible">True</property>
                 <property name="border_width">5</property>
-                <property name="n_rows">6</property>
+                <property name="n_rows">7</property>
                 <property name="n_columns">4</property>
                 <property name="column_spacing">5</property>
                 <property name="row_spacing">5</property>
-                <child>
-                  <object class="GtkLabel" id="wirelessHotkeyLabel">
-                    <property name="visible">True</property>
-                    <property name="tooltip_text" translatable="yes">Hotkey used for wireless control</property>
-                    <property name="label" translatable="yes">Wireless:</property>
-                  </object>
-                  <packing>
-                    <property name="top_attach">5</property>
-                    <property name="bottom_attach">6</property>
-                    <property name="x_options"></property>
-                    <property name="y_options"></property>
-                  </packing>
-                </child>
                 <child>
                   <object class="GtkLabel" id="webcamHotkeyLabel">
                     <property name="visible">True</property>
@@ -45,8 +32,8 @@
                     <property name="label" translatable="yes">Webcam:</property>
                   </object>
                   <packing>
-                    <property name="top_attach">4</property>
-                    <property name="bottom_attach">5</property>
+                    <property name="top_attach">5</property>
+                    <property name="bottom_attach">6</property>
                     <property name="x_options"></property>
                     <property name="y_options"></property>
                   </packing>
@@ -58,8 +45,8 @@
                     <property name="label" translatable="yes">CPU fan:</property>
                   </object>
                   <packing>
-                    <property name="top_attach">3</property>
-                    <property name="bottom_attach">4</property>
+                    <property name="top_attach">4</property>
+                    <property name="bottom_attach">5</property>
                     <property name="x_options"></property>
                     <property name="y_options"></property>
                   </packing>
@@ -71,8 +58,8 @@
                     <property name="label" translatable="yes">Bluetooth:</property>
                   </object>
                   <packing>
-                    <property name="top_attach">2</property>
-                    <property name="bottom_attach">3</property>
+                    <property name="top_attach">3</property>
+                    <property name="bottom_attach">4</property>
                     <property name="x_options"></property>
                     <property name="y_options"></property>
                   </packing>
@@ -84,8 +71,8 @@
                     <property name="label" translatable="yes">Backlight:</property>
                   </object>
                   <packing>
-                    <property name="top_attach">1</property>
-                    <property name="bottom_attach">2</property>
+                    <property name="top_attach">2</property>
+                    <property name="bottom_attach">3</property>
                     <property name="x_options"></property>
                     <property name="y_options"></property>
                   </packing>
@@ -100,8 +87,8 @@
                   <packing>
                     <property name="left_attach">2</property>
                     <property name="right_attach">3</property>
-                    <property name="top_attach">5</property>
-                    <property name="bottom_attach">6</property>
+                    <property name="top_attach">6</property>
+                    <property name="bottom_attach">7</property>
                     <property name="x_options"></property>
                     <property name="y_options"></property>
                   </packing>
@@ -116,8 +103,8 @@
                   <packing>
                     <property name="left_attach">2</property>
                     <property name="right_attach">3</property>
-                    <property name="top_attach">4</property>
-                    <property name="bottom_attach">5</property>
+                    <property name="top_attach">5</property>
+                    <property name="bottom_attach">6</property>
                     <property name="x_options"></property>
                     <property name="y_options"></property>
                   </packing>
@@ -132,8 +119,33 @@
                   <packing>
                     <property name="left_attach">2</property>
                     <property name="right_attach">3</property>
-                    <property name="top_attach">3</property>
-                    <property name="bottom_attach">4</property>
+                    <property name="top_attach">4</property>
+                    <property name="bottom_attach">5</property>
+                    <property name="x_options"></property>
+                    <property name="y_options"></property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="hotkeysConfigurationLabel">
+                    <property name="visible">True</property>
+                    <property name="xalign">0</property>
+                    <property name="xpad">5</property>
+                    <property name="label" translatable="yes">&lt;b&gt;Hotkeys configuration&lt;/b&gt;</property>
+                    <property name="use_markup">True</property>
+                  </object>
+                  <packing>
+                    <property name="right_attach">4</property>
+                    <property name="y_options"></property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="wirelessHotkeyLabel">
+                    <property name="visible">True</property>
+                    <property name="label" translatable="yes">Wireless:</property>
+                  </object>
+                  <packing>
+                    <property name="top_attach">6</property>
+                    <property name="bottom_attach">7</property>
                     <property name="x_options"></property>
                     <property name="y_options"></property>
                   </packing>
@@ -143,7 +155,22 @@
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
-                    <property name="tooltip_text" translatable="yes">Click here to disable the hotkey</property>
+                  </object>
+                  <packing>
+                    <property name="left_attach">2</property>
+                    <property name="right_attach">3</property>
+                    <property name="top_attach">3</property>
+                    <property name="bottom_attach">4</property>
+                    <property name="x_options"></property>
+                    <property name="y_options"></property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="backlightHotkeyCleanButton">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="image_position">top</property>
                   </object>
                   <packing>
                     <property name="left_attach">2</property>
@@ -155,28 +182,25 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkButton" id="backlightHotkeyCleanButton">
+                  <object class="GtkButton" id="wirelessHotkeyDefaultButton">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
-                    <property name="tooltip_text" translatable="yes">Click here to disable the hotkey</property>
-                    <property name="image_position">top</property>
                   </object>
                   <packing>
-                    <property name="left_attach">2</property>
-                    <property name="right_attach">3</property>
-                    <property name="top_attach">1</property>
-                    <property name="bottom_attach">2</property>
+                    <property name="left_attach">3</property>
+                    <property name="right_attach">4</property>
+                    <property name="top_attach">6</property>
+                    <property name="bottom_attach">7</property>
                     <property name="x_options"></property>
                     <property name="y_options"></property>
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkButton" id="wirelessHotkeyDefaultButton">
+                  <object class="GtkButton" id="webcamHotkeyDefaultButton">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
-                    <property name="tooltip_text" translatable="yes">Click here to set the default hotkey</property>
                   </object>
                   <packing>
                     <property name="left_attach">3</property>
@@ -188,11 +212,10 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkButton" id="webcamHotkeyDefaultButton">
+                  <object class="GtkButton" id="cpufanHotkeyDefaultButton">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
-                    <property name="tooltip_text" translatable="yes">Click here to set the default hotkey</property>
                   </object>
                   <packing>
                     <property name="left_attach">3</property>
@@ -204,11 +227,10 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkButton" id="cpufanHotkeyDefaultButton">
+                  <object class="GtkButton" id="bluetoothHotkeyDefaultButton">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
-                    <property name="tooltip_text" translatable="yes">Click here to set the default hotkey</property>
                   </object>
                   <packing>
                     <property name="left_attach">3</property>
@@ -220,11 +242,10 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkButton" id="bluetoothHotkeyDefaultButton">
+                  <object class="GtkButton" id="backlightHotkeyDefaultButton">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
-                    <property name="tooltip_text" translatable="yes">Click here to set the default hotkey</property>
                   </object>
                   <packing>
                     <property name="left_attach">3</property>
@@ -236,32 +257,17 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkButton" id="backlightHotkeyDefaultButton">
+                  <object class="GtkCheckButton" id="useHotkeysCheckbutton">
+                    <property name="label" translatable="yes">Enable hotkeys</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="receives_default">True</property>
-                    <property name="tooltip_text" translatable="yes">Click here to set the default hotkey</property>
+                    <property name="receives_default">False</property>
+                    <property name="draw_indicator">True</property>
                   </object>
                   <packing>
-                    <property name="left_attach">3</property>
                     <property name="right_attach">4</property>
                     <property name="top_attach">1</property>
                     <property name="bottom_attach">2</property>
-                    <property name="x_options"></property>
-                    <property name="y_options"></property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkLabel" id="hotkeysConfigurationLabel">
-                    <property name="visible">True</property>
-                    <property name="xalign">0</property>
-                    <property name="xpad">5</property>
-                    <property name="label" translatable="yes">&lt;b&gt;Hotkeys&lt;/b&gt;</property>
-                    <property name="use_markup">True</property>
-                  </object>
-                  <packing>
-                    <property name="right_attach">4</property>
-                    <property name="y_options"></property>
                   </packing>
                 </child>
                 <child>
@@ -348,7 +354,7 @@
                     <property name="visible">True</property>
                     <property name="xalign">0</property>
                     <property name="xpad">5</property>
-                    <property name="label" translatable="yes">&lt;b&gt;General&lt;/b&gt;</property>
+                    <property name="label" translatable="yes">&lt;b&gt;General configuration&lt;/b&gt;</property>
                     <property name="use_markup">True</property>
                   </object>
                   <packing>
@@ -517,7 +523,7 @@ Note: the new setting will be applied after a reboot.</property>
                     <property name="visible">True</property>
                     <property name="xalign">0</property>
                     <property name="xpad">5</property>
-                    <property name="label" translatable="yes">&lt;b&gt;Wireless&lt;/b&gt;</property>
+                    <property name="label" translatable="yes">&lt;b&gt;Wireless configuration&lt;/b&gt;</property>
                     <property name="use_markup">True</property>
                   </object>
                   <packing>

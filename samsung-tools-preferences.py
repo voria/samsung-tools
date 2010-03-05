@@ -165,7 +165,7 @@ class Main():
 		(key, mods) = gtk.accelerator_parse(self.__convert_xbindkeys_to_gtk(hotkey))
 		self.backlightHotkeyButton.set_label(key, mods, True)
 		self.backlightHotkeyButton.set_tooltip_text(self.builder.get_object("backlightHotkeyLabel").get_tooltip_text())
-		self.sessionTable.attach(self.backlightHotkeyButton, 1, 2, 1, 2, yoptions = 0)
+		self.sessionTable.attach(self.backlightHotkeyButton, 1, 2, 2, 3, yoptions = 0)
 		self.backlightHotkeyButton.connect("changed", self.on_backlightHotkeyButton_changed)
 		self.backlightHotkeyButton.show()
 		# Set bluetooth hotkey grabber
@@ -174,7 +174,7 @@ class Main():
 		(key, mods) = gtk.accelerator_parse(self.__convert_xbindkeys_to_gtk(hotkey))
 		self.bluetoothHotkeyButton.set_label(key, mods, True)
 		self.bluetoothHotkeyButton.set_tooltip_text(self.builder.get_object("bluetoothHotkeyLabel").get_tooltip_text())
-		self.sessionTable.attach(self.bluetoothHotkeyButton, 1, 2, 2, 3, yoptions = 0)
+		self.sessionTable.attach(self.bluetoothHotkeyButton, 1, 2, 3, 4, yoptions = 0)
 		self.bluetoothHotkeyButton.connect("changed", self.on_bluetoothHotkeyButton_changed)
 		self.bluetoothHotkeyButton.show()
 		# Set cpufan hotkey grabber
@@ -183,7 +183,7 @@ class Main():
 		(key, mods) = gtk.accelerator_parse(self.__convert_xbindkeys_to_gtk(hotkey))
 		self.cpufanHotkeyButton.set_label(key, mods, True)
 		self.cpufanHotkeyButton.set_tooltip_text(self.builder.get_object("cpufanHotkeyLabel").get_tooltip_text())
-		self.sessionTable.attach(self.cpufanHotkeyButton, 1, 2, 3, 4, yoptions = 0)
+		self.sessionTable.attach(self.cpufanHotkeyButton, 1, 2, 4, 5, yoptions = 0)
 		self.cpufanHotkeyButton.connect("changed", self.on_cpufanHotkeyButton_changed)
 		self.cpufanHotkeyButton.show()
 		# Set webcam hotkey grabber
@@ -192,7 +192,7 @@ class Main():
 		(key, mods) = gtk.accelerator_parse(self.__convert_xbindkeys_to_gtk(hotkey))
 		self.webcamHotkeyButton.set_label(key, mods, True)
 		self.webcamHotkeyButton.set_tooltip_text(self.builder.get_object("webcamHotkeyLabel").get_tooltip_text())
-		self.sessionTable.attach(self.webcamHotkeyButton, 1, 2, 4, 5, yoptions = 0)
+		self.sessionTable.attach(self.webcamHotkeyButton, 1, 2, 5, 6, yoptions = 0)
 		self.webcamHotkeyButton.connect("changed", self.on_webcamHotkeyButton_changed)
 		self.webcamHotkeyButton.show()
 		# Set wireless hotkey grabber
@@ -201,7 +201,7 @@ class Main():
 		(key, mods) = gtk.accelerator_parse(self.__convert_xbindkeys_to_gtk(hotkey))
 		self.wirelessHotkeyButton.set_label(key, mods, True)
 		self.wirelessHotkeyButton.set_tooltip_text(self.builder.get_object("wirelessHotkeyLabel").get_tooltip_text())
-		self.sessionTable.attach(self.wirelessHotkeyButton, 1, 2, 5, 6, yoptions = 0)
+		self.sessionTable.attach(self.wirelessHotkeyButton, 1, 2, 6, 7, yoptions = 0)
 		self.wirelessHotkeyButton.connect("changed", self.on_wirelessHotkeyButton_changed)
 		self.wirelessHotkeyButton.show()
 		# Set clean buttons for keygrabbers
@@ -236,6 +236,16 @@ class Main():
 		self.wirelessHotkeyDefaultButton = self.builder.get_object("wirelessHotkeyDefaultButton")
 		self.wirelessHotkeyDefaultButton.set_image(gtk.image_new_from_stock(gtk.STOCK_CLEAR, gtk.ICON_SIZE_MENU))
 		self.wirelessHotkeyDefaultButton.connect("clicked", self.on_wirelessHotkeyDefaultButton_clicked)
+		# Set enable hotkeys checkbutton
+		self.backlightHotkeyLabel = self.builder.get_object("backlightHotkeyLabel")
+		self.bluetoothHotkeyLabel = self.builder.get_object("bluetoothHotkeyLabel")
+		self.cpufanHotkeyLabel = self.builder.get_object("cpufanHotkeyLabel")
+		self.webcamHotkeyLabel = self.builder.get_object("webcamHotkeyLabel")
+		self.wirelessHotkeyLabel = self.builder.get_object("wirelessHotkeyLabel")
+		self.useHotkeysCheckbutton = self.builder.get_object("useHotkeysCheckbutton")
+		self.useHotkeysCheckbutton.set_active(session.GetUseHotkeys())
+		self.useHotkeysCheckbutton.connect("toggled", self.on_useHotkeysCheckbutton_toggled)
+		self.on_useHotkeysCheckbutton_toggled(self.useHotkeysCheckbutton, True)
 		
 		###
 		### System configuration
@@ -340,6 +350,38 @@ class Main():
 			if key == "Control" or key == "Shift" or key == "Alt" or key == "Super":
 				result += ">"
 		return result
+	
+	def on_useHotkeysCheckbutton_toggled(self, checkbutton = None, toggle_widgets_only = False):
+		self.backlightHotkeyLabel.set_sensitive(checkbutton.get_active())
+		self.bluetoothHotkeyLabel.set_sensitive(checkbutton.get_active())
+		self.cpufanHotkeyLabel.set_sensitive(checkbutton.get_active())
+		self.webcamHotkeyLabel.set_sensitive(checkbutton.get_active())
+		self.wirelessHotkeyLabel.set_sensitive(checkbutton.get_active())
+		
+		self.backlightHotkeyButton.set_sensitive(checkbutton.get_active())
+		self.bluetoothHotkeyButton.set_sensitive(checkbutton.get_active())
+		self.cpufanHotkeyButton.set_sensitive(checkbutton.get_active())
+		self.webcamHotkeyButton.set_sensitive(checkbutton.get_active())
+		self.wirelessHotkeyButton.set_sensitive(checkbutton.get_active())
+		
+		self.backlightHotkeyCleanButton.set_sensitive(checkbutton.get_active())
+		self.bluetoothHotkeyCleanButton.set_sensitive(checkbutton.get_active())
+		self.cpufanHotkeyCleanButton.set_sensitive(checkbutton.get_active())
+		self.webcamHotkeyCleanButton.set_sensitive(checkbutton.get_active())
+		self.wirelessHotkeyCleanButton.set_sensitive(checkbutton.get_active())
+		
+		self.backlightHotkeyDefaultButton.set_sensitive(checkbutton.get_active())
+		self.bluetoothHotkeyDefaultButton.set_sensitive(checkbutton.get_active())
+		self.cpufanHotkeyDefaultButton.set_sensitive(checkbutton.get_active())
+		self.webcamHotkeyDefaultButton.set_sensitive(checkbutton.get_active())
+		self.wirelessHotkeyDefaultButton.set_sensitive(checkbutton.get_active())
+		
+		if toggle_widgets_only == False:
+			session = self.__connect_session()
+			if checkbutton.get_active() == True:
+				session.SetUseHotkeys("true")
+			else:
+				session.SetUseHotkeys("false")
 	
 	def on_backlightHotkeyButton_changed(self, button = None, key = None, mods = None):
 		if key == 0 and mods == 0:
