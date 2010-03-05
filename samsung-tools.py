@@ -443,6 +443,25 @@ def main():
 	
 	(options, args) = parser.parse_args()
 	
+	if options.debug == True:
+		## The following code kill session and system services, for developing purposes
+		# TODO: Remember to remove it.
+		try:
+			bus = dbus.SessionBus()
+			proxy = bus.get_object(SESSION_INTERFACE_NAME, SESSION_OBJECT_PATH_GENERAL)
+			general = dbus.Interface(proxy, SESSION_INTERFACE_NAME)
+			general.Exit()
+		except:
+			pass
+		try:
+			bus = dbus.SystemBus()
+			proxy = bus.get_object(SYSTEM_INTERFACE_NAME, SYSTEM_OBJECT_PATH_GENERAL)
+			general = dbus.Interface(proxy, SYSTEM_INTERFACE_NAME)
+			general.Exit()
+			sys.exit()
+		except:
+			sys.exit()
+	
 	if len(args) != 0:
 		print "Wrong argument(s)."
 		print "Use --help for instructions."
@@ -458,14 +477,6 @@ def main():
 	CPUFan(options.cpufan, options.show_notify).apply()
 	Webcam(options.webcam, options.show_notify).apply()
 	Wireless(options.wireless, options.show_notify).apply()
-
-	if options.debug == True:
-		## The following code kill session service, for developing purposes
-		# TODO: Remember to remove it.
-		bus = dbus.SessionBus()
-		general_proxy = bus.get_object(SESSION_INTERFACE_NAME, SESSION_OBJECT_PATH_GENERAL)
-		general = dbus.Interface(general_proxy, SESSION_INTERFACE_NAME)
-		general.Exit()
 
 if __name__ == "__main__":
 	main()
