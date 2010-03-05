@@ -59,7 +59,7 @@ class Webcam(dbus.service.Object):
 					return True
 			return False
 		except:
-			systemlog.write("ERROR: 'Webcam.IsAvailable()' - Exception thrown.")
+			systemlog.write("ERROR: 'Webcam.IsAvailable()' - COMMAND: '" + COMMAND_DMESG + "' - Exception thrown.")
 			return False
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
@@ -80,7 +80,7 @@ class Webcam(dbus.service.Object):
 			else:
 				return False
 		except:
-			systemlog.write("ERROR: 'Webcam.IsEnabled()' - Exception thrown.")
+			systemlog.write("ERROR: 'Webcam.IsEnabled()' - COMMAND: '" + COMMAND_LSMOD + "' - Exception thrown.")
 			return False
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
@@ -92,19 +92,18 @@ class Webcam(dbus.service.Object):
 			return False
 		if self.IsEnabled():
 			return True
+		command = COMMAND_MODPROBE + " uvcvideo" 
 		try:
-			process = subprocess.Popen([COMMAND_MODPROBE, 'uvcvideo'],
+			process = subprocess.Popen(command.split(),
 									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 			process.communicate()
 			if process.returncode != 0:
-				command = COMMAND_MODPROBE + " uvcvideo"
 				systemlog.write("ERROR: 'Webcam.Enable()' - COMMAND: '" + command + "' FAILED.")
 				return False
 			# Save webcam status
 			self.__save_last_status(True)
 			return True
 		except:
-			command = COMMAND_MODPROBE + " uvcvideo"
 			systemlog.write("ERROR: 'Webcam.Enable()' - COMMAND: '" + command + "' - Exception thrown.")
 			return False
 	
@@ -117,19 +116,18 @@ class Webcam(dbus.service.Object):
 			return False
 		if not self.IsEnabled():
 			return True
+		command = COMMAND_MODPROBE + " -r uvcvideo"
 		try:
-			process = subprocess.Popen([COMMAND_MODPROBE, '-r', 'uvcvideo'],
+			process = subprocess.Popen(command.split(),
 									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 			process.communicate()
 			if process.returncode != 0:
-				command = COMMAND_MODPROBE + " -r uvcvideo"
 				systemlog.write("ERROR: 'Webcam.Disable()' - COMMAND: '" + command + "' FAILED.")
 				return False
 			# Save webcam status
 			self.__save_last_status(False)
 			return True
 		except:
-			command = COMMAND_MODPROBE + " -r uvcvideo"
 			systemlog.write("ERROR: 'Webcam.Disable()' - COMMAND: '" + command + "' - Exception thrown.")
 			return False
 	

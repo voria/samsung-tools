@@ -29,26 +29,23 @@ class Wireless(dbus.service.Object):
 	""" Control wireless """
 	def __init__(self, conn = None, object_path = None, bus_name = None):
 		dbus.service.Object.__init__(self, conn, object_path, bus_name)
-		# Try to load the easy-slow-down-manager interface.
-		# Even if it may not be used for wireless, it's used for other devices.
 			
 	def __load_esdm_module(self):
 		""" Load the easy-slow-down-manager kernel module. """
 		""" Return 'True' on success, 'False' otherwise. """
 		if os.path.exists(ESDM_PATH_WIRELESS):
 			return True # already loaded
+		command = COMMAND_MODPROBE + " " + ESDM_MODULE
 		try:
-			process = subprocess.Popen([COMMAND_MODPROBE, ESDM_MODULE],
+			process = subprocess.Popen(command.split(),
 									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 			process.communicate()
 			if process.returncode != 0:
-				command = COMMAND_MODPROBE + " " + ESDM_MODULE
 				systemlog.write("ERROR: 'Wireless.__load_esdm_module()' - COMMAND: '" + command + "' FAILED.")
 				return False
 			else:
 				return True
 		except:
-			command = COMMAND_MODPROBE + " " + ESDM_MODULE
 			systemlog.write("ERROR: 'Wireless.__load_esdm_module()' - COMMAND: '" + command + "' - Exception thrown.")
 			return False
 	
@@ -96,12 +93,12 @@ class Wireless(dbus.service.Object):
 		method = systemconfig.getWirelessToggleMethod()
 		if method == "iwconfig":
 			device = systemconfig.getWirelessDevice()
+			command = COMMAND_IWCONFIG + " " + device 
 			try:
-				process = subprocess.Popen([COMMAND_IWCONFIG, device],
+				process = subprocess.Popen(command.split(),
 										stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 				output = process.communicate()[0].split()
 				if process.returncode != 0:
-					command = COMMAND_IWCONFIG + " " + device
 					systemlog.write("ERROR: 'Wireless.IsEnabled()' - COMMAND: '" + command + "' FAILED.")
 					return False
 				if "Tx-Power=off" in output:
@@ -109,7 +106,6 @@ class Wireless(dbus.service.Object):
 				else:
 					return True
 			except:
-				command = COMMAND_IWCONFIG + " " + device
 				systemlog.write("ERROR: 'Wireless.IsEnabled()' - COMMAND: '" + command + "' - Exception thrown.")
 				return False
 		elif method == "module":
@@ -151,31 +147,30 @@ class Wireless(dbus.service.Object):
 			return True
 		method = systemconfig.getWirelessToggleMethod()
 		if method == "iwconfig":
+			device = systemconfig.getWirelessDevice()
+			command = COMMAND_IWCONFIG + " " + device + " txpower auto"
 			try:
-				device = systemconfig.getWirelessDevice()
-				process = subprocess.Popen([COMMAND_IWCONFIG, device, 'txpower', 'auto'],
+				process = subprocess.Popen(command.split(),
 										stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 				process.communicate()
 				if process.returncode != 0:
-					command = COMMAND_IWCONFIG + " " + device + " txpower auto"
 					systemlog.write("ERROR: 'Wireless.Enable()' - COMMAND: '" + command + "' FAILED.")
 					return False
 			except:
-				command = COMMAND_IWCONFIG + " " + device + " txpower auto"
 				systemlog.write("ERROR: 'Wireless.Enable()' - COMMAND: '" + command + "' - Exception thrown.")
 				return False
 		elif method == "module":
 			try:
 				module = systemconfig.getWirelessModule()
-				process = subprocess.Popen([COMMAND_MODPROBE, module],
+				command = COMMAND_MODPROBE + " " + module
+				process = subprocess.Popen(command.split(),
 										stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 				process.communicate()
 				if process.returncode != 0:
-					command = COMMAND_MODPROBE + " " + module
 					systemlog.write("ERROR: 'Wireless.Enable()' - COMMAND: '" + command + "' FAILED.")
 					return False
 			except:
-				log_system.write("ERROR: 'Wireless.Enable()' - COMMAND: 'modprobe " + self.module + "' - Exception thrown.")
+				systemlog.write("ERROR: 'Wireless.Enable()' - COMMAND: '" + command + "' - Exception thrown.")
 				return False
 		else: # method == "esdm":
 			try:
@@ -199,31 +194,29 @@ class Wireless(dbus.service.Object):
 			return True
 		method = systemconfig.getWirelessToggleMethod()
 		if method == "iwconfig":
+			device = systemconfig.getWirelessDevice()
+			command = COMMAND_IWCONFIG + " " + device + " txpower off"
 			try:
-				device = systemconfig.getWirelessDevice()
-				process = subprocess.Popen([COMMAND_IWCONFIG, device, 'txpower', 'off'],
+				process = subprocess.Popen(command.split(),
 										stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 				process.communicate()
 				if process.returncode != 0:
-					command = COMMAND_IWCONFIG + " " + device + " txpower off"
 					systemlog.write("ERROR: 'Wireless.Disable()' - COMMAND: '" + command + "' FAILED.")
 					return False
 			except:
-				command = COMMAND_IWCONFIG + " " + device + " txpower off"
 				systemlog.write("ERROR: 'Wireless.Disable()' - COMMAND: '" + command + "' - Exception thrown.")
 				return False
 		elif method == "module":
+			module = systemconfig.getWirelessModule()
+			command = COMMAND_MODPROBE + " -r " + module
 			try:
-				module = systemconfig.getWirelessModule()
-				process = subprocess.Popen([COMMAND_MODPROBE, '-r', module],
+				process = subprocess.Popen(command.split(),
 										stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 				process.communicate()
 				if process.returncode != 0:
-					command = COMMAND_MODPROBE + " -r " + module
 					systemlog.write("ERROR: 'Wireless.Disable()' - COMMAND: '" + command + "' FAILED.")
 					return False
 			except:
-				command = COMMAND_MODPROBE + " -r " + module
 				systemlog.write("ERROR: 'Wireless.Disable()' - COMMAND: '" + command + "' - Exception thrown.")
 				return False
 		else: # method == "esdm":

@@ -36,17 +36,25 @@ class Backlight(dbus.service.Object):
 			self.method = "esdm"
 		else:
 			# Try to load easy-slow-down-manager module
-			process = subprocess.Popen([COMMAND_MODPROBE, ESDM_MODULE],
-									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-			process.communicate()
-			if process.returncode == 0:
-				self.method = "esdm"
-			else:
-				systemlog.write("WARNING: 'Backlight()' - 'esdm' control method not available, using 'vbetool' as fallback.")
+			command = COMMAND_MODPROBE + " " + ESDM_MODULE
+			try:
+				process = subprocess.Popen(command.split(),
+										stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+				process.communicate()
+				if process.returncode == 0:
+					self.method = "esdm"
+				else:
+					systemlog.write("WARNING: 'Backlight' - 'esdm' control method not available, using 'vbetool' as fallback.")
+					self.method = "vbetool"
+			except:
+				systemlog.write("WARNING: 'Backlight' - COMMAND: '" + command + "' - Exception thrown. Using 'vbetool' as fallback.")
 				self.method = "vbetool"
 	
 	def __save_status(self, status):
-		""" Save backlight status (only useful when self.method == vbetool). """
+		""" Save backlight status (to be used only when self.method == "vbetool"). """
+		if self.method != "vbetool":
+			systemlog.write("WARNING: 'Backlight.__save_status()' - Trying to save status with self.method != \"vbetool\".")
+			return
 		try:
 			if status == False:
 				with open(LAST_DEVICE_STATUS_BACKLIGHT, "w") as file:
@@ -54,10 +62,12 @@ class Backlight(dbus.service.Object):
 			else:
 				os.remove(LAST_DEVICE_STATUS_BACKLIGHT)				
 		except:
-			pass
+			systemlog.write("WARNING: 'Backlight.__save_status()' - Cannot save new status.")
 	
 	def __get_status(self):
-		""" Return backlight status (only useful when self.method == vbetool) ."""
+		""" Return backlight status (to be used only when self.method == "vbetool"). """
+		if self.method != "vbetool":
+			systemlog.write("WARNING: 'Backlight.__get_status()' - Trying to get status with self.method != \"vbetool\".")
 		if os.path.exists(LAST_DEVICE_STATUS_BACKLIGHT):
 			return False
 		else:
@@ -98,16 +108,20 @@ class Backlight(dbus.service.Object):
 				log_system.write("ERROR: 'Backlight.Enable()' - cannot write to '" + ESDM_PATH_BACKLIGHT + "'.")
 				return False
 		else: # self.method == "vbetool"
-			process = subprocess.Popen([COMMAND_VBETOOL, 'dpms', 'on'],
-									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-			process.communicate()
-			if process.returncode != 0:
-				command = COMMAND_VBETOOL + " dpms on"
-				systemlog.write("ERROR: 'Backlight.Enable()' - COMMAND: '" + command + "' FAILED.")
+			command = COMMAND_VBETOOL + " dpms on"
+			try:
+				process = subprocess.Popen(command.split(),
+										stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+				process.communicate()
+				if process.returncode != 0:
+					systemlog.write("ERROR: 'Backlight.Enable()' - COMMAND: '" + command + "' FAILED.")
+					return False
+				else:
+					self.__save_status(True)
+					return True
+			except:
+				systemlog.write("ERROR: 'Backlight.Enable()' - COMMAND: '" + command + "' - Exception thrown.")
 				return False
-			else:
-				self.__save_status(True)
-				return True
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
@@ -125,16 +139,20 @@ class Backlight(dbus.service.Object):
 				systemlog.write("ERROR: 'Backlight.Disable()' - cannot write to '" + ESDM_PATH_BACKLIGHT + "'.")
 				return False
 		else: # self.method == "vbetool":
-			process = subprocess.Popen([COMMAND_VBETOOL, 'dpms', 'off'],
-									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-			process.communicate()
-			if process.returncode != 0:
-				command = COMMAND_VBETOOL + " dpms off"
-				systemlog.write("ERROR: 'Backlight.Disable()' - COMMAND: '" + command + "' FAILED.")
+			command = COMMAND_VBETOOL + " dpms off"
+			try:
+				process = subprocess.Popen(command.split(),
+										stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+				process.communicate()
+				if process.returncode != 0:
+					systemlog.write("ERROR: 'Backlight.Disable()' - COMMAND: '" + command + "' FAILED.")
+					return False
+				else:
+					self.__save_status(False)
+					return True
+			except:
+				systemlog.write("ERROR: 'Backlight.Disable()' - COMMAND: '" + command + "' - Exception thrown.")
 				return False
-			else:
-				self.__save_status(False)
-				return True
 
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')

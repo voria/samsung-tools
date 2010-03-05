@@ -39,25 +39,24 @@ class Fan(dbus.service.Object):
 			return True
 		else:
 			# Try to load easy-slow-down-manager module
+			command = COMMAND_MODPROBE + " " + ESDM_MODULE
 			try:
-				process = subprocess.Popen([COMMAND_MODPROBE, ESDM_MODULE],
+				process = subprocess.Popen(command.split(),
 										stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 				process.communicate()
 				if process.returncode != 0:
-					command = COMMAND_MODPROBE + " " + ESDM_MODULE
 					systemlog.write("ERROR: 'Fan.IsAvailable()' - COMMAND: '" + command + "' FAILED.")
 					return False
 				else:
 					return True
 			except:
-				command = COMMAND_MODPROBE + " " + ESDM_MODULE
 				systemlog.write("ERROR: 'Fan.IsAvailable()' - COMMAND: '" + command + "' - Exception thrown.")
 				return False	
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'i',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Status(self, sender = None, conn = None):
-		""" Check current mode. """
+		""" Get current mode. """
 		"""Return 0 if 'normal', 1 if 'silent', 2 if 'speed'. """
 		""" Return 3 if any error. """
 		if not self.IsAvailable():

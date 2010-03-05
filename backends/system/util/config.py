@@ -49,22 +49,23 @@ class SystemConfig():
 			self.config.set("Main", "WIRELESS_MODULE", WIRELESS_MODULE_DEFAULT)
 			self.config.set("Main", "LAST_STATUS_RESTORE", LAST_STATUS_RESTORE_DEFAULT)
 		# Check if all options are specified in the config file
-		try:
-			self.config.get("Main", "WIRELESS_TOGGLE_METHOD")
-		except:
-			self.config.set("Main", "WIRELESS_TOGGLE_METHOD", WIRELESS_TOGGLE_METHOD_DEFAULT)
-		try:
-			self.config.get("Main", "WIRELESS_DEVICE")
-		except:
-			self.config.set("Main", "WIRELESS_DEVICE", WIRELESS_DEVICE_DEFAULT)
-		try:
-			self.config.get("Main", "WIRELESS_MODULE")
-		except:
-			self.config.set("Main", "WIRELESS_MODULE", WIRELESS_MODULE_DEFAULT)
-		try:
-			self.config.get("Main", "LAST_STATUS_RESTORE")
-		except:
-			self.config.set("Main", "LAST_STATUS_RESTORE", LAST_STATUS_RESTORE_DEFAULT)
+		else:
+			try:
+				self.config.get("Main", "WIRELESS_TOGGLE_METHOD")
+			except:
+				self.config.set("Main", "WIRELESS_TOGGLE_METHOD", WIRELESS_TOGGLE_METHOD_DEFAULT)
+			try:
+				self.config.get("Main", "WIRELESS_DEVICE")
+			except:
+				self.config.set("Main", "WIRELESS_DEVICE", WIRELESS_DEVICE_DEFAULT)
+			try:
+				self.config.get("Main", "WIRELESS_MODULE")
+			except:
+				self.config.set("Main", "WIRELESS_MODULE", WIRELESS_MODULE_DEFAULT)
+			try:
+				self.config.get("Main", "LAST_STATUS_RESTORE")
+			except:
+				self.config.set("Main", "LAST_STATUS_RESTORE", LAST_STATUS_RESTORE_DEFAULT)
 		# Options sanity check
 		if self.config.get("Main", "WIRELESS_TOGGLE_METHOD") not in WIRELESS_TOGGLE_METHOD_ACCEPTED_VALUES:
 			# Option is invalid, set default value
@@ -97,7 +98,7 @@ class SystemConfig():
 			if line[0:1] == "#" or line == "\n" or line == "[Main]\n":
 				newfile.write(line)
 			else:
-				option = line.split('=')[0]
+				option = line.split('=')[0].strip()
 				try:
 					value = self.config.get("Main", option)
 					newfile.write(option + "=" + self.config.get("Main", option) + "\n")
@@ -108,7 +109,7 @@ class SystemConfig():
 		try:
 			os.remove(self.configfile)
 		except:
-			systemlog.write("ERROR: 'SystemConfig().__write()' - cannot replace  the old '" + self.configfile + "' with the new version.")
+			systemlog.write("ERROR: 'SystemConfig().__write()' - cannot replace old '" + self.configfile + "' with the new version.")
 			os.remove(self.configfile + ".new")
 			return False
 		shutil.move(self.configfile + ".new", self.configfile)
