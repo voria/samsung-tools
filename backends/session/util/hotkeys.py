@@ -25,11 +25,11 @@ import subprocess
 
 from backends.globals import *
 
-BACKLIGHT_HOTKEY_COMMAND = "samsung-tools -b toggle --show-notify"
-BLUETOOTH_HOTKEY_COMMAND = "samsung-tools -B toggle --show-notify"
-FAN_HOTKEY_COMMAND = "samsung-tools -f hotkey --show-notify"
-WEBCAM_HOTKEY_COMMAND = "samsung-tools -w toggle --show-notify"
-WIRELESS_HOTKEY_COMMAND = "samsung-tools -W toggle --show-notify"
+BACKLIGHT_HOTKEY_COMMAND = "samsung-tools -b toggle --show-notify --quiet"
+BLUETOOTH_HOTKEY_COMMAND = "samsung-tools -B toggle --show-notify --quiet"
+FAN_HOTKEY_COMMAND = "samsung-tools -f hotkey --show-notify --quiet"
+WEBCAM_HOTKEY_COMMAND = "samsung-tools -w toggle --show-notify --quiet"
+WIRELESS_HOTKEY_COMMAND = "samsung-tools -W toggle --show-notify --quiet"
 
 XBINDKEYS_CONFIG_FILE = os.path.join(os.getenv('HOME'), ".xbindkeysrc")
 
