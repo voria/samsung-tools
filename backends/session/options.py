@@ -75,10 +75,10 @@ class Options(dbus.service.Object):
 			status = sessionconfig.getUseHotkeys()
 			if status == "true":
 				self.hotkeys.setBacklightHotkey(sessionconfig.getBacklightHotkey())
-				self.hotkeys.setBluetoothHotkey(sessionconfig.getBacklightHotkey())
-				self.hotkeys.setFanHotkey(sessionconfig.getBacklightHotkey())
-				self.hotkeys.setWebcamHotkey(sessionconfig.getBacklightHotkey())
-				self.hotkeys.setWirelessHotkey(sessionconfig.getBacklightHotkey())
+				self.hotkeys.setBluetoothHotkey(sessionconfig.getBluetoothHotkey())
+				self.hotkeys.setFanHotkey(sessionconfig.getFanHotkey())
+				self.hotkeys.setWebcamHotkey(sessionconfig.getWebcamHotkey())
+				self.hotkeys.setWirelessHotkey(sessionconfig.getWirelessHotkey())
 				self.hotkeys.restartDaemon()
 			else:
 				self.hotkeys.setBacklightHotkey("disable")
