@@ -19,6 +19,7 @@
 # See the GNU General Public License for more details.
 # <http://www.gnu.org/licenses/gpl.txt>
 
+import os, shutil
 import ConfigParser
 
 from backends.globals import *
@@ -57,23 +58,38 @@ class SessionConfig():
 		""" Return "True" on success, "False" otherwise. """
 		# We don't use the ConfigParser builtin write function,
 		# because it seems to be impossible to add comments to config file.
-		text = [
-			"#\n",
-			"# Configuration file for samsung-tools - session service\n",
-			"#\n",
-			"\n",
-			"[Main]\n",
-			"# Hotkeys configuration\n",
-			"USE_HOTKEYS=%s\n" % self.config.get("Main", "USE_HOTKEYS"),
-			]
 		try:
-			with open(self.configfile, "w") as config:
-				config.writelines(text)
-			return True
+			oldfile = open(self.configfile, "r")
+		except:
+			sessionlog.write("ERROR: 'SessionConfig().__write()' - '" + self.configfile + "' not found.")
+			return False
+		try:
+			newfile = open(self.configfile + ".new", "w")
 		except:
 			sessionlog.write("ERROR: 'SessionConfig().__write()' - cannot write new config file.")
+			oldfile.close()
 			return False
-	
+		for line in oldfile:
+			if line[0:1] == "#" or line == "\n" or line == "[Main]\n":
+				newfile.write(line)
+			else:
+				option = line.split('=')[0]
+				try:
+					value = self.config.get("Main", option)
+					newfile.write(option + "=" + self.config.get("Main", option) + "\n")
+				except:
+					pass # invalid option, omit it
+		oldfile.close()
+		newfile.close()
+		try:
+			os.remove(self.configfile)
+		except:
+			sessionlog.write("ERROR: 'SessionConfig().__write()' - cannot replace  the old '" + self.configfile + "' with the new version.")
+			os.remove(self.configfile + ".new")
+			return False
+		shutil.move(self.configfile + ".new", self.configfile)
+		return True
+		
 	def getUseHotkeys(self):
 		""" Return the USE_HOTKEYS option. """
 		if self.config.get("Main", "USE_HOTKEYS") == "true":

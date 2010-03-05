@@ -19,6 +19,7 @@
 # See the GNU General Public License for more details.
 # <http://www.gnu.org/licenses/gpl.txt>
 
+import os, shutil
 import ConfigParser
 
 from backends.globals import *
@@ -81,36 +82,37 @@ class SystemConfig():
 		""" Return "True" on success, "False" otherwise. """
 		# We don't use the ConfigParser builtin write function,
 		# because it seems to be impossible to add comments to config file.
-		text = [
-			"#\n",
-			"# Configuration file for samsung-tools - system service\n",
-			"#\n",
-			"\n",
-			"[Main]\n",
-			"# Method for enabling/disabling wireless.\n",
-			"# Valid values are:\n",
-			"# 'iwconfig' - use iwconfig commands\n",
-			"# 'module' - use kernel module removal\n",
-			"# 'esdm' - use easy-slow-down-manager interface\n"
-			"WIRELESS_TOGGLE_METHOD=%s\n" % self.config.get("Main", "WIRELESS_TOGGLE_METHOD"),
-			"\n",
-			"# Wireless device to control, when WIRELESS_TOGGLE_METHOD=iwconfig\n",
-			"WIRELESS_DEVICE=%s\n" % self.config.get("Main", "WIRELESS_DEVICE"),
-			"\n",
-			"# Kernel module to control, when WIRELESS_TOGGLE_METHOD=module\n",
-			"WIRELESS_MODULE=%s\n" % self.config.get("Main", "WIRELESS_MODULE"),
-			"\n",
-			"# Set this to 'false' if you don't want the last status for devices\n",
-			"# to be restored after a suspend/hibernate/reboot cycle.\n",
-			"LAST_STATUS_RESTORE=%s\n" % self.config.get("Main", "LAST_STATUS_RESTORE")
-			]
 		try:
-			with open(self.configfile, "w") as config:
-				config.writelines(text)
-			return True
+			oldfile = open(self.configfile, "r")
+		except:
+			systemlog.write("ERROR: 'SystemConfig().__write()' - '" + self.configfile + "' not found.")
+			return False
+		try:
+			newfile = open(self.configfile + ".new", "w")
 		except:
 			systemlog.write("ERROR: 'SystemConfig().__write()' - cannot write new config file.")
-			return False	
+			oldfile.close()
+			return False
+		for line in oldfile:
+			if line[0:1] == "#" or line == "\n" or line == "[Main]\n":
+				newfile.write(line)
+			else:
+				option = line.split('=')[0]
+				try:
+					value = self.config.get("Main", option)
+					newfile.write(option + "=" + self.config.get("Main", option) + "\n")
+				except:
+					pass # invalid option, omit it
+		oldfile.close()
+		newfile.close()
+		try:
+			os.remove(self.configfile)
+		except:
+			systemlog.write("ERROR: 'SystemConfig().__write()' - cannot replace  the old '" + self.configfile + "' with the new version.")
+			os.remove(self.configfile + ".new")
+			return False
+		shutil.move(self.configfile + ".new", self.configfile)
+		return True
 	
 	def getLastStatusRestore(self):
 		""" Return the LAST_STATUS_RESTORE option. """
