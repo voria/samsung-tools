@@ -79,14 +79,12 @@ class Options(dbus.service.Object):
 				self.hotkeys.setFanHotkey(sessionconfig.getFanHotkey())
 				self.hotkeys.setWebcamHotkey(sessionconfig.getWebcamHotkey())
 				self.hotkeys.setWirelessHotkey(sessionconfig.getWirelessHotkey())
-				self.hotkeys.restartDaemon()
 			else:
 				self.hotkeys.setBacklightHotkey("disable")
 				self.hotkeys.setBluetoothHotkey("disable")
 				self.hotkeys.setFanHotkey("disable")
 				self.hotkeys.setWebcamHotkey("disable")
 				self.hotkeys.setWirelessHotkey("disable")
-				self.hotkeys.stopDaemon()			
 		return result
 	
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 's', out_signature = 'b',
@@ -97,7 +95,6 @@ class Options(dbus.service.Object):
 		usehotkeys = sessionconfig.getUseHotkeys()
 		if result == True and usehotkeys == "true":
 			self.hotkeys.setBacklightHotkey(hotkey)
-			self.hotkeys.restartDaemon()
 		return result
 
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 's', out_signature = 'b',
@@ -108,7 +105,6 @@ class Options(dbus.service.Object):
 		usehotkeys = sessionconfig.getUseHotkeys()
 		if result == True and usehotkeys == "true":
 			self.hotkeys.setBluetoothHotkey(hotkey)
-			self.hotkeys.restartDaemon()
 		return result
 	
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 's', out_signature = 'b',
@@ -119,7 +115,6 @@ class Options(dbus.service.Object):
 		usehotkeys = sessionconfig.getUseHotkeys()
 		if result == True and usehotkeys == "true":
 			self.hotkeys.setFanHotkey(hotkey)
-			self.hotkeys.restartDaemon()
 		return result
 
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 's', out_signature = 'b',
@@ -130,7 +125,6 @@ class Options(dbus.service.Object):
 		usehotkeys = sessionconfig.getUseHotkeys()
 		if result == True and usehotkeys == "true":
 			self.hotkeys.setWebcamHotkey(hotkey)
-			self.hotkeys.restartDaemon()
 		return result
 	
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 's', out_signature = 'b',
@@ -141,5 +135,4 @@ class Options(dbus.service.Object):
 		usehotkeys = sessionconfig.getUseHotkeys()
 		if result == True and usehotkeys == "true":
 			self.hotkeys.setWirelessHotkey(hotkey)
-			self.hotkeys.restartDaemon()
 		return result
