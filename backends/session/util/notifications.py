@@ -19,6 +19,8 @@
 # See the GNU General Public License for more details.
 # <http://www.gnu.org/licenses/gpl.txt>
 
+# TODO: KDE notifications support
+
 from backends.globals import *
 
 try:
@@ -35,7 +37,7 @@ class Notification():
 		self.initialized = False # Is notification system initialized
 		if method == "pynotify":
 			if not pynotify.init("Samsung-Tools Notification System"):
-				sessionlog.write("ERROR: 'Notification()'  - cannot initialize pynotify.")
+				sessionlog.write("ERROR: 'Notification()' - cannot initialize pynotify.")
 				return
 			# Create a new notification
 			self.notify = pynotify.Notification(" ")

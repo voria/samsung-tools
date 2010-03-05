@@ -29,44 +29,42 @@ class Options(dbus.service.Object):
 	def __init__(self, conn = None, object_path = None, bus_name = None):
 		dbus.service.Object.__init__(self, conn, object_path, bus_name)
 		self.hotkeys = Hotkeys()
-		if self.GetUseHotkeys() == "true": # Start xbindkeys at start
-			self.hotkeys.startHotkeys()
 	
-	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = None, out_signature = 'b',
+	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = None, out_signature = 's',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def GetUseHotkeys(self, sender = None, conn = None):
-		""" Return 'True' if hotkeys are enabled, 'False' otherwise. """
+		""" Return the USE_HOTKEYS option. """
 		return sessionconfig.getUseHotkeys()
 	
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = None, out_signature = 's',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def GetBacklightHotkey(self, sender = None, conn = None):
 		""" Return the current hotkey for backlight control. """
-		return self.hotkeys.getBacklightHotkey()
+		return sessionconfig.getBacklightHotkey()
 	
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = None, out_signature = 's',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def GetBluetoothHotkey(self, sender = None, conn = None):
 		""" Return the current hotkey for bluetooth control. """
-		return self.hotkeys.getBluetoothHotkey()
+		return sessionconfig.getBluetoothHotkey()
 	
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = None, out_signature = 's',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def GetFanHotkey(self, sender = None, conn = None):
 		""" Return the current hotkey for fan control. """
-		return self.hotkeys.getFanHotkey()
+		return sessionconfig.getFanHotkey()
 	
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = None, out_signature = 's',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def GetWebcamHotkey(self, sender = None, conn = None):
 		""" Return the current hotkey for webcam control. """
-		return self.hotkeys.getWebcamHotkey()
+		return sessionconfig.getWebcamHotkey()
 	
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = None, out_signature = 's',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def GetWirelessHotkey(self, sender = None, conn = None):
 		""" Return the current hotkey for wireless control. """
-		return self.hotkeys.getWirelessHotkey()
+		return sessionconfig.getWirelessHotkey()
 	
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 's', out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
@@ -75,58 +73,73 @@ class Options(dbus.service.Object):
 		result = sessionconfig.setUseHotkeys(value)
 		if result == True:
 			status = sessionconfig.getUseHotkeys()
-			if status == True:
-				self.hotkeys.restartHotkeys()
+			if status == "true":
+				self.hotkeys.setBacklightHotkey(sessionconfig.getBacklightHotkey())
+				self.hotkeys.setBluetoothHotkey(sessionconfig.getBacklightHotkey())
+				self.hotkeys.setFanHotkey(sessionconfig.getBacklightHotkey())
+				self.hotkeys.setWebcamHotkey(sessionconfig.getBacklightHotkey())
+				self.hotkeys.setWirelessHotkey(sessionconfig.getBacklightHotkey())
+				self.hotkeys.restartDaemon()
 			else:
-				self.hotkeys.stopHotkeys()			
+				self.hotkeys.setBacklightHotkey("disable")
+				self.hotkeys.setBluetoothHotkey("disable")
+				self.hotkeys.setFanHotkey("disable")
+				self.hotkeys.setWebcamHotkey("disable")
+				self.hotkeys.setWirelessHotkey("disable")
+				self.hotkeys.stopDaemon()			
 		return result
 	
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 's', out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def SetBacklightHotkey(self, hotkey, sender = None, conn = None):
 		""" Return 'True' on success, 'False' otherwise. """
-		result = self.hotkeys.setBacklightHotkey(hotkey)
+		result = sessionconfig.setBacklightHotkey(hotkey)
 		usehotkeys = sessionconfig.getUseHotkeys()
-		if result == True and usehotkeys == True:
-			self.hotkeys.restartHotkeys()
+		if result == True and usehotkeys == "true":
+			self.hotkeys.setBacklightHotkey(hotkey)
+			self.hotkeys.restartDaemon()
 		return result
 
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 's', out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def SetBluetoothHotkey(self, hotkey, sender = None, conn = None):
 		""" Return 'True' on success, 'False' otherwise. """
-		result = self.hotkeys.setBluetoothHotkey(hotkey)
+		result = sessionconfig.setBluetoothHotkey(hotkey)
 		usehotkeys = sessionconfig.getUseHotkeys()
-		if result == True and usehotkeys == True:
-			self.hotkeys.restartHotkeys()
+		if result == True and usehotkeys == "true":
+			self.hotkeys.setBluetoothHotkey(hotkey)
+			self.hotkeys.restartDaemon()
 		return result
 	
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 's', out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def SetFanHotkey(self, hotkey, sender = None, conn = None):
 		""" Return 'True' on success, 'False' otherwise. """
-		result = self.hotkeys.setFanHotkey(hotkey)
+		result = sessionconfig.setFanHotkey(hotkey)
 		usehotkeys = sessionconfig.getUseHotkeys()
-		if result == True and usehotkeys == True:
-			self.hotkeys.restartHotkeys()
+		if result == True and usehotkeys == "true":
+			self.hotkeys.setFanHotkey(hotkey)
+			self.hotkeys.restartDaemon()
 		return result
 
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 's', out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def SetWebcamHotkey(self, hotkey, sender = None, conn = None):
 		""" Return 'True' on success, 'False' otherwise. """
-		result = self.hotkeys.setWebcamHotkey(hotkey)
+		result = sessionconfig.setWebcamHotkey(hotkey)
 		usehotkeys = sessionconfig.getUseHotkeys()
-		if result == True and usehotkeys == True:
-			self.hotkeys.restartHotkeys()
+		if result == True and usehotkeys == "true":
+			self.hotkeys.setWebcamHotkey(hotkey)
+			self.hotkeys.restartDaemon()
 		return result
 	
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 's', out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def SetWirelessHotkey(self, hotkey, sender = None, conn = None):
 		""" Return 'True' on success, 'False' otherwise. """
-		result = self.hotkeys.setWirelessHotkey(hotkey)
+		result = sessionconfig.setWirelessHotkey(hotkey)
 		usehotkeys = sessionconfig.getUseHotkeys()
-		if result == True and usehotkeys == True:
-			self.hotkeys.restartHotkeys()
+		if result == True and usehotkeys == "true":
+			self.hotkeys.setWirelessHotkey(hotkey)
+			self.hotkeys.restartDaemon()
 		return result

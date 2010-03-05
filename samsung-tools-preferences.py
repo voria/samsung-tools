@@ -243,7 +243,10 @@ class Main():
 		self.webcamHotkeyLabel = self.builder.get_object("webcamHotkeyLabel")
 		self.wirelessHotkeyLabel = self.builder.get_object("wirelessHotkeyLabel")
 		self.useHotkeysCheckbutton = self.builder.get_object("useHotkeysCheckbutton")
-		self.useHotkeysCheckbutton.set_active(session.GetUseHotkeys())
+		if session.GetUseHotkeys() == "true":
+			self.useHotkeysCheckbutton.set_active(True)
+		else:
+			self.useHotkeysCheckbutton.set_active(False)
 		self.useHotkeysCheckbutton.connect("toggled", self.on_useHotkeysCheckbutton_toggled)
 		self.on_useHotkeysCheckbutton_toggled(self.useHotkeysCheckbutton, True)
 		

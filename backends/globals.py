@@ -33,6 +33,7 @@ WORK_DIRECTORY = "/usr/lib/samsung-tools/"
 ###
 SESSION_CONFIG_FILE = "/etc/samsung-tools/session.conf"
 try: # system service fails when trying to get $HOME environment variable. It doesn't need these infos anyway
+	# Config/Log
 	import os
 	USER_DIRECTORY = os.path.join(os.getenv('HOME'), ".samsung-tools")
 	USER_CONFIG_FILE = os.path.join(USER_DIRECTORY, os.path.basename(SESSION_CONFIG_FILE))
@@ -63,7 +64,7 @@ SYSTEM_OBJECT_PATH_BLUETOOTH = "/Device/Bluetooth"
 SYSTEM_OBJECT_PATH_FAN = "/Device/Fan"
 SYSTEM_OBJECT_PATH_WEBCAM = "/Device/Webcam"
 SYSTEM_OBJECT_PATH_WIRELESS = "/Device/Wireless"
-
+# Config/Log
 SYSTEM_CONFIG_FILE = "/etc/samsung-tools/system.conf"
 SYSTEM_LOG_FILE = "/var/log/samsung-tools.log"
 systemlog = Log(SYSTEM_LOG_FILE)
