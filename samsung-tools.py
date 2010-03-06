@@ -474,8 +474,10 @@ def usage(option = None, opt = None, value = None, parser = None):
 	print "\tOptions:\ton | off | toggle | status"
 	print
 	print "Other options:"
-	print " -n | --show-notify\tShow graphical notifications"
-	print " -q | --quiet\t\tDo not print messages on standard output"
+	print " -n | --show-notify\tShow graphical notifications."
+	print " -q | --quiet\t\tDo not print messages on standard output."
+	print " -s | --stop-session\tStop the session service."
+	print " -S | --stop-system\tStop the system service."
 	print
 	print "Examples of use:"
 	print " - Toggle backlight:"
@@ -534,35 +536,20 @@ def main():
 					action = "store_true",
 					dest = "quiet",
 					default = False)
-	parser.add_option('-d', '--debug',
+	parser.add_option('-s', '--stop-session',
 					action = "store_true",
-					dest = "debug",
+					dest = "stopsession",
+					default = False)
+	parser.add_option('-S', '--stop-system',
+					action = "store_true",
+					dest = "stopsystem",
 					default = False)
 	
 	(options, args) = parser.parse_args()
 	
 	global quiet
 	quiet = options.quiet
-	
-	if options.debug == True:
-		## The following code kill session and system services, for developing purposes
-		# TODO: Remember to remove it.
-		try:
-			bus = dbus.SessionBus()
-			proxy = bus.get_object(SESSION_INTERFACE_NAME, SESSION_OBJECT_PATH_GENERAL)
-			general = dbus.Interface(proxy, SESSION_INTERFACE_NAME)
-			general.Exit()
-		except:
-			pass
-		try:
-			bus = dbus.SystemBus()
-			proxy = bus.get_object(SYSTEM_INTERFACE_NAME, SYSTEM_OBJECT_PATH_GENERAL)
-			general = dbus.Interface(proxy, SYSTEM_INTERFACE_NAME)
-			general.Exit()
-			sys.exit()
-		except:
-			sys.exit()
-	
+		
 	if len(args) != 0:
 		print "Wrong argument(s)."
 		print "Use --help for instructions."
@@ -573,6 +560,32 @@ def main():
 	CPUFan(options.cpufan, options.show_notify).apply()
 	Webcam(options.webcam, options.show_notify).apply()
 	Wireless(options.wireless, options.show_notify).apply()
+	
+	if options.stopsession == True:
+		try:
+			bus = dbus.SessionBus()
+			proxy = bus.get_object(SESSION_INTERFACE_NAME, SESSION_OBJECT_PATH_GENERAL)
+			general = dbus.Interface(proxy, SESSION_INTERFACE_NAME)
+			general.Exit()
+			if not quiet:
+				print "Session service stopped."
+		except:
+			if not quiet:
+				print "Cannot stop session service."
+			pass
+	
+	if options.stopsystem == True:
+		try:
+			bus = dbus.SystemBus()
+			proxy = bus.get_object(SYSTEM_INTERFACE_NAME, SYSTEM_OBJECT_PATH_GENERAL)
+			general = dbus.Interface(proxy, SYSTEM_INTERFACE_NAME)
+			general.Exit()
+			if not quiet:
+				print "System service stopped."
+		except:
+			if not quiet:
+				print "Cannot stop system service."
+			pass
 
 if __name__ == "__main__":
 	main()
