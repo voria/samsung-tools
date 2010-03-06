@@ -172,7 +172,7 @@ class Bluetooth():
 				else:
 					print "Bluetooth is currently disabled."
 		
-class CPUFan():
+class Cpu():
 	def __init__(self, option, use_notify = False):
 		self.option = option
 		self.use_notify = use_notify
@@ -181,13 +181,13 @@ class CPUFan():
 		while retry > 0 and success == False:
 			try:
 				bus = dbus.SessionBus()
-				proxy = bus.get_object(SESSION_INTERFACE_NAME, SESSION_OBJECT_PATH_FAN)
+				proxy = bus.get_object(SESSION_INTERFACE_NAME, SESSION_OBJECT_PATH_CPU)
 				self.interface = dbus.Interface(proxy, SESSION_INTERFACE_NAME)
 				success = True
 			except:
 				retry = retry - 1
 		if retry == 0:
-			print "CPU Fan control: unable to connect to session bus!"
+			print "CPU control: unable to connect to session bus!"
 			sys.exit(1)
 	
 	def __is_available(self):
@@ -213,30 +213,30 @@ class CPUFan():
 			return
 		if not self.__is_available():
 			if not quiet:
-				print "CPU fan control is not available."
+				print "CPU control is not available."
 			self.__status() # needed to show notification
 			return
 		if self.option == "normal":
 			result = self.__normal()
 			if not quiet:
 				if result == 1:
-					print "CPU fan 'normal' mode enabled."
+					print "CPU 'normal' mode enabled."
 				else:
-					print "ERROR: CPU fan 'normal' mode cannot be enabled."
+					print "ERROR: CPU 'normal' mode cannot be enabled."
 		if self.option == "silent":
 			result = self.__silent()
 			if not quiet:
 				if result == 1:
-					print "CPU fan 'silent' mode enabled."
+					print "CPU 'silent' mode enabled."
 				else:
-					print "ERROR: CPU fan 'silent' mode cannot be enabled."
+					print "ERROR: CPU 'silent' mode cannot be enabled."
 		if self.option == "speed":
 			result = self.__speed()
 			if not quiet:
 				if result == 1:
-					print "CPU fan 'speed' mode enabled."
+					print "CPU 'speed' mode enabled."
 				else:
-					print "ERROR: CPU fan 'speed' mode cannot be enabled."
+					print "ERROR: CPU 'speed' mode cannot be enabled."
 		if self.option == "cycle":
 			result = self.__cycle()
 			if not quiet:
@@ -248,15 +248,15 @@ class CPUFan():
 					self.use_notify = n
 					# Notification re-enabled
 					if mode == 0:
-						print "CPU fan mode switched to 'normal'."
+						print "CPU mode switched to 'normal'."
 					if mode == 1:
-						print "CPU fan mode switched to 'silent'."
+						print "CPU mode switched to 'silent'."
 					if mode == 2:
-						print "CPU fan mode switched to 'speed'."
+						print "CPU mode switched to 'speed'."
 					if mode == 3:
-						print "ERROR: Cannot get new CPU fan status."
+						print "ERROR: Cannot get new CPU status."
 				else:
-					print "ERROR: CPU fan mode cannot be switched."
+					print "ERROR: CPU mode cannot be switched."
 		if self.option == "hotkey":
 			from time import sleep
 			from subprocess import Popen, PIPE
@@ -272,7 +272,7 @@ class CPUFan():
 						break
 			except:
 				pass
-			CPUFan(action, self.use_notify).apply()
+			Cpu(action, self.use_notify).apply()
 			try:
 				file = open(tempfile, "w").close() # create temp file
 			except:
@@ -286,13 +286,13 @@ class CPUFan():
 			result = self.__status()
 			if not quiet:
 				if result == 0:
-					print "CPU fan current mode is 'normal'."
+					print "CPU current mode is 'normal'."
 				if result == 1:
-					print "CPU fan current mode is 'silent'."
+					print "CPU current mode is 'silent'."
 				if result == 2:
-					print "CPU fan current mode is 'speed'."
+					print "CPU current mode is 'speed'."
 				if result == 3:
-					print "ERROR: Cannot get current CPU fan status."  
+					print "ERROR: Cannot get current CPU status."  
 		
 class Webcam():
 	def __init__(self, option, use_notify = False):
@@ -463,8 +463,8 @@ def usage(option = None, opt = None, value = None, parser = None):
 	print "Bluetooth:"
 	print "\tInterface:\t-B | --bluetooth"
 	print "\tOptions:\ton | off | toggle | status"
-	print "CPU Fan:"
-	print "\tInterface:\t-f | --cpufan"
+	print "CPU:"
+	print "\tInterface:\t-c | --cpu"
 	print "\tOptions:\tnormal | silent | speed | cycle | hotkey | status"
 	print "Webcam:"
 	print "\tInterface:\t-w | --webcam"
@@ -483,8 +483,8 @@ def usage(option = None, opt = None, value = None, parser = None):
 	print " - Toggle backlight:"
 	print " %s --backlight toggle" % os.path.basename(sys.argv[0])
 	print
-	print " - Toggle wireless and set CPU fan to silent:"
-	print " %s --wireless toggle --cpufan silent" % os.path.basename(sys.argv[0])
+	print " - Toggle wireless and set CPU to silent:"
+	print " %s --wireless toggle --cpu silent" % os.path.basename(sys.argv[0])
 	print
 	print " - Disable bluetooth, webcam and wireless:"
 	print " %s -B off -w off -W off" % os.path.basename(sys.argv[0])
@@ -516,8 +516,8 @@ def main():
 					dest = "bluetooth",
 					type = "choice",
 					choices = ['on', 'off', 'toggle', 'status'])
-	parser.add_option('-f', '--cpufan',
-					dest = "cpufan",
+	parser.add_option('-c', '--cpu',
+					dest = "cpu",
 					type = "choice",
 					choices = ['normal', 'silent', 'speed', 'cycle', 'hotkey', 'status'])
 	parser.add_option('-w', '--webcam',
@@ -557,7 +557,7 @@ def main():
 	
 	Backlight(options.backlight).apply()
 	Bluetooth(options.bluetooth, options.show_notify).apply()
-	CPUFan(options.cpufan, options.show_notify).apply()
+	Cpu(options.cpu, options.show_notify).apply()
 	Webcam(options.webcam, options.show_notify).apply()
 	Wireless(options.wireless, options.show_notify).apply()
 	

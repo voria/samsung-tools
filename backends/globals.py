@@ -22,7 +22,7 @@
 from backends.log import Log
 
 APP_NAME = "Samsung Tools"
-APP_VERSION = "0.1-alpha1"
+APP_VERSION = "0.1"
 WORK_DIRECTORY = "/usr/lib/samsung-tools/"
 
 ###
@@ -34,7 +34,7 @@ SESSION_OBJECT_PATH_GENERAL = "/"
 SESSION_OBJECT_PATH_OPTIONS = "/Options"
 SESSION_OBJECT_PATH_BACKLIGHT = "/Device/Backlight"
 SESSION_OBJECT_PATH_BLUETOOTH = "/Device/Bluetooth"
-SESSION_OBJECT_PATH_FAN = "/Device/Fan"
+SESSION_OBJECT_PATH_CPU = "/Device/Cpu"
 SESSION_OBJECT_PATH_WEBCAM = "/Device/Webcam"
 SESSION_OBJECT_PATH_WIRELESS = "/Device/Wireless"
 # Config/Log
@@ -56,7 +56,7 @@ SYSTEM_OBJECT_PATH_GENERAL = "/"
 SYSTEM_OBJECT_PATH_OPTIONS = "/Options"
 SYSTEM_OBJECT_PATH_BACKLIGHT = "/Device/Backlight"
 SYSTEM_OBJECT_PATH_BLUETOOTH = "/Device/Bluetooth"
-SYSTEM_OBJECT_PATH_FAN = "/Device/Fan"
+SYSTEM_OBJECT_PATH_CPU = "/Device/Cpu"
 SYSTEM_OBJECT_PATH_WEBCAM = "/Device/Webcam"
 SYSTEM_OBJECT_PATH_WIRELESS = "/Device/Wireless"
 # Config/Log
@@ -86,5 +86,5 @@ COMMAND_IWCONFIG = "/sbin/iwconfig"
 # Easy slow down manager interface
 ESDM_MODULE = "easy_slow_down_manager"
 ESDM_PATH_BACKLIGHT = "/proc/easy_backlight"
-ESDM_PATH_FAN = "/proc/easy_slow_down_manager"
+ESDM_PATH_CPU = "/proc/easy_slow_down_manager"
 ESDM_PATH_WIRELESS = "/proc/easy_wifi_kill"

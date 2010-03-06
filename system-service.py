@@ -30,7 +30,7 @@ from backends.globals import *
 from backends.system.options import Options
 from backends.system.backlight import Backlight
 from backends.system.bluetooth import Bluetooth
-from backends.system.fan import Fan
+from backends.system.cpu import Cpu
 from backends.system.webcam import Webcam
 from backends.system.wireless import Wireless
 
@@ -90,7 +90,7 @@ if __name__ == '__main__':
 	General(bus, SYSTEM_OBJECT_PATH_GENERAL)
 	Options(bus, SYSTEM_OBJECT_PATH_OPTIONS)
 	Backlight(bus, SYSTEM_OBJECT_PATH_BACKLIGHT)
-	Fan(bus, SYSTEM_OBJECT_PATH_FAN)
+	Cpu(bus, SYSTEM_OBJECT_PATH_CPU)
 	# We need these objects for restoring last statuses
 	bluetooth = Bluetooth(bus, SYSTEM_OBJECT_PATH_BLUETOOTH)
 	webcam = Webcam(bus, SYSTEM_OBJECT_PATH_WEBCAM)

@@ -50,9 +50,9 @@ class Options(dbus.service.Object):
 	
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = None, out_signature = 's',
 						sender_keyword = 'sender', connection_keyword = 'conn')
-	def GetFanHotkey(self, sender = None, conn = None):
-		""" Return the current hotkey for fan control. """
-		return sessionconfig.getFanHotkey()
+	def GetCpuHotkey(self, sender = None, conn = None):
+		""" Return the current hotkey for cpu control. """
+		return sessionconfig.getCpuHotkey()
 	
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = None, out_signature = 's',
 						sender_keyword = 'sender', connection_keyword = 'conn')
@@ -76,13 +76,13 @@ class Options(dbus.service.Object):
 			if status == "true":
 				self.hotkeys.setBacklightHotkey(sessionconfig.getBacklightHotkey())
 				self.hotkeys.setBluetoothHotkey(sessionconfig.getBluetoothHotkey())
-				self.hotkeys.setFanHotkey(sessionconfig.getFanHotkey())
+				self.hotkeys.setCpuHotkey(sessionconfig.getCpuHotkey())
 				self.hotkeys.setWebcamHotkey(sessionconfig.getWebcamHotkey())
 				self.hotkeys.setWirelessHotkey(sessionconfig.getWirelessHotkey())
 			else:
 				self.hotkeys.setBacklightHotkey("disable")
 				self.hotkeys.setBluetoothHotkey("disable")
-				self.hotkeys.setFanHotkey("disable")
+				self.hotkeys.setCpuHotkey("disable")
 				self.hotkeys.setWebcamHotkey("disable")
 				self.hotkeys.setWirelessHotkey("disable")
 		return result
@@ -109,12 +109,12 @@ class Options(dbus.service.Object):
 	
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 's', out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
-	def SetFanHotkey(self, hotkey, sender = None, conn = None):
+	def SetCpuHotkey(self, hotkey, sender = None, conn = None):
 		""" Return 'True' on success, 'False' otherwise. """
-		result = sessionconfig.setFanHotkey(hotkey)
+		result = sessionconfig.setCpuHotkey(hotkey)
 		usehotkeys = sessionconfig.getUseHotkeys()
 		if result == True and usehotkeys == "true":
-			self.hotkeys.setFanHotkey(hotkey)
+			self.hotkeys.setCpuHotkey(hotkey)
 		return result
 
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 's', out_signature = 'b',

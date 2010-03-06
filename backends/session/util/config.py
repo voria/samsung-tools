@@ -28,7 +28,7 @@ from backends.globals import *
 USE_HOTKEYS_DEFAULT = "true"
 BACKLIGHT_HOTKEY_DEFAULT = "XF86Launch1"
 BLUETOOTH_HOTKEY_DEFAULT = "XF86Launch2"
-FAN_HOTKEY_DEFAULT = "XF86Launch3"
+CPU_HOTKEY_DEFAULT = "XF86Launch3"
 WEBCAM_HOTKEY_DEFAULT = "Alt+KP_Insert"
 WIRELESS_HOTKEY_DEFAULT = "XF86WLAN"
 USE_HOTKEYS_ACCEPTED_VALUES = ['true', 'false']
@@ -48,7 +48,7 @@ class SessionConfig():
 			self.config.set("Main", "USE_HOTKEYS", USE_HOTKEYS_DEFAULT)
 			self.config.set("Main", "BACKLIGHT_HOTKEY", BACKLIGHT_HOTKEY_DEFAULT)
 			self.config.set("Main", "BLUETOOTH_HOTKEY", BLUETOOTH_HOTKEY_DEFAULT)
-			self.config.set("Main", "FAN_HOTKEY", FAN_HOTKEY_DEFAULT)
+			self.config.set("Main", "CPU_HOTKEY", CPU_HOTKEY_DEFAULT)
 			self.config.set("Main", "WEBCAM_HOTKEY", WEBCAM_HOTKEY_DEFAULT)
 			self.config.set("Main", "WIRELESS_HOTKEY", WIRELESS_HOTKEY_DEFAULT)
 		# Check if all options are specified in the config file
@@ -68,9 +68,9 @@ class SessionConfig():
 			except:
 				self.config.set("Main", "BLUETOOTH_HOTKEY", BLUETOOTH_HOTKEY_DEFAULT)
 			try:
-				self.config.get("Main", "FAN_HOTKEY")
+				self.config.get("Main", "CPU_HOTKEY")
 			except:
-				self.config.set("Main", "FAN_HOTKEY", FAN_HOTKEY_DEFAULT)
+				self.config.set("Main", "CPU_HOTKEY", CPU_HOTKEY_DEFAULT)
 			try:
 				self.config.get("Main", "WEBCAM_HOTKEY")
 			except:
@@ -166,9 +166,9 @@ class SessionConfig():
 		""" Return the BLUETOOTH_HOTKEY option. """
 		return self.config.get("Main", "BLUETOOTH_HOTKEY")
 	
-	def getFanHotkey(self):
-		""" Return the FAN_HOTKEY option. """
-		return self.config.get("Main", "FAN_HOTKEY")
+	def getCpuHotkey(self):
+		""" Return the CPU_HOTKEY option. """
+		return self.config.get("Main", "CPU_HOTKEY")
 	
 	def getWebcamHotkey(self):
 		""" Return the WEBCAM_HOTKEY option. """
@@ -204,13 +204,13 @@ class SessionConfig():
 		self.config.set("Main", "BLUETOOTH_HOTKEY", value)
 		return self.__write("BLUETOOTH_HOTKEY")
 	
-	def setFanHotkey(self, value):
-		""" Set the FAN_HOTKEY option. """
+	def setCpuHotkey(self, value):
+		""" Set the CPU_HOTKEY option. """
 		""" Return 'True' on success, 'False' otherwise. """
 		if value == "default": # set default
-			value = FAN_HOTKEY_DEFAULT
-		self.config.set("Main", "FAN_HOTKEY", value)
-		return self.__write("FAN_HOTKEY")
+			value = CPU_HOTKEY_DEFAULT
+		self.config.set("Main", "CPU_HOTKEY", value)
+		return self.__write("CPU_HOTKEY")
 	
 	def setWebcamHotkey(self, value):
 		""" Set the WEBCAM_HOTKEY option. """

@@ -29,7 +29,7 @@ from backends.globals import *
 from backends.session.options import Options
 from backends.session.backlight import Backlight
 from backends.session.bluetooth import Bluetooth
-from backends.session.fan import Fan
+from backends.session.cpu import Cpu
 from backends.session.webcam import Webcam
 from backends.session.wireless import Wireless
 from backends.session.util.notifications import Notification
@@ -75,7 +75,7 @@ if __name__ == '__main__':
 	Backlight(session_bus, SESSION_OBJECT_PATH_BACKLIGHT)
 	Options(session_bus, SESSION_OBJECT_PATH_OPTIONS)
 	Bluetooth(notify, session_bus, SESSION_OBJECT_PATH_BLUETOOTH)
-	Fan(notify, session_bus, SESSION_OBJECT_PATH_FAN)
+	Cpu(notify, session_bus, SESSION_OBJECT_PATH_CPU)
 	Webcam(notify, session_bus, SESSION_OBJECT_PATH_WEBCAM)
 	Wireless(notify, session_bus, SESSION_OBJECT_PATH_WIRELESS)
 	

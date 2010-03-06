@@ -25,11 +25,11 @@ import subprocess
 
 from backends.globals import *
 
-BACKLIGHT_HOTKEY_COMMAND = "samsung-tools -b toggle --show-notify --quiet"
-BLUETOOTH_HOTKEY_COMMAND = "samsung-tools -B toggle --show-notify --quiet"
-FAN_HOTKEY_COMMAND = "samsung-tools -f hotkey --show-notify --quiet"
-WEBCAM_HOTKEY_COMMAND = "samsung-tools -w toggle --show-notify --quiet"
-WIRELESS_HOTKEY_COMMAND = "samsung-tools -W toggle --show-notify --quiet"
+BACKLIGHT_HOTKEY_COMMAND = "samsung-tools --show-notify --quiet --backlight toggle"
+BLUETOOTH_HOTKEY_COMMAND = "samsung-tools --show-notify --quiet --bluetooth toggle"
+CPU_HOTKEY_COMMAND = "samsung-tools --show-notify --quiet --cpu hotkey"
+WEBCAM_HOTKEY_COMMAND = "samsung-tools --show-notify --quiet --webcam toggle"
+WIRELESS_HOTKEY_COMMAND = "samsung-tools --show-notify --quiet --wireless toggle"
 DUMMY_HOTKEY_COMMAND = "SamsungToolsDummyCommand"
 DUMMY_HOTKEY = "Control+Alt+Shift+Mod4+F1+F2+F3"
 
@@ -46,13 +46,13 @@ class Hotkeys():
 		if sessionconfig.getUseHotkeys() == "true":
 			self.setBacklightHotkey(sessionconfig.getBacklightHotkey())
 			self.setBluetoothHotkey(sessionconfig.getBluetoothHotkey())
-			self.setFanHotkey(sessionconfig.getFanHotkey())
+			self.setCpuHotkey(sessionconfig.getCpuHotkey())
 			self.setWebcamHotkey(sessionconfig.getWebcamHotkey())
 			self.setWirelessHotkey(sessionconfig.getWirelessHotkey())
 		else:
 			self.setBacklightHotkey("disable")
 			self.setBluetoothHotkey("disable")
-			self.setFanHotkey("disable")
+			self.setCpuHotkey("disable")
 			self.setWebcamHotkey("disable")
 			self.setWirelessHotkey("disable")
 	
@@ -183,13 +183,13 @@ class Hotkeys():
 		self.__restart_daemon()
 		return result
 	
-	def setFanHotkey(self, hotkey):
+	def setCpuHotkey(self, hotkey):
 		""" Set the new hotkey. """
 		""" Return 'True' on success, 'False' otherwise. """
 		if hotkey == "disable":
-			result = self.__remove_hotkey(FAN_HOTKEY_COMMAND)
+			result = self.__remove_hotkey(CPU_HOTKEY_COMMAND)
 		else:
-			result = self.__update_hotkey(FAN_HOTKEY_COMMAND, hotkey)
+			result = self.__update_hotkey(CPU_HOTKEY_COMMAND, hotkey)
 		self.__restart_daemon()
 		return result
 		
