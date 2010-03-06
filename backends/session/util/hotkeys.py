@@ -122,6 +122,8 @@ class Hotkeys():
 				os.remove(XBINDKEYS_CONFIG_FILE + ".new")
 				return False
 			shutil.move(XBINDKEYS_CONFIG_FILE + ".new", XBINDKEYS_CONFIG_FILE)
+		else:
+			os.remove(XBINDKEYS_CONFIG_FILE + ".new")
 		return True
 	
 	def __start_daemon(self):
@@ -143,49 +145,67 @@ class Hotkeys():
 			process.communicate()
 		except:
 			sessionlog.write("ERROR: 'Hotkeys.startDaemon()' - COMMAND: '" + command + "' - Exception thrown.")
-			return
+	
+	def __config_changed(self):
+		""" Force xbindkeys to reload its configuration file. """
+		command = "killall -HUP xbindkeys"
+		try:
+			process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+			process.communicate()
+		except:
+			sessionlog.write("ERROR: 'Hotkeys.__config_changed()' - COMMAND: '" + command + "' - Exception thrown.")
 		
 	def setBacklightHotkey(self, hotkey):
 		""" Set the new hotkey. """
 		""" Return 'True' on success, 'False' otherwise. """
 		if hotkey == "disable":
-			return self.__remove_hotkey(BACKLIGHT_HOTKEY_COMMAND)
+			result = self.__remove_hotkey(BACKLIGHT_HOTKEY_COMMAND)
 		else:
+			result = self.__update_hotkey(BACKLIGHT_HOTKEY_COMMAND, hotkey) 
 			self.__start_daemon() # make sure xbindkeys is started
-			return self.__update_hotkey(BACKLIGHT_HOTKEY_COMMAND, hotkey)
+		self.__config_changed()
+		return result
 	
 	def setBluetoothHotkey(self, hotkey):
 		""" Set the new hotkey. """
 		""" Return 'True' on success, 'False' otherwise. """
 		if hotkey == "disable":
-			return self.__remove_hotkey(BLUETOOTH_HOTKEY_COMMAND)
+			result = self.__remove_hotkey(BLUETOOTH_HOTKEY_COMMAND)
 		else:
+			result = self.__update_hotkey(BLUETOOTH_HOTKEY_COMMAND, hotkey)
 			self.__start_daemon() # make sure xbindkeys is started
-			return self.__update_hotkey(BLUETOOTH_HOTKEY_COMMAND, hotkey)
+		self.__config_changed()
+		return result
 	
 	def setFanHotkey(self, hotkey):
 		""" Set the new hotkey. """
 		""" Return 'True' on success, 'False' otherwise. """
 		if hotkey == "disable":
-			return self.__remove_hotkey(FAN_HOTKEY_COMMAND)
+			result = self.__remove_hotkey(FAN_HOTKEY_COMMAND)
 		else:
+			result = self.__update_hotkey(FAN_HOTKEY_COMMAND, hotkey)
 			self.__start_daemon() # make sure xbindkeys is started
-			return self.__update_hotkey(FAN_HOTKEY_COMMAND, hotkey)
+		self.__config_changed()
+		return result
 		
 	def setWebcamHotkey(self, hotkey):
 		""" Set the new hotkey. """
 		""" Return 'True' on success, 'False' otherwise. """
 		if hotkey == "disable":
-			return self.__remove_hotkey(WEBCAM_HOTKEY_COMMAND)
+			result = self.__remove_hotkey(WEBCAM_HOTKEY_COMMAND)
 		else:
+			result = self.__update_hotkey(WEBCAM_HOTKEY_COMMAND, hotkey)
 			self.__start_daemon() # make sure xbindkeys is started
-			return self.__update_hotkey(WEBCAM_HOTKEY_COMMAND, hotkey)
+		self.__config_changed()
+		return result
 		
 	def setWirelessHotkey(self, hotkey):
 		""" Set the new hotkey. """
 		""" Return 'True' on success, 'False' otherwise. """
 		if hotkey == "disable":
-			return self.__remove_hotkey(WIRELESS_HOTKEY_COMMAND)
+			result = self.__remove_hotkey(WIRELESS_HOTKEY_COMMAND)
 		else:
+			result = self.__update_hotkey(WIRELESS_HOTKEY_COMMAND, hotkey)
 			self.__start_daemon() # make sure xbindkeys is started
-			return self.__update_hotkey(WIRELESS_HOTKEY_COMMAND, hotkey)
+		self.__config_changed()
+		return result
