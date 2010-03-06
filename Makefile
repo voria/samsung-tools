@@ -26,6 +26,8 @@ install_services:
 	$(install_script) sleep.d/20_samsung-tools $(DESTDIR)/etc/pm/sleep.d/
 	$(install_dir) $(DESTDIR)/etc/init/
 	$(install_file) upstart/samsung-tools.conf $(DESTDIR)/etc/init/
+	$(install_dir) $(DESTDIR)/etc/xdg/autostart/
+	$(install_file) desktop/samsung-tools-session-service.desktop $(DESTDIR)/etc/xdg/autostart/ 
 	
 install_cli: install_services
 	$(install_dir) $(DESTDIR)/usr/bin/
@@ -37,7 +39,7 @@ install_gui: install_cli
 	$(install_dir) $(DESTDIR)/usr/bin/
 	$(install_script) samsung-tools-preferences.py $(DESTDIR)/usr/bin/samsung-tools-preferences
 	$(install_dir) $(DESTDIR)/usr/share/applications/
-	$(install_file) desktop/*.desktop $(DESTDIR)/usr/share/applications/
+	$(install_file) desktop/samsung-tools-preferences.desktop $(DESTDIR)/usr/share/applications/
 
 uninstall:
 	rm -rf $(DESTDIR)/usr/bin/samsung-tools
@@ -50,3 +52,4 @@ uninstall:
 	rm -rf $(DESTDIR)/etc/pm/sleep.d/20_samsung-tools
 	rm -rf $(DESTDIR)/etc/init/samsung-tools.conf
 	rm -rf $(DESTDIR)/usr/share/applications/samsung-tools-preferences.desktop
+	rm -rf $(DESTDIR)/etc/xdg/autostart/samsung-tools-session-service.desktop

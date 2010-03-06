@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Samsung Tools
+Comment=Samsung Tools Session Service
+#Icon=
+Exec=/usr/lib/samsung-tools/session-service.py
+Terminal=false
+Type=Application
+#Categories=
+OnlyShowIn=GNOME;XFCE;
