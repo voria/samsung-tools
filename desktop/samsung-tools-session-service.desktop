@@ -6,4 +6,4 @@ Exec=/usr/lib/samsung-tools/session-service.py
 Terminal=false
 Type=Application
 #Categories=
-OnlyShowIn=GNOME;XFCE;
+OnlyShowIn=GNOME;XFCE;KDE;
