@@ -23,31 +23,57 @@
 
 from backends.globals import *
 
+# Try to use these notification methods, in order:
+# "pynotify" - Use pynotify module (ubuntu - notify-osd)
+# "dbus" - Use "org.freedesktop.Notifications" interface through dbus (kubuntu)
+# None - Do not use notification system
+method = "pynotify"
+
+import dbus
+DBUS_METHOD_INTERFACE = "org.freedesktop.Notifications"
+DBUS_METHOD_OBJECT = "/org/freedesktop/Notifications"
+
 try:
 	import pynotify
-	method = "pynotify"
 except:
-	sessionlog.write("ERROR: 'notifications'  - cannot import pynotify.")
-	method = None
-	pass
+	method = "dbus"
 
 class Notification():
 	""" Show user's notifications. """
 	def __init__(self, title = None, message = None, icon = None, urgency = "normal"):
 		self.initialized = False # Is notification system initialized
+		global method
 		if method == "pynotify":
-			if not pynotify.init("Samsung-Tools Notification System"):
-				sessionlog.write("ERROR: 'Notification()' - cannot initialize pynotify.")
-				return
-			# Create a new notification
-			self.notify = pynotify.Notification(" ")
-			# Set initial values
-			self.setTitle(title)
-			self.setMessage(message)
-			self.setIcon(icon)
-			self.setUrgency(urgency)
-			self.initialized = True
-
+			if pynotify.init("Samsung-Tools Notification System"):
+				# Create a new notification
+				self.notify = pynotify.Notification(" ")
+				# Set initial values
+				self.setTitle(title)
+				self.setMessage(message)
+				self.setIcon(icon)
+				self.setUrgency(urgency)
+				self.initialized = True
+			else:
+				sessionlog.write("ERROR: 'Notification()' - cannot use 'pynotify' method. Trying with 'dbus' one.")
+				method = "dbus"
+		if method == "dbus":
+			if self.__connect() != None:
+				self.initialized = True
+			else:
+				method = None	
+	
+	def __connect(self):
+		""" Enable connection to session backend (used when method == 'dbus'). """
+		retry = 3
+		while retry > 0:
+			try:
+				bus = dbus.SessionBus()
+				proxy = bus.get_object(DBUS_METHOD_INTERFACE, DBUS_METHOD_OBJECT)
+				return dbus.Interface(proxy, DBUS_METHOD_INTERFACE)
+			except:
+				retry = retry - 1
+		return None
+	
 	def setTitle(self, title):
 		""" Set notification's title. """ 
 		self.title = title
@@ -62,8 +88,8 @@ class Notification():
 
 	def setUrgency(self, urgency):
 		""" Set notification's urgency. """
-		if method != "pynotify":
-			return
+		if method != "pynotify": 
+			return # urgency's used only with pynotify method
 		if urgency == "low":
 			self.urgency = pynotify.URGENCY_LOW
 		elif urgency == "normal":
@@ -81,3 +107,7 @@ class Notification():
 			if self.urgency != None:
 				self.notify.set_urgency(self.urgency)
 			self.notify.show()
+		if method == "dbus":
+			interface = self.__connect()
+			if interface != None:
+				interface.Notify(APP_NAME, 0, self.icon, self.title, self.message, "", "", 3000)
