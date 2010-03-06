@@ -88,6 +88,7 @@ class SystemConfig():
 		# because it seems to be impossible to add comments to config file.
 		value = self.config.get("Main", option)
 		optionfound = False
+		sectionfound = False
 		try:
 			oldfile = open(self.configfile, "r")
 		except:
@@ -105,8 +106,11 @@ class SystemConfig():
 			oldfile.close()
 			return False
 		for line in oldfile:
-			if line[0:1] == "#" or line == "\n" or line == "[Main]\n":
+			if line[0:1] == "#" or line == "\n":
 				newfile.write(line)
+			elif line == "[Main]\n":
+				newfile.write(line)
+				sectionfound = True
 			else:
 				currentoption = line.split('=')[0].strip()
 				if currentoption != option: # not the option we are searching for
@@ -122,6 +126,8 @@ class SystemConfig():
 						os.remove(self.configfile + ".new")
 						return False
 		oldfile.close()
+		if sectionfound == False: # probably an empty file, write section
+			newfile.write("[Main]\n")
 		if optionfound == False: # option not found in current config file, add it
 			newfile.write(option + "=" + value + "\n")
 		newfile.close()
