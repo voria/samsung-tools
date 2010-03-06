@@ -29,16 +29,20 @@ class Fan(dbus.service.Object):
 	""" Control CPU fan """
 	def __init__(self, notify = None, conn = None, object_path = None, bus_name = None):
 		dbus.service.Object.__init__(self, conn, object_path, bus_name)
-		self.system_bus = None
-		self.proxy = None
-		self.interface = None
 		self.notify = notify
 	
 	def __connect(self):
 		""" Enable connection to system backend """
-		self.system_bus = dbus.SystemBus()
-		self.proxy = self.system_bus.get_object(SYSTEM_INTERFACE_NAME, SYSTEM_OBJECT_PATH_FAN)
-		self.interface = dbus.Interface(self.proxy, SYSTEM_INTERFACE_NAME)
+		retry = 3
+		while retry > 0:
+			try:
+				bus = dbus.SystemBus()
+				proxy = bus.get_object(SYSTEM_INTERFACE_NAME, SYSTEM_OBJECT_PATH_FAN)
+				return dbus.Interface(proxy, SYSTEM_INTERFACE_NAME)
+			except:
+				retry = retry - 1
+		sessionlog.write("ERROR: 'Fan.__connect()' - 3 attempts to connect to system bus failed.")
+		return None
 	
 	def __not_available(self, show_notify = True):
 		""" If show_notify == True, inform the user that the CPU fan control is not available. """
@@ -55,9 +59,11 @@ class Fan(dbus.service.Object):
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def IsAvailable(self, sender = None, conn = None):
 		""" Check if the CPU fan control is available. """
-		""" Return 'True' if available, 'False' if disabled. """
-		self.__connect()
-		return self.interface.IsAvailable()
+		""" Return 'True' if available, 'False' if disabled or any error. """
+		interface = self.__connect()
+		if not interface:
+			return False
+		return interface.IsAvailable()
 	
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 'b', out_signature = 'i',
 						sender_keyword = 'sender', connection_keyword = 'conn')
@@ -68,8 +74,10 @@ class Fan(dbus.service.Object):
 		if not self.IsAvailable():
 			self.__not_available(show_notify)
 			return 3
-		self.__connect()
-		status = self.interface.Status()
+		interface = self.__connect()
+		if not interface:
+			return 3
+		status = interface.Status()
 		if self.notify != None and show_notify:
 			self.notify.setTitle(FAN_TITLE)
 			self.notify.setUrgency("critical")
@@ -95,8 +103,10 @@ class Fan(dbus.service.Object):
 		""" Return 'True' on success, 'False' otherwise. """
 		if not self.IsAvailable():
 			return self.__not_available(show_notify)
-		self.__connect()
-		result = self.interface.SetNormal()
+		interface = self.__connect()
+		if not interface:
+			return False
+		result = interface.SetNormal()
 		if self.notify != None and show_notify:
 			self.notify.setTitle(FAN_TITLE)
 			self.notify.setUrgency("critical")
@@ -116,8 +126,10 @@ class Fan(dbus.service.Object):
 		""" Return 'True' on success, 'False' otherwise. """
 		if not self.IsAvailable():
 			return self.__not_available(show_notify)
-		self.__connect()
-		result = self.interface.SetSilent()
+		interface = self.__connect()
+		if not interface:
+			return False
+		result = interface.SetSilent()
 		if self.notify != None and show_notify:
 			self.notify.setTitle(FAN_TITLE)
 			self.notify.setUrgency("critical")
@@ -137,8 +149,10 @@ class Fan(dbus.service.Object):
 		""" Return 'True' on success, 'False' otherwise. """
 		if not self.IsAvailable():
 			return self.__not_available(show_notify)
-		self.__connect()
-		result = self.interface.SetSpeed()
+		interface = self.__connect()
+		if not interface:
+			return False
+		result = interface.SetSpeed()
 		if self.notify != None and show_notify:
 			self.notify.setTitle(FAN_TITLE)
 			self.notify.setUrgency("critical")
@@ -158,13 +172,15 @@ class Fan(dbus.service.Object):
 		""" Return 'True' on success, 'False' otherwise. """
 		if not self.IsAvailable():
 			return self.__not_available(show_notify)
-		self.__connect()
-		result = self.interface.Cycle()
+		interface = self.__connect()
+		if not interface:
+			return False
+		result = interface.Cycle()
 		if self.notify != None and show_notify:
 			self.notify.setTitle(FAN_TITLE)
 			self.notify.setUrgency("critical")
 			if result == True:
-				status = self.interface.Status()				
+				status = interface.Status()				
 				if status == 0:
 					self.notify.setMessage(FAN_SWITCH_NORMAL)
 					self.notify.setIcon(FAN_NORMAL_ICON)

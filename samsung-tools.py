@@ -35,9 +35,19 @@ quiet = False
 class Backlight():
 	def __init__(self, option):
 		self.option = option
-		bus = dbus.SessionBus()
-		proxy = bus.get_object(SESSION_INTERFACE_NAME, SESSION_OBJECT_PATH_BACKLIGHT)
-		self.interface = dbus.Interface(proxy, SESSION_INTERFACE_NAME)
+		success = False
+		retry = 3
+		while retry > 0 and success == False:
+			try:
+				bus = dbus.SessionBus()
+				proxy = bus.get_object(SESSION_INTERFACE_NAME, SESSION_OBJECT_PATH_BACKLIGHT)
+				self.interface = dbus.Interface(proxy, SESSION_INTERFACE_NAME)
+				success = True
+			except:
+				retry = retry - 1
+		if retry == 0:
+			print "Backlight control: unable to connect to session bus!"
+			sys.exit(1)
 		
 	def __on(self):
 		return self.interface.Enable()
@@ -87,9 +97,19 @@ class Bluetooth():
 	def __init__(self, option, use_notify = False):
 		self.option = option
 		self.use_notify = use_notify
-		bus = dbus.SessionBus()
-		proxy = bus.get_object(SESSION_INTERFACE_NAME, SESSION_OBJECT_PATH_BLUETOOTH)
-		self.interface = dbus.Interface(proxy, SESSION_INTERFACE_NAME)
+		success = False
+		retry = 3
+		while retry > 0 and success == False:
+			try:
+				bus = dbus.SessionBus()
+				proxy = bus.get_object(SESSION_INTERFACE_NAME, SESSION_OBJECT_PATH_BLUETOOTH)
+				self.interface = dbus.Interface(proxy, SESSION_INTERFACE_NAME)
+				success = True
+			except:
+				retry = retry - 1
+		if retry == 0:
+			print "Bluetooth control: unable to connect to session bus!"
+			sys.exit(1)
 			
 	def __is_available(self):
 		return self.interface.IsAvailable()
@@ -156,9 +176,19 @@ class CPUFan():
 	def __init__(self, option, use_notify = False):
 		self.option = option
 		self.use_notify = use_notify
-		bus = dbus.SessionBus()
-		proxy = bus.get_object(SESSION_INTERFACE_NAME, SESSION_OBJECT_PATH_FAN)
-		self.interface = dbus.Interface(proxy, SESSION_INTERFACE_NAME)
+		success = False
+		retry = 3
+		while retry > 0 and success == False:
+			try:
+				bus = dbus.SessionBus()
+				proxy = bus.get_object(SESSION_INTERFACE_NAME, SESSION_OBJECT_PATH_FAN)
+				self.interface = dbus.Interface(proxy, SESSION_INTERFACE_NAME)
+				success = True
+			except:
+				retry = retry - 1
+		if retry == 0:
+			print "CPU Fan control: unable to connect to session bus!"
+			sys.exit(1)
 	
 	def __is_available(self):
 		return self.interface.IsAvailable()
@@ -258,9 +288,19 @@ class Webcam():
 	def __init__(self, option, use_notify = False):
 		self.option = option
 		self.use_notify = use_notify
-		bus = dbus.SessionBus()
-		proxy = bus.get_object(SESSION_INTERFACE_NAME, SESSION_OBJECT_PATH_WEBCAM)
-		self.interface = dbus.Interface(proxy, SESSION_INTERFACE_NAME)
+		success = False
+		retry = 3
+		while retry > 0 and success == False:
+			try:
+				bus = dbus.SessionBus()
+				proxy = bus.get_object(SESSION_INTERFACE_NAME, SESSION_OBJECT_PATH_WEBCAM)
+				self.interface = dbus.Interface(proxy, SESSION_INTERFACE_NAME)
+				success = True
+			except:
+				retry = retry - 1
+		if retry == 0:
+			print "Webcam control: unable to connect to session bus!"
+			sys.exit(1)
 	
 	def __is_available(self):
 		return self.interface.IsAvailable()
@@ -327,9 +367,19 @@ class Wireless():
 	def __init__(self, option, use_notify = False):
 		self.option = option
 		self.use_notify = use_notify 
-		bus = dbus.SessionBus()
-		proxy = bus.get_object(SESSION_INTERFACE_NAME, SESSION_OBJECT_PATH_WIRELESS)
-		self.interface = dbus.Interface(proxy, SESSION_INTERFACE_NAME)
+		success = False
+		retry = 3
+		while retry > 0 and success == False:
+			try:
+				bus = dbus.SessionBus()
+				proxy = bus.get_object(SESSION_INTERFACE_NAME, SESSION_OBJECT_PATH_WIRELESS)
+				self.interface = dbus.Interface(proxy, SESSION_INTERFACE_NAME)
+				success = True
+			except:
+				retry = retry - 1
+		if retry == 0:
+			print "Wireless control: unable to connect to session bus!"
+			sys.exit(1)
 	
 	def __is_available(self):
 		return self.interface.IsAvailable()
@@ -427,13 +477,13 @@ def usage(option = None, opt = None, value = None, parser = None):
 	print " - Disable bluetooth, webcam and wireless:"
 	print " %s -B off -w off -W off" % os.path.basename(sys.argv[0])
 	print
-	print "Visit the 'Linux On My Samsung' forum for more informations, at:"
+	print "For more informations, visit the 'Linux On My Samsung' forum, at:"
 	print
 	print " - http://www.voria.org/forum"
 	print
 	print "Copyleft by: Fortunato Ventre (voRia) - vorione@gmail.com"
 	print "Released under GPLv3 license."
-	sys.exit()
+	sys.exit(0)
 
 def main():
 	if  len(sys.argv) == 1:

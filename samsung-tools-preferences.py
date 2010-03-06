@@ -321,14 +321,28 @@ class Main():
 		self.mainWindow.show()
 	
 	def __connect_session(self):
-		bus = dbus.SessionBus()
-		proxy = bus.get_object(SESSION_INTERFACE_NAME, SESSION_OBJECT_PATH_OPTIONS)
-		return dbus.Interface(proxy, SESSION_INTERFACE_NAME)
-	
+		retry = 3
+		while retry > 0:
+			try:
+				bus = dbus.SessionBus()
+				proxy = bus.get_object(SESSION_INTERFACE_NAME, SESSION_OBJECT_PATH_OPTIONS)
+				return dbus.Interface(proxy, SESSION_INTERFACE_NAME)
+			except:
+				retry = retry - 1
+		print "Unable to connect to session bus!"
+		sys.exit(1)
+		
 	def __connect_system(self):
-		bus = dbus.SystemBus()
-		proxy = bus.get_object(SYSTEM_INTERFACE_NAME, SYSTEM_OBJECT_PATH_OPTIONS)
-		return dbus.Interface(proxy, SYSTEM_INTERFACE_NAME)
+		retry = 3
+		while retry > 0:
+			try:
+				bus = dbus.SystemBus()
+				proxy = bus.get_object(SYSTEM_INTERFACE_NAME, SYSTEM_OBJECT_PATH_OPTIONS)
+				return dbus.Interface(proxy, SYSTEM_INTERFACE_NAME)
+			except:
+				retry = retry - 1
+		print "Unable to connect to system bus!"
+		sys.exit(1)
 	
 	def __convert_gtk_to_xbindkeys(self, hotkey):
 		keys = hotkey.replace('<', "").split('>')

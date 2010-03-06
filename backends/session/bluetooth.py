@@ -29,16 +29,20 @@ class Bluetooth(dbus.service.Object):
 	""" Control bluetooth """
 	def __init__(self, notify = None, conn = None, object_path = None, bus_name = None):
 		dbus.service.Object.__init__(self, conn, object_path, bus_name)
-		self.system_bus = None
-		self.proxy = None
-		self.interface = None
 		self.notify = notify
 	
 	def __connect(self):
 		""" Enable connection to system backend """
-		self.system_bus = dbus.SystemBus()
-		self.proxy = self.system_bus.get_object(SYSTEM_INTERFACE_NAME, SYSTEM_OBJECT_PATH_BLUETOOTH)
-		self.interface = dbus.Interface(self.proxy, SYSTEM_INTERFACE_NAME)
+		retry = 3
+		while retry > 0:
+			try:
+				bus = dbus.SystemBus()
+				proxy = bus.get_object(SYSTEM_INTERFACE_NAME, SYSTEM_OBJECT_PATH_BLUETOOTH)
+				return dbus.Interface(proxy, SYSTEM_INTERFACE_NAME)
+			except:
+				retry = retry - 1
+		sessionlog.write("ERROR: 'Bluetooth.__connect()' - 3 attempts to connect to system bus failed.")
+		return None
 	
 	def __not_available(self, show_notify = True):
 		""" If show_notify == True, inform the user that bluetooth is not available. """
@@ -55,19 +59,23 @@ class Bluetooth(dbus.service.Object):
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def IsAvailable(self, sender = None, conn = None):
 		""" Check if bluetooth is available. """
-		""" Return 'True' if available, 'False' if disabled. """
-		self.__connect()
-		return self.interface.IsAvailable()
+		""" Return 'True' if available, 'False' if disabled or any error. """
+		interface = self.__connect()
+		if not interface:
+			return False
+		return interface.IsAvailable()
 			
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 'b', out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def IsEnabled(self, show_notify = True, sender = None, conn = None):
 		""" Check if bluetooth is enabled. """
-		""" Return 'True' if enabled, 'False' if disabled. """
+		""" Return 'True' if enabled, 'False' if disabled or any error. """
 		if not self.IsAvailable():
 			return self.__not_available(show_notify)
-		self.__connect()
-		enabled = self.interface.IsEnabled()
+		interface = self.__connect()
+		if not interface:
+			return False
+		enabled = interface.IsEnabled()
 		if self.notify != None and show_notify:
 			self.notify.setTitle(BLUETOOTH_TITLE)
 			self.notify.setIcon(BLUETOOTH_ICON)
@@ -86,8 +94,10 @@ class Bluetooth(dbus.service.Object):
 		""" Return 'True' on success, 'False' otherwise. """
 		if not self.IsAvailable():
 			return self.__not_available(show_notify)
-		self.__connect()
-		result = self.interface.Enable()
+		interface = self.__connect()
+		if not interface:
+			return False
+		result = interface.Enable()
 		if self.notify != None and show_notify:
 			self.notify.setTitle(BLUETOOTH_TITLE)
 			self.notify.setUrgency("critical")
@@ -107,8 +117,10 @@ class Bluetooth(dbus.service.Object):
 		""" Return 'True' on success, 'False' otherwise. """
 		if not self.IsAvailable():
 			return self.__not_available(show_notify)
-		self.__connect()
-		result = self.interface.Disable()
+		interface = self.__connect()
+		if not interface:
+			return False
+		result = interface.Disable()
 		if self.notify != None and show_notify:
 			self.notify.setTitle(BLUETOOTH_TITLE)
 			self.notify.setUrgency("critical")
@@ -128,7 +140,10 @@ class Bluetooth(dbus.service.Object):
 		""" Return 'True' on success, 'False' otherwise. """
 		if not self.IsAvailable():
 			return self.__not_available(show_notify)
-		if self.interface.IsEnabled():
+		interface = self.__connect()
+		if not interface:
+			return False
+		if interface.IsEnabled():
 			return self.Disable(show_notify)
 		else:
 			return self.Enable(show_notify)
