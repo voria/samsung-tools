@@ -258,16 +258,26 @@ class CPUFan():
 				else:
 					print "ERROR: CPU fan mode cannot be switched."
 		if self.option == "hotkey":
-			# FIXME
 			from time import sleep
-			tempfile = os.path.join(USER_DIRECTORY, ".samsung-tools_hotkey-tempfile")
-			if os.path.exists(tempfile):
-				CPUFan("cycle", self.use_notify).apply()
-			else:
-				CPUFan("status", self.use_notify).apply()
-				file = open(tempfile, "w") # create temp file
-				file.close()
-			sleep(5)
+			from subprocess import Popen, PIPE
+			tempfiles = ".samsung-tools_hotkey-tempfile-"
+			tempfile = os.path.join(USER_DIRECTORY, tempfiles + str(os.getpid()))
+			action = "status"
+			try:
+				ls = Popen(['ls', '-a', USER_DIRECTORY], stdout = PIPE)
+				output = ls.communicate()[0].split()
+				for line in output:
+					if line[0:len(tempfiles)] == tempfiles:
+						action = "cycle"
+						break
+			except:
+				pass
+			CPUFan(action, self.use_notify).apply()
+			try:
+				file = open(tempfile, "w").close() # create temp file
+			except:
+				pass
+			sleep(10)
 			try:
 				os.remove(tempfile)
 			except:
