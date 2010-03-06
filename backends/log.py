@@ -19,7 +19,7 @@
 # See the GNU General Public License for more details.
 # <http://www.gnu.org/licenses/gpl.txt>
 
-import time
+from time import strftime
 
 class Log():
 	def __init__(self, logfile):
@@ -29,7 +29,7 @@ class Log():
 	def __open(self):
 		""" Open log file for writing. """
 		try:
-			self.log = open(self.logfile, "a")
+			self.log = open(self.logfile, "a+")
 		except:
 			self.log = None
 	
@@ -40,7 +40,7 @@ class Log():
 	
 	def __get_time(self):
 		""" Return current time string. """
-		return time.strftime("%a %d %H:%M:%S : ")
+		return strftime("%a %d %H:%M:%S : ")
 	
 	def write(self, message):
 		self.__open()

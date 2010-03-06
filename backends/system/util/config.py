@@ -38,11 +38,11 @@ class SystemConfig():
 		self.configfile = configfile
 		self.config = ConfigParser.SafeConfigParser()
 		try:
-			self.config.readfp(open(configfile))
+			self.config.readfp(open(configfile, "r"))
 		except:
 			# configfile not found?
 			# Use default options
-			systemlog.write("WARNING: 'SystemConfig()' - '" + configfile + "' not found. Using default values for all options.")
+			systemlog.write("WARNING: 'SystemConfig()' - Cannot read '" + configfile + "'. Using default values for all options.")
 			self.config.add_section("Main")
 			self.config.set("Main", "WIRELESS_TOGGLE_METHOD", WIRELESS_TOGGLE_METHOD_DEFAULT)
 			self.config.set("Main", "WIRELESS_DEVICE", WIRELESS_DEVICE_DEFAULT)
@@ -50,6 +50,8 @@ class SystemConfig():
 			self.config.set("Main", "LAST_STATUS_RESTORE", LAST_STATUS_RESTORE_DEFAULT)
 		# Check if all options are specified in the config file
 		else:
+			if not self.config.has_section("Main"):
+				self.config.add_section("Main")
 			try:
 				self.config.get("Main", "WIRELESS_TOGGLE_METHOD")
 			except:
@@ -78,33 +80,50 @@ class SystemConfig():
 					"' is invalid. Using default value ('" + LAST_STATUS_RESTORE_DEFAULT + "').")
 			self.config.set("Main", "LAST_STATUS_RESTORE", LAST_STATUS_RESTORE_DEFAULT)
 	
-	def __write(self):
-		""" Write on disk the config file. """
+	def __write(self, option):
+		""" Write the new 'option' in the config file. """
+		""" If 'option' does not exists in file, add it. """
 		""" Return "True" on success, "False" otherwise. """
 		# We don't use the ConfigParser builtin write function,
 		# because it seems to be impossible to add comments to config file.
+		value = self.config.get("Main", option)
+		optionfound = False
 		try:
 			oldfile = open(self.configfile, "r")
 		except:
-			systemlog.write("ERROR: 'SystemConfig().__write()' - '" + self.configfile + "' not found.")
-			return False
+			systemlog.write("WARNING: 'SystemConfig().__write()' - '" + self.configfile + "' not found. Creating a new one.")
+			try:
+				oldfile = open(self.configfile, "w").close()
+				oldfile = open(self.configfile, "r")
+			except:
+				systemlog.write("ERROR: 'SystemConfig().__write()' - cannot write the config file.")
+				return False
 		try:
 			newfile = open(self.configfile + ".new", "w")
 		except:
-			systemlog.write("ERROR: 'SystemConfig().__write()' - cannot write new config file.")
+			systemlog.write("ERROR: 'SystemConfig().__write()' - cannot write the new config file.")
 			oldfile.close()
 			return False
 		for line in oldfile:
 			if line[0:1] == "#" or line == "\n" or line == "[Main]\n":
 				newfile.write(line)
 			else:
-				option = line.split('=')[0].strip()
-				try:
-					value = self.config.get("Main", option)
-					newfile.write(option + "=" + self.config.get("Main", option) + "\n")
-				except:
-					pass # invalid option, omit it
+				currentoption = line.split('=')[0].strip()
+				if currentoption != option: # not the option we are searching for
+					newfile.write(line)
+				else:
+					optionfound = True
+					try:					
+						newfile.write(option + "=" + value + "\n")
+					except:
+						systemlog.write("ERROR: 'SystemConfig().__write()' - cannot write the new value for '" + option + "' in the new config file.")
+						oldfile.close()
+						newfile.close()
+						os.remove(self.configfile + ".new")
+						return False
 		oldfile.close()
+		if optionfound == False: # option not found in current config file, add it
+			newfile.write(option + "=" + value + "\n")
 		newfile.close()
 		try:
 			os.remove(self.configfile)
@@ -139,7 +158,7 @@ class SystemConfig():
 		if value not in LAST_STATUS_RESTORE_ACCEPTED_VALUES:
 			return False
 		self.config.set("Main", "LAST_STATUS_RESTORE", value)
-		return self.__write()
+		return self.__write("LAST_STATUS_RESTORE")
 	
 	def setWirelessToggleMethod(self, value):
 		""" Set the WIRELESS_TOGGLE_METHOD option. """
@@ -149,7 +168,7 @@ class SystemConfig():
 		if value not in WIRELESS_TOGGLE_METHOD_ACCEPTED_VALUES:
 			return False
 		self.config.set("Main", "WIRELESS_TOGGLE_METHOD", value)
-		return self.__write()
+		return self.__write("WIRELESS_TOGGLE_METHOD")
 	
 	def setWirelessDevice(self, value):
 		""" Set the WIRELESS_DEVICE option. """
@@ -157,7 +176,7 @@ class SystemConfig():
 		if value == "default": # set default
 			value = WIRELESS_DEVICE_DEFAULT
 		self.config.set("Main", "WIRELESS_DEVICE", value)
-		return self.__write()
+		return self.__write("WIRELESS_DEVICE")
 		
 	def setWirelessModule(self, value):
 		""" Set the WIRELESS_MODULE option. """
@@ -165,5 +184,5 @@ class SystemConfig():
 		if value == "default": # set default
 			value = WIRELESS_MODULE_DEFAULT
 		self.config.set("Main", "WIRELESS_MODULE", value)
-		return self.__write()
+		return self.__write("WIRELESS_MODULE")
 	

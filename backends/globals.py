@@ -19,9 +19,6 @@
 # See the GNU General Public License for more details.
 # <http://www.gnu.org/licenses/gpl.txt>
 
-from backends.session.util.config import SessionConfig
-from backends.system.util.config import SystemConfig
-
 from backends.log import Log
 
 APP_NAME = "Samsung Tools"
@@ -31,17 +28,6 @@ WORK_DIRECTORY = "/usr/lib/samsung-tools/"
 ###
 ### Session service
 ###
-SESSION_CONFIG_FILE = "/etc/samsung-tools/session.conf"
-try: # system service fails when trying to get $HOME environment variable. It doesn't need these infos anyway
-	# Config/Log
-	import os
-	USER_DIRECTORY = os.path.join(os.getenv('HOME'), ".samsung-tools")
-	USER_CONFIG_FILE = os.path.join(USER_DIRECTORY, os.path.basename(SESSION_CONFIG_FILE))
-	SESSION_LOG_FILE = os.path.join(USER_DIRECTORY, "log")
-	sessionlog = Log(SESSION_LOG_FILE)
-	sessionconfig = SessionConfig(USER_CONFIG_FILE)
-except:
-	pass 
 # Interface/Objects
 SESSION_INTERFACE_NAME = "org.voria.SamsungTools.Session"
 SESSION_OBJECT_PATH_GENERAL = "/"
@@ -51,6 +37,15 @@ SESSION_OBJECT_PATH_BLUETOOTH = "/Device/Bluetooth"
 SESSION_OBJECT_PATH_FAN = "/Device/Fan"
 SESSION_OBJECT_PATH_WEBCAM = "/Device/Webcam"
 SESSION_OBJECT_PATH_WIRELESS = "/Device/Wireless"
+# Config/Log
+SESSION_CONFIG_FILE = "/etc/samsung-tools/session.conf"
+import os
+USER_DIRECTORY = os.path.join(os.getenv('HOME', '/root'), ".samsung-tools")
+USER_CONFIG_FILE = os.path.join(USER_DIRECTORY, os.path.basename(SESSION_CONFIG_FILE))
+SESSION_LOG_FILE = os.path.join(USER_DIRECTORY, "log")
+sessionlog = Log(SESSION_LOG_FILE)
+from backends.session.util.config import SessionConfig
+sessionconfig = SessionConfig(USER_CONFIG_FILE)
 
 ###
 ### System service
@@ -68,6 +63,7 @@ SYSTEM_OBJECT_PATH_WIRELESS = "/Device/Wireless"
 SYSTEM_CONFIG_FILE = "/etc/samsung-tools/system.conf"
 SYSTEM_LOG_FILE = "/var/log/samsung-tools.log"
 systemlog = Log(SYSTEM_LOG_FILE)
+from backends.system.util.config import SystemConfig
 systemconfig = SystemConfig(SYSTEM_CONFIG_FILE)
 # Last devices' status files
 LAST_DEVICES_STATUS_DIRECTORY = os.path.join(WORK_DIRECTORY, "devices-status")
