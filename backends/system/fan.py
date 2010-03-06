@@ -29,10 +29,9 @@ class Fan(dbus.service.Object):
 	""" Control CPU fan through easy-slow-down-manager interface """
 	def __init__(self, conn = None, object_path = None, bus_name = None):
 		dbus.service.Object.__init__(self, conn, object_path, bus_name)
-	
-	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
-						sender_keyword = 'sender', connection_keyword = 'conn')
-	def IsAvailable(self, sender = None, conn = None):
+		self.available = self.__is_available()
+		
+	def __is_available(self):
 		""" Check if the CPU fan control is available. """
 		""" Return 'True' if available, 'False' otherwise. """
 		if os.path.exists(ESDM_PATH_FAN):
@@ -51,7 +50,13 @@ class Fan(dbus.service.Object):
 					return True
 			except:
 				systemlog.write("ERROR: 'Fan.IsAvailable()' - COMMAND: '" + command + "' - Exception thrown.")
-				return False	
+				return False
+	
+	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
+						sender_keyword = 'sender', connection_keyword = 'conn')
+	def IsAvailable(self, sender = None, conn = None):
+		""" Return 'True' if CPU fan control is available, 'False' otherwise. """
+		return self.available
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'i',
 						sender_keyword = 'sender', connection_keyword = 'conn')
@@ -59,7 +64,7 @@ class Fan(dbus.service.Object):
 		""" Get current mode. """
 		"""Return 0 if 'normal', 1 if 'silent', 2 if 'speed'. """
 		""" Return 3 if any error. """
-		if not self.IsAvailable():
+		if not self.available:
 			return 3
 		try:
 			with open(ESDM_PATH_FAN, 'r') as file:
@@ -73,7 +78,7 @@ class Fan(dbus.service.Object):
 	def SetNormal(self, sender = None, conn = None):
 		""" Set 'normal' mode. """
 		""" Return 'True' on success, 'False' otherwise. """
-		if not self.IsAvailable():
+		if not self.available:
 			return False
 		try:
 			with open(ESDM_PATH_FAN, 'w') as file:
@@ -88,7 +93,7 @@ class Fan(dbus.service.Object):
 	def SetSilent(self, sender = None, conn = None):
 		""" Set 'silent' mode. """
 		""" Return 'True' on success, 'False' otherwise. """
-		if not self.IsAvailable():
+		if not self.available:
 			return False
 		try:
 			with open(ESDM_PATH_FAN, 'w') as file:
@@ -103,7 +108,7 @@ class Fan(dbus.service.Object):
 	def SetSpeed(self, sender = None, conn = None):
 		""" Set 'speed' mode. """
 		""" Return 'True' on success, 'False' otherwise. """
-		if not self.IsAvailable():
+		if not self.available:
 			return False
 		try:
 			with open(ESDM_PATH_FAN, 'w') as file:
@@ -118,7 +123,7 @@ class Fan(dbus.service.Object):
 	def Cycle(self, sender = None, conn = None):
 		""" Set the next mode in a cyclic way. """
 		""" Return 'True' on success, 'False' otherwise. """
-		if not self.IsAvailable():
+		if not self.available:
 			return False
 		current = self.Status()
 		if current == 0:

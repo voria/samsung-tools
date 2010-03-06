@@ -29,6 +29,27 @@ class Bluetooth(dbus.service.Object):
 	""" Control bluetooth """
 	def __init__(self, conn = None, object_path = None, bus_name = None):
 		dbus.service.Object.__init__(self, conn, object_path, bus_name)
+		self.available = self.__is_available()
+		
+	def __is_available(self):
+		""" Check if bluetooth is available. """
+		""" Return 'True' if available, 'False' if disabled. """
+		# FIXME: Find a better way to check if bluetooth is available
+		command = COMMAND_LSUSB + " -v"
+		try:
+			process = subprocess.Popen(command.split(),
+									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+			output = process.communicate()[0].split()
+			if process.returncode != 0:
+				systemlog.write("ERROR: 'Bluetooth.IsAvailable()' - COMMAND: '" + command + "' FAILED.")
+				return False
+			if "Bluetooth" in output:
+				return True
+			else:
+				return False
+		except:
+			systemlog.write("ERROR: 'Bluetooth.IsAvailable()' - COMMAND: '" + command + "' - Exception thrown.")
+			return False
 	
 	def __is_module_loaded(self):
 		""" Check if bluetooth kernel module is loaded. """
@@ -99,31 +120,15 @@ class Bluetooth(dbus.service.Object):
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')	
 	def IsAvailable(self, sender = None, conn = None):
-		""" Check if bluetooth is available. """
-		""" Return 'True' if available, 'False' if disabled. """
-		# FIXME: Find a better way to check if bluetooth is available
-		command = COMMAND_LSUSB + " -v"
-		try:
-			process = subprocess.Popen(command.split(),
-									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-			output = process.communicate()[0].split()
-			if process.returncode != 0:
-				systemlog.write("ERROR: 'Bluetooth.IsAvailable()' - COMMAND: '" + command + "' FAILED.")
-				return False
-			if "Bluetooth" in output:
-				return True
-			else:
-				return False
-		except:
-			systemlog.write("ERROR: 'Bluetooth.IsAvailable()' - COMMAND: '" + command + "' - Exception thrown.")
-			return False
+		""" Return 'True' if bluetooth is available, 'False' if not. """
+		return self.available
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def IsEnabled(self, sender = None, conn = None):
 		""" Check if bluetooth is enabled. """
 		""" Return 'True' if enabled, 'False' if disabled. """
-		if not self.IsAvailable():
+		if not self.available:
 			return False
 		if self.__is_module_loaded() and self.__is_service_started() and self.__is_radio_enabled():
 			return True
@@ -135,7 +140,7 @@ class Bluetooth(dbus.service.Object):
 	def Enable(self, sender = None, conn = None):
 		""" Enable bluetooth. """
 		""" Return 'True' on success, 'False' otherwise. """
-		if not self.IsAvailable():
+		if not self.available:
 			return False
 		if self.IsEnabled():
 			return True
@@ -184,7 +189,7 @@ class Bluetooth(dbus.service.Object):
 	def Disable(self, sender = None, conn = None):
 		""" Disable bluetooth. """
 		""" Return 'True' on success, 'False' otherwise. """
-		if not self.IsAvailable():
+		if not self.available:
 			return False
 		if not self.IsEnabled():
 			return True
@@ -233,7 +238,7 @@ class Bluetooth(dbus.service.Object):
 	def Toggle(self, sender = None, conn = None):
 		""" Toggle bluetooth. """
 		""" Return 'True' on success, 'False' otherwise. """
-		if not self.IsAvailable():
+		if not self.available:
 			return False
 		if self.IsEnabled():
 			return self.Disable()

@@ -29,6 +29,27 @@ class Wireless(dbus.service.Object):
 	""" Control wireless """
 	def __init__(self, conn = None, object_path = None, bus_name = None):
 		dbus.service.Object.__init__(self, conn, object_path, bus_name)
+		self.available = self.__is_available()
+	
+	def __is_available(self):
+		""" Check if wireless is available. """
+		""" Return 'True' if available, 'False' otherwise. """
+		if self.__load_esdm_module() == True:
+			return True
+		# FIXME: Find a better way to check if wireless is available
+		try:
+			process = subprocess.Popen([COMMAND_LSPCI], stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+			output = process.communicate()[0].split()
+			if process.returncode != 0:
+				systemlog.write("ERROR: 'Wireless.IsAvailable()' - COMMAND: '" + COMMAND_LSPCI + "' FAILED.")
+				return False			
+			if not "Wireless" in output:
+				return False
+			else:
+				return True
+		except:
+			systemlog.write("ERROR: 'Wireless.IsAvailable()' - COMMAND: '" + COMMAND_LSPCI + "' - Exception thrown.")
+			return False
 			
 	def __load_esdm_module(self):
 		""" Load the easy-slow-down-manager kernel module. """
@@ -64,31 +85,15 @@ class Wireless(dbus.service.Object):
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def IsAvailable(self, sender = None, conn = None):
-		""" Check if wireless is available. """
-		""" Return 'True' if available, 'False' otherwise. """
-		if self.__load_esdm_module() == True:
-			return True
-		# FIXME: Find a better way to check if wireless is available
-		try:
-			process = subprocess.Popen([COMMAND_LSPCI], stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-			output = process.communicate()[0].split()
-			if process.returncode != 0:
-				systemlog.write("ERROR: 'Wireless.IsAvailable()' - COMMAND: '" + COMMAND_LSPCI + "' FAILED.")
-				return False			
-			if not "Wireless" in output:
-				return False
-			else:
-				return True
-		except:
-			systemlog.write("ERROR: 'Wireless.IsAvailable()' - COMMAND: '" + COMMAND_LSPCI + "' - Exception thrown.")
-			return False
+		""" Return 'True' if wireless control is available, 'False' otherwise. """
+		return self.available
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def IsEnabled(self, sender = None, conn = None):
 		""" Check if wireless is enabled. """
 		""" Return 'True' if enabled, 'False' if disabled. """
-		if not self.IsAvailable():
+		if not self.available:
 			return False
 		method = systemconfig.getWirelessToggleMethod()
 		if method == "iwconfig":
@@ -141,7 +146,7 @@ class Wireless(dbus.service.Object):
 	def Enable(self, sender = None, conn = None):
 		""" Enable wireless. """
 		""" Return 'True' on success, 'False' otherwise. """
-		if not self.IsAvailable():
+		if not self.available:
 			return False
 		if self.IsEnabled():
 			return True
@@ -188,7 +193,7 @@ class Wireless(dbus.service.Object):
 	def Disable(self, sender = None, conn = None):
 		""" Disable wireless. """
 		""" Return 'True' on success, 'False' otherwise. """
-		if not self.IsAvailable():
+		if not self.available:
 			return False
 		if not self.IsEnabled():
 			return True
@@ -235,7 +240,7 @@ class Wireless(dbus.service.Object):
 	def Toggle(self, sender = None, conn = None):
 		""" Toggle wireless. """
 		""" Return 'True' on success, 'False' otherwise. """
-		if not self.IsAvailable():
+		if not self.available:
 			return False
 		if self.IsEnabled():
 			return self.Disable()
