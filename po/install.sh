@@ -4,8 +4,8 @@
 DESTDIR=$1
 
 # Compile
-for locale in po/`cat po/LINGUAS`; do
-	msgfmt $locale.po -o $locale.mo
+for locale in `cat po/LINGUAS`; do
+	msgfmt po/$locale.po -o po/$locale.mo
 done
 # Install
 for locale in `cat po/LINGUAS`; do

@@ -12,10 +12,14 @@ echo
 echo "*** Removing unneeded files..."
 rm *.glade.h
 
-echo
-for file in po/*.po; do
-	echo "*** Updating '$file'..."
-	msgmerge -U "$file" po/messages.pot
+for locale in `cat po/LINGUAS`; do
+	if [ -f po/$locale.po ]; then
+		echo "*** Updating '`echo $locale.po | cut -d/ -f2`'..."
+		msgmerge -U po/$locale.po po/messages.pot
+	else
+		echo "*** Creating new '`echo $locale.po | cut -d/ -f2`'..."
+		cp po/messages.pot po/$locale.po
+	fi
 done
 
 echo
