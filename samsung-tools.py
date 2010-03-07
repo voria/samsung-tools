@@ -25,10 +25,12 @@ WORK_DIRECTORY = "/usr/lib/samsung-tools"
 sys.path.append(WORK_DIRECTORY)
 
 from optparse import OptionParser
-
 import dbus
+import gettext
+_ = gettext.gettext
 
 from backends.globals import *
+from backends.session.util.locales import *
 
 quiet = False
 
@@ -46,7 +48,7 @@ class Backlight():
 			except:
 				retry = retry - 1
 		if retry == 0:
-			print "Backlight control: unable to connect to session bus!"
+			print _("Backlight control: unable to connect to session service!")
 			sys.exit(1)
 		
 	def __on(self):
@@ -68,30 +70,39 @@ class Backlight():
 			result = self.__on()
 			if not quiet:
 				if result == 1:
-					print "Backlight enabled."
+					print BACKLIGHT_ENABLED
 				else:
-					print "ERROR: Backlight cannot be enabled."
+					print BACKLIGHT_ENABLING_ERROR
 		if self.option == "off":
 			result = self.__off()
 			if not quiet:
 				if result == 1:
-					print "Backlight disabled."
+					print BACKLIGHT_DISABLED
 				else:
-					print "ERROR: Backlight cannot be disabled."
+					print BACKLIGHT_DISABLING_ERROR
 		if self.option == "toggle":
 			result = self.__toggle()
 			if not quiet:
 				if result == 1:
-					print "Backlight toggled."
+					# Temporary disable notifications
+					n = self.use_notify
+					self.use_notify = False
+					status = self.__status()
+					self.use_notify = n
+					# Notification re-enabled
+					if status == 1:
+						print BACKLIGHT_ENABLED
+					else:
+						print BACKLIGHT_DISABLED
 				else:
-					print "ERROR: Backlight cannot be toggled."				
+					print BACKLIGHT_TOGGLING_ERROR				
 		if self.option == "status":
 			result = self.__status()
 			if not quiet:
 				if result == 1:
-					print "Backlight is currently enabled."
+					print BACKLIGHT_STATUS_ENABLED
 				else:
-					print "Backlight is currently disabled."
+					print BACKLIGHT_STATUS_DISABLED
 	
 class Bluetooth():
 	def __init__(self, option, use_notify = False):
@@ -108,7 +119,7 @@ class Bluetooth():
 			except:
 				retry = retry - 1
 		if retry == 0:
-			print "Bluetooth control: unable to connect to session bus!"
+			print _("Bluetooth control: unable to connect to session service!")
 			sys.exit(1)
 			
 	def __is_available(self):
@@ -131,23 +142,23 @@ class Bluetooth():
 			return
 		if not self.__is_available():
 			if not quiet:
-				print "Bluetooth control is not available."
+				print BLUETOOTH_NOT_AVAILABLE
 			self.__status() # needed to show notification
 			return
 		if self.option == "on":
 			result = self.__on()
 			if not quiet:
 				if result == 1:
-					print "Bluetooth enabled."
+					print BLUETOOTH_ENABLED
 				else:
-					print "ERROR: Bluetooth cannot be enabled."
+					print BLUETOOTH_ENABLING_ERROR
 		if self.option == "off":
 			result = self.__off()
 			if not quiet:
 				if result == 1:
-					print "Bluetooth disabled."
+					print BLUETOOTH_DISABLED
 				else:
-					print "ERROR: Bluetooth cannot be disabled."
+					print BLUETOOTH_DISABLING_ERROR
 		if self.option == "toggle":
 			result = self.__toggle()
 			if not quiet:
@@ -159,18 +170,18 @@ class Bluetooth():
 					self.use_notify = n
 					# Notification re-enabled
 					if status == 1:
-						print "Bluetooth enabled."
+						print BLUETOOTH_ENABLED
 					else:
-						print "Bluetooth disabled."
+						print BLUETOOTH_DISABLED
 				else:
-					print "ERROR: Bluetooth cannot be toggled."
+					print BLUETOOTH_TOGGLING_ERROR
 		if self.option == "status":
 			result = self.__status()
 			if not quiet:
 				if result == 1:
-					print "Bluetooth is currently enabled."
+					print BLUETOOTH_STATUS_ENABLED
 				else:
-					print "Bluetooth is currently disabled."
+					print BLUETOOTH_STATUS_DISABLED
 		
 class Cpu():
 	def __init__(self, option, use_notify = False):
@@ -187,7 +198,7 @@ class Cpu():
 			except:
 				retry = retry - 1
 		if retry == 0:
-			print "CPU control: unable to connect to session bus!"
+			print _("CPU control: unable to connect to session service!")
 			sys.exit(1)
 	
 	def __is_available(self):
@@ -213,30 +224,30 @@ class Cpu():
 			return
 		if not self.__is_available():
 			if not quiet:
-				print "CPU control is not available."
+				print CPU_NOT_AVAILABLE
 			self.__status() # needed to show notification
 			return
 		if self.option == "normal":
 			result = self.__normal()
 			if not quiet:
 				if result == 1:
-					print "CPU 'normal' mode enabled."
+					print CPU_SWITCH_NORMAL
 				else:
-					print "ERROR: CPU 'normal' mode cannot be enabled."
+					print CPU_SWITCHING_ERROR
 		if self.option == "silent":
 			result = self.__silent()
 			if not quiet:
 				if result == 1:
-					print "CPU 'silent' mode enabled."
+					print CPU_SWITCH_SILENT
 				else:
-					print "ERROR: CPU 'silent' mode cannot be enabled."
+					print CPU_SWITCHING_ERROR
 		if self.option == "speed":
 			result = self.__speed()
 			if not quiet:
 				if result == 1:
-					print "CPU 'speed' mode enabled."
+					print CPU_SWITCH_SPEED
 				else:
-					print "ERROR: CPU 'speed' mode cannot be enabled."
+					print CPU_SWITCHING_ERROR
 		if self.option == "cycle":
 			result = self.__cycle()
 			if not quiet:
@@ -248,15 +259,15 @@ class Cpu():
 					self.use_notify = n
 					# Notification re-enabled
 					if mode == 0:
-						print "CPU mode switched to 'normal'."
+						print CPU_SWITCH_NORMAL
 					if mode == 1:
-						print "CPU mode switched to 'silent'."
+						print CPU_SWITCH_SILENT
 					if mode == 2:
-						print "CPU mode switched to 'speed'."
+						print CPU_SWITCH_SPEED
 					if mode == 3:
-						print "ERROR: Cannot get new CPU status."
+						print CPU_STATUS_ERROR
 				else:
-					print "ERROR: CPU mode cannot be switched."
+					print CPU_SWITCHING_ERROR
 		if self.option == "hotkey":
 			from time import sleep
 			from subprocess import Popen, PIPE
@@ -286,13 +297,13 @@ class Cpu():
 			result = self.__status()
 			if not quiet:
 				if result == 0:
-					print "CPU current mode is 'normal'."
+					print CPU_STATUS_NORMAL
 				if result == 1:
-					print "CPU current mode is 'silent'."
+					print CPU_STATUS_SILENT
 				if result == 2:
-					print "CPU current mode is 'speed'."
+					print CPU_STATUS_SPEED
 				if result == 3:
-					print "ERROR: Cannot get current CPU status."  
+					print CPU_STATUS_ERROR
 		
 class Webcam():
 	def __init__(self, option, use_notify = False):
@@ -309,7 +320,7 @@ class Webcam():
 			except:
 				retry = retry - 1
 		if retry == 0:
-			print "Webcam control: unable to connect to session bus!"
+			print _("Webcam control: unable to connect to session service!")
 			sys.exit(1)
 	
 	def __is_available(self):
@@ -332,23 +343,23 @@ class Webcam():
 			return
 		if not self.__is_available():
 			if not quiet:
-				print "Webcam control is not available."
+				print WEBCAM_NOT_AVAILABLE
 			self.__status() # needed to show notification
 			return
 		if self.option == "on":
 			result = self.__on()
 			if not quiet:
 				if result == 1:
-					print "Webcam enabled."
+					print WEBCAM_ENABLED
 				else:
-					print "ERROR: Webcam cannot be enabled."
+					print WEBCAM_ENABLING_ERROR
 		if self.option == "off":
 			result = self.__off()
 			if not quiet:
 				if result == 1:
-					print "Webcam disabled."
+					print WEBCAM_DISABLED
 				else:
-					print "ERROR: Webcam cannot be disabled."
+					print WEBCAM_DISABLING_ERROR
 		if self.option == "toggle":
 			result = self.__toggle()
 			if not quiet:
@@ -360,18 +371,18 @@ class Webcam():
 					self.use_notify = n
 					# Notification re-enabled
 					if status == 1:
-						print "Webcam enabled."
+						print WEBCAM_ENABLED
 					else:
-						print "Webcam disabled."
+						print WEBCAM_DISABLED
 				else:
-					print "ERROR: Webcam cannot be toggled."
+					print WEBCAM_TOGGLING_ERROR
 		if self.option == "status":
 			result = self.__status()
 			if not quiet:
 				if result == 1:
-					print "Webcam is currently enabled."
+					print WEBCAM_STATUS_ENABLED
 				else:
-					print "Webcam is currently disabled."
+					print WEBCAM_STATUS_DISABLED
 
 class Wireless():
 	def __init__(self, option, use_notify = False):
@@ -388,7 +399,7 @@ class Wireless():
 			except:
 				retry = retry - 1
 		if retry == 0:
-			print "Wireless control: unable to connect to session bus!"
+			print _("Wireless control: unable to connect to session service!")
 			sys.exit(1)
 	
 	def __is_available(self):
@@ -411,23 +422,23 @@ class Wireless():
 			return
 		if not self.__is_available():
 			if not quiet:
-				print "Wireless control is not available."
+				print WIRELESS_NOT_AVAILABLE
 			self.__status() # needed to show notification
 			return
 		if self.option == "on":
 			result = self.__on()
 			if not quiet:
 				if result == 1:
-					print "Wireless enabled."
+					print WIRELESS_ENABLED
 				else:
-					print "ERROR: Wireless cannot be enabled."
+					print WIRELESS_ENABLING_ERROR
 		if self.option == "off":
 			result = self.__off()
 			if not quiet:
 				if result == 1:
-					print "Wireless disabled."
+					print WIRELESS_DISABLED
 				else:
-					print "ERROR: Wireless cannot be disabled."
+					print WIRELESS_DISABLING_ERROR
 		if self.option == "toggle":
 			result = self.__toggle()
 			if not quiet:
@@ -439,71 +450,75 @@ class Wireless():
 					self.use_notify = n
 					# Notification re-enabled
 					if status == 1:
-						print "Wireless enabled."
+						print WIRELESS_STATUS_ENABLED
 					else:
-						print "Wireless disabled."
+						print WIRELESS_STATUS_DISABLED
 				else:
-					print "ERROR: Wireless cannot be toggled."
+					print WIRELESS_TOGGLING_ERROR
 		if self.option == "status":
 			result = self.__status()
 			if not quiet:
 				if result == 1:
-					print "Wireless is currently enabled."
+					print WIRELESS_STATUS_ENABLED
 				else:
-					print "Wireless is currently disabled."
+					print WIRELESS_STATUS_DISABLED
 
 def usage(option = None, opt = None, value = None, parser = None):
-	print "Samsung-Tools - Command Line Utility"
+	print _("Samsung-Tools - Command Line Utility")
 	print
-	print "Usage: %s <interface> <option> ..." % os.path.basename(sys.argv[0])
+	print _("Usage: %s <interface> <option> ...") % os.path.basename(sys.argv[0])
 	print
-	print "Backlight:"
-	print "\tInterface:\t-b | --backlight"
-	print "\tOptions:\ton | off | toggle | status"
-	print "Bluetooth:"
-	print "\tInterface:\t-B | --bluetooth"
-	print "\tOptions:\ton | off | toggle | status"
-	print "CPU:"
-	print "\tInterface:\t-c | --cpu"
-	print "\tOptions:\tnormal | silent | speed | cycle | hotkey | status"
-	print "Webcam:"
-	print "\tInterface:\t-w | --webcam"
-	print "\tOptions:\ton | off | toggle | status"
-	print "Wireless:"
-	print "\tInterface:\t-W | --wireless"
-	print "\tOptions:\ton | off | toggle | status"
+	print _("Backlight:")
+	print _("\tInterface:\t") + "-b | --backlight"
+	print _("\tOptions:\t") + "on | off | toggle | status"
+	print _("Bluetooth:")
+	print _("\tInterface:\t") + "-B | --bluetooth"
+	print _("\tOptions:\t") + "on | off | toggle | status"
+	print _("CPU:")
+	print _("\tInterface:\t") + "-c | --cpu"
+	print _("\tOptions:\t") + "normal | silent | speed | cycle | hotkey | status"
+	print _("Webcam:")
+	print _("\tInterface:\t") + "-w | --webcam"
+	print _("\tOptions:\t") + "on | off | toggle | status"
+	print _("Wireless:")
+	print _("\tInterface:\t") + "-W | --wireless"
+	print _("\tOptions:\t") + "on | off | toggle | status"
 	print
 	print "Other options:"
-	print " -n | --show-notify\tShow graphical notifications."
-	print " -q | --quiet\t\tDo not print messages on standard output."
-	print " -s | --stop-session\tStop the session service."
-	print " -S | --stop-system\tStop the system service."
+	print " -n | --show-notify\t" + _("Show graphical notifications.")
+	print " -q | --quiet\t\t" + _("Do not print messages on standard output.")
+	print " -s | --stop-session\t" + _("Stop the session service.")
+	print " -S | --stop-system\t" + _("Stop the system service.")
 	print
-	print "Examples of use:"
-	print " - Toggle backlight:"
+	print _("Examples of use:")
+	print _(" - Toggle backlight:")
 	print " %s --backlight toggle" % os.path.basename(sys.argv[0])
 	print
-	print " - Toggle wireless and set CPU to silent:"
+	print _(" - Toggle wireless and set CPU to silent:")
 	print " %s --wireless toggle --cpu silent" % os.path.basename(sys.argv[0])
 	print
-	print " - Disable bluetooth, webcam and wireless:"
+	print _(" - Disable bluetooth, webcam and wireless:")
 	print " %s -B off -w off -W off" % os.path.basename(sys.argv[0])
 	print
-	print "For more informations, visit the 'Linux On My Samsung' forum, at:"
+	print _("For more informations, visit the 'Linux On My Samsung' forum, at:")
 	print
 	print " - http://www.voria.org/forum"
 	print
 	print "Copyleft by: Fortunato Ventre (voRia) - vorione@gmail.com"
-	print "Released under GPLv3 license."
+	print _("Released under GPLv3 license.")
 	sys.exit(0)
 
 def main():
+	
+	gettext.bindtextdomain(APP_NAME.replace(' ', '-').lower())
+	gettext.textdomain(APP_NAME.replace(' ', '-').lower())
+	
 	if  len(sys.argv) == 1:
-		print "No action(s) specified."
-		print "Use --help for instructions."
+		print _("No action(s) specified.")
+		print _("Use --help for instructions.")
 		sys.exit(1)
 	
-	usage_string = "Usage: %s <interface> <option> ..." % os.path.basename(sys.argv[0])
+	usage_string = _("Usage: %s <interface> <option> ...") % os.path.basename(sys.argv[0])
 	parser = OptionParser(usage_string, add_help_option = False)
 	parser.add_option('-h', '--help',
 					action = "callback",
@@ -551,8 +566,8 @@ def main():
 	quiet = options.quiet
 		
 	if len(args) != 0:
-		print "Wrong argument(s)."
-		print "Use --help for instructions."
+		print _("Wrong argument(s).")
+		print _("Use --help for instructions.")
 		sys.exit(1)
 	
 	Backlight(options.backlight).apply()
@@ -568,10 +583,10 @@ def main():
 			general = dbus.Interface(proxy, SESSION_INTERFACE_NAME)
 			general.Exit()
 			if not quiet:
-				print "Session service stopped."
+				print _("Session service stopped.")
 		except:
 			if not quiet:
-				print "Cannot stop session service."
+				print _("Cannot stop session service.")
 			pass
 	
 	if options.stopsystem == True:
@@ -581,10 +596,10 @@ def main():
 			general = dbus.Interface(proxy, SYSTEM_INTERFACE_NAME)
 			general.Exit()
 			if not quiet:
-				print "System service stopped."
+				print _("System service stopped.")
 		except:
 			if not quiet:
-				print "Cannot stop system service."
+				print _("Cannot stop system service.")
 			pass
 
 if __name__ == "__main__":

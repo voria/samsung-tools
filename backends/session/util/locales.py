@@ -19,38 +19,54 @@
 # See the GNU General Public License for more details.
 # <http://www.gnu.org/licenses/gpl.txt>
 
-BLUETOOTH_TITLE = "Bluetooth"
-BLUETOOTH_STATUS_ENABLED = "Bluetooth is currently enabled"
-BLUETOOTH_STATUS_DISABLED = "Bluetooth is currently disabled"
-BLUETOOTH_ENABLED = "Bluetooth enabled"
-BLUETOOTH_DISABLED = "Bluetooth disabled"
-BLUETOOTH_ENABLING_ERROR = "Error while enabling bluetooth!"
-BLUETOOTH_DISABLING_ERROR = "Error while disabling bluetooth!"
-BLUETOOTH_NOT_AVAILABLE = "Bluetooth control is not available"
+from gettext import gettext as _
 
-CPU_TITLE = "CPU"
-CPU_SWITCH_NORMAL = "'normal' mode enabled"
-CPU_SWITCH_SILENT = "'silent' mode enabled"
-CPU_SWITCH_SPEED = "'speed' mode enabled"
-CPU_STATUS_NORMAL = "Mode: 'normal'"
-CPU_STATUS_SILENT = "Mode: 'silent'"
-CPU_STATUS_SPEED = "Mode: 'speed'"
-CPU_NOT_AVAILABLE = "CPU control is not available"
+BACKLIGHT_TITLE = "Backlight"
+BACKLIGHT_STATUS_ENABLED = "Backlight is currently enabled."
+BACKLIGHT_STATUS_DISABLED = "Backlight is currently disabled."
+BACKLIGHT_ENABLED = "Backlight enabled."
+BACKLIGHT_DISABLED = "Backlight disabled."
+BACKLIGHT_ENABLING_ERROR = "Backlight cannot be enabled."
+BACKLIGHT_DISABLING_ERROR = "Backlight cannot be disabled."
+BACKLIGHT_TOGGLING_ERROR = "Backlight cannot be toggled."
 
-WEBCAM_TITLE = "Webcam"
-WEBCAM_STATUS_ENABLED = "Webcam is currently enabled"
-WEBCAM_STATUS_DISABLED = "Webcam is currently disabled"
-WEBCAM_ENABLED = "Webcam enabled"
-WEBCAM_DISABLED = "Webcam disabled"
-WEBCAM_ENABLING_ERROR = "Error while enabling webcam!"
-WEBCAM_DISABLING_ERROR = "Error while disabling webcam!"
-WEBCAM_NOT_AVAILABLE = "Webcam control is not available"
+BLUETOOTH_TITLE = _("Bluetooth")
+BLUETOOTH_STATUS_ENABLED = _("Bluetooth is currently enabled.")
+BLUETOOTH_STATUS_DISABLED = _("Bluetooth is currently disabled.")
+BLUETOOTH_ENABLED = _("Bluetooth enabled.")
+BLUETOOTH_DISABLED = _("Bluetooth disabled.")
+BLUETOOTH_ENABLING_ERROR = _("Bluetooth cannot be enabled.")
+BLUETOOTH_DISABLING_ERROR = _("Bluetooth cannot be disabled.")
+BLUETOOTH_TOGGLING_ERROR = _("Bluetooth cannot be toggled.")
+BLUETOOTH_NOT_AVAILABLE = _("Bluetooth control is not available.")
 
-WIRELESS_TITLE = "Wireless"
-WIRELESS_STATUS_ENABLED = "Wireless is currently enabled"
-WIRELESS_STATUS_DISABLED = "Wireless is currently disabled"
-WIRELESS_ENABLED = "Wireless enabled"
-WIRELESS_DISABLED = "Wireless disabled"
-WIRELESS_ENABLING_ERROR = "Error while enabling wireless!"
-WIRELESS_DISABLING_ERROR = "Error while disabling wireless!"
-WIRELESS_NOT_AVAILABLE = "Wireless control is not available"
+CPU_TITLE = _("CPU")
+CPU_SWITCH_NORMAL = _("CPU mode changed to 'normal'.")
+CPU_SWITCH_SILENT = _("CPU mode changed to 'silent'.")
+CPU_SWITCH_SPEED = _("CPU mode changed to 'speed'.")
+CPU_SWITCHING_ERROR = _("CPU mode cannot be changed.")
+CPU_STATUS_NORMAL = _("CPU current mode is 'normal'.")
+CPU_STATUS_SILENT = _("CPU current mode is 'silent'.")
+CPU_STATUS_SPEED = _("CPU current mode is 'speed'.")
+CPU_STATUS_ERROR = _("Cannot get CPU status.")
+CPU_NOT_AVAILABLE = _("CPU control is not available.")
+
+WEBCAM_TITLE = _("Webcam")
+WEBCAM_STATUS_ENABLED = _("Webcam is currently enabled.")
+WEBCAM_STATUS_DISABLED = _("Webcam is currently disabled.")
+WEBCAM_ENABLED = _("Webcam enabled.")
+WEBCAM_DISABLED = _("Webcam disabled.")
+WEBCAM_ENABLING_ERROR = _("Webcam cannot be enabled.")
+WEBCAM_DISABLING_ERROR = _("Webcam cannot be disabled.")
+WEBCAM_TOGGLING_ERROR = _("Webcam cannot be toggled.")
+WEBCAM_NOT_AVAILABLE = _("Webcam control is not available.")
+
+WIRELESS_TITLE = _("Wireless")
+WIRELESS_STATUS_ENABLED = _("Wireless is currently enabled.")
+WIRELESS_STATUS_DISABLED = _("Wireless is currently disabled.")
+WIRELESS_ENABLED = _("Wireless enabled.")
+WIRELESS_DISABLED = _("Wireless disabled.")
+WIRELESS_ENABLING_ERROR = _("Wireless cannot be enabled.")
+WIRELESS_DISABLING_ERROR = _("Wireless cannot be disabled.")
+WIRELESS_TOGGLING_ERROR = _("Wireless cannot be toggled.")
+WIRELESS_NOT_AVAILABLE = _("Wireless control is not available.")
