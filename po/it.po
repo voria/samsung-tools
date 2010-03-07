@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-07 01:23+0100\n"
-"PO-Revision-Date: 2010-03-07 01:17+0100\n"
+"PO-Revision-Date: 2010-03-07 03:39+0100\n"
 "Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: Italiano <vorione@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -17,39 +17,39 @@ msgstr ""
 
 #: backends/session/util/locales.py:24
 msgid "Backlight"
-msgstr ""
+msgstr "Retroilluminazione"
 
 #: backends/session/util/locales.py:25
 msgid "Backlight is currently enabled."
-msgstr ""
+msgstr "La retroilluminazione è attualmente abilitata."
 
 #: backends/session/util/locales.py:26
 msgid "Backlight is currently disabled."
-msgstr ""
+msgstr "La retroilluminazione è attualmente disabilitata."
 
 #: backends/session/util/locales.py:27
 msgid "Backlight enabled."
-msgstr ""
+msgstr "Retroilluminazione abilitata."
 
 #: backends/session/util/locales.py:28
 msgid "Backlight disabled."
-msgstr ""
+msgstr "Retroilluminazione disabilitata."
 
 #: backends/session/util/locales.py:29
 msgid "Backlight cannot be enabled."
-msgstr ""
+msgstr "La retroilluminazione non può essere abilitata."
 
 #: backends/session/util/locales.py:30
 msgid "Backlight cannot be disabled."
-msgstr ""
+msgstr "La retroilluminazione non può essere disabilitata."
 
 #: backends/session/util/locales.py:31
 msgid "Backlight cannot be toggled."
-msgstr ""
+msgstr "La retroilluminazione non può essere commutata."
 
 #: backends/session/util/locales.py:33
 msgid "Bluetooth"
-msgstr ""
+msgstr "Bluetooth"
 
 #: backends/session/util/locales.py:34
 msgid "Bluetooth is currently enabled."
