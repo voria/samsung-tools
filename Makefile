@@ -2,9 +2,12 @@ install_dir=install -d -m 755
 install_file=install -m 644
 install_script=install -m 755
 
-install: install_services install_cli install_gui
-	
-install_services:
+install: install_gui
+
+install_locales:
+	#$(shell po/install.sh ${DESTDIR}) 
+
+install_services: install_locales
 	$(install_dir) $(DESTDIR)/usr/lib/samsung-tools/backends/
 	$(install_file) backends/*.py $(DESTDIR)/usr/lib/samsung-tools/backends/
 	$(install_dir) $(DESTDIR)/usr/lib/samsung-tools/backends/system/util/
@@ -53,3 +56,4 @@ uninstall:
 	rm -rf $(DESTDIR)/etc/init/samsung-tools.conf
 	rm -rf $(DESTDIR)/usr/share/applications/samsung-tools-preferences.desktop
 	rm -rf $(DESTDIR)/etc/xdg/autostart/samsung-tools-session-service.desktop
+	#$(shell po/uninstall.sh ${DESTDIR})

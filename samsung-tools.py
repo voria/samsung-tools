@@ -509,10 +509,6 @@ def usage(option = None, opt = None, value = None, parser = None):
 	sys.exit(0)
 
 def main():
-	
-	gettext.bindtextdomain(APP_NAME.replace(' ', '-').lower())
-	gettext.textdomain(APP_NAME.replace(' ', '-').lower())
-	
 	if  len(sys.argv) == 1:
 		print _("No action(s) specified.")
 		print _("Use --help for instructions.")
@@ -603,4 +599,6 @@ def main():
 			pass
 
 if __name__ == "__main__":
+	gettext.bindtextdomain(APP_NAME.replace(' ', '-').lower())
+	gettext.textdomain(APP_NAME.replace(' ', '-').lower())
 	main()
