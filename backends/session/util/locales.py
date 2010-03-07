@@ -19,7 +19,8 @@
 # See the GNU General Public License for more details.
 # <http://www.gnu.org/licenses/gpl.txt>
 
-from gettext import gettext as _
+import gettext
+_ = gettext.gettext
 
 BACKLIGHT_TITLE = _("Backlight")
 BACKLIGHT_STATUS_ENABLED = _("Backlight is currently enabled.")

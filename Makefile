@@ -5,7 +5,7 @@ install_script=install -m 755
 install: install_gui
 
 install_locales:
-	#$(shell po/install.sh ${DESTDIR}) 
+	$(shell po/install.sh ${DESTDIR}) 
 
 install_services: install_locales
 	$(install_dir) $(DESTDIR)/usr/lib/samsung-tools/backends/
@@ -56,4 +56,4 @@ uninstall:
 	rm -rf $(DESTDIR)/etc/init/samsung-tools.conf
 	rm -rf $(DESTDIR)/usr/share/applications/samsung-tools-preferences.desktop
 	rm -rf $(DESTDIR)/etc/xdg/autostart/samsung-tools-session-service.desktop
-	#$(shell po/uninstall.sh ${DESTDIR})
+	$(shell po/uninstall.sh ${DESTDIR})
