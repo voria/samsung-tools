@@ -1,9 +1,13 @@
 [Desktop Entry]
 Name=Samsung Tools Preferences
-Comment=Configure Samsung Tools
+_Name=Samsung Tools Preferences
+Comment=Show and modify Samsung Tools preferences
+_Comment=Show and modify Samsung Tools preferences
 Exec=samsung-tools-preferences
 Terminal=false
 Type=Application
 Categories=Settings;X-GNOME-SystemSettings;
 OnlyShowIn=GNOME;XFCE;KDE;
 StartupNotify=true
+
+X-Ubuntu-Gettext-Domain=samsung-tools

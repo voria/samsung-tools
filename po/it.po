@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-07 17:42+0100\n"
-"PO-Revision-Date: 2010-03-07 17:42+0100\n"
+"POT-Creation-Date: 2010-03-07 19:37+0100\n"
+"PO-Revision-Date: 2010-03-07 19:37+0100\n"
 "Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: Italiano <vorione@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -439,6 +439,7 @@ msgid "Last status restore:"
 msgstr "Ripristino ultimo stato:"
 
 #: po/samsung-tools-preferences.glade.h:28
+#: po/samsung-tools-preferences.desktop.h:1
 msgid "Samsung Tools Preferences"
 msgstr "Preferenze di Samsung Tools"
 
@@ -476,23 +477,10 @@ msgstr ""
 msgid "Toggle method:"
 msgstr "Metodo commutazione:"
 
-#~ msgid "esdm"
-#~ msgstr "esdm"
+#: po/samsung-tools-preferences.desktop.h:2
+msgid "Show and modify Samsung Tools preferences"
+msgstr "Mostra e modifica le preferenze di Samsung Tools"
 
-#~ msgid "iwconfig"
-#~ msgstr "iwconfig"
-
-#~ msgid "module"
-#~ msgstr "module"
-
-#~ msgid "Backlight is currently enabled."
-#~ msgstr "La retroilluminazione è attiva."
-
-#~ msgid "Backlight is currently disabled."
-#~ msgstr "La retroilluminazione è attualmente disattivata."
-
-#~ msgid "Bluetooth is currently enabled."
-#~ msgstr "Il bluetooth è attualmente attivato."
-
-#~ msgid "Bluetooth is currently disabled."
-#~ msgstr "Il bluetooth è attualmente disattivato."
+#: po/samsung-tools-session-service.desktop.h:1
+msgid "Start the session service"
+msgstr "Avvia il servizio di sessione"

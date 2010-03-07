@@ -1,9 +1,11 @@
 [Desktop Entry]
 Name=Samsung Tools
-Comment=Samsung Tools Session Service
+Comment=Start the session service
+_Comment=Start the session service
 #Icon=
 Exec=/usr/lib/samsung-tools/session-service.py
 Terminal=false
 Type=Application
-#Categories=
 OnlyShowIn=GNOME;XFCE;KDE;
+
+X-Ubuntu-Gettext-Domain=samsung-tools

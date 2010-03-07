@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-07 17:42+0100\n"
+"POT-Creation-Date: 2010-03-07 19:43+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -431,6 +431,7 @@ msgid "Last status restore:"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:28
+#: po/samsung-tools-preferences.desktop.h:1
 msgid "Samsung Tools Preferences"
 msgstr ""
 
@@ -458,4 +459,12 @@ msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:37
 msgid "Toggle method:"
+msgstr ""
+
+#: po/samsung-tools-preferences.desktop.h:2
+msgid "Show and modify Samsung Tools preferences"
+msgstr ""
+
+#: po/samsung-tools-session-service.desktop.h:1
+msgid "Start the session service"
 msgstr ""
