@@ -1,2 +1,3 @@
 backends/session/util/locales.py
 samsung-tools.py
+samsung-tools-preferences.py

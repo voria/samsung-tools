@@ -26,6 +26,7 @@ sys.path.append(WORK_DIRECTORY)
 
 from optparse import OptionParser
 import dbus
+
 import gettext
 _ = gettext.gettext
 gettext.bindtextdomain("samsung-tools")
@@ -471,22 +472,22 @@ def usage(option = None, opt = None, value = None, parser = None):
 	print _("Usage: %s <interface> <option> ...") % os.path.basename(sys.argv[0])
 	print
 	print _("Backlight:")
-	print _("\tInterface:\t") + "-b | --backlight"
-	print _("\tOptions:\t") + "on | off | toggle | status"
+	print "\t" + _("Interface") + ":\t-b | --backlight"
+	print "\t" + _("Options") + ":\ton | off | toggle | status"
 	print _("Bluetooth:")
-	print _("\tInterface:\t") + "-B | --bluetooth"
-	print _("\tOptions:\t") + "on | off | toggle | status"
+	print "\t" + _("Interface") + ":\t-B | --bluetooth"
+	print "\t" + _("Options") + ":\ton | off | toggle | status"
 	print _("CPU:")
-	print _("\tInterface:\t") + "-c | --cpu"
-	print _("\tOptions:\t") + "normal | silent | speed | cycle | hotkey | status"
+	print "\t" + _("Interface") + ":\t-c | --cpu"
+	print "\t" + _("Options") + ":\tnormal | silent | speed | cycle | hotkey | status"
 	print _("Webcam:")
-	print _("\tInterface:\t") + "-w | --webcam"
-	print _("\tOptions:\t") + "on | off | toggle | status"
+	print "\t" + _("Interface") + ":\t-w | --webcam"
+	print "\t" + _("Options") + ":\ton | off | toggle | status"
 	print _("Wireless:")
-	print _("\tInterface:\t") + "-W | --wireless"
-	print _("\tOptions:\t") + "on | off | toggle | status"
+	print "\t" + _("Interface") + ":\t-W | --wireless"
+	print "\t" + _("Options") + ":\ton | off | toggle | status"
 	print
-	print "Other options:"
+	print _("Other options:")
 	print " -n | --show-notify\t" + _("Show graphical notifications.")
 	print " -q | --quiet\t\t" + _("Do not print messages on standard output.")
 	print " -s | --stop-session\t" + _("Stop the session service.")

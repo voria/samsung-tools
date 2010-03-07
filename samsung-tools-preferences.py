@@ -31,6 +31,11 @@ WORK_DIRECTORY = "/usr/lib/samsung-tools/"
 import sys
 sys.path.append(WORK_DIRECTORY)
 
+import gettext
+_ = gettext.gettext
+gettext.bindtextdomain("samsung-tools")
+gettext.textdomain("samsung-tools")
+
 from backends.globals import *
 
 # Popup (based on code from compizconfig-settings-manager)
@@ -71,7 +76,7 @@ class KeyGrabber(gtk.Button):
 
 	def begin_key_grab(self, widget):
 		self.add_events(gtk.gdk.KEY_PRESS_MASK)
-		self.popup = Popup("Please press the new key combination", self.popup_title, self)
+		self.popup = Popup(_("Please press the new key combination"), self.popup_title, self)
 		self.popup.show_all()
 		self.handler = self.popup.connect("key-press-event", self.on_key_press_event)
 		while gtk.gdk.keyboard_grab(self.popup.window) != gtk.gdk.GRAB_SUCCESS:
@@ -113,7 +118,7 @@ class KeyGrabber(gtk.Button):
 			mods = self.mods
 		label = gtk.accelerator_name(key, mods)
 		if not len(label):
-			label = "Disabled"
+			label = _("Disabled")
 		else:
 			if label == "XF86Sleep":
 				label = "Fn-Esc"
@@ -143,6 +148,7 @@ class Main():
 
 		# Setup GUI
 		self.builder = gtk.Builder()
+		self.builder.set_translation_domain("samsung-tools")
 		self.builder.add_from_file(os.path.join(WORK_DIRECTORY, "gui/glade/samsung-tools-preferences.glade"))
 		
 		###
@@ -178,7 +184,7 @@ class Main():
 		self.bluetoothHotkeyButton.connect("changed", self.on_bluetoothHotkeyButton_changed)
 		self.bluetoothHotkeyButton.show()
 		# Set cpu hotkey grabber
-		self.cpuHotkeyButton = KeyGrabber(popup_title = "CPU control")
+		self.cpuHotkeyButton = KeyGrabber(popup_title = _("CPU"))
 		hotkey = session.GetCpuHotkey()
 		(key, mods) = gtk.accelerator_parse(self.__convert_xbindkeys_to_gtk(hotkey))
 		self.cpuHotkeyButton.set_label(key, mods, True)
@@ -187,7 +193,7 @@ class Main():
 		self.cpuHotkeyButton.connect("changed", self.on_cpuHotkeyButton_changed)
 		self.cpuHotkeyButton.show()
 		# Set webcam hotkey grabber
-		self.webcamHotkeyButton = KeyGrabber(popup_title = "Webcam control")
+		self.webcamHotkeyButton = KeyGrabber(popup_title = _("Webcam"))
 		hotkey = session.GetWebcamHotkey()
 		(key, mods) = gtk.accelerator_parse(self.__convert_xbindkeys_to_gtk(hotkey))
 		self.webcamHotkeyButton.set_label(key, mods, True)
@@ -196,7 +202,7 @@ class Main():
 		self.webcamHotkeyButton.connect("changed", self.on_webcamHotkeyButton_changed)
 		self.webcamHotkeyButton.show()
 		# Set wireless hotkey grabber
-		self.wirelessHotkeyButton = KeyGrabber(popup_title = "Wireless control")
+		self.wirelessHotkeyButton = KeyGrabber(popup_title = _("Wireless"))
 		hotkey = session.GetWirelessHotkey()
 		(key, mods) = gtk.accelerator_parse(self.__convert_xbindkeys_to_gtk(hotkey))
 		self.wirelessHotkeyButton.set_label(key, mods, True)
@@ -329,7 +335,7 @@ class Main():
 				return dbus.Interface(proxy, SESSION_INTERFACE_NAME)
 			except:
 				retry = retry - 1
-		print "Unable to connect to session bus!"
+		print _("Unable to connect to session service!")
 		sys.exit(1)
 		
 	def __connect_system(self):
@@ -341,7 +347,7 @@ class Main():
 				return dbus.Interface(proxy, SYSTEM_INTERFACE_NAME)
 			except:
 				retry = retry - 1
-		print "Unable to connect to system bus!"
+		print _("Unable to connect to system service!")
 		sys.exit(1)
 	
 	def __convert_gtk_to_xbindkeys(self, hotkey):
@@ -562,7 +568,7 @@ class Main():
 		dialog = gtk.AboutDialog()
 		dialog.set_name(APP_NAME)
 		dialog.set_version(APP_VERSION)
-		copyright = "Released under GPLv3 terms\n\nCopyleft by\nFortunato Ventre (voRia)\nvorione@gmail.com"
+		copyright = _("Released under GPLv3 license.") + "\n\nCopyleft by\nFortunato Ventre (voRia)\nvorione@gmail.com"
 		dialog.set_copyright(copyright)
 		dialog.set_website("http://www.voria.org/forum")
 		dialog.set_website_label("Linux On My Samsung")
