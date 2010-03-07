@@ -130,7 +130,7 @@
                     <property name="visible">True</property>
                     <property name="xalign">0</property>
                     <property name="xpad">5</property>
-                    <property name="label" translatable="yes">&lt;b&gt;Hotkeys configuration&lt;/b&gt;</property>
+                    <property name="label" translatable="yes">&lt;b&gt;Hotkeys&lt;/b&gt;</property>
                     <property name="use_markup">True</property>
                   </object>
                   <packing>
@@ -155,6 +155,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Click here to disable the hotkey</property>
                   </object>
                   <packing>
                     <property name="left_attach">2</property>
@@ -170,6 +171,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Click here to disable the hotkey</property>
                     <property name="image_position">top</property>
                   </object>
                   <packing>
@@ -186,6 +188,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Click here to set the default hotkey</property>
                   </object>
                   <packing>
                     <property name="left_attach">3</property>
@@ -201,6 +204,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Click here to set the default hotkey</property>
                   </object>
                   <packing>
                     <property name="left_attach">3</property>
@@ -216,6 +220,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Click here to set the default hotkey</property>
                   </object>
                   <packing>
                     <property name="left_attach">3</property>
@@ -231,6 +236,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Click here to set the default hotkey</property>
                   </object>
                   <packing>
                     <property name="left_attach">3</property>
@@ -246,6 +252,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Click here to set the default hotkey</property>
                   </object>
                   <packing>
                     <property name="left_attach">3</property>
@@ -308,7 +315,7 @@
                   <object class="GtkLabel" id="lastStatusRestoreLabel">
                     <property name="visible">True</property>
                     <property name="tooltip_text" translatable="yes">If enabled, the status of all devices will be restored after a suspend/hibernate/reboot cycle</property>
-                    <property name="label" translatable="yes">Last Status Restore:</property>
+                    <property name="label" translatable="yes">Last status restore:</property>
                   </object>
                   <packing>
                     <property name="top_attach">1</property>
@@ -354,7 +361,7 @@
                     <property name="visible">True</property>
                     <property name="xalign">0</property>
                     <property name="xpad">5</property>
-                    <property name="label" translatable="yes">&lt;b&gt;General configuration&lt;/b&gt;</property>
+                    <property name="label" translatable="yes">&lt;b&gt;General&lt;/b&gt;</property>
                     <property name="use_markup">True</property>
                   </object>
                   <packing>
@@ -367,9 +374,8 @@
                     <property name="visible">True</property>
                     <property name="tooltip_text" translatable="yes">The kernel module to be managed.
 
-Note:
-this option is only used when 'Toggle Method' is set to 'module'.</property>
-                    <property name="label" translatable="yes">Kernel Module:</property>
+Note: this option is only used when 'Toggle method' is set to 'module'.</property>
+                    <property name="label" translatable="yes">Kernel module:</property>
                   </object>
                   <packing>
                     <property name="top_attach">5</property>
@@ -383,8 +389,7 @@ this option is only used when 'Toggle Method' is set to 'module'.</property>
                     <property name="visible">True</property>
                     <property name="tooltip_text" translatable="yes">The wireless device to use.
 
-Note:
-this option is only used when 'Toggle Method' is set to 'iwconfig'.</property>
+Note: this option is only used when 'Toggle method' is set to 'iwconfig'.</property>
                     <property name="label" translatable="yes">Device:</property>
                   </object>
                   <packing>
@@ -404,7 +409,7 @@ this option is only used when 'Toggle Method' is set to 'iwconfig'.</property>
 'esdm' - Use the 'easy slow down manager' interface.
 
 Note: the new setting will be applied after a reboot.</property>
-                    <property name="label" translatable="yes">Toggle Method:</property>
+                    <property name="label" translatable="yes">Toggle method:</property>
                   </object>
                   <packing>
                     <property name="top_attach">3</property>
@@ -419,8 +424,7 @@ Note: the new setting will be applied after a reboot.</property>
                     <property name="can_focus">True</property>
                     <property name="tooltip_text" translatable="yes">The kernel module to be managed.
 
-Note:
-this option is only used when 'Toggle Method' is set to 'module'.</property>
+Note: this option is only used when 'Toggle method' is set to 'module'.</property>
                     <property name="invisible_char">&#x2022;</property>
                   </object>
                   <packing>
@@ -453,8 +457,7 @@ this option is only used when 'Toggle Method' is set to 'module'.</property>
                     <property name="can_focus">True</property>
                     <property name="tooltip_text" translatable="yes">The wireless device to use.
 
-Note:
-this option is only used when 'Toggle Method' is set to 'iwconfig'.</property>
+Note: this option is only used when 'Toggle method' is set to 'iwconfig'.</property>
                     <property name="invisible_char">&#x2022;</property>
                   </object>
                   <packing>
@@ -523,7 +526,7 @@ Note: the new setting will be applied after a reboot.</property>
                     <property name="visible">True</property>
                     <property name="xalign">0</property>
                     <property name="xpad">5</property>
-                    <property name="label" translatable="yes">&lt;b&gt;Wireless configuration&lt;/b&gt;</property>
+                    <property name="label" translatable="yes">&lt;b&gt;Wireless&lt;/b&gt;</property>
                     <property name="use_markup">True</property>
                   </object>
                   <packing>

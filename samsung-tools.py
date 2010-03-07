@@ -467,7 +467,7 @@ class Wireless():
 					print WIRELESS_STATUS_DISABLED
 
 def usage(option = None, opt = None, value = None, parser = None):
-	print _("Samsung-Tools - Command Line Utility")
+	print _("Samsung Tools - Command Line Utility")
 	print
 	print _("Usage: %s <interface> <option> ...") % os.path.basename(sys.argv[0])
 	print
@@ -497,13 +497,13 @@ def usage(option = None, opt = None, value = None, parser = None):
 	print _(" - Toggle backlight:")
 	print " %s --backlight toggle" % os.path.basename(sys.argv[0])
 	print
-	print _(" - Toggle wireless and set CPU to silent:")
+	print _(" - Toggle wireless and set CPU mode to 'silent':")
 	print " %s --wireless toggle --cpu silent" % os.path.basename(sys.argv[0])
 	print
 	print _(" - Disable bluetooth, webcam and wireless:")
 	print " %s -B off -w off -W off" % os.path.basename(sys.argv[0])
 	print
-	print _("For more informations, visit the 'Linux On My Samsung' forum, at:")
+	print _("For more informations, visit the 'Linux On My Samsung' forum:")
 	print
 	print " - http://www.voria.org/forum"
 	print

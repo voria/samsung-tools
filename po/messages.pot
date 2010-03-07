@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-07 12:03+0100\n"
+"POT-Creation-Date: 2010-03-07 12:56+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -217,7 +217,7 @@ msgid "Wireless control: unable to connect to session service!"
 msgstr ""
 
 #: samsung-tools.py:470
-msgid "Samsung-Tools - Command Line Utility"
+msgid "Samsung Tools - Command Line Utility"
 msgstr ""
 
 #: samsung-tools.py:472 samsung-tools.py:520
@@ -247,11 +247,11 @@ msgstr ""
 msgid "CPU:"
 msgstr ""
 
-#: samsung-tools.py:483 samsung-tools-preferences.glade.h:39
+#: samsung-tools.py:483 samsung-tools-preferences.glade.h:38
 msgid "Webcam:"
 msgstr ""
 
-#: samsung-tools.py:486 samsung-tools-preferences.glade.h:40
+#: samsung-tools.py:486 samsung-tools-preferences.glade.h:39
 msgid "Wireless:"
 msgstr ""
 
@@ -284,7 +284,7 @@ msgid " - Toggle backlight:"
 msgstr ""
 
 #: samsung-tools.py:500
-msgid " - Toggle wireless and set CPU to silent:"
+msgid " - Toggle wireless and set CPU mode to 'silent':"
 msgstr ""
 
 #: samsung-tools.py:503
@@ -292,7 +292,7 @@ msgid " - Disable bluetooth, webcam and wireless:"
 msgstr ""
 
 #: samsung-tools.py:506
-msgid "For more informations, visit the 'Linux On My Samsung' forum, at:"
+msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr ""
 
 #: samsung-tools.py:511 samsung-tools-preferences.py:571
@@ -331,7 +331,7 @@ msgstr ""
 msgid "Please press the new key combination"
 msgstr ""
 
-#: samsung-tools-preferences.py:121 samsung-tools-preferences.glade.h:10
+#: samsung-tools-preferences.py:121 samsung-tools-preferences.glade.h:11
 msgid "Disabled"
 msgstr ""
 
@@ -344,15 +344,15 @@ msgid "Unable to connect to system service!"
 msgstr ""
 
 #: samsung-tools-preferences.glade.h:1
-msgid "<b>General configuration</b>"
+msgid "<b>General</b>"
 msgstr ""
 
 #: samsung-tools-preferences.glade.h:2
-msgid "<b>Hotkeys configuration</b>"
+msgid "<b>Hotkeys</b>"
 msgstr ""
 
 #: samsung-tools-preferences.glade.h:3
-msgid "<b>Wireless configuration</b>"
+msgid "<b>Wireless</b>"
 msgstr ""
 
 #: samsung-tools-preferences.glade.h:7
@@ -360,38 +360,42 @@ msgid "Click here to disable the hotkey"
 msgstr ""
 
 #: samsung-tools-preferences.glade.h:8
-msgid "Click here to set the default value"
+msgid "Click here to set the default hotkey"
 msgstr ""
 
 #: samsung-tools-preferences.glade.h:9
+msgid "Click here to set the default value"
+msgstr ""
+
+#: samsung-tools-preferences.glade.h:10
 msgid "Device:"
 msgstr ""
 
-#: samsung-tools-preferences.glade.h:11
+#: samsung-tools-preferences.glade.h:12
 msgid "Enable hotkeys"
 msgstr ""
 
-#: samsung-tools-preferences.glade.h:12
+#: samsung-tools-preferences.glade.h:13
 msgid "Enabled"
 msgstr ""
 
-#: samsung-tools-preferences.glade.h:13
+#: samsung-tools-preferences.glade.h:14
 msgid "Hotkey used for CPU control"
 msgstr ""
 
-#: samsung-tools-preferences.glade.h:14
+#: samsung-tools-preferences.glade.h:15
 msgid "Hotkey used for backlight control"
 msgstr ""
 
-#: samsung-tools-preferences.glade.h:15
+#: samsung-tools-preferences.glade.h:16
 msgid "Hotkey used for bluetooth control"
 msgstr ""
 
-#: samsung-tools-preferences.glade.h:16
+#: samsung-tools-preferences.glade.h:17
 msgid "Hotkey used for webcam control"
 msgstr ""
 
-#: samsung-tools-preferences.glade.h:17
+#: samsung-tools-preferences.glade.h:18
 msgid ""
 "How the wireless is toggled.\n"
 "\n"
@@ -402,60 +406,58 @@ msgid ""
 "Note: the new setting will be applied after a reboot."
 msgstr ""
 
-#: samsung-tools-preferences.glade.h:24
+#: samsung-tools-preferences.glade.h:25
 msgid ""
 "If enabled, the status of all devices will be restored after a suspend/"
 "hibernate/reboot cycle"
 msgstr ""
 
-#: samsung-tools-preferences.glade.h:25
-msgid "Kernel Module:"
-msgstr ""
-
 #: samsung-tools-preferences.glade.h:26
-msgid "Last Status Restore:"
+msgid "Kernel module:"
 msgstr ""
 
 #: samsung-tools-preferences.glade.h:27
-msgid "Samsung Tools Preferences"
+msgid "Last status restore:"
 msgstr ""
 
 #: samsung-tools-preferences.glade.h:28
-msgid "Session service"
+msgid "Samsung Tools Preferences"
 msgstr ""
 
 #: samsung-tools-preferences.glade.h:29
-msgid "System service"
+msgid "Session service"
 msgstr ""
 
 #: samsung-tools-preferences.glade.h:30
+msgid "System service"
+msgstr ""
+
+#: samsung-tools-preferences.glade.h:31
 msgid ""
 "The kernel module to be managed.\n"
 "\n"
-"Note:\n"
-"this option is only used when 'Toggle Method' is set to 'module'."
+"Note: this option is only used when 'Toggle method' is set to 'module'."
 msgstr ""
 
 #: samsung-tools-preferences.glade.h:34
 msgid ""
 "The wireless device to use.\n"
 "\n"
-"Note:\n"
-"this option is only used when 'Toggle Method' is set to 'iwconfig'."
+"Note: this option is only used when 'Toggle method' is set to 'iwconfig'."
 msgstr ""
 
-#: samsung-tools-preferences.glade.h:38
-msgid "Toggle Method:"
+#: samsung-tools-preferences.glade.h:37
+msgid "Toggle method:"
 msgstr ""
 
-#: samsung-tools-preferences.glade.h:41
+#: samsung-tools-preferences.glade.h:40
 msgid "esdm"
 msgstr ""
 
-#: samsung-tools-preferences.glade.h:42
+#: samsung-tools-preferences.glade.h:41
 msgid "iwconfig"
 msgstr ""
 
-#: samsung-tools-preferences.glade.h:43
+#: samsung-tools-preferences.glade.h:42
 msgid "module"
 msgstr ""
