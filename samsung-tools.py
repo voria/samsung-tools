@@ -28,6 +28,8 @@ from optparse import OptionParser
 import dbus
 import gettext
 _ = gettext.gettext
+gettext.bindtextdomain("samsung-tools")
+gettext.textdomain("samsung-tools")
 
 from backends.globals import *
 from backends.session.util.locales import *
@@ -599,6 +601,4 @@ def main():
 			pass
 
 if __name__ == "__main__":
-	gettext.bindtextdomain(APP_NAME.replace(' ', '-').lower())
-	gettext.textdomain(APP_NAME.replace(' ', '-').lower())
 	main()

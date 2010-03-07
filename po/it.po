@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-07 01:23+0100\n"
-"PO-Revision-Date: 2010-03-07 03:39+0100\n"
+"PO-Revision-Date: 2010-03-07 03:50+0100\n"
 "Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: Italiano <vorione@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -81,7 +81,7 @@ msgstr ""
 
 #: backends/session/util/locales.py:41
 msgid "Bluetooth control is not available."
-msgstr ""
+msgstr "Il controllo bluetooth non è disponibile."
 
 #: backends/session/util/locales.py:43
 msgid "CPU"

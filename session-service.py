@@ -25,6 +25,11 @@ import dbus
 import dbus.service
 import dbus.mainloop.glib
 
+import gettext
+_ = gettext.gettext
+gettext.bindtextdomain("samsung-tools")
+gettext.textdomain("samsung-tools")
+
 from backends.globals import *
 from backends.session.options import Options
 from backends.session.backlight import Backlight
@@ -33,9 +38,6 @@ from backends.session.cpu import Cpu
 from backends.session.webcam import Webcam
 from backends.session.wireless import Wireless
 from backends.session.util.notifications import Notification
-
-import gettext
-_ = gettext.gettext
 
 mainloop = None
 
@@ -66,9 +68,6 @@ class General(dbus.service.Object):
 
 if __name__ == '__main__':
 	dbus.mainloop.glib.DBusGMainLoop(set_as_default = True)
-	
-	gettext.bindtextdomain(APP_NAME.replace(' ', '-').lower())
-	gettext.textdomain(APP_NAME.replace(' ', '-').lower())
 	
 	# Initialize notification system
 	notify = Notification()
