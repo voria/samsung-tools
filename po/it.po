@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-07 12:56+0100\n"
-"PO-Revision-Date: 2010-03-07 12:59+0100\n"
+"PO-Revision-Date: 2010-03-07 13:02+0100\n"
 "Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: Italiano <vorione@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -306,7 +306,7 @@ msgstr "Nessuna azione specificata."
 
 #: samsung-tools.py:517 samsung-tools.py:569
 msgid "Use --help for instructions."
-msgstr "Usa --help per istruzioni."
+msgstr "Usa --help per le istruzioni."
 
 #: samsung-tools.py:568
 msgid "Wrong argument(s)."
