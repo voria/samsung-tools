@@ -21,14 +21,14 @@
 
 from gettext import gettext as _
 
-BACKLIGHT_TITLE = "Backlight"
-BACKLIGHT_STATUS_ENABLED = "Backlight is currently enabled."
-BACKLIGHT_STATUS_DISABLED = "Backlight is currently disabled."
-BACKLIGHT_ENABLED = "Backlight enabled."
-BACKLIGHT_DISABLED = "Backlight disabled."
-BACKLIGHT_ENABLING_ERROR = "Backlight cannot be enabled."
-BACKLIGHT_DISABLING_ERROR = "Backlight cannot be disabled."
-BACKLIGHT_TOGGLING_ERROR = "Backlight cannot be toggled."
+BACKLIGHT_TITLE = _("Backlight")
+BACKLIGHT_STATUS_ENABLED = _("Backlight is currently enabled.")
+BACKLIGHT_STATUS_DISABLED = _("Backlight is currently disabled.")
+BACKLIGHT_ENABLED = _("Backlight enabled.")
+BACKLIGHT_DISABLED = _("Backlight disabled.")
+BACKLIGHT_ENABLING_ERROR = _("Backlight cannot be enabled.")
+BACKLIGHT_DISABLING_ERROR = _("Backlight cannot be disabled.")
+BACKLIGHT_TOGGLING_ERROR = _("Backlight cannot be toggled.")
 
 BLUETOOTH_TITLE = _("Bluetooth")
 BLUETOOTH_STATUS_ENABLED = _("Bluetooth is currently enabled.")

@@ -7,13 +7,45 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-07 01:18+0100\n"
+"POT-Creation-Date: 2010-03-07 01:23+0100\n"
 "PO-Revision-Date: 2010-03-07 01:17+0100\n"
 "Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: Italiano <vorione@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: backends/session/util/locales.py:24
+msgid "Backlight"
+msgstr ""
+
+#: backends/session/util/locales.py:25
+msgid "Backlight is currently enabled."
+msgstr ""
+
+#: backends/session/util/locales.py:26
+msgid "Backlight is currently disabled."
+msgstr ""
+
+#: backends/session/util/locales.py:27
+msgid "Backlight enabled."
+msgstr ""
+
+#: backends/session/util/locales.py:28
+msgid "Backlight disabled."
+msgstr ""
+
+#: backends/session/util/locales.py:29
+msgid "Backlight cannot be enabled."
+msgstr ""
+
+#: backends/session/util/locales.py:30
+msgid "Backlight cannot be disabled."
+msgstr ""
+
+#: backends/session/util/locales.py:31
+msgid "Backlight cannot be toggled."
+msgstr ""
 
 #: backends/session/util/locales.py:33
 msgid "Bluetooth"
