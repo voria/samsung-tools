@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-07 11:48+0100\n"
+"POT-Creation-Date: 2010-03-07 12:03+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,11 +21,11 @@ msgid "Backlight"
 msgstr ""
 
 #: backends/session/util/locales.py:26
-msgid "Backlight is currently enabled."
+msgid "Backlight is enabled."
 msgstr ""
 
 #: backends/session/util/locales.py:27
-msgid "Backlight is currently disabled."
+msgid "Backlight is disabled."
 msgstr ""
 
 #: backends/session/util/locales.py:28
@@ -53,11 +53,11 @@ msgid "Bluetooth"
 msgstr ""
 
 #: backends/session/util/locales.py:35
-msgid "Bluetooth is currently enabled."
+msgid "Bluetooth is enabled."
 msgstr ""
 
 #: backends/session/util/locales.py:36
-msgid "Bluetooth is currently disabled."
+msgid "Bluetooth is disabled."
 msgstr ""
 
 #: backends/session/util/locales.py:37
@@ -105,19 +105,19 @@ msgid "CPU mode cannot be changed."
 msgstr ""
 
 #: backends/session/util/locales.py:49
-msgid "CPU current mode is 'normal'."
+msgid "CPU mode is 'normal'."
 msgstr ""
 
 #: backends/session/util/locales.py:50
-msgid "CPU current mode is 'silent'."
+msgid "CPU mode is 'silent'."
 msgstr ""
 
 #: backends/session/util/locales.py:51
-msgid "CPU current mode is 'speed'."
+msgid "CPU mode is 'speed'."
 msgstr ""
 
 #: backends/session/util/locales.py:52
-msgid "Cannot get CPU status."
+msgid "Cannot get CPU mode."
 msgstr ""
 
 #: backends/session/util/locales.py:53
@@ -129,11 +129,11 @@ msgid "Webcam"
 msgstr ""
 
 #: backends/session/util/locales.py:56
-msgid "Webcam is currently enabled."
+msgid "Webcam is enabled."
 msgstr ""
 
 #: backends/session/util/locales.py:57
-msgid "Webcam is currently disabled."
+msgid "Webcam is disabled."
 msgstr ""
 
 #: backends/session/util/locales.py:58
@@ -165,11 +165,11 @@ msgid "Wireless"
 msgstr ""
 
 #: backends/session/util/locales.py:66
-msgid "Wireless is currently enabled."
+msgid "Wireless is enabled."
 msgstr ""
 
 #: backends/session/util/locales.py:67
-msgid "Wireless is currently disabled."
+msgid "Wireless is disabled."
 msgstr ""
 
 #: backends/session/util/locales.py:68

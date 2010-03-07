@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-07 11:48+0100\n"
-"PO-Revision-Date: 2010-03-07 03:50+0100\n"
+"POT-Creation-Date: 2010-03-07 12:03+0100\n"
+"PO-Revision-Date: 2010-03-07 12:02+0100\n"
 "Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: Italiano <vorione@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -20,28 +20,30 @@ msgid "Backlight"
 msgstr "Retroilluminazione"
 
 #: backends/session/util/locales.py:26
-msgid "Backlight is currently enabled."
-msgstr "La retroilluminazione è attualmente abilitata."
+#, fuzzy
+msgid "Backlight is enabled."
+msgstr "Retroilluminazione attivata."
 
 #: backends/session/util/locales.py:27
-msgid "Backlight is currently disabled."
-msgstr "La retroilluminazione è attualmente disabilitata."
+#, fuzzy
+msgid "Backlight is disabled."
+msgstr "Retroilluminazione disattivata."
 
 #: backends/session/util/locales.py:28
 msgid "Backlight enabled."
-msgstr "Retroilluminazione abilitata."
+msgstr "Retroilluminazione attivata."
 
 #: backends/session/util/locales.py:29
 msgid "Backlight disabled."
-msgstr "Retroilluminazione disabilitata."
+msgstr "Retroilluminazione disattivata."
 
 #: backends/session/util/locales.py:30
 msgid "Backlight cannot be enabled."
-msgstr "La retroilluminazione non può essere abilitata."
+msgstr "La retroilluminazione non può essere attivata."
 
 #: backends/session/util/locales.py:31
 msgid "Backlight cannot be disabled."
-msgstr "La retroilluminazione non può essere disabilitata."
+msgstr "La retroilluminazione non può essere disattivata."
 
 #: backends/session/util/locales.py:32
 msgid "Backlight cannot be toggled."
@@ -52,32 +54,34 @@ msgid "Bluetooth"
 msgstr "Bluetooth"
 
 #: backends/session/util/locales.py:35
-msgid "Bluetooth is currently enabled."
-msgstr ""
+#, fuzzy
+msgid "Bluetooth is enabled."
+msgstr "Bluetooth attivato."
 
 #: backends/session/util/locales.py:36
-msgid "Bluetooth is currently disabled."
-msgstr ""
+#, fuzzy
+msgid "Bluetooth is disabled."
+msgstr "Bluetooth disattivato."
 
 #: backends/session/util/locales.py:37
 msgid "Bluetooth enabled."
-msgstr ""
+msgstr "Bluetooth attivato."
 
 #: backends/session/util/locales.py:38
 msgid "Bluetooth disabled."
-msgstr ""
+msgstr "Bluetooth disattivato."
 
 #: backends/session/util/locales.py:39
 msgid "Bluetooth cannot be enabled."
-msgstr ""
+msgstr "Il bluetooth non può essere attivato."
 
 #: backends/session/util/locales.py:40
 msgid "Bluetooth cannot be disabled."
-msgstr ""
+msgstr "Il bluetooth non può essere disattivato."
 
 #: backends/session/util/locales.py:41
 msgid "Bluetooth cannot be toggled."
-msgstr ""
+msgstr "Il bluetooth non può essere commutato."
 
 #: backends/session/util/locales.py:42
 msgid "Bluetooth control is not available."
@@ -85,55 +89,61 @@ msgstr "Il controllo bluetooth non è disponibile."
 
 #: backends/session/util/locales.py:44 samsung-tools-preferences.py:187
 msgid "CPU"
-msgstr ""
+msgstr "CPU"
 
 #: backends/session/util/locales.py:45
 msgid "CPU mode changed to 'normal'."
-msgstr ""
+msgstr "Modalità CPU cambiata in 'normal'."
 
 #: backends/session/util/locales.py:46
 msgid "CPU mode changed to 'silent'."
-msgstr ""
+msgstr "Modalità CPU cambiata in 'silent'."
 
 #: backends/session/util/locales.py:47
 msgid "CPU mode changed to 'speed'."
-msgstr ""
+msgstr "Modalità CPU cambiata in 'speed'."
 
 #: backends/session/util/locales.py:48
 msgid "CPU mode cannot be changed."
-msgstr ""
+msgstr "La modalità CPU non può essere cambiata."
 
 #: backends/session/util/locales.py:49
-msgid "CPU current mode is 'normal'."
-msgstr ""
+#, fuzzy
+msgid "CPU mode is 'normal'."
+msgstr "La modalità CPU corrente è 'normal'."
 
 #: backends/session/util/locales.py:50
-msgid "CPU current mode is 'silent'."
-msgstr ""
+#, fuzzy
+msgid "CPU mode is 'silent'."
+msgstr "La modalità CPU corrente è 'silent'."
 
 #: backends/session/util/locales.py:51
-msgid "CPU current mode is 'speed'."
-msgstr ""
+#, fuzzy
+msgid "CPU mode is 'speed'."
+msgstr "La modalità CPU corrente è 'speed'."
 
 #: backends/session/util/locales.py:52
-msgid "Cannot get CPU status."
-msgstr ""
+#, fuzzy
+msgid "Cannot get CPU mode."
+msgstr "Impossibile recuperare la modalità CPU corrente."
 
 #: backends/session/util/locales.py:53
 msgid "CPU control is not available."
-msgstr ""
+msgstr "Il controllo CPU non è disponibile."
 
 #: backends/session/util/locales.py:55 samsung-tools-preferences.py:196
 msgid "Webcam"
-msgstr ""
+msgstr "Webcam"
 
 #: backends/session/util/locales.py:56
-msgid "Webcam is currently enabled."
-msgstr ""
+#, fuzzy
+msgid "Webcam is enabled."
+msgstr "La webcam è attualmente attivata."
 
 #: backends/session/util/locales.py:57
-msgid "Webcam is currently disabled."
-msgstr ""
+#, fuzzy
+msgid "Webcam is disabled."
+msgstr "La webcam è attualmente attivata."
 
 #: backends/session/util/locales.py:58
 msgid "Webcam enabled."
@@ -164,12 +174,13 @@ msgid "Wireless"
 msgstr ""
 
 #: backends/session/util/locales.py:66
-msgid "Wireless is currently enabled."
+msgid "Wireless is enabled."
 msgstr ""
 
 #: backends/session/util/locales.py:67
-msgid "Wireless is currently disabled."
-msgstr ""
+#, fuzzy
+msgid "Wireless is disabled."
+msgstr "Retroilluminazione disattivata."
 
 #: backends/session/util/locales.py:68
 msgid "Wireless enabled."
@@ -458,3 +469,15 @@ msgstr ""
 #: samsung-tools-preferences.glade.h:43
 msgid "module"
 msgstr ""
+
+#~ msgid "Backlight is currently enabled."
+#~ msgstr "La retroilluminazione è attiva."
+
+#~ msgid "Backlight is currently disabled."
+#~ msgstr "La retroilluminazione è attualmente disattivata."
+
+#~ msgid "Bluetooth is currently enabled."
+#~ msgstr "Il bluetooth è attualmente attivato."
+
+#~ msgid "Bluetooth is currently disabled."
+#~ msgstr "Il bluetooth è attualmente disattivato."
