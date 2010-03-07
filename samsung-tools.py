@@ -582,10 +582,10 @@ def main():
 			general = dbus.Interface(proxy, SESSION_INTERFACE_NAME)
 			general.Exit()
 			if not quiet:
-				print _("Session service stopped.")
+				print _("Session service stopped")
 		except:
 			if not quiet:
-				print _("Cannot stop session service.")
+				print _("Cannot stop session service")
 			pass
 	
 	if options.stopsystem == True:
@@ -595,10 +595,10 @@ def main():
 			general = dbus.Interface(proxy, SYSTEM_INTERFACE_NAME)
 			general.Exit()
 			if not quiet:
-				print _("System service stopped.")
+				print _("System service stopped")
 		except:
 			if not quiet:
-				print _("Cannot stop system service.")
+				print _("Cannot stop system service")
 			pass
 
 if __name__ == "__main__":
