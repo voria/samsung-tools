@@ -8,12 +8,12 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-07 15:02+0100\n"
+"POT-Creation-Date: 2010-03-07 17:42+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: backends/session/util/locales.py:25
@@ -225,7 +225,7 @@ msgstr ""
 msgid "Usage: %s <interface> <option> ..."
 msgstr ""
 
-#: samsung-tools.py:474 samsung-tools-preferences.glade.h:4
+#: samsung-tools.py:474 po/samsung-tools-preferences.glade.h:4
 msgid "Backlight:"
 msgstr ""
 
@@ -239,19 +239,19 @@ msgstr ""
 msgid "Options"
 msgstr ""
 
-#: samsung-tools.py:477 samsung-tools-preferences.glade.h:5
+#: samsung-tools.py:477 po/samsung-tools-preferences.glade.h:5
 msgid "Bluetooth:"
 msgstr ""
 
-#: samsung-tools.py:480 samsung-tools-preferences.glade.h:6
+#: samsung-tools.py:480 po/samsung-tools-preferences.glade.h:6
 msgid "CPU:"
 msgstr ""
 
-#: samsung-tools.py:483 samsung-tools-preferences.glade.h:38
+#: samsung-tools.py:483 po/samsung-tools-preferences.glade.h:38
 msgid "Webcam:"
 msgstr ""
 
-#: samsung-tools.py:486 samsung-tools-preferences.glade.h:39
+#: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:39
 msgid "Wireless:"
 msgstr ""
 
@@ -296,7 +296,7 @@ msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr ""
 
 #: samsung-tools.py:511 samsung-tools-preferences.py:571
-msgid "Released under GPLv3 license."
+msgid "Released under GPLv3 license"
 msgstr ""
 
 #: samsung-tools.py:516
@@ -331,8 +331,8 @@ msgstr ""
 msgid "Please press the new key combination"
 msgstr ""
 
-#: samsung-tools-preferences.py:121 samsung-tools-preferences.glade.h:11
-msgid "Disabled"
+#: samsung-tools-preferences.py:121
+msgid "None"
 msgstr ""
 
 #: samsung-tools-preferences.py:338
@@ -343,121 +343,119 @@ msgstr ""
 msgid "Unable to connect to system service!"
 msgstr ""
 
-#: samsung-tools-preferences.glade.h:1
+#: po/samsung-tools-preferences.glade.h:1
 msgid "<b>General</b>"
 msgstr ""
 
-#: samsung-tools-preferences.glade.h:2
+#: po/samsung-tools-preferences.glade.h:2
 msgid "<b>Hotkeys</b>"
 msgstr ""
 
-#: samsung-tools-preferences.glade.h:3
+#: po/samsung-tools-preferences.glade.h:3
 msgid "<b>Wireless</b>"
 msgstr ""
 
-#: samsung-tools-preferences.glade.h:7
+#: po/samsung-tools-preferences.glade.h:7
 msgid "Click here to disable the hotkey"
 msgstr ""
 
-#: samsung-tools-preferences.glade.h:8
+#: po/samsung-tools-preferences.glade.h:8
 msgid "Click here to set the default hotkey"
 msgstr ""
 
-#: samsung-tools-preferences.glade.h:9
+#: po/samsung-tools-preferences.glade.h:9
 msgid "Click here to set the default value"
 msgstr ""
 
-#: samsung-tools-preferences.glade.h:10
+#: po/samsung-tools-preferences.glade.h:10
 msgid "Device:"
 msgstr ""
 
-#: samsung-tools-preferences.glade.h:12
+#: po/samsung-tools-preferences.glade.h:11
+msgid "Disabled"
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:12
 msgid "Enable hotkeys"
 msgstr ""
 
-#: samsung-tools-preferences.glade.h:13
+#: po/samsung-tools-preferences.glade.h:13
+msgid "Enable this option to use hotkeys"
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:14
 msgid "Enabled"
 msgstr ""
 
-#: samsung-tools-preferences.glade.h:14
+#: po/samsung-tools-preferences.glade.h:15
 msgid "Hotkey used for CPU control"
 msgstr ""
 
-#: samsung-tools-preferences.glade.h:15
+#: po/samsung-tools-preferences.glade.h:16
 msgid "Hotkey used for backlight control"
 msgstr ""
 
-#: samsung-tools-preferences.glade.h:16
+#: po/samsung-tools-preferences.glade.h:17
 msgid "Hotkey used for bluetooth control"
 msgstr ""
 
-#: samsung-tools-preferences.glade.h:17
+#: po/samsung-tools-preferences.glade.h:18
 msgid "Hotkey used for webcam control"
 msgstr ""
 
-#: samsung-tools-preferences.glade.h:18
+#: po/samsung-tools-preferences.glade.h:19
+msgid "Hotkey used for wireless control"
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:20
 msgid ""
 "How the wireless is toggled.\n"
 "\n"
 "'iwconfig' - Use iwconfig commands.\n"
 "'module' - Insert/remove kernel module.\n"
-"'esdm' - Use the 'easy slow down manager' interface.\n"
-"\n"
-"Note: the new setting will be applied after a reboot."
+"'esdm' - Use the 'easy slow down manager' interface."
 msgstr ""
 
-#: samsung-tools-preferences.glade.h:25
+#: po/samsung-tools-preferences.glade.h:25
 msgid ""
-"If enabled, the status of all devices will be restored after a suspend/"
-"hibernate/reboot cycle"
+"If enabled, the status of all devices will be restored after a suspend, "
+"hibernate, reboot cycle"
 msgstr ""
 
-#: samsung-tools-preferences.glade.h:26
+#: po/samsung-tools-preferences.glade.h:26
 msgid "Kernel module:"
 msgstr ""
 
-#: samsung-tools-preferences.glade.h:27
+#: po/samsung-tools-preferences.glade.h:27
 msgid "Last status restore:"
 msgstr ""
 
-#: samsung-tools-preferences.glade.h:28
+#: po/samsung-tools-preferences.glade.h:28
 msgid "Samsung Tools Preferences"
 msgstr ""
 
-#: samsung-tools-preferences.glade.h:29
+#: po/samsung-tools-preferences.glade.h:29
 msgid "Session service"
 msgstr ""
 
-#: samsung-tools-preferences.glade.h:30
+#: po/samsung-tools-preferences.glade.h:30
 msgid "System service"
 msgstr ""
 
-#: samsung-tools-preferences.glade.h:31
+#: po/samsung-tools-preferences.glade.h:31
 msgid ""
 "The kernel module to be managed.\n"
 "\n"
 "Note: this option is only used when 'Toggle method' is set to 'module'."
 msgstr ""
 
-#: samsung-tools-preferences.glade.h:34
+#: po/samsung-tools-preferences.glade.h:34
 msgid ""
 "The wireless device to use.\n"
 "\n"
 "Note: this option is only used when 'Toggle method' is set to 'iwconfig'."
 msgstr ""
 
-#: samsung-tools-preferences.glade.h:37
+#: po/samsung-tools-preferences.glade.h:37
 msgid "Toggle method:"
-msgstr ""
-
-#: samsung-tools-preferences.glade.h:40
-msgid "esdm"
-msgstr ""
-
-#: samsung-tools-preferences.glade.h:41
-msgid "iwconfig"
-msgstr ""
-
-#: samsung-tools-preferences.glade.h:42
-msgid "module"
 msgstr ""

@@ -118,7 +118,7 @@ class KeyGrabber(gtk.Button):
 			mods = self.mods
 		label = gtk.accelerator_name(key, mods)
 		if not len(label):
-			label = _("Disabled")
+			label = _("None")
 		else:
 			if label == "XF86Sleep":
 				label = "Fn-Esc"
@@ -568,7 +568,7 @@ class Main():
 		dialog = gtk.AboutDialog()
 		dialog.set_name(APP_NAME)
 		dialog.set_version(APP_VERSION)
-		copyright = _("Released under GPLv3 license.") + "\n\nCopyleft by\nFortunato Ventre (voRia)\nvorione@gmail.com"
+		copyright = _("Released under GPLv3 license") + "\n\nCopyleft by\nFortunato Ventre (voRia)\nvorione@gmail.com"
 		dialog.set_copyright(copyright)
 		dialog.set_website("http://www.voria.org/forum")
 		dialog.set_website_label("Linux On My Samsung")

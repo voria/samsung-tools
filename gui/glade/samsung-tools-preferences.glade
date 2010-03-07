@@ -141,6 +141,7 @@
                 <child>
                   <object class="GtkLabel" id="wirelessHotkeyLabel">
                     <property name="visible">True</property>
+                    <property name="tooltip_text" translatable="yes">Hotkey used for wireless control</property>
                     <property name="label" translatable="yes">Wireless:</property>
                   </object>
                   <packing>
@@ -269,6 +270,7 @@
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">False</property>
+                    <property name="tooltip_text" translatable="yes">Enable this option to use hotkeys</property>
                     <property name="draw_indicator">True</property>
                   </object>
                   <packing>
@@ -314,7 +316,7 @@
                 <child>
                   <object class="GtkLabel" id="lastStatusRestoreLabel">
                     <property name="visible">True</property>
-                    <property name="tooltip_text" translatable="yes">If enabled, the status of all devices will be restored after a suspend/hibernate/reboot cycle</property>
+                    <property name="tooltip_text" translatable="yes">If enabled, the status of all devices will be restored after a suspend, hibernate, reboot cycle</property>
                     <property name="label" translatable="yes">Last status restore:</property>
                   </object>
                   <packing>
@@ -327,7 +329,7 @@
                 <child>
                   <object class="GtkComboBox" id="lastStatusRestoreCombobox">
                     <property name="visible">True</property>
-                    <property name="tooltip_text" translatable="yes">If enabled, the status of all devices will be restored after a suspend/hibernate/reboot cycle</property>
+                    <property name="tooltip_text" translatable="yes">If enabled, the status of all devices will be restored after a suspend, hibernate, reboot cycle</property>
                     <property name="model">lastStatusRestoreListstore</property>
                     <property name="active">0</property>
                   </object>
@@ -406,9 +408,7 @@ Note: this option is only used when 'Toggle method' is set to 'iwconfig'.</prope
 
 'iwconfig' - Use iwconfig commands.
 'module' - Insert/remove kernel module.
-'esdm' - Use the 'easy slow down manager' interface.
-
-Note: the new setting will be applied after a reboot.</property>
+'esdm' - Use the 'easy slow down manager' interface.</property>
                     <property name="label" translatable="yes">Toggle method:</property>
                   </object>
                   <packing>
@@ -507,9 +507,7 @@ Note: this option is only used when 'Toggle method' is set to 'iwconfig'.</prope
 
 'iwconfig' - Use iwconfig commands.
 'module' - Insert/remove kernel module.
-'esdm' - Use the 'easy slow down manager' interface.
-
-Note: the new setting will be applied after a reboot.</property>
+'esdm' - Use the 'easy slow down manager' interface.</property>
                     <property name="model">wirelessToggleMethodListstore</property>
                     <property name="active">0</property>
                   </object>
@@ -609,13 +607,13 @@ Note: the new setting will be applied after a reboot.</property>
     </columns>
     <data>
       <row>
-        <col id="0" translatable="yes">iwconfig</col>
+        <col id="0">iwconfig</col>
       </row>
       <row>
-        <col id="0" translatable="yes">module</col>
+        <col id="0">module</col>
       </row>
       <row>
-        <col id="0" translatable="yes">esdm</col>
+        <col id="0">esdm</col>
       </row>
     </data>
   </object>

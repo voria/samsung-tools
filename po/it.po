@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-07 15:00+0100\n"
-"PO-Revision-Date: 2010-03-07 15:02+0100\n"
+"POT-Creation-Date: 2010-03-07 17:42+0100\n"
+"PO-Revision-Date: 2010-03-07 17:42+0100\n"
 "Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: Italiano <vorione@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -226,7 +226,7 @@ msgstr "Samsung Tools - Utilità da linea di comando"
 msgid "Usage: %s <interface> <option> ..."
 msgstr "Uso: %s <interfaccia> <opzione> ..."
 
-#: samsung-tools.py:474 samsung-tools-preferences.glade.h:4
+#: samsung-tools.py:474 po/samsung-tools-preferences.glade.h:4
 msgid "Backlight:"
 msgstr "Retroilluminazione:"
 
@@ -240,19 +240,19 @@ msgstr "Interfaccia"
 msgid "Options"
 msgstr "Opzioni"
 
-#: samsung-tools.py:477 samsung-tools-preferences.glade.h:5
+#: samsung-tools.py:477 po/samsung-tools-preferences.glade.h:5
 msgid "Bluetooth:"
 msgstr "Bluetooth:"
 
-#: samsung-tools.py:480 samsung-tools-preferences.glade.h:6
+#: samsung-tools.py:480 po/samsung-tools-preferences.glade.h:6
 msgid "CPU:"
 msgstr "CPU:"
 
-#: samsung-tools.py:483 samsung-tools-preferences.glade.h:38
+#: samsung-tools.py:483 po/samsung-tools-preferences.glade.h:38
 msgid "Webcam:"
 msgstr "Webcam:"
 
-#: samsung-tools.py:486 samsung-tools-preferences.glade.h:39
+#: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:39
 msgid "Wireless:"
 msgstr "Wireless:"
 
@@ -297,8 +297,8 @@ msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Per maggiori informazioni, visita il forum 'Linux On My Samsung':"
 
 #: samsung-tools.py:511 samsung-tools-preferences.py:571
-msgid "Released under GPLv3 license."
-msgstr "Rilasciato con licenza GPLv3."
+msgid "Released under GPLv3 license"
+msgstr "Rilasciato con licenza GPLv3"
 
 #: samsung-tools.py:516
 msgid "No action(s) specified."
@@ -332,9 +332,9 @@ msgstr "Impossibile fermare il servizio di sistema"
 msgid "Please press the new key combination"
 msgstr "Premi la nuova combinazione di tasti"
 
-#: samsung-tools-preferences.py:121 samsung-tools-preferences.glade.h:11
-msgid "Disabled"
-msgstr "Disattivo"
+#: samsung-tools-preferences.py:121
+msgid "None"
+msgstr "Nessuno"
 
 #: samsung-tools-preferences.py:338
 msgid "Unable to connect to session service!"
@@ -344,105 +344,113 @@ msgstr "Impossibile connettersi al servizio di sessione!"
 msgid "Unable to connect to system service!"
 msgstr "Impossibile connettersi al servizio di sistema!"
 
-#: samsung-tools-preferences.glade.h:1
+#: po/samsung-tools-preferences.glade.h:1
 msgid "<b>General</b>"
 msgstr "<b>Generale</b>"
 
-#: samsung-tools-preferences.glade.h:2
+#: po/samsung-tools-preferences.glade.h:2
 msgid "<b>Hotkeys</b>"
 msgstr "<b>Tasti veloci</b>"
 
-#: samsung-tools-preferences.glade.h:3
+#: po/samsung-tools-preferences.glade.h:3
 msgid "<b>Wireless</b>"
 msgstr "<b>Wireless</b>"
 
-#: samsung-tools-preferences.glade.h:7
+#: po/samsung-tools-preferences.glade.h:7
 msgid "Click here to disable the hotkey"
 msgstr "Clicca qui per disattivare il tasto veloce"
 
-#: samsung-tools-preferences.glade.h:8
+#: po/samsung-tools-preferences.glade.h:8
 msgid "Click here to set the default hotkey"
 msgstr "Clicca qui per impostare il tasto veloce predefinito"
 
-#: samsung-tools-preferences.glade.h:9
+#: po/samsung-tools-preferences.glade.h:9
 msgid "Click here to set the default value"
 msgstr "Clicca qui per impostare il valore predefinito"
 
-#: samsung-tools-preferences.glade.h:10
+#: po/samsung-tools-preferences.glade.h:10
 msgid "Device:"
 msgstr "Dispositivo:"
 
-#: samsung-tools-preferences.glade.h:12
+#: po/samsung-tools-preferences.glade.h:11
+msgid "Disabled"
+msgstr "Disattivo"
+
+#: po/samsung-tools-preferences.glade.h:12
 msgid "Enable hotkeys"
 msgstr "Abilita i tasti veloci"
 
-#: samsung-tools-preferences.glade.h:13
+#: po/samsung-tools-preferences.glade.h:13
+msgid "Enable this option to use hotkeys"
+msgstr "Attiva questa opzione per utilizzare i tasti veloci"
+
+#: po/samsung-tools-preferences.glade.h:14
 msgid "Enabled"
 msgstr "Attivo"
 
-#: samsung-tools-preferences.glade.h:14
+#: po/samsung-tools-preferences.glade.h:15
 msgid "Hotkey used for CPU control"
 msgstr "Tasto veloce utilizzato per il controllo della CPU"
 
-#: samsung-tools-preferences.glade.h:15
+#: po/samsung-tools-preferences.glade.h:16
 msgid "Hotkey used for backlight control"
 msgstr "Tasto veloce utilizzato per il controllo della retroilluminazione"
 
-#: samsung-tools-preferences.glade.h:16
+#: po/samsung-tools-preferences.glade.h:17
 msgid "Hotkey used for bluetooth control"
 msgstr "Tasto veloce utilizzato per il controllo del bluetooth"
 
-#: samsung-tools-preferences.glade.h:17
+#: po/samsung-tools-preferences.glade.h:18
 msgid "Hotkey used for webcam control"
 msgstr "Tasto veloce utilizzato per il controllo della webcam"
 
-#: samsung-tools-preferences.glade.h:18
+#: po/samsung-tools-preferences.glade.h:19
+msgid "Hotkey used for wireless control"
+msgstr "Tasto veloce utilizzato per il controllo del wireless"
+
+#: po/samsung-tools-preferences.glade.h:20
 msgid ""
 "How the wireless is toggled.\n"
 "\n"
 "'iwconfig' - Use iwconfig commands.\n"
 "'module' - Insert/remove kernel module.\n"
-"'esdm' - Use the 'easy slow down manager' interface.\n"
-"\n"
-"Note: the new setting will be applied after a reboot."
+"'esdm' - Use the 'easy slow down manager' interface."
 msgstr ""
 "La modalità di commutazione del wireless.\n"
 "\n"
 "'iwconfig' - Usa i comandi iwconfig.\n"
 "'module' - Inserisce/rimuove il modulo del kernel.\n"
-"'esdm' - Usa l'interfaccia 'easy-slow-down-manager'.\n"
-"\n"
-"Nota: le nuove impostazioni saranno applicate dopo un riavvio."
+"'esdm' - Usa l'interfaccia 'easy-slow-down-manager'."
 
-#: samsung-tools-preferences.glade.h:25
+#: po/samsung-tools-preferences.glade.h:25
 msgid ""
-"If enabled, the status of all devices will be restored after a suspend/"
-"hibernate/reboot cycle"
+"If enabled, the status of all devices will be restored after a suspend, "
+"hibernate, reboot cycle"
 msgstr ""
 "Se attivo, lo stato di tutti i dispositivi viene ripristinato dopo un ciclo "
-"di sospensione/ibernazione o riavvio"
+"di sospensione, ibernazione o riavvio"
 
-#: samsung-tools-preferences.glade.h:26
+#: po/samsung-tools-preferences.glade.h:26
 msgid "Kernel module:"
 msgstr "Modulo del kernel:"
 
-#: samsung-tools-preferences.glade.h:27
+#: po/samsung-tools-preferences.glade.h:27
 msgid "Last status restore:"
 msgstr "Ripristino ultimo stato:"
 
-#: samsung-tools-preferences.glade.h:28
+#: po/samsung-tools-preferences.glade.h:28
 msgid "Samsung Tools Preferences"
 msgstr "Preferenze di Samsung Tools"
 
-#: samsung-tools-preferences.glade.h:29
+#: po/samsung-tools-preferences.glade.h:29
 msgid "Session service"
 msgstr "Servizio di sessione"
 
-#: samsung-tools-preferences.glade.h:30
+#: po/samsung-tools-preferences.glade.h:30
 msgid "System service"
 msgstr "Servizio di sistema"
 
-#: samsung-tools-preferences.glade.h:31
+#: po/samsung-tools-preferences.glade.h:31
 msgid ""
 "The kernel module to be managed.\n"
 "\n"
@@ -453,7 +461,7 @@ msgstr ""
 "Nota questa opzione è usata solo quando 'Metodo commutazione' è impostato a "
 "'module'."
 
-#: samsung-tools-preferences.glade.h:34
+#: po/samsung-tools-preferences.glade.h:34
 msgid ""
 "The wireless device to use.\n"
 "\n"
@@ -464,21 +472,18 @@ msgstr ""
 "Nota: questa opzione è usata solo quando 'Metodo commutazione' è impostato a "
 "'iwconfig'."
 
-#: samsung-tools-preferences.glade.h:37
+#: po/samsung-tools-preferences.glade.h:37
 msgid "Toggle method:"
 msgstr "Metodo commutazione:"
 
-#: samsung-tools-preferences.glade.h:40
-msgid "esdm"
-msgstr "esdm"
+#~ msgid "esdm"
+#~ msgstr "esdm"
 
-#: samsung-tools-preferences.glade.h:41
-msgid "iwconfig"
-msgstr "iwconfig"
+#~ msgid "iwconfig"
+#~ msgstr "iwconfig"
 
-#: samsung-tools-preferences.glade.h:42
-msgid "module"
-msgstr "module"
+#~ msgid "module"
+#~ msgstr "module"
 
 #~ msgid "Backlight is currently enabled."
 #~ msgstr "La retroilluminazione è attiva."

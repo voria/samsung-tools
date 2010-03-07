@@ -508,7 +508,7 @@ def usage(option = None, opt = None, value = None, parser = None):
 	print " - http://www.voria.org/forum"
 	print
 	print "Copyleft by: Fortunato Ventre (voRia) - vorione@gmail.com"
-	print _("Released under GPLv3 license.")
+	print _("Released under GPLv3 license") + "."
 	sys.exit(0)
 
 def main():
