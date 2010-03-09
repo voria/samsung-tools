@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-09 11:55+0100\n"
-"PO-Revision-Date: 2010-03-09 11:55+0100\n"
+"PO-Revision-Date: 2010-03-09 11:59+0100\n"
 "Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: Italiano <vorione@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -89,19 +89,19 @@ msgstr "CPU/Ventola"
 
 #: backends/session/util/locales.py:45
 msgid "Fan mode changed: 'normal'"
-msgstr "Modalità della ventola cambiata: 'normale'"
+msgstr "Modalità ventola cambiata: 'normale'"
 
 #: backends/session/util/locales.py:46
 msgid "Fan mode changed: 'silent'"
-msgstr "Modalità della ventola cambiata: 'silent'"
+msgstr "Modalità ventola cambiata: 'silent'"
 
 #: backends/session/util/locales.py:47
 msgid "Fan mode changed: 'speed'"
-msgstr "Modalità della ventola cambiata: 'speed'"
+msgstr "Modalità ventola cambiata: 'speed'"
 
 #: backends/session/util/locales.py:48
 msgid "Fan mode cannot be changed"
-msgstr "La modalità della ventola non può essere cambiata"
+msgstr "La modalità ventola non può essere cambiata"
 
 #: backends/session/util/locales.py:49
 msgid "Fan mode: 'normal'"
