@@ -205,22 +205,25 @@ class Cpu():
 			sys.exit(1)
 	
 	def __is_available(self):
-		return self.interface.IsAvailable()
+		return self.interface.IsFanAvailable()
+	
+	def __temp(self):
+		return self.interface.GetCpuTemp()
 	
 	def __normal(self):
-		return self.interface.SetNormal(self.use_notify)
+		return self.interface.SetFanNormal(self.use_notify)
 	
 	def __silent(self):
-		return self.interface.SetSilent(self.use_notify)
+		return self.interface.SetFanSilent(self.use_notify)
 	
 	def __speed(self):
-		return self.interface.SetSpeed(self.use_notify)
+		return self.interface.SetFanSpeed(self.use_notify)
 	
 	def __cycle(self):
-		return self.interface.Cycle(self.use_notify)
+		return self.interface.SetFanCycle(self.use_notify)
 	
 	def __status(self):
-		return self.interface.Status(self.use_notify)
+		return self.interface.GetFanMode(self.use_notify)
 	
 	def apply(self):
 		if self.option == None:
@@ -307,6 +310,11 @@ class Cpu():
 					print CPU_FAN_STATUS_SPEED
 				if result == 3:
 					print CPU_FAN_STATUS_ERROR
+		# Print temperature
+		if not quiet:
+			temp = self.__temp()
+			if temp != "none" and self.option != "hotkey":
+				print CPU_TEMP + " " + temp
 		
 class Webcam():
 	def __init__(self, option, use_notify = False):

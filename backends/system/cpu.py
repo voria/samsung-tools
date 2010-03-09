@@ -26,13 +26,14 @@ import dbus.service
 from backends.globals import *
 
 class Cpu(dbus.service.Object):
-	""" Control CPU through easy-slow-down-manager interface """
+	""" Show CPU temperature and control CPU Fan through easy-slow-down-manager interface """
 	def __init__(self, conn = None, object_path = None, bus_name = None):
 		dbus.service.Object.__init__(self, conn, object_path, bus_name)
-		self.available = self.__is_available()
+		self.fan_available = self.__is_fan_available()
+		self.temp_available = self.__is_temp_available()
 		
-	def __is_available(self):
-		""" Check if the CPU control is available. """
+	def __is_fan_available(self):
+		""" Check if the fan control is available. """
 		""" Return 'True' if available, 'False' otherwise. """
 		if os.path.exists(ESDM_PATH_CPU):
 			return True
@@ -44,92 +45,120 @@ class Cpu(dbus.service.Object):
 										stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 				process.communicate()
 				if process.returncode != 0:
-					systemlog.write("ERROR: 'Cpu.IsAvailable()' - COMMAND: '" + command + "' FAILED.")
+					systemlog.write("ERROR: 'Cpu.__is_fan_available()' - COMMAND: '" + command + "' FAILED.")
 					return False
 				else:
 					return True
 			except:
-				systemlog.write("ERROR: 'Cpu.IsAvailable()' - COMMAND: '" + command + "' - Exception thrown.")
+				systemlog.write("ERROR: 'Cpu.__is_fan_available()' - COMMAND: '" + command + "' - Exception thrown.")
 				return False
+	
+	def __is_temp_available(self):
+		""" Check if the temperature reading is available. """
+		""" Return 'True' if available, 'False' otherwise. """
+		if os.path.exists(CPU_TEMPERATURE_PATH):
+			return True
+		else:
+			return False
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
-	def IsAvailable(self, sender = None, conn = None):
-		""" Return 'True' if CPU control is available, 'False' otherwise. """
-		return self.available
+	def IsFanAvailable(self, sender = None, conn = None):
+		""" Return 'True' if fan control is available, 'False' otherwise. """
+		return self.fan_available
+	
+	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
+						sender_keyword = 'sender', connection_keyword = 'conn')
+	def IsTempAvailable(self, sender = None, conn = None):
+		""" Return 'True' if temperature reading is available, 'False' otherwise. """
+		return self.temp_available
+	
+	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 's',
+						sender_keyword = 'sender', connection_keyword = 'conn')
+	def GetCpuTemp(self, sender = None, conn = None):
+		""" Return current CPU temperature. """
+		""" Return 'none' if any error. """
+		if not self.temp_available:
+			return "none"
+		try:
+			file = open(CPU_TEMPERATURE_PATH, "r")
+		except:
+			systemlog.write("ERROR: 'Cpu.GetCpuTemp()' - Cannot read temperature from '" + CPU_TEMPERATURE_PATH + "'.")
+			return "none"
+		return file.read().split(':')[1].strip()	
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'i',
 						sender_keyword = 'sender', connection_keyword = 'conn')
-	def Status(self, sender = None, conn = None):
-		""" Get current mode. """
+	def GetFanMode(self, sender = None, conn = None):
+		""" Get current fan mode. """
 		"""Return 0 if 'normal', 1 if 'silent', 2 if 'speed'. """
 		""" Return 3 if any error. """
-		if not self.available:
+		if not self.fan_available:
 			return 3
 		try:
 			with open(ESDM_PATH_CPU, 'r') as file:
 				return int(file.read(1))
 		except:
-			systemlog.write("ERROR: 'Cpu.Status()' - cannot read from '" + ESDM_PATH_CPU + "'.")
+			systemlog.write("ERROR: 'Cpu.GetFanMode()' - cannot read from '" + ESDM_PATH_CPU + "'.")
 			return 3
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
-	def SetNormal(self, sender = None, conn = None):
-		""" Set 'normal' mode. """
+	def SetFanNormal(self, sender = None, conn = None):
+		""" Set fan to 'normal' mode. """
 		""" Return 'True' on success, 'False' otherwise. """
-		if not self.available:
+		if not self.fan_available:
 			return False
 		try:
 			with open(ESDM_PATH_CPU, 'w') as file:
 				file.write('0')
 			return True
 		except:
-			systemlog.write("ERROR: 'Cpu.SetNormal()' - cannot write to '" + ESDM_PATH_CPU + "'.")
+			systemlog.write("ERROR: 'Cpu.SetFanNormal()' - cannot write to '" + ESDM_PATH_CPU + "'.")
 			return False
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
-	def SetSilent(self, sender = None, conn = None):
-		""" Set 'silent' mode. """
+	def SetFanSilent(self, sender = None, conn = None):
+		""" Set fan to 'silent' mode. """
 		""" Return 'True' on success, 'False' otherwise. """
-		if not self.available:
+		if not self.fan_available:
 			return False
 		try:
 			with open(ESDM_PATH_CPU, 'w') as file:
 				file.write('1')
 			return True
 		except:
-			systemlog.write("ERROR: 'Cpu.SetSilent()' - cannot write to '" + ESDM_PATH_CPU + "'.")
+			systemlog.write("ERROR: 'Cpu.SetFanSilent()' - cannot write to '" + ESDM_PATH_CPU + "'.")
 			return False
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
-	def SetSpeed(self, sender = None, conn = None):
-		""" Set 'speed' mode. """
+	def SetFanSpeed(self, sender = None, conn = None):
+		""" Set fan to 'speed' mode. """
 		""" Return 'True' on success, 'False' otherwise. """
-		if not self.available:
+		if not self.fan_available:
 			return False
 		try:
 			with open(ESDM_PATH_CPU, 'w') as file:
 				file.write('2')
 			return True
 		except:
-			systemlog.write("ERROR: 'Cpu.SetSpeed()' - cannot write to '" + ESDM_PATH_CPU + "'.")
+			systemlog.write("ERROR: 'Cpu.SetFanSpeed()' - cannot write to '" + ESDM_PATH_CPU + "'.")
 			return False
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
-	def Cycle(self, sender = None, conn = None):
-		""" Set the next mode in a cyclic way. """
+	def SetFanCycle(self, sender = None, conn = None):
+		""" Set the next fan mode in a cyclic way. """
 		""" Return 'True' on success, 'False' otherwise. """
-		if not self.available:
+		if not self.fan_available:
 			return False
-		current = self.Status()
+		current = self.GetFanMode()
 		if current == 0:
-			return self.SetSilent()
+			return self.SetFanSilent()
 		if current == 1:
-			return self.SetSpeed()
+			return self.SetFanSpeed()
 		if current == 2:
-			return self.SetNormal()
+			return self.SetFanNormal()
 		return False

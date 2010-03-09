@@ -88,3 +88,5 @@ ESDM_MODULE = "easy_slow_down_manager"
 ESDM_PATH_BACKLIGHT = "/proc/easy_backlight"
 ESDM_PATH_CPU = "/proc/easy_slow_down_manager"
 ESDM_PATH_WIRELESS = "/proc/easy_wifi_kill"
+# Temperature path
+CPU_TEMPERATURE_PATH = "/proc/acpi/thermal_zone/TZ00/temperature"
