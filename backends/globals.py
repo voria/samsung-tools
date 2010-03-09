@@ -57,6 +57,7 @@ SYSTEM_OBJECT_PATH_OPTIONS = "/Options"
 SYSTEM_OBJECT_PATH_BACKLIGHT = "/Device/Backlight"
 SYSTEM_OBJECT_PATH_BLUETOOTH = "/Device/Bluetooth"
 SYSTEM_OBJECT_PATH_CPU = "/Device/Cpu"
+SYSTEM_OBJECT_PATH_FAN = "/Device/Fan"
 SYSTEM_OBJECT_PATH_WEBCAM = "/Device/Webcam"
 SYSTEM_OBJECT_PATH_WIRELESS = "/Device/Wireless"
 # Config/Log
@@ -86,7 +87,7 @@ COMMAND_IWCONFIG = "/sbin/iwconfig"
 # Easy slow down manager interface
 ESDM_MODULE = "easy_slow_down_manager"
 ESDM_PATH_BACKLIGHT = "/proc/easy_backlight"
-ESDM_PATH_CPU = "/proc/easy_slow_down_manager"
+ESDM_PATH_FAN = "/proc/easy_slow_down_manager"
 ESDM_PATH_WIRELESS = "/proc/easy_wifi_kill"
-# Temperature path
+# Temperature
 CPU_TEMPERATURE_PATH = "/proc/acpi/thermal_zone/TZ00/temperature"

@@ -31,8 +31,8 @@ class Cpu(dbus.service.Object):
 		dbus.service.Object.__init__(self, conn, object_path, bus_name)
 		self.notify = notify
 	
-	def __connect(self):
-		""" Enable connection to system backend """
+	def __connect_cpu(self):
+		""" Enable connection to system backend for 'Cpu' object """
 		retry = 3
 		while retry > 0:
 			try:
@@ -41,81 +41,95 @@ class Cpu(dbus.service.Object):
 				return dbus.Interface(proxy, SYSTEM_INTERFACE_NAME)
 			except:
 				retry = retry - 1
-		sessionlog.write("ERROR: 'Cpu.__connect()' - 3 attempts to connect to system bus failed.")
+		sessionlog.write("ERROR: 'Cpu.__connect_cpu()' - 3 attempts to connect to system bus failed.")
 		return None
 	
-	def __not_available(self, show_notify = True):
-		""" If show_notify == True, inform the user that the fan control is not available. """
-		""" Return always 'False'. """
-		if self.notify != None and show_notify:
-			self.notify.setTitle(CPU_TITLE)
-			self.notify.setMessage(CPU_FAN_NOT_AVAILABLE)
-			self.notify.setIcon(STOP_ICON)
-			self.notify.setUrgency("critical")
+	def __connect_fan(self):
+		""" Enable connection to system backend for 'Fan' object """
+		retry = 3
+		while retry > 0:
+			try:
+				bus = dbus.SystemBus()
+				proxy = bus.get_object(SYSTEM_INTERFACE_NAME, SYSTEM_OBJECT_PATH_FAN)
+				return dbus.Interface(proxy, SYSTEM_INTERFACE_NAME)
+			except:
+				retry = retry - 1
+		sessionlog.write("ERROR: 'Cpu.__connect_fan()' - 3 attempts to connect to system bus failed.")
+		return None
+	
+	def __show_notify(self, title, message, icon, urgency = "critical"):
+		""" Show user notifications. """
+		if self.notify != None:
+			temp = self.GetTemperature()
+			if temp != "none":
+				message = CPU_TEMPERATURE + " " + temp + "\n\n" + message
+			self.notify.setTitle(title)
+			self.notify.setMessage(message)
+			self.notify.setIcon(icon)
+			self.notify.setUrgency(urgency)
 			self.notify.show()
-		return False
+			
+	def __fan_not_available(self, show_notify = True):
+		""" If show_notify == True, inform the user that the fan control is not available. """
+		if show_notify:
+			self.__show_notify(CPU_TITLE, FAN_NOT_AVAILABLE, STOP_ICON)		
 	
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def IsFanAvailable(self, sender = None, conn = None):
 		""" Check if the fan control is available. """
 		""" Return 'True' if available, 'False' if disabled or any error. """
-		interface = self.__connect()
+		interface = self.__connect_fan()
 		if not interface:
 			return False
-		return interface.IsFanAvailable()
+		return interface.IsAvailable()
 
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
-	def IsTempAvailable(self, sender = None, conn = None):
+	def IsTemperatureAvailable(self, sender = None, conn = None):
 		""" Check if temperature reading is available. """
 		""" Return 'True' if available, 'False' if disabled or any error. """
-		interface = self.__connect()
+		interface = self.__connect_cpu()
 		if not interface:
 			return False
-		return interface.IsFanAvailable()
+		return interface.IsTemperatureAvailable()
 	
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = None, out_signature = 's',
 						sender_keyword = 'sender', connection_keyword = 'conn')
-	def GetCpuTemp(self, sender = None, conn = None):
+	def GetTemperature(self, sender = None, conn = None):
 		""" Get the current CPU temperature. """
 		""" Return 'none' if temperature reading is not available. """
-		interface = self.__connect()
-		return interface.GetCpuTemp()
+		interface = self.__connect_cpu()
+		return interface.GetTemperature()
 	
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 'b', out_signature = 'i',
 						sender_keyword = 'sender', connection_keyword = 'conn')
-	def GetFanMode(self, show_notify = True, sender = None, conn = None):
-		""" Get current fan mode. """
+	def Status(self, show_notify = True, sender = None, conn = None):
+		""" Show current fan mode. """
 		"""Return 0 if 'normal', 1 if 'silent', 2 if 'speed'. """
 		""" Return 3 if any error. """
 		if not self.IsFanAvailable():
-			self.__not_available(show_notify)
+			self.__fan_not_available(show_notify)
 			return 3
-		interface = self.__connect()
+		interface = self.__connect_fan()
 		if not interface:
 			return 3
-		status = interface.GetFanMode()
-		if self.notify != None and show_notify:
-			self.notify.setTitle(CPU_TITLE)
-			self.notify.setUrgency("critical")
+		status = interface.Status()
+		if show_notify:
+			title = CPU_TITLE
 			if status == 0:
-				message = CPU_FAN_STATUS_NORMAL
-				self.notify.setIcon(CPU_NORMAL_ICON)
+				message = FAN_STATUS_NORMAL
+				icon = FAN_NORMAL_ICON
 			elif status == 1:
-				message = CPU_FAN_STATUS_SILENT
-				self.notify.setIcon(CPU_SILENT_ICON)
+				message = FAN_STATUS_SILENT
+				icon = FAN_SILENT_ICON
 			elif status == 2:
-				message = CPU_FAN_STATUS_SPEED
-				self.notify.setIcon(CPU_SPEED_ICON)
+				message = FAN_STATUS_SPEED
+				icon = FAN_SPEED_ICON
 			else: # status == 3
-				self.__not_available(show_notify)
+				self.__fan_not_available(show_notify)
 				return 3
-			temp = self.GetCpuTemp()
-			if temp != "none":
-				message += "\n" + CPU_TEMP + " " + temp
-			self.notify.setMessage(message)
-			self.notify.show()
+			self.__show_notify(title, message, icon)
 		return status
 			
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 'b', out_signature = 'b',
@@ -124,110 +138,83 @@ class Cpu(dbus.service.Object):
 		""" Set fan to 'normal' mode. """
 		""" Return 'True' on success, 'False' otherwise. """
 		if not self.IsFanAvailable():
-			return self.__not_available(show_notify)
-		interface = self.__connect()
+			return self.__fan_not_available(show_notify)
+		interface = self.__connect_fan()
 		if not interface:
 			return False
-		result = interface.SetFanNormal()
-		if self.notify != None and show_notify:
-			self.notify.setTitle(CPU_TITLE)
-			self.notify.setUrgency("critical")
+		result = interface.SetNormal()
+		if show_notify:
 			if result == True:
-				message = CPU_FAN_SWITCH_NORMAL
-				self.notify.setIcon(CPU_NORMAL_ICON)
+				self.__show_notify(CPU_TITLE, FAN_SWITCH_NORMAL, FAN_NORMAL_ICON)
 			else:
-				return self.__not_available(show_notify)
-			temp = self.GetCpuTemp()
-			if temp != "none":
-				message += "\n" + CPU_TEMP + " " + temp
-			self.notify.setMessage(message)
-			self.notify.show()
+				self.__show_notify(CPU_TITLE, FAN_SWITCHING_ERROR, ERROR_ICON)
 		return result
 		
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 'b', out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
-	def SetSilent(self, show_notify = True, sender = None, conn = None):
+	def SetFanSilent(self, show_notify = True, sender = None, conn = None):
 		""" Set fan to 'silent' mode. """
 		""" Return 'True' on success, 'False' otherwise. """
-		if not self.IsAvailable():
-			return self.__not_available(show_notify)
-		interface = self.__connect()
+		if not self.IsFanAvailable():
+			return self.__fan_not_available(show_notify)
+		interface = self.__connect_fan()
 		if not interface:
 			return False
-		result = interface.SetFanSilent()
-		if self.notify != None and show_notify:
-			self.notify.setTitle(CPU_TITLE)
-			self.notify.setUrgency("critical")
+		result = interface.SetSilent()
+		if show_notify:
 			if result == True:
-				message = CPU_FAN_SWITCH_SILENT
-				self.notify.setIcon(CPU_SILENT_ICON)
+				self.__show_notify(CPU_TITLE, FAN_SWITCH_SILENT, FAN_SILENT_ICON)
 			else:
-				return self.__not_available(show_notify)
-			temp = self.GetCpuTemp()
-			if temp != "none":
-				message += "\n" + CPU_TEMP + " " + temp
-			self.notify.setMessage(message)
-			self.notify.show()
+				self.__show_notify(CPU_TITLE, FAN_SWITCHING_ERROR, ERROR_ICON)
 		return result
 		
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 'b', out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
-	def SetSpeed(self, show_notify = True, sender = None, conn = None):
+	def SetFanSpeed(self, show_notify = True, sender = None, conn = None):
 		""" Set fan to 'speed' mode. """
 		""" Return 'True' on success, 'False' otherwise. """
-		if not self.IsAvailable():
-			return self.__not_available(show_notify)
-		interface = self.__connect()
+		if not self.IsFanAvailable():
+			return self.__fan_not_available(show_notify)
+		interface = self.__connect_fan()
 		if not interface:
 			return False
-		result = interface.SetFanSpeed()
-		if self.notify != None and show_notify:
-			self.notify.setTitle(CPU_TITLE)
-			self.notify.setUrgency("critical")
+		result = interface.SetSpeed()
+		if show_notify:
 			if result == True:
-				message = CPU_FAN_SWITCH_SPEED
-				self.notify.setIcon(CPU_SPEED_ICON)
+				self.__show_notify(CPU_TITLE, FAN_SWITCH_SPEED, FAN_SPEED_ICON)
 			else:
-				return self.__not_available(show_notify)
-			temp = self.GetCpuTemp()
-			if temp != "none":
-				message += "\n" + CPU_TEMP + " " + temp
-			self.notify.setMessage(message)
-			self.notify.show()
+				self.__show_notify(CPU_TITLE, FAN_SWITCHING_ERROR, ERROR_ICON)
 		return result
 	
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 'b', out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
-	def SetFanCycle(self, show_notify = True, sender = None, conn = None):
+	def Cycle(self, show_notify = True, sender = None, conn = None):
 		""" Set the next fan mode in a cyclic way. """
 		""" Return 'True' on success, 'False' otherwise. """
 		if not self.IsFanAvailable():
-			return self.__not_available(show_notify)
-		interface = self.__connect()
+			return self.__fan_not_available(show_notify)
+		interface = self.__connect_fan()
 		if not interface:
 			return False
-		result = interface.SetFanCycle()
-		if self.notify != None and show_notify:
-			self.notify.setTitle(CPU_TITLE)
-			self.notify.setUrgency("critical")
+		result = interface.Cycle()
+		if show_notify:
+			title = CPU_TITLE
 			if result == True:
-				status = interface.GetFanMode()				
+				status = interface.Status()				
 				if status == 0:
-					message = CPU_FAN_SWITCH_NORMAL
-					self.notify.setIcon(CPU_NORMAL_ICON)
+					message = FAN_SWITCH_NORMAL
+					icon = FAN_NORMAL_ICON
 				elif status == 1:
-					message = CPU_FAN_SWITCH_SILENT
-					self.notify.setIcon(CPU_SILENT_ICON)
+					message = FAN_SWITCH_SILENT
+					icon = FAN_SILENT_ICON
 				elif status == 2:
-					message = CPU_FAN_SWITCH_SPEED
-					self.notify.setIcon(CPU_SPEED_ICON)
+					message = FAN_SWITCH_SPEED
+					icon = FAN_SPEED_ICON
 				else: # status == 3
-					return self.__not_available(show_notify)
+					self.__fan_not_available(show_notify)
+					return False
 			else: # result == False
-				return self.__not_available(show_notify)
-			temp = self.GetCpuTemp()
-			if temp != "none":
-				message += "\n" + CPU_TEMP + " " + temp
-			self.notify.setMessage(message)
-			self.notify.show()
+				message = FAN_SWITCHING_ERROR
+				icon = ERROR_ICON
+			self.__show_notify(title, message, icon)
 		return result

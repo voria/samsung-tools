@@ -72,28 +72,23 @@ class Backlight():
 		if self.option == "on":
 			result = self.__on()
 			if not quiet:
-				if result == 1:
+				if result == True:
 					print BACKLIGHT_ENABLED
 				else:
 					print BACKLIGHT_ENABLING_ERROR
 		if self.option == "off":
 			result = self.__off()
 			if not quiet:
-				if result == 1:
+				if result == True:
 					print BACKLIGHT_DISABLED
 				else:
 					print BACKLIGHT_DISABLING_ERROR
 		if self.option == "toggle":
 			result = self.__toggle()
 			if not quiet:
-				if result == 1:
-					# Temporary disable notifications
-					n = self.use_notify
-					self.use_notify = False
+				if result == True:
 					status = self.__status()
-					self.use_notify = n
-					# Notification re-enabled
-					if status == 1:
+					if status == True:
 						print BACKLIGHT_ENABLED
 					else:
 						print BACKLIGHT_DISABLED
@@ -102,7 +97,7 @@ class Backlight():
 		if self.option == "status":
 			result = self.__status()
 			if not quiet:
-				if result == 1:
+				if result == True:
 					print BACKLIGHT_STATUS_ENABLED
 				else:
 					print BACKLIGHT_STATUS_DISABLED
@@ -151,28 +146,28 @@ class Bluetooth():
 		if self.option == "on":
 			result = self.__on()
 			if not quiet:
-				if result == 1:
+				if result == True:
 					print BLUETOOTH_ENABLED
 				else:
 					print BLUETOOTH_ENABLING_ERROR
 		if self.option == "off":
 			result = self.__off()
 			if not quiet:
-				if result == 1:
+				if result == True:
 					print BLUETOOTH_DISABLED
 				else:
 					print BLUETOOTH_DISABLING_ERROR
 		if self.option == "toggle":
 			result = self.__toggle()
 			if not quiet:
-				if result == 1:
+				if result == True:
 					# Temporary disable notifications
 					n = self.use_notify
 					self.use_notify = False
 					status = self.__status()
 					self.use_notify = n
 					# Notification re-enabled
-					if status == 1:
+					if status == True:
 						print BLUETOOTH_ENABLED
 					else:
 						print BLUETOOTH_DISABLED
@@ -181,7 +176,7 @@ class Bluetooth():
 		if self.option == "status":
 			result = self.__status()
 			if not quiet:
-				if result == 1:
+				if result == True:
 					print BLUETOOTH_STATUS_ENABLED
 				else:
 					print BLUETOOTH_STATUS_DISABLED
@@ -204,11 +199,14 @@ class Cpu():
 			print _("CPU control: unable to connect to session service!")
 			sys.exit(1)
 	
-	def __is_available(self):
+	def __is_temperature_available(self):
+		return self.interface.IsTemperatureAvailable()
+	
+	def __is_fan_available(self):
 		return self.interface.IsFanAvailable()
 	
 	def __temp(self):
-		return self.interface.GetCpuTemp()
+		return self.interface.GetTemperature()
 	
 	def __normal(self):
 		return self.interface.SetFanNormal(self.use_notify)
@@ -220,44 +218,46 @@ class Cpu():
 		return self.interface.SetFanSpeed(self.use_notify)
 	
 	def __cycle(self):
-		return self.interface.SetFanCycle(self.use_notify)
+		return self.interface.Cycle(self.use_notify)
 	
 	def __status(self):
-		return self.interface.GetFanMode(self.use_notify)
+		return self.interface.Status(self.use_notify)
 	
 	def apply(self):
 		if self.option == None:
 			return
-		if not self.__is_available():
+		if self.__is_temperature_available() and self.option != "hotkey":
+			print CPU_TEMPERATURE + " " + self.__temp()
+		if not self.__is_fan_available():
 			if not quiet:
-				print CPU_FAN_NOT_AVAILABLE
+				print FAN_NOT_AVAILABLE
 			self.__status() # needed to show notification
 			return
 		if self.option == "normal":
 			result = self.__normal()
 			if not quiet:
-				if result == 1:
-					print CPU_FAN_SWITCH_NORMAL
+				if result == True:
+					print FAN_SWITCH_NORMAL
 				else:
-					print CPU_FAN_SWITCHING_ERROR
+					print FAN_SWITCHING_ERROR
 		if self.option == "silent":
 			result = self.__silent()
 			if not quiet:
-				if result == 1:
-					print CPU_FAN_SWITCH_SILENT
+				if result == True:
+					print FAN_SWITCH_SILENT
 				else:
-					print CPU_FAN_SWITCHING_ERROR
+					print FAN_SWITCHING_ERROR
 		if self.option == "speed":
 			result = self.__speed()
 			if not quiet:
-				if result == 1:
-					print CPU_FAN_SWITCH_SPEED
+				if result == True:
+					print FAN_SWITCH_SPEED
 				else:
-					print CPU_FAN_SWITCHING_ERROR
+					print FAN_SWITCHING_ERROR
 		if self.option == "cycle":
 			result = self.__cycle()
 			if not quiet:
-				if result == 1:
+				if result == True:
 					# Temporary disable notifications
 					n = self.use_notify
 					self.use_notify = False
@@ -265,19 +265,19 @@ class Cpu():
 					self.use_notify = n
 					# Notification re-enabled
 					if mode == 0:
-						print CPU_FAN_SWITCH_NORMAL
+						print FAN_SWITCH_NORMAL
 					if mode == 1:
-						print CPU_FAN_SWITCH_SILENT
+						print FAN_SWITCH_SILENT
 					if mode == 2:
-						print CPU_FAN_SWITCH_SPEED
+						print FAN_SWITCH_SPEED
 					if mode == 3:
-						print CPU_FAN_STATUS_ERROR
+						print FAN_STATUS_ERROR
 				else:
-					print CPU_FAN_SWITCHING_ERROR
+					print FAN_SWITCHING_ERROR
 		if self.option == "hotkey":
 			from time import sleep
 			from subprocess import Popen, PIPE
-			tempfiles = ".samsung-tools_hotkey-tempfile-"
+			tempfiles = ".hotkey-tempfile-"
 			tempfile = os.path.join(USER_DIRECTORY, tempfiles + str(os.getpid()))
 			action = "status"
 			try:
@@ -303,19 +303,14 @@ class Cpu():
 			result = self.__status()
 			if not quiet:
 				if result == 0:
-					print CPU_FAN_STATUS_NORMAL
+					print FAN_STATUS_NORMAL
 				if result == 1:
-					print CPU_FAN_STATUS_SILENT
+					print FAN_STATUS_SILENT
 				if result == 2:
-					print CPU_FAN_STATUS_SPEED
+					print FAN_STATUS_SPEED
 				if result == 3:
-					print CPU_FAN_STATUS_ERROR
-		# Print temperature
-		if not quiet:
-			temp = self.__temp()
-			if temp != "none" and self.option != "hotkey":
-				print CPU_TEMP + " " + temp
-		
+					print FAN_STATUS_ERROR
+				
 class Webcam():
 	def __init__(self, option, use_notify = False):
 		self.option = option
@@ -360,28 +355,28 @@ class Webcam():
 		if self.option == "on":
 			result = self.__on()
 			if not quiet:
-				if result == 1:
+				if result == True:
 					print WEBCAM_ENABLED
 				else:
 					print WEBCAM_ENABLING_ERROR
 		if self.option == "off":
 			result = self.__off()
 			if not quiet:
-				if result == 1:
+				if result == True:
 					print WEBCAM_DISABLED
 				else:
 					print WEBCAM_DISABLING_ERROR
 		if self.option == "toggle":
 			result = self.__toggle()
 			if not quiet:
-				if result == 1:
+				if result == True:
 					# Temporary disable notifications
 					n = self.use_notify
 					self.use_notify = False
 					status = self.__status()
 					self.use_notify = n
 					# Notification re-enabled
-					if status == 1:
+					if status == True:
 						print WEBCAM_ENABLED
 					else:
 						print WEBCAM_DISABLED
@@ -390,7 +385,7 @@ class Webcam():
 		if self.option == "status":
 			result = self.__status()
 			if not quiet:
-				if result == 1:
+				if result == True:
 					print WEBCAM_STATUS_ENABLED
 				else:
 					print WEBCAM_STATUS_DISABLED
@@ -439,28 +434,28 @@ class Wireless():
 		if self.option == "on":
 			result = self.__on()
 			if not quiet:
-				if result == 1:
+				if result == True:
 					print WIRELESS_ENABLED
 				else:
 					print WIRELESS_ENABLING_ERROR
 		if self.option == "off":
 			result = self.__off()
 			if not quiet:
-				if result == 1:
+				if result == True:
 					print WIRELESS_DISABLED
 				else:
 					print WIRELESS_DISABLING_ERROR
 		if self.option == "toggle":
 			result = self.__toggle()
 			if not quiet:
-				if result == 1:
+				if result == True:
 					# Temporary disable notifications
 					n = self.use_notify
 					self.use_notify = False
 					status = self.__status()
 					self.use_notify = n
 					# Notification re-enabled
-					if status == 1:
+					if status == True:
 						print WIRELESS_STATUS_ENABLED
 					else:
 						print WIRELESS_STATUS_DISABLED
@@ -469,7 +464,7 @@ class Wireless():
 		if self.option == "status":
 			result = self.__status()
 			if not quiet:
-				if result == 1:
+				if result == True:
 					print WIRELESS_STATUS_ENABLED
 				else:
 					print WIRELESS_STATUS_DISABLED
@@ -485,7 +480,7 @@ def usage(option = None, opt = None, value = None, parser = None):
 	print _("Bluetooth:")
 	print "\t" + _("Interface") + ":\t-B | --bluetooth"
 	print "\t" + _("Options") + ":\ton | off | toggle | status"
-	print _("CPU:")
+	print _("CPU/Fan:")
 	print "\t" + _("Interface") + ":\t-c | --cpu"
 	print "\t" + _("Options") + ":\tnormal | silent | speed | cycle | hotkey | status"
 	print _("Webcam:")
