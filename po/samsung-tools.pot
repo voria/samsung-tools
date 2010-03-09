@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-09 12:04+0100\n"
+"POT-Creation-Date: 2010-03-09 12:09+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -84,7 +84,7 @@ msgstr ""
 msgid "Bluetooth control is not available"
 msgstr ""
 
-#: backends/session/util/locales.py:44
+#: backends/session/util/locales.py:44 samsung-tools-preferences.py:187
 msgid "CPU/Fan"
 msgstr ""
 
@@ -341,10 +341,6 @@ msgstr ""
 
 #: samsung-tools-preferences.py:121
 msgid "None"
-msgstr ""
-
-#: samsung-tools-preferences.py:187
-msgid "CPU"
 msgstr ""
 
 #: samsung-tools-preferences.py:338

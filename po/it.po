@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-09 12:04+0100\n"
+"POT-Creation-Date: 2010-03-09 12:09+0100\n"
 "PO-Revision-Date: 2010-03-09 12:05+0100\n"
 "Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: Italiano <vorione@gmail.com>\n"
@@ -83,7 +83,7 @@ msgstr "Il bluetooth non può essere commutato"
 msgid "Bluetooth control is not available"
 msgstr "Il controllo bluetooth non è disponibile"
 
-#: backends/session/util/locales.py:44
+#: backends/session/util/locales.py:44 samsung-tools-preferences.py:187
 msgid "CPU/Fan"
 msgstr "CPU/Ventola"
 
@@ -343,10 +343,6 @@ msgstr "Premi la nuova combinazione di tasti"
 #: samsung-tools-preferences.py:121
 msgid "None"
 msgstr "Nessuno"
-
-#: samsung-tools-preferences.py:187
-msgid "CPU"
-msgstr "CPU"
 
 #: samsung-tools-preferences.py:338
 msgid "Unable to connect to session service!"
