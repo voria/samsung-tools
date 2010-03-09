@@ -49,7 +49,7 @@ class Cpu(dbus.service.Object):
 		""" Return always 'False'. """
 		if self.notify != None and show_notify:
 			self.notify.setTitle(CPU_TITLE)
-			self.notify.setMessage(CPU_NOT_AVAILABLE)
+			self.notify.setMessage(CPU_FAN_NOT_AVAILABLE)
 			self.notify.setIcon(STOP_ICON)
 			self.notify.setUrgency("critical")
 			self.notify.show()
@@ -82,16 +82,16 @@ class Cpu(dbus.service.Object):
 			self.notify.setTitle(CPU_TITLE)
 			self.notify.setUrgency("critical")
 			if status == 0:
-				self.notify.setMessage(CPU_STATUS_NORMAL)
+				self.notify.setMessage(CPU_FAN_STATUS_NORMAL)
 				self.notify.setIcon(CPU_NORMAL_ICON)
 			elif status == 1:
-				self.notify.setMessage(CPU_STATUS_SILENT)
+				self.notify.setMessage(CPU_FAN_STATUS_SILENT)
 				self.notify.setIcon(CPU_SILENT_ICON)
 			elif status == 2:
-				self.notify.setMessage(CPU_STATUS_SPEED)
+				self.notify.setMessage(CPU_FAN_STATUS_SPEED)
 				self.notify.setIcon(CPU_SPEED_ICON)
 			else: # status == 3
-				self.notify.setMessage(CPU_NOT_AVAILABLE)
+				self.notify.setMessage(CPU_FAN_NOT_AVAILABLE)
 				self.notify.setIcon(STOP_ICON)
 			self.notify.show()
 		return status
@@ -111,10 +111,10 @@ class Cpu(dbus.service.Object):
 			self.notify.setTitle(CPU_TITLE)
 			self.notify.setUrgency("critical")
 			if result == True:
-				self.notify.setMessage(CPU_SWITCH_NORMAL)
+				self.notify.setMessage(CPU_FAN_SWITCH_NORMAL)
 				self.notify.setIcon(CPU_NORMAL_ICON)
 			else:
-				self.notify.setMessage(CPU_NOT_AVAILABLE)
+				self.notify.setMessage(CPU_FAN_NOT_AVAILABLE)
 				self.notify.setIcon(STOP_ICON)
 			self.notify.show()
 		return result
@@ -134,10 +134,10 @@ class Cpu(dbus.service.Object):
 			self.notify.setTitle(CPU_TITLE)
 			self.notify.setUrgency("critical")
 			if result == True:
-				self.notify.setMessage(CPU_SWITCH_SILENT)
+				self.notify.setMessage(CPU_FAN_SWITCH_SILENT)
 				self.notify.setIcon(CPU_SILENT_ICON)
 			else:
-				self.notify.setMessage(CPU_NOT_AVAILABLE)
+				self.notify.setMessage(CPU_FAN_NOT_AVAILABLE)
 				self.notify.setIcon(STOP_ICON)
 			self.notify.show()
 		return result
@@ -157,10 +157,10 @@ class Cpu(dbus.service.Object):
 			self.notify.setTitle(CPU_TITLE)
 			self.notify.setUrgency("critical")
 			if result == True:
-				self.notify.setMessage(CPU_SWITCH_SPEED)
+				self.notify.setMessage(CPU_FAN_SWITCH_SPEED)
 				self.notify.setIcon(CPU_SPEED_ICON)
 			else:
-				self.notify.setMessage(CPU_NOT_AVAILABLE)
+				self.notify.setMessage(CPU_FAN_NOT_AVAILABLE)
 				self.notify.setIcon(STOP_ICON)
 			self.notify.show()
 		return result
@@ -182,19 +182,19 @@ class Cpu(dbus.service.Object):
 			if result == True:
 				status = interface.Status()				
 				if status == 0:
-					self.notify.setMessage(CPU_SWITCH_NORMAL)
+					self.notify.setMessage(CPU_FAN_SWITCH_NORMAL)
 					self.notify.setIcon(CPU_NORMAL_ICON)
 				elif status == 1:
-					self.notify.setMessage(CPU_SWITCH_SILENT)
+					self.notify.setMessage(CPU_FAN_SWITCH_SILENT)
 					self.notify.setIcon(CPU_SILENT_ICON)
 				elif status == 2:
-					self.notify.setMessage(CPU_SWITCH_SPEED)
+					self.notify.setMessage(CPU_FAN_SWITCH_SPEED)
 					self.notify.setIcon(CPU_SPEED_ICON)
 				else: # status == 3
-					self.notify.setMessage(CPU_NOT_AVAILABLE)
+					self.notify.setMessage(CPU_FAN_NOT_AVAILABLE)
 					self.notify.setIcon(STOP_ICON)
 			else: # result == False
-				self.notify.setMessage(CPU_NOT_AVAILABLE)
+				self.notify.setMessage(CPU_FAN_NOT_AVAILABLE)
 				self.notify.setIcon(STOP_ICON)
 			self.notify.show()
 		return result

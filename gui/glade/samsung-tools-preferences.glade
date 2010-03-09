@@ -41,8 +41,8 @@
                 <child>
                   <object class="GtkLabel" id="cpuHotkeyLabel">
                     <property name="visible">True</property>
-                    <property name="tooltip_text" translatable="yes">Hotkey used for CPU control</property>
-                    <property name="label" translatable="yes">CPU:</property>
+                    <property name="tooltip_text" translatable="yes">Hotkey used for CPU and Fan control</property>
+                    <property name="label" translatable="yes">CPU/Fan:</property>
                   </object>
                   <packing>
                     <property name="top_attach">4</property>

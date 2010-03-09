@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-07 19:43+0100\n"
+"POT-Creation-Date: 2010-03-09 11:55+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -84,115 +84,119 @@ msgstr ""
 msgid "Bluetooth control is not available"
 msgstr ""
 
-#: backends/session/util/locales.py:44 samsung-tools-preferences.py:187
-msgid "CPU"
+#: backends/session/util/locales.py:44
+msgid "CPU/Fan"
 msgstr ""
 
 #: backends/session/util/locales.py:45
-msgid "CPU mode changed to 'normal'"
+msgid "Fan mode changed: 'normal'"
 msgstr ""
 
 #: backends/session/util/locales.py:46
-msgid "CPU mode changed to 'silent'"
+msgid "Fan mode changed: 'silent'"
 msgstr ""
 
 #: backends/session/util/locales.py:47
-msgid "CPU mode changed to 'speed'"
+msgid "Fan mode changed: 'speed'"
 msgstr ""
 
 #: backends/session/util/locales.py:48
-msgid "CPU mode cannot be changed"
+msgid "Fan mode cannot be changed"
 msgstr ""
 
 #: backends/session/util/locales.py:49
-msgid "CPU mode is 'normal'"
+msgid "Fan mode: 'normal'"
 msgstr ""
 
 #: backends/session/util/locales.py:50
-msgid "CPU mode is 'silent'"
+msgid "Fan mode: 'silent'"
 msgstr ""
 
 #: backends/session/util/locales.py:51
-msgid "CPU mode is 'speed'"
+msgid "Fan mode: 'speed'"
 msgstr ""
 
 #: backends/session/util/locales.py:52
-msgid "Cannot get CPU mode"
+msgid "Cannot get Fan mode"
 msgstr ""
 
 #: backends/session/util/locales.py:53
-msgid "CPU control is not available"
+msgid "Fan control is not available"
 msgstr ""
 
-#: backends/session/util/locales.py:55 samsung-tools-preferences.py:196
+#: backends/session/util/locales.py:54
+msgid "CPU Temperature:"
+msgstr ""
+
+#: backends/session/util/locales.py:56 samsung-tools-preferences.py:196
 msgid "Webcam"
 msgstr ""
 
-#: backends/session/util/locales.py:56
+#: backends/session/util/locales.py:57
 msgid "Webcam is enabled"
 msgstr ""
 
-#: backends/session/util/locales.py:57
+#: backends/session/util/locales.py:58
 msgid "Webcam is disabled"
 msgstr ""
 
-#: backends/session/util/locales.py:58
+#: backends/session/util/locales.py:59
 msgid "Webcam enabled"
 msgstr ""
 
-#: backends/session/util/locales.py:59
+#: backends/session/util/locales.py:60
 msgid "Webcam disabled"
 msgstr ""
 
-#: backends/session/util/locales.py:60
+#: backends/session/util/locales.py:61
 msgid "Webcam cannot be enabled"
 msgstr ""
 
-#: backends/session/util/locales.py:61
+#: backends/session/util/locales.py:62
 msgid "Webcam cannot be disabled"
 msgstr ""
 
-#: backends/session/util/locales.py:62
+#: backends/session/util/locales.py:63
 msgid "Webcam cannot be toggled"
 msgstr ""
 
-#: backends/session/util/locales.py:63
+#: backends/session/util/locales.py:64
 msgid "Webcam control is not available"
 msgstr ""
 
-#: backends/session/util/locales.py:65 samsung-tools-preferences.py:205
+#: backends/session/util/locales.py:66 samsung-tools-preferences.py:205
 msgid "Wireless"
 msgstr ""
 
-#: backends/session/util/locales.py:66
+#: backends/session/util/locales.py:67
 msgid "Wireless is enabled"
 msgstr ""
 
-#: backends/session/util/locales.py:67
+#: backends/session/util/locales.py:68
 msgid "Wireless is disabled"
 msgstr ""
 
-#: backends/session/util/locales.py:68
+#: backends/session/util/locales.py:69
 msgid "Wireless enabled"
 msgstr ""
 
-#: backends/session/util/locales.py:69
+#: backends/session/util/locales.py:70
 msgid "Wireless disabled"
 msgstr ""
 
-#: backends/session/util/locales.py:70
+#: backends/session/util/locales.py:71
 msgid "Wireless cannot be enabled"
 msgstr ""
 
-#: backends/session/util/locales.py:71
+#: backends/session/util/locales.py:72
 msgid "Wireless cannot be disabled"
 msgstr ""
 
-#: backends/session/util/locales.py:72
+#: backends/session/util/locales.py:73
 msgid "Wireless cannot be toggled"
 msgstr ""
 
-#: backends/session/util/locales.py:73
+#: backends/session/util/locales.py:74
 msgid "Wireless control is not available"
 msgstr ""
 
@@ -243,7 +247,7 @@ msgstr ""
 msgid "Bluetooth:"
 msgstr ""
 
-#: samsung-tools.py:480 po/samsung-tools-preferences.glade.h:6
+#: samsung-tools.py:480
 msgid "CPU:"
 msgstr ""
 
@@ -335,6 +339,10 @@ msgstr ""
 msgid "None"
 msgstr ""
 
+#: samsung-tools-preferences.py:187
+msgid "CPU"
+msgstr ""
+
 #: samsung-tools-preferences.py:338
 msgid "Unable to connect to session service!"
 msgstr ""
@@ -353,6 +361,10 @@ msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:3
 msgid "<b>Wireless</b>"
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:6
+msgid "CPU/Fan:"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:7
@@ -388,7 +400,7 @@ msgid "Enabled"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:15
-msgid "Hotkey used for CPU control"
+msgid "Hotkey used for CPU and Fan control"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:16

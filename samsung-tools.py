@@ -227,30 +227,30 @@ class Cpu():
 			return
 		if not self.__is_available():
 			if not quiet:
-				print CPU_NOT_AVAILABLE
+				print CPU_FAN_NOT_AVAILABLE
 			self.__status() # needed to show notification
 			return
 		if self.option == "normal":
 			result = self.__normal()
 			if not quiet:
 				if result == 1:
-					print CPU_SWITCH_NORMAL
+					print CPU_FAN_SWITCH_NORMAL
 				else:
-					print CPU_SWITCHING_ERROR
+					print CPU_FAN_SWITCHING_ERROR
 		if self.option == "silent":
 			result = self.__silent()
 			if not quiet:
 				if result == 1:
-					print CPU_SWITCH_SILENT
+					print CPU_FAN_SWITCH_SILENT
 				else:
-					print CPU_SWITCHING_ERROR
+					print CPU_FAN_SWITCHING_ERROR
 		if self.option == "speed":
 			result = self.__speed()
 			if not quiet:
 				if result == 1:
-					print CPU_SWITCH_SPEED
+					print CPU_FAN_SWITCH_SPEED
 				else:
-					print CPU_SWITCHING_ERROR
+					print CPU_FAN_SWITCHING_ERROR
 		if self.option == "cycle":
 			result = self.__cycle()
 			if not quiet:
@@ -262,15 +262,15 @@ class Cpu():
 					self.use_notify = n
 					# Notification re-enabled
 					if mode == 0:
-						print CPU_SWITCH_NORMAL
+						print CPU_FAN_SWITCH_NORMAL
 					if mode == 1:
-						print CPU_SWITCH_SILENT
+						print CPU_FAN_SWITCH_SILENT
 					if mode == 2:
-						print CPU_SWITCH_SPEED
+						print CPU_FAN_SWITCH_SPEED
 					if mode == 3:
-						print CPU_STATUS_ERROR
+						print CPU_FAN_STATUS_ERROR
 				else:
-					print CPU_SWITCHING_ERROR
+					print CPU_FAN_SWITCHING_ERROR
 		if self.option == "hotkey":
 			from time import sleep
 			from subprocess import Popen, PIPE
@@ -300,13 +300,13 @@ class Cpu():
 			result = self.__status()
 			if not quiet:
 				if result == 0:
-					print CPU_STATUS_NORMAL
+					print CPU_FAN_STATUS_NORMAL
 				if result == 1:
-					print CPU_STATUS_SILENT
+					print CPU_FAN_STATUS_SILENT
 				if result == 2:
-					print CPU_STATUS_SPEED
+					print CPU_FAN_STATUS_SPEED
 				if result == 3:
-					print CPU_STATUS_ERROR
+					print CPU_FAN_STATUS_ERROR
 		
 class Webcam():
 	def __init__(self, option, use_notify = False):
