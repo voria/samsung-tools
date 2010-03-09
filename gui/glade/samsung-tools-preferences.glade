@@ -277,6 +277,7 @@
                     <property name="right_attach">4</property>
                     <property name="top_attach">1</property>
                     <property name="bottom_attach">2</property>
+                    <property name="y_options"></property>
                   </packing>
                 </child>
                 <child>
