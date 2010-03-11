@@ -69,6 +69,9 @@ class General(dbus.service.Object):
 		bluetooth.Enable()
 		webcam.Enable()
 		wireless.Enable()
+		# Sleep a while
+		from time import sleep
+		sleep(3)
 		# Then disable the ones that have to be disabled
 		if bluetooth_status == False:
 			bluetooth.Disable()
