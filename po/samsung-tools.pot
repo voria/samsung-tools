@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-11 01:38+0100\n"
+"POT-Creation-Date: 2010-03-11 23:48+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -93,110 +93,98 @@ msgid "CPU Temperature:"
 msgstr ""
 
 #: backends/session/util/locales.py:46
-msgid "Fan mode changed: Normal"
-msgstr ""
-
-#: backends/session/util/locales.py:47
-msgid "Fan mode changed: Silent"
-msgstr ""
-
-#: backends/session/util/locales.py:48
-msgid "Fan mode changed: Speed"
-msgstr ""
-
-#: backends/session/util/locales.py:49
 msgid "Fan mode cannot be changed"
 msgstr ""
 
-#: backends/session/util/locales.py:50
+#: backends/session/util/locales.py:47
 msgid "Fan mode: Normal"
 msgstr ""
 
-#: backends/session/util/locales.py:51
+#: backends/session/util/locales.py:48
 msgid "Fan mode: Silent"
 msgstr ""
 
-#: backends/session/util/locales.py:52
+#: backends/session/util/locales.py:49
 msgid "Fan mode: Speed"
 msgstr ""
 
-#: backends/session/util/locales.py:53
+#: backends/session/util/locales.py:50
 msgid "Cannot get fan mode"
 msgstr ""
 
-#: backends/session/util/locales.py:54
+#: backends/session/util/locales.py:51
 msgid "Fan control is not available"
 msgstr ""
 
-#: backends/session/util/locales.py:56 samsung-tools-preferences.py:198
+#: backends/session/util/locales.py:53 samsung-tools-preferences.py:198
 msgid "Webcam"
 msgstr ""
 
-#: backends/session/util/locales.py:57
+#: backends/session/util/locales.py:54
 msgid "Webcam is enabled"
 msgstr ""
 
-#: backends/session/util/locales.py:58
+#: backends/session/util/locales.py:55
 msgid "Webcam is disabled"
 msgstr ""
 
-#: backends/session/util/locales.py:59
+#: backends/session/util/locales.py:56
 msgid "Webcam enabled"
 msgstr ""
 
-#: backends/session/util/locales.py:60
+#: backends/session/util/locales.py:57
 msgid "Webcam disabled"
 msgstr ""
 
-#: backends/session/util/locales.py:61
+#: backends/session/util/locales.py:58
 msgid "Webcam cannot be enabled"
 msgstr ""
 
-#: backends/session/util/locales.py:62
+#: backends/session/util/locales.py:59
 msgid "Webcam cannot be disabled"
 msgstr ""
 
-#: backends/session/util/locales.py:63
+#: backends/session/util/locales.py:60
 msgid "Webcam cannot be toggled"
 msgstr ""
 
-#: backends/session/util/locales.py:64
+#: backends/session/util/locales.py:61
 msgid "Webcam control is not available"
 msgstr ""
 
-#: backends/session/util/locales.py:66 samsung-tools-preferences.py:207
+#: backends/session/util/locales.py:63 samsung-tools-preferences.py:207
 msgid "Wireless"
 msgstr ""
 
-#: backends/session/util/locales.py:67
+#: backends/session/util/locales.py:64
 msgid "Wireless is enabled"
 msgstr ""
 
-#: backends/session/util/locales.py:68
+#: backends/session/util/locales.py:65
 msgid "Wireless is disabled"
 msgstr ""
 
-#: backends/session/util/locales.py:69
+#: backends/session/util/locales.py:66
 msgid "Wireless enabled"
 msgstr ""
 
-#: backends/session/util/locales.py:70
+#: backends/session/util/locales.py:67
 msgid "Wireless disabled"
 msgstr ""
 
-#: backends/session/util/locales.py:71
+#: backends/session/util/locales.py:68
 msgid "Wireless cannot be enabled"
 msgstr ""
 
-#: backends/session/util/locales.py:72
+#: backends/session/util/locales.py:69
 msgid "Wireless cannot be disabled"
 msgstr ""
 
-#: backends/session/util/locales.py:73
+#: backends/session/util/locales.py:70
 msgid "Wireless cannot be toggled"
 msgstr ""
 
-#: backends/session/util/locales.py:74
+#: backends/session/util/locales.py:71
 msgid "Wireless control is not available"
 msgstr ""
 
@@ -299,7 +287,7 @@ msgstr ""
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr ""
 
-#: samsung-tools.py:514 samsung-tools-preferences.py:577
+#: samsung-tools.py:514 samsung-tools-preferences.py:578
 msgid "Released under GPLv3 license"
 msgstr ""
 

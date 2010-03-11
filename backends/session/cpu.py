@@ -145,7 +145,7 @@ class Cpu(dbus.service.Object):
 		result = interface.SetNormal()
 		if show_notify:
 			if result == True:
-				self.__show_notify(CPU_TITLE, FAN_SWITCH_NORMAL, FAN_NORMAL_ICON)
+				self.__show_notify(CPU_TITLE, FAN_STATUS_NORMAL, FAN_NORMAL_ICON)
 			else:
 				self.__show_notify(CPU_TITLE, FAN_SWITCHING_ERROR, ERROR_ICON)
 		return result
@@ -163,7 +163,7 @@ class Cpu(dbus.service.Object):
 		result = interface.SetSilent()
 		if show_notify:
 			if result == True:
-				self.__show_notify(CPU_TITLE, FAN_SWITCH_SILENT, FAN_SILENT_ICON)
+				self.__show_notify(CPU_TITLE, FAN_STATUS_SILENT, FAN_SILENT_ICON)
 			else:
 				self.__show_notify(CPU_TITLE, FAN_SWITCHING_ERROR, ERROR_ICON)
 		return result
@@ -181,7 +181,7 @@ class Cpu(dbus.service.Object):
 		result = interface.SetSpeed()
 		if show_notify:
 			if result == True:
-				self.__show_notify(CPU_TITLE, FAN_SWITCH_SPEED, FAN_SPEED_ICON)
+				self.__show_notify(CPU_TITLE, FAN_STATUS_SPEED, FAN_SPEED_ICON)
 			else:
 				self.__show_notify(CPU_TITLE, FAN_SWITCHING_ERROR, ERROR_ICON)
 		return result
@@ -202,13 +202,13 @@ class Cpu(dbus.service.Object):
 			if result == True:
 				status = interface.Status()				
 				if status == 0:
-					message = FAN_SWITCH_NORMAL
+					message = FAN_STATUS_NORMAL
 					icon = FAN_NORMAL_ICON
 				elif status == 1:
-					message = FAN_SWITCH_SILENT
+					message = FAN_STATUS_SILENT
 					icon = FAN_SILENT_ICON
 				elif status == 2:
-					message = FAN_SWITCH_SPEED
+					message = FAN_STATUS_SPEED
 					icon = FAN_SPEED_ICON
 				else: # status == 3
 					self.__fan_not_available(show_notify)

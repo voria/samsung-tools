@@ -237,21 +237,21 @@ class Cpu():
 			result = self.__normal()
 			if not quiet:
 				if result == True:
-					print FAN_SWITCH_NORMAL
+					print FAN_STATUS_NORMAL
 				else:
 					print FAN_SWITCHING_ERROR
 		if self.option == "silent":
 			result = self.__silent()
 			if not quiet:
 				if result == True:
-					print FAN_SWITCH_SILENT
+					print FAN_STATUS_SILENT
 				else:
 					print FAN_SWITCHING_ERROR
 		if self.option == "speed":
 			result = self.__speed()
 			if not quiet:
 				if result == True:
-					print FAN_SWITCH_SPEED
+					print FAN_STATUS_SPEED
 				else:
 					print FAN_SWITCHING_ERROR
 		if self.option == "cycle":
@@ -265,11 +265,11 @@ class Cpu():
 					self.use_notify = n
 					# Notification re-enabled
 					if mode == 0:
-						print FAN_SWITCH_NORMAL
+						print FAN_STATUS_NORMAL
 					if mode == 1:
-						print FAN_SWITCH_SILENT
+						print FAN_STATUS_SILENT
 					if mode == 2:
-						print FAN_SWITCH_SPEED
+						print FAN_STATUS_SPEED
 					if mode == 3:
 						print FAN_STATUS_ERROR
 				else:
