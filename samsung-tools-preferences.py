@@ -569,9 +569,10 @@ class Main():
 	def about(self, button = None):
 		authors = [ "Fortunato Ventre" ]
 		translators = [ "Fortunato Ventre", "Lionel BASTET", "miplou", "sk" ]
-		artists = [ "rejon "]
+		artists = [ "rejon" ]
 		
 		dialog = gtk.AboutDialog()
+		dialog.set_icon_from_file(SAMSUNG_TOOLS_ICON)
 		dialog.set_name(APP_NAME)
 		dialog.set_version(APP_VERSION)
 		copyright = _("Released under GPLv3 license") + "\n\nCopyleft by\nFortunato Ventre (voRia)\nvorione@gmail.com"
