@@ -2,18 +2,19 @@
 # This file is distributed under BSD license.
 # Fortunato Ventre (voRia) <vorione@gmail.com>, 2010.
 # Fortunato Ventre <vorione@gmail.com>, 2010.
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-09 17:23+0100\n"
-"PO-Revision-Date: 2010-03-09 13:37+0100\n"
+"POT-Creation-Date: 2010-03-11 01:38+0100\n"
+"PO-Revision-Date: 2010-03-11 01:18+0100\n"
 "Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: Italiano <vorione@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2010-03-11 00:08+0000\n"
+"X-Generator: Launchpad (build Unknown)\n"
 
 #: backends/session/util/locales.py:25
 msgid "Backlight"
@@ -21,11 +22,11 @@ msgstr "Retroilluminazione"
 
 #: backends/session/util/locales.py:26
 msgid "Backlight is enabled"
-msgstr "La retroilluminazione è attiva"
+msgstr "La retroilluminazione è attivata"
 
 #: backends/session/util/locales.py:27
 msgid "Backlight is disabled"
-msgstr "La retroilluminazione è disattiva"
+msgstr "La retroilluminazione è disattivata"
 
 #: backends/session/util/locales.py:28
 msgid "Backlight enabled"
@@ -53,11 +54,11 @@ msgstr "Bluetooth"
 
 #: backends/session/util/locales.py:35
 msgid "Bluetooth is enabled"
-msgstr "Il bluetooth è attivo"
+msgstr "Il bluetooth è attivato"
 
 #: backends/session/util/locales.py:36
 msgid "Bluetooth is disabled"
-msgstr "Il bluetooth è disattivo"
+msgstr "Il bluetooth è disattivato"
 
 #: backends/session/util/locales.py:37
 msgid "Bluetooth enabled"
@@ -83,7 +84,7 @@ msgstr "Il bluetooth non può essere commutato"
 msgid "Bluetooth control is not available"
 msgstr "Il controllo bluetooth non è disponibile"
 
-#: backends/session/util/locales.py:44 samsung-tools-preferences.py:187
+#: backends/session/util/locales.py:44 samsung-tools-preferences.py:189
 msgid "CPU/Fan"
 msgstr "CPU/Ventola"
 
@@ -127,17 +128,17 @@ msgstr "Impossibile recuperare la modalità ventola"
 msgid "Fan control is not available"
 msgstr "Il controllo della ventola non è disponibile"
 
-#: backends/session/util/locales.py:56 samsung-tools-preferences.py:196
+#: backends/session/util/locales.py:56 samsung-tools-preferences.py:198
 msgid "Webcam"
 msgstr "Webcam"
 
 #: backends/session/util/locales.py:57
 msgid "Webcam is enabled"
-msgstr "La webcam è attiva"
+msgstr "La webcam è attivata"
 
 #: backends/session/util/locales.py:58
 msgid "Webcam is disabled"
-msgstr "La webcam è disattiva"
+msgstr "La webcam è disattivata"
 
 #: backends/session/util/locales.py:59
 msgid "Webcam enabled"
@@ -163,17 +164,17 @@ msgstr "La webcam non può essere commutata"
 msgid "Webcam control is not available"
 msgstr "Il controllo webcam non è disponibile"
 
-#: backends/session/util/locales.py:66 samsung-tools-preferences.py:205
+#: backends/session/util/locales.py:66 samsung-tools-preferences.py:207
 msgid "Wireless"
 msgstr "Wireless"
 
 #: backends/session/util/locales.py:67
 msgid "Wireless is enabled"
-msgstr "Il wireless è attivo"
+msgstr "Il wireless è attivato"
 
 #: backends/session/util/locales.py:68
 msgid "Wireless is disabled"
-msgstr "Il wireless è disattivo"
+msgstr "Il wireless è disattivato"
 
 #: backends/session/util/locales.py:69
 msgid "Wireless enabled"
@@ -289,8 +290,9 @@ msgid " - Toggle backlight:"
 msgstr " - Commuta la retroilluminazione:"
 
 #: samsung-tools.py:503
-msgid " - Toggle wireless and set CPU mode to 'silent':"
-msgstr " - Commuta il wireless e imposta la modalità CPU a 'silent':"
+msgid " - Toggle wireless and set CPU fan mode to 'silent':"
+msgstr ""
+" - Commuta il wireless e imposta la ventola della CPU in modalità silenziosa:"
 
 #: samsung-tools.py:506
 msgid " - Disable bluetooth, webcam and wireless:"
@@ -300,7 +302,7 @@ msgstr " - Disattiva il bluetooth, la webcam e il wireless:"
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Per maggiori informazioni, visita il forum 'Linux On My Samsung':"
 
-#: samsung-tools.py:514 samsung-tools-preferences.py:571
+#: samsung-tools.py:514 samsung-tools-preferences.py:577
 msgid "Released under GPLv3 license"
 msgstr "Rilasciato con licenza GPLv3"
 
@@ -332,19 +334,19 @@ msgstr "Servizio di sistema fermato"
 msgid "Cannot stop system service"
 msgstr "Impossibile fermare il servizio di sistema"
 
-#: samsung-tools-preferences.py:79
-msgid "Please press the new key combination"
-msgstr "Premi la nuova combinazione di tasti"
+#: samsung-tools-preferences.py:80
+msgid "Please press the new hotkey"
+msgstr "Premere la nuova combinazione di tasti"
 
-#: samsung-tools-preferences.py:121
+#: samsung-tools-preferences.py:122
 msgid "None"
 msgstr "Nessuno"
 
-#: samsung-tools-preferences.py:338
+#: samsung-tools-preferences.py:340
 msgid "Unable to connect to session service!"
 msgstr "Impossibile connettersi al servizio di sessione!"
 
-#: samsung-tools-preferences.py:350
+#: samsung-tools-preferences.py:352
 msgid "Unable to connect to system service!"
 msgstr "Impossibile connettersi al servizio di sistema!"
 
@@ -378,7 +380,7 @@ msgstr "Dispositivo:"
 
 #: po/samsung-tools-preferences.glade.h:11
 msgid "Disabled"
-msgstr "Disattivo"
+msgstr "Disattivato"
 
 #: po/samsung-tools-preferences.glade.h:12
 msgid "Enable hotkeys"
@@ -390,7 +392,7 @@ msgstr "Attiva questa opzione per utilizzare i tasti veloci"
 
 #: po/samsung-tools-preferences.glade.h:14
 msgid "Enabled"
-msgstr "Attivo"
+msgstr "Attivato"
 
 #: po/samsung-tools-preferences.glade.h:15
 msgid "Hotkey used for CPU and Fan control"
@@ -489,8 +491,8 @@ msgstr "Mostra e modifica le preferenze di Samsung Tools"
 msgid "Start the session service"
 msgstr "Avvia il servizio di sessione"
 
-#~ msgid "CPU:"
-#~ msgstr "CPU:"
-
 #~ msgid "CPU temperature is not available"
 #~ msgstr "La temperatura CPU non è disponibile"
+
+#~ msgid "CPU:"
+#~ msgstr "CPU:"

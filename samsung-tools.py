@@ -500,7 +500,7 @@ def usage(option = None, opt = None, value = None, parser = None):
 	print _(" - Toggle backlight:")
 	print " %s --backlight toggle" % os.path.basename(sys.argv[0])
 	print
-	print _(" - Toggle wireless and set CPU mode to 'silent':")
+	print _(" - Toggle wireless and set CPU fan mode to 'silent':")
 	print " %s --wireless toggle --cpu silent" % os.path.basename(sys.argv[0])
 	print
 	print _(" - Disable bluetooth, webcam and wireless:")

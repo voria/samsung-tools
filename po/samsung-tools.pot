@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-09 17:23+0100\n"
+"POT-Creation-Date: 2010-03-11 01:38+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -84,7 +84,7 @@ msgstr ""
 msgid "Bluetooth control is not available"
 msgstr ""
 
-#: backends/session/util/locales.py:44 samsung-tools-preferences.py:187
+#: backends/session/util/locales.py:44 samsung-tools-preferences.py:189
 msgid "CPU/Fan"
 msgstr ""
 
@@ -128,7 +128,7 @@ msgstr ""
 msgid "Fan control is not available"
 msgstr ""
 
-#: backends/session/util/locales.py:56 samsung-tools-preferences.py:196
+#: backends/session/util/locales.py:56 samsung-tools-preferences.py:198
 msgid "Webcam"
 msgstr ""
 
@@ -164,7 +164,7 @@ msgstr ""
 msgid "Webcam control is not available"
 msgstr ""
 
-#: backends/session/util/locales.py:66 samsung-tools-preferences.py:205
+#: backends/session/util/locales.py:66 samsung-tools-preferences.py:207
 msgid "Wireless"
 msgstr ""
 
@@ -288,7 +288,7 @@ msgid " - Toggle backlight:"
 msgstr ""
 
 #: samsung-tools.py:503
-msgid " - Toggle wireless and set CPU mode to 'silent':"
+msgid " - Toggle wireless and set CPU fan mode to 'silent':"
 msgstr ""
 
 #: samsung-tools.py:506
@@ -299,7 +299,7 @@ msgstr ""
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr ""
 
-#: samsung-tools.py:514 samsung-tools-preferences.py:571
+#: samsung-tools.py:514 samsung-tools-preferences.py:577
 msgid "Released under GPLv3 license"
 msgstr ""
 
@@ -331,19 +331,19 @@ msgstr ""
 msgid "Cannot stop system service"
 msgstr ""
 
-#: samsung-tools-preferences.py:79
-msgid "Please press the new key combination"
+#: samsung-tools-preferences.py:80
+msgid "Please press the new hotkey"
 msgstr ""
 
-#: samsung-tools-preferences.py:121
+#: samsung-tools-preferences.py:122
 msgid "None"
 msgstr ""
 
-#: samsung-tools-preferences.py:338
+#: samsung-tools-preferences.py:340
 msgid "Unable to connect to session service!"
 msgstr ""
 
-#: samsung-tools-preferences.py:350
+#: samsung-tools-preferences.py:352
 msgid "Unable to connect to system service!"
 msgstr ""
 

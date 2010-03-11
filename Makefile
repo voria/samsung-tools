@@ -30,7 +30,9 @@ install_services: install_locales
 	$(install_dir) $(DESTDIR)/etc/init/
 	$(install_file) upstart/samsung-tools.conf $(DESTDIR)/etc/init/
 	$(install_dir) $(DESTDIR)/etc/xdg/autostart/
-	$(install_file) desktop/samsung-tools-session-service.desktop $(DESTDIR)/etc/xdg/autostart/ 
+	$(install_file) desktop/samsung-tools-session-service.desktop $(DESTDIR)/etc/xdg/autostart/
+	$(install_dir) $(DESTDIR)/usr/share/icons/
+	$(install_file) gui/icons/* $(DESTDIR)/usr/share/icons/
 	
 install_cli: install_services
 	$(install_dir) $(DESTDIR)/usr/bin/
@@ -56,4 +58,5 @@ uninstall:
 	rm -rf $(DESTDIR)/etc/init/samsung-tools.conf
 	rm -rf $(DESTDIR)/usr/share/applications/samsung-tools-preferences.desktop
 	rm -rf $(DESTDIR)/etc/xdg/autostart/samsung-tools-session-service.desktop
+	rm -rf $(DESTDIR)/usr/share/icons/samsung-tools.*
 	$(shell po/uninstall.sh ${DESTDIR})

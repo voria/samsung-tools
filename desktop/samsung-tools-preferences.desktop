@@ -3,6 +3,7 @@ Name=Samsung Tools Preferences
 _Name=Samsung Tools Preferences
 Comment=Show and modify Samsung Tools preferences
 _Comment=Show and modify Samsung Tools preferences
+Icon=samsung-tools
 Exec=samsung-tools-preferences
 Terminal=false
 Type=Application

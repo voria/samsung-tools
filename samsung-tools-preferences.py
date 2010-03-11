@@ -37,6 +37,7 @@ gettext.bindtextdomain("samsung-tools")
 gettext.textdomain("samsung-tools")
 
 from backends.globals import *
+from backends.session.util.icons import * 
 
 # Popup (based on code from compizconfig-settings-manager)
 class Popup (gtk.Window):
@@ -76,7 +77,7 @@ class KeyGrabber(gtk.Button):
 
 	def begin_key_grab(self, widget):
 		self.add_events(gtk.gdk.KEY_PRESS_MASK)
-		self.popup = Popup(_("Please press the new key combination"), self.popup_title, self)
+		self.popup = Popup(_("Please press the new hotkey"), self.popup_title, self)
 		self.popup.show_all()
 		self.handler = self.popup.connect("key-press-event", self.on_key_press_event)
 		while gtk.gdk.keyboard_grab(self.popup.window) != gtk.gdk.GRAB_SUCCESS:
@@ -155,6 +156,7 @@ class Main():
 		### Main widgets
 		###
 		self.mainWindow = self.builder.get_object("mainWindow")
+		self.mainWindow.set_icon_from_file(SAMSUNG_TOOLS_ICON)
 		self.mainWindow.connect("delete-event", self.quit)
 		self.closeButton = self.builder.get_object("closeButton")
 		self.closeButton.connect("clicked", self.quit)
@@ -166,7 +168,7 @@ class Main():
 		###
 		self.sessionTable = self.builder.get_object("sessionTable")
 		# Set backlight hotkey grabber
-		self.backlightHotkeyButton = KeyGrabber(popup_title = "Backlight control")
+		self.backlightHotkeyButton = KeyGrabber(popup_title = "Backlight")
 		hotkey = session.GetBacklightHotkey()
 		(key, mods) = gtk.accelerator_parse(self.__convert_xbindkeys_to_gtk(hotkey))
 		self.backlightHotkeyButton.set_label(key, mods, True)
@@ -175,7 +177,7 @@ class Main():
 		self.backlightHotkeyButton.connect("changed", self.on_backlightHotkeyButton_changed)
 		self.backlightHotkeyButton.show()
 		# Set bluetooth hotkey grabber
-		self.bluetoothHotkeyButton = KeyGrabber(popup_title = "Bluetooth control")
+		self.bluetoothHotkeyButton = KeyGrabber(popup_title = "Bluetooth")
 		hotkey = session.GetBluetoothHotkey()
 		(key, mods) = gtk.accelerator_parse(self.__convert_xbindkeys_to_gtk(hotkey))
 		self.bluetoothHotkeyButton.set_label(key, mods, True)
@@ -565,6 +567,10 @@ class Main():
 		self.wirelessModuleEntry.set_text(system.GetWirelessModule())
 	
 	def about(self, button = None):
+		authors = [ "Fortunato Ventre" ]
+		translators = [ "Fortunato Ventre", "Lionel BASTET", "miplou", "sk" ]
+		artists = [ "rejon "]
+		
 		dialog = gtk.AboutDialog()
 		dialog.set_name(APP_NAME)
 		dialog.set_version(APP_VERSION)
@@ -572,6 +578,13 @@ class Main():
 		dialog.set_copyright(copyright)
 		dialog.set_website("http://www.voria.org/forum")
 		dialog.set_website_label("Linux On My Samsung")
+		
+		dialog.set_authors(authors)
+		dialog.set_artists(artists)
+		temp = ""
+		for name in translators:
+			temp += name + "\n"
+		dialog.set_translator_credits(temp)
 		dialog.run()
 		dialog.destroy()
 	

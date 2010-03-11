@@ -2,7 +2,7 @@
 Name=Samsung Tools
 Comment=Start the session service
 _Comment=Start the session service
-#Icon=
+Icon=samsung-tools
 Exec=/usr/lib/samsung-tools/session-service.py
 Terminal=false
 Type=Application
