@@ -568,7 +568,7 @@ class Main():
 	
 	def about(self, button = None):
 		authors = [ "Fortunato Ventre" ]
-		translators = [ "Fortunato Ventre", "Lionel BASTET", "miplou", "sk" ]
+		translators = [ "Fortunato Ventre", "Lionel BASTET", "miplou", "sk", "Jonathan Cragg" ]
 		artists = [ "rejon" ]
 		
 		dialog = gtk.AboutDialog()

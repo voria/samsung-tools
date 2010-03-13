@@ -6,14 +6,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-11 23:48+0100\n"
-"PO-Revision-Date: 2010-03-11 01:18+0100\n"
+"POT-Creation-Date: 2010-03-13 11:44+0100\n"
+"PO-Revision-Date: 2010-03-11 01:01+0000\n"
 "Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: Italiano <vorione@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-03-11 00:08+0000\n"
+"X-Launchpad-Export-Date: 2010-03-13 13:32+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: backends/session/util/locales.py:25
@@ -196,7 +196,8 @@ msgstr ""
 
 #: samsung-tools.py:120
 msgid "Bluetooth control: unable to connect to session service!"
-msgstr "Controllo bluetooth: impossibile connettersi al servizio di sessione!"
+msgstr ""
+"Controllo bluetooth: impossibile connettersi al servizio di sessione!"
 
 #: samsung-tools.py:199
 msgid "CPU control: unable to connect to session service!"
@@ -479,6 +480,9 @@ msgstr "Mostra e modifica le preferenze di Samsung Tools"
 msgid "Start the session service"
 msgstr "Avvia il servizio di sessione"
 
+#~ msgid "CPU temperature is not available"
+#~ msgstr "La temperatura CPU non è disponibile"
+
 #~ msgid "Fan mode changed: Normal"
 #~ msgstr "Modalità ventola cambiata: Normale"
 
@@ -487,9 +491,6 @@ msgstr "Avvia il servizio di sessione"
 
 #~ msgid "Fan mode changed: Speed"
 #~ msgstr "Modalità ventola cambiata: Veloce"
-
-#~ msgid "CPU temperature is not available"
-#~ msgstr "La temperatura CPU non è disponibile"
 
 #~ msgid "CPU:"
 #~ msgstr "CPU:"

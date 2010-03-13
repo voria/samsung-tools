@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-11 23:48+0100\n"
-"PO-Revision-Date: 2010-03-10 23:00+0000\n"
-"Last-Translator: miplou <Unknown>\n"
+"POT-Creation-Date: 2010-03-13 11:44+0100\n"
+"PO-Revision-Date: 2010-03-13 03:04+0000\n"
+"Last-Translator: Lionel BASTET <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-03-11 00:08+0000\n"
+"X-Launchpad-Export-Date: 2010-03-13 13:32+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: backends/session/util/locales.py:25
@@ -147,11 +147,11 @@ msgstr "La webcam ne peut être désactivée"
 
 #: backends/session/util/locales.py:60
 msgid "Webcam cannot be toggled"
-msgstr "Impossible de changer l'état de la webcam"
+msgstr "Changement d'état de la webcam impossible"
 
 #: backends/session/util/locales.py:61
 msgid "Webcam control is not available"
-msgstr "Le contrôle de la webcam n'est pas disponible"
+msgstr "Contrôle de la webcam non disponible"
 
 #: backends/session/util/locales.py:63 samsung-tools-preferences.py:207
 msgid "Wireless"
@@ -183,11 +183,11 @@ msgstr "Le réseau sans fil ne peut être désactivé"
 
 #: backends/session/util/locales.py:70
 msgid "Wireless cannot be toggled"
-msgstr "Le changement d'état du réseau sans fil est impossible"
+msgstr "Changement d'état du réseau sans fil impossible"
 
 #: backends/session/util/locales.py:71
 msgid "Wireless control is not available"
-msgstr "Le contrôle du réseau sans fil est indisponible"
+msgstr "Contrôle du réseau sans fil indisponible"
 
 #: samsung-tools.py:54
 msgid "Backlight control: unable to connect to session service!"
@@ -264,7 +264,7 @@ msgstr "Afficher les notifications graphiques."
 
 #: samsung-tools.py:495
 msgid "Do not print messages on standard output."
-msgstr "Ne pas imprimer les messages sur la sortie standard."
+msgstr "Ne pas afficher les messages sur la sortie standard"
 
 #: samsung-tools.py:496
 msgid "Stop the session service."
@@ -283,11 +283,10 @@ msgid " - Toggle backlight:"
 msgstr " - Changer l'état du rétroéclairage:"
 
 #: samsung-tools.py:503
-#, fuzzy
 msgid " - Toggle wireless and set CPU fan mode to 'silent':"
 msgstr ""
-" - Changer l'état du réseau sans fil et mettre le processeur en mode "
-"silencieux:"
+" - Changer l'état du réseau sans fil et mettre le ventilateur en mode "
+"\"silencieux\""
 
 #: samsung-tools.py:506
 msgid " - Disable bluetooth, webcam and wireless:"
@@ -307,7 +306,7 @@ msgstr "Pas d'action(s) spécifiée(s)"
 
 #: samsung-tools.py:520 samsung-tools.py:572
 msgid "Use --help for instructions."
-msgstr "Utiliser  --help pour de l'aide"
+msgstr "Utiliser --help pour obtenir de l'aide"
 
 #: samsung-tools.py:571
 msgid "Wrong argument(s)."
@@ -330,9 +329,8 @@ msgid "Cannot stop system service"
 msgstr "Impossible d'arrêter le service système"
 
 #: samsung-tools-preferences.py:80
-#, fuzzy
 msgid "Please press the new hotkey"
-msgstr "Veuillez appuyer sur la nouvelle combinaison de touches"
+msgstr "Entrez la nouvelle combinaison de touches"
 
 #: samsung-tools-preferences.py:122
 msgid "None"
@@ -352,7 +350,7 @@ msgstr "<b>Général</b>"
 
 #: po/samsung-tools-preferences.glade.h:2
 msgid "<b>Hotkeys</b>"
-msgstr "<b>Combinaisons de touches</b>"
+msgstr "<b>Raccourcis clavier</b>"
 
 #: po/samsung-tools-preferences.glade.h:3
 msgid "<b>Wireless</b>"
@@ -360,11 +358,11 @@ msgstr "<b>Réseau sans fil</b>"
 
 #: po/samsung-tools-preferences.glade.h:7
 msgid "Click here to disable the hotkey"
-msgstr "Cliquez ici pour désactiver la combinaison de touches"
+msgstr "Cliquez ici pour désactiver le raccourci clavier"
 
 #: po/samsung-tools-preferences.glade.h:8
 msgid "Click here to set the default hotkey"
-msgstr "Cliquez ici pour fixer la combinaison de touches par défaut"
+msgstr "Cliquez ici pour fixer le raccourci clavier par défaut"
 
 #: po/samsung-tools-preferences.glade.h:9
 msgid "Click here to set the default value"
@@ -380,11 +378,11 @@ msgstr "Désactivé"
 
 #: po/samsung-tools-preferences.glade.h:12
 msgid "Enable hotkeys"
-msgstr "activer les combinaisons de touches"
+msgstr "Activer les raccourcis clavier"
 
 #: po/samsung-tools-preferences.glade.h:13
 msgid "Enable this option to use hotkeys"
-msgstr "Activer cette option pour utiliser les combinaisons de touches"
+msgstr "Activer cette option pour utiliser les raccourcis clavier"
 
 #: po/samsung-tools-preferences.glade.h:14
 msgid "Enabled"
@@ -392,25 +390,23 @@ msgstr "Activé"
 
 #: po/samsung-tools-preferences.glade.h:15
 msgid "Hotkey used for CPU and Fan control"
-msgstr ""
-"Combinaison de touches utilisée pour le contrôle du processeur et du "
-"ventilateur"
+msgstr "Raccourci clavier pour le contrôle du processeur et du ventilateur"
 
 #: po/samsung-tools-preferences.glade.h:16
 msgid "Hotkey used for backlight control"
-msgstr "Combinaison de touches utilisée pour le contrôle du rétroéclairage"
+msgstr "Raccourci clavier pour le contrôle du rétroéclairage"
 
 #: po/samsung-tools-preferences.glade.h:17
 msgid "Hotkey used for bluetooth control"
-msgstr "Combinaison de touches utilisée pour le contrôle du Bluetooth"
+msgstr "Raccourci clavier pour le contrôle du Bluetooth"
 
 #: po/samsung-tools-preferences.glade.h:18
 msgid "Hotkey used for webcam control"
-msgstr "Combinaison de touches utilisée pour le contrôle de la webcam"
+msgstr "Raccourci clavier pour le contrôle de la webcam"
 
 #: po/samsung-tools-preferences.glade.h:19
 msgid "Hotkey used for wireless control"
-msgstr "Combinaison de touches utilisée pour le contrôle du réseau sans fil"
+msgstr "Raccourci clavier pour le contrôle du réseau sans fil"
 
 #: po/samsung-tools-preferences.glade.h:20
 msgid ""
@@ -420,19 +416,19 @@ msgid ""
 "'module' - Insert/remove kernel module.\n"
 "'esdm' - Use the 'easy slow down manager' interface."
 msgstr ""
-"Comment le réseau sans fil est changé d'état.\n"
+"Gestion du changement d'état pour le réseau sans fil.\n"
 "\n"
-"'iwconfig' - Utiliser les commandes iwconfig.\n"
-"'module' - Insérer/enlever un module du noyau.\n"
-"'esdm' - Utiliser l'interface 'easy slow down manager'."
+"'iwconfig' - Utiliser les commandes 'iwconfig'\n"
+"'module' - Insérer/Supprimer le module du noyau.\n"
+"'esdm' - Utiliser l'interface 'easy slow down manager'"
 
 #: po/samsung-tools-preferences.glade.h:25
 msgid ""
 "If enabled, the status of all devices will be restored after a suspend, "
 "hibernate, reboot cycle"
 msgstr ""
-"Si activé, le statut de tous les périphériques sera restauré après un "
-"redémarrage ou une hibernation"
+"Si activé, l'état de tous les périphériques sera restauré après une mise en "
+"veille, une hibernation ou un redémarrage"
 
 #: po/samsung-tools-preferences.glade.h:26
 msgid "Kernel module:"
@@ -464,7 +460,7 @@ msgstr ""
 "Module du noyau à gérer.\n"
 "\n"
 "Note: cette option est utilisée seulement quand 'Méthode de changement "
-"d'état' est réglé sur 'module'."
+"d'état\" est réglée sur 'module'."
 
 #: po/samsung-tools-preferences.glade.h:34
 msgid ""
@@ -475,7 +471,7 @@ msgstr ""
 "Périphérique de réseau sans fil à utiliser.\n"
 "\n"
 "Note: cette option est utilisée seulement quand 'Méthode de changement "
-"d'état' est réglé sur 'iwconfig'."
+"d'état' est réglée sur 'iwconfig'."
 
 #: po/samsung-tools-preferences.glade.h:37
 msgid "Toggle method:"
