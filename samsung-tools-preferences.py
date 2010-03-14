@@ -650,8 +650,16 @@ class Main():
 	
 	def about(self, button = None):
 		authors = [ "Fortunato Ventre" ]
-		translators = [ "Fortunato Ventre", "Lionel BASTET", "miplou", "sk", "Jonathan Cragg" ]
 		artists = [ "rejon" ]
+		translators = [
+					"Fortunato Ventre",
+					"Lionel BASTET",
+					"miplou",
+					"sk",
+					"Jonathan Cragg",
+					"nanker",
+					"mysza-j"
+					]
 		
 		dialog = gtk.AboutDialog()
 		dialog.set_icon_from_file(SAMSUNG_TOOLS_ICON)
@@ -661,7 +669,6 @@ class Main():
 		dialog.set_copyright(copyright)
 		dialog.set_website("http://www.voria.org/forum")
 		dialog.set_website_label("Linux On My Samsung")
-		
 		dialog.set_authors(authors)
 		dialog.set_artists(artists)
 		temp = ""

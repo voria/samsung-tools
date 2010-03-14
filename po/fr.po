@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-14 12:44+0100\n"
-"PO-Revision-Date: 2010-03-13 03:04+0000\n"
-"Last-Translator: Lionel BASTET <Unknown>\n"
+"PO-Revision-Date: 2010-03-13 14:16+0000\n"
+"Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-03-13 13:32+0000\n"
+"X-Launchpad-Export-Date: 2010-03-14 14:36+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: backends/session/util/locales.py:25
@@ -357,9 +357,8 @@ msgid "<b>Wireless</b>"
 msgstr "<b>Réseau sans fil</b>"
 
 #: po/samsung-tools-preferences.glade.h:5
-#, fuzzy
 msgid "Bluetooth initial status:"
-msgstr "Bluetooth est activé"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:8
 msgid "Click here to disable the hotkey"
@@ -432,9 +431,8 @@ msgid "Kernel module:"
 msgstr "Module du noyau:"
 
 #: po/samsung-tools-preferences.glade.h:27
-#, fuzzy
 msgid "Last status"
-msgstr "Restauration du dernier état:"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:28
 #: po/samsung-tools-preferences.desktop.h:1
@@ -469,8 +467,8 @@ msgid ""
 msgstr ""
 "Module du noyau à gérer.\n"
 "\n"
-"Note: cette option est utilisée seulement quand 'Méthode de changement d'état"
-"\" est réglée sur 'module'."
+"Note: cette option est utilisée seulement quand 'Méthode de changement "
+"d'état\" est réglée sur 'module'."
 
 #: po/samsung-tools-preferences.glade.h:37
 msgid ""
@@ -492,9 +490,8 @@ msgid "Webcam initial status:"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:43
-#, fuzzy
 msgid "Wireless initial status:"
-msgstr "Le réseau sans fil est activé"
+msgstr ""
 
 #: po/samsung-tools-preferences.desktop.h:2
 msgid "Show and modify Samsung Tools preferences"
@@ -504,49 +501,6 @@ msgstr "Afficher et modifier les préférences de Samsung Tools"
 msgid "Start the session service"
 msgstr "Lancer le service de session"
 
-#~ msgid ""
-#~ "If enabled, the status of all devices will be restored after a suspend, "
-#~ "hibernate, reboot cycle"
-#~ msgstr ""
-#~ "Si activé, l'état de tous les périphériques sera restauré après une mise "
-#~ "en veille, une hibernation ou un redémarrage"
-
-#, fuzzy
-#~ msgid ""
-#~ "The status to set at boot for Bluetooth.\n"
-#~ "\n"
-#~ "Note: this option is only used when  'Last status restore' is set to "
-#~ "'Disabled'."
-#~ msgstr ""
-#~ "Périphérique de réseau sans fil à utiliser.\n"
-#~ "\n"
-#~ "Note: cette option est utilisée seulement quand 'Méthode de changement "
-#~ "d'état' est réglée sur 'iwconfig'."
-
-#, fuzzy
-#~ msgid ""
-#~ "The status to set at boot for webcam.\n"
-#~ "\n"
-#~ "Note: this option is only used when  'Last status restore' is set to "
-#~ "'Disabled'."
-#~ msgstr ""
-#~ "Module du noyau à gérer.\n"
-#~ "\n"
-#~ "Note: cette option est utilisée seulement quand 'Méthode de changement "
-#~ "d'état\" est réglée sur 'module'."
-
-#, fuzzy
-#~ msgid ""
-#~ "The status to set at boot for wireless.\n"
-#~ "\n"
-#~ "Note: this option is only used when  'Last status restore' is set to "
-#~ "'Disabled'."
-#~ msgstr ""
-#~ "Module du noyau à gérer.\n"
-#~ "\n"
-#~ "Note: cette option est utilisée seulement quand 'Méthode de changement "
-#~ "d'état\" est réglée sur 'module'."
-
 #~ msgid "Fan mode changed: Normal"
 #~ msgstr "Changement de mode ventilateur: Normal"
 
@@ -555,3 +509,10 @@ msgstr "Lancer le service de session"
 
 #~ msgid "Fan mode changed: Speed"
 #~ msgstr "Changement de mode ventilateur: rapide"
+
+#~ msgid ""
+#~ "If enabled, the status of all devices will be restored after a suspend, "
+#~ "hibernate, reboot cycle"
+#~ msgstr ""
+#~ "Si activé, l'état de tous les périphériques sera restauré après une mise en "
+#~ "veille, une hibernation ou un redémarrage"
