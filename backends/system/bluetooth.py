@@ -115,7 +115,15 @@ class Bluetooth(dbus.service.Object):
 				file.close()
 		except:
 			systemlog.write("WARNING: 'Bluetooth.__save_last_status()' - Cannot save last status.")
-		
+	
+	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
+						sender_keyword = 'sender', connection_keyword = 'conn')	
+	def LastStatus(self, sender = None, conn = None):
+		""" Return 'True' if last status is on, 'False' if off. """
+		if not os.path.exists(LAST_DEVICE_STATUS_BLUETOOTH):
+			return True
+		else:
+			return False
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')	

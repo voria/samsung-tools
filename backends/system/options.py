@@ -30,11 +30,6 @@ class Options(dbus.service.Object):
 		
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 's',
 						sender_keyword = 'sender', connection_keyword = 'conn')
-	def GetLastStatusRestore(self, sender = None, conn = None):
-		return systemconfig.getLastStatusRestore()
-	
-	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 's',
-						sender_keyword = 'sender', connection_keyword = 'conn')
 	def GetBluetoothInitialStatus(self, sender = None, conn = None):
 		return systemconfig.getBluetoothInitialStatus()
 	
@@ -62,12 +57,6 @@ class Options(dbus.service.Object):
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def GetWirelessModule(self, sender = None, conn = None):
 		return systemconfig.getWirelessModule()
-	
-	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = 's', out_signature = 'b',
-						sender_keyword = 'sender', connection_keyword = 'conn')
-	def SetLastStatusRestore(self, value, sender = None, conn = None):
-		""" Return 'True' on success, 'False' otherwise. """
-		return systemconfig.setLastStatusRestore(value)
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = 's', out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')

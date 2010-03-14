@@ -261,27 +261,19 @@ class Main():
 		###
 		### System configuration
 		###
-		# Last status restore
-		self.lastStatusRestoreCombobox = self.builder.get_object("lastStatusRestoreCombobox")
-		# Set cell renderer for 'last status restore' combobox
-		self.lastStatusRestoreComboboxCR = gtk.CellRendererText()
-		self.lastStatusRestoreCombobox.pack_start(self.lastStatusRestoreComboboxCR)
-		self.lastStatusRestoreCombobox.add_attribute(self.lastStatusRestoreComboboxCR, 'text', 0)
-		if system.GetLastStatusRestore() == "true":
-			self.lastStatusRestoreCombobox.set_active(0)
-		else: # laststatusrestore == "false"
-			self.lastStatusRestoreCombobox.set_active(1)
-		self.lastStatusRestoreCombobox.connect("changed", self.on_lastStatusRestoreCombobox_changed)
 		# Bluetooth initial status
 		self.bluetoothInitialStatusCombobox = self.builder.get_object("bluetoothInitialStatusCombobox")
 		# Set cell renderer for 'bluetooth initial status' combobox
 		self.bluetoothInitialStatusComboboxCR = gtk.CellRendererText()
 		self.bluetoothInitialStatusCombobox.pack_start(self.bluetoothInitialStatusComboboxCR)
 		self.bluetoothInitialStatusCombobox.add_attribute(self.bluetoothInitialStatusComboboxCR, 'text', 0)
-		if system.GetBluetoothInitialStatus() == "true":
+		status = system.GetBluetoothInitialStatus() 
+		if status == "last":
 			self.bluetoothInitialStatusCombobox.set_active(0)
-		else:
+		elif status == "on":
 			self.bluetoothInitialStatusCombobox.set_active(1)
+		else: # status == "off"
+			self.bluetoothInitialStatusCombobox.set_active(2)
 		self.bluetoothInitialStatusCombobox.connect("changed", self.on_bluetoothInitialStatusCombobox_changed)
 		# Webcam initial status
 		self.webcamInitialStatusCombobox = self.builder.get_object("webcamInitialStatusCombobox")
@@ -289,10 +281,13 @@ class Main():
 		self.webcamInitialStatusComboboxCR = gtk.CellRendererText()
 		self.webcamInitialStatusCombobox.pack_start(self.webcamInitialStatusComboboxCR)
 		self.webcamInitialStatusCombobox.add_attribute(self.webcamInitialStatusComboboxCR, 'text', 0)
-		if system.GetWebcamInitialStatus() == "true":
+		status = system.GetWebcamInitialStatus()
+		if status == "last":
 			self.webcamInitialStatusCombobox.set_active(0)
-		else:
+		elif status == "on":
 			self.webcamInitialStatusCombobox.set_active(1)
+		else: # status == "off"
+			self.webcamInitialStatusCombobox.set_active(2)
 		self.webcamInitialStatusCombobox.connect("changed", self.on_webcamInitialStatusCombobox_changed)
 		# Wireless initial status
 		self.wirelessInitialStatusCombobox = self.builder.get_object("wirelessInitialStatusCombobox")
@@ -300,10 +295,13 @@ class Main():
 		self.wirelessInitialStatusComboboxCR = gtk.CellRendererText()
 		self.wirelessInitialStatusCombobox.pack_start(self.wirelessInitialStatusComboboxCR)
 		self.wirelessInitialStatusCombobox.add_attribute(self.wirelessInitialStatusComboboxCR, 'text', 0)
-		if system.GetWirelessInitialStatus() == "true":
+		status = system.GetWirelessInitialStatus()
+		if status == "last":
 			self.wirelessInitialStatusCombobox.set_active(0)
-		else:
+		elif status == "on":
 			self.wirelessInitialStatusCombobox.set_active(1)
+		else: # status == "off"
+			self.wirelessInitialStatusCombobox.set_active(2)
 		self.wirelessInitialStatusCombobox.connect("changed", self.on_wirelessInitialStatusCombobox_changed)
 		# Wireless toggle method
 		self.wirelessToggleMethodCombobox = self.builder.get_object("wirelessToggleMethodCombobox")
@@ -328,9 +326,6 @@ class Main():
 		self.wirelessModuleEntry.set_text(system.GetWirelessModule())
 		self.wirelessModuleEntry.connect("focus-out-event", self.on_wirelessModuleEntry_focus_out_event)
 		# Set clean buttons
-		self.lastStatusRestoreCleanButton = self.builder.get_object("lastStatusRestoreCleanButton")
-		self.lastStatusRestoreCleanButton.set_image(gtk.image_new_from_stock(gtk.STOCK_CLEAR, gtk.ICON_SIZE_MENU))
-		self.lastStatusRestoreCleanButton.connect("clicked", self.on_lastStatusRestoreCleanButton_clicked)
 		self.bluetoothInitialStatusCleanButton = self.builder.get_object("bluetoothInitialStatusCleanButton")
 		self.bluetoothInitialStatusCleanButton.set_image(gtk.image_new_from_stock(gtk.STOCK_CLEAR, gtk.ICON_SIZE_MENU))
 		self.bluetoothInitialStatusCleanButton.connect("clicked", self.on_bluetoothInitialStatusCleanButton_clicked)
@@ -349,32 +344,6 @@ class Main():
 		self.wirelessModuleCleanButton = self.builder.get_object("wirelessModuleCleanButton")
 		self.wirelessModuleCleanButton.set_image(gtk.image_new_from_stock(gtk.STOCK_CLEAR, gtk.ICON_SIZE_MENU))
 		self.wirelessModuleCleanButton.connect("clicked", self.on_wirelessModuleCleanButton_clicked)
-		# Disable 'bluetooth initial status', 'webcam initial status', 'wireless initial status' options,
-		# according to 'last status restore' status
-		self.bluetoothInitialStatusLabel = self.builder.get_object("bluetoothInitialStatusLabel")
-		self.webcamInitialStatusLabel = self.builder.get_object("webcamInitialStatusLabel")
-		self.wirelessInitialStatusLabel = self.builder.get_object("wirelessInitialStatusLabel")
-		lsr = self.lastStatusRestoreCombobox.get_active()
-		if lsr == 0:
-			self.bluetoothInitialStatusLabel.set_sensitive(False)
-			self.bluetoothInitialStatusCombobox.set_sensitive(False)
-			self.bluetoothInitialStatusCleanButton.set_sensitive(False)
-			self.webcamInitialStatusLabel.set_sensitive(False)
-			self.webcamInitialStatusCombobox.set_sensitive(False)
-			self.webcamInitialStatusCleanButton.set_sensitive(False)
-			self.wirelessInitialStatusLabel.set_sensitive(False)
-			self.wirelessInitialStatusCombobox.set_sensitive(False)
-			self.wirelessInitialStatusCleanButton.set_sensitive(False)
-		else:
-			self.bluetoothInitialStatusLabel.set_sensitive(True)
-			self.bluetoothInitialStatusCombobox.set_sensitive(True)
-			self.bluetoothInitialStatusCleanButton.set_sensitive(True)
-			self.webcamInitialStatusLabel.set_sensitive(True)
-			self.webcamInitialStatusCombobox.set_sensitive(True)
-			self.webcamInitialStatusCleanButton.set_sensitive(True)
-			self.wirelessInitialStatusLabel.set_sensitive(True)
-			self.wirelessInitialStatusCombobox.set_sensitive(True)
-			self.wirelessInitialStatusCleanButton.set_sensitive(True)
 		# Disable 'wireless device' and 'wireless module' options according to 'wireless toggle method' status
 		self.wirelessDeviceLabel = self.builder.get_object("wirelessDeviceLabel")
 		self.wirelessModuleLabel = self.builder.get_object("wirelessModuleLabel")
@@ -575,54 +544,35 @@ class Main():
 		(key, mods) = gtk.accelerator_parse(self.__convert_xbindkeys_to_gtk(hotkey))
 		self.wirelessHotkeyButton.set_label(key, mods, True)
 	
-	def on_lastStatusRestoreCombobox_changed(self, combobox = None):
+	def on_bluetoothInitialStatusCombobox_changed(self, combobox = None):
 		system = self.__connect_system()
 		active = combobox.get_active()
 		if active == 0:
-			system.SetLastStatusRestore("true")
+			system.SetBluetoothInitialStatus("last")
+		elif active == 1:
+			system.SetBluetoothInitialStatus("on")
 		else:
-			system.SetLastStatusRestore("false")
-		if active == 0:
-			self.bluetoothInitialStatusLabel.set_sensitive(False)
-			self.bluetoothInitialStatusCombobox.set_sensitive(False)
-			self.bluetoothInitialStatusCleanButton.set_sensitive(False)
-			self.webcamInitialStatusLabel.set_sensitive(False)
-			self.webcamInitialStatusCombobox.set_sensitive(False)
-			self.webcamInitialStatusCleanButton.set_sensitive(False)
-			self.wirelessInitialStatusLabel.set_sensitive(False)
-			self.wirelessInitialStatusCombobox.set_sensitive(False)
-			self.wirelessInitialStatusCleanButton.set_sensitive(False)
-		else:
-			self.bluetoothInitialStatusLabel.set_sensitive(True)
-			self.bluetoothInitialStatusCombobox.set_sensitive(True)
-			self.bluetoothInitialStatusCleanButton.set_sensitive(True)
-			self.webcamInitialStatusLabel.set_sensitive(True)
-			self.webcamInitialStatusCombobox.set_sensitive(True)
-			self.webcamInitialStatusCleanButton.set_sensitive(True)
-			self.wirelessInitialStatusLabel.set_sensitive(True)
-			self.wirelessInitialStatusCombobox.set_sensitive(True)
-			self.wirelessInitialStatusCleanButton.set_sensitive(True)
-	
-	def on_bluetoothInitialStatusCombobox_changed(self, combobox = None):
-		system = self.__connect_system()
-		if combobox.get_active() == 0:
-			system.SetBluetoothInitialStatus("true")
-		else:
-			system.SetBluetoothInitialStatus("false")
+			system.SetBluetoothInitialStatus("off")
 			
 	def on_webcamInitialStatusCombobox_changed(self, combobox = None):
 		system = self.__connect_system()
-		if combobox.get_active() == 0:
-			system.SetWebcamInitialStatus("true")
+		active = combobox.get_active()
+		if active == 0:
+			system.SetWebcamInitialStatus("last")
+		elif active == 1:
+			system.SetWebcamInitialStatus("on")
 		else:
-			system.SetWebcamInitialStatus("false")
+			system.SetWebcamInitialStatus("off")
 	
 	def on_wirelessInitialStatusCombobox_changed(self, combobox = None):
 		system = self.__connect_system()
-		if combobox.get_active() == 0:
-			system.SetWirelessInitialStatus("true")
+		active = combobox.get_active()
+		if active == 0:
+			system.SetWirelessInitialStatus("last")
+		elif active == 1:
+			system.SetWirelessInitialStatus("on")
 		else:
-			system.SetWirelessInitialStatus("false")
+			system.SetWirelessInitialStatus("off")
 	
 	def on_wirelessToggleMethodCombobox_changed(self, combobox = None):
 		system = self.__connect_system()
@@ -671,10 +621,6 @@ class Main():
 		old = system.GetWirelessModule()
 		if new != old:
 			system.SetWirelessModule(new)
-	
-	def on_lastStatusRestoreCleanButton_clicked(self, button = None):
-		if self.lastStatusRestoreCombobox.get_active() != 0:
-			self.lastStatusRestoreCombobox.set_active(0)
 	
 	def on_bluetoothInitialStatusCleanButton_clicked(self, button = None):
 		if self.bluetoothInitialStatusCombobox.get_active() != 0:

@@ -48,58 +48,59 @@ class General(dbus.service.Object):
 		if not os.path.exists(LAST_DEVICES_STATUS_DIRECTORY):
 			os.mkdir(LAST_DEVICES_STATUS_DIRECTORY)	
 	
+	def __restore_bluetooth_status(self):
+		if bluetooth.LastStatus() == True:
+			bluetooth.Enable()
+		else:
+			bluetooth.Disable()
+	
+	def __restore_webcam_status(self):
+		if webcam.LastStatus() == True:
+			webcam.Enable()
+		else:
+			webcam.Disable()
+	
+	def __restore_wireless_status(self):
+		if wireless.LastStatus() == True:
+			wireless.Enable()
+		else:
+			wireless.Disable()
+	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = None,
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def RestoreDevicesLastStatus(self, sender = None, conn = None):
 		""" Restore last status for webcam, bluetooth, wireless. """
 		""" Return nothing. """
-		if systemconfig.getLastStatusRestore() == "false":
-			return
-		# Get last status for devices
-		bluetooth_status = False
-		webcam_status = False
-		wireless_status = False
-		if not os.path.exists(LAST_DEVICE_STATUS_BLUETOOTH):
-			bluetooth_status = True
-		if not os.path.exists(LAST_DEVICE_STATUS_WEBCAM):
-			webcam_status = True
-		if not os.path.exists(LAST_DEVICE_STATUS_WIRELESS):
-			wireless_status = True
-		# Enable all devices
-		bluetooth.Enable()
-		webcam.Enable()
-		wireless.Enable()
-		# Sleep a while
-		from time import sleep
-		sleep(3)
-		# Then disable the ones that have to be disabled
-		if bluetooth_status == False:
-			bluetooth.Disable()
-		if webcam_status == False:
-			webcam.Disable()
-		if wireless_status == False:
-			wireless.Disable()
-	
+		self.__restore_bluetooth_status()
+		self.__restore_webcam_status()
+		self.__restore_wireless_status()
+		
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = None,
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def SetInitialDevicesStatus(self, sender = None, conn = None):
 		""" Set initial status for webcam, bluetooth, wireless. """
 		""" Return nothing. """
-		if systemconfig.getLastStatusRestore() == "true":
-			self.RestoreDevicesLastStatus()
-			return
-		if systemconfig.getBluetoothInitialStatus() == "true":
+		status = systemconfig.getBluetoothInitialStatus()
+		if status == "on":
 			bluetooth.Enable()
-		else:
+		elif status == "off":
 			bluetooth.Disable()
-		if systemconfig.getWebcamInitialStatus() == "true":
+		else: # status == "last":
+			self.__restore_bluetooth_status()
+		status = systemconfig.getWebcamInitialStatus()
+		if status == "on":	
 			webcam.Enable()
-		else:
+		elif status == "off":
 			webcam.Disable()
-		if systemconfig.getWirelessInitialStatus() == "true":
+		else: # status == "last"
+			self.__restore_webcam_status()
+		status = systemconfig.getWirelessInitialStatus()
+		if status == "on":
 			wireless.Enable()
-		else:
+		elif status == "off":
 			wireless.Disable()
+		else: # status == "last"
+			self.__restore_wireless_status()
 			
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = None,
 						sender_keyword = 'sender', connection_keyword = 'conn')
