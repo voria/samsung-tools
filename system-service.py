@@ -49,21 +49,21 @@ class General(dbus.service.Object):
 			os.mkdir(LAST_DEVICES_STATUS_DIRECTORY)	
 	
 	def __restore_bluetooth_status(self):
-		if bluetooth.LastStatus() == True:
-			bluetooth.Enable()
-		else:
+		status = bluetooth.LastStatus()
+		bluetooth.Enable()
+		if status == False:
 			bluetooth.Disable()
 	
 	def __restore_webcam_status(self):
-		if webcam.LastStatus() == True:
-			webcam.Enable()
-		else:
+		status = webcam.LastStatus()
+		webcam.Enable()
+		if status == False:
 			webcam.Disable()
 	
 	def __restore_wireless_status(self):
-		if wireless.LastStatus() == True:
-			wireless.Enable()
-		else:
+		status = wireless.LastStatus()
+		wireless.Enable()
+		if status == False:
 			wireless.Disable()
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = None,
