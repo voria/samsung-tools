@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-13 11:44+0100\n"
+"POT-Creation-Date: 2010-03-14 01:40+0100\n"
 "PO-Revision-Date: 2010-03-13 03:04+0000\n"
 "Last-Translator: Lionel BASTET <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -238,19 +238,19 @@ msgstr "Interface"
 msgid "Options"
 msgstr "Options"
 
-#: samsung-tools.py:480 po/samsung-tools-preferences.glade.h:5
+#: samsung-tools.py:480 po/samsung-tools-preferences.glade.h:6
 msgid "Bluetooth:"
 msgstr "Bluetooth:"
 
-#: samsung-tools.py:483 po/samsung-tools-preferences.glade.h:6
+#: samsung-tools.py:483 po/samsung-tools-preferences.glade.h:7
 msgid "CPU/Fan:"
 msgstr "Processeur/Ventilateur:"
 
-#: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:38
+#: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:49
 msgid "Webcam:"
 msgstr "Webcam:"
 
-#: samsung-tools.py:489 po/samsung-tools-preferences.glade.h:39
+#: samsung-tools.py:489 po/samsung-tools-preferences.glade.h:51
 msgid "Wireless:"
 msgstr "Réseau sans fil:"
 
@@ -296,7 +296,7 @@ msgstr " - Désactiver le Bluetooth, la webcam et le réseau sans fil:"
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Pour plus d'informations, visitez le forum \"Linux On My Samsung\":"
 
-#: samsung-tools.py:514 samsung-tools-preferences.py:578
+#: samsung-tools.py:514 samsung-tools-preferences.py:714
 msgid "Released under GPLv3 license"
 msgstr "Publié sous licence GPLv3"
 
@@ -336,11 +336,11 @@ msgstr "Entrez la nouvelle combinaison de touches"
 msgid "None"
 msgstr "Aucun"
 
-#: samsung-tools-preferences.py:340
+#: samsung-tools-preferences.py:416
 msgid "Unable to connect to session service!"
 msgstr "Impossible de se connecter au service de session!"
 
-#: samsung-tools-preferences.py:352
+#: samsung-tools-preferences.py:428
 msgid "Unable to connect to system service!"
 msgstr "Impossible de se connecter au service système!"
 
@@ -356,59 +356,64 @@ msgstr "<b>Raccourcis clavier</b>"
 msgid "<b>Wireless</b>"
 msgstr "<b>Réseau sans fil</b>"
 
-#: po/samsung-tools-preferences.glade.h:7
+#: po/samsung-tools-preferences.glade.h:5
+#, fuzzy
+msgid "Bluetooth initial status:"
+msgstr "Bluetooth est activé"
+
+#: po/samsung-tools-preferences.glade.h:8
 msgid "Click here to disable the hotkey"
 msgstr "Cliquez ici pour désactiver le raccourci clavier"
 
-#: po/samsung-tools-preferences.glade.h:8
+#: po/samsung-tools-preferences.glade.h:9
 msgid "Click here to set the default hotkey"
 msgstr "Cliquez ici pour fixer le raccourci clavier par défaut"
 
-#: po/samsung-tools-preferences.glade.h:9
+#: po/samsung-tools-preferences.glade.h:10
 msgid "Click here to set the default value"
 msgstr "Cliquez ici pour fixer la valeur par défaut"
 
-#: po/samsung-tools-preferences.glade.h:10
+#: po/samsung-tools-preferences.glade.h:11
 msgid "Device:"
 msgstr "Périphérique :"
 
-#: po/samsung-tools-preferences.glade.h:11
+#: po/samsung-tools-preferences.glade.h:12
 msgid "Disabled"
 msgstr "Désactivé"
 
-#: po/samsung-tools-preferences.glade.h:12
+#: po/samsung-tools-preferences.glade.h:13
 msgid "Enable hotkeys"
 msgstr "Activer les raccourcis clavier"
 
-#: po/samsung-tools-preferences.glade.h:13
+#: po/samsung-tools-preferences.glade.h:14
 msgid "Enable this option to use hotkeys"
 msgstr "Activer cette option pour utiliser les raccourcis clavier"
 
-#: po/samsung-tools-preferences.glade.h:14
+#: po/samsung-tools-preferences.glade.h:15
 msgid "Enabled"
 msgstr "Activé"
 
-#: po/samsung-tools-preferences.glade.h:15
+#: po/samsung-tools-preferences.glade.h:16
 msgid "Hotkey used for CPU and Fan control"
 msgstr "Raccourci clavier pour le contrôle du processeur et du ventilateur"
 
-#: po/samsung-tools-preferences.glade.h:16
+#: po/samsung-tools-preferences.glade.h:17
 msgid "Hotkey used for backlight control"
 msgstr "Raccourci clavier pour le contrôle du rétroéclairage"
 
-#: po/samsung-tools-preferences.glade.h:17
+#: po/samsung-tools-preferences.glade.h:18
 msgid "Hotkey used for bluetooth control"
 msgstr "Raccourci clavier pour le contrôle du Bluetooth"
 
-#: po/samsung-tools-preferences.glade.h:18
+#: po/samsung-tools-preferences.glade.h:19
 msgid "Hotkey used for webcam control"
 msgstr "Raccourci clavier pour le contrôle de la webcam"
 
-#: po/samsung-tools-preferences.glade.h:19
+#: po/samsung-tools-preferences.glade.h:20
 msgid "Hotkey used for wireless control"
 msgstr "Raccourci clavier pour le contrôle du réseau sans fil"
 
-#: po/samsung-tools-preferences.glade.h:20
+#: po/samsung-tools-preferences.glade.h:21
 msgid ""
 "How the wireless is toggled.\n"
 "\n"
@@ -422,7 +427,7 @@ msgstr ""
 "'module' - Insérer/Supprimer le module du noyau.\n"
 "'esdm' - Utiliser l'interface 'easy slow down manager'"
 
-#: po/samsung-tools-preferences.glade.h:25
+#: po/samsung-tools-preferences.glade.h:26
 msgid ""
 "If enabled, the status of all devices will be restored after a suspend, "
 "hibernate, reboot cycle"
@@ -430,28 +435,28 @@ msgstr ""
 "Si activé, l'état de tous les périphériques sera restauré après une mise en "
 "veille, une hibernation ou un redémarrage"
 
-#: po/samsung-tools-preferences.glade.h:26
+#: po/samsung-tools-preferences.glade.h:27
 msgid "Kernel module:"
 msgstr "Module du noyau:"
 
-#: po/samsung-tools-preferences.glade.h:27
+#: po/samsung-tools-preferences.glade.h:28
 msgid "Last status restore:"
 msgstr "Restauration du dernier état:"
 
-#: po/samsung-tools-preferences.glade.h:28
+#: po/samsung-tools-preferences.glade.h:29
 #: po/samsung-tools-preferences.desktop.h:1
 msgid "Samsung Tools Preferences"
 msgstr "Préférences de Samsung Tools"
 
-#: po/samsung-tools-preferences.glade.h:29
+#: po/samsung-tools-preferences.glade.h:30
 msgid "Session service"
 msgstr "Service de session"
 
-#: po/samsung-tools-preferences.glade.h:30
+#: po/samsung-tools-preferences.glade.h:31
 msgid "System service"
 msgstr "Service système"
 
-#: po/samsung-tools-preferences.glade.h:31
+#: po/samsung-tools-preferences.glade.h:32
 msgid ""
 "The kernel module to be managed.\n"
 "\n"
@@ -459,10 +464,49 @@ msgid ""
 msgstr ""
 "Module du noyau à gérer.\n"
 "\n"
-"Note: cette option est utilisée seulement quand 'Méthode de changement "
-"d'état\" est réglée sur 'module'."
+"Note: cette option est utilisée seulement quand 'Méthode de changement d'état"
+"\" est réglée sur 'module'."
 
-#: po/samsung-tools-preferences.glade.h:34
+#: po/samsung-tools-preferences.glade.h:35
+#, fuzzy
+msgid ""
+"The status to set at boot for Bluetooth.\n"
+"\n"
+"Note: this option is only used when  'Last status restore' is set to "
+"'Disabled'."
+msgstr ""
+"Périphérique de réseau sans fil à utiliser.\n"
+"\n"
+"Note: cette option est utilisée seulement quand 'Méthode de changement "
+"d'état' est réglée sur 'iwconfig'."
+
+#: po/samsung-tools-preferences.glade.h:38
+#, fuzzy
+msgid ""
+"The status to set at boot for webcam.\n"
+"\n"
+"Note: this option is only used when  'Last status restore' is set to "
+"'Disabled'."
+msgstr ""
+"Module du noyau à gérer.\n"
+"\n"
+"Note: cette option est utilisée seulement quand 'Méthode de changement d'état"
+"\" est réglée sur 'module'."
+
+#: po/samsung-tools-preferences.glade.h:41
+#, fuzzy
+msgid ""
+"The status to set at boot for wireless.\n"
+"\n"
+"Note: this option is only used when  'Last status restore' is set to "
+"'Disabled'."
+msgstr ""
+"Module du noyau à gérer.\n"
+"\n"
+"Note: cette option est utilisée seulement quand 'Méthode de changement d'état"
+"\" est réglée sur 'module'."
+
+#: po/samsung-tools-preferences.glade.h:44
 msgid ""
 "The wireless device to use.\n"
 "\n"
@@ -473,9 +517,18 @@ msgstr ""
 "Note: cette option est utilisée seulement quand 'Méthode de changement "
 "d'état' est réglée sur 'iwconfig'."
 
-#: po/samsung-tools-preferences.glade.h:37
+#: po/samsung-tools-preferences.glade.h:47
 msgid "Toggle method:"
 msgstr "Méthode de changement d'état:"
+
+#: po/samsung-tools-preferences.glade.h:48
+msgid "Webcam initial status:"
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:50
+#, fuzzy
+msgid "Wireless initial status:"
+msgstr "Le réseau sans fil est activé"
 
 #: po/samsung-tools-preferences.desktop.h:2
 msgid "Show and modify Samsung Tools preferences"

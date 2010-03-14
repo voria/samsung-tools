@@ -310,7 +310,7 @@
               <object class="GtkTable" id="systemTable">
                 <property name="visible">True</property>
                 <property name="border_width">5</property>
-                <property name="n_rows">6</property>
+                <property name="n_rows">9</property>
                 <property name="n_columns">3</property>
                 <property name="column_spacing">5</property>
                 <property name="row_spacing">5</property>
@@ -343,23 +343,6 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkButton" id="lastStatusRestoreCleanButton">
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">True</property>
-                    <property name="tooltip_text" translatable="yes">Click here to set the default value</property>
-                    <property name="image_position">top</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">2</property>
-                    <property name="right_attach">3</property>
-                    <property name="top_attach">1</property>
-                    <property name="bottom_attach">2</property>
-                    <property name="x_options"></property>
-                    <property name="y_options"></property>
-                  </packing>
-                </child>
-                <child>
                   <object class="GtkLabel" id="generalConfigurationLabel">
                     <property name="visible">True</property>
                     <property name="xalign">0</property>
@@ -381,8 +364,8 @@ Note: this option is only used when 'Toggle method' is set to 'module'.</propert
                     <property name="label" translatable="yes">Kernel module:</property>
                   </object>
                   <packing>
-                    <property name="top_attach">5</property>
-                    <property name="bottom_attach">6</property>
+                    <property name="top_attach">8</property>
+                    <property name="bottom_attach">9</property>
                     <property name="x_options"></property>
                     <property name="y_options"></property>
                   </packing>
@@ -396,8 +379,8 @@ Note: this option is only used when 'Toggle method' is set to 'iwconfig'.</prope
                     <property name="label" translatable="yes">Device:</property>
                   </object>
                   <packing>
-                    <property name="top_attach">4</property>
-                    <property name="bottom_attach">5</property>
+                    <property name="top_attach">7</property>
+                    <property name="bottom_attach">8</property>
                     <property name="x_options"></property>
                     <property name="y_options"></property>
                   </packing>
@@ -413,8 +396,8 @@ Note: this option is only used when 'Toggle method' is set to 'iwconfig'.</prope
                     <property name="label" translatable="yes">Toggle method:</property>
                   </object>
                   <packing>
-                    <property name="top_attach">3</property>
-                    <property name="bottom_attach">4</property>
+                    <property name="top_attach">6</property>
+                    <property name="bottom_attach">7</property>
                     <property name="x_options"></property>
                     <property name="y_options"></property>
                   </packing>
@@ -431,8 +414,8 @@ Note: this option is only used when 'Toggle method' is set to 'module'.</propert
                   <packing>
                     <property name="left_attach">1</property>
                     <property name="right_attach">2</property>
-                    <property name="top_attach">5</property>
-                    <property name="bottom_attach">6</property>
+                    <property name="top_attach">8</property>
+                    <property name="bottom_attach">9</property>
                     <property name="y_options"></property>
                   </packing>
                 </child>
@@ -446,8 +429,40 @@ Note: this option is only used when 'Toggle method' is set to 'module'.</propert
                   <packing>
                     <property name="left_attach">2</property>
                     <property name="right_attach">3</property>
-                    <property name="top_attach">5</property>
-                    <property name="bottom_attach">6</property>
+                    <property name="top_attach">8</property>
+                    <property name="bottom_attach">9</property>
+                    <property name="x_options"></property>
+                    <property name="y_options"></property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="wirelessDeviceCleanButton">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Click here to set the default value</property>
+                  </object>
+                  <packing>
+                    <property name="left_attach">2</property>
+                    <property name="right_attach">3</property>
+                    <property name="top_attach">7</property>
+                    <property name="bottom_attach">8</property>
+                    <property name="x_options"></property>
+                    <property name="y_options"></property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="wirelessToggleMethodCleanButton">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Click here to set the default value</property>
+                  </object>
+                  <packing>
+                    <property name="left_attach">2</property>
+                    <property name="right_attach">3</property>
+                    <property name="top_attach">6</property>
+                    <property name="bottom_attach">7</property>
                     <property name="x_options"></property>
                     <property name="y_options"></property>
                   </packing>
@@ -464,39 +479,24 @@ Note: this option is only used when 'Toggle method' is set to 'iwconfig'.</prope
                   <packing>
                     <property name="left_attach">1</property>
                     <property name="right_attach">2</property>
-                    <property name="top_attach">4</property>
-                    <property name="bottom_attach">5</property>
+                    <property name="top_attach">7</property>
+                    <property name="bottom_attach">8</property>
                     <property name="y_options"></property>
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkButton" id="wirelessDeviceCleanButton">
+                  <object class="GtkButton" id="lastStatusRestoreCleanButton">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
                     <property name="tooltip_text" translatable="yes">Click here to set the default value</property>
+                    <property name="image_position">top</property>
                   </object>
                   <packing>
                     <property name="left_attach">2</property>
                     <property name="right_attach">3</property>
-                    <property name="top_attach">4</property>
-                    <property name="bottom_attach">5</property>
-                    <property name="x_options"></property>
-                    <property name="y_options"></property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkButton" id="wirelessToggleMethodCleanButton">
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">True</property>
-                    <property name="tooltip_text" translatable="yes">Click here to set the default value</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">2</property>
-                    <property name="right_attach">3</property>
-                    <property name="top_attach">3</property>
-                    <property name="bottom_attach">4</property>
+                    <property name="top_attach">1</property>
+                    <property name="bottom_attach">2</property>
                     <property name="x_options"></property>
                     <property name="y_options"></property>
                   </packing>
@@ -515,8 +515,8 @@ Note: this option is only used when 'Toggle method' is set to 'iwconfig'.</prope
                   <packing>
                     <property name="left_attach">1</property>
                     <property name="right_attach">2</property>
-                    <property name="top_attach">3</property>
-                    <property name="bottom_attach">4</property>
+                    <property name="top_attach">6</property>
+                    <property name="bottom_attach">7</property>
                     <property name="y_options"></property>
                   </packing>
                 </child>
@@ -530,8 +530,155 @@ Note: this option is only used when 'Toggle method' is set to 'iwconfig'.</prope
                   </object>
                   <packing>
                     <property name="right_attach">3</property>
+                    <property name="top_attach">5</property>
+                    <property name="bottom_attach">6</property>
+                    <property name="y_options"></property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="bluetoothInitialStatusLabel">
+                    <property name="visible">True</property>
+                    <property name="tooltip_text" translatable="yes">The status to set at boot for Bluetooth.
+
+Note: this option is only used when  'Last status restore' is set to 'Disabled'.</property>
+                    <property name="label" translatable="yes">Bluetooth initial status:</property>
+                  </object>
+                  <packing>
                     <property name="top_attach">2</property>
                     <property name="bottom_attach">3</property>
+                    <property name="x_options"></property>
+                    <property name="y_options"></property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="webcamInitialStatusLabel">
+                    <property name="visible">True</property>
+                    <property name="tooltip_text" translatable="yes">The status to set at boot for webcam.
+
+Note: this option is only used when  'Last status restore' is set to 'Disabled'.</property>
+                    <property name="label" translatable="yes">Webcam initial status:</property>
+                  </object>
+                  <packing>
+                    <property name="top_attach">3</property>
+                    <property name="bottom_attach">4</property>
+                    <property name="x_options"></property>
+                    <property name="y_options"></property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="wirelessInitialStatusLabel">
+                    <property name="visible">True</property>
+                    <property name="tooltip_text" translatable="yes">The status to set at boot for wireless.
+
+Note: this option is only used when  'Last status restore' is set to 'Disabled'.</property>
+                    <property name="label" translatable="yes">Wireless initial status:</property>
+                  </object>
+                  <packing>
+                    <property name="top_attach">4</property>
+                    <property name="bottom_attach">5</property>
+                    <property name="x_options"></property>
+                    <property name="y_options"></property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkComboBox" id="bluetoothInitialStatusCombobox">
+                    <property name="visible">True</property>
+                    <property name="tooltip_text" translatable="yes">The status to set at boot for Bluetooth.
+
+Note: this option is only used when  'Last status restore' is set to 'Disabled'.</property>
+                    <property name="model">lastStatusRestoreListstore</property>
+                    <property name="active">0</property>
+                  </object>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="right_attach">2</property>
+                    <property name="top_attach">2</property>
+                    <property name="bottom_attach">3</property>
+                    <property name="y_options"></property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkComboBox" id="webcamInitialStatusCombobox">
+                    <property name="visible">True</property>
+                    <property name="tooltip_text" translatable="yes">The status to set at boot for webcam.
+
+Note: this option is only used when  'Last status restore' is set to 'Disabled'.</property>
+                    <property name="model">lastStatusRestoreListstore</property>
+                    <property name="active">0</property>
+                  </object>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="right_attach">2</property>
+                    <property name="top_attach">3</property>
+                    <property name="bottom_attach">4</property>
+                    <property name="y_options"></property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkComboBox" id="wirelessInitialStatusCombobox">
+                    <property name="visible">True</property>
+                    <property name="tooltip_text" translatable="yes">The status to set at boot for wireless.
+
+Note: this option is only used when  'Last status restore' is set to 'Disabled'.</property>
+                    <property name="model">lastStatusRestoreListstore</property>
+                    <property name="active">0</property>
+                  </object>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="right_attach">2</property>
+                    <property name="top_attach">4</property>
+                    <property name="bottom_attach">5</property>
+                    <property name="y_options"></property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="bluetoothInitialStatusCleanButton">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Click here to set the default value</property>
+                    <property name="image_position">top</property>
+                  </object>
+                  <packing>
+                    <property name="left_attach">2</property>
+                    <property name="right_attach">3</property>
+                    <property name="top_attach">2</property>
+                    <property name="bottom_attach">3</property>
+                    <property name="x_options"></property>
+                    <property name="y_options"></property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="webcamInitialStatusCleanButton">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Click here to set the default value</property>
+                    <property name="image_position">top</property>
+                  </object>
+                  <packing>
+                    <property name="left_attach">2</property>
+                    <property name="right_attach">3</property>
+                    <property name="top_attach">3</property>
+                    <property name="bottom_attach">4</property>
+                    <property name="x_options"></property>
+                    <property name="y_options"></property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="wirelessInitialStatusCleanButton">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Click here to set the default value</property>
+                    <property name="image_position">top</property>
+                  </object>
+                  <packing>
+                    <property name="left_attach">2</property>
+                    <property name="right_attach">3</property>
+                    <property name="top_attach">4</property>
+                    <property name="bottom_attach">5</property>
+                    <property name="x_options"></property>
                     <property name="y_options"></property>
                   </packing>
                 </child>

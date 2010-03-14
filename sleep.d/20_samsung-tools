@@ -4,6 +4,9 @@ case ${1} in
 	resume|thaw)
 		dbus-send --system --print-reply --dest='org.voria.SamsungTools.System' '/' org.voria.SamsungTools.System.RestoreDevicesLastStatus > /dev/null
 		;;
+	boot)
+		dbus-send --system --print-reply --dest='org.voria.SamsungTools.System' '/' org.voria.SamsungTools.System.SetInitialDevicesStatus > /dev/null
+		;;
 esac
 
 exit 0

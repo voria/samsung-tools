@@ -29,8 +29,14 @@ WIRELESS_TOGGLE_METHOD_DEFAULT = "iwconfig"
 WIRELESS_DEVICE_DEFAULT = "wlan0"
 WIRELESS_MODULE_DEFAULT = "ath5k"
 LAST_STATUS_RESTORE_DEFAULT = "true"
+BLUETOOTH_INITIAL_STATUS_DEFAULT = "true"
+WEBCAM_INITIAL_STATUS_DEFAULT = "true"
+WIRELESS_INITIAL_STATUS_DEFAULT = "true"
 WIRELESS_TOGGLE_METHOD_ACCEPTED_VALUES = ['iwconfig', 'module', 'esdm']
 LAST_STATUS_RESTORE_ACCEPTED_VALUES = ['true', 'false']
+BLUETOOTH_INITIAL_STATUS_ACCEPTED_VALUES = ['true', 'false']
+WEBCAM_INITIAL_STATUS_ACCEPTED_VALUES = ['true', 'false']
+WIRELESS_INITIAL_STATUS_ACCEPTED_VALUES = ['true', 'false']
 
 class SystemConfig():
 	""" Manage system service configuration file """
@@ -48,6 +54,9 @@ class SystemConfig():
 			self.config.set("Main", "WIRELESS_DEVICE", WIRELESS_DEVICE_DEFAULT)
 			self.config.set("Main", "WIRELESS_MODULE", WIRELESS_MODULE_DEFAULT)
 			self.config.set("Main", "LAST_STATUS_RESTORE", LAST_STATUS_RESTORE_DEFAULT)
+			self.config.set("Main", "BLUETOOTH_INITIAL_STATUS", BLUETOOTH_INITIAL_STATUS_DEFAULT)
+			self.config.set("Main", "WEBCAM_INITIAL_STATUS", WEBCAM_INITIAL_STATUS_DEFAULT)
+			self.config.set("Main", "WIRELESS_INITIAL_STATUS", WIRELESS_INITIAL_STATUS_DEFAULT)
 		# Check if all options are specified in the config file
 		else:
 			if not self.config.has_section("Main"):
@@ -68,6 +77,18 @@ class SystemConfig():
 				self.config.get("Main", "LAST_STATUS_RESTORE")
 			except:
 				self.config.set("Main", "LAST_STATUS_RESTORE", LAST_STATUS_RESTORE_DEFAULT)
+			try:
+				self.config.get("Main", "BLUETOOTH_INITIAL_STATUS")
+			except:
+				self.config.set("Main", "BLUETOOTH_INITIAL_STATUS", BLUETOOTH_INITIAL_STATUS_DEFAULT)
+			try:
+				self.config.get("Main", "WEBCAM_INITIAL_STATUS")
+			except:
+				self.config.set("Main", "WEBCAM_INITIAL_STATUS", WEBCAM_INITIAL_STATUS_DEFAULT)
+			try:
+				self.config.get("Main", "WIRELESS_INITIAL_STATUS")
+			except:
+				self.config.set("Main", "WIRELESS_INITIAL_STATUS", WIRELESS_INITIAL_STATUS_DEFAULT)
 		# Options sanity check
 		if self.config.get("Main", "WIRELESS_TOGGLE_METHOD") not in WIRELESS_TOGGLE_METHOD_ACCEPTED_VALUES:
 			# Option is invalid, set default value
@@ -78,7 +99,22 @@ class SystemConfig():
 			# Option is invalid, set default value
 			systemlog.write("WARNING: 'SystemConfig()' - 'LAST_STATUS_RESTORE' option specified in '" + configfile + 
 					"' is invalid. Using default value ('" + LAST_STATUS_RESTORE_DEFAULT + "').")
-			self.config.set("Main", "LAST_STATUS_RESTORE", LAST_STATUS_RESTORE_DEFAULT)
+			self.config.set("Main", "LAST_STATUS_RESTORE", LAST_STATUS_RESTORE_DEFAULT)	
+		if self.config.get("Main", "BLUETOOTH_INITIAL_STATUS") not in BLUETOOTH_INITIAL_STATUS_ACCEPTED_VALUES:
+			# Option is invalid, set default value
+			systemlog.write("WARNING: 'SystemConfig()' - 'BLUETOOTH_INITIAL_STATUS' option specified in '" + configfile + 
+					"' is invalid. Using default value ('" + BLUETOOTH_INITIAL_STATUS_DEFAULT + "').")
+			self.config.set("Main", "BLUETOOTH_INITIAL_STATUS", BLUETOOTH_INITIAL_STATUS_DEFAULT)
+		if self.config.get("Main", "WEBCAM_INITIAL_STATUS") not in WEBCAM_INITIAL_STATUS_ACCEPTED_VALUES:
+			# Option is invalid, set default value
+			systemlog.write("WARNING: 'SystemConfig()' - 'WEBCAM_INITIAL_STATUS' option specified in '" + configfile + 
+					"' is invalid. Using default value ('" + WEBCAM_INITIAL_STATUS_DEFAULT + "').")
+			self.config.set("Main", "WIRELESS_INITIAL_STATUS", WIRELESS_INITIAL_STATUS_DEFAULT)
+		if self.config.get("Main", "WIRELESS_INITIAL_STATUS") not in WIRELESS_INITIAL_STATUS_ACCEPTED_VALUES:
+			# Option is invalid, set default value
+			systemlog.write("WARNING: 'SystemConfig()' - 'WIRELESS_INITIAL_STATUS' option specified in '" + configfile + 
+					"' is invalid. Using default value ('" + WIRELESS_INITIAL_STATUS_DEFAULT + "').")
+			self.config.set("Main", "WIRELESS_INITIAL_STATUS", WIRELESS_INITIAL_STATUS_DEFAULT)
 	
 	def __write(self, option):
 		""" Write the new 'option' in the config file. """
@@ -144,6 +180,18 @@ class SystemConfig():
 		""" Return the LAST_STATUS_RESTORE option. """
 		return self.config.get("Main", "LAST_STATUS_RESTORE")
 	
+	def getBluetoothInitialStatus(self):
+		""" Return the BLUETOOTH_INITIAL_STATUS option. """
+		return self.config.get("Main", "BLUETOOTH_INITIAL_STATUS")
+	
+	def getWebcamInitialStatus(self):
+		""" Return the WEBCAM_INITIAL_STATUS option. """
+		return self.config.get("Main", "WEBCAM_INITIAL_STATUS")
+	
+	def getWirelessInitialStatus(self):
+		""" Return the WIRELESS_INITIAL_STATUS option. """
+		return self.config.get("Main", "WIRELESS_INITIAL_STATUS")
+	
 	def getWirelessToggleMethod(self):
 		""" Return the WIRELESS_TOGGLE_METHOD option. """
 		return self.config.get("Main", "WIRELESS_TOGGLE_METHOD") 
@@ -165,6 +213,36 @@ class SystemConfig():
 			return False
 		self.config.set("Main", "LAST_STATUS_RESTORE", value)
 		return self.__write("LAST_STATUS_RESTORE")
+	
+	def setBluetoothInitialStatus(self, value):
+		""" Set the BLUETOOTH_INITIAL_STATUS option. """
+		""" Return 'True' on success, 'False' otherwise. """
+		if value == "default": # set default
+			value = BLUETOOTH_INITIAL_STATUS_DEFAULT
+		if value not in BLUETOOTH_INITIAL_STATUS_ACCEPTED_VALUES:
+			return False
+		self.config.set("Main", "BLUETOOTH_INITIAL_STATUS", value)
+		return self.__write("BLUETOOTH_INITIAL_STATUS")
+	
+	def setWebcamInitialStatus(self, value):
+		""" Set the WEBCAM_INITIAL_STATUS option. """
+		""" Return 'True' on success, 'False' otherwise. """
+		if value == "default": # set default
+			value = WEBCAM_INITIAL_STATUS_DEFAULT
+		if value not in WEBCAM_INITIAL_STATUS_ACCEPTED_VALUES:
+			return False
+		self.config.set("Main", "WEBCAM_INITIAL_STATUS", value)
+		return self.__write("WEBCAM_INITIAL_STATUS")
+	
+	def setWirelessInitialStatus(self, value):
+		""" Set the WIRELESS_INITIAL_STATUS option. """
+		""" Return 'True' on success, 'False' otherwise. """
+		if value == "default": # set default
+			value = WIRELESS_INITIAL_STATUS_DEFAULT
+		if value not in WIRELESS_INITIAL_STATUS_ACCEPTED_VALUES:
+			return False
+		self.config.set("Main", "WIRELESS_INITIAL_STATUS", value)
+		return self.__write("WIRELESS_INITIAL_STATUS")
 	
 	def setWirelessToggleMethod(self, value):
 		""" Set the WIRELESS_TOGGLE_METHOD option. """

@@ -82,6 +82,27 @@ class General(dbus.service.Object):
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = None,
 						sender_keyword = 'sender', connection_keyword = 'conn')
+	def SetInitialDevicesStatus(self, sender = None, conn = None):
+		""" Set initial status for webcam, bluetooth, wireless. """
+		""" Return nothing. """
+		if systemconfig.getLastStatusRestore() == "true":
+			self.RestoreDevicesLastStatus()
+			return
+		if systemconfig.getBluetoothInitialStatus() == "true":
+			bluetooth.Enable()
+		else:
+			bluetooth.Disable()
+		if systemconfig.getWebcamInitialStatus() == "true":
+			webcam.Enable()
+		else:
+			webcam.Disable()
+		if systemconfig.getWirelessInitialStatus() == "true":
+			wireless.Enable()
+		else:
+			wireless.Disable()
+			
+	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = None,
+						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Exit(self, sender = None, conn = None):
 		mainloop.quit()
 
