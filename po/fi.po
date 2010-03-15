@@ -1,140 +1,141 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Finnish translation for samsung-tools
+# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
+# This file is distributed under the same license as the samsung-tools package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-15 17:59+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2010-03-14 17:05+0000\n"
+"Last-Translator: papukaija <Unknown>\n"
+"Language-Team: Finnish <fi@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2010-03-15 16:56+0000\n"
+"X-Generator: Launchpad (build Unknown)\n"
 
 #: backends/session/util/locales.py:25
 msgid "Backlight"
-msgstr ""
+msgstr "Taustavalo"
 
 #: backends/session/util/locales.py:26
 msgid "Backlight is enabled"
-msgstr ""
+msgstr "Taustavalo on päällä"
 
 #: backends/session/util/locales.py:27
 msgid "Backlight is disabled"
-msgstr ""
+msgstr "Tastavalo on pois päältä"
 
 #: backends/session/util/locales.py:28
 msgid "Backlight enabled"
-msgstr ""
+msgstr "Taustavalo päällä"
 
 #: backends/session/util/locales.py:29
 msgid "Backlight disabled"
-msgstr ""
+msgstr "Taustavalo poistettu käytöstä"
 
 #: backends/session/util/locales.py:30
 msgid "Backlight cannot be enabled"
-msgstr ""
+msgstr "Taustavaloa ei voida ottaa päälle"
 
 #: backends/session/util/locales.py:31
 msgid "Backlight cannot be disabled"
-msgstr ""
+msgstr "Taustavaloa ei voida ottaa pois päältä"
 
 #: backends/session/util/locales.py:32
 msgid "Backlight cannot be toggled"
-msgstr ""
+msgstr "Taustavaloa ei voitu muuttaa"
 
 #: backends/session/util/locales.py:34
 msgid "Bluetooth"
-msgstr ""
+msgstr "Bluetooth"
 
 #: backends/session/util/locales.py:35
 msgid "Bluetooth is enabled"
-msgstr ""
+msgstr "Bluetooth on päällä"
 
 #: backends/session/util/locales.py:36
 msgid "Bluetooth is disabled"
-msgstr ""
+msgstr "Bluetooth on pois käytöstä"
 
 #: backends/session/util/locales.py:37
 msgid "Bluetooth enabled"
-msgstr ""
+msgstr "Bluetooth käytössä"
 
 #: backends/session/util/locales.py:38
 msgid "Bluetooth disabled"
-msgstr ""
+msgstr "Bluetooth poistettu käytöstä"
 
 #: backends/session/util/locales.py:39
 msgid "Bluetooth cannot be enabled"
-msgstr ""
+msgstr "Bluetoothia ei saada päälle"
 
 #: backends/session/util/locales.py:40
 msgid "Bluetooth cannot be disabled"
-msgstr ""
+msgstr "Bluetoothia ei saada pois päältä"
 
 #: backends/session/util/locales.py:41
 msgid "Bluetooth cannot be toggled"
-msgstr ""
+msgstr "Bluetoothia ei saada muutettua"
 
 #: backends/session/util/locales.py:42
 msgid "Bluetooth control is not available"
-msgstr ""
+msgstr "Bluetoothia ei voida konrolloida"
 
 #: backends/session/util/locales.py:44 samsung-tools-preferences.py:189
 msgid "CPU/Fan"
-msgstr ""
+msgstr "Suoritin/Tuuletin"
 
 #: backends/session/util/locales.py:45
 msgid "CPU Temperature:"
-msgstr ""
+msgstr "Suorittimen lämpötila:"
 
 #: backends/session/util/locales.py:46
 msgid "Fan mode cannot be changed"
-msgstr ""
+msgstr "Tuulettimen tilaa ei voida muuttaa"
 
 #: backends/session/util/locales.py:47
 msgid "Fan mode: Normal"
-msgstr ""
+msgstr "Tuulettimen tila: Normaali"
 
 #: backends/session/util/locales.py:48
 msgid "Fan mode: Silent"
-msgstr ""
+msgstr "Tuulettimen tila: Hiljainen"
 
 #: backends/session/util/locales.py:49
 msgid "Fan mode: Speed"
-msgstr ""
+msgstr "Tuulettimen tila: Nopeus"
 
 #: backends/session/util/locales.py:50
 msgid "Cannot get fan mode"
-msgstr ""
+msgstr "Tuulettimen tilaa ei saatu"
 
 #: backends/session/util/locales.py:51
 msgid "Fan control is not available"
-msgstr ""
+msgstr "Tuulettimen tilaa ei voida hallita"
 
 #: backends/session/util/locales.py:53 samsung-tools-preferences.py:198
 msgid "Webcam"
-msgstr ""
+msgstr "Web-kamera"
 
 #: backends/session/util/locales.py:54
 msgid "Webcam is enabled"
-msgstr ""
+msgstr "Web-kamera on päällä"
 
 #: backends/session/util/locales.py:55
 msgid "Webcam is disabled"
-msgstr ""
+msgstr "Web-kamera on pois päältä"
 
 #: backends/session/util/locales.py:56
 msgid "Webcam enabled"
-msgstr ""
+msgstr "Web-kamera käytössä"
 
 #: backends/session/util/locales.py:57
 msgid "Webcam disabled"
-msgstr ""
+msgstr "Web-kamera pois käytöstä"
 
 #: backends/session/util/locales.py:58
 msgid "Webcam cannot be enabled"
@@ -154,7 +155,7 @@ msgstr ""
 
 #: backends/session/util/locales.py:63 samsung-tools-preferences.py:207
 msgid "Wireless"
-msgstr ""
+msgstr "Langaton"
 
 #: backends/session/util/locales.py:64
 msgid "Wireless is enabled"
@@ -170,7 +171,7 @@ msgstr ""
 
 #: backends/session/util/locales.py:67
 msgid "Wireless disabled"
-msgstr ""
+msgstr "Langaton pois käytöstä"
 
 #: backends/session/util/locales.py:68
 msgid "Wireless cannot be enabled"

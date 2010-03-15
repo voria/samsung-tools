@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-14 12:44+0100\n"
-"PO-Revision-Date: 2010-03-13 14:16+0000\n"
-"Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
+"POT-Creation-Date: 2010-03-15 17:59+0100\n"
+"PO-Revision-Date: 2010-03-14 18:59+0000\n"
+"Last-Translator: Lionel BASTET <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-03-14 14:36+0000\n"
+"X-Launchpad-Export-Date: 2010-03-15 16:56+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: backends/session/util/locales.py:25
@@ -296,7 +296,7 @@ msgstr " - Désactiver le Bluetooth, la webcam et le réseau sans fil:"
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Pour plus d'informations, visitez le forum \"Linux On My Samsung\":"
 
-#: samsung-tools.py:514 samsung-tools-preferences.py:660
+#: samsung-tools.py:514 samsung-tools-preferences.py:668
 msgid "Released under GPLv3 license"
 msgstr "Publié sous licence GPLv3"
 
@@ -358,7 +358,7 @@ msgstr "<b>Réseau sans fil</b>"
 
 #: po/samsung-tools-preferences.glade.h:5
 msgid "Bluetooth initial status:"
-msgstr ""
+msgstr "Etat initial du Bluetooth:"
 
 #: po/samsung-tools-preferences.glade.h:8
 msgid "Click here to disable the hotkey"
@@ -432,7 +432,7 @@ msgstr "Module du noyau:"
 
 #: po/samsung-tools-preferences.glade.h:27
 msgid "Last status"
-msgstr ""
+msgstr "Dernier état"
 
 #: po/samsung-tools-preferences.glade.h:28
 #: po/samsung-tools-preferences.desktop.h:1
@@ -449,15 +449,15 @@ msgstr "Service système"
 
 #: po/samsung-tools-preferences.glade.h:31
 msgid "The initial status at boot for Bluetooth"
-msgstr ""
+msgstr "L'état initial du Bluetooth au démarrage"
 
 #: po/samsung-tools-preferences.glade.h:32
 msgid "The initial status at boot for webcam"
-msgstr ""
+msgstr "L'état initial de la webcam au démarrage"
 
 #: po/samsung-tools-preferences.glade.h:33
 msgid "The initial status at boot for wireless"
-msgstr ""
+msgstr "L'état initial du réseau sans fil au démarrage"
 
 #: po/samsung-tools-preferences.glade.h:34
 msgid ""
@@ -467,8 +467,8 @@ msgid ""
 msgstr ""
 "Module du noyau à gérer.\n"
 "\n"
-"Note: cette option est utilisée seulement quand 'Méthode de changement "
-"d'état\" est réglée sur 'module'."
+"Note: cette option est utilisée seulement quand 'Méthode de changement d'état"
+"\" est réglée sur 'module'."
 
 #: po/samsung-tools-preferences.glade.h:37
 msgid ""
@@ -487,11 +487,11 @@ msgstr "Méthode de changement d'état:"
 
 #: po/samsung-tools-preferences.glade.h:41
 msgid "Webcam initial status:"
-msgstr ""
+msgstr "Etat initial de la webcam:"
 
 #: po/samsung-tools-preferences.glade.h:43
 msgid "Wireless initial status:"
-msgstr ""
+msgstr "Etat initial du réseau sans fil:"
 
 #: po/samsung-tools-preferences.desktop.h:2
 msgid "Show and modify Samsung Tools preferences"
@@ -514,5 +514,5 @@ msgstr "Lancer le service de session"
 #~ "If enabled, the status of all devices will be restored after a suspend, "
 #~ "hibernate, reboot cycle"
 #~ msgstr ""
-#~ "Si activé, l'état de tous les périphériques sera restauré après une mise en "
-#~ "veille, une hibernation ou un redémarrage"
+#~ "Si activé, l'état de tous les périphériques sera restauré après une mise "
+#~ "en veille, une hibernation ou un redémarrage"
