@@ -19,6 +19,7 @@
 # See the GNU General Public License for more details.
 # <http://www.gnu.org/licenses/gpl.txt>
 
+import os
 import gobject
 
 import dbus
@@ -69,6 +70,11 @@ class General(dbus.service.Object):
 if __name__ == '__main__':
 	dbus.mainloop.glib.DBusGMainLoop(set_as_default = True)
 	
+	# Disable session service for root user
+	if os.getuid() == 0:
+		import sys
+		sys.exit()
+		
 	# Initialize notification system
 	notify = Notification()
 
