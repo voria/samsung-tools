@@ -168,7 +168,7 @@ class Main():
 		###
 		self.sessionTable = self.builder.get_object("sessionTable")
 		# Set backlight hotkey grabber
-		self.backlightHotkeyButton = KeyGrabber(popup_title = "Backlight")
+		self.backlightHotkeyButton = KeyGrabber(popup_title = unicode(_("Backlight"), "utf-8"))
 		hotkey = session.GetBacklightHotkey()
 		(key, mods) = gtk.accelerator_parse(self.__convert_xbindkeys_to_gtk(hotkey))
 		self.backlightHotkeyButton.set_label(key, mods, True)
@@ -177,7 +177,7 @@ class Main():
 		self.backlightHotkeyButton.connect("changed", self.on_backlightHotkeyButton_changed)
 		self.backlightHotkeyButton.show()
 		# Set bluetooth hotkey grabber
-		self.bluetoothHotkeyButton = KeyGrabber(popup_title = "Bluetooth")
+		self.bluetoothHotkeyButton = KeyGrabber(popup_title = unicode(_("Bluetooth"), "utf-8"))
 		hotkey = session.GetBluetoothHotkey()
 		(key, mods) = gtk.accelerator_parse(self.__convert_xbindkeys_to_gtk(hotkey))
 		self.bluetoothHotkeyButton.set_label(key, mods, True)
@@ -186,7 +186,7 @@ class Main():
 		self.bluetoothHotkeyButton.connect("changed", self.on_bluetoothHotkeyButton_changed)
 		self.bluetoothHotkeyButton.show()
 		# Set cpu hotkey grabber
-		self.cpuHotkeyButton = KeyGrabber(popup_title = _("CPU/Fan"))
+		self.cpuHotkeyButton = KeyGrabber(popup_title = unicode(_("CPU/Fan"), "utf-8"))
 		hotkey = session.GetCpuHotkey()
 		(key, mods) = gtk.accelerator_parse(self.__convert_xbindkeys_to_gtk(hotkey))
 		self.cpuHotkeyButton.set_label(key, mods, True)
@@ -195,7 +195,7 @@ class Main():
 		self.cpuHotkeyButton.connect("changed", self.on_cpuHotkeyButton_changed)
 		self.cpuHotkeyButton.show()
 		# Set webcam hotkey grabber
-		self.webcamHotkeyButton = KeyGrabber(popup_title = _("Webcam"))
+		self.webcamHotkeyButton = KeyGrabber(popup_title = unicode(_("Webcam"), "utf-8"))
 		hotkey = session.GetWebcamHotkey()
 		(key, mods) = gtk.accelerator_parse(self.__convert_xbindkeys_to_gtk(hotkey))
 		self.webcamHotkeyButton.set_label(key, mods, True)
@@ -204,7 +204,7 @@ class Main():
 		self.webcamHotkeyButton.connect("changed", self.on_webcamHotkeyButton_changed)
 		self.webcamHotkeyButton.show()
 		# Set wireless hotkey grabber
-		self.wirelessHotkeyButton = KeyGrabber(popup_title = _("Wireless"))
+		self.wirelessHotkeyButton = KeyGrabber(popup_title = unicode(_("Wireless"), "utf-8"))
 		hotkey = session.GetWirelessHotkey()
 		(key, mods) = gtk.accelerator_parse(self.__convert_xbindkeys_to_gtk(hotkey))
 		self.wirelessHotkeyButton.set_label(key, mods, True)
@@ -382,7 +382,7 @@ class Main():
 				return dbus.Interface(proxy, SESSION_INTERFACE_NAME)
 			except:
 				retry = retry - 1
-		print _("Unable to connect to session service!")
+		print unicode(_("Unable to connect to session service!"), "utf-8")
 		sys.exit(1)
 		
 	def __connect_system(self):
@@ -394,7 +394,7 @@ class Main():
 				return dbus.Interface(proxy, SYSTEM_INTERFACE_NAME)
 			except:
 				retry = retry - 1
-		print _("Unable to connect to system service!")
+		print unicode(_("Unable to connect to system service!"), "utf-8")
 		sys.exit(1)
 	
 	def __convert_gtk_to_xbindkeys(self, hotkey):
@@ -666,7 +666,7 @@ class Main():
 		dialog.set_icon_from_file(SAMSUNG_TOOLS_ICON)
 		dialog.set_name(APP_NAME)
 		dialog.set_version(APP_VERSION)
-		copyright = _("Released under GPLv3 license") + "\n\nCopyleft by\nFortunato Ventre (voRia)\nvorione@gmail.com"
+		copyright = unicode(_("Released under GPLv3 license"), "utf-8") + "\n\nCopyleft by\nFortunato Ventre (voRia)\nvorione@gmail.com"
 		dialog.set_copyright(copyright)
 		dialog.set_website("http://www.voria.org/forum")
 		dialog.set_website_label("Linux On My Samsung")

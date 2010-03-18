@@ -51,7 +51,7 @@ class Backlight():
 			except:
 				retry = retry - 1
 		if retry == 0:
-			print _("Backlight control: unable to connect to session service!")
+			print unicode(_("Backlight control: unable to connect to session service!"), "utf-8")
 			sys.exit(1)
 		
 	def __on(self):
@@ -117,7 +117,7 @@ class Bluetooth():
 			except:
 				retry = retry - 1
 		if retry == 0:
-			print _("Bluetooth control: unable to connect to session service!")
+			print unicode(_("Bluetooth control: unable to connect to session service!"), "utf-8")
 			sys.exit(1)
 			
 	def __is_available(self):
@@ -196,7 +196,7 @@ class Cpu():
 			except:
 				retry = retry - 1
 		if retry == 0:
-			print _("CPU control: unable to connect to session service!")
+			print unicode(_("CPU control: unable to connect to session service!"), "utf-8")
 			sys.exit(1)
 	
 	def __is_temperature_available(self):
@@ -226,7 +226,7 @@ class Cpu():
 	def apply(self):
 		if self.option == None:
 			return
-		if self.__is_temperature_available() and self.option != "hotkey":
+		if self.__is_temperature_available() and self.option != "hotkey" and not quiet:
 			print CPU_TEMPERATURE + " " + self.__temp()
 		if not self.__is_fan_available():
 			if not quiet:
@@ -326,7 +326,7 @@ class Webcam():
 			except:
 				retry = retry - 1
 		if retry == 0:
-			print _("Webcam control: unable to connect to session service!")
+			print unicode(_("Webcam control: unable to connect to session service!"), "utf-8")
 			sys.exit(1)
 	
 	def __is_available(self):
@@ -405,7 +405,7 @@ class Wireless():
 			except:
 				retry = retry - 1
 		if retry == 0:
-			print _("Wireless control: unable to connect to session service!")
+			print unicode(_("Wireless control: unable to connect to session service!"), "utf-8")
 			sys.exit(1)
 	
 	def __is_available(self):
@@ -470,57 +470,57 @@ class Wireless():
 					print WIRELESS_STATUS_DISABLED
 
 def usage(option = None, opt = None, value = None, parser = None):
-	print _("Samsung Tools - Command Line Utility")
+	print unicode(_("Samsung Tools - Command Line Utility"), "utf-8")
 	print
-	print _("Usage: %s <interface> <option> ...") % os.path.basename(sys.argv[0])
+	print unicode(_("Usage: %s <interface> <option> ...") % os.path.basename(sys.argv[0]), "utf-8")
 	print
-	print _("Backlight:")
-	print "\t" + _("Interface") + ":\t-b | --backlight"
-	print "\t" + _("Options") + ":\ton | off | toggle | status"
-	print _("Bluetooth:")
-	print "\t" + _("Interface") + ":\t-B | --bluetooth"
-	print "\t" + _("Options") + ":\ton | off | toggle | status"
-	print _("CPU/Fan:")
-	print "\t" + _("Interface") + ":\t-c | --cpu"
-	print "\t" + _("Options") + ":\tnormal | silent | speed | cycle | hotkey | status"
-	print _("Webcam:")
-	print "\t" + _("Interface") + ":\t-w | --webcam"
-	print "\t" + _("Options") + ":\ton | off | toggle | status"
-	print _("Wireless:")
-	print "\t" + _("Interface") + ":\t-W | --wireless"
-	print "\t" + _("Options") + ":\ton | off | toggle | status"
+	print unicode(_("Backlight:"), "utf-8")
+	print "\t" + unicode(_("Interface"), "utf-8") + ":\t-b | --backlight"
+	print "\t" + unicode(_("Options"), "utf-8") + ":\ton | off | toggle | status"
+	print unicode(_("Bluetooth:"), "utf-8")
+	print "\t" + unicode(_("Interface"), "utf-8") + ":\t-B | --bluetooth"
+	print "\t" + unicode(_("Options"), "utf-8") + ":\ton | off | toggle | status"
+	print unicode(_("CPU/Fan:"), "utf-8")
+	print "\t" + unicode(_("Interface"), "utf-8") + ":\t-c | --cpu"
+	print "\t" + unicode(_("Options"), "utf-8") + ":\tnormal | silent | speed | cycle | hotkey | status"
+	print unicode(_("Webcam:"), "utf-8")
+	print "\t" + unicode(_("Interface"), "utf-8") + ":\t-w | --webcam"
+	print "\t" + unicode(_("Options"), "utf-8") + ":\ton | off | toggle | status"
+	print unicode(_("Wireless:"), "utf-8")
+	print "\t" + unicode(_("Interface"), "utf-8") + ":\t-W | --wireless"
+	print "\t" + unicode(_("Options"), "utf-8") + ":\ton | off | toggle | status"
 	print
-	print _("Other options:")
-	print " -n | --show-notify\t" + _("Show graphical notifications.")
-	print " -q | --quiet\t\t" + _("Do not print messages on standard output.")
-	print " -s | --stop-session\t" + _("Stop the session service.")
-	print " -S | --stop-system\t" + _("Stop the system service.")
+	print unicode(_("Other options:"), "utf-8")
+	print " -n | --show-notify\t" + unicode(_("Show graphical notifications."), "utf-8")
+	print " -q | --quiet\t\t" + unicode(_("Do not print messages on standard output."), "utf-8")
+	print " -s | --stop-session\t" + unicode(_("Stop the session service."), "utf-8")
+	print " -S | --stop-system\t" + unicode(_("Stop the system service."), "utf-8")
 	print
-	print _("Examples of use:")
-	print _(" - Toggle backlight:")
+	print unicode(_("Examples of use:"), "utf-8")
+	print unicode(_(" - Toggle backlight:"), "utf-8")
 	print " %s --backlight toggle" % os.path.basename(sys.argv[0])
 	print
-	print _(" - Toggle wireless and set CPU fan mode to 'silent':")
+	print unicode(_(" - Toggle wireless and set CPU fan mode to 'silent':"), "utf-8")
 	print " %s --wireless toggle --cpu silent" % os.path.basename(sys.argv[0])
 	print
-	print _(" - Disable bluetooth, webcam and wireless:")
+	print unicode(_(" - Disable bluetooth, webcam and wireless:"), "utf-8")
 	print " %s -B off -w off -W off" % os.path.basename(sys.argv[0])
 	print
-	print _("For more informations, visit the 'Linux On My Samsung' forum:")
+	print unicode(_("For more informations, visit the 'Linux On My Samsung' forum:"), "utf-8")
 	print
 	print " - http://www.voria.org/forum"
 	print
 	print "Copyleft by: Fortunato Ventre (voRia) - vorione@gmail.com"
-	print _("Released under GPLv3 license") + "."
+	print unicode(_("Released under GPLv3 license"), "utf-8") + "."
 	sys.exit(0)
 
 def main():
 	if  len(sys.argv) == 1:
-		print _("No action(s) specified.")
-		print _("Use --help for instructions.")
+		print unicode(_("No action(s) specified."), "utf-8")
+		print unicode(_("Use --help for instructions."), "utf-8")
 		sys.exit(1)
 	
-	usage_string = _("Usage: %s <interface> <option> ...") % os.path.basename(sys.argv[0])
+	usage_string = unicode(_("Usage: %s <interface> <option> ...") % os.path.basename(sys.argv[0]), "utf-8")
 	parser = OptionParser(usage_string, add_help_option = False)
 	parser.add_option('-h', '--help',
 					action = "callback",
@@ -568,8 +568,8 @@ def main():
 	quiet = options.quiet
 		
 	if len(args) != 0:
-		print _("Wrong argument(s).")
-		print _("Use --help for instructions.")
+		print unicode(_("Wrong argument(s)."), "utf-8")
+		print unicode(_("Use --help for instructions."), "utf-8")
 		sys.exit(1)
 	
 	Backlight(options.backlight).apply()
@@ -585,10 +585,10 @@ def main():
 			general = dbus.Interface(proxy, SESSION_INTERFACE_NAME)
 			general.Exit()
 			if not quiet:
-				print _("Session service stopped")
+				print unicode(_("Session service stopped"), "utf-8")
 		except:
 			if not quiet:
-				print _("Cannot stop session service")
+				print unicode(_("Cannot stop session service"), "utf-8")
 			pass
 	
 	if options.stopsystem == True:
@@ -598,10 +598,10 @@ def main():
 			general = dbus.Interface(proxy, SYSTEM_INTERFACE_NAME)
 			general.Exit()
 			if not quiet:
-				print _("System service stopped")
+				print unicode(_("System service stopped"), "utf-8")
 		except:
 			if not quiet:
-				print _("Cannot stop system service")
+				print unicode(_("Cannot stop system service"), "utf-8")
 			pass
 
 if __name__ == "__main__":
