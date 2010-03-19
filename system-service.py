@@ -51,9 +51,6 @@ class General(dbus.service.Object):
 	def __restore_bluetooth_status(self):
 		status = bluetooth.LastStatus()
 		bluetooth.Enable()
-		# sleep for a while
-		from time import sleep
-		sleep(2)
 		if status == False:
 			bluetooth.Disable()
 	
