@@ -51,9 +51,6 @@ class General(dbus.service.Object):
 	def __restore_bluetooth_status(self):
 		status = bluetooth.LastStatus()
 		bluetooth.Enable()
-		# sleep for a while
-		from time import sleep
-		sleep(2)
 		if status == False:
 			bluetooth.Disable()
 	
@@ -83,6 +80,9 @@ class General(dbus.service.Object):
 	def SetInitialDevicesStatus(self, sender = None, conn = None):
 		""" Set initial status for webcam, bluetooth, wireless. """
 		""" Return nothing. """
+		# sleep for a while
+		from time import sleep
+		sleep(5)
 		status = systemconfig.getWebcamInitialStatus()
 		if status == "on":	
 			webcam.Enable()
