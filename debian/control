@@ -9,6 +9,5 @@ Homepage: http://www.voria.org/forum
 Package: samsung-tools
 Architecture: all
 Depends: python-gtk2, xbindkeys, easy-slow-down-manager
-Conflicts: samsung-scripts
 Description: Samsung Tools
  Tools for Samsung netbooks.
