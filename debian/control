@@ -1,0 +1,13 @@
+Source: samsung-tools
+Section: misc
+Priority: extra
+Maintainer: Fortunato Ventre (voRia) <vorione@gmail.com>
+Build-Depends: debhelper (>= 7), gettext
+Standards-Version: 3.8.0
+Homepage: http://www.voria.org/forum
+
+Package: samsung-tools
+Architecture: all
+Depends: python-gtk2, xbindkeys, easy-slow-down-manager
+Description: Samsung Tools
+ Tools for Samsung netbooks.

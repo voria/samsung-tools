@@ -1,0 +1,41 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+configure: configure-stamp
+
+configure-stamp:
+	dh_testdir
+	touch configure-stamp
+
+build: build-stamp
+
+build-stamp: configure-stamp  
+	dh_testdir
+	touch $@
+
+clean: 
+	dh_testdir
+	dh_testroot
+	rm -f build-stamp configure-stamp
+	# Delete unneeded stuff
+	rm -rf .bzr .pydevproject .project src/*.pyc
+	dh_clean
+
+install:
+	dh_testdir
+	dh_testroot
+	dh_prep
+	dh_installchangelogs
+	dh_installdocs
+	dh_installdeb
+	$(MAKE) DESTDIR=$(CURDIR)/debian/samsung-tools install
+
+# Build architecture-independent files here.
+binary-indep: install
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary: binary-indep
+binary-arch: binary-indep
+.PHONY: clean binary binary-indep binary-arch install configure build
