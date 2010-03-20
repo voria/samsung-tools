@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-15 17:59+0100\n"
+"POT-Creation-Date: 2010-03-20 14:03+0100\n"
 "PO-Revision-Date: 2010-03-14 18:59+0000\n"
 "Last-Translator: Lionel BASTET <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2010-03-15 16:56+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
-#: backends/session/util/locales.py:25
+#: backends/session/util/locales.py:25 samsung-tools-preferences.py:171
 msgid "Backlight"
 msgstr "Rétroéclairage"
 
@@ -49,7 +49,7 @@ msgstr "Le rétroéclairage ne peut être désactivé"
 msgid "Backlight cannot be toggled"
 msgstr "Changement d'état du rétroéclairage impossible"
 
-#: backends/session/util/locales.py:34
+#: backends/session/util/locales.py:34 samsung-tools-preferences.py:180
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
@@ -296,7 +296,7 @@ msgstr " - Désactiver le Bluetooth, la webcam et le réseau sans fil:"
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Pour plus d'informations, visitez le forum \"Linux On My Samsung\":"
 
-#: samsung-tools.py:514 samsung-tools-preferences.py:668
+#: samsung-tools.py:514 samsung-tools-preferences.py:669
 msgid "Released under GPLv3 license"
 msgstr "Publié sous licence GPLv3"
 
@@ -435,7 +435,7 @@ msgid "Last status"
 msgstr "Dernier état"
 
 #: po/samsung-tools-preferences.glade.h:28
-#: po/samsung-tools-preferences.desktop.h:1
+#: po/samsung-tools-preferences.desktop.in.h:1
 msgid "Samsung Tools Preferences"
 msgstr "Préférences de Samsung Tools"
 
@@ -493,11 +493,11 @@ msgstr "Etat initial de la webcam:"
 msgid "Wireless initial status:"
 msgstr "Etat initial du réseau sans fil:"
 
-#: po/samsung-tools-preferences.desktop.h:2
+#: po/samsung-tools-preferences.desktop.in.h:2
 msgid "Show and modify Samsung Tools preferences"
 msgstr "Afficher et modifier les préférences de Samsung Tools"
 
-#: po/samsung-tools-session-service.desktop.h:1
+#: po/samsung-tools-session-service.desktop.in.h:1
 msgid "Start the session service"
 msgstr "Lancer le service de session"
 

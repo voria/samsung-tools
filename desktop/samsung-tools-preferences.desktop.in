@@ -1,7 +1,5 @@
 [Desktop Entry]
-Name=Samsung Tools Preferences
 _Name=Samsung Tools Preferences
-Comment=Show and modify Samsung Tools preferences
 _Comment=Show and modify Samsung Tools preferences
 Icon=samsung-tools
 Exec=samsung-tools-preferences
@@ -10,5 +8,4 @@ Type=Application
 Categories=Settings;X-GNOME-SystemSettings;
 OnlyShowIn=GNOME;XFCE;KDE;
 StartupNotify=true
-
 X-Ubuntu-Gettext-Domain=samsung-tools

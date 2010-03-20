@@ -8,20 +8,20 @@ done
 mv gui/glade/*.glade.h po/
 
 echo "*** Extracting strings from *.desktop files..." # A bit hacking, but it works
-for file in desktop/*.desktop; do
+for file in desktop/*.desktop.in; do
 	intltool-extract --type=gettext/ini "$file"
 done
-mv desktop/*.desktop.h po/
+mv desktop/*.desktop.in.h po/
 
 echo
 echo "*** Creating samsung-tools.pot..."
-xgettext -k_ -kN_ -o po/messages.pot `cat po/FILES` po/*.glade.h po/*.desktop.h
+xgettext -k_ -kN_ -o po/messages.pot `cat po/FILES` po/*.glade.h po/*.desktop.in.h
 cat po/messages.pot | sed s:charset=CHARSET:charset=UTF-8: > po/samsung-tools.pot
 
 echo
 echo "*** Removing unneeded files..."
 rm po/*.glade.h
-rm po/*.desktop.h
+rm po/*.desktop.in.h
 rm po/messages.pot
 
 for locale in `cat po/LINGUAS`; do

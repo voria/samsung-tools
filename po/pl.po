@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-15 17:59+0100\n"
+"POT-Creation-Date: 2010-03-20 14:03+0100\n"
 "PO-Revision-Date: 2010-03-14 15:28+0000\n"
 "Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: Polish <pl@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2010-03-15 16:56+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
-#: backends/session/util/locales.py:25
+#: backends/session/util/locales.py:25 samsung-tools-preferences.py:171
 msgid "Backlight"
 msgstr "Podświetlenie"
 
@@ -49,7 +49,7 @@ msgstr "Podświetlenie nie może być wyłączone"
 msgid "Backlight cannot be toggled"
 msgstr "NIe można zmienić stanu podświetlenia"
 
-#: backends/session/util/locales.py:34
+#: backends/session/util/locales.py:34 samsung-tools-preferences.py:180
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
@@ -289,7 +289,7 @@ msgstr " Wyłącz Bluetooth'a, kamerę internetową i sieć bezprzewodową:"
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Po więcej informacji odwiedź forum 'Linux On My Samsung' :"
 
-#: samsung-tools.py:514 samsung-tools-preferences.py:668
+#: samsung-tools.py:514 samsung-tools-preferences.py:669
 msgid "Released under GPLv3 license"
 msgstr "Wydane na licencji GPLv3"
 
@@ -423,7 +423,7 @@ msgid "Last status"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:28
-#: po/samsung-tools-preferences.desktop.h:1
+#: po/samsung-tools-preferences.desktop.in.h:1
 msgid "Samsung Tools Preferences"
 msgstr "Ustawienia Narzędzi Samsung"
 
@@ -473,10 +473,10 @@ msgstr "Status początkowy kamery internetowej:"
 msgid "Wireless initial status:"
 msgstr "Status początkowy sieci bezprzewodowej:"
 
-#: po/samsung-tools-preferences.desktop.h:2
+#: po/samsung-tools-preferences.desktop.in.h:2
 msgid "Show and modify Samsung Tools preferences"
 msgstr "Pokaż i zmodyfikuj preferencje Narzędzi Samsung"
 
-#: po/samsung-tools-session-service.desktop.h:1
+#: po/samsung-tools-session-service.desktop.in.h:1
 msgid "Start the session service"
 msgstr "Włącz usługę sesji"
