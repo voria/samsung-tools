@@ -1,3 +1,9 @@
+samsung-tools (0.1~ppa2~loms~lucid) karmic; urgency=low
+
+  * Add 'samsung-scripts' as conflict package. 
+
+ -- Fortunato Ventre (voRia) <vorione@gmail.com>  Sat, 20 Mar 2010 14:51:04 +0100
+
 samsung-tools (0.1~ppa1~loms~lucid) karmic; urgency=low
 
   * Initial release.
