@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-20 14:03+0100\n"
+"POT-Creation-Date: 2010-03-26 11:43+0100\n"
 "PO-Revision-Date: 2010-03-14 15:28+0000\n"
 "Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: Polish <pl@li.org>\n"
@@ -213,7 +213,7 @@ msgstr "Zarządzanie siecią bezprzewodową: nie można połączyć z usługą s
 msgid "Samsung Tools - Command Line Utility"
 msgstr ""
 
-#: samsung-tools.py:475 samsung-tools.py:523
+#: samsung-tools.py:475 samsung-tools.py:524
 #, python-format
 msgid "Usage: %s <interface> <option> ..."
 msgstr "Użyj: %s <interfejs> <opcja> ..."
@@ -253,71 +253,75 @@ msgid "Other options:"
 msgstr "Inne opcje:"
 
 #: samsung-tools.py:494
+msgid "Show status for all devices."
+msgstr ""
+
+#: samsung-tools.py:495
 msgid "Show graphical notifications."
 msgstr "Pokazuj graficzne powiadomienia"
 
-#: samsung-tools.py:495
+#: samsung-tools.py:496
 msgid "Do not print messages on standard output."
 msgstr "NIe można wyświetlić wiadomości na standardowym wyjściu"
 
-#: samsung-tools.py:496
+#: samsung-tools.py:497
 msgid "Stop the session service."
 msgstr "Zatrzymaj usługę sesji"
 
-#: samsung-tools.py:497
+#: samsung-tools.py:498
 msgid "Stop the system service."
 msgstr "Zatrzymaj usługę systemową"
 
-#: samsung-tools.py:499
+#: samsung-tools.py:500
 msgid "Examples of use:"
 msgstr "Przykład użycia:"
 
-#: samsung-tools.py:500
+#: samsung-tools.py:501
 msgid " - Toggle backlight:"
 msgstr " Przełącz stan podświetlenia"
 
-#: samsung-tools.py:503
+#: samsung-tools.py:504
 msgid " - Toggle wireless and set CPU fan mode to 'silent':"
 msgstr ""
 " Przełącz sieć bezprzewodową i ustaw szybkość wentylatora procesora na wolną:"
 
-#: samsung-tools.py:506
+#: samsung-tools.py:507
 msgid " - Disable bluetooth, webcam and wireless:"
 msgstr " Wyłącz Bluetooth'a, kamerę internetową i sieć bezprzewodową:"
 
-#: samsung-tools.py:509
+#: samsung-tools.py:510
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Po więcej informacji odwiedź forum 'Linux On My Samsung' :"
 
-#: samsung-tools.py:514 samsung-tools-preferences.py:669
+#: samsung-tools.py:515 samsung-tools-preferences.py:670
 msgid "Released under GPLv3 license"
 msgstr "Wydane na licencji GPLv3"
 
-#: samsung-tools.py:519
+#: samsung-tools.py:520
 msgid "No action(s) specified."
 msgstr "Nie ustalono akcji"
 
-#: samsung-tools.py:520 samsung-tools.py:572
+#: samsung-tools.py:521 samsung-tools.py:585
 msgid "Use --help for instructions."
 msgstr "Użyj --help, aby zobaczyć pomoc"
 
-#: samsung-tools.py:571
+#: samsung-tools.py:584
 msgid "Wrong argument(s)."
 msgstr "Złe argumenty"
 
-#: samsung-tools.py:588
+#: samsung-tools.py:601
 msgid "Session service stopped"
 msgstr "Usługa sesji zastopowana"
 
-#: samsung-tools.py:591
+#: samsung-tools.py:604
 msgid "Cannot stop session service"
 msgstr "Nie można zastopować usługi sesji"
 
-#: samsung-tools.py:601
+#: samsung-tools.py:614
 msgid "System service stopped"
 msgstr "Usługa systemowa zastopowana"
 
-#: samsung-tools.py:604
+#: samsung-tools.py:617
 msgid "Cannot stop system service"
 msgstr "Nie można zastopować usługi systemowej"
 

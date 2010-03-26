@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-26 10:09+0100\n"
+"POT-Creation-Date: 2010-03-26 11:43+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -212,7 +212,7 @@ msgstr ""
 msgid "Samsung Tools - Command Line Utility"
 msgstr ""
 
-#: samsung-tools.py:475 samsung-tools.py:523
+#: samsung-tools.py:475 samsung-tools.py:524
 #, python-format
 msgid "Usage: %s <interface> <option> ..."
 msgstr ""
@@ -252,70 +252,74 @@ msgid "Other options:"
 msgstr ""
 
 #: samsung-tools.py:494
-msgid "Show graphical notifications."
+msgid "Show status for all devices."
 msgstr ""
 
 #: samsung-tools.py:495
-msgid "Do not print messages on standard output."
+msgid "Show graphical notifications."
 msgstr ""
 
 #: samsung-tools.py:496
-msgid "Stop the session service."
+msgid "Do not print messages on standard output."
 msgstr ""
 
 #: samsung-tools.py:497
+msgid "Stop the session service."
+msgstr ""
+
+#: samsung-tools.py:498
 msgid "Stop the system service."
 msgstr ""
 
-#: samsung-tools.py:499
+#: samsung-tools.py:500
 msgid "Examples of use:"
 msgstr ""
 
-#: samsung-tools.py:500
+#: samsung-tools.py:501
 msgid " - Toggle backlight:"
 msgstr ""
 
-#: samsung-tools.py:503
+#: samsung-tools.py:504
 msgid " - Toggle wireless and set CPU fan mode to 'silent':"
 msgstr ""
 
-#: samsung-tools.py:506
+#: samsung-tools.py:507
 msgid " - Disable bluetooth, webcam and wireless:"
 msgstr ""
 
-#: samsung-tools.py:509
+#: samsung-tools.py:510
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr ""
 
-#: samsung-tools.py:514 samsung-tools-preferences.py:669
+#: samsung-tools.py:515 samsung-tools-preferences.py:670
 msgid "Released under GPLv3 license"
 msgstr ""
 
-#: samsung-tools.py:519
+#: samsung-tools.py:520
 msgid "No action(s) specified."
 msgstr ""
 
-#: samsung-tools.py:520 samsung-tools.py:572
+#: samsung-tools.py:521 samsung-tools.py:585
 msgid "Use --help for instructions."
 msgstr ""
 
-#: samsung-tools.py:571
+#: samsung-tools.py:584
 msgid "Wrong argument(s)."
 msgstr ""
 
-#: samsung-tools.py:588
+#: samsung-tools.py:601
 msgid "Session service stopped"
 msgstr ""
 
-#: samsung-tools.py:591
+#: samsung-tools.py:604
 msgid "Cannot stop session service"
 msgstr ""
 
-#: samsung-tools.py:601
+#: samsung-tools.py:614
 msgid "System service stopped"
 msgstr ""
 
-#: samsung-tools.py:604
+#: samsung-tools.py:617
 msgid "Cannot stop system service"
 msgstr ""
 

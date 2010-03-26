@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-20 14:03+0100\n"
+"POT-Creation-Date: 2010-03-26 11:43+0100\n"
 "PO-Revision-Date: 2010-03-25 03:18+0000\n"
 "Last-Translator: ironfisher <dgvalde@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -204,8 +204,7 @@ msgstr "Control de CPU : ¡Incapaz de conectar al servicio de sesión!"
 
 #: samsung-tools.py:329
 msgid "Webcam control: unable to connect to session service!"
-msgstr ""
-"Control de la cámara web: ¡Incapaz de conectar al servicio de sesión!"
+msgstr "Control de la cámara web: ¡Incapaz de conectar al servicio de sesión!"
 
 #: samsung-tools.py:408
 msgid "Wireless control: unable to connect to session service!"
@@ -217,7 +216,7 @@ msgstr ""
 msgid "Samsung Tools - Command Line Utility"
 msgstr "Herramientas Samsung - Utilidad por línea de comandos"
 
-#: samsung-tools.py:475 samsung-tools.py:523
+#: samsung-tools.py:475 samsung-tools.py:524
 #, python-format
 msgid "Usage: %s <interface> <option> ..."
 msgstr "Uso: %s <interfaz> <opción>"
@@ -257,72 +256,76 @@ msgid "Other options:"
 msgstr "Otras opciones:"
 
 #: samsung-tools.py:494
+msgid "Show status for all devices."
+msgstr ""
+
+#: samsung-tools.py:495
 msgid "Show graphical notifications."
 msgstr "Muestra notificaciones gráficas."
 
-#: samsung-tools.py:495
+#: samsung-tools.py:496
 msgid "Do not print messages on standard output."
 msgstr "No mostrar mensajes  por la salida estándar."
 
-#: samsung-tools.py:496
+#: samsung-tools.py:497
 msgid "Stop the session service."
 msgstr "Detener el servicio de sesión."
 
-#: samsung-tools.py:497
+#: samsung-tools.py:498
 msgid "Stop the system service."
 msgstr "Detener el servicio del sistema."
 
-#: samsung-tools.py:499
+#: samsung-tools.py:500
 msgid "Examples of use:"
 msgstr "Ejemplos de uso:"
 
-#: samsung-tools.py:500
+#: samsung-tools.py:501
 msgid " - Toggle backlight:"
 msgstr " - Conmuta la luz de fondo:"
 
-#: samsung-tools.py:503
+#: samsung-tools.py:504
 msgid " - Toggle wireless and set CPU fan mode to 'silent':"
 msgstr ""
 " - Conmuta las redes inalámbricas y activa el modo 'silencioso' para la CPU "
 "y el ventilador:"
 
-#: samsung-tools.py:506
+#: samsung-tools.py:507
 msgid " - Disable bluetooth, webcam and wireless:"
 msgstr " - Deshabilita bluetooth, la cámara web y las redes inalámbricas:"
 
-#: samsung-tools.py:509
+#: samsung-tools.py:510
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Para mas información visita el foro \"Linux On My Samsung\":"
 
-#: samsung-tools.py:514 samsung-tools-preferences.py:669
+#: samsung-tools.py:515 samsung-tools-preferences.py:670
 msgid "Released under GPLv3 license"
 msgstr "Liberado bajo licencia GPLv3"
 
-#: samsung-tools.py:519
+#: samsung-tools.py:520
 msgid "No action(s) specified."
 msgstr "Ninguna acción escificada."
 
-#: samsung-tools.py:520 samsung-tools.py:572
+#: samsung-tools.py:521 samsung-tools.py:585
 msgid "Use --help for instructions."
 msgstr "Use --help para instrucciones."
 
-#: samsung-tools.py:571
+#: samsung-tools.py:584
 msgid "Wrong argument(s)."
 msgstr "Argumento u argumentos inválidos"
 
-#: samsung-tools.py:588
+#: samsung-tools.py:601
 msgid "Session service stopped"
 msgstr "Servicio de sesión detenido"
 
-#: samsung-tools.py:591
+#: samsung-tools.py:604
 msgid "Cannot stop session service"
 msgstr "No se puede detener el servicio de sesión"
 
-#: samsung-tools.py:601
+#: samsung-tools.py:614
 msgid "System service stopped"
 msgstr "Servicio de sistema detenido"
 
-#: samsung-tools.py:604
+#: samsung-tools.py:617
 msgid "Cannot stop system service"
 msgstr "No se puede detener el servicio de sistema"
 

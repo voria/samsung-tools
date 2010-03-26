@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-20 14:03+0100\n"
+"POT-Creation-Date: 2010-03-26 11:43+0100\n"
 "PO-Revision-Date: 2010-03-15 17:36+0000\n"
 "Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -214,7 +214,7 @@ msgstr "WLAN-Karten-Steuerung: Kann nicht mit Sitzungsdienst verbinden"
 msgid "Samsung Tools - Command Line Utility"
 msgstr "Samsung Tools - Befehlszeilenwerkzeug"
 
-#: samsung-tools.py:475 samsung-tools.py:523
+#: samsung-tools.py:475 samsung-tools.py:524
 #, python-format
 msgid "Usage: %s <interface> <option> ..."
 msgstr "Verwendung: %s <Schnittstelle> <Option>"
@@ -254,73 +254,77 @@ msgid "Other options:"
 msgstr "Weitere Einstellungen:"
 
 #: samsung-tools.py:494
+msgid "Show status for all devices."
+msgstr ""
+
+#: samsung-tools.py:495
 msgid "Show graphical notifications."
 msgstr "Zeige graphische Benachrichtigungen."
 
-#: samsung-tools.py:495
+#: samsung-tools.py:496
 msgid "Do not print messages on standard output."
 msgstr "Nachrichten nicht auf der Standardausgabe ausgeben."
 
-#: samsung-tools.py:496
+#: samsung-tools.py:497
 msgid "Stop the session service."
 msgstr "Sitzungsdienst beenden."
 
-#: samsung-tools.py:497
+#: samsung-tools.py:498
 msgid "Stop the system service."
 msgstr "Systemdient beenden."
 
-#: samsung-tools.py:499
+#: samsung-tools.py:500
 msgid "Examples of use:"
 msgstr "Beispiele:"
 
-#: samsung-tools.py:500
+#: samsung-tools.py:501
 msgid " - Toggle backlight:"
 msgstr " - Hintergrundbeleuchtung ein-/ausschalten"
 
-#: samsung-tools.py:503
+#: samsung-tools.py:504
 msgid " - Toggle wireless and set CPU fan mode to 'silent':"
 msgstr ""
 " - WLAN-Karte ein-/ausschalten und CPU-Lüfter in den Modus \"leise\"  "
 "versetzen:"
 
-#: samsung-tools.py:506
+#: samsung-tools.py:507
 msgid " - Disable bluetooth, webcam and wireless:"
 msgstr " - Bluetooth, Webcam und WLAN-Karte ausschalten"
 
-#: samsung-tools.py:509
+#: samsung-tools.py:510
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr ""
 "Für weitere Informationen, besuche das Internetforum \"Linux On My Samsung\":"
 
-#: samsung-tools.py:514 samsung-tools-preferences.py:669
+#: samsung-tools.py:515 samsung-tools-preferences.py:670
 msgid "Released under GPLv3 license"
 msgstr "Veröffentlicht unter der GPLv3-Lizenz"
 
-#: samsung-tools.py:519
+#: samsung-tools.py:520
 msgid "No action(s) specified."
 msgstr "Keine Aktion angegeben"
 
-#: samsung-tools.py:520 samsung-tools.py:572
+#: samsung-tools.py:521 samsung-tools.py:585
 msgid "Use --help for instructions."
 msgstr "Verwende --help um Hilfe zu erhalten."
 
-#: samsung-tools.py:571
+#: samsung-tools.py:584
 msgid "Wrong argument(s)."
 msgstr "Falsche(r) Parameter."
 
-#: samsung-tools.py:588
+#: samsung-tools.py:601
 msgid "Session service stopped"
 msgstr "Sitzungsdienst beendet"
 
-#: samsung-tools.py:591
+#: samsung-tools.py:604
 msgid "Cannot stop session service"
 msgstr "Kann Sitzungsdienst nicht beenden"
 
-#: samsung-tools.py:601
+#: samsung-tools.py:614
 msgid "System service stopped"
 msgstr "Systemdienst beendet"
 
-#: samsung-tools.py:604
+#: samsung-tools.py:617
 msgid "Cannot stop system service"
 msgstr "Kann Systemdienst nicht beenden"
 

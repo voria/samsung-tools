@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-20 14:03+0100\n"
+"POT-Creation-Date: 2010-03-26 11:43+0100\n"
 "PO-Revision-Date: 2010-03-15 17:36+0000\n"
 "Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -219,7 +219,7 @@ msgstr ""
 msgid "Samsung Tools - Command Line Utility"
 msgstr "\"Samsung Tools\" - Utilitaire de ligne de commande"
 
-#: samsung-tools.py:475 samsung-tools.py:523
+#: samsung-tools.py:475 samsung-tools.py:524
 #, python-format
 msgid "Usage: %s <interface> <option> ..."
 msgstr "Emploi: %s<interface> <option> ..."
@@ -259,72 +259,76 @@ msgid "Other options:"
 msgstr "Autres options :"
 
 #: samsung-tools.py:494
+msgid "Show status for all devices."
+msgstr ""
+
+#: samsung-tools.py:495
 msgid "Show graphical notifications."
 msgstr "Afficher les notifications graphiques."
 
-#: samsung-tools.py:495
+#: samsung-tools.py:496
 msgid "Do not print messages on standard output."
 msgstr "Ne pas afficher les messages sur la sortie standard"
 
-#: samsung-tools.py:496
+#: samsung-tools.py:497
 msgid "Stop the session service."
 msgstr "Arrêter le service de session."
 
-#: samsung-tools.py:497
+#: samsung-tools.py:498
 msgid "Stop the system service."
 msgstr "Arrêter le service système."
 
-#: samsung-tools.py:499
+#: samsung-tools.py:500
 msgid "Examples of use:"
 msgstr "Exemples d'emploi:"
 
-#: samsung-tools.py:500
+#: samsung-tools.py:501
 msgid " - Toggle backlight:"
 msgstr " - Changer l'état du rétroéclairage:"
 
-#: samsung-tools.py:503
+#: samsung-tools.py:504
 msgid " - Toggle wireless and set CPU fan mode to 'silent':"
 msgstr ""
 " - Changer l'état du réseau sans fil et mettre le ventilateur en mode "
 "\"silencieux\""
 
-#: samsung-tools.py:506
+#: samsung-tools.py:507
 msgid " - Disable bluetooth, webcam and wireless:"
 msgstr " - Désactiver le Bluetooth, la webcam et le réseau sans fil:"
 
-#: samsung-tools.py:509
+#: samsung-tools.py:510
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Pour plus d'informations, visitez le forum \"Linux On My Samsung\":"
 
-#: samsung-tools.py:514 samsung-tools-preferences.py:669
+#: samsung-tools.py:515 samsung-tools-preferences.py:670
 msgid "Released under GPLv3 license"
 msgstr "Publié sous licence GPLv3"
 
-#: samsung-tools.py:519
+#: samsung-tools.py:520
 msgid "No action(s) specified."
 msgstr "Pas d'action(s) spécifiée(s)"
 
-#: samsung-tools.py:520 samsung-tools.py:572
+#: samsung-tools.py:521 samsung-tools.py:585
 msgid "Use --help for instructions."
 msgstr "Utiliser --help pour obtenir de l'aide"
 
-#: samsung-tools.py:571
+#: samsung-tools.py:584
 msgid "Wrong argument(s)."
 msgstr "Mauvais argument(s)"
 
-#: samsung-tools.py:588
+#: samsung-tools.py:601
 msgid "Session service stopped"
 msgstr "Service de session arrêté"
 
-#: samsung-tools.py:591
+#: samsung-tools.py:604
 msgid "Cannot stop session service"
 msgstr "Impossible d'arrêter le service de session"
 
-#: samsung-tools.py:601
+#: samsung-tools.py:614
 msgid "System service stopped"
 msgstr "Service système arrêté"
 
-#: samsung-tools.py:604
+#: samsung-tools.py:617
 msgid "Cannot stop system service"
 msgstr "Impossible d'arrêter le service système"
 
@@ -467,8 +471,8 @@ msgid ""
 msgstr ""
 "Module du noyau à gérer.\n"
 "\n"
-"Note: cette option est utilisée seulement quand 'Méthode de changement "
-"d'état\" est réglée sur 'module'."
+"Note: cette option est utilisée seulement quand 'Méthode de changement d'état"
+"\" est réglée sur 'module'."
 
 #: po/samsung-tools-preferences.glade.h:37
 msgid ""
@@ -514,5 +518,5 @@ msgstr "Lancer le service de session"
 #~ "If enabled, the status of all devices will be restored after a suspend, "
 #~ "hibernate, reboot cycle"
 #~ msgstr ""
-#~ "Si activé, l'état de tous les périphériques sera restauré après une mise en "
-#~ "veille, une hibernation ou un redémarrage"
+#~ "Si activé, l'état de tous les périphériques sera restauré après une mise "
+#~ "en veille, une hibernation ou un redémarrage"
