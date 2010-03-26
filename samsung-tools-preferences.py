@@ -659,7 +659,8 @@ class Main():
 					"Jonathan Cragg",
 					"nanker",
 					"mysza-j",
-					"papukaija"
+					"papukaija",
+					"ironfisher"
 					]
 		
 		dialog = gtk.AboutDialog()
