@@ -71,6 +71,9 @@ class General(dbus.service.Object):
 	def RestoreDevicesLastStatus(self, sender = None, conn = None):
 		""" Restore last status for webcam, bluetooth, wireless. """
 		""" Return nothing. """
+		# sleep for a while
+		from time import sleep
+		sleep(5)
 		self.__restore_webcam_status()
 		self.__restore_wireless_status()
 		self.__restore_bluetooth_status()
