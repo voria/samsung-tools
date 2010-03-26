@@ -491,6 +491,7 @@ def usage(option = None, opt = None, value = None, parser = None):
 	print "\t" + unicode(_("Options"), "utf-8") + ":\ton | off | toggle | status"
 	print
 	print unicode(_("Other options:"), "utf-8")
+	print " -a | --status\t\t" + unicode(_("Show status for all devices."), "utf-8")
 	print " -n | --show-notify\t" + unicode(_("Show graphical notifications."), "utf-8")
 	print " -q | --quiet\t\t" + unicode(_("Do not print messages on standard output."), "utf-8")
 	print " -s | --stop-session\t" + unicode(_("Stop the session service."), "utf-8")
@@ -561,11 +562,23 @@ def main():
 					action = "store_true",
 					dest = "stopsystem",
 					default = False)
-	
+	parser.add_option('-a', '--status',
+					action = "store_true",
+					dest = "status",
+					default = False)
+		
 	(options, args) = parser.parse_args()
 	
 	global quiet
 	quiet = options.quiet
+	
+	if options.status == True:
+		options.backlight = "status"
+		options.bluetooth = "status"
+		options.cpu = "status"
+		options.webcam = "status"
+		options.wireless = "status"
+		quiet = False
 		
 	if len(args) != 0:
 		print unicode(_("Wrong argument(s)."), "utf-8")
