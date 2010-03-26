@@ -1,3 +1,12 @@
+samsung-tools (0.1~ppa4~loms~lucid) lucid; urgency=low
+
+  * debian/control:
+    remove 'samsung-scripts' as conflict package, as it does not exist in lucid.
+  * Sleep some time when restoring last status for devices on resume/thaw.
+  * Update translations to latest versions from Launchpad's Rosetta.
+
+ -- Fortunato Ventre (voRia) <vorione@gmail.com>  Fri, 26 Mar 2010 10:10:52 +0100
+
 samsung-tools (0.1~ppa3~loms~lucid) lucid; urgency=low
 
   * Initial release.
