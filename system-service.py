@@ -38,6 +38,7 @@ from backends.system.wireless import Wireless
 mainloop = None
 
 bluetooth = None
+fan = None
 webcam = None
 wireless = None
 
@@ -48,66 +49,45 @@ class General(dbus.service.Object):
 		if not os.path.exists(LAST_DEVICES_STATUS_DIRECTORY):
 			os.mkdir(LAST_DEVICES_STATUS_DIRECTORY)	
 	
-	def __restore_bluetooth_status(self):
-		status = bluetooth.LastStatus()
-		bluetooth.Enable()
-		if status == False:
-			bluetooth.Disable()
-	
-	def __restore_webcam_status(self):
-		status = webcam.LastStatus()
-		webcam.Enable()
-		if status == False:
-			webcam.Disable()
-	
-	def __restore_wireless_status(self):
-		status = wireless.LastStatus()
-		wireless.Enable()
-		if status == False:
-			wireless.Disable()
-	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = None,
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def RestoreDevicesLastStatus(self, sender = None, conn = None):
 		""" Restore last status for webcam, bluetooth, wireless. """
 		""" Return nothing. """
-		# sleep for a while
-		from time import sleep
-		sleep(5)
-		self.__restore_webcam_status()
-		self.__restore_wireless_status()
-		self.__restore_bluetooth_status()
+		bluetooth.RestoreLastStatus()
+		webcam.RestoreLastStatus()
+		wireless.RestoreLastStatus()
 		
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = None,
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def SetInitialDevicesStatus(self, sender = None, conn = None):
 		""" Set initial status for webcam, bluetooth, wireless. """
 		""" Return nothing. """
-		# sleep for a while
-		from time import sleep
-		sleep(5)
-		status = systemconfig.getWebcamInitialStatus()
-		if status == "on":	
-			webcam.Enable()
-		elif status == "off":
-			webcam.Disable()
-		else: # status == "last"
-			self.__restore_webcam_status()
-		status = systemconfig.getWirelessInitialStatus()
-		if status == "on":
-			wireless.Enable()
-		elif status == "off":
-			wireless.Disable()
-		else: # status == "last"
-			self.__restore_wireless_status()
+		# Bluetooth
 		status = systemconfig.getBluetoothInitialStatus()
 		if status == "on":
 			bluetooth.Enable()
 		elif status == "off":
 			bluetooth.Disable()
 		else: # status == "last":
-			self.__restore_bluetooth_status()
-			
+			bluetooth.RestoreLastStatus()
+		# Webcam
+		status = systemconfig.getWebcamInitialStatus()
+		if status == "on":	
+			webcam.Enable()
+		elif status == "off":
+			webcam.Disable()
+		else: # status == "last"
+			webcam.RestoreLastStatus()
+		# Wireless
+		status = systemconfig.getWirelessInitialStatus()
+		if status == "on":
+			wireless.Enable()
+		elif status == "off":
+			wireless.Disable()
+		else: # status == "last"
+			wireless.RestoreLastStatus()
+
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = None,
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Exit(self, sender = None, conn = None):
@@ -123,9 +103,9 @@ if __name__ == '__main__':
 	Options(bus, SYSTEM_OBJECT_PATH_OPTIONS)
 	Backlight(bus, SYSTEM_OBJECT_PATH_BACKLIGHT)
 	Cpu(bus, SYSTEM_OBJECT_PATH_CPU)
-	Fan(bus, SYSTEM_OBJECT_PATH_FAN)
 	# We need these objects for restoring last statuses
 	bluetooth = Bluetooth(bus, SYSTEM_OBJECT_PATH_BLUETOOTH)
+	fan = Fan(bus, SYSTEM_OBJECT_PATH_FAN)
 	webcam = Webcam(bus, SYSTEM_OBJECT_PATH_WEBCAM)
 	wireless = Wireless(bus, SYSTEM_OBJECT_PATH_WIRELESS)
 	

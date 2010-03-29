@@ -90,6 +90,15 @@ class Bluetooth(dbus.service.Object):
 			return False
 		return True
 	
+	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = None,
+						sender_keyword = 'sender', connection_keyword = 'conn')
+	def RestoreLastStatus(self, sender = None, conn = None):
+		""" Restore last status for Bluetooth """
+		if self.LastStatus() == True:
+			self.Enable()
+		else:
+			self.Disable()
+	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')	
 	def IsAvailable(self, sender = None, conn = None):

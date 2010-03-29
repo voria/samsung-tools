@@ -19,7 +19,7 @@
 # See the GNU General Public License for more details.
 # <http://www.gnu.org/licenses/gpl.txt>
 
-# TODO: KDE notifications support
+# FIXME: Proper KDE notifications when pynotify is also available
 
 from backends.globals import *
 

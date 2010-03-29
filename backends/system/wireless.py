@@ -91,6 +91,15 @@ class Wireless(dbus.service.Object):
 		else:
 			return False
 	
+	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = None,
+						sender_keyword = 'sender', connection_keyword = 'conn')
+	def RestoreLastStatus(self, sender = None, conn = None):
+		""" Restore last status for wireless """
+		if self.LastStatus() == True:
+			self.Enable()
+		else:
+			self.Disable()
+	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def IsAvailable(self, sender = None, conn = None):
