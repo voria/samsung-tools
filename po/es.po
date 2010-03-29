@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-26 11:43+0100\n"
-"PO-Revision-Date: 2010-03-25 03:18+0000\n"
-"Last-Translator: ironfisher <dgvalde@gmail.com>\n"
+"POT-Creation-Date: 2010-03-29 17:44+0200\n"
+"PO-Revision-Date: 2010-03-28 21:41+0000\n"
+"Last-Translator: Jonay <jonay.santana@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-03-26 08:52+0000\n"
+"X-Launchpad-Export-Date: 2010-03-29 15:40+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: backends/session/util/locales.py:25 samsung-tools-preferences.py:171
@@ -257,7 +257,7 @@ msgstr "Otras opciones:"
 
 #: samsung-tools.py:494
 msgid "Show status for all devices."
-msgstr ""
+msgstr "Mostrar el stado de todos los dispositivos."
 
 #: samsung-tools.py:495
 msgid "Show graphical notifications."
@@ -297,7 +297,7 @@ msgstr " - Deshabilita bluetooth, la cámara web y las redes inalámbricas:"
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Para mas información visita el foro \"Linux On My Samsung\":"
 
-#: samsung-tools.py:515 samsung-tools-preferences.py:670
+#: samsung-tools.py:515 samsung-tools-preferences.py:676
 msgid "Released under GPLv3 license"
 msgstr "Liberado bajo licencia GPLv3"
 

@@ -660,8 +660,14 @@ class Main():
 					"nanker",
 					"mysza-j",
 					"papukaija",
-					"ironfisher"
+					"ironfisher",
+					"joel morren",
+					"subiraj",
+					"Jonay",
+					"zeugma"
 					]
+		
+		translators.sort(cmp = lambda x, y: cmp(x.lower(), y.lower()))
 		
 		dialog = gtk.AboutDialog()
 		dialog.set_icon_from_file(SAMSUNG_TOOLS_ICON)
