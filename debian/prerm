@@ -1,0 +1,11 @@
+#!/bin/sh
+
+case "$1" in
+	remove|purge)
+		# Remove all .pyc files from installation directories
+		DIR="/usr/lib/samsung-tools/"
+		rm -f `find "$DIR" -name *.pyc`
+		# Remove devices-status directory
+		rm -rf "$DIR/devices-status"
+		;;
+esac
