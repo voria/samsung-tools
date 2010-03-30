@@ -1,3 +1,9 @@
+samsung-tools (0.1~ppa7~loms~lucid) lucid; urgency=low
+
+  * Use 'esdm' as default wireless toggle method in 'samsung-tools-preferences'.  * Correctly use KDE notifications when pynotify is also available. 
+
+ -- Fortunato Ventre (voRia) <vorione@gmail.com>  Wed, 31 Mar 2010 00:48:32 +0200
+
 samsung-tools (0.1~ppa6~loms~lucid) lucid; urgency=low
 
   * For bluetooth control, only enable/disable bluetooth service.
