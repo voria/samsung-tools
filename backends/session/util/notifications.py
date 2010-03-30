@@ -19,24 +19,29 @@
 # See the GNU General Public License for more details.
 # <http://www.gnu.org/licenses/gpl.txt>
 
-# FIXME: Proper KDE notifications when pynotify is also available
-
+import subprocess
 from backends.globals import *
 
 # Try to use these notification methods, in order:
 # "pynotify" - Use pynotify module (ubuntu - notify-osd)
 # "dbus" - Use "org.freedesktop.Notifications" interface through dbus (kubuntu)
 # None - Do not use notification system
-method = "pynotify"
-
-import dbus
-DBUS_METHOD_INTERFACE = "org.freedesktop.Notifications"
-DBUS_METHOD_OBJECT = "/org/freedesktop/Notifications"
 
 try:
-	import pynotify
+	method = None
+	command = "ps x"
+	process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+	output = process.communicate()[0]
+	if output.find("gnome-session") != -1:
+		method = "pynotify"
+		import pynotify
+	if method == None:
+		raise
 except:
 	method = "dbus"
+	import dbus
+	DBUS_METHOD_INTERFACE = "org.freedesktop.Notifications"
+	DBUS_METHOD_OBJECT = "/org/freedesktop/Notifications"
 
 class Notification():
 	""" Show user's notifications. """
