@@ -1,3 +1,16 @@
+samsung-tools (0.1~ppa6~loms~lucid) lucid; urgency=low
+
+  * For bluetooth control, only enable/disable bluetooth service.
+  * Move 'restore last status' routines in devices classes.
+  * Use 'esdm' as default method for wireless toggling.
+  * Fix restore last status for wireless.
+  * Update to latest translations from Launchpad.
+  * Add a 'prerm' script to 'debian/' drectory, in order to remove
+    all files created at runtime when package is uninstalled.
+  * debian/rules: remove all .pyc files when cleaning sources.   
+
+ -- Fortunato Ventre (voRia) <vorione@gmail.com>  Tue, 30 Mar 2010 13:37:11 +0200
+
 samsung-tools (0.1~ppa5~loms~lucid) lucid; urgency=low
 
   * Add ironfisher to the translators credits list.
