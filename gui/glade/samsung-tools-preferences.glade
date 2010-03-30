@@ -698,13 +698,13 @@ Note: this option is only used when 'Toggle method' is set to 'module'.</propert
     </columns>
     <data>
       <row>
+        <col id="0">esdm</col>
+      </row>
+      <row>
         <col id="0">iwconfig</col>
       </row>
       <row>
         <col id="0">module</col>
-      </row>
-      <row>
-        <col id="0">esdm</col>
       </row>
     </data>
   </object>

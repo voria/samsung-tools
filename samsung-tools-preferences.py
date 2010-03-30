@@ -310,11 +310,11 @@ class Main():
 		self.wirelessToggleMethodCombobox.pack_start(self.wirelessToggleMethodComboboxCR)
 		self.wirelessToggleMethodCombobox.add_attribute(self.wirelessToggleMethodComboboxCR, 'text', 0)
 		wirelesstogglemethod = system.GetWirelessToggleMethod()
-		if wirelesstogglemethod == "iwconfig":
+		if wirelesstogglemethod == "esdm":
 			self.wirelessToggleMethodCombobox.set_active(0)
-		elif wirelesstogglemethod == "module":
+		elif wirelesstogglemethod == "iwconfig":
 			self.wirelessToggleMethodCombobox.set_active(1)
-		else: # wirelesstogglemethod == "esdm"
+		else: # wirelesstogglemethod == "module"
 			self.wirelessToggleMethodCombobox.set_active(2)
 		self.wirelessToggleMethodCombobox.connect("changed", self.on_wirelessToggleMethodCombobox_changed)
 		# Wireless device
@@ -349,26 +349,26 @@ class Main():
 		self.wirelessModuleLabel = self.builder.get_object("wirelessModuleLabel")
 		active_method = self.wirelessToggleMethodCombobox.get_active()
 		if active_method == 0:
+			self.wirelessDeviceLabel.set_sensitive(False)
+			self.wirelessDeviceEntry.set_sensitive(False)
+			self.wirelessDeviceCleanButton.set_sensitive(False)
+			self.wirelessModuleLabel.set_sensitive(False)
+			self.wirelessModuleEntry.set_sensitive(False)
+			self.wirelessModuleCleanButton.set_sensitive(False)
+		elif active_method == 1:
 			self.wirelessDeviceLabel.set_sensitive(True)
 			self.wirelessDeviceEntry.set_sensitive(True)
 			self.wirelessDeviceCleanButton.set_sensitive(True)
 			self.wirelessModuleLabel.set_sensitive(False)
 			self.wirelessModuleEntry.set_sensitive(False)
 			self.wirelessModuleCleanButton.set_sensitive(False)
-		elif active_method == 1:
+		else:
 			self.wirelessDeviceLabel.set_sensitive(False)
 			self.wirelessDeviceEntry.set_sensitive(False)
 			self.wirelessDeviceCleanButton.set_sensitive(False)
 			self.wirelessModuleLabel.set_sensitive(True)
 			self.wirelessModuleEntry.set_sensitive(True)
 			self.wirelessModuleCleanButton.set_sensitive(True)
-		else:
-			self.wirelessDeviceLabel.set_sensitive(False)
-			self.wirelessDeviceEntry.set_sensitive(False)
-			self.wirelessDeviceCleanButton.set_sensitive(False)
-			self.wirelessModuleLabel.set_sensitive(False)
-			self.wirelessModuleEntry.set_sensitive(False)
-			self.wirelessModuleCleanButton.set_sensitive(False)
 		
 		# All ready
 		self.mainWindow.show()
@@ -578,22 +578,6 @@ class Main():
 		system = self.__connect_system()
 		active = combobox.get_active()
 		if active == 0:
-			system.SetWirelessToggleMethod("iwconfig")
-			self.wirelessDeviceLabel.set_sensitive(True)
-			self.wirelessDeviceEntry.set_sensitive(True)
-			self.wirelessDeviceCleanButton.set_sensitive(True)
-			self.wirelessModuleLabel.set_sensitive(False)
-			self.wirelessModuleEntry.set_sensitive(False)
-			self.wirelessModuleCleanButton.set_sensitive(False)
-		elif active == 1:
-			system.SetWirelessToggleMethod("module")
-			self.wirelessDeviceLabel.set_sensitive(False)
-			self.wirelessDeviceEntry.set_sensitive(False)
-			self.wirelessDeviceCleanButton.set_sensitive(False)
-			self.wirelessModuleLabel.set_sensitive(True)
-			self.wirelessModuleEntry.set_sensitive(True)
-			self.wirelessModuleCleanButton.set_sensitive(True)
-		else:
 			system.SetWirelessToggleMethod("esdm")
 			self.wirelessDeviceLabel.set_sensitive(False)
 			self.wirelessDeviceEntry.set_sensitive(False)
@@ -601,6 +585,22 @@ class Main():
 			self.wirelessModuleLabel.set_sensitive(False)
 			self.wirelessModuleEntry.set_sensitive(False)
 			self.wirelessModuleCleanButton.set_sensitive(False)
+		elif active == 1:
+			system.SetWirelessToggleMethod("iwconfig")
+			self.wirelessDeviceLabel.set_sensitive(True)
+			self.wirelessDeviceEntry.set_sensitive(True)
+			self.wirelessDeviceCleanButton.set_sensitive(True)
+			self.wirelessModuleLabel.set_sensitive(False)
+			self.wirelessModuleEntry.set_sensitive(False)
+			self.wirelessModuleCleanButton.set_sensitive(False)
+		else:
+			system.SetWirelessToggleMethod("module")
+			self.wirelessDeviceLabel.set_sensitive(False)
+			self.wirelessDeviceEntry.set_sensitive(False)
+			self.wirelessDeviceCleanButton.set_sensitive(False)
+			self.wirelessModuleLabel.set_sensitive(True)
+			self.wirelessModuleEntry.set_sensitive(True)
+			self.wirelessModuleCleanButton.set_sensitive(True)
 		
 	def on_wirelessDeviceEntry_focus_out_event(self, widget = None, event = None):
 		new = widget.get_text()
