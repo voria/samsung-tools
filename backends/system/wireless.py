@@ -98,6 +98,12 @@ class Wireless(dbus.service.Object):
 		if self.LastStatus() == True:
 			self.Enable()
 		else:
+			method = systemconfig.getWirelessToggleMethod()
+			if method == "iwconfig" or method == "module":
+				from time import sleep
+				self.Enable()
+				# sleep some seconds to let things set up
+				sleep(3)
 			self.Disable()
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
