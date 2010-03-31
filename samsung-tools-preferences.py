@@ -127,7 +127,7 @@ class KeyGrabber(gtk.Button):
 				label = "Fn-F2"
 			if label == "<Alt>KP_Insert":
 				label = "Fn-F3"
-			if label == "XF86Launch4":
+			if label == "XF86Launch4" or label == "XF86Display":
 				label = "Fn-F4"
 			if label == "XF86Launch1":
 				label = "Fn-F5"
