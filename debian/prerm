@@ -2,6 +2,8 @@
 
 case "$1" in
 	remove|purge)
+		# Kill running 'samsung-tools' services
+		kill -9 `ps aux | grep samsung-tools | grep -v grep | awk '{print $2}'`
 		# Remove all .pyc files from installation directories
 		DIR="/usr/lib/samsung-tools/"
 		rm -f `find "$DIR" -name *.pyc`
