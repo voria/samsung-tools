@@ -57,6 +57,7 @@ class General(dbus.service.Object):
 		bluetooth.RestoreLastStatus()
 		webcam.RestoreLastStatus()
 		wireless.RestoreLastStatus()
+		fan.RestoreLastStatus()
 		
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = None,
 						sender_keyword = 'sender', connection_keyword = 'conn')
@@ -87,6 +88,16 @@ class General(dbus.service.Object):
 			wireless.Disable()
 		else: # status == "last"
 			wireless.RestoreLastStatus()
+		# CPU fan
+		status = systemconfig.getCpufanInitialStatus()
+		if status == "normal":
+			fan.SetNormal()
+		elif status == "silent":
+			fan.SetSilent()
+		elif status == "speed":
+			fan.SetSpeed()
+		else: # status == "last"
+			fan.RestoreLastStatus()
 
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = None,
 						sender_keyword = 'sender', connection_keyword = 'conn')

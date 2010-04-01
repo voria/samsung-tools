@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-29 17:44+0200\n"
+"POT-Creation-Date: 2010-04-01 11:15+0200\n"
 "PO-Revision-Date: 2010-03-28 15:41+0000\n"
 "Last-Translator: joel morren <Unknown>\n"
 "Language-Team: Dutch <nl@li.org>\n"
@@ -236,15 +236,15 @@ msgstr ""
 msgid "Bluetooth:"
 msgstr ""
 
-#: samsung-tools.py:483 po/samsung-tools-preferences.glade.h:7
+#: samsung-tools.py:483 po/samsung-tools-preferences.glade.h:8
 msgid "CPU/Fan:"
 msgstr ""
 
-#: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:42
+#: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:47
 msgid "Webcam:"
 msgstr ""
 
-#: samsung-tools.py:489 po/samsung-tools-preferences.glade.h:44
+#: samsung-tools.py:489 po/samsung-tools-preferences.glade.h:49
 msgid "Wireless:"
 msgstr ""
 
@@ -292,7 +292,7 @@ msgstr ""
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr ""
 
-#: samsung-tools.py:515 samsung-tools-preferences.py:676
+#: samsung-tools.py:515 samsung-tools-preferences.py:711
 msgid "Released under GPLv3 license"
 msgstr ""
 
@@ -332,11 +332,11 @@ msgstr ""
 msgid "None"
 msgstr ""
 
-#: samsung-tools-preferences.py:385
+#: samsung-tools-preferences.py:404
 msgid "Unable to connect to session service!"
 msgstr ""
 
-#: samsung-tools-preferences.py:397
+#: samsung-tools-preferences.py:416
 msgid "Unable to connect to system service!"
 msgstr ""
 
@@ -356,59 +356,63 @@ msgstr ""
 msgid "Bluetooth initial status:"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:8
-msgid "Click here to disable the hotkey"
+#: po/samsung-tools-preferences.glade.h:7
+msgid "CPU fan initial status:"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:9
-msgid "Click here to set the default hotkey"
+msgid "Click here to disable the hotkey"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:10
-msgid "Click here to set the default value"
+msgid "Click here to set the default hotkey"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:11
-msgid "Device:"
+msgid "Click here to set the default value"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:12
-msgid "Disabled"
+msgid "Device:"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:13
-msgid "Enable hotkeys"
+msgid "Disabled"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:14
-msgid "Enable this option to use hotkeys"
+msgid "Enable hotkeys"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:15
-msgid "Enabled"
+msgid "Enable this option to use hotkeys"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:16
-msgid "Hotkey used for CPU and Fan control"
+msgid "Enabled"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:17
-msgid "Hotkey used for backlight control"
+msgid "Hotkey used for CPU and Fan control"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:18
-msgid "Hotkey used for bluetooth control"
+msgid "Hotkey used for backlight control"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:19
-msgid "Hotkey used for webcam control"
+msgid "Hotkey used for bluetooth control"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:20
-msgid "Hotkey used for wireless control"
+msgid "Hotkey used for webcam control"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:21
+msgid "Hotkey used for wireless control"
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:22
 msgid ""
 "How the wireless is toggled.\n"
 "\n"
@@ -417,62 +421,78 @@ msgid ""
 "'esdm' - Use the 'easy slow down manager' interface."
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:26
+#: po/samsung-tools-preferences.glade.h:27
 msgid "Kernel module:"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:27
+#: po/samsung-tools-preferences.glade.h:28
 msgid "Last status"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:28
+#: po/samsung-tools-preferences.glade.h:29
+msgid "Normal"
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:30
 #: po/samsung-tools-preferences.desktop.in.h:1
 msgid "Samsung Tools Preferences"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:29
+#: po/samsung-tools-preferences.glade.h:31
 msgid "Session service"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:30
-msgid "System service"
-msgstr ""
-
-#: po/samsung-tools-preferences.glade.h:31
-msgid "The initial status at boot for Bluetooth"
-msgstr ""
-
 #: po/samsung-tools-preferences.glade.h:32
-msgid "The initial status at boot for webcam"
+msgid "Silent"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:33
-msgid "The initial status at boot for wireless"
+msgid "Speed"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:34
+msgid "System service"
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:35
+msgid "The initial status at boot for Bluetooth"
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:36
+msgid "The initial status at boot for CPU fan"
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:37
+msgid "The initial status at boot for webcam"
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:38
+msgid "The initial status at boot for wireless"
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:39
 msgid ""
 "The kernel module to be managed.\n"
 "\n"
 "Note: this option is only used when 'Toggle method' is set to 'module'."
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:37
+#: po/samsung-tools-preferences.glade.h:42
 msgid ""
 "The wireless device to use.\n"
 "\n"
 "Note: this option is only used when 'Toggle method' is set to 'iwconfig'."
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:40
+#: po/samsung-tools-preferences.glade.h:45
 msgid "Toggle method:"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:41
+#: po/samsung-tools-preferences.glade.h:46
 msgid "Webcam initial status:"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:43
+#: po/samsung-tools-preferences.glade.h:48
 msgid "Wireless initial status:"
 msgstr ""
 

@@ -52,6 +52,41 @@ class Fan(dbus.service.Object):
 				systemlog.write("ERROR: 'Fan.__is_available()' - COMMAND: '" + command + "' - Exception thrown.")
 				return False
 	
+	def __save_last_status(self, status):
+		""" Save CPU fan last status. """
+		try:
+			if status == "normal":
+				if os.path.exists(LAST_DEVICE_STATUS_CPUFAN):
+					os.remove(LAST_DEVICE_STATUS_CPUFAN)
+			else:
+				file = open(LAST_DEVICE_STATUS_CPUFAN, "w")
+				file.write(status)
+				file.close()
+		except:
+			systemlog.write("WARNING: 'Fan.__save_last_status()' - Cannot save last status.")
+			
+	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
+						sender_keyword = 'sender', connection_keyword = 'conn')		
+	def LastStatus(self, sender = None, conn = None):
+		""" Return last status. """
+		if not os.path.exists(LAST_DEVICE_STATUS_CPUFAN):
+			return "normal"
+		else:
+			with open(LAST_DEVICE_STATUS_CPUFAN, "r") as file:
+				return file.readline()
+	
+	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = None,
+						sender_keyword = 'sender', connection_keyword = 'conn')
+	def RestoreLastStatus(self, sender = None, conn = None):
+		""" Restore last status for CPU fan. """
+		laststatus = self.LastStatus()
+		if laststatus == "normal":
+			self.SetNormal()
+		elif laststatus == "silent":
+			self.SetSilent()
+		else:
+			self.SetSpeed()
+	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def IsAvailable(self, sender = None, conn = None):
@@ -83,6 +118,7 @@ class Fan(dbus.service.Object):
 		try:
 			with open(ESDM_PATH_FAN, 'w') as file:
 				file.write('0')
+			self.__save_last_status("normal")
 			return True
 		except:
 			systemlog.write("ERROR: 'Fan.SetNormal()' - cannot write to '" + ESDM_PATH_FAN + "'.")
@@ -98,6 +134,7 @@ class Fan(dbus.service.Object):
 		try:
 			with open(ESDM_PATH_FAN, 'w') as file:
 				file.write('1')
+			self.__save_last_status("silent")
 			return True
 		except:
 			systemlog.write("ERROR: 'Fan.SetSilent()' - cannot write to '" + ESDM_PATH_FAN + "'.")
@@ -113,6 +150,7 @@ class Fan(dbus.service.Object):
 		try:
 			with open(ESDM_PATH_FAN, 'w') as file:
 				file.write('2')
+			self.__save_last_status("speed")
 			return True
 		except:
 			systemlog.write("ERROR: 'Fan.SetSpeed()' - cannot write to '" + ESDM_PATH_FAN + "'.")

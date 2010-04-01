@@ -310,7 +310,7 @@
               <object class="GtkTable" id="systemTable">
                 <property name="visible">True</property>
                 <property name="border_width">5</property>
-                <property name="n_rows">8</property>
+                <property name="n_rows">9</property>
                 <property name="n_columns">3</property>
                 <property name="column_spacing">5</property>
                 <property name="row_spacing">5</property>
@@ -472,8 +472,8 @@
                   </object>
                   <packing>
                     <property name="right_attach">3</property>
-                    <property name="top_attach">4</property>
-                    <property name="bottom_attach">5</property>
+                    <property name="top_attach">5</property>
+                    <property name="bottom_attach">6</property>
                     <property name="y_options"></property>
                   </packing>
                 </child>
@@ -488,8 +488,8 @@
                     <property name="label" translatable="yes">Toggle method:</property>
                   </object>
                   <packing>
-                    <property name="top_attach">5</property>
-                    <property name="bottom_attach">6</property>
+                    <property name="top_attach">6</property>
+                    <property name="bottom_attach">7</property>
                     <property name="x_options"></property>
                     <property name="y_options"></property>
                   </packing>
@@ -508,8 +508,8 @@
                   <packing>
                     <property name="left_attach">1</property>
                     <property name="right_attach">2</property>
-                    <property name="top_attach">5</property>
-                    <property name="bottom_attach">6</property>
+                    <property name="top_attach">6</property>
+                    <property name="bottom_attach">7</property>
                     <property name="y_options"></property>
                   </packing>
                 </child>
@@ -523,8 +523,8 @@
                   <packing>
                     <property name="left_attach">2</property>
                     <property name="right_attach">3</property>
-                    <property name="top_attach">5</property>
-                    <property name="bottom_attach">6</property>
+                    <property name="top_attach">6</property>
+                    <property name="bottom_attach">7</property>
                     <property name="x_options"></property>
                     <property name="y_options"></property>
                   </packing>
@@ -538,8 +538,8 @@ Note: this option is only used when 'Toggle method' is set to 'iwconfig'.</prope
                     <property name="label" translatable="yes">Device:</property>
                   </object>
                   <packing>
-                    <property name="top_attach">6</property>
-                    <property name="bottom_attach">7</property>
+                    <property name="top_attach">7</property>
+                    <property name="bottom_attach">8</property>
                     <property name="x_options"></property>
                     <property name="y_options"></property>
                   </packing>
@@ -556,8 +556,8 @@ Note: this option is only used when 'Toggle method' is set to 'iwconfig'.</prope
                   <packing>
                     <property name="left_attach">1</property>
                     <property name="right_attach">2</property>
-                    <property name="top_attach">6</property>
-                    <property name="bottom_attach">7</property>
+                    <property name="top_attach">7</property>
+                    <property name="bottom_attach">8</property>
                     <property name="y_options"></property>
                   </packing>
                 </child>
@@ -571,8 +571,8 @@ Note: this option is only used when 'Toggle method' is set to 'iwconfig'.</prope
                   <packing>
                     <property name="left_attach">2</property>
                     <property name="right_attach">3</property>
-                    <property name="top_attach">6</property>
-                    <property name="bottom_attach">7</property>
+                    <property name="top_attach">7</property>
+                    <property name="bottom_attach">8</property>
                     <property name="x_options"></property>
                     <property name="y_options"></property>
                   </packing>
@@ -587,8 +587,8 @@ Note: this option is only used when 'Toggle method' is set to 'iwconfig'.</prope
                   <packing>
                     <property name="left_attach">2</property>
                     <property name="right_attach">3</property>
-                    <property name="top_attach">7</property>
-                    <property name="bottom_attach">8</property>
+                    <property name="top_attach">8</property>
+                    <property name="bottom_attach">9</property>
                     <property name="x_options"></property>
                     <property name="y_options"></property>
                   </packing>
@@ -602,8 +602,8 @@ Note: this option is only used when 'Toggle method' is set to 'module'.</propert
                     <property name="label" translatable="yes">Kernel module:</property>
                   </object>
                   <packing>
-                    <property name="top_attach">7</property>
-                    <property name="bottom_attach">8</property>
+                    <property name="top_attach">8</property>
+                    <property name="bottom_attach">9</property>
                     <property name="x_options"></property>
                     <property name="y_options"></property>
                   </packing>
@@ -620,8 +620,53 @@ Note: this option is only used when 'Toggle method' is set to 'module'.</propert
                   <packing>
                     <property name="left_attach">1</property>
                     <property name="right_attach">2</property>
-                    <property name="top_attach">7</property>
-                    <property name="bottom_attach">8</property>
+                    <property name="top_attach">8</property>
+                    <property name="bottom_attach">9</property>
+                    <property name="y_options"></property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="cpufanInitialStatusLabel">
+                    <property name="visible">True</property>
+                    <property name="tooltip_text" translatable="yes">The initial status at boot for CPU fan</property>
+                    <property name="label" translatable="yes">CPU fan initial status:</property>
+                  </object>
+                  <packing>
+                    <property name="top_attach">4</property>
+                    <property name="bottom_attach">5</property>
+                    <property name="x_options"></property>
+                    <property name="y_options"></property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkComboBox" id="cpufanInitialStatusCombobox">
+                    <property name="visible">True</property>
+                    <property name="tooltip_text" translatable="yes">The initial status at boot for CPU fan</property>
+                    <property name="model">cpufanInitialStatusListstore</property>
+                    <property name="active">0</property>
+                  </object>
+                  <packing>
+                    <property name="left_attach">1</property>
+                    <property name="right_attach">2</property>
+                    <property name="top_attach">4</property>
+                    <property name="bottom_attach">5</property>
+                    <property name="y_options"></property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="cpufanInitialStatusCleanButton">
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Click here to set the default value</property>
+                    <property name="image_position">top</property>
+                  </object>
+                  <packing>
+                    <property name="left_attach">2</property>
+                    <property name="right_attach">3</property>
+                    <property name="top_attach">4</property>
+                    <property name="bottom_attach">5</property>
+                    <property name="x_options"></property>
                     <property name="y_options"></property>
                   </packing>
                 </child>
@@ -722,6 +767,26 @@ Note: this option is only used when 'Toggle method' is set to 'module'.</propert
       </row>
       <row>
         <col id="0" translatable="yes">Disabled</col>
+      </row>
+    </data>
+  </object>
+  <object class="GtkListStore" id="cpufanInitialStatusListstore">
+    <columns>
+      <!-- column-name Status -->
+      <column type="gchararray"/>
+    </columns>
+    <data>
+      <row>
+        <col id="0" translatable="yes">Normal</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Silent</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Speed</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Last status</col>
       </row>
     </data>
   </object>

@@ -303,6 +303,22 @@ class Main():
 		else: # status == "off"
 			self.wirelessInitialStatusCombobox.set_active(2)
 		self.wirelessInitialStatusCombobox.connect("changed", self.on_wirelessInitialStatusCombobox_changed)
+		# CPU fan initial status
+		self.cpufanInitialStatusCombobox = self.builder.get_object("cpufanInitialStatusCombobox")
+		# Set cell renderer for 'cpufan initial status' combobox
+		self.cpufanInitialStatusComboboxCR = gtk.CellRendererText()
+		self.cpufanInitialStatusCombobox.pack_start(self.cpufanInitialStatusComboboxCR)
+		self.cpufanInitialStatusCombobox.add_attribute(self.cpufanInitialStatusComboboxCR, 'text', 0)
+		status = system.GetCpufanInitialStatus()
+		if status == "normal":
+			self.cpufanInitialStatusCombobox.set_active(0)
+		elif status == "silent":
+			self.cpufanInitialStatusCombobox.set_active(1)
+		elif status == "speed":
+			self.cpufanInitialStatusCombobox.set_active(2)
+		else: # status == "last"
+			self.cpufanInitialStatusCombobox.set_active(3)
+		self.cpufanInitialStatusCombobox.connect("changed", self.on_cpufanInitialStatusCombobox_changed)
 		# Wireless toggle method
 		self.wirelessToggleMethodCombobox = self.builder.get_object("wirelessToggleMethodCombobox")
 		# Set cell renderer for 'wireless toggle method' combobox
@@ -335,6 +351,9 @@ class Main():
 		self.wirelessInitialStatusCleanButton = self.builder.get_object("wirelessInitialStatusCleanButton")
 		self.wirelessInitialStatusCleanButton.set_image(gtk.image_new_from_stock(gtk.STOCK_CLEAR, gtk.ICON_SIZE_MENU))
 		self.wirelessInitialStatusCleanButton.connect("clicked", self.on_wirelessInitialStatusCleanButton_clicked)
+		self.cpufanInitialStatusCleanButton = self.builder.get_object("cpufanInitialStatusCleanButton")
+		self.cpufanInitialStatusCleanButton.set_image(gtk.image_new_from_stock(gtk.STOCK_CLEAR, gtk.ICON_SIZE_MENU))
+		self.cpufanInitialStatusCleanButton.connect("clicked", self.on_cpufanInitialStatusCleanButton_clicked)
 		self.wirelessToggleMethodCleanButton = self.builder.get_object("wirelessToggleMethodCleanButton")
 		self.wirelessToggleMethodCleanButton.set_image(gtk.image_new_from_stock(gtk.STOCK_CLEAR, gtk.ICON_SIZE_MENU))
 		self.wirelessToggleMethodCleanButton.connect("clicked", self.on_wirelessToggleMethodCleanButton_clicked)
@@ -573,6 +592,18 @@ class Main():
 			system.SetWirelessInitialStatus("on")
 		else:
 			system.SetWirelessInitialStatus("off")
+			
+	def on_cpufanInitialStatusCombobox_changed(self, combobox = None):
+		system = self.__connect_system()
+		active = combobox.get_active()
+		if active == 0:
+			system.SetCpufanInitialStatus("normal")
+		elif active == 1:
+			system.SetCpufanInitialStatus("silent")
+		elif active == 2:
+			system.SetCpufanInitialStatus("speed")
+		else:
+			system.SetCpufanInitialStatus("last")
 	
 	def on_wirelessToggleMethodCombobox_changed(self, combobox = None):
 		system = self.__connect_system()
@@ -633,6 +664,10 @@ class Main():
 	def on_wirelessInitialStatusCleanButton_clicked(self, button = None):
 		if self.wirelessInitialStatusCombobox.get_active() != 0:
 			self.wirelessInitialStatusCombobox.set_active(0)
+	
+	def on_cpufanInitialStatusCleanButton_clicked(self, button = None):
+		if self.cpufanInitialStatusCombobox.get_active() != 0:
+			self.cpufanInitialStatusCombobox.set_active(0)
 	
 	def on_wirelessToggleMethodCleanButton_clicked(self, button = None):
 		if self.wirelessToggleMethodCombobox.get_active() != 0:
