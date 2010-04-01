@@ -28,13 +28,13 @@ from backends.globals import *
 BLUETOOTH_INITIAL_STATUS_DEFAULT = "last"
 WEBCAM_INITIAL_STATUS_DEFAULT = "last"
 WIRELESS_INITIAL_STATUS_DEFAULT = "last"
-WIRELESS_TOGGLE_METHOD_DEFAULT = "iwconfig"
+WIRELESS_TOGGLE_METHOD_DEFAULT = "esdm"
 WIRELESS_DEVICE_DEFAULT = "wlan0"
 WIRELESS_MODULE_DEFAULT = "ath5k"
 BLUETOOTH_INITIAL_STATUS_ACCEPTED_VALUES = ['on', 'off', 'last']
 WEBCAM_INITIAL_STATUS_ACCEPTED_VALUES = ['on', 'off', 'last']
 WIRELESS_INITIAL_STATUS_ACCEPTED_VALUES = ['on', 'off', 'last']
-WIRELESS_TOGGLE_METHOD_ACCEPTED_VALUES = ['iwconfig', 'module', 'esdm']
+WIRELESS_TOGGLE_METHOD_ACCEPTED_VALUES = ['esdm', 'iwconfig', 'module']
 
 class SystemConfig():
 	""" Manage system service configuration file """
