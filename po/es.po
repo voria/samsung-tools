@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-01 11:15+0200\n"
+"POT-Creation-Date: 2010-04-01 14:32+0200\n"
 "PO-Revision-Date: 2010-03-28 21:41+0000\n"
 "Last-Translator: Jonay <jonay.santana@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -50,6 +50,7 @@ msgid "Backlight cannot be toggled"
 msgstr "La luz de fondo no puede ser conmutada"
 
 #: backends/session/util/locales.py:34 samsung-tools-preferences.py:180
+#: po/samsung-tools-applet.glade.h:1
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
@@ -118,6 +119,7 @@ msgid "Fan control is not available"
 msgstr "El control del ventilador no está disponible"
 
 #: backends/session/util/locales.py:53 samsung-tools-preferences.py:198
+#: po/samsung-tools-applet.glade.h:7
 msgid "Webcam"
 msgstr "Cámara web"
 
@@ -154,6 +156,7 @@ msgid "Webcam control is not available"
 msgstr "El control de la cámara web no está disponible"
 
 #: backends/session/util/locales.py:63 samsung-tools-preferences.py:207
+#: po/samsung-tools-applet.glade.h:8
 msgid "Wireless"
 msgstr "Redes inalámbricas"
 
@@ -345,6 +348,40 @@ msgstr "¡Incapaz de conectar con el servicio de sesión!"
 msgid "Unable to connect to system service!"
 msgstr "¡Incapaz de conectar con el servicio de sistema!"
 
+#: po/samsung-tools-applet.glade.h:2
+#, fuzzy
+msgid "CPU Fan"
+msgstr "CPU/Ventilador"
+
+#: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:29
+msgid "Normal"
+msgstr ""
+
+#: po/samsung-tools-applet.glade.h:4
+msgid "Preferences..."
+msgstr ""
+
+#: po/samsung-tools-applet.glade.h:5 po/samsung-tools-preferences.glade.h:32
+msgid "Silent"
+msgstr ""
+
+#: po/samsung-tools-applet.glade.h:6 po/samsung-tools-preferences.glade.h:33
+msgid "Speed"
+msgstr ""
+
+#: po/samsung-tools-applet.server.in.h:1
+msgid "Manage devices on Samsung netbooks"
+msgstr ""
+
+#: po/samsung-tools-preferences.desktop.in.h:1
+#: po/samsung-tools-preferences.glade.h:30
+msgid "Samsung Tools Preferences"
+msgstr "Preferencias de las herramientas Samsung"
+
+#: po/samsung-tools-preferences.desktop.in.h:2
+msgid "Show and modify Samsung Tools preferences"
+msgstr "Mostrar y modificar las preferencias de las herramientas Samung"
+
 #: po/samsung-tools-preferences.glade.h:1
 msgid "<b>General</b>"
 msgstr "<b>General</b>"
@@ -441,26 +478,9 @@ msgstr "Módulo kernel:"
 msgid "Last status"
 msgstr "Último estado"
 
-#: po/samsung-tools-preferences.glade.h:29
-msgid "Normal"
-msgstr ""
-
-#: po/samsung-tools-preferences.glade.h:30
-#: po/samsung-tools-preferences.desktop.in.h:1
-msgid "Samsung Tools Preferences"
-msgstr "Preferencias de las herramientas Samsung"
-
 #: po/samsung-tools-preferences.glade.h:31
 msgid "Session service"
 msgstr "Servicio de sesión"
-
-#: po/samsung-tools-preferences.glade.h:32
-msgid "Silent"
-msgstr ""
-
-#: po/samsung-tools-preferences.glade.h:33
-msgid "Speed"
-msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:34
 msgid "System service"
@@ -516,10 +536,6 @@ msgstr "Estado inicial de la cámara web"
 #: po/samsung-tools-preferences.glade.h:48
 msgid "Wireless initial status:"
 msgstr "Estado inicial de las redes inalámbricas"
-
-#: po/samsung-tools-preferences.desktop.in.h:2
-msgid "Show and modify Samsung Tools preferences"
-msgstr "Mostrar y modificar las preferencias de las herramientas Samung"
 
 #: po/samsung-tools-session-service.desktop.in.h:1
 msgid "Start the session service"

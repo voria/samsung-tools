@@ -13,15 +13,21 @@ for file in desktop/*.desktop.in; do
 done
 mv desktop/*.desktop.in.h po/
 
+echo "*** Extracting strings from *.server files..." # A bit hacking, but it works
+for file in bonobo/*.server.in; do
+	intltool-extract --type=gettext/xml "$file"
+done
+mv bonobo/*.server.in.h po/
+
 echo
 echo "*** Creating samsung-tools.pot..."
-xgettext -k_ -kN_ -o po/messages.pot `cat po/FILES` po/*.glade.h po/*.desktop.in.h
+xgettext -k_ -kN_ -o po/messages.pot `cat po/FILES` po/*.h 
 cat po/messages.pot | sed s:charset=CHARSET:charset=UTF-8: > po/samsung-tools.pot
 
 echo
 echo "*** Removing unneeded files..."
 rm po/*.glade.h
-rm po/*.desktop.in.h
+rm po/*.in.h
 rm po/messages.pot
 
 for locale in `cat po/LINGUAS`; do
