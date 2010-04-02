@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-01 14:32+0200\n"
-"PO-Revision-Date: 2010-04-01 14:33+0200\n"
+"POT-Creation-Date: 2010-04-02 11:52+0200\n"
+"PO-Revision-Date: 2010-04-02 11:46+0200\n"
 "Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: Italiano <vorione@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -55,11 +55,11 @@ msgstr "Bluetooth"
 
 #: backends/session/util/locales.py:35
 msgid "Bluetooth is enabled"
-msgstr "Il bluetooth è attivato"
+msgstr "Il Bluetooth è attivato"
 
 #: backends/session/util/locales.py:36
 msgid "Bluetooth is disabled"
-msgstr "Il bluetooth è disattivato"
+msgstr "Il Bluetooth è disattivato"
 
 #: backends/session/util/locales.py:37
 msgid "Bluetooth enabled"
@@ -71,23 +71,23 @@ msgstr "Bluetooth disattivato"
 
 #: backends/session/util/locales.py:39
 msgid "Bluetooth cannot be enabled"
-msgstr "Il bluetooth non può essere attivato"
+msgstr "Il Bluetooth non può essere attivato"
 
 #: backends/session/util/locales.py:40
 msgid "Bluetooth cannot be disabled"
-msgstr "Il bluetooth non può essere disattivato"
+msgstr "Il Bluetooth non può essere disattivato"
 
 #: backends/session/util/locales.py:41
 msgid "Bluetooth cannot be toggled"
-msgstr "Il bluetooth non può essere commutato"
+msgstr "Il Bluetooth non può essere commutato"
 
 #: backends/session/util/locales.py:42
 msgid "Bluetooth control is not available"
-msgstr "Il controllo bluetooth non è disponibile"
+msgstr "Il controllo Bluetooth non è disponibile"
 
 #: backends/session/util/locales.py:44 samsung-tools-preferences.py:189
-msgid "CPU/Fan"
-msgstr "CPU/Ventola"
+msgid "CPU fan"
+msgstr "Ventola CPU"
 
 #: backends/session/util/locales.py:45
 msgid "CPU Temperature:"
@@ -95,7 +95,7 @@ msgstr "Temperatura CPU:"
 
 #: backends/session/util/locales.py:46
 msgid "Fan mode cannot be changed"
-msgstr "La modalità ventola non può essere cambiata"
+msgstr "La modalità della ventola non può essere cambiata"
 
 #: backends/session/util/locales.py:47
 msgid "Fan mode: Normal"
@@ -111,11 +111,11 @@ msgstr "Modalità ventola: Veloce"
 
 #: backends/session/util/locales.py:50
 msgid "Cannot get fan mode"
-msgstr "Impossibile recuperare la modalità ventola"
+msgstr "Impossibile recuperare la modalità della ventola"
 
 #: backends/session/util/locales.py:51
-msgid "Fan control is not available"
-msgstr "Il controllo della ventola non è disponibile"
+msgid "CPU fan control is not available"
+msgstr "Il controllo della ventola della CPU non è disponibile"
 
 #: backends/session/util/locales.py:53 samsung-tools-preferences.py:198
 #: po/samsung-tools-applet.glade.h:7
@@ -157,39 +157,39 @@ msgstr "Il controllo webcam non è disponibile"
 #: backends/session/util/locales.py:63 samsung-tools-preferences.py:207
 #: po/samsung-tools-applet.glade.h:8
 msgid "Wireless"
-msgstr "Wireless"
+msgstr "Rete senza fili"
 
 #: backends/session/util/locales.py:64
 msgid "Wireless is enabled"
-msgstr "Il wireless è attivato"
+msgstr "La rete senza fili è attivata"
 
 #: backends/session/util/locales.py:65
 msgid "Wireless is disabled"
-msgstr "Il wireless è disattivato"
+msgstr "La rete senza fili è disattivata"
 
 #: backends/session/util/locales.py:66
 msgid "Wireless enabled"
-msgstr "Wireless attivato"
+msgstr "Rete senza fili attivata"
 
 #: backends/session/util/locales.py:67
 msgid "Wireless disabled"
-msgstr "Wireless disattivato"
+msgstr "Rete senza fili disattivata"
 
 #: backends/session/util/locales.py:68
 msgid "Wireless cannot be enabled"
-msgstr "Il wireless non può essere attivato"
+msgstr "La rete senza fili non può essere attivata"
 
 #: backends/session/util/locales.py:69
 msgid "Wireless cannot be disabled"
-msgstr "Il wireless non può essere disattivato"
+msgstr "La rete senza fili non può essere disattivata"
 
 #: backends/session/util/locales.py:70
 msgid "Wireless cannot be toggled"
-msgstr "Il wireless non può essere commutato"
+msgstr "La rete senza fili non può essere commutata"
 
 #: backends/session/util/locales.py:71
 msgid "Wireless control is not available"
-msgstr "Il controllo wireless non è disponibile"
+msgstr "Il controllo della rete senza fili non è disponibile"
 
 #: samsung-tools.py:54
 msgid "Backlight control: unable to connect to session service!"
@@ -199,11 +199,12 @@ msgstr ""
 
 #: samsung-tools.py:120
 msgid "Bluetooth control: unable to connect to session service!"
-msgstr "Controllo bluetooth: impossibile connettersi al servizio di sessione!"
+msgstr "Controllo Bluetooth: impossibile connettersi al servizio di sessione!"
 
 #: samsung-tools.py:199
-msgid "CPU control: unable to connect to session service!"
-msgstr "Controllo CPU: impossibile connettersi al servizio di sessione!"
+msgid "CPU fan control: unable to connect to session service!"
+msgstr ""
+"Controllo ventola CPU: impossibile connettersi al servizio di sessione!"
 
 #: samsung-tools.py:329
 msgid "Webcam control: unable to connect to session service!"
@@ -211,7 +212,8 @@ msgstr "Controllo webcam: impossibile connettersi al servizio di sessione!"
 
 #: samsung-tools.py:408
 msgid "Wireless control: unable to connect to session service!"
-msgstr "Controllo wireless: impossibile connettersi al servizio di sessione!"
+msgstr ""
+"Controllo rete senza fili: impossibile connettersi al servizio di sessione!"
 
 #: samsung-tools.py:473
 msgid "Samsung Tools - Command Line Utility"
@@ -241,16 +243,16 @@ msgid "Bluetooth:"
 msgstr "Bluetooth:"
 
 #: samsung-tools.py:483 po/samsung-tools-preferences.glade.h:8
-msgid "CPU/Fan:"
-msgstr "CPU/Ventola:"
+msgid "CPU fan:"
+msgstr "Ventola CPU:"
 
-#: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:47
+#: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:57
 msgid "Webcam:"
 msgstr "Webcam:"
 
-#: samsung-tools.py:489 po/samsung-tools-preferences.glade.h:49
+#: samsung-tools.py:489 po/samsung-tools-preferences.glade.h:59
 msgid "Wireless:"
-msgstr "Wireless:"
+msgstr "Rete senza fili:"
 
 #: samsung-tools.py:493
 msgid "Other options:"
@@ -287,11 +289,12 @@ msgstr " - Commuta la retroilluminazione:"
 #: samsung-tools.py:504
 msgid " - Toggle wireless and set CPU fan mode to 'silent':"
 msgstr ""
-" - Commuta il wireless e imposta la ventola della CPU in modalità silenziosa:"
+" - Commuta la rete senza fili e imposta la ventola della CPU in modalità "
+"'silenziosa':"
 
 #: samsung-tools.py:507
 msgid " - Disable bluetooth, webcam and wireless:"
-msgstr " - Disattiva il bluetooth, la webcam e il wireless:"
+msgstr " - Disattiva il Bluetooth, la webcam e la rete senza fili:"
 
 #: samsung-tools.py:510
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
@@ -349,7 +352,7 @@ msgstr "Impossibile connettersi al servizio di sistema!"
 msgid "CPU Fan"
 msgstr "Ventola CPU"
 
-#: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:29
+#: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:24
 msgid "Normal"
 msgstr "Normale"
 
@@ -357,11 +360,11 @@ msgstr "Normale"
 msgid "Preferences..."
 msgstr "Preferenze..."
 
-#: po/samsung-tools-applet.glade.h:5 po/samsung-tools-preferences.glade.h:32
+#: po/samsung-tools-applet.glade.h:5 po/samsung-tools-preferences.glade.h:27
 msgid "Silent"
 msgstr "Silenziosa"
 
-#: po/samsung-tools-applet.glade.h:6 po/samsung-tools-preferences.glade.h:33
+#: po/samsung-tools-applet.glade.h:6 po/samsung-tools-preferences.glade.h:28
 msgid "Speed"
 msgstr "Veloce"
 
@@ -370,13 +373,13 @@ msgid "Manage devices on Samsung netbooks"
 msgstr "Gestisce i dispositivi sui netbook Samsung"
 
 #: po/samsung-tools-preferences.desktop.in.h:1
-#: po/samsung-tools-preferences.glade.h:30
+#: po/samsung-tools-preferences.glade.h:25
 msgid "Samsung Tools Preferences"
 msgstr "Preferenze di Samsung Tools"
 
 #: po/samsung-tools-preferences.desktop.in.h:2
 msgid "Show and modify Samsung Tools preferences"
-msgstr "Mostra e modifica le preferenze di Samsung Tools"
+msgstr "Visualizza e modifica le preferenze di Samsung Tools"
 
 #: po/samsung-tools-preferences.glade.h:1
 msgid "<b>General</b>"
@@ -388,7 +391,7 @@ msgstr "<b>Tasti veloci</b>"
 
 #: po/samsung-tools-preferences.glade.h:3
 msgid "<b>Wireless</b>"
-msgstr "<b>Wireless</b>"
+msgstr "<b>Rete senza fili</b>"
 
 #: po/samsung-tools-preferences.glade.h:5
 msgid "Bluetooth initial status:"
@@ -431,108 +434,148 @@ msgid "Enabled"
 msgstr "Attivato"
 
 #: po/samsung-tools-preferences.glade.h:17
-msgid "Hotkey used for CPU and Fan control"
-msgstr "Tasto veloce utilizzato per il controllo della CPU e della ventola"
+msgid "Hotkey used for CPU fan control"
+msgstr "Tasto veloce utilizzato per il controllo della ventola della CPU"
 
 #: po/samsung-tools-preferences.glade.h:18
 msgid "Hotkey used for backlight control"
-msgstr "Tasto veloce utilizzato per il controllo retroilluminazione"
+msgstr "Tasto veloce utilizzato per il controllo della retroilluminazione"
 
 #: po/samsung-tools-preferences.glade.h:19
 msgid "Hotkey used for bluetooth control"
-msgstr "Tasto veloce utilizzato per il controllo bluetooth"
+msgstr "Tasto veloce utilizzato per il controllo del Bluetooth"
 
 #: po/samsung-tools-preferences.glade.h:20
 msgid "Hotkey used for webcam control"
-msgstr "Tasto veloce utilizzato per il controllo webcam"
+msgstr "Tasto veloce utilizzato per il controllo della webcam"
 
 #: po/samsung-tools-preferences.glade.h:21
 msgid "Hotkey used for wireless control"
-msgstr "Tasto veloce utilizzato per il controllo wireless"
+msgstr "Tasto veloce utilizzato per il controllo della rete senza fili"
 
 #: po/samsung-tools-preferences.glade.h:22
-msgid ""
-"How the wireless is toggled.\n"
-"\n"
-"'iwconfig' - Use iwconfig commands.\n"
-"'module' - Insert/remove kernel module.\n"
-"'esdm' - Use the 'easy slow down manager' interface."
-msgstr ""
-"La modalità di commutazione del wireless.\n"
-"\n"
-"'iwconfig' - Usa i comandi iwconfig.\n"
-"'module' - Inserisce/rimuove il modulo del kernel.\n"
-"'esdm' - Usa l'interfaccia 'easy-slow-down-manager'."
-
-#: po/samsung-tools-preferences.glade.h:27
 msgid "Kernel module:"
 msgstr "Modulo del kernel:"
 
-#: po/samsung-tools-preferences.glade.h:28
+#: po/samsung-tools-preferences.glade.h:23
 msgid "Last status"
 msgstr "Ultimo stato"
 
-#: po/samsung-tools-preferences.glade.h:31
+#: po/samsung-tools-preferences.glade.h:26
 msgid "Session service"
 msgstr "Servizio di sessione"
 
-#: po/samsung-tools-preferences.glade.h:34
+#: po/samsung-tools-preferences.glade.h:29
 msgid "System service"
 msgstr "Servizio di sistema"
 
-#: po/samsung-tools-preferences.glade.h:35
+#: po/samsung-tools-preferences.glade.h:30
 msgid "The initial status at boot for Bluetooth"
 msgstr "Lo stato iniziale del Bluetooth all'avvio"
 
-#: po/samsung-tools-preferences.glade.h:36
+#: po/samsung-tools-preferences.glade.h:31
 msgid "The initial status at boot for CPU fan"
 msgstr "Lo stato iniziale della ventola della CPU all'avvio"
 
-#: po/samsung-tools-preferences.glade.h:37
+#: po/samsung-tools-preferences.glade.h:32
 msgid "The initial status at boot for webcam"
 msgstr "Lo stato iniziale della webcam all'avvio"
 
-#: po/samsung-tools-preferences.glade.h:38
+#: po/samsung-tools-preferences.glade.h:33
 msgid "The initial status at boot for wireless"
-msgstr "Lo stato iniziale del wireless all'avvio"
+msgstr "Lo stato iniziale della rete senza fili all'avvio"
 
-#: po/samsung-tools-preferences.glade.h:39
+#: po/samsung-tools-preferences.glade.h:34
 msgid ""
-"The kernel module to be managed.\n"
-"\n"
-"Note: this option is only used when 'Toggle method' is set to 'module'."
-msgstr ""
-"Il modulo del kernel da gestire.\n"
-"\n"
-"Nota questa opzione è usata solo quando 'Metodo commutazione' è impostato a "
+"The kernel module to handle, when the 'Toggle method' option is set to "
 "'module'."
-
-#: po/samsung-tools-preferences.glade.h:42
-msgid ""
-"The wireless device to use.\n"
-"\n"
-"Note: this option is only used when 'Toggle method' is set to 'iwconfig'."
 msgstr ""
-"Il dispositivo wireless da utilizzare.\n"
-"\n"
-"Nota: questa opzione è usata solo quando 'Metodo commutazione' è impostato a "
-"'iwconfig'."
+"Il modulo del kernel da gestire, quando l'opzione 'Metodo commutazione' è "
+"impostata a 'module'."
 
-#: po/samsung-tools-preferences.glade.h:45
+#: po/samsung-tools-preferences.glade.h:36
+msgid ""
+"The method used to toggle wireless.\n"
+"\n"
+" - esdm:\n"
+"   Use the 'easy slow down manager' interface.\n"
+"   This is the default option and it should work on all netbook\n"
+"   models.\n"
+" - iwconfig:\n"
+"   Use iwconfig commands to toggle the radio transmit power.\n"
+"   On models like the NC10 shipped with Atheros wireless card,\n"
+"   this method disables wireless AND turns off the radio\n"
+"   transmit power. On other models this might not work as\n"
+"   expected: in these cases it's preferable to use the 'module'\n"
+"   or 'esdm' method instead.\n"
+" - module:\n"
+"   Insert/remove kernel module to toggle wireless.\n"
+"   On some netbook models the radio transmit power is not\n"
+"   actually killed when the kernel module is removed: in these\n"
+"   cases it's preferable to use the 'esdm' method instead."
+msgstr ""
+"Metodo usato per la commutazione della rete senza fili.\n"
+"\n"
+" - esdm:\n"
+"   Usa l'interfaccia 'easy slow down manager'.\n"
+"   Questa è l'opzione di default e dovrebbe funzionare su\n"
+"   tutti i modelli di netbook.\n"
+" - iwconfig:\n"
+"   Usa comandi iwconfig per commutare la potenza di\n"
+"   trasmissione radio. Sui modelli come l'NC10 forniti di\n"
+"   scheda wireless Atheros, questo metodo disabilita la\n"
+"   rete senza fili e spegne la trasmissione radio. Su altri\n"
+"   modelli potrebbe non funzionare come previsto: in questi\n"
+"   casi è preferibile invece usare il metodo 'esdm' o 'module'.\n"
+" - module:\n"
+"   Inserisce/rimuove il modulo del kernel per commutare la\n"
+"   rete senza fili. Con alcuni modelli di netbook la trasmissione\n"
+"   radio non è davvero disabilitata quando il modulo del kernel\n"
+"   viene rimosso: in questi casi è preferibile invece usare il\n"
+"   methodo 'esdm'."
+
+#: po/samsung-tools-preferences.glade.h:54
+msgid ""
+"The wireless device to use, when the 'Toggle method' option is set to "
+"'iwconfig'."
+msgstr ""
+"Il dispositivo wireless da utilizzare, quando l'opzione 'Metodo "
+"commutazione' è impostata a 'iwconfig'."
+
+#: po/samsung-tools-preferences.glade.h:55
 msgid "Toggle method:"
 msgstr "Metodo commutazione:"
 
-#: po/samsung-tools-preferences.glade.h:46
+#: po/samsung-tools-preferences.glade.h:56
 msgid "Webcam initial status:"
 msgstr "Stato iniziale webcam:"
 
-#: po/samsung-tools-preferences.glade.h:48
+#: po/samsung-tools-preferences.glade.h:58
 msgid "Wireless initial status:"
-msgstr "Stato iniziale wireless:"
+msgstr "Stato iniziale rete senza fili:"
 
 #: po/samsung-tools-session-service.desktop.in.h:1
 msgid "Start the session service"
 msgstr "Avvia il servizio di sessione"
+
+#~ msgid "CPU/Fan"
+#~ msgstr "CPU/Ventola"
+
+#~ msgid "CPU/Fan:"
+#~ msgstr "CPU/Ventola:"
+
+#~ msgid ""
+#~ "How the wireless is toggled.\n"
+#~ "\n"
+#~ "'iwconfig' - Use iwconfig commands.\n"
+#~ "'module' - Insert/remove kernel module.\n"
+#~ "'esdm' - Use the 'easy slow down manager' interface."
+#~ msgstr ""
+#~ "La modalità di commutazione del wireless.\n"
+#~ "\n"
+#~ "'iwconfig' - Usa i comandi iwconfig.\n"
+#~ "'module' - Inserisce/rimuove il modulo del kernel.\n"
+#~ "'esdm' - Usa l'interfaccia 'easy-slow-down-manager'."
 
 #~ msgid "CPU temperature is not available"
 #~ msgstr "La temperatura CPU non è disponibile"

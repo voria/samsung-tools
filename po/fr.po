@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-01 14:32+0200\n"
+"POT-Creation-Date: 2010-04-02 11:52+0200\n"
 "PO-Revision-Date: 2010-03-27 01:00+0000\n"
 "Last-Translator: Lionel BASTET <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -87,7 +87,8 @@ msgid "Bluetooth control is not available"
 msgstr "Contrôle du Bluetooth non disponible"
 
 #: backends/session/util/locales.py:44 samsung-tools-preferences.py:189
-msgid "CPU/Fan"
+#, fuzzy
+msgid "CPU fan"
 msgstr "Ventllateur processeur"
 
 #: backends/session/util/locales.py:45
@@ -115,7 +116,8 @@ msgid "Cannot get fan mode"
 msgstr "Ne peut trouver le mode du ventilateur"
 
 #: backends/session/util/locales.py:51
-msgid "Fan control is not available"
+#, fuzzy
+msgid "CPU fan control is not available"
 msgstr "Le contrôle du ventilateur n'est pas disponible"
 
 #: backends/session/util/locales.py:53 samsung-tools-preferences.py:198
@@ -203,7 +205,8 @@ msgstr ""
 "Contrôle du Bluetooth: impossible de se connecter au service de session!"
 
 #: samsung-tools.py:199
-msgid "CPU control: unable to connect to session service!"
+#, fuzzy
+msgid "CPU fan control: unable to connect to session service!"
 msgstr ""
 "Contrôle du processeur: impossible de se connecter au service de session!"
 
@@ -246,14 +249,15 @@ msgid "Bluetooth:"
 msgstr "Bluetooth:"
 
 #: samsung-tools.py:483 po/samsung-tools-preferences.glade.h:8
-msgid "CPU/Fan:"
-msgstr "Processeur/Ventilateur:"
+#, fuzzy
+msgid "CPU fan:"
+msgstr "Ventllateur processeur"
 
-#: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:47
+#: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:57
 msgid "Webcam:"
 msgstr "Webcam:"
 
-#: samsung-tools.py:489 po/samsung-tools-preferences.glade.h:49
+#: samsung-tools.py:489 po/samsung-tools-preferences.glade.h:59
 msgid "Wireless:"
 msgstr "Réseau sans fil:"
 
@@ -356,7 +360,7 @@ msgstr "Impossible de se connecter au service système!"
 msgid "CPU Fan"
 msgstr "Ventllateur processeur"
 
-#: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:29
+#: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:24
 msgid "Normal"
 msgstr ""
 
@@ -364,11 +368,11 @@ msgstr ""
 msgid "Preferences..."
 msgstr ""
 
-#: po/samsung-tools-applet.glade.h:5 po/samsung-tools-preferences.glade.h:32
+#: po/samsung-tools-applet.glade.h:5 po/samsung-tools-preferences.glade.h:27
 msgid "Silent"
 msgstr ""
 
-#: po/samsung-tools-applet.glade.h:6 po/samsung-tools-preferences.glade.h:33
+#: po/samsung-tools-applet.glade.h:6 po/samsung-tools-preferences.glade.h:28
 msgid "Speed"
 msgstr ""
 
@@ -377,7 +381,7 @@ msgid "Manage devices on Samsung netbooks"
 msgstr ""
 
 #: po/samsung-tools-preferences.desktop.in.h:1
-#: po/samsung-tools-preferences.glade.h:30
+#: po/samsung-tools-preferences.glade.h:25
 msgid "Samsung Tools Preferences"
 msgstr "Préférences de Samsung Tools"
 
@@ -439,7 +443,8 @@ msgid "Enabled"
 msgstr "Activé"
 
 #: po/samsung-tools-preferences.glade.h:17
-msgid "Hotkey used for CPU and Fan control"
+#, fuzzy
+msgid "Hotkey used for CPU fan control"
 msgstr "Raccourci clavier pour le contrôle du processeur et du ventilateur"
 
 #: po/samsung-tools-preferences.glade.h:18
@@ -459,89 +464,116 @@ msgid "Hotkey used for wireless control"
 msgstr "Raccourci clavier pour le contrôle du réseau sans fil"
 
 #: po/samsung-tools-preferences.glade.h:22
-msgid ""
-"How the wireless is toggled.\n"
-"\n"
-"'iwconfig' - Use iwconfig commands.\n"
-"'module' - Insert/remove kernel module.\n"
-"'esdm' - Use the 'easy slow down manager' interface."
-msgstr ""
-"Gestion du changement d'état pour le réseau sans fil.\n"
-"\n"
-"'iwconfig' - Utiliser les commandes 'iwconfig'\n"
-"'module' - Insérer/Supprimer le module du noyau.\n"
-"'esdm' - Utiliser l'interface 'easy slow down manager'"
-
-#: po/samsung-tools-preferences.glade.h:27
 msgid "Kernel module:"
 msgstr "Module du noyau:"
 
-#: po/samsung-tools-preferences.glade.h:28
+#: po/samsung-tools-preferences.glade.h:23
 msgid "Last status"
 msgstr "Dernier état"
 
-#: po/samsung-tools-preferences.glade.h:31
+#: po/samsung-tools-preferences.glade.h:26
 msgid "Session service"
 msgstr "Service de session"
 
-#: po/samsung-tools-preferences.glade.h:34
+#: po/samsung-tools-preferences.glade.h:29
 msgid "System service"
 msgstr "Service système"
 
-#: po/samsung-tools-preferences.glade.h:35
+#: po/samsung-tools-preferences.glade.h:30
 msgid "The initial status at boot for Bluetooth"
 msgstr "L'état initial du Bluetooth au démarrage"
 
-#: po/samsung-tools-preferences.glade.h:36
+#: po/samsung-tools-preferences.glade.h:31
 #, fuzzy
 msgid "The initial status at boot for CPU fan"
 msgstr "L'état initial de la webcam au démarrage"
 
-#: po/samsung-tools-preferences.glade.h:37
+#: po/samsung-tools-preferences.glade.h:32
 msgid "The initial status at boot for webcam"
 msgstr "L'état initial de la webcam au démarrage"
 
-#: po/samsung-tools-preferences.glade.h:38
+#: po/samsung-tools-preferences.glade.h:33
 msgid "The initial status at boot for wireless"
 msgstr "L'état initial du réseau sans fil au démarrage"
 
-#: po/samsung-tools-preferences.glade.h:39
+#: po/samsung-tools-preferences.glade.h:34
+#, fuzzy
 msgid ""
-"The kernel module to be managed.\n"
-"\n"
-"Note: this option is only used when 'Toggle method' is set to 'module'."
+"The kernel module to handle, when the 'Toggle method' option is set to "
+"'module'."
 msgstr ""
 "Module du noyau à gérer.\n"
 "\n"
 "Note: cette option est utilisée seulement quand 'Méthode de changement d'état"
 "\" est réglée sur 'module'."
 
-#: po/samsung-tools-preferences.glade.h:42
+#: po/samsung-tools-preferences.glade.h:36
 msgid ""
-"The wireless device to use.\n"
+"The method used to toggle wireless.\n"
 "\n"
-"Note: this option is only used when 'Toggle method' is set to 'iwconfig'."
+" - esdm:\n"
+"   Use the 'easy slow down manager' interface.\n"
+"   This is the default option and it should work on all netbook\n"
+"   models.\n"
+" - iwconfig:\n"
+"   Use iwconfig commands to toggle the radio transmit power.\n"
+"   On models like the NC10 shipped with Atheros wireless card,\n"
+"   this method disables wireless AND turns off the radio\n"
+"   transmit power. On other models this might not work as\n"
+"   expected: in these cases it's preferable to use the 'module'\n"
+"   or 'esdm' method instead.\n"
+" - module:\n"
+"   Insert/remove kernel module to toggle wireless.\n"
+"   On some netbook models the radio transmit power is not\n"
+"   actually killed when the kernel module is removed: in these\n"
+"   cases it's preferable to use the 'esdm' method instead."
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:54
+#, fuzzy
+msgid ""
+"The wireless device to use, when the 'Toggle method' option is set to "
+"'iwconfig'."
 msgstr ""
 "Périphérique de réseau sans fil à utiliser.\n"
 "\n"
 "Note: cette option est utilisée seulement quand 'Méthode de changement "
 "d'état' est réglée sur 'iwconfig'."
 
-#: po/samsung-tools-preferences.glade.h:45
+#: po/samsung-tools-preferences.glade.h:55
 msgid "Toggle method:"
 msgstr "Méthode de changement d'état:"
 
-#: po/samsung-tools-preferences.glade.h:46
+#: po/samsung-tools-preferences.glade.h:56
 msgid "Webcam initial status:"
 msgstr "Etat initial de la webcam:"
 
-#: po/samsung-tools-preferences.glade.h:48
+#: po/samsung-tools-preferences.glade.h:58
 msgid "Wireless initial status:"
 msgstr "Etat initial du réseau sans fil:"
 
 #: po/samsung-tools-session-service.desktop.in.h:1
 msgid "Start the session service"
 msgstr "Lancer le service de session"
+
+#~ msgid "CPU/Fan"
+#~ msgstr "Ventllateur processeur"
+
+#~ msgid "CPU/Fan:"
+#~ msgstr "Processeur/Ventilateur:"
+
+#~ msgid ""
+#~ "How the wireless is toggled.\n"
+#~ "\n"
+#~ "'iwconfig' - Use iwconfig commands.\n"
+#~ "'module' - Insert/remove kernel module.\n"
+#~ "'esdm' - Use the 'easy slow down manager' interface."
+#~ msgstr ""
+#~ "Gestion du changement d'état pour le réseau sans fil.\n"
+#~ "\n"
+#~ "'iwconfig' - Utiliser les commandes 'iwconfig'\n"
+#~ "'module' - Insérer/Supprimer le module du noyau.\n"
+#~ "'esdm' - Utiliser l'interface 'easy slow down manager'"
 
 #~ msgid "Fan mode changed: Normal"
 #~ msgstr "Changement de mode ventilateur: Normal"

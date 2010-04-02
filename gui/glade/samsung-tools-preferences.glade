@@ -41,8 +41,8 @@
                 <child>
                   <object class="GtkLabel" id="cpuHotkeyLabel">
                     <property name="visible">True</property>
-                    <property name="tooltip_text" translatable="yes">Hotkey used for CPU and Fan control</property>
-                    <property name="label" translatable="yes">CPU/Fan:</property>
+                    <property name="tooltip_text" translatable="yes">Hotkey used for CPU fan control</property>
+                    <property name="label" translatable="yes">CPU fan:</property>
                   </object>
                   <packing>
                     <property name="top_attach">4</property>
@@ -480,11 +480,24 @@
                 <child>
                   <object class="GtkLabel" id="wirelessToggleMethodLabel">
                     <property name="visible">True</property>
-                    <property name="tooltip_text" translatable="yes">How the wireless is toggled.
+                    <property name="tooltip_text" translatable="yes" comments="This is the text shown in the tooltip of the &quot;Toggle method:&quot; option, in the 'samsung-tools-preferences' dialog.&#10;Every line should not be longer than ~65 chars, or else it will be automatically cut off and the layout will be lost.">The method used to toggle wireless.
 
-'iwconfig' - Use iwconfig commands.
-'module' - Insert/remove kernel module.
-'esdm' - Use the 'easy slow down manager' interface.</property>
+ - esdm:
+   Use the 'easy slow down manager' interface.
+   This is the default option and it should work on all netbook
+   models.
+ - iwconfig:
+   Use iwconfig commands to toggle the radio transmit power.
+   On models like the NC10 shipped with Atheros wireless card,
+   this method disables wireless AND turns off the radio
+   transmit power. On other models this might not work as
+   expected: in these cases it's preferable to use the 'module'
+   or 'esdm' method instead.
+ - module:
+   Insert/remove kernel module to toggle wireless.
+   On some netbook models the radio transmit power is not
+   actually killed when the kernel module is removed: in these
+   cases it's preferable to use the 'esdm' method instead.</property>
                     <property name="label" translatable="yes">Toggle method:</property>
                   </object>
                   <packing>
@@ -497,11 +510,24 @@
                 <child>
                   <object class="GtkComboBox" id="wirelessToggleMethodCombobox">
                     <property name="visible">True</property>
-                    <property name="tooltip_text" translatable="yes">How the wireless is toggled.
+                    <property name="tooltip_text" translatable="yes" comments="This is the text shown in the tooltip of the &quot;Toggle method:&quot; option, in the 'samsung-tools-preferences' dialog.&#10;Every line should not be longer than ~65 chars, or else it will be automatically cut off and the layout will be lost.">The method used to toggle wireless.
 
-'iwconfig' - Use iwconfig commands.
-'module' - Insert/remove kernel module.
-'esdm' - Use the 'easy slow down manager' interface.</property>
+ - esdm:
+   Use the 'easy slow down manager' interface.
+   This is the default option and it should work on all netbook
+   models.
+ - iwconfig:
+   Use iwconfig commands to toggle the radio transmit power.
+   On models like the NC10 shipped with Atheros wireless card,
+   this method disables wireless AND turns off the radio
+   transmit power. On other models this might not work as
+   expected: in these cases it's preferable to use the 'module'
+   or 'esdm' method instead.
+ - module:
+   Insert/remove kernel module to toggle wireless.
+   On some netbook models the radio transmit power is not
+   actually killed when the kernel module is removed: in these
+   cases it's preferable to use the 'esdm' method instead.</property>
                     <property name="model">wirelessToggleMethodListstore</property>
                     <property name="active">0</property>
                   </object>
@@ -532,9 +558,7 @@
                 <child>
                   <object class="GtkLabel" id="wirelessDeviceLabel">
                     <property name="visible">True</property>
-                    <property name="tooltip_text" translatable="yes">The wireless device to use.
-
-Note: this option is only used when 'Toggle method' is set to 'iwconfig'.</property>
+                    <property name="tooltip_text" translatable="yes">The wireless device to use, when the 'Toggle method' option is set to 'iwconfig'.</property>
                     <property name="label" translatable="yes">Device:</property>
                   </object>
                   <packing>
@@ -548,9 +572,7 @@ Note: this option is only used when 'Toggle method' is set to 'iwconfig'.</prope
                   <object class="GtkEntry" id="wirelessDeviceEntry">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="tooltip_text" translatable="yes">The wireless device to use.
-
-Note: this option is only used when 'Toggle method' is set to 'iwconfig'.</property>
+                    <property name="tooltip_text" translatable="yes">The wireless device to use, when the 'Toggle method' option is set to 'iwconfig'.</property>
                     <property name="invisible_char">&#x2022;</property>
                   </object>
                   <packing>
@@ -596,9 +618,7 @@ Note: this option is only used when 'Toggle method' is set to 'iwconfig'.</prope
                 <child>
                   <object class="GtkLabel" id="wirelessModuleLabel">
                     <property name="visible">True</property>
-                    <property name="tooltip_text" translatable="yes">The kernel module to be managed.
-
-Note: this option is only used when 'Toggle method' is set to 'module'.</property>
+                    <property name="tooltip_text" translatable="yes">The kernel module to handle, when the 'Toggle method' option is set to 'module'.</property>
                     <property name="label" translatable="yes">Kernel module:</property>
                   </object>
                   <packing>
@@ -612,9 +632,7 @@ Note: this option is only used when 'Toggle method' is set to 'module'.</propert
                   <object class="GtkEntry" id="wirelessModuleEntry">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="tooltip_text" translatable="yes">The kernel module to be managed.
-
-Note: this option is only used when 'Toggle method' is set to 'module'.</property>
+                    <property name="tooltip_text" translatable="yes">The kernel module to handle, when the 'Toggle method' option is set to 'module'.</property>
                     <property name="invisible_char">&#x2022;</property>
                   </object>
                   <packing>

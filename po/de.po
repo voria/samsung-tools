@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-01 14:32+0200\n"
+"POT-Creation-Date: 2010-04-02 11:52+0200\n"
 "PO-Revision-Date: 2010-03-15 17:36+0000\n"
 "Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -87,7 +87,8 @@ msgid "Bluetooth control is not available"
 msgstr "Bluetooth-Steuerung ist nicht verfügbar"
 
 #: backends/session/util/locales.py:44 samsung-tools-preferences.py:189
-msgid "CPU/Fan"
+#, fuzzy
+msgid "CPU fan"
 msgstr "CPU/Lüfter"
 
 #: backends/session/util/locales.py:45
@@ -115,7 +116,8 @@ msgid "Cannot get fan mode"
 msgstr "Lüftermodus kann nicht ermittelt werden"
 
 #: backends/session/util/locales.py:51
-msgid "Fan control is not available"
+#, fuzzy
+msgid "CPU fan control is not available"
 msgstr "Lüftersteuerung ist nicht verfügbar"
 
 #: backends/session/util/locales.py:53 samsung-tools-preferences.py:198
@@ -202,7 +204,8 @@ msgid "Bluetooth control: unable to connect to session service!"
 msgstr "Bluetooth-Steuerung: Kann nicht mit Sitzungsdienst verbinden!"
 
 #: samsung-tools.py:199
-msgid "CPU control: unable to connect to session service!"
+#, fuzzy
+msgid "CPU fan control: unable to connect to session service!"
 msgstr "CPU-Steuerung: Kann nicht mit Sitzungsdienst verbinden"
 
 #: samsung-tools.py:329
@@ -241,14 +244,15 @@ msgid "Bluetooth:"
 msgstr "Bluetooth:"
 
 #: samsung-tools.py:483 po/samsung-tools-preferences.glade.h:8
-msgid "CPU/Fan:"
-msgstr "CPU/Lüfter:"
+#, fuzzy
+msgid "CPU fan:"
+msgstr "CPU/Lüfter"
 
-#: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:47
+#: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:57
 msgid "Webcam:"
 msgstr "Webcam:"
 
-#: samsung-tools.py:489 po/samsung-tools-preferences.glade.h:49
+#: samsung-tools.py:489 po/samsung-tools-preferences.glade.h:59
 msgid "Wireless:"
 msgstr "WLAN-Karte"
 
@@ -352,7 +356,7 @@ msgstr "Kann nicht mit Systemdienst verbinden"
 msgid "CPU Fan"
 msgstr "CPU/Lüfter"
 
-#: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:29
+#: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:24
 msgid "Normal"
 msgstr ""
 
@@ -360,11 +364,11 @@ msgstr ""
 msgid "Preferences..."
 msgstr ""
 
-#: po/samsung-tools-applet.glade.h:5 po/samsung-tools-preferences.glade.h:32
+#: po/samsung-tools-applet.glade.h:5 po/samsung-tools-preferences.glade.h:27
 msgid "Silent"
 msgstr ""
 
-#: po/samsung-tools-applet.glade.h:6 po/samsung-tools-preferences.glade.h:33
+#: po/samsung-tools-applet.glade.h:6 po/samsung-tools-preferences.glade.h:28
 msgid "Speed"
 msgstr ""
 
@@ -373,7 +377,7 @@ msgid "Manage devices on Samsung netbooks"
 msgstr ""
 
 #: po/samsung-tools-preferences.desktop.in.h:1
-#: po/samsung-tools-preferences.glade.h:30
+#: po/samsung-tools-preferences.glade.h:25
 msgid "Samsung Tools Preferences"
 msgstr "Samsung Tools Einstellungen"
 
@@ -435,7 +439,8 @@ msgid "Enabled"
 msgstr "Eingeschaltet"
 
 #: po/samsung-tools-preferences.glade.h:17
-msgid "Hotkey used for CPU and Fan control"
+#, fuzzy
+msgid "Hotkey used for CPU fan control"
 msgstr "Tastenkombination für CPU- und Lüftersteuerung"
 
 #: po/samsung-tools-preferences.glade.h:18
@@ -455,87 +460,114 @@ msgid "Hotkey used for wireless control"
 msgstr "Tastenkombination für die WLAN-Karten-Steuerung"
 
 #: po/samsung-tools-preferences.glade.h:22
-msgid ""
-"How the wireless is toggled.\n"
-"\n"
-"'iwconfig' - Use iwconfig commands.\n"
-"'module' - Insert/remove kernel module.\n"
-"'esdm' - Use the 'easy slow down manager' interface."
-msgstr ""
-"Wie die WLAN-Karte ein-/ausgeschaltet wird.\n"
-"\n"
-"'iwconfig' - Verwende iwconfig-Befehle.\n"
-"'module' - Einfügen/entfernen des Kernel-Moduls.\n"
-"'esdm' - Verwende den 'easy slow down manager'"
-
-#: po/samsung-tools-preferences.glade.h:27
 msgid "Kernel module:"
 msgstr "Kernel-Modul:"
 
-#: po/samsung-tools-preferences.glade.h:28
+#: po/samsung-tools-preferences.glade.h:23
 msgid "Last status"
 msgstr "Letzter Status"
 
-#: po/samsung-tools-preferences.glade.h:31
+#: po/samsung-tools-preferences.glade.h:26
 msgid "Session service"
 msgstr "Sitzungsdienst"
 
-#: po/samsung-tools-preferences.glade.h:34
+#: po/samsung-tools-preferences.glade.h:29
 msgid "System service"
 msgstr "Systemdienst"
 
-#: po/samsung-tools-preferences.glade.h:35
+#: po/samsung-tools-preferences.glade.h:30
 msgid "The initial status at boot for Bluetooth"
 msgstr "Letzter Status von Bluetooth beim Booten"
 
-#: po/samsung-tools-preferences.glade.h:36
+#: po/samsung-tools-preferences.glade.h:31
 #, fuzzy
 msgid "The initial status at boot for CPU fan"
 msgstr "Letzter Status der Webcam beim Booten"
 
-#: po/samsung-tools-preferences.glade.h:37
+#: po/samsung-tools-preferences.glade.h:32
 msgid "The initial status at boot for webcam"
 msgstr "Letzter Status der Webcam beim Booten"
 
-#: po/samsung-tools-preferences.glade.h:38
+#: po/samsung-tools-preferences.glade.h:33
 msgid "The initial status at boot for wireless"
 msgstr "Letzter Status der WLAN-Karte beim Booten"
 
-#: po/samsung-tools-preferences.glade.h:39
+#: po/samsung-tools-preferences.glade.h:34
+#, fuzzy
 msgid ""
-"The kernel module to be managed.\n"
-"\n"
-"Note: this option is only used when 'Toggle method' is set to 'module'."
+"The kernel module to handle, when the 'Toggle method' option is set to "
+"'module'."
 msgstr ""
 "Das Kernel-Modul steuert das Verwenden der WLAN-Karten-Treiber.\n"
 "Achtung: diese Option wird nur verwendet, wenn die \"Umschalt-Methode\" auf "
 "\"module\" gesetzt ist."
 
-#: po/samsung-tools-preferences.glade.h:42
+#: po/samsung-tools-preferences.glade.h:36
 msgid ""
-"The wireless device to use.\n"
+"The method used to toggle wireless.\n"
 "\n"
-"Note: this option is only used when 'Toggle method' is set to 'iwconfig'."
+" - esdm:\n"
+"   Use the 'easy slow down manager' interface.\n"
+"   This is the default option and it should work on all netbook\n"
+"   models.\n"
+" - iwconfig:\n"
+"   Use iwconfig commands to toggle the radio transmit power.\n"
+"   On models like the NC10 shipped with Atheros wireless card,\n"
+"   this method disables wireless AND turns off the radio\n"
+"   transmit power. On other models this might not work as\n"
+"   expected: in these cases it's preferable to use the 'module'\n"
+"   or 'esdm' method instead.\n"
+" - module:\n"
+"   Insert/remove kernel module to toggle wireless.\n"
+"   On some netbook models the radio transmit power is not\n"
+"   actually killed when the kernel module is removed: in these\n"
+"   cases it's preferable to use the 'esdm' method instead."
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:54
+#, fuzzy
+msgid ""
+"The wireless device to use, when the 'Toggle method' option is set to "
+"'iwconfig'."
 msgstr ""
 "Die WLAN-Karte direkt ansprechen (ein-/ausschalten):\n"
 "Achtung: diese Option wird nur verwendet, wenn die \"Umschalt-Methode\" auf "
 "\"iwconfig\" gesetzt ist."
 
-#: po/samsung-tools-preferences.glade.h:45
+#: po/samsung-tools-preferences.glade.h:55
 msgid "Toggle method:"
 msgstr "Umschalt-Methode"
 
-#: po/samsung-tools-preferences.glade.h:46
+#: po/samsung-tools-preferences.glade.h:56
 msgid "Webcam initial status:"
 msgstr "Anfangs-Status der Webcam"
 
-#: po/samsung-tools-preferences.glade.h:48
+#: po/samsung-tools-preferences.glade.h:58
 msgid "Wireless initial status:"
 msgstr "Anfangs-Status der WLAN-Karte"
 
 #: po/samsung-tools-session-service.desktop.in.h:1
 msgid "Start the session service"
 msgstr "Sitzungsdienst starten"
+
+#~ msgid "CPU/Fan"
+#~ msgstr "CPU/Lüfter"
+
+#~ msgid "CPU/Fan:"
+#~ msgstr "CPU/Lüfter:"
+
+#~ msgid ""
+#~ "How the wireless is toggled.\n"
+#~ "\n"
+#~ "'iwconfig' - Use iwconfig commands.\n"
+#~ "'module' - Insert/remove kernel module.\n"
+#~ "'esdm' - Use the 'easy slow down manager' interface."
+#~ msgstr ""
+#~ "Wie die WLAN-Karte ein-/ausgeschaltet wird.\n"
+#~ "\n"
+#~ "'iwconfig' - Verwende iwconfig-Befehle.\n"
+#~ "'module' - Einfügen/entfernen des Kernel-Moduls.\n"
+#~ "'esdm' - Verwende den 'easy slow down manager'"
 
 #~ msgid "Fan mode changed: Speed"
 #~ msgstr "Lüftermodus geändert: Geschwindigkeit"

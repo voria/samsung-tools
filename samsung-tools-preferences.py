@@ -186,7 +186,7 @@ class Main():
 		self.bluetoothHotkeyButton.connect("changed", self.on_bluetoothHotkeyButton_changed)
 		self.bluetoothHotkeyButton.show()
 		# Set cpu hotkey grabber
-		self.cpuHotkeyButton = KeyGrabber(popup_title = unicode(_("CPU/Fan"), "utf-8"))
+		self.cpuHotkeyButton = KeyGrabber(popup_title = unicode(_("CPU fan"), "utf-8"))
 		hotkey = session.GetCpuHotkey()
 		(key, mods) = gtk.accelerator_parse(self.__convert_xbindkeys_to_gtk(hotkey))
 		self.cpuHotkeyButton.set_label(key, mods, True)

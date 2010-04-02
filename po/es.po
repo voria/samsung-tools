@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-01 14:32+0200\n"
+"POT-Creation-Date: 2010-04-02 11:52+0200\n"
 "PO-Revision-Date: 2010-03-28 21:41+0000\n"
 "Last-Translator: Jonay <jonay.santana@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -87,7 +87,8 @@ msgid "Bluetooth control is not available"
 msgstr "El control de bluetooth no está disponible"
 
 #: backends/session/util/locales.py:44 samsung-tools-preferences.py:189
-msgid "CPU/Fan"
+#, fuzzy
+msgid "CPU fan"
 msgstr "CPU/Ventilador"
 
 #: backends/session/util/locales.py:45
@@ -115,7 +116,8 @@ msgid "Cannot get fan mode"
 msgstr "No se puede obtener el modo del ventilador"
 
 #: backends/session/util/locales.py:51
-msgid "Fan control is not available"
+#, fuzzy
+msgid "CPU fan control is not available"
 msgstr "El control del ventilador no está disponible"
 
 #: backends/session/util/locales.py:53 samsung-tools-preferences.py:198
@@ -202,7 +204,8 @@ msgid "Bluetooth control: unable to connect to session service!"
 msgstr "Control de bluetooth: ¡Incapaz de conectar al servicio de sesión!"
 
 #: samsung-tools.py:199
-msgid "CPU control: unable to connect to session service!"
+#, fuzzy
+msgid "CPU fan control: unable to connect to session service!"
 msgstr "Control de CPU : ¡Incapaz de conectar al servicio de sesión!"
 
 #: samsung-tools.py:329
@@ -243,14 +246,15 @@ msgid "Bluetooth:"
 msgstr "Bluetooth:"
 
 #: samsung-tools.py:483 po/samsung-tools-preferences.glade.h:8
-msgid "CPU/Fan:"
-msgstr "CPU/Ventilador:"
+#, fuzzy
+msgid "CPU fan:"
+msgstr "CPU/Ventilador"
 
-#: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:47
+#: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:57
 msgid "Webcam:"
 msgstr "Cámara web:"
 
-#: samsung-tools.py:489 po/samsung-tools-preferences.glade.h:49
+#: samsung-tools.py:489 po/samsung-tools-preferences.glade.h:59
 msgid "Wireless:"
 msgstr "Redes inalámbricas:"
 
@@ -353,7 +357,7 @@ msgstr "¡Incapaz de conectar con el servicio de sistema!"
 msgid "CPU Fan"
 msgstr "CPU/Ventilador"
 
-#: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:29
+#: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:24
 msgid "Normal"
 msgstr ""
 
@@ -361,11 +365,11 @@ msgstr ""
 msgid "Preferences..."
 msgstr ""
 
-#: po/samsung-tools-applet.glade.h:5 po/samsung-tools-preferences.glade.h:32
+#: po/samsung-tools-applet.glade.h:5 po/samsung-tools-preferences.glade.h:27
 msgid "Silent"
 msgstr ""
 
-#: po/samsung-tools-applet.glade.h:6 po/samsung-tools-preferences.glade.h:33
+#: po/samsung-tools-applet.glade.h:6 po/samsung-tools-preferences.glade.h:28
 msgid "Speed"
 msgstr ""
 
@@ -374,7 +378,7 @@ msgid "Manage devices on Samsung netbooks"
 msgstr ""
 
 #: po/samsung-tools-preferences.desktop.in.h:1
-#: po/samsung-tools-preferences.glade.h:30
+#: po/samsung-tools-preferences.glade.h:25
 msgid "Samsung Tools Preferences"
 msgstr "Preferencias de las herramientas Samsung"
 
@@ -436,7 +440,8 @@ msgid "Enabled"
 msgstr "Habilitado"
 
 #: po/samsung-tools-preferences.glade.h:17
-msgid "Hotkey used for CPU and Fan control"
+#, fuzzy
+msgid "Hotkey used for CPU fan control"
 msgstr "Tecla caliente usada para el control de la CPU y el ventilador"
 
 #: po/samsung-tools-preferences.glade.h:18
@@ -456,87 +461,114 @@ msgid "Hotkey used for wireless control"
 msgstr "Tecla caliente para el control de las redes inalámbricas"
 
 #: po/samsung-tools-preferences.glade.h:22
-msgid ""
-"How the wireless is toggled.\n"
-"\n"
-"'iwconfig' - Use iwconfig commands.\n"
-"'module' - Insert/remove kernel module.\n"
-"'esdm' - Use the 'easy slow down manager' interface."
-msgstr ""
-"Cómo conmuta la red inalámbrica.\n"
-"\n"
-"'iwconfig' - Usa el comando iwconfig.\n"
-"'module' - Inserta/elimina el módulo kernel.\n"
-"'esdm' - Usa la interfaz esdm: 'administador de sencilla disminución de la "
-"velocidad'."
-
-#: po/samsung-tools-preferences.glade.h:27
 msgid "Kernel module:"
 msgstr "Módulo kernel:"
 
-#: po/samsung-tools-preferences.glade.h:28
+#: po/samsung-tools-preferences.glade.h:23
 msgid "Last status"
 msgstr "Último estado"
 
-#: po/samsung-tools-preferences.glade.h:31
+#: po/samsung-tools-preferences.glade.h:26
 msgid "Session service"
 msgstr "Servicio de sesión"
 
-#: po/samsung-tools-preferences.glade.h:34
+#: po/samsung-tools-preferences.glade.h:29
 msgid "System service"
 msgstr "Servicio de sistema"
 
-#: po/samsung-tools-preferences.glade.h:35
+#: po/samsung-tools-preferences.glade.h:30
 msgid "The initial status at boot for Bluetooth"
 msgstr "El estado inicial al encender el equipo para bluetooth"
 
-#: po/samsung-tools-preferences.glade.h:36
+#: po/samsung-tools-preferences.glade.h:31
 #, fuzzy
 msgid "The initial status at boot for CPU fan"
 msgstr "El estado inicial al encender el equipo para la cámara web"
 
-#: po/samsung-tools-preferences.glade.h:37
+#: po/samsung-tools-preferences.glade.h:32
 msgid "The initial status at boot for webcam"
 msgstr "El estado inicial al encender el equipo para la cámara web"
 
-#: po/samsung-tools-preferences.glade.h:38
+#: po/samsung-tools-preferences.glade.h:33
 msgid "The initial status at boot for wireless"
 msgstr "El estado inicial al encender el equipo para las redes inalámbricas"
 
-#: po/samsung-tools-preferences.glade.h:39
+#: po/samsung-tools-preferences.glade.h:34
+#, fuzzy
 msgid ""
-"The kernel module to be managed.\n"
-"\n"
-"Note: this option is only used when 'Toggle method' is set to 'module'."
+"The kernel module to handle, when the 'Toggle method' option is set to "
+"'module'."
 msgstr ""
 "El módulo kernel que será usado.\n"
 "\n"
 "Nota: Esta opción se usa solo cuando el método de conmutación está en modo "
 "'módulo'."
 
-#: po/samsung-tools-preferences.glade.h:42
+#: po/samsung-tools-preferences.glade.h:36
 msgid ""
-"The wireless device to use.\n"
+"The method used to toggle wireless.\n"
 "\n"
-"Note: this option is only used when 'Toggle method' is set to 'iwconfig'."
+" - esdm:\n"
+"   Use the 'easy slow down manager' interface.\n"
+"   This is the default option and it should work on all netbook\n"
+"   models.\n"
+" - iwconfig:\n"
+"   Use iwconfig commands to toggle the radio transmit power.\n"
+"   On models like the NC10 shipped with Atheros wireless card,\n"
+"   this method disables wireless AND turns off the radio\n"
+"   transmit power. On other models this might not work as\n"
+"   expected: in these cases it's preferable to use the 'module'\n"
+"   or 'esdm' method instead.\n"
+" - module:\n"
+"   Insert/remove kernel module to toggle wireless.\n"
+"   On some netbook models the radio transmit power is not\n"
+"   actually killed when the kernel module is removed: in these\n"
+"   cases it's preferable to use the 'esdm' method instead."
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:54
+#, fuzzy
+msgid ""
+"The wireless device to use, when the 'Toggle method' option is set to "
+"'iwconfig'."
 msgstr ""
 "El dispositivo de redes inalámbricas a usar\n"
 "\n"
 "Nota: Esta opción se usa solo cuando el método de conmutación está en modo "
 "'iwconfig'."
 
-#: po/samsung-tools-preferences.glade.h:45
+#: po/samsung-tools-preferences.glade.h:55
 msgid "Toggle method:"
 msgstr "Método de conmutación:"
 
-#: po/samsung-tools-preferences.glade.h:46
+#: po/samsung-tools-preferences.glade.h:56
 msgid "Webcam initial status:"
 msgstr "Estado inicial de la cámara web"
 
-#: po/samsung-tools-preferences.glade.h:48
+#: po/samsung-tools-preferences.glade.h:58
 msgid "Wireless initial status:"
 msgstr "Estado inicial de las redes inalámbricas"
 
 #: po/samsung-tools-session-service.desktop.in.h:1
 msgid "Start the session service"
 msgstr "Inicia el servicio de sesión"
+
+#~ msgid "CPU/Fan"
+#~ msgstr "CPU/Ventilador"
+
+#~ msgid "CPU/Fan:"
+#~ msgstr "CPU/Ventilador:"
+
+#~ msgid ""
+#~ "How the wireless is toggled.\n"
+#~ "\n"
+#~ "'iwconfig' - Use iwconfig commands.\n"
+#~ "'module' - Insert/remove kernel module.\n"
+#~ "'esdm' - Use the 'easy slow down manager' interface."
+#~ msgstr ""
+#~ "Cómo conmuta la red inalámbrica.\n"
+#~ "\n"
+#~ "'iwconfig' - Usa el comando iwconfig.\n"
+#~ "'module' - Inserta/elimina el módulo kernel.\n"
+#~ "'esdm' - Usa la interfaz esdm: 'administador de sencilla disminución de "
+#~ "la velocidad'."

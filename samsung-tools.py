@@ -196,7 +196,7 @@ class Cpu():
 			except:
 				retry = retry - 1
 		if retry == 0:
-			print unicode(_("CPU control: unable to connect to session service!"), "utf-8")
+			print unicode(_("CPU fan control: unable to connect to session service!"), "utf-8")
 			sys.exit(1)
 	
 	def __is_temperature_available(self):
@@ -480,7 +480,7 @@ def usage(option = None, opt = None, value = None, parser = None):
 	print unicode(_("Bluetooth:"), "utf-8")
 	print "\t" + unicode(_("Interface"), "utf-8") + ":\t-B | --bluetooth"
 	print "\t" + unicode(_("Options"), "utf-8") + ":\ton | off | toggle | status"
-	print unicode(_("CPU/Fan:"), "utf-8")
+	print unicode(_("CPU fan:"), "utf-8")
 	print "\t" + unicode(_("Interface"), "utf-8") + ":\t-c | --cpu"
 	print "\t" + unicode(_("Options"), "utf-8") + ":\tnormal | silent | speed | cycle | hotkey | status"
 	print unicode(_("Webcam:"), "utf-8")
