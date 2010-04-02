@@ -1,3 +1,11 @@
+samsung-tools (0.1~ppa10~loms~lucid) lucid; urgency=low
+
+  * Update strings and translations.
+  * Do not try to kill running services in debian/prerm, as it seems
+    this causes troubles.
+
+ -- Fortunato Ventre (voRia) <vorione@gmail.com>  Fri, 02 Apr 2010 12:41:08 +0200
+
 samsung-tools (0.1~ppa9~loms~lucid) lucid; urgency=low
 
   * Add a new applet for gnome.
