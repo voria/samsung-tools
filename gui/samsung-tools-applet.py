@@ -16,6 +16,7 @@ sys.path.append(WORK_DIRECTORY)
 
 from backends.globals import *
 from backends.session.util.icons import *
+from backends.session.util.locales import *
 
 class Applet():
 	def __init__(self, applet, iid):
@@ -194,6 +195,10 @@ class Applet():
 				self.fanNormalRadiomenuitem.handler_unblock(self.fanNormal_sid)
 				self.fanSilentRadiomenuitem.handler_unblock(self.fanSilent_sid)
 				self.fanSpeedRadiomenuitem.handler_unblock(self.fanSpeed_sid)
+			if conn.IsTemperatureAvailable():
+				temp = conn.GetTemperature()
+				self.cpufanMenuitem.set_has_tooltip(True)
+				self.cpufanMenuitem.set_tooltip_text(CPU_TEMPERATURE + " " + temp)
 			# All ready, show menu	
 			self.menu.popup(None, None, None, event.button, event.time)
 		
