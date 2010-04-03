@@ -1,3 +1,9 @@
+samsung-tools (0.1~ppa11~loms~lucid) lucid; urgency=low
+
+  * samsung-tools-applet: show CPU temperature as tooltip. 
+
+ -- Fortunato Ventre (voRia) <vorione@gmail.com>  Sat, 03 Apr 2010 20:21:25 +0200
+
 samsung-tools (0.1~ppa10~loms~lucid) lucid; urgency=low
 
   * Update strings and translations.
