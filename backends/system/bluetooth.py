@@ -51,23 +51,23 @@ class Bluetooth(dbus.service.Object):
 			systemlog.write("ERROR: 'Bluetooth.IsAvailable()' - COMMAND: '" + command + "' - Exception thrown.")
 			return False
 	
-	def __is_service_started(self):
-		""" Check if bluetooth service is started. """
-		""" Return 'True' if it's started, 'False' otherwise. """
-		command = COMMAND_SERVICE + " bluetooth status"
+	def __is_radio_enabled(self):
+		""" Check if bluetooth radio is enabled. """
+		""" Return 'True' if it's enabled, 'False' otherwise. """
+		command = COMMAND_RFKILL + " list bluetooth"
 		try:
 			process = subprocess.Popen(command.split(),
 									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 			output = process.communicate()[0]
 			if process.returncode != 0:
-				systemlog.write("ERROR: 'Bluetooth.__is_service_started()' - COMMAND: '" + command + "' FAILED.")
+				systemlog.write("ERROR: 'Bluetooth.__is_radio_enabled()' - COMMAND: '" + command + "' FAILED.")
 				return False
-			if "not" in output:
+			if output.split()[5] == "yes":
 				return False
 			else:
 				return True			
 		except:
-			systemlog.write("ERROR: 'Bluetooth.__is_service_started()' - COMMAND: '" + command + "' - Exception thrown.")
+			systemlog.write("ERROR: 'Bluetooth.__is_radio_enabled()' - COMMAND: '" + command + "' - Exception thrown.")
 			return False
 		
 	def __save_last_status(self, status):
@@ -112,7 +112,7 @@ class Bluetooth(dbus.service.Object):
 		""" Return 'True' if enabled, 'False' if disabled. """
 		if not self.available:
 			return False
-		return self.__is_service_started()
+		return self.__is_radio_enabled()
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
@@ -123,8 +123,8 @@ class Bluetooth(dbus.service.Object):
 			return False
 		if self.IsEnabled():
 			return True
-		# Start bluetooth service
-		command = COMMAND_SERVICE + " bluetooth start"
+		# Enable radio
+		command = COMMAND_RFKILL + " unblock bluetooth"
 		try:
 			process = subprocess.Popen(command.split(),
 									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
@@ -148,8 +148,8 @@ class Bluetooth(dbus.service.Object):
 			return False
 		if not self.IsEnabled():
 			return True
-		# Stop bluetooth service
-		command = COMMAND_SERVICE + " bluetooth stop"
+		# Disable radio
+		command = COMMAND_RFKILL + " block bluetooth"
 		try:
 			process = subprocess.Popen(command.split(),
 									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
