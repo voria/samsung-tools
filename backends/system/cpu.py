@@ -29,28 +29,22 @@ class Cpu(dbus.service.Object):
 	""" Handle CPU informations """
 	def __init__(self, conn = None, object_path = None, bus_name = None):
 		dbus.service.Object.__init__(self, conn, object_path, bus_name)
-		self.available = self.__is_available()
-		
-	def __is_available(self):
-		""" Check if the temperature reading is available. """
-		""" Return 'True' if available, 'False' otherwise. """
-		if os.path.exists(CPU_TEMPERATURE_PATH):
-			return True
-		else:
-			return False
-	
+			
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def IsTemperatureAvailable(self, sender = None, conn = None):
 		""" Return 'True' if temperature reading is available, 'False' otherwise. """
-		return self.available
+		if os.path.exists(CPU_TEMPERATURE_PATH):
+			return True
+		else:
+			return False
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 's',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def GetTemperature(self, sender = None, conn = None):
 		""" Return current CPU temperature. """
 		""" Return 'none' if any error. """
-		if not self.available:
+		if not self.IsTemperatureAvailable():
 			return "none"
 		try:
 			file = open(CPU_TEMPERATURE_PATH, "r")
