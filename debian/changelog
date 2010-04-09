@@ -1,6 +1,14 @@
-samsung-tools (0.1~ppa12~loms~lucid) UNRELEASED; urgency=low
+samsung-tools (0.1~ppa12~loms~lucid) lucid; urgency=low
 
-  * 
+  * Use the 'rfkill' command line utility to control bluetooth radio.
+    This way bluetooth can be controlled in a coherent way, no matter
+    if the work is done by using directly the gnome-bluetooth applet
+    or by using samsung-tools.
+  * Remove the wireless toggle options, and use always the 'easy slow
+    down manager' interface, along with the 'rfkill' command line utility.
+  * Clean up code in system services modules.
+  * Update translations template.
+  * Update italian translation.
 
  -- Fortunato Ventre (voRia) <vorione@gmail.com>  Fri, 09 Apr 2010 11:06:19 +0200
 
