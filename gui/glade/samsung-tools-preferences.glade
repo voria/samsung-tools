@@ -5,6 +5,7 @@
   <object class="GtkDialog" id="mainWindow">
     <property name="border_width">5</property>
     <property name="title" translatable="yes">Samsung Tools Preferences</property>
+    <property name="default_width">400</property>
     <property name="type_hint">normal</property>
     <property name="has_separator">False</property>
     <child internal-child="vbox">
