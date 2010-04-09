@@ -29,46 +29,6 @@ class Bluetooth(dbus.service.Object):
 	""" Control bluetooth """
 	def __init__(self, conn = None, object_path = None, bus_name = None):
 		dbus.service.Object.__init__(self, conn, object_path, bus_name)
-		self.available = self.__is_available()
-		
-	def __is_available(self):
-		""" Check if bluetooth is available. """
-		""" Return 'True' if available, 'False' if disabled. """
-		# FIXME: Find a better way to check if bluetooth is available
-		command = COMMAND_LSUSB + " -v"
-		try:
-			process = subprocess.Popen(command.split(),
-									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-			output = process.communicate()[0].split()
-			if process.returncode != 0:
-				systemlog.write("ERROR: 'Bluetooth.IsAvailable()' - COMMAND: '" + command + "' FAILED.")
-				return False
-			if "Bluetooth" in output:
-				return True
-			else:
-				return False
-		except:
-			systemlog.write("ERROR: 'Bluetooth.IsAvailable()' - COMMAND: '" + command + "' - Exception thrown.")
-			return False
-	
-	def __is_radio_enabled(self):
-		""" Check if bluetooth radio is enabled. """
-		""" Return 'True' if it's enabled, 'False' otherwise. """
-		command = COMMAND_RFKILL + " list bluetooth"
-		try:
-			process = subprocess.Popen(command.split(),
-									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-			output = process.communicate()[0]
-			if process.returncode != 0:
-				systemlog.write("ERROR: 'Bluetooth.__is_radio_enabled()' - COMMAND: '" + command + "' FAILED.")
-				return False
-			if output.split()[5] == "yes":
-				return False
-			else:
-				return True			
-		except:
-			systemlog.write("ERROR: 'Bluetooth.__is_radio_enabled()' - COMMAND: '" + command + "' - Exception thrown.")
-			return False
 		
 	def __save_last_status(self, status):
 		""" Save bluetooth last status. """
@@ -88,7 +48,8 @@ class Bluetooth(dbus.service.Object):
 		""" Return 'True' if last status is on, 'False' if off. """
 		if os.path.exists(LAST_DEVICE_STATUS_BLUETOOTH):
 			return False
-		return True
+		else:
+			return True
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = None,
 						sender_keyword = 'sender', connection_keyword = 'conn')
@@ -102,32 +63,58 @@ class Bluetooth(dbus.service.Object):
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')	
 	def IsAvailable(self, sender = None, conn = None):
-		""" Return 'True' if bluetooth is available, 'False' if not. """
-		return self.available
+		""" Check if bluetooth is available. """
+		""" Return 'True' if available, 'False' if disabled. """
+		command = COMMAND_RFKILL + " list bluetooth"
+		try:
+			process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+			output = process.communicate()[0]
+			if process.returncode != 0:
+				systemlog.write("ERROR: 'Bluetooth.IsAvailable()' - COMMAND: '" + command + "' FAILED.")
+				return False
+			if "Bluetooth" in output:
+				return True
+			else:
+				return False
+		except:
+			systemlog.write("ERROR: 'Bluetooth.IsAvailable()' - COMMAND: '" + command + "' - Exception thrown.")
+			return False
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def IsEnabled(self, sender = None, conn = None):
 		""" Check if bluetooth is enabled. """
 		""" Return 'True' if enabled, 'False' if disabled. """
-		if not self.available:
+		if not self.IsAvailable():
 			return False
-		return self.__is_radio_enabled()
+		command = COMMAND_RFKILL + " list bluetooth"
+		try:
+			process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+			output = process.communicate()[0]
+			if process.returncode != 0:
+				systemlog.write("ERROR: 'Bluetooth.IsEnabled()' - COMMAND: '" + command + "' FAILED.")
+				return False
+			if output.split()[5] == "yes":
+				return False
+			else:
+				return True			
+		except:
+			systemlog.write("ERROR: 'Bluetooth.IsEnabled()' - COMMAND: '" + command + "' - Exception thrown.")
+			return False
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Enable(self, sender = None, conn = None):
 		""" Enable bluetooth. """
 		""" Return 'True' on success, 'False' otherwise. """
-		if not self.available:
+		if not self.IsAvailable():
 			return False
 		if self.IsEnabled():
 			return True
 		# Enable radio
 		command = COMMAND_RFKILL + " unblock bluetooth"
 		try:
-			process = subprocess.Popen(command.split(),
-									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+			process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 			process.communicate()
 			if process.returncode != 0:
 				systemlog.write("ERROR: 'Bluetooth.Enable()' - COMMAND: '" + command + "' FAILED.")
@@ -144,15 +131,14 @@ class Bluetooth(dbus.service.Object):
 	def Disable(self, sender = None, conn = None):
 		""" Disable bluetooth. """
 		""" Return 'True' on success, 'False' otherwise. """
-		if not self.available:
+		if not self.IsAvailable():
 			return False
 		if not self.IsEnabled():
 			return True
 		# Disable radio
 		command = COMMAND_RFKILL + " block bluetooth"
 		try:
-			process = subprocess.Popen(command.split(),
-									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+			process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 			process.communicate()
 			if process.returncode != 0:
 				systemlog.write("ERROR: 'Bluetooth.Disable()' - COMMAND: '" + command + "' FAILED.")
@@ -169,7 +155,7 @@ class Bluetooth(dbus.service.Object):
 	def Toggle(self, sender = None, conn = None):
 		""" Toggle bluetooth. """
 		""" Return 'True' on success, 'False' otherwise. """
-		if not self.available:
+		if not self.IsAvailable():
 			return False
 		if self.IsEnabled():
 			return self.Disable()
