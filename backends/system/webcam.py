@@ -39,14 +39,14 @@ class Webcam(dbus.service.Object):
 			process = subprocess.Popen([COMMAND_DMESG], stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 			output = process.communicate()[0].split('\n')
 			if process.returncode != 0:
-				systemlog.write("ERROR: 'Webcam.IsAvailable()' - COMMAND: '" + COMMAND_DMESG + "' FAILED.")
+				systemlog.write("ERROR: 'Webcam.__is_available()' - COMMAND: '" + COMMAND_DMESG + "' FAILED.")
 				return False
 			for line in output:
 				if len(line.split("uvcvideo: Found")) > 1:
 					return True
 			return False
 		except:
-			systemlog.write("ERROR: 'Webcam.IsAvailable()' - COMMAND: '" + COMMAND_DMESG + "' - Exception thrown.")
+			systemlog.write("ERROR: 'Webcam.__is_available()' - COMMAND: '" + COMMAND_DMESG + "' - Exception thrown.")
 			return False		
 	
 	def __save_last_status(self, status):
@@ -85,7 +85,6 @@ class Webcam(dbus.service.Object):
 		""" Return 'True' if webcam control is available, 'False' otherwise. """
 		return self.available
 		
-	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def IsEnabled(self, sender = None, conn = None):
@@ -118,8 +117,7 @@ class Webcam(dbus.service.Object):
 			return True
 		command = COMMAND_MODPROBE + " uvcvideo" 
 		try:
-			process = subprocess.Popen(command.split(),
-									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+			process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 			process.communicate()
 			if process.returncode != 0:
 				systemlog.write("ERROR: 'Webcam.Enable()' - COMMAND: '" + command + "' FAILED.")
@@ -142,8 +140,7 @@ class Webcam(dbus.service.Object):
 			return True
 		command = COMMAND_MODPROBE + " -r uvcvideo"
 		try:
-			process = subprocess.Popen(command.split(),
-									stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+			process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 			process.communicate()
 			if process.returncode != 0:
 				systemlog.write("ERROR: 'Webcam.Disable()' - COMMAND: '" + command + "' FAILED.")
