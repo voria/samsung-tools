@@ -30,24 +30,6 @@ class Wireless(dbus.service.Object):
 	def __init__(self, conn = None, object_path = None, bus_name = None):
 		dbus.service.Object.__init__(self, conn, object_path, bus_name)
 			
-	def __load_esdm_module(self):
-		""" Load the easy-slow-down-manager kernel module. """
-		""" Return 'True' on success, 'False' otherwise. """
-		if os.path.exists(ESDM_PATH_WIRELESS):
-			return True # already loaded
-		command = COMMAND_MODPROBE + " " + ESDM_MODULE
-		try:
-			process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-			process.communicate()
-			if process.returncode != 0:
-				systemlog.write("ERROR: 'Wireless.__load_esdm_module()' - COMMAND: '" + command + "' FAILED.")
-				return False
-			else:
-				return True
-		except:
-			systemlog.write("ERROR: 'Wireless.__load_esdm_module()' - COMMAND: '" + command + "' - Exception thrown.")
-			return False
-	
 	def __save_last_status(self, status):
 		""" Save wireless last status. """
 		try:
@@ -83,11 +65,21 @@ class Wireless(dbus.service.Object):
 	def IsAvailable(self, sender = None, conn = None):
 		""" Check if wireless is available. """
 		""" Return 'True' if available, 'False' if disabled. """
-		method = systemconfig.getWirelessToggleMethod()
-		if method == "esdm":
-			# Check if the 'esdm' module is correctly loaded
-			if not self.__load_esdm_module():
+		# Check if the 'esdm' module is correctly loaded
+		if not os.path.exists(ESDM_PATH_WIRELESS):
+			command = COMMAND_MODPROBE + " " + ESDM_MODULE
+			try:
+				process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+				process.communicate()
+				if process.returncode != 0:
+					systemlog.write("ERROR: 'Wireless.IsAvailable()' - COMMAND: '" + command + "' FAILED.")
+					return False
+				else:
+					return True
+			except:
+				systemlog.write("ERROR: 'Wireless.IsAvailable()' - COMMAND: '" + command + "' - Exception thrown.")
 				return False
+		# Check if wireless is actually available
 		command = COMMAND_RFKILL + " list wifi"
 		try:
 			process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
@@ -110,33 +102,16 @@ class Wireless(dbus.service.Object):
 		""" Return 'True' if enabled, 'False' if disabled. """
 		if not self.IsAvailable():
 			return False
-		method = systemconfig.getWirelessToggleMethod()
-		if method == "esdm":
-			try:
-				with open(ESDM_PATH_WIRELESS, 'r') as file:
-					result = int(file.read(1))
-					if result == 0:
-						return False
-					else:
-						return True
-			except:
-				systemlog.write("ERROR: 'Wireless.IsEnabled()' - cannot read from '" + ESDM_PATH_WIRELESS + "'.")
-				return False
-		else: # method == "rfkill"
-			command = COMMAND_RFKILL + " list wifi"
-			try:
-				process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-				output = process.communicate()[0]
-				if process.returncode != 0:
-					systemlog.write("ERROR: 'Wireless.IsEnabled()' - COMMAND: '" + command + "' FAILED.")
-					return False
-				if output.split()[6] == "yes":
+		try:
+			with open(ESDM_PATH_WIRELESS, 'r') as file:
+				result = int(file.read(1))
+				if result == 0:
 					return False
 				else:
-					return True			
-			except:
-				systemlog.write("ERROR: 'Wireless.IsEnabled()' - COMMAND: '" + command + "' - Exception thrown.")
-				return False
+					return True
+		except:
+			systemlog.write("ERROR: 'Wireless.IsEnabled()' - cannot read from '" + ESDM_PATH_WIRELESS + "'.")
+			return False
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
@@ -147,25 +122,22 @@ class Wireless(dbus.service.Object):
 			return False
 		if self.IsEnabled():
 			return True
-		method = systemconfig.getWirelessToggleMethod()
-		if method == "esdm":
-			try:
-				with open(ESDM_PATH_WIRELESS, 'w') as file:
-					file.write('1')
-			except:
-				systemlog.write("ERROR: 'Wireless.Enable()' - cannot write to '" + ESDM_PATH_WIRELESS + "'.")
-				return False
-		else: # method == "rfkill"
-			command = COMMAND_RFKILL + " unblock wifi"
-			try:
-				process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-				process.communicate()
-				if process.returncode != 0:
-					systemlog.write("ERROR: 'Wireless.Enable()' - COMMAND: '" + command + "' FAILED.")
-					return False
-			except:
-				systemlog.write("ERROR: 'Wireless.Enable()' - COMMAND: '" + command + "' - Exception thrown.")
-				return False
+		# Enable wireless through 'easy slow down manager' interface
+		try:
+			with open(ESDM_PATH_WIRELESS, 'w') as file:
+				file.write('1')
+		except:
+			systemlog.write("ERROR: 'Wireless.Enable()' - cannot write to '" + ESDM_PATH_WIRELESS + "'.")
+			return False
+		# Enable wireless even through the 'rfkill' command line utility
+		command = COMMAND_RFKILL + " unblock wifi"
+		try:
+			process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+			process.communicate()
+			if process.returncode != 0:
+				systemlog.write("ERROR: 'Wireless.Enable()' - COMMAND: '" + command + "' FAILED.")
+		except:
+			systemlog.write("ERROR: 'Wireless.Enable()' - COMMAND: '" + command + "' - Exception thrown.")
 		# Save wireless status
 		self.__save_last_status(True)
 		return True
@@ -179,25 +151,23 @@ class Wireless(dbus.service.Object):
 			return False
 		if not self.IsEnabled():
 			return True
-		method = systemconfig.getWirelessToggleMethod()
-		if method == "esdm":
-			try:
-				with open(ESDM_PATH_WIRELESS, 'w') as file:
-					file.write('0')
-			except:
-				systemlog.write("ERROR: 'Wireless.Disable()' - cannot write to '" + ESDM_PATH_WIRELESS + "'.")
+		# Disable wireless through the 'rfkill' command line utility
+		command = COMMAND_RFKILL + " block wifi"
+		try:
+			process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+			process.communicate()
+			if process.returncode != 0:
+				systemlog.write("ERROR: 'Wireless.Disable()' - COMMAND: '" + command + "' FAILED.")
 				return False
-		else: # method == "rfkill"
-			command = COMMAND_RFKILL + " block wifi"
-			try:
-				process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-				process.communicate()
-				if process.returncode != 0:
-					systemlog.write("ERROR: 'Wireless.Disable()' - COMMAND: '" + command + "' FAILED.")
-					return False
-			except:
-				systemlog.write("ERROR: 'Wireless.Disable()' - COMMAND: '" + command + "' - Exception thrown.")
-				return False
+		except:
+			systemlog.write("ERROR: 'Wireless.Disable()' - COMMAND: '" + command + "' - Exception thrown.")
+			return False
+		# Disable wireless even through the 'easy slow down manager' interface
+		try:
+			with open(ESDM_PATH_WIRELESS, 'w') as file:
+				file.write('0')
+		except:
+			systemlog.write("ERROR: 'Wireless.Disable()' - cannot write to '" + ESDM_PATH_WIRELESS + "'.")
 		# Save wireless status
 		self.__save_last_status(False)
 		return True

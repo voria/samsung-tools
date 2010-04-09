@@ -319,18 +319,6 @@ class Main():
 		else: # status == "last"
 			self.cpufanInitialStatusCombobox.set_active(3)
 		self.cpufanInitialStatusCombobox.connect("changed", self.on_cpufanInitialStatusCombobox_changed)
-		# Wireless toggle method
-		self.wirelessToggleMethodCombobox = self.builder.get_object("wirelessToggleMethodCombobox")
-		# Set cell renderer for 'wireless toggle method' combobox
-		self.wirelessToggleMethodComboboxCR = gtk.CellRendererText()
-		self.wirelessToggleMethodCombobox.pack_start(self.wirelessToggleMethodComboboxCR)
-		self.wirelessToggleMethodCombobox.add_attribute(self.wirelessToggleMethodComboboxCR, 'text', 0)
-		wirelesstogglemethod = system.GetWirelessToggleMethod()
-		if wirelesstogglemethod == "esdm":
-			self.wirelessToggleMethodCombobox.set_active(0)
-		else: # wirelesstogglemethod == "rfkill":
-			self.wirelessToggleMethodCombobox.set_active(1)
-		self.wirelessToggleMethodCombobox.connect("changed", self.on_wirelessToggleMethodCombobox_changed)
 		# Set clean buttons
 		self.bluetoothInitialStatusCleanButton = self.builder.get_object("bluetoothInitialStatusCleanButton")
 		self.bluetoothInitialStatusCleanButton.set_image(gtk.image_new_from_stock(gtk.STOCK_CLEAR, gtk.ICON_SIZE_MENU))
@@ -344,9 +332,6 @@ class Main():
 		self.cpufanInitialStatusCleanButton = self.builder.get_object("cpufanInitialStatusCleanButton")
 		self.cpufanInitialStatusCleanButton.set_image(gtk.image_new_from_stock(gtk.STOCK_CLEAR, gtk.ICON_SIZE_MENU))
 		self.cpufanInitialStatusCleanButton.connect("clicked", self.on_cpufanInitialStatusCleanButton_clicked)
-		self.wirelessToggleMethodCleanButton = self.builder.get_object("wirelessToggleMethodCleanButton")
-		self.wirelessToggleMethodCleanButton.set_image(gtk.image_new_from_stock(gtk.STOCK_CLEAR, gtk.ICON_SIZE_MENU))
-		self.wirelessToggleMethodCleanButton.connect("clicked", self.on_wirelessToggleMethodCleanButton_clicked)
 		
 		# All ready
 		self.mainWindow.show()
@@ -564,14 +549,6 @@ class Main():
 		else:
 			system.SetCpufanInitialStatus("last")
 	
-	def on_wirelessToggleMethodCombobox_changed(self, combobox = None):
-		system = self.__connect_system()
-		active = combobox.get_active()
-		if active == 0:
-			system.SetWirelessToggleMethod("esdm")
-		else: # active == 1:
-			system.SetWirelessToggleMethod("rfkill")
-		
 	def on_bluetoothInitialStatusCleanButton_clicked(self, button = None):
 		if self.bluetoothInitialStatusCombobox.get_active() != 0:
 			self.bluetoothInitialStatusCombobox.set_active(0)
@@ -587,10 +564,6 @@ class Main():
 	def on_cpufanInitialStatusCleanButton_clicked(self, button = None):
 		if self.cpufanInitialStatusCombobox.get_active() != 0:
 			self.cpufanInitialStatusCombobox.set_active(0)
-	
-	def on_wirelessToggleMethodCleanButton_clicked(self, button = None):
-		if self.wirelessToggleMethodCombobox.get_active() != 0:
-			self.wirelessToggleMethodCombobox.set_active(0)
 	
 	def about(self, button = None):
 		authors = [ "Fortunato Ventre" ]

@@ -29,12 +29,10 @@ BLUETOOTH_INITIAL_STATUS_DEFAULT = "last"
 WEBCAM_INITIAL_STATUS_DEFAULT = "last"
 WIRELESS_INITIAL_STATUS_DEFAULT = "last"
 CPUFAN_INITIAL_STATUS_DEFAULT = "normal"
-WIRELESS_TOGGLE_METHOD_DEFAULT = "esdm"
 BLUETOOTH_INITIAL_STATUS_ACCEPTED_VALUES = ['on', 'off', 'last']
 WEBCAM_INITIAL_STATUS_ACCEPTED_VALUES = ['on', 'off', 'last']
 WIRELESS_INITIAL_STATUS_ACCEPTED_VALUES = ['on', 'off', 'last']
 CPUFAN_INITIAL_STATUS_ACCEPTED_VALUES = ['normal', 'silent', 'speed', 'last']
-WIRELESS_TOGGLE_METHOD_ACCEPTED_VALUES = ['esdm', 'rfkill']
 
 class SystemConfig():
 	""" Manage system service configuration file """
@@ -48,7 +46,6 @@ class SystemConfig():
 			# Use default options
 			systemlog.write("WARNING: 'SystemConfig()' - Cannot read '" + configfile + "'. Using default values for all options.")
 			self.config.add_section("Main")
-			self.config.set("Main", "WIRELESS_TOGGLE_METHOD", WIRELESS_TOGGLE_METHOD_DEFAULT)
 			self.config.set("Main", "BLUETOOTH_INITIAL_STATUS", BLUETOOTH_INITIAL_STATUS_DEFAULT)
 			self.config.set("Main", "WEBCAM_INITIAL_STATUS", WEBCAM_INITIAL_STATUS_DEFAULT)
 			self.config.set("Main", "WIRELESS_INITIAL_STATUS", WIRELESS_INITIAL_STATUS_DEFAULT)
@@ -57,10 +54,6 @@ class SystemConfig():
 		else:
 			if not self.config.has_section("Main"):
 				self.config.add_section("Main")
-			try:
-				self.config.get("Main", "WIRELESS_TOGGLE_METHOD")
-			except:
-				self.config.set("Main", "WIRELESS_TOGGLE_METHOD", WIRELESS_TOGGLE_METHOD_DEFAULT)
 			try:
 				self.config.get("Main", "BLUETOOTH_INITIAL_STATUS")
 			except:
@@ -78,11 +71,6 @@ class SystemConfig():
 			except:
 				self.config.set("Main", "CPUFAN_INITIAL_STATUS", CPUFAN_INITIAL_STATUS_DEFAULT)
 		# Options sanity check
-		if self.config.get("Main", "WIRELESS_TOGGLE_METHOD") not in WIRELESS_TOGGLE_METHOD_ACCEPTED_VALUES:
-			# Option is invalid, set default value
-			systemlog.write("WARNING: 'SystemConfig()' - 'WIRELESS_TOGGLE_METHOD' option specified in '" + configfile + 
-					"' is invalid. Using default value ('" + WIRELESS_TOGGLE_METHOD_DEFAULT + "').")
-			self.config.set("Main", "WIRELESS_TOGGLE_METHOD", WIRELESS_TOGGLE_METHOD_DEFAULT)
 		if self.config.get("Main", "BLUETOOTH_INITIAL_STATUS") not in BLUETOOTH_INITIAL_STATUS_ACCEPTED_VALUES:
 			# Option is invalid, set default value
 			systemlog.write("WARNING: 'SystemConfig()' - 'BLUETOOTH_INITIAL_STATUS' option specified in '" + configfile + 
@@ -180,10 +168,6 @@ class SystemConfig():
 		""" Return the CPUFAN_INITIAL_STATUS option. """
 		return self.config.get("Main", "CPUFAN_INITIAL_STATUS")
 	
-	def getWirelessToggleMethod(self):
-		""" Return the WIRELESS_TOGGLE_METHOD option. """
-		return self.config.get("Main", "WIRELESS_TOGGLE_METHOD") 
-	
 	def setBluetoothInitialStatus(self, value):
 		""" Set the BLUETOOTH_INITIAL_STATUS option. """
 		""" Return 'True' on success, 'False' otherwise. """
@@ -223,13 +207,3 @@ class SystemConfig():
 			return False
 		self.config.set("Main", "CPUFAN_INITIAL_STATUS", value)
 		return self.__write("CPUFAN_INITIAL_STATUS")
-	
-	def setWirelessToggleMethod(self, value):
-		""" Set the WIRELESS_TOGGLE_METHOD option. """
-		""" Return 'True' on success, 'False' otherwise. """
-		if value == "default": # set default
-			value = WIRELESS_TOGGLE_METHOD_DEFAULT
-		if value not in WIRELESS_TOGGLE_METHOD_ACCEPTED_VALUES:
-			return False
-		self.config.set("Main", "WIRELESS_TOGGLE_METHOD", value)
-		return self.__write("WIRELESS_TOGGLE_METHOD")

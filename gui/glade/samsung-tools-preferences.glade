@@ -310,16 +310,16 @@
               <object class="GtkTable" id="systemTable">
                 <property name="visible">True</property>
                 <property name="border_width">5</property>
-                <property name="n_rows">7</property>
+                <property name="n_rows">5</property>
                 <property name="n_columns">3</property>
                 <property name="column_spacing">5</property>
                 <property name="row_spacing">5</property>
                 <child>
-                  <object class="GtkLabel" id="generalConfigurationLabel">
+                  <object class="GtkLabel" id="initialStatusForDevicesConfigurationLabel">
                     <property name="visible">True</property>
                     <property name="xalign">0</property>
                     <property name="xpad">5</property>
-                    <property name="label" translatable="yes">&lt;b&gt;General&lt;/b&gt;</property>
+                    <property name="label" translatable="yes">&lt;b&gt;Initial status for devices&lt;/b&gt;</property>
                     <property name="use_markup">True</property>
                   </object>
                   <packing>
@@ -331,7 +331,7 @@
                   <object class="GtkLabel" id="bluetoothInitialStatusLabel">
                     <property name="visible">True</property>
                     <property name="tooltip_text" translatable="yes">The initial status at boot for Bluetooth</property>
-                    <property name="label" translatable="yes">Bluetooth initial status:</property>
+                    <property name="label" translatable="yes">Bluetooth:</property>
                   </object>
                   <packing>
                     <property name="top_attach">1</property>
@@ -376,7 +376,7 @@
                   <object class="GtkLabel" id="webcamInitialStatusLabel">
                     <property name="visible">True</property>
                     <property name="tooltip_text" translatable="yes">The initial status at boot for webcam</property>
-                    <property name="label" translatable="yes">Webcam initial status:</property>
+                    <property name="label" translatable="yes">Webcam:</property>
                   </object>
                   <packing>
                     <property name="top_attach">2</property>
@@ -453,7 +453,7 @@
                   <object class="GtkLabel" id="wirelessInitialStatusLabel">
                     <property name="visible">True</property>
                     <property name="tooltip_text" translatable="yes">The initial status at boot for wireless</property>
-                    <property name="label" translatable="yes">Wireless initial status:</property>
+                    <property name="label" translatable="yes">Wireless:</property>
                   </object>
                   <packing>
                     <property name="top_attach">3</property>
@@ -463,103 +463,10 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkLabel" id="wirelessConfigurationLabel">
-                    <property name="visible">True</property>
-                    <property name="xalign">0</property>
-                    <property name="xpad">5</property>
-                    <property name="label" translatable="yes">&lt;b&gt;Wireless&lt;/b&gt;</property>
-                    <property name="use_markup">True</property>
-                  </object>
-                  <packing>
-                    <property name="right_attach">3</property>
-                    <property name="top_attach">5</property>
-                    <property name="bottom_attach">6</property>
-                    <property name="y_options"></property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkLabel" id="wirelessToggleMethodLabel">
-                    <property name="visible">True</property>
-                    <property name="tooltip_text" translatable="yes" comments="This is the text shown in the tooltip of the &quot;Toggle method:&quot; option, in the 'samsung-tools-preferences' dialog.&#10;Every line should not be longer than ~65 chars, or else it will be automatically cut off and the layout will be lost.">The method used to toggle wireless.
-
- - esdm:
-   Use the 'easy slow down manager' interface.
-   This is the default option and it should work on all netbook
-   models.
- - iwconfig:
-   Use iwconfig commands to toggle the radio transmit power.
-   On models like the NC10 shipped with Atheros wireless card,
-   this method disables wireless AND turns off the radio
-   transmit power. On other models this might not work as
-   expected: in these cases it's preferable to use the 'module'
-   or 'esdm' method instead.
- - module:
-   Insert/remove kernel module to toggle wireless.
-   On some netbook models the radio transmit power is not
-   actually killed when the kernel module is removed: in these
-   cases it's preferable to use the 'esdm' method instead.</property>
-                    <property name="label" translatable="yes">Toggle method:</property>
-                  </object>
-                  <packing>
-                    <property name="top_attach">6</property>
-                    <property name="bottom_attach">7</property>
-                    <property name="x_options"></property>
-                    <property name="y_options"></property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkComboBox" id="wirelessToggleMethodCombobox">
-                    <property name="visible">True</property>
-                    <property name="tooltip_text" translatable="yes" comments="This is the text shown in the tooltip of the &quot;Toggle method:&quot; option, in the 'samsung-tools-preferences' dialog.&#10;Every line should not be longer than ~65 chars, or else it will be automatically cut off and the layout will be lost.">The method used to toggle wireless.
-
- - esdm:
-   Use the 'easy slow down manager' interface.
-   This is the default option and it should work on all netbook
-   models.
- - iwconfig:
-   Use iwconfig commands to toggle the radio transmit power.
-   On models like the NC10 shipped with Atheros wireless card,
-   this method disables wireless AND turns off the radio
-   transmit power. On other models this might not work as
-   expected: in these cases it's preferable to use the 'module'
-   or 'esdm' method instead.
- - module:
-   Insert/remove kernel module to toggle wireless.
-   On some netbook models the radio transmit power is not
-   actually killed when the kernel module is removed: in these
-   cases it's preferable to use the 'esdm' method instead.</property>
-                    <property name="model">wirelessToggleMethodListstore</property>
-                    <property name="active">0</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">1</property>
-                    <property name="right_attach">2</property>
-                    <property name="top_attach">6</property>
-                    <property name="bottom_attach">7</property>
-                    <property name="y_options"></property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkButton" id="wirelessToggleMethodCleanButton">
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">True</property>
-                    <property name="tooltip_text" translatable="yes">Click here to set the default value</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">2</property>
-                    <property name="right_attach">3</property>
-                    <property name="top_attach">6</property>
-                    <property name="bottom_attach">7</property>
-                    <property name="x_options"></property>
-                    <property name="y_options"></property>
-                  </packing>
-                </child>
-                <child>
                   <object class="GtkLabel" id="cpufanInitialStatusLabel">
                     <property name="visible">True</property>
                     <property name="tooltip_text" translatable="yes">The initial status at boot for CPU fan</property>
-                    <property name="label" translatable="yes">CPU fan initial status:</property>
+                    <property name="label" translatable="yes">CPU fan:</property>
                   </object>
                   <packing>
                     <property name="top_attach">4</property>
@@ -665,20 +572,6 @@
       <action-widget response="0">aboutButton</action-widget>
       <action-widget response="0">closeButton</action-widget>
     </action-widgets>
-  </object>
-  <object class="GtkListStore" id="wirelessToggleMethodListstore">
-    <columns>
-      <!-- column-name Methods -->
-      <column type="gchararray"/>
-    </columns>
-    <data>
-      <row>
-        <col id="0">esdm</col>
-      </row>
-      <row>
-        <col id="0">rfkill</col>
-      </row>
-    </data>
   </object>
   <object class="GtkListStore" id="initialStatusListstore">
     <columns>
