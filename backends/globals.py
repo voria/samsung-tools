@@ -83,7 +83,6 @@ COMMAND_LSUSB = "/usr/sbin/lsusb"
 COMMAND_LSPCI = "/usr/bin/lspci"
 COMMAND_DMESG = "/bin/dmesg"
 COMMAND_RFKILL = "/sbin/rfkill"
-COMMAND_IWCONFIG = "/sbin/iwconfig"
 # Easy slow down manager interface
 ESDM_MODULE = "easy_slow_down_manager"
 ESDM_PATH_BACKLIGHT = "/proc/easy_backlight"

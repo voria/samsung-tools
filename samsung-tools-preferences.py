@@ -328,19 +328,9 @@ class Main():
 		wirelesstogglemethod = system.GetWirelessToggleMethod()
 		if wirelesstogglemethod == "esdm":
 			self.wirelessToggleMethodCombobox.set_active(0)
-		elif wirelesstogglemethod == "iwconfig":
+		else: # wirelesstogglemethod == "rfkill":
 			self.wirelessToggleMethodCombobox.set_active(1)
-		else: # wirelesstogglemethod == "module"
-			self.wirelessToggleMethodCombobox.set_active(2)
 		self.wirelessToggleMethodCombobox.connect("changed", self.on_wirelessToggleMethodCombobox_changed)
-		# Wireless device
-		self.wirelessDeviceEntry = self.builder.get_object("wirelessDeviceEntry")
-		self.wirelessDeviceEntry.set_text(system.GetWirelessDevice())
-		self.wirelessDeviceEntry.connect("focus-out-event", self.on_wirelessDeviceEntry_focus_out_event)
-		# Wireless module
-		self.wirelessModuleEntry = self.builder.get_object("wirelessModuleEntry")
-		self.wirelessModuleEntry.set_text(system.GetWirelessModule())
-		self.wirelessModuleEntry.connect("focus-out-event", self.on_wirelessModuleEntry_focus_out_event)
 		# Set clean buttons
 		self.bluetoothInitialStatusCleanButton = self.builder.get_object("bluetoothInitialStatusCleanButton")
 		self.bluetoothInitialStatusCleanButton.set_image(gtk.image_new_from_stock(gtk.STOCK_CLEAR, gtk.ICON_SIZE_MENU))
@@ -357,37 +347,6 @@ class Main():
 		self.wirelessToggleMethodCleanButton = self.builder.get_object("wirelessToggleMethodCleanButton")
 		self.wirelessToggleMethodCleanButton.set_image(gtk.image_new_from_stock(gtk.STOCK_CLEAR, gtk.ICON_SIZE_MENU))
 		self.wirelessToggleMethodCleanButton.connect("clicked", self.on_wirelessToggleMethodCleanButton_clicked)
-		self.wirelessDeviceCleanButton = self.builder.get_object("wirelessDeviceCleanButton")
-		self.wirelessDeviceCleanButton.set_image(gtk.image_new_from_stock(gtk.STOCK_CLEAR, gtk.ICON_SIZE_MENU))
-		self.wirelessDeviceCleanButton.connect("clicked", self.on_wirelessDeviceCleanButton_clicked)
-		self.wirelessModuleCleanButton = self.builder.get_object("wirelessModuleCleanButton")
-		self.wirelessModuleCleanButton.set_image(gtk.image_new_from_stock(gtk.STOCK_CLEAR, gtk.ICON_SIZE_MENU))
-		self.wirelessModuleCleanButton.connect("clicked", self.on_wirelessModuleCleanButton_clicked)
-		# Disable 'wireless device' and 'wireless module' options according to 'wireless toggle method' status
-		self.wirelessDeviceLabel = self.builder.get_object("wirelessDeviceLabel")
-		self.wirelessModuleLabel = self.builder.get_object("wirelessModuleLabel")
-		active_method = self.wirelessToggleMethodCombobox.get_active()
-		if active_method == 0:
-			self.wirelessDeviceLabel.set_sensitive(False)
-			self.wirelessDeviceEntry.set_sensitive(False)
-			self.wirelessDeviceCleanButton.set_sensitive(False)
-			self.wirelessModuleLabel.set_sensitive(False)
-			self.wirelessModuleEntry.set_sensitive(False)
-			self.wirelessModuleCleanButton.set_sensitive(False)
-		elif active_method == 1:
-			self.wirelessDeviceLabel.set_sensitive(True)
-			self.wirelessDeviceEntry.set_sensitive(True)
-			self.wirelessDeviceCleanButton.set_sensitive(True)
-			self.wirelessModuleLabel.set_sensitive(False)
-			self.wirelessModuleEntry.set_sensitive(False)
-			self.wirelessModuleCleanButton.set_sensitive(False)
-		else:
-			self.wirelessDeviceLabel.set_sensitive(False)
-			self.wirelessDeviceEntry.set_sensitive(False)
-			self.wirelessDeviceCleanButton.set_sensitive(False)
-			self.wirelessModuleLabel.set_sensitive(True)
-			self.wirelessModuleEntry.set_sensitive(True)
-			self.wirelessModuleCleanButton.set_sensitive(True)
 		
 		# All ready
 		self.mainWindow.show()
@@ -610,49 +569,9 @@ class Main():
 		active = combobox.get_active()
 		if active == 0:
 			system.SetWirelessToggleMethod("esdm")
-			self.wirelessDeviceLabel.set_sensitive(False)
-			self.wirelessDeviceEntry.set_sensitive(False)
-			self.wirelessDeviceCleanButton.set_sensitive(False)
-			self.wirelessModuleLabel.set_sensitive(False)
-			self.wirelessModuleEntry.set_sensitive(False)
-			self.wirelessModuleCleanButton.set_sensitive(False)
-		elif active == 1:
-			system.SetWirelessToggleMethod("iwconfig")
-			self.wirelessDeviceLabel.set_sensitive(True)
-			self.wirelessDeviceEntry.set_sensitive(True)
-			self.wirelessDeviceCleanButton.set_sensitive(True)
-			self.wirelessModuleLabel.set_sensitive(False)
-			self.wirelessModuleEntry.set_sensitive(False)
-			self.wirelessModuleCleanButton.set_sensitive(False)
-		else:
-			system.SetWirelessToggleMethod("module")
-			self.wirelessDeviceLabel.set_sensitive(False)
-			self.wirelessDeviceEntry.set_sensitive(False)
-			self.wirelessDeviceCleanButton.set_sensitive(False)
-			self.wirelessModuleLabel.set_sensitive(True)
-			self.wirelessModuleEntry.set_sensitive(True)
-			self.wirelessModuleCleanButton.set_sensitive(True)
+		else: # active == 1:
+			system.SetWirelessToggleMethod("rfkill")
 		
-	def on_wirelessDeviceEntry_focus_out_event(self, widget = None, event = None):
-		new = widget.get_text()
-		system = self.__connect_system()
-		if new == "":
-			widget.set_text(system.GetWirelessDevice())
-			return
-		old = system.GetWirelessDevice()
-		if new != old:
-			system.SetWirelessDevice(new)
-	
-	def on_wirelessModuleEntry_focus_out_event(self, widget = None, event = None):
-		new = widget.get_text()
-		system = self.__connect_system()
-		if new == "":
-			widget.set_text(system.GetWirelessModule())
-			return
-		old = system.GetWirelessModule()
-		if new != old:
-			system.SetWirelessModule(new)
-	
 	def on_bluetoothInitialStatusCleanButton_clicked(self, button = None):
 		if self.bluetoothInitialStatusCombobox.get_active() != 0:
 			self.bluetoothInitialStatusCombobox.set_active(0)
@@ -672,16 +591,6 @@ class Main():
 	def on_wirelessToggleMethodCleanButton_clicked(self, button = None):
 		if self.wirelessToggleMethodCombobox.get_active() != 0:
 			self.wirelessToggleMethodCombobox.set_active(0)
-	
-	def on_wirelessDeviceCleanButton_clicked(self, button = None):
-		system = self.__connect_system()
-		system.SetWirelessDevice("default")
-		self.wirelessDeviceEntry.set_text(system.GetWirelessDevice())
-	
-	def on_wirelessModuleCleanButton_clicked(self, button = None):
-		system = self.__connect_system()
-		system.SetWirelessModule("default")
-		self.wirelessModuleEntry.set_text(system.GetWirelessModule())
 	
 	def about(self, button = None):
 		authors = [ "Fortunato Ventre" ]

@@ -310,7 +310,7 @@
               <object class="GtkTable" id="systemTable">
                 <property name="visible">True</property>
                 <property name="border_width">5</property>
-                <property name="n_rows">9</property>
+                <property name="n_rows">7</property>
                 <property name="n_columns">3</property>
                 <property name="column_spacing">5</property>
                 <property name="row_spacing">5</property>
@@ -556,94 +556,6 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkLabel" id="wirelessDeviceLabel">
-                    <property name="visible">True</property>
-                    <property name="tooltip_text" translatable="yes">The wireless device to use, when the 'Toggle method' option is set to 'iwconfig'.</property>
-                    <property name="label" translatable="yes">Device:</property>
-                  </object>
-                  <packing>
-                    <property name="top_attach">7</property>
-                    <property name="bottom_attach">8</property>
-                    <property name="x_options"></property>
-                    <property name="y_options"></property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkEntry" id="wirelessDeviceEntry">
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="tooltip_text" translatable="yes">The wireless device to use, when the 'Toggle method' option is set to 'iwconfig'.</property>
-                    <property name="invisible_char">&#x2022;</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">1</property>
-                    <property name="right_attach">2</property>
-                    <property name="top_attach">7</property>
-                    <property name="bottom_attach">8</property>
-                    <property name="y_options"></property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkButton" id="wirelessDeviceCleanButton">
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">True</property>
-                    <property name="tooltip_text" translatable="yes">Click here to set the default value</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">2</property>
-                    <property name="right_attach">3</property>
-                    <property name="top_attach">7</property>
-                    <property name="bottom_attach">8</property>
-                    <property name="x_options"></property>
-                    <property name="y_options"></property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkButton" id="wirelessModuleCleanButton">
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">True</property>
-                    <property name="tooltip_text" translatable="yes">Click here to set the default value</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">2</property>
-                    <property name="right_attach">3</property>
-                    <property name="top_attach">8</property>
-                    <property name="bottom_attach">9</property>
-                    <property name="x_options"></property>
-                    <property name="y_options"></property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkLabel" id="wirelessModuleLabel">
-                    <property name="visible">True</property>
-                    <property name="tooltip_text" translatable="yes">The kernel module to handle, when the 'Toggle method' option is set to 'module'.</property>
-                    <property name="label" translatable="yes">Kernel module:</property>
-                  </object>
-                  <packing>
-                    <property name="top_attach">8</property>
-                    <property name="bottom_attach">9</property>
-                    <property name="x_options"></property>
-                    <property name="y_options"></property>
-                  </packing>
-                </child>
-                <child>
-                  <object class="GtkEntry" id="wirelessModuleEntry">
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="tooltip_text" translatable="yes">The kernel module to handle, when the 'Toggle method' option is set to 'module'.</property>
-                    <property name="invisible_char">&#x2022;</property>
-                  </object>
-                  <packing>
-                    <property name="left_attach">1</property>
-                    <property name="right_attach">2</property>
-                    <property name="top_attach">8</property>
-                    <property name="bottom_attach">9</property>
-                    <property name="y_options"></property>
-                  </packing>
-                </child>
-                <child>
                   <object class="GtkLabel" id="cpufanInitialStatusLabel">
                     <property name="visible">True</property>
                     <property name="tooltip_text" translatable="yes">The initial status at boot for CPU fan</property>
@@ -764,10 +676,7 @@
         <col id="0">esdm</col>
       </row>
       <row>
-        <col id="0">iwconfig</col>
-      </row>
-      <row>
-        <col id="0">module</col>
+        <col id="0">rfkill</col>
       </row>
     </data>
   </object>

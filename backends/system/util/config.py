@@ -30,13 +30,11 @@ WEBCAM_INITIAL_STATUS_DEFAULT = "last"
 WIRELESS_INITIAL_STATUS_DEFAULT = "last"
 CPUFAN_INITIAL_STATUS_DEFAULT = "normal"
 WIRELESS_TOGGLE_METHOD_DEFAULT = "esdm"
-WIRELESS_DEVICE_DEFAULT = "wlan0"
-WIRELESS_MODULE_DEFAULT = "ath5k"
 BLUETOOTH_INITIAL_STATUS_ACCEPTED_VALUES = ['on', 'off', 'last']
 WEBCAM_INITIAL_STATUS_ACCEPTED_VALUES = ['on', 'off', 'last']
 WIRELESS_INITIAL_STATUS_ACCEPTED_VALUES = ['on', 'off', 'last']
 CPUFAN_INITIAL_STATUS_ACCEPTED_VALUES = ['normal', 'silent', 'speed', 'last']
-WIRELESS_TOGGLE_METHOD_ACCEPTED_VALUES = ['esdm', 'iwconfig', 'module']
+WIRELESS_TOGGLE_METHOD_ACCEPTED_VALUES = ['esdm', 'rfkill']
 
 class SystemConfig():
 	""" Manage system service configuration file """
@@ -51,8 +49,6 @@ class SystemConfig():
 			systemlog.write("WARNING: 'SystemConfig()' - Cannot read '" + configfile + "'. Using default values for all options.")
 			self.config.add_section("Main")
 			self.config.set("Main", "WIRELESS_TOGGLE_METHOD", WIRELESS_TOGGLE_METHOD_DEFAULT)
-			self.config.set("Main", "WIRELESS_DEVICE", WIRELESS_DEVICE_DEFAULT)
-			self.config.set("Main", "WIRELESS_MODULE", WIRELESS_MODULE_DEFAULT)
 			self.config.set("Main", "BLUETOOTH_INITIAL_STATUS", BLUETOOTH_INITIAL_STATUS_DEFAULT)
 			self.config.set("Main", "WEBCAM_INITIAL_STATUS", WEBCAM_INITIAL_STATUS_DEFAULT)
 			self.config.set("Main", "WIRELESS_INITIAL_STATUS", WIRELESS_INITIAL_STATUS_DEFAULT)
@@ -65,14 +61,6 @@ class SystemConfig():
 				self.config.get("Main", "WIRELESS_TOGGLE_METHOD")
 			except:
 				self.config.set("Main", "WIRELESS_TOGGLE_METHOD", WIRELESS_TOGGLE_METHOD_DEFAULT)
-			try:
-				self.config.get("Main", "WIRELESS_DEVICE")
-			except:
-				self.config.set("Main", "WIRELESS_DEVICE", WIRELESS_DEVICE_DEFAULT)
-			try:
-				self.config.get("Main", "WIRELESS_MODULE")
-			except:
-				self.config.set("Main", "WIRELESS_MODULE", WIRELESS_MODULE_DEFAULT)
 			try:
 				self.config.get("Main", "BLUETOOTH_INITIAL_STATUS")
 			except:
@@ -196,14 +184,6 @@ class SystemConfig():
 		""" Return the WIRELESS_TOGGLE_METHOD option. """
 		return self.config.get("Main", "WIRELESS_TOGGLE_METHOD") 
 	
-	def getWirelessDevice(self):
-		""" Return the WIRELESS_DEVICE option. """
-		return self.config.get("Main", "WIRELESS_DEVICE")
-	
-	def getWirelessModule(self):
-		""" Return the WIRELESS_MODULE option. """
-		return self.config.get("Main", "WIRELESS_MODULE")
-	
 	def setBluetoothInitialStatus(self, value):
 		""" Set the BLUETOOTH_INITIAL_STATUS option. """
 		""" Return 'True' on success, 'False' otherwise. """
@@ -253,19 +233,3 @@ class SystemConfig():
 			return False
 		self.config.set("Main", "WIRELESS_TOGGLE_METHOD", value)
 		return self.__write("WIRELESS_TOGGLE_METHOD")
-	
-	def setWirelessDevice(self, value):
-		""" Set the WIRELESS_DEVICE option. """
-		""" Return 'True' on success, 'False' otherwise. """
-		if value == "default": # set default
-			value = WIRELESS_DEVICE_DEFAULT
-		self.config.set("Main", "WIRELESS_DEVICE", value)
-		return self.__write("WIRELESS_DEVICE")
-		
-	def setWirelessModule(self, value):
-		""" Set the WIRELESS_MODULE option. """
-		""" Return 'True' on success, 'False' otherwise. """
-		if value == "default": # set default
-			value = WIRELESS_MODULE_DEFAULT
-		self.config.set("Main", "WIRELESS_MODULE", value)
-		return self.__write("WIRELESS_MODULE")

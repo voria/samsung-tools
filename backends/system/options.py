@@ -53,16 +53,6 @@ class Options(dbus.service.Object):
 	def GetWirelessToggleMethod(self, sender = None, conn = None):
 		return systemconfig.getWirelessToggleMethod()
 	
-	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 's',
-						sender_keyword = 'sender', connection_keyword = 'conn')
-	def GetWirelessDevice(self, sender = None, conn = None):
-		return systemconfig.getWirelessDevice()
-	
-	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 's',
-						sender_keyword = 'sender', connection_keyword = 'conn')
-	def GetWirelessModule(self, sender = None, conn = None):
-		return systemconfig.getWirelessModule()
-	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = 's', out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def SetBluetoothInitialStatus(self, value, sender = None, conn = None):
@@ -92,15 +82,3 @@ class Options(dbus.service.Object):
 	def SetWirelessToggleMethod(self, value, sender = None, conn = None):
 		""" Return 'True' on success, 'False' otherwise. """
 		return systemconfig.setWirelessToggleMethod(value)
-	
-	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = 's', out_signature = 'b',
-						sender_keyword = 'sender', connection_keyword = 'conn')
-	def SetWirelessDevice(self, value, sender = None, conn = None):
-		""" Return 'True' on success, 'False' otherwise. """
-		return systemconfig.setWirelessDevice(value)
-	
-	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = 's', out_signature = 'b',
-						sender_keyword = 'sender', connection_keyword = 'conn')
-	def SetWirelessModule(self, value, sender = None, conn = None):
-		""" Return 'True' on success, 'False' otherwise. """
-		return systemconfig.setWirelessModule(value)
