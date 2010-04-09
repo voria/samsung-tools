@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-02 11:52+0200\n"
+"POT-Creation-Date: 2010-04-09 12:42+0200\n"
 "PO-Revision-Date: 2010-03-15 17:36+0000\n"
 "Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -225,7 +225,7 @@ msgstr "Samsung Tools - Befehlszeilenwerkzeug"
 msgid "Usage: %s <interface> <option> ..."
 msgstr "Verwendung: %s <Schnittstelle> <Option>"
 
-#: samsung-tools.py:477 po/samsung-tools-preferences.glade.h:4
+#: samsung-tools.py:477 po/samsung-tools-preferences.glade.h:3
 msgid "Backlight:"
 msgstr "Hintergrundbeleuchtung:"
 
@@ -239,20 +239,20 @@ msgstr "Benutzeroberfläche"
 msgid "Options"
 msgstr "Einstellungen"
 
-#: samsung-tools.py:480 po/samsung-tools-preferences.glade.h:6
+#: samsung-tools.py:480 po/samsung-tools-preferences.glade.h:4
 msgid "Bluetooth:"
 msgstr "Bluetooth:"
 
-#: samsung-tools.py:483 po/samsung-tools-preferences.glade.h:8
+#: samsung-tools.py:483 po/samsung-tools-preferences.glade.h:5
 #, fuzzy
 msgid "CPU fan:"
 msgstr "CPU/Lüfter"
 
-#: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:57
+#: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:29
 msgid "Webcam:"
 msgstr "Webcam:"
 
-#: samsung-tools.py:489 po/samsung-tools-preferences.glade.h:59
+#: samsung-tools.py:489 po/samsung-tools-preferences.glade.h:30
 msgid "Wireless:"
 msgstr "WLAN-Karte"
 
@@ -303,7 +303,7 @@ msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr ""
 "Für weitere Informationen, besuche das Internetforum \"Linux On My Samsung\":"
 
-#: samsung-tools.py:515 samsung-tools-preferences.py:711
+#: samsung-tools.py:515 samsung-tools-preferences.py:593
 msgid "Released under GPLv3 license"
 msgstr "Veröffentlicht unter der GPLv3-Lizenz"
 
@@ -343,11 +343,11 @@ msgstr "Bitte drücke die neue Tastenkombination"
 msgid "None"
 msgstr "Keine"
 
-#: samsung-tools-preferences.py:404
+#: samsung-tools-preferences.py:348
 msgid "Unable to connect to session service!"
 msgstr "Kann nicht mit Sitzungsdienst verbinden"
 
-#: samsung-tools-preferences.py:416
+#: samsung-tools-preferences.py:360
 msgid "Unable to connect to system service!"
 msgstr "Kann nicht mit Systemdienst verbinden"
 
@@ -356,7 +356,7 @@ msgstr "Kann nicht mit Systemdienst verbinden"
 msgid "CPU Fan"
 msgstr "CPU/Lüfter"
 
-#: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:24
+#: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:19
 msgid "Normal"
 msgstr ""
 
@@ -364,11 +364,11 @@ msgstr ""
 msgid "Preferences..."
 msgstr ""
 
-#: po/samsung-tools-applet.glade.h:5 po/samsung-tools-preferences.glade.h:27
+#: po/samsung-tools-applet.glade.h:5 po/samsung-tools-preferences.glade.h:22
 msgid "Silent"
 msgstr ""
 
-#: po/samsung-tools-applet.glade.h:6 po/samsung-tools-preferences.glade.h:28
+#: po/samsung-tools-applet.glade.h:6 po/samsung-tools-preferences.glade.h:23
 msgid "Speed"
 msgstr ""
 
@@ -377,7 +377,7 @@ msgid "Manage devices on Samsung netbooks"
 msgstr ""
 
 #: po/samsung-tools-preferences.desktop.in.h:1
-#: po/samsung-tools-preferences.glade.h:25
+#: po/samsung-tools-preferences.glade.h:20
 msgid "Samsung Tools Preferences"
 msgstr "Samsung Tools Einstellungen"
 
@@ -386,169 +386,140 @@ msgid "Show and modify Samsung Tools preferences"
 msgstr "Anzeigen und ändern der Samsung Tools Einstellungen"
 
 #: po/samsung-tools-preferences.glade.h:1
-msgid "<b>General</b>"
-msgstr "<b>Allgemein</b>"
-
-#: po/samsung-tools-preferences.glade.h:2
 msgid "<b>Hotkeys</b>"
 msgstr "<b>Tastenkombinationen</b>"
 
-#: po/samsung-tools-preferences.glade.h:3
-msgid "<b>Wireless</b>"
-msgstr "<b>WLAN-Karte</b>"
+#: po/samsung-tools-preferences.glade.h:2
+msgid "<b>Initial status for devices</b>"
+msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:5
-msgid "Bluetooth initial status:"
-msgstr "Anfangs-Status von Bluetooth"
-
-#: po/samsung-tools-preferences.glade.h:7
-#, fuzzy
-msgid "CPU fan initial status:"
-msgstr "Anfangs-Status der Webcam"
-
-#: po/samsung-tools-preferences.glade.h:9
+#: po/samsung-tools-preferences.glade.h:6
 msgid "Click here to disable the hotkey"
 msgstr "Klicke hier, um die Tastenkombination zu deaktivieren"
 
-#: po/samsung-tools-preferences.glade.h:10
+#: po/samsung-tools-preferences.glade.h:7
 msgid "Click here to set the default hotkey"
 msgstr "Klick hier um die Standard-Tastenkombination zu verwenden"
 
-#: po/samsung-tools-preferences.glade.h:11
+#: po/samsung-tools-preferences.glade.h:8
 msgid "Click here to set the default value"
 msgstr "Klick hier um den Standard-Wert zu verwenden"
 
-#: po/samsung-tools-preferences.glade.h:12
-msgid "Device:"
-msgstr "Gerät:"
-
-#: po/samsung-tools-preferences.glade.h:13
+#: po/samsung-tools-preferences.glade.h:9
 msgid "Disabled"
 msgstr "Ausgeschaltet"
 
-#: po/samsung-tools-preferences.glade.h:14
+#: po/samsung-tools-preferences.glade.h:10
 msgid "Enable hotkeys"
 msgstr "Tastenkombinationen einschalten"
 
-#: po/samsung-tools-preferences.glade.h:15
+#: po/samsung-tools-preferences.glade.h:11
 msgid "Enable this option to use hotkeys"
 msgstr "Aktiviere diese Option, um die Tastenkombinationen zu verwenden"
 
-#: po/samsung-tools-preferences.glade.h:16
+#: po/samsung-tools-preferences.glade.h:12
 msgid "Enabled"
 msgstr "Eingeschaltet"
 
-#: po/samsung-tools-preferences.glade.h:17
+#: po/samsung-tools-preferences.glade.h:13
 #, fuzzy
 msgid "Hotkey used for CPU fan control"
 msgstr "Tastenkombination für CPU- und Lüftersteuerung"
 
-#: po/samsung-tools-preferences.glade.h:18
+#: po/samsung-tools-preferences.glade.h:14
 msgid "Hotkey used for backlight control"
 msgstr "Tastenkombination für Hintergrundbeleuchtung"
 
-#: po/samsung-tools-preferences.glade.h:19
+#: po/samsung-tools-preferences.glade.h:15
 msgid "Hotkey used for bluetooth control"
 msgstr "Tastenkombination für Bluetooth-Steuerung"
 
-#: po/samsung-tools-preferences.glade.h:20
+#: po/samsung-tools-preferences.glade.h:16
 msgid "Hotkey used for webcam control"
 msgstr "Tastenkombination für Webcam-Steuerung"
 
-#: po/samsung-tools-preferences.glade.h:21
+#: po/samsung-tools-preferences.glade.h:17
 msgid "Hotkey used for wireless control"
 msgstr "Tastenkombination für die WLAN-Karten-Steuerung"
 
-#: po/samsung-tools-preferences.glade.h:22
-msgid "Kernel module:"
-msgstr "Kernel-Modul:"
-
-#: po/samsung-tools-preferences.glade.h:23
+#: po/samsung-tools-preferences.glade.h:18
 msgid "Last status"
 msgstr "Letzter Status"
 
-#: po/samsung-tools-preferences.glade.h:26
+#: po/samsung-tools-preferences.glade.h:21
 msgid "Session service"
 msgstr "Sitzungsdienst"
 
-#: po/samsung-tools-preferences.glade.h:29
+#: po/samsung-tools-preferences.glade.h:24
 msgid "System service"
 msgstr "Systemdienst"
 
-#: po/samsung-tools-preferences.glade.h:30
+#: po/samsung-tools-preferences.glade.h:25
 msgid "The initial status at boot for Bluetooth"
 msgstr "Letzter Status von Bluetooth beim Booten"
 
-#: po/samsung-tools-preferences.glade.h:31
+#: po/samsung-tools-preferences.glade.h:26
 #, fuzzy
 msgid "The initial status at boot for CPU fan"
 msgstr "Letzter Status der Webcam beim Booten"
 
-#: po/samsung-tools-preferences.glade.h:32
+#: po/samsung-tools-preferences.glade.h:27
 msgid "The initial status at boot for webcam"
 msgstr "Letzter Status der Webcam beim Booten"
 
-#: po/samsung-tools-preferences.glade.h:33
+#: po/samsung-tools-preferences.glade.h:28
 msgid "The initial status at boot for wireless"
 msgstr "Letzter Status der WLAN-Karte beim Booten"
-
-#: po/samsung-tools-preferences.glade.h:34
-#, fuzzy
-msgid ""
-"The kernel module to handle, when the 'Toggle method' option is set to "
-"'module'."
-msgstr ""
-"Das Kernel-Modul steuert das Verwenden der WLAN-Karten-Treiber.\n"
-"Achtung: diese Option wird nur verwendet, wenn die \"Umschalt-Methode\" auf "
-"\"module\" gesetzt ist."
-
-#: po/samsung-tools-preferences.glade.h:36
-msgid ""
-"The method used to toggle wireless.\n"
-"\n"
-" - esdm:\n"
-"   Use the 'easy slow down manager' interface.\n"
-"   This is the default option and it should work on all netbook\n"
-"   models.\n"
-" - iwconfig:\n"
-"   Use iwconfig commands to toggle the radio transmit power.\n"
-"   On models like the NC10 shipped with Atheros wireless card,\n"
-"   this method disables wireless AND turns off the radio\n"
-"   transmit power. On other models this might not work as\n"
-"   expected: in these cases it's preferable to use the 'module'\n"
-"   or 'esdm' method instead.\n"
-" - module:\n"
-"   Insert/remove kernel module to toggle wireless.\n"
-"   On some netbook models the radio transmit power is not\n"
-"   actually killed when the kernel module is removed: in these\n"
-"   cases it's preferable to use the 'esdm' method instead."
-msgstr ""
-
-#: po/samsung-tools-preferences.glade.h:54
-#, fuzzy
-msgid ""
-"The wireless device to use, when the 'Toggle method' option is set to "
-"'iwconfig'."
-msgstr ""
-"Die WLAN-Karte direkt ansprechen (ein-/ausschalten):\n"
-"Achtung: diese Option wird nur verwendet, wenn die \"Umschalt-Methode\" auf "
-"\"iwconfig\" gesetzt ist."
-
-#: po/samsung-tools-preferences.glade.h:55
-msgid "Toggle method:"
-msgstr "Umschalt-Methode"
-
-#: po/samsung-tools-preferences.glade.h:56
-msgid "Webcam initial status:"
-msgstr "Anfangs-Status der Webcam"
-
-#: po/samsung-tools-preferences.glade.h:58
-msgid "Wireless initial status:"
-msgstr "Anfangs-Status der WLAN-Karte"
 
 #: po/samsung-tools-session-service.desktop.in.h:1
 msgid "Start the session service"
 msgstr "Sitzungsdienst starten"
+
+#~ msgid "<b>General</b>"
+#~ msgstr "<b>Allgemein</b>"
+
+#~ msgid "<b>Wireless</b>"
+#~ msgstr "<b>WLAN-Karte</b>"
+
+#~ msgid "Bluetooth initial status:"
+#~ msgstr "Anfangs-Status von Bluetooth"
+
+#, fuzzy
+#~ msgid "CPU fan initial status:"
+#~ msgstr "Anfangs-Status der Webcam"
+
+#~ msgid "Device:"
+#~ msgstr "Gerät:"
+
+#~ msgid "Kernel module:"
+#~ msgstr "Kernel-Modul:"
+
+#, fuzzy
+#~ msgid ""
+#~ "The kernel module to handle, when the 'Toggle method' option is set to "
+#~ "'module'."
+#~ msgstr ""
+#~ "Das Kernel-Modul steuert das Verwenden der WLAN-Karten-Treiber.\n"
+#~ "Achtung: diese Option wird nur verwendet, wenn die \"Umschalt-Methode\" "
+#~ "auf \"module\" gesetzt ist."
+
+#, fuzzy
+#~ msgid ""
+#~ "The wireless device to use, when the 'Toggle method' option is set to "
+#~ "'iwconfig'."
+#~ msgstr ""
+#~ "Die WLAN-Karte direkt ansprechen (ein-/ausschalten):\n"
+#~ "Achtung: diese Option wird nur verwendet, wenn die \"Umschalt-Methode\" "
+#~ "auf \"iwconfig\" gesetzt ist."
+
+#~ msgid "Toggle method:"
+#~ msgstr "Umschalt-Methode"
+
+#~ msgid "Webcam initial status:"
+#~ msgstr "Anfangs-Status der Webcam"
+
+#~ msgid "Wireless initial status:"
+#~ msgstr "Anfangs-Status der WLAN-Karte"
 
 #~ msgid "CPU/Fan"
 #~ msgstr "CPU/Lüfter"
