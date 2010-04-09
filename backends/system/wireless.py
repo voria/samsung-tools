@@ -122,7 +122,7 @@ class Wireless(dbus.service.Object):
 			return False
 		if self.IsEnabled():
 			return True
-		# Enable wireless through 'easy slow down manager' interface
+		# Enable wireless through the 'easy slow down manager' interface
 		try:
 			with open(ESDM_PATH_WIRELESS, 'w') as file:
 				file.write('1')
@@ -135,9 +135,9 @@ class Wireless(dbus.service.Object):
 			process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 			process.communicate()
 			if process.returncode != 0:
-				systemlog.write("ERROR: 'Wireless.Enable()' - COMMAND: '" + command + "' FAILED.")
+				systemlog.write("WARNING: 'Wireless.Enable()' - COMMAND: '" + command + "' FAILED.")
 		except:
-			systemlog.write("ERROR: 'Wireless.Enable()' - COMMAND: '" + command + "' - Exception thrown.")
+			systemlog.write("WARNING: 'Wireless.Enable()' - COMMAND: '" + command + "' - Exception thrown.")
 		# Save wireless status
 		self.__save_last_status(True)
 		return True
@@ -157,17 +157,16 @@ class Wireless(dbus.service.Object):
 			process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 			process.communicate()
 			if process.returncode != 0:
-				systemlog.write("ERROR: 'Wireless.Disable()' - COMMAND: '" + command + "' FAILED.")
-				return False
+				systemlog.write("WARNING: 'Wireless.Disable()' - COMMAND: '" + command + "' FAILED.")
 		except:
-			systemlog.write("ERROR: 'Wireless.Disable()' - COMMAND: '" + command + "' - Exception thrown.")
-			return False
-		# Disable wireless even through the 'easy slow down manager' interface
+			systemlog.write("WARNING: 'Wireless.Disable()' - COMMAND: '" + command + "' - Exception thrown.")
+		# Disable wireless through the 'easy slow down manager' interface
 		try:
 			with open(ESDM_PATH_WIRELESS, 'w') as file:
 				file.write('0')
 		except:
 			systemlog.write("ERROR: 'Wireless.Disable()' - cannot write to '" + ESDM_PATH_WIRELESS + "'.")
+			return False
 		# Save wireless status
 		self.__save_last_status(False)
 		return True
