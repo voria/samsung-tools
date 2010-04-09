@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-04-09 12:42+0200\n"
-"PO-Revision-Date: 2010-03-28 21:41+0000\n"
+"PO-Revision-Date: 2010-03-29 16:36+0000\n"
 "Last-Translator: Jonay <jonay.santana@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-03-29 15:40+0000\n"
+"X-Launchpad-Export-Date: 2010-04-09 13:44+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: backends/session/util/locales.py:25 samsung-tools-preferences.py:171
@@ -87,9 +87,8 @@ msgid "Bluetooth control is not available"
 msgstr "El control de bluetooth no está disponible"
 
 #: backends/session/util/locales.py:44 samsung-tools-preferences.py:189
-#, fuzzy
 msgid "CPU fan"
-msgstr "CPU/Ventilador"
+msgstr ""
 
 #: backends/session/util/locales.py:45
 msgid "CPU Temperature:"
@@ -116,9 +115,8 @@ msgid "Cannot get fan mode"
 msgstr "No se puede obtener el modo del ventilador"
 
 #: backends/session/util/locales.py:51
-#, fuzzy
 msgid "CPU fan control is not available"
-msgstr "El control del ventilador no está disponible"
+msgstr ""
 
 #: backends/session/util/locales.py:53 samsung-tools-preferences.py:198
 #: po/samsung-tools-applet.glade.h:7
@@ -204,13 +202,13 @@ msgid "Bluetooth control: unable to connect to session service!"
 msgstr "Control de bluetooth: ¡Incapaz de conectar al servicio de sesión!"
 
 #: samsung-tools.py:199
-#, fuzzy
 msgid "CPU fan control: unable to connect to session service!"
-msgstr "Control de CPU : ¡Incapaz de conectar al servicio de sesión!"
+msgstr ""
 
 #: samsung-tools.py:329
 msgid "Webcam control: unable to connect to session service!"
-msgstr "Control de la cámara web: ¡Incapaz de conectar al servicio de sesión!"
+msgstr ""
+"Control de la cámara web: ¡Incapaz de conectar al servicio de sesión!"
 
 #: samsung-tools.py:408
 msgid "Wireless control: unable to connect to session service!"
@@ -246,9 +244,8 @@ msgid "Bluetooth:"
 msgstr "Bluetooth:"
 
 #: samsung-tools.py:483 po/samsung-tools-preferences.glade.h:5
-#, fuzzy
 msgid "CPU fan:"
-msgstr "CPU/Ventilador"
+msgstr ""
 
 #: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:29
 msgid "Webcam:"
@@ -353,9 +350,8 @@ msgid "Unable to connect to system service!"
 msgstr "¡Incapaz de conectar con el servicio de sistema!"
 
 #: po/samsung-tools-applet.glade.h:2
-#, fuzzy
 msgid "CPU Fan"
-msgstr "CPU/Ventilador"
+msgstr ""
 
 #: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:19
 msgid "Normal"
@@ -391,9 +387,8 @@ msgid "<b>Hotkeys</b>"
 msgstr "<b>Teclas calientes</b>"
 
 #: po/samsung-tools-preferences.glade.h:2
-#, fuzzy
 msgid "<b>Initial status for devices</b>"
-msgstr "Mostrar el stado de todos los dispositivos."
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:6
 msgid "Click here to disable the hotkey"
@@ -424,9 +419,8 @@ msgid "Enabled"
 msgstr "Habilitado"
 
 #: po/samsung-tools-preferences.glade.h:13
-#, fuzzy
 msgid "Hotkey used for CPU fan control"
-msgstr "Tecla caliente usada para el control de la CPU y el ventilador"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:14
 msgid "Hotkey used for backlight control"
@@ -461,9 +455,8 @@ msgid "The initial status at boot for Bluetooth"
 msgstr "El estado inicial al encender el equipo para bluetooth"
 
 #: po/samsung-tools-preferences.glade.h:26
-#, fuzzy
 msgid "The initial status at boot for CPU fan"
-msgstr "El estado inicial al encender el equipo para la cámara web"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:27
 msgid "The initial status at boot for webcam"
@@ -477,59 +470,26 @@ msgstr "El estado inicial al encender el equipo para las redes inalámbricas"
 msgid "Start the session service"
 msgstr "Inicia el servicio de sesión"
 
+#~ msgid "CPU/Fan"
+#~ msgstr "CPU/Ventilador"
+
+#~ msgid "CPU/Fan:"
+#~ msgstr "CPU/Ventilador:"
+
 #~ msgid "<b>General</b>"
 #~ msgstr "<b>General</b>"
-
-#~ msgid "<b>Wireless</b>"
-#~ msgstr "<b>Redes inalámbricas</b>"
 
 #~ msgid "Bluetooth initial status:"
 #~ msgstr "Estado inicial de bluetooth:"
 
-#, fuzzy
-#~ msgid "CPU fan initial status:"
-#~ msgstr "Estado inicial de la cámara web"
+#~ msgid "<b>Wireless</b>"
+#~ msgstr "<b>Redes inalámbricas</b>"
 
 #~ msgid "Device:"
 #~ msgstr "Dispositivo:"
 
 #~ msgid "Kernel module:"
 #~ msgstr "Módulo kernel:"
-
-#, fuzzy
-#~ msgid ""
-#~ "The kernel module to handle, when the 'Toggle method' option is set to "
-#~ "'module'."
-#~ msgstr ""
-#~ "El módulo kernel que será usado.\n"
-#~ "\n"
-#~ "Nota: Esta opción se usa solo cuando el método de conmutación está en "
-#~ "modo 'módulo'."
-
-#, fuzzy
-#~ msgid ""
-#~ "The wireless device to use, when the 'Toggle method' option is set to "
-#~ "'iwconfig'."
-#~ msgstr ""
-#~ "El dispositivo de redes inalámbricas a usar\n"
-#~ "\n"
-#~ "Nota: Esta opción se usa solo cuando el método de conmutación está en "
-#~ "modo 'iwconfig'."
-
-#~ msgid "Toggle method:"
-#~ msgstr "Método de conmutación:"
-
-#~ msgid "Webcam initial status:"
-#~ msgstr "Estado inicial de la cámara web"
-
-#~ msgid "Wireless initial status:"
-#~ msgstr "Estado inicial de las redes inalámbricas"
-
-#~ msgid "CPU/Fan"
-#~ msgstr "CPU/Ventilador"
-
-#~ msgid "CPU/Fan:"
-#~ msgstr "CPU/Ventilador:"
 
 #~ msgid ""
 #~ "How the wireless is toggled.\n"
@@ -542,5 +502,14 @@ msgstr "Inicia el servicio de sesión"
 #~ "\n"
 #~ "'iwconfig' - Usa el comando iwconfig.\n"
 #~ "'module' - Inserta/elimina el módulo kernel.\n"
-#~ "'esdm' - Usa la interfaz esdm: 'administador de sencilla disminución de "
-#~ "la velocidad'."
+#~ "'esdm' - Usa la interfaz esdm: 'administador de sencilla disminución de la "
+#~ "velocidad'."
+
+#~ msgid "Webcam initial status:"
+#~ msgstr "Estado inicial de la cámara web"
+
+#~ msgid "Wireless initial status:"
+#~ msgstr "Estado inicial de las redes inalámbricas"
+
+#~ msgid "Toggle method:"
+#~ msgstr "Método de conmutación:"

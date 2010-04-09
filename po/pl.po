@@ -14,7 +14,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-03-29 15:40+0000\n"
+"X-Launchpad-Export-Date: 2010-04-09 13:44+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: backends/session/util/locales.py:25 samsung-tools-preferences.py:171
@@ -87,9 +87,8 @@ msgid "Bluetooth control is not available"
 msgstr "Zarządzanie Bluetooth'em nie jest dostępne"
 
 #: backends/session/util/locales.py:44 samsung-tools-preferences.py:189
-#, fuzzy
 msgid "CPU fan"
-msgstr "Wentylator procesora"
+msgstr ""
 
 #: backends/session/util/locales.py:45
 msgid "CPU Temperature:"
@@ -116,9 +115,8 @@ msgid "Cannot get fan mode"
 msgstr "Nie można sprawdzić trybu wentylatora"
 
 #: backends/session/util/locales.py:51
-#, fuzzy
 msgid "CPU fan control is not available"
-msgstr "Nie można sterować wiatrakiem"
+msgstr ""
 
 #: backends/session/util/locales.py:53 samsung-tools-preferences.py:198
 #: po/samsung-tools-applet.glade.h:7
@@ -203,9 +201,8 @@ msgid "Bluetooth control: unable to connect to session service!"
 msgstr "Zarządzanie Bluetooth'em: nie można połączyć z usługą sesji"
 
 #: samsung-tools.py:199
-#, fuzzy
 msgid "CPU fan control: unable to connect to session service!"
-msgstr "Zarządzanie procesorem: nie można połączyć z usługą sesji"
+msgstr ""
 
 #: samsung-tools.py:329
 msgid "Webcam control: unable to connect to session service!"
@@ -243,9 +240,8 @@ msgid "Bluetooth:"
 msgstr "Bluetooth:"
 
 #: samsung-tools.py:483 po/samsung-tools-preferences.glade.h:5
-#, fuzzy
 msgid "CPU fan:"
-msgstr "Wentylator procesora"
+msgstr ""
 
 #: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:29
 msgid "Webcam:"
@@ -349,9 +345,8 @@ msgid "Unable to connect to system service!"
 msgstr "NIe da się połączyć z usługą systemową!"
 
 #: po/samsung-tools-applet.glade.h:2
-#, fuzzy
 msgid "CPU Fan"
-msgstr "Wentylator procesora"
+msgstr ""
 
 #: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:19
 msgid "Normal"
@@ -419,9 +414,8 @@ msgid "Enabled"
 msgstr "Włączony"
 
 #: po/samsung-tools-preferences.glade.h:13
-#, fuzzy
 msgid "Hotkey used for CPU fan control"
-msgstr "Skrót klawiaturowy używany do zarządzania procesorem i wentylatorem"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:14
 msgid "Hotkey used for backlight control"
@@ -471,18 +465,20 @@ msgstr ""
 msgid "Start the session service"
 msgstr "Włącz usługę sesji"
 
+#~ msgid "CPU/Fan"
+#~ msgstr "Wentylator procesora"
+
+#~ msgid "CPU/Fan:"
+#~ msgstr "Wentylator procesora"
+
 #~ msgid "<b>General</b>"
 #~ msgstr "<b>Ogólne</b>"
-
-#~ msgid "<b>Wireless</b>"
-#~ msgstr "<b>SIeć bezprzewodowa</b>"
 
 #~ msgid "Bluetooth initial status:"
 #~ msgstr "Początkowy stan Bluetooth'a"
 
-#, fuzzy
-#~ msgid "CPU fan initial status:"
-#~ msgstr "Status początkowy kamery internetowej:"
+#~ msgid "<b>Wireless</b>"
+#~ msgstr "<b>SIeć bezprzewodowa</b>"
 
 #~ msgid "Device:"
 #~ msgstr "Urządzenie:"
@@ -490,17 +486,11 @@ msgstr "Włącz usługę sesji"
 #~ msgid "Kernel module:"
 #~ msgstr "Moduł jądra"
 
-#~ msgid "Toggle method:"
-#~ msgstr "Metoda przełączania:"
-
 #~ msgid "Webcam initial status:"
 #~ msgstr "Status początkowy kamery internetowej:"
 
+#~ msgid "Toggle method:"
+#~ msgstr "Metoda przełączania:"
+
 #~ msgid "Wireless initial status:"
 #~ msgstr "Status początkowy sieci bezprzewodowej:"
-
-#~ msgid "CPU/Fan"
-#~ msgstr "Wentylator procesora"
-
-#~ msgid "CPU/Fan:"
-#~ msgstr "Wentylator procesora"

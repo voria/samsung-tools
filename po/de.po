@@ -14,7 +14,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-03-29 15:40+0000\n"
+"X-Launchpad-Export-Date: 2010-04-09 13:44+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: backends/session/util/locales.py:25 samsung-tools-preferences.py:171
@@ -87,9 +87,8 @@ msgid "Bluetooth control is not available"
 msgstr "Bluetooth-Steuerung ist nicht verfügbar"
 
 #: backends/session/util/locales.py:44 samsung-tools-preferences.py:189
-#, fuzzy
 msgid "CPU fan"
-msgstr "CPU/Lüfter"
+msgstr ""
 
 #: backends/session/util/locales.py:45
 msgid "CPU Temperature:"
@@ -116,9 +115,8 @@ msgid "Cannot get fan mode"
 msgstr "Lüftermodus kann nicht ermittelt werden"
 
 #: backends/session/util/locales.py:51
-#, fuzzy
 msgid "CPU fan control is not available"
-msgstr "Lüftersteuerung ist nicht verfügbar"
+msgstr ""
 
 #: backends/session/util/locales.py:53 samsung-tools-preferences.py:198
 #: po/samsung-tools-applet.glade.h:7
@@ -204,9 +202,8 @@ msgid "Bluetooth control: unable to connect to session service!"
 msgstr "Bluetooth-Steuerung: Kann nicht mit Sitzungsdienst verbinden!"
 
 #: samsung-tools.py:199
-#, fuzzy
 msgid "CPU fan control: unable to connect to session service!"
-msgstr "CPU-Steuerung: Kann nicht mit Sitzungsdienst verbinden"
+msgstr ""
 
 #: samsung-tools.py:329
 msgid "Webcam control: unable to connect to session service!"
@@ -244,9 +241,8 @@ msgid "Bluetooth:"
 msgstr "Bluetooth:"
 
 #: samsung-tools.py:483 po/samsung-tools-preferences.glade.h:5
-#, fuzzy
 msgid "CPU fan:"
-msgstr "CPU/Lüfter"
+msgstr ""
 
 #: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:29
 msgid "Webcam:"
@@ -352,9 +348,8 @@ msgid "Unable to connect to system service!"
 msgstr "Kann nicht mit Systemdienst verbinden"
 
 #: po/samsung-tools-applet.glade.h:2
-#, fuzzy
 msgid "CPU Fan"
-msgstr "CPU/Lüfter"
+msgstr ""
 
 #: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:19
 msgid "Normal"
@@ -422,9 +417,8 @@ msgid "Enabled"
 msgstr "Eingeschaltet"
 
 #: po/samsung-tools-preferences.glade.h:13
-#, fuzzy
 msgid "Hotkey used for CPU fan control"
-msgstr "Tastenkombination für CPU- und Lüftersteuerung"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:14
 msgid "Hotkey used for backlight control"
@@ -459,9 +453,8 @@ msgid "The initial status at boot for Bluetooth"
 msgstr "Letzter Status von Bluetooth beim Booten"
 
 #: po/samsung-tools-preferences.glade.h:26
-#, fuzzy
 msgid "The initial status at boot for CPU fan"
-msgstr "Letzter Status der Webcam beim Booten"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:27
 msgid "The initial status at boot for webcam"
@@ -475,18 +468,17 @@ msgstr "Letzter Status der WLAN-Karte beim Booten"
 msgid "Start the session service"
 msgstr "Sitzungsdienst starten"
 
+#~ msgid "Fan mode changed: Speed"
+#~ msgstr "Lüftermodus geändert: Geschwindigkeit"
+
+#~ msgid "Fan mode changed: Silent"
+#~ msgstr "Lüftermodus geändert: Leise"
+
+#~ msgid "CPU/Fan:"
+#~ msgstr "CPU/Lüfter:"
+
 #~ msgid "<b>General</b>"
 #~ msgstr "<b>Allgemein</b>"
-
-#~ msgid "<b>Wireless</b>"
-#~ msgstr "<b>WLAN-Karte</b>"
-
-#~ msgid "Bluetooth initial status:"
-#~ msgstr "Anfangs-Status von Bluetooth"
-
-#, fuzzy
-#~ msgid "CPU fan initial status:"
-#~ msgstr "Anfangs-Status der Webcam"
 
 #~ msgid "Device:"
 #~ msgstr "Gerät:"
@@ -494,38 +486,33 @@ msgstr "Sitzungsdienst starten"
 #~ msgid "Kernel module:"
 #~ msgstr "Kernel-Modul:"
 
-#, fuzzy
-#~ msgid ""
-#~ "The kernel module to handle, when the 'Toggle method' option is set to "
-#~ "'module'."
-#~ msgstr ""
-#~ "Das Kernel-Modul steuert das Verwenden der WLAN-Karten-Treiber.\n"
-#~ "Achtung: diese Option wird nur verwendet, wenn die \"Umschalt-Methode\" "
-#~ "auf \"module\" gesetzt ist."
+#~ msgid "Fan mode changed: Normal"
+#~ msgstr "Lüftermodus geändert: Normal"
 
-#, fuzzy
+#~ msgid "CPU/Fan"
+#~ msgstr "CPU/Lüfter"
+
 #~ msgid ""
-#~ "The wireless device to use, when the 'Toggle method' option is set to "
-#~ "'iwconfig'."
+#~ "If enabled, the status of all devices will be restored after a suspend, "
+#~ "hibernate, reboot cycle"
 #~ msgstr ""
-#~ "Die WLAN-Karte direkt ansprechen (ein-/ausschalten):\n"
-#~ "Achtung: diese Option wird nur verwendet, wenn die \"Umschalt-Methode\" "
-#~ "auf \"iwconfig\" gesetzt ist."
+#~ "Wenn eingeschaltet, wird der Status aller Geräte nach Bereitschaft, "
+#~ "Ruhezustand oder Neustart wiederhergestellt"
 
 #~ msgid "Toggle method:"
 #~ msgstr "Umschalt-Methode"
+
+#~ msgid "<b>Wireless</b>"
+#~ msgstr "<b>WLAN-Karte</b>"
+
+#~ msgid "Bluetooth initial status:"
+#~ msgstr "Anfangs-Status von Bluetooth"
 
 #~ msgid "Webcam initial status:"
 #~ msgstr "Anfangs-Status der Webcam"
 
 #~ msgid "Wireless initial status:"
 #~ msgstr "Anfangs-Status der WLAN-Karte"
-
-#~ msgid "CPU/Fan"
-#~ msgstr "CPU/Lüfter"
-
-#~ msgid "CPU/Fan:"
-#~ msgstr "CPU/Lüfter:"
 
 #~ msgid ""
 #~ "How the wireless is toggled.\n"
@@ -539,19 +526,3 @@ msgstr "Sitzungsdienst starten"
 #~ "'iwconfig' - Verwende iwconfig-Befehle.\n"
 #~ "'module' - Einfügen/entfernen des Kernel-Moduls.\n"
 #~ "'esdm' - Verwende den 'easy slow down manager'"
-
-#~ msgid "Fan mode changed: Speed"
-#~ msgstr "Lüftermodus geändert: Geschwindigkeit"
-
-#~ msgid "Fan mode changed: Silent"
-#~ msgstr "Lüftermodus geändert: Leise"
-
-#~ msgid "Fan mode changed: Normal"
-#~ msgstr "Lüftermodus geändert: Normal"
-
-#~ msgid ""
-#~ "If enabled, the status of all devices will be restored after a suspend, "
-#~ "hibernate, reboot cycle"
-#~ msgstr ""
-#~ "Wenn eingeschaltet, wird der Status aller Geräte nach Bereitschaft, "
-#~ "Ruhezustand oder Neustart wiederhergestellt"

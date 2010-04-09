@@ -7,13 +7,13 @@ msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-04-09 12:42+0200\n"
-"PO-Revision-Date: 2010-04-09 12:42+0200\n"
+"PO-Revision-Date: 2010-04-09 11:05+0000\n"
 "Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: Italiano <vorione@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-03-29 15:40+0000\n"
+"X-Launchpad-Export-Date: 2010-04-09 13:44+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: backends/session/util/locales.py:25 samsung-tools-preferences.py:171
@@ -199,7 +199,8 @@ msgstr ""
 
 #: samsung-tools.py:120
 msgid "Bluetooth control: unable to connect to session service!"
-msgstr "Controllo Bluetooth: impossibile connettersi al servizio di sessione!"
+msgstr ""
+"Controllo Bluetooth: impossibile connettersi al servizio di sessione!"
 
 #: samsung-tools.py:199
 msgid "CPU fan control: unable to connect to session service!"
@@ -469,23 +470,103 @@ msgstr "Lo stato iniziale della rete senza fili all'avvio"
 msgid "Start the session service"
 msgstr "Avvia il servizio di sessione"
 
+#~ msgid "CPU/Fan"
+#~ msgstr "CPU/Ventola"
+
+#~ msgid "CPU temperature is not available"
+#~ msgstr "La temperatura CPU non è disponibile"
+
+#~ msgid "Fan mode changed: Normal"
+#~ msgstr "Modalità ventola cambiata: Normale"
+
+#~ msgid "Fan mode changed: Silent"
+#~ msgstr "Modalità ventola cambiata: Silenziosa"
+
+#~ msgid "Fan mode changed: Speed"
+#~ msgstr "Modalità ventola cambiata: Veloce"
+
+#~ msgid "CPU:"
+#~ msgstr "CPU:"
+
 #~ msgid "<b>General</b>"
 #~ msgstr "<b>Generale</b>"
 
-#~ msgid "<b>Wireless</b>"
-#~ msgstr "<b>Rete senza fili</b>"
-
-#~ msgid "Bluetooth initial status:"
-#~ msgstr "Stato iniziale Bluetooth:"
-
-#~ msgid "CPU fan initial status:"
-#~ msgstr "Stato iniziale ventola CPU:"
+#~ msgid "CPU/Fan:"
+#~ msgstr "CPU/Ventola:"
 
 #~ msgid "Device:"
 #~ msgstr "Dispositivo:"
 
+#~ msgid ""
+#~ "How the wireless is toggled.\n"
+#~ "\n"
+#~ "'iwconfig' - Use iwconfig commands.\n"
+#~ "'module' - Insert/remove kernel module.\n"
+#~ "'esdm' - Use the 'easy slow down manager' interface."
+#~ msgstr ""
+#~ "La modalità di commutazione del wireless.\n"
+#~ "\n"
+#~ "'iwconfig' - Usa i comandi iwconfig.\n"
+#~ "'module' - Inserisce/rimuove il modulo del kernel.\n"
+#~ "'esdm' - Usa l'interfaccia 'easy-slow-down-manager'."
+
+#~ msgid ""
+#~ "If enabled, the status of all devices will be restored after a suspend, "
+#~ "hibernate, reboot cycle"
+#~ msgstr ""
+#~ "Se attivo, lo stato di tutti i dispositivi viene ripristinato dopo un ciclo "
+#~ "di sospensione, ibernazione o riavvio"
+
 #~ msgid "Kernel module:"
 #~ msgstr "Modulo del kernel:"
+
+#~ msgid "Toggle method:"
+#~ msgstr "Metodo commutazione:"
+
+#~ msgid "Bluetooth initial status:"
+#~ msgstr "Stato iniziale Bluetooth:"
+
+#~ msgid ""
+#~ "The status to set at boot for Bluetooth.\n"
+#~ "\n"
+#~ "Note: this option is only used when  'Last status restore' is set to "
+#~ "'Disabled'."
+#~ msgstr ""
+#~ "Lo stato da impostare all'avvio per il Bluetooth.\n"
+#~ "\n"
+#~ "Nota: questa opzione è usata solo quando 'Ripristina ultimo stato' è "
+#~ "impostato a 'Disattivato'."
+
+#~ msgid ""
+#~ "The status to set at boot for webcam.\n"
+#~ "\n"
+#~ "Note: this option is only used when  'Last status restore' is set to "
+#~ "'Disabled'."
+#~ msgstr ""
+#~ "Lo stato da impostare all'avvio per la webcam.\n"
+#~ "\n"
+#~ "Nota: questa opzione è usata solo quando 'Ripristina ultimo stato' è "
+#~ "impostato a 'Disattivato'."
+
+#~ msgid ""
+#~ "The status to set at boot for wireless.\n"
+#~ "\n"
+#~ "Note: this option is only used when  'Last status restore' is set to "
+#~ "'Disabled'."
+#~ msgstr ""
+#~ "Lo stato da impostare all'avvio per il wireless.\n"
+#~ "\n"
+#~ "Nota: questa opzione è usata solo quando 'Ripristina ultimo stato' è "
+#~ "impostato a 'Disattivato'."
+
+#~ msgid "Webcam initial status:"
+#~ msgstr "Stato iniziale webcam:"
+
+#~ msgid "CPU fan initial status:"
+#~ msgstr "Stato iniziale ventola CPU:"
+
+#~ msgid "<b>Wireless</b>"
+#~ msgstr "<b>Rete senza fili</b>"
 
 #~ msgid ""
 #~ "The kernel module to handle, when the 'Toggle method' option is set to "
@@ -541,85 +622,5 @@ msgstr "Avvia il servizio di sessione"
 #~ "Il dispositivo wireless da utilizzare, quando l'opzione 'Metodo "
 #~ "commutazione' è impostata a 'iwconfig'."
 
-#~ msgid "Toggle method:"
-#~ msgstr "Metodo commutazione:"
-
-#~ msgid "Webcam initial status:"
-#~ msgstr "Stato iniziale webcam:"
-
 #~ msgid "Wireless initial status:"
 #~ msgstr "Stato iniziale rete senza fili:"
-
-#~ msgid "CPU/Fan"
-#~ msgstr "CPU/Ventola"
-
-#~ msgid "CPU/Fan:"
-#~ msgstr "CPU/Ventola:"
-
-#~ msgid ""
-#~ "How the wireless is toggled.\n"
-#~ "\n"
-#~ "'iwconfig' - Use iwconfig commands.\n"
-#~ "'module' - Insert/remove kernel module.\n"
-#~ "'esdm' - Use the 'easy slow down manager' interface."
-#~ msgstr ""
-#~ "La modalità di commutazione del wireless.\n"
-#~ "\n"
-#~ "'iwconfig' - Usa i comandi iwconfig.\n"
-#~ "'module' - Inserisce/rimuove il modulo del kernel.\n"
-#~ "'esdm' - Usa l'interfaccia 'easy-slow-down-manager'."
-
-#~ msgid "CPU temperature is not available"
-#~ msgstr "La temperatura CPU non è disponibile"
-
-#~ msgid "Fan mode changed: Normal"
-#~ msgstr "Modalità ventola cambiata: Normale"
-
-#~ msgid "Fan mode changed: Silent"
-#~ msgstr "Modalità ventola cambiata: Silenziosa"
-
-#~ msgid "Fan mode changed: Speed"
-#~ msgstr "Modalità ventola cambiata: Veloce"
-
-#~ msgid "CPU:"
-#~ msgstr "CPU:"
-
-#~ msgid ""
-#~ "If enabled, the status of all devices will be restored after a suspend, "
-#~ "hibernate, reboot cycle"
-#~ msgstr ""
-#~ "Se attivo, lo stato di tutti i dispositivi viene ripristinato dopo un "
-#~ "ciclo di sospensione, ibernazione o riavvio"
-
-#~ msgid ""
-#~ "The status to set at boot for Bluetooth.\n"
-#~ "\n"
-#~ "Note: this option is only used when  'Last status restore' is set to "
-#~ "'Disabled'."
-#~ msgstr ""
-#~ "Lo stato da impostare all'avvio per il Bluetooth.\n"
-#~ "\n"
-#~ "Nota: questa opzione è usata solo quando 'Ripristina ultimo stato' è "
-#~ "impostato a 'Disattivato'."
-
-#~ msgid ""
-#~ "The status to set at boot for webcam.\n"
-#~ "\n"
-#~ "Note: this option is only used when  'Last status restore' is set to "
-#~ "'Disabled'."
-#~ msgstr ""
-#~ "Lo stato da impostare all'avvio per la webcam.\n"
-#~ "\n"
-#~ "Nota: questa opzione è usata solo quando 'Ripristina ultimo stato' è "
-#~ "impostato a 'Disattivato'."
-
-#~ msgid ""
-#~ "The status to set at boot for wireless.\n"
-#~ "\n"
-#~ "Note: this option is only used when  'Last status restore' is set to "
-#~ "'Disabled'."
-#~ msgstr ""
-#~ "Lo stato da impostare all'avvio per il wireless.\n"
-#~ "\n"
-#~ "Nota: questa opzione è usata solo quando 'Ripristina ultimo stato' è "
-#~ "impostato a 'Disattivato'."

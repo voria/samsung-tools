@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-04-09 12:42+0200\n"
-"PO-Revision-Date: 2010-03-28 15:41+0000\n"
-"Last-Translator: joel morren <Unknown>\n"
+"PO-Revision-Date: 2010-03-29 16:36+0000\n"
+"Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: Dutch <nl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-03-29 15:40+0000\n"
+"X-Launchpad-Export-Date: 2010-04-09 13:44+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: backends/session/util/locales.py:25 samsung-tools-preferences.py:171
@@ -87,9 +87,8 @@ msgid "Bluetooth control is not available"
 msgstr "Bluetooth control is niet beschikbaar"
 
 #: backends/session/util/locales.py:44 samsung-tools-preferences.py:189
-#, fuzzy
 msgid "CPU fan"
-msgstr "CPU/Fan"
+msgstr ""
 
 #: backends/session/util/locales.py:45
 msgid "CPU Temperature:"
@@ -116,9 +115,8 @@ msgid "Cannot get fan mode"
 msgstr ""
 
 #: backends/session/util/locales.py:51
-#, fuzzy
 msgid "CPU fan control is not available"
-msgstr "Ventilator control is niet beschikbaar"
+msgstr ""
 
 #: backends/session/util/locales.py:53 samsung-tools-preferences.py:198
 #: po/samsung-tools-applet.glade.h:7
@@ -242,9 +240,8 @@ msgid "Bluetooth:"
 msgstr ""
 
 #: samsung-tools.py:483 po/samsung-tools-preferences.glade.h:5
-#, fuzzy
 msgid "CPU fan:"
-msgstr "CPU/Fan"
+msgstr ""
 
 #: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:29
 msgid "Webcam:"
@@ -347,9 +344,8 @@ msgid "Unable to connect to system service!"
 msgstr ""
 
 #: po/samsung-tools-applet.glade.h:2
-#, fuzzy
 msgid "CPU Fan"
-msgstr "CPU/Fan"
+msgstr ""
 
 #: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:19
 msgid "Normal"

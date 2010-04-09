@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-04-09 12:42+0200\n"
-"PO-Revision-Date: 2010-03-27 01:00+0000\n"
+"PO-Revision-Date: 2010-04-08 19:28+0000\n"
 "Last-Translator: Lionel BASTET <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-03-29 15:40+0000\n"
+"X-Launchpad-Export-Date: 2010-04-09 13:44+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: backends/session/util/locales.py:25 samsung-tools-preferences.py:171
@@ -87,9 +87,8 @@ msgid "Bluetooth control is not available"
 msgstr "Contrôle du Bluetooth non disponible"
 
 #: backends/session/util/locales.py:44 samsung-tools-preferences.py:189
-#, fuzzy
 msgid "CPU fan"
-msgstr "Ventllateur processeur"
+msgstr "Ventilateur processeur"
 
 #: backends/session/util/locales.py:45
 msgid "CPU Temperature:"
@@ -116,9 +115,8 @@ msgid "Cannot get fan mode"
 msgstr "Ne peut trouver le mode du ventilateur"
 
 #: backends/session/util/locales.py:51
-#, fuzzy
 msgid "CPU fan control is not available"
-msgstr "Le contrôle du ventilateur n'est pas disponible"
+msgstr "Le contrôle du ventilateur processeur n'est pas disponible"
 
 #: backends/session/util/locales.py:53 samsung-tools-preferences.py:198
 #: po/samsung-tools-applet.glade.h:7
@@ -205,10 +203,10 @@ msgstr ""
 "Contrôle du Bluetooth: impossible de se connecter au service de session!"
 
 #: samsung-tools.py:199
-#, fuzzy
 msgid "CPU fan control: unable to connect to session service!"
 msgstr ""
-"Contrôle du processeur: impossible de se connecter au service de session!"
+"Contrôle du ventilateur processeur: impossible de se connecter au service de "
+"session!"
 
 #: samsung-tools.py:329
 msgid "Webcam control: unable to connect to session service!"
@@ -249,9 +247,8 @@ msgid "Bluetooth:"
 msgstr "Bluetooth:"
 
 #: samsung-tools.py:483 po/samsung-tools-preferences.glade.h:5
-#, fuzzy
 msgid "CPU fan:"
-msgstr "Ventllateur processeur"
+msgstr "Ventilateur processeur"
 
 #: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:29
 msgid "Webcam:"
@@ -356,29 +353,28 @@ msgid "Unable to connect to system service!"
 msgstr "Impossible de se connecter au service système!"
 
 #: po/samsung-tools-applet.glade.h:2
-#, fuzzy
 msgid "CPU Fan"
-msgstr "Ventllateur processeur"
+msgstr "Ventilateur processeur"
 
 #: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:19
 msgid "Normal"
-msgstr ""
+msgstr "Normal"
 
 #: po/samsung-tools-applet.glade.h:4
 msgid "Preferences..."
-msgstr ""
+msgstr "Préférences..."
 
 #: po/samsung-tools-applet.glade.h:5 po/samsung-tools-preferences.glade.h:22
 msgid "Silent"
-msgstr ""
+msgstr "Silencieux"
 
 #: po/samsung-tools-applet.glade.h:6 po/samsung-tools-preferences.glade.h:23
 msgid "Speed"
-msgstr ""
+msgstr "Rapide"
 
 #: po/samsung-tools-applet.server.in.h:1
 msgid "Manage devices on Samsung netbooks"
-msgstr ""
+msgstr "Gérer les périphériques sur les netbooks Samsung"
 
 #: po/samsung-tools-preferences.desktop.in.h:1
 #: po/samsung-tools-preferences.glade.h:20
@@ -394,9 +390,8 @@ msgid "<b>Hotkeys</b>"
 msgstr "<b>Raccourcis clavier</b>"
 
 #: po/samsung-tools-preferences.glade.h:2
-#, fuzzy
 msgid "<b>Initial status for devices</b>"
-msgstr "Montrer l'état de tous les périphériques"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:6
 msgid "Click here to disable the hotkey"
@@ -427,9 +422,8 @@ msgid "Enabled"
 msgstr "Activé"
 
 #: po/samsung-tools-preferences.glade.h:13
-#, fuzzy
 msgid "Hotkey used for CPU fan control"
-msgstr "Raccourci clavier pour le contrôle du processeur et du ventilateur"
+msgstr "Raccourci clavier utilisé pour le contrôle du ventilateur processeur"
 
 #: po/samsung-tools-preferences.glade.h:14
 msgid "Hotkey used for backlight control"
@@ -464,9 +458,8 @@ msgid "The initial status at boot for Bluetooth"
 msgstr "L'état initial du Bluetooth au démarrage"
 
 #: po/samsung-tools-preferences.glade.h:26
-#, fuzzy
 msgid "The initial status at boot for CPU fan"
-msgstr "L'état initial de la webcam au démarrage"
+msgstr "L'état initial du ventilateur processeur au démarrage"
 
 #: po/samsung-tools-preferences.glade.h:27
 msgid "The initial status at boot for webcam"
@@ -480,59 +473,42 @@ msgstr "L'état initial du réseau sans fil au démarrage"
 msgid "Start the session service"
 msgstr "Lancer le service de session"
 
+#~ msgid "Fan mode changed: Normal"
+#~ msgstr "Changement de mode ventilateur: Normal"
+
+#~ msgid "CPU/Fan"
+#~ msgstr "Ventllateur processeur"
+
+#~ msgid "Fan mode changed: Silent"
+#~ msgstr "Changement de mode Ventilateur: Silencieux"
+
+#~ msgid "Fan mode changed: Speed"
+#~ msgstr "Changement de mode ventilateur: rapide"
+
+#~ msgid "CPU/Fan:"
+#~ msgstr "Processeur/Ventilateur:"
+
+#~ msgid "Kernel module:"
+#~ msgstr "Module du noyau:"
+
+#~ msgid "Toggle method:"
+#~ msgstr "Méthode de changement d'état:"
+
 #~ msgid "<b>General</b>"
 #~ msgstr "<b>Général</b>"
 
 #~ msgid "<b>Wireless</b>"
 #~ msgstr "<b>Réseau sans fil</b>"
 
-#~ msgid "Bluetooth initial status:"
-#~ msgstr "Etat initial du Bluetooth:"
-
-#, fuzzy
-#~ msgid "CPU fan initial status:"
-#~ msgstr "Etat initial de la webcam:"
-
 #~ msgid "Device:"
 #~ msgstr "Périphérique :"
 
-#~ msgid "Kernel module:"
-#~ msgstr "Module du noyau:"
-
-#, fuzzy
 #~ msgid ""
-#~ "The kernel module to handle, when the 'Toggle method' option is set to "
-#~ "'module'."
+#~ "If enabled, the status of all devices will be restored after a suspend, "
+#~ "hibernate, reboot cycle"
 #~ msgstr ""
-#~ "Module du noyau à gérer.\n"
-#~ "\n"
-#~ "Note: cette option est utilisée seulement quand 'Méthode de changement "
-#~ "d'état\" est réglée sur 'module'."
-
-#, fuzzy
-#~ msgid ""
-#~ "The wireless device to use, when the 'Toggle method' option is set to "
-#~ "'iwconfig'."
-#~ msgstr ""
-#~ "Périphérique de réseau sans fil à utiliser.\n"
-#~ "\n"
-#~ "Note: cette option est utilisée seulement quand 'Méthode de changement "
-#~ "d'état' est réglée sur 'iwconfig'."
-
-#~ msgid "Toggle method:"
-#~ msgstr "Méthode de changement d'état:"
-
-#~ msgid "Webcam initial status:"
-#~ msgstr "Etat initial de la webcam:"
-
-#~ msgid "Wireless initial status:"
-#~ msgstr "Etat initial du réseau sans fil:"
-
-#~ msgid "CPU/Fan"
-#~ msgstr "Ventllateur processeur"
-
-#~ msgid "CPU/Fan:"
-#~ msgstr "Processeur/Ventilateur:"
+#~ "Si activé, l'état de tous les périphériques sera restauré après une mise en "
+#~ "veille, une hibernation ou un redémarrage"
 
 #~ msgid ""
 #~ "How the wireless is toggled.\n"
@@ -547,18 +523,11 @@ msgstr "Lancer le service de session"
 #~ "'module' - Insérer/Supprimer le module du noyau.\n"
 #~ "'esdm' - Utiliser l'interface 'easy slow down manager'"
 
-#~ msgid "Fan mode changed: Normal"
-#~ msgstr "Changement de mode ventilateur: Normal"
+#~ msgid "Bluetooth initial status:"
+#~ msgstr "Etat initial du Bluetooth:"
 
-#~ msgid "Fan mode changed: Silent"
-#~ msgstr "Changement de mode Ventilateur: Silencieux"
+#~ msgid "Webcam initial status:"
+#~ msgstr "Etat initial de la webcam:"
 
-#~ msgid "Fan mode changed: Speed"
-#~ msgstr "Changement de mode ventilateur: rapide"
-
-#~ msgid ""
-#~ "If enabled, the status of all devices will be restored after a suspend, "
-#~ "hibernate, reboot cycle"
-#~ msgstr ""
-#~ "Si activé, l'état de tous les périphériques sera restauré après une mise "
-#~ "en veille, une hibernation ou un redémarrage"
+#~ msgid "Wireless initial status:"
+#~ msgstr "Etat initial du réseau sans fil:"
