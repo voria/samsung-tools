@@ -343,7 +343,7 @@ class Main():
 			self.laptopmodeIsAvailable = False
 			laptopModeOptionsLabel = self.builder.get_object("laptopModeOptionsLabel")
 			laptopModeOptionsLabel.set_has_tooltip(True)
-			tooltip = unicode(_("Install 'laptop-mode-tools' to configure these options"), "utf-8")
+			tooltip = unicode(_("Install 'laptop-mode-tools' to use these options"), "utf-8")
 			laptopModeOptionsLabel.set_tooltip_text(tooltip)
 		else:
 			self.laptopmodeIsAvailable = True

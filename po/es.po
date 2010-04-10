@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-09 12:42+0200\n"
+"POT-Creation-Date: 2010-04-10 20:37+0200\n"
 "PO-Revision-Date: 2010-03-29 16:36+0000\n"
 "Last-Translator: Jonay <jonay.santana@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -207,8 +207,7 @@ msgstr ""
 
 #: samsung-tools.py:329
 msgid "Webcam control: unable to connect to session service!"
-msgstr ""
-"Control de la cámara web: ¡Incapaz de conectar al servicio de sesión!"
+msgstr "Control de la cámara web: ¡Incapaz de conectar al servicio de sesión!"
 
 #: samsung-tools.py:408
 msgid "Wireless control: unable to connect to session service!"
@@ -225,7 +224,7 @@ msgstr "Herramientas Samsung - Utilidad por línea de comandos"
 msgid "Usage: %s <interface> <option> ..."
 msgstr "Uso: %s <interfaz> <opción>"
 
-#: samsung-tools.py:477 po/samsung-tools-preferences.glade.h:3
+#: samsung-tools.py:477 po/samsung-tools-preferences.glade.h:6
 msgid "Backlight:"
 msgstr "Luz de fondo:"
 
@@ -239,19 +238,19 @@ msgstr "Interfaz"
 msgid "Options"
 msgstr "Opciones"
 
-#: samsung-tools.py:480 po/samsung-tools-preferences.glade.h:4
+#: samsung-tools.py:480 po/samsung-tools-preferences.glade.h:7
 msgid "Bluetooth:"
 msgstr "Bluetooth:"
 
-#: samsung-tools.py:483 po/samsung-tools-preferences.glade.h:5
+#: samsung-tools.py:483 po/samsung-tools-preferences.glade.h:8
 msgid "CPU fan:"
 msgstr ""
 
-#: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:29
+#: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:52
 msgid "Webcam:"
 msgstr "Cámara web:"
 
-#: samsung-tools.py:489 po/samsung-tools-preferences.glade.h:30
+#: samsung-tools.py:489 po/samsung-tools-preferences.glade.h:53
 msgid "Wireless:"
 msgstr "Redes inalámbricas:"
 
@@ -301,7 +300,7 @@ msgstr " - Deshabilita bluetooth, la cámara web y las redes inalámbricas:"
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Para mas información visita el foro \"Linux On My Samsung\":"
 
-#: samsung-tools.py:515 samsung-tools-preferences.py:593
+#: samsung-tools.py:515 samsung-tools-preferences.py:732
 msgid "Released under GPLv3 license"
 msgstr "Liberado bajo licencia GPLv3"
 
@@ -341,11 +340,15 @@ msgstr "Por favor, presione una nueva \"tecla caliente\""
 msgid "None"
 msgstr "Ninguno"
 
-#: samsung-tools-preferences.py:348
+#: samsung-tools-preferences.py:346
+msgid "Install 'laptop-mode-tools' to use these options"
+msgstr ""
+
+#: samsung-tools-preferences.py:416
 msgid "Unable to connect to session service!"
 msgstr "¡Incapaz de conectar con el servicio de sesión!"
 
-#: samsung-tools-preferences.py:360
+#: samsung-tools-preferences.py:428 samsung-tools-preferences.py:440
 msgid "Unable to connect to system service!"
 msgstr "¡Incapaz de conectar con el servicio de sistema!"
 
@@ -353,7 +356,7 @@ msgstr "¡Incapaz de conectar con el servicio de sistema!"
 msgid "CPU Fan"
 msgstr ""
 
-#: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:19
+#: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:40
 msgid "Normal"
 msgstr ""
 
@@ -361,11 +364,11 @@ msgstr ""
 msgid "Preferences..."
 msgstr ""
 
-#: po/samsung-tools-applet.glade.h:5 po/samsung-tools-preferences.glade.h:22
+#: po/samsung-tools-applet.glade.h:5 po/samsung-tools-preferences.glade.h:43
 msgid "Silent"
 msgstr ""
 
-#: po/samsung-tools-applet.glade.h:6 po/samsung-tools-preferences.glade.h:23
+#: po/samsung-tools-applet.glade.h:6 po/samsung-tools-preferences.glade.h:44
 msgid "Speed"
 msgstr ""
 
@@ -374,7 +377,7 @@ msgid "Manage devices on Samsung netbooks"
 msgstr ""
 
 #: po/samsung-tools-preferences.desktop.in.h:1
-#: po/samsung-tools-preferences.glade.h:20
+#: po/samsung-tools-preferences.glade.h:41
 msgid "Samsung Tools Preferences"
 msgstr "Preferencias de las herramientas Samsung"
 
@@ -383,88 +386,202 @@ msgid "Show and modify Samsung Tools preferences"
 msgstr "Mostrar y modificar las preferencias de las herramientas Samung"
 
 #: po/samsung-tools-preferences.glade.h:1
+msgid "<b>\"Laptop Mode\" options</b>"
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:2
 msgid "<b>Hotkeys</b>"
 msgstr "<b>Teclas calientes</b>"
 
-#: po/samsung-tools-preferences.glade.h:2
+#: po/samsung-tools-preferences.glade.h:3
 msgid "<b>Initial status for devices</b>"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:6
+#: po/samsung-tools-preferences.glade.h:4
+msgid "Advanced power management"
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:5
+msgid ""
+"An enabled video output port draws power, even if no display is connected. "
+"This option forces the display output off depending on the power mode."
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:9
 msgid "Click here to disable the hotkey"
 msgstr "Haga click aquí para deshabilitar la tecla caliente"
 
-#: po/samsung-tools-preferences.glade.h:7
+#: po/samsung-tools-preferences.glade.h:10
 msgid "Click here to set the default hotkey"
 msgstr "Haga click aquí para establecer la tecla caliente por defecto"
 
-#: po/samsung-tools-preferences.glade.h:8
+#: po/samsung-tools-preferences.glade.h:11
 msgid "Click here to set the default value"
 msgstr "Haga click aquí para seleccionar el valor por defecto"
 
-#: po/samsung-tools-preferences.glade.h:9
-msgid "Disabled"
-msgstr "Deshabilitado"
-
-#: po/samsung-tools-preferences.glade.h:10
-msgid "Enable hotkeys"
-msgstr "Habilitar teclas calientes"
-
-#: po/samsung-tools-preferences.glade.h:11
-msgid "Enable this option to use hotkeys"
-msgstr "Habilitar esta opción para usar las teclas calientes"
-
 #: po/samsung-tools-preferences.glade.h:12
-msgid "Enabled"
-msgstr "Habilitado"
+msgid "Control HAL polling"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:13
-msgid "Hotkey used for CPU fan control"
+msgid "Control Intel HDA audio chipset power"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:14
+msgid "Control Intel SATA chipset power"
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:15
+msgid "Control configuration files"
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:16
+msgid "Control ethernet settings"
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:17
+msgid "Control linux scheduler"
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:18
+msgid "Control video output settings"
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:19
+msgid "Disabled"
+msgstr "Deshabilitado"
+
+#: po/samsung-tools-preferences.glade.h:20
+msgid "Enable USB autosuspend"
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:21
+msgid "Enable hotkeys"
+msgstr "Habilitar teclas calientes"
+
+#: po/samsung-tools-preferences.glade.h:22
+msgid "Enable this option to use hotkeys"
+msgstr "Habilitar esta opción para usar las teclas calientes"
+
+#: po/samsung-tools-preferences.glade.h:23
+msgid "Enabled"
+msgstr "Habilitado"
+
+#: po/samsung-tools-preferences.glade.h:24
+msgid "Hard Disk power management:"
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:25
+msgid "Hotkey used for CPU fan control"
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:26
 msgid "Hotkey used for backlight control"
 msgstr "Tecla caliente usada para el control la luz de fondo"
 
-#: po/samsung-tools-preferences.glade.h:15
+#: po/samsung-tools-preferences.glade.h:27
 msgid "Hotkey used for bluetooth control"
 msgstr "Tecla caliente para el control de bluetooth"
 
-#: po/samsung-tools-preferences.glade.h:16
+#: po/samsung-tools-preferences.glade.h:28
 msgid "Hotkey used for webcam control"
 msgstr "Tecla caliente para el control de la cámara web"
 
-#: po/samsung-tools-preferences.glade.h:17
+#: po/samsung-tools-preferences.glade.h:29
 msgid "Hotkey used for wireless control"
 msgstr "Tecla caliente para el control de las redes inalámbricas"
 
-#: po/samsung-tools-preferences.glade.h:18
+#: po/samsung-tools-preferences.glade.h:30
+msgid ""
+"If you enable this option, laptop mode tools will automatically configure "
+"the Linux scheduler to save power on multi-core processors while running on "
+"battery mode."
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:31
+msgid ""
+"If you enable this option, laptop mode tools will automatically enable the "
+"USB autosuspend feature for all devices."
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:32
+msgid ""
+"If you enable this option, laptop mode tools will automatically enable the "
+"link power management mode of Intel AHCI compliant SATA chipsets."
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:33
+msgid ""
+"If you enable this option, laptop mode tools will automatically set the "
+"powersave mode of Intel HDA audio chipsets."
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:34
+msgid ""
+"If you enable this option, laptop mode tools will control the polling of "
+"your CD/DVD drives by HAL. Disabling polling saves a considerable amount of "
+"power."
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:35
+msgid ""
+"If you enable this option, the speed of the Ethernet connection is limited "
+"to 100 Mbit. The difference in power usage between 1 Gbit and 100 Mbit "
+"Ethernet is quite large, so tuning can yield savings if you don't need the "
+"full speed (for instance if you only use Ethernet as to connect to a much "
+"slower ADSL modem)."
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:36
+msgid ""
+"Laptop mode tools can automatically swap out configuration files depending "
+"on the power state of your system.\n"
+" \n"
+"The primary use for this feature is for controlling the configuration files "
+"of syslog daemons. Syslog daemons have a tendency to sync their log files "
+"when entries are written to them. This causes disks to spin up, which is not "
+"very nice when you're trying to save power."
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:39
 msgid "Last status"
 msgstr "Último estado"
 
-#: po/samsung-tools-preferences.glade.h:21
+#: po/samsung-tools-preferences.glade.h:42
 msgid "Session service"
 msgstr "Servicio de sesión"
 
-#: po/samsung-tools-preferences.glade.h:24
+#: po/samsung-tools-preferences.glade.h:45
 msgid "System service"
 msgstr "Servicio de sistema"
 
-#: po/samsung-tools-preferences.glade.h:25
+#: po/samsung-tools-preferences.glade.h:46
 msgid "The initial status at boot for Bluetooth"
 msgstr "El estado inicial al encender el equipo para bluetooth"
 
-#: po/samsung-tools-preferences.glade.h:26
+#: po/samsung-tools-preferences.glade.h:47
 msgid "The initial status at boot for CPU fan"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:27
+#: po/samsung-tools-preferences.glade.h:48
 msgid "The initial status at boot for webcam"
 msgstr "El estado inicial al encender el equipo para la cámara web"
 
-#: po/samsung-tools-preferences.glade.h:28
+#: po/samsung-tools-preferences.glade.h:49
 msgid "The initial status at boot for wireless"
 msgstr "El estado inicial al encender el equipo para las redes inalámbricas"
+
+#: po/samsung-tools-preferences.glade.h:50
+msgid ""
+"This option sets the disk power management, and it can have a value between "
+"1 and 255. A low value results in a better energy saving but less disk "
+"performance, an high value results in disk performance but less energy "
+"saving."
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:51
+msgid "Use these options for a better power management"
+msgstr ""
 
 #: po/samsung-tools-session-service.desktop.in.h:1
 msgid "Start the session service"
@@ -502,8 +619,8 @@ msgstr "Inicia el servicio de sesión"
 #~ "\n"
 #~ "'iwconfig' - Usa el comando iwconfig.\n"
 #~ "'module' - Inserta/elimina el módulo kernel.\n"
-#~ "'esdm' - Usa la interfaz esdm: 'administador de sencilla disminución de la "
-#~ "velocidad'."
+#~ "'esdm' - Usa la interfaz esdm: 'administador de sencilla disminución de "
+#~ "la velocidad'."
 
 #~ msgid "Webcam initial status:"
 #~ msgstr "Estado inicial de la cámara web"
