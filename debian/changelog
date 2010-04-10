@@ -1,6 +1,8 @@
-samsung-tools (0.1~ppa13~loms~lucid) UNRELEASED; urgency=low
+samsung-tools (0.1~ppa13~loms~lucid) lucid; urgency=low
 
-  * 
+  * Remove old commands no more used.
+  * Change the application's icon with a new one.
+  * Update to latest translations from Launchpad's rosetta.  
 
  -- Fortunato Ventre (voRia) <vorione@gmail.com>  Fri, 09 Apr 2010 13:13:00 +0200
 
