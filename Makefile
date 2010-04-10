@@ -40,7 +40,7 @@ install:
 	$(install_script) gui/samsung-tools-applet.py $(DESTDIR)/usr/lib/samsung-tools/gui/
 	# Icons
 	$(install_dir) $(DESTDIR)/usr/share/icons/
-	$(install_file) gui/icons/* $(DESTDIR)/usr/share/icons/
+	$(install_file) gui/icons/*.png $(DESTDIR)/usr/share/icons/
 	# .desktop files
 	$(shell desktop/prepare.sh desktop/samsung-tools-session-service.desktop.in)
 	$(install_dir) $(DESTDIR)/etc/xdg/autostart/
