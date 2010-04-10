@@ -261,5 +261,5 @@ class LaptopMode(dbus.service.Object):
 	def SetVideoOutput(self, value, sender = None, conn = None):
 		if value != 0 and value != 1:
 			return False
-		self.__write(VIDEOOUT_CONFIG_FILE, "BATT_DISABLE_VIDEO_OUTPUTS", "VGA1")
+		self.__write(VIDEOOUT_CONFIG_FILE, "BATT_DISABLE_VIDEO_OUTPUTS", "\"VGA1\"")
 		return self.__write(VIDEOOUT_CONFIG_FILE, "CONTROL_VIDEO_OUTPUTS", str(value))
