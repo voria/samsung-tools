@@ -41,9 +41,8 @@ class LaptopMode(dbus.service.Object):
 		dbus.service.Object.__init__(self, conn, object_path, bus_name)
 		# Check if laptop-mode is available
 		self.available = False
-		if os.path.exists("/usr/sbin/laptop_mode"):
-			self.available = True
-	
+		self.IsAvailable()
+
 	def __write(self, file, option, value):
 		""" Write the 'option=value' in the 'file' configfile. """
 		""" If 'option' is not found in the config file, add it. """
@@ -116,16 +115,9 @@ class LaptopMode(dbus.service.Object):
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def IsAvailable(self, sender = None, conn = None):
+		if os.path.exists("/usr/sbin/laptop_mode"):
+			self.available = True
 		return self.available
-	
-	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'i',
-						sender_keyword = 'sender', connection_keyword = 'conn')
-	def GetLaptopModeEnabled(self, sender = None, conn = None):
-		value = self.__read(MAIN_CONFIG_FILE, "ENABLE_LAPTOP_MODE_ON_BATTERY")
-		if value == None:
-			return (-1)
-		else:
-			return int(value)
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'i',
 						sender_keyword = 'sender', connection_keyword = 'conn')
@@ -208,22 +200,6 @@ class LaptopMode(dbus.service.Object):
 		else:
 			return int(value)
 		
-	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 's',
-						sender_keyword = 'sender', connection_keyword = 'conn')
-	def GetVideoOutputDevices(self, sender = None, conn = None):
-		value = self.__read(VIDEOOUT_CONFIG_FILE, "BATT_DISABLE_VIDEO_OUTPUTS")
-		if value == None:
-			return "None"
-		else:
-			return value
-
-	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = 'i', out_signature = 'b',
-						sender_keyword = 'sender', connection_keyword = 'conn')
-	def SetLaptopModeEnabled(self, value, sender = None, conn = None):
-		if value != 0 and value != 1:
-			return False
-		return self.__write(MAIN_CONFIG_FILE, "ENABLE_LAPTOP_MODE_ON_BATTERY", str(value))
-	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = 'i', out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def SetHDPowerMgmt(self, value, sender = None, conn = None):
@@ -285,9 +261,5 @@ class LaptopMode(dbus.service.Object):
 	def SetVideoOutput(self, value, sender = None, conn = None):
 		if value != 0 and value != 1:
 			return False
+		self.__write(VIDEOOUT_CONFIG_FILE, "BATT_DISABLE_VIDEO_OUTPUTS", "VGA1")
 		return self.__write(VIDEOOUT_CONFIG_FILE, "CONTROL_VIDEO_OUTPUTS", str(value))
-
-	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = 's', out_signature = 'b',
-						sender_keyword = 'sender', connection_keyword = 'conn')
-	def SetVideoOutputDevices(self, value, sender = None, conn = None):
-		return self.__write(VIDEOOUT_CONFIG_FILE, "BATT_DISABLE_VIDEO_OUTPUTS", value)
