@@ -1,6 +1,6 @@
-samsung-tools (0.1~ppa14~loms~lucid) UNRELEASED; urgency=low
+samsung-tools (0.1~ppa14~loms~lucid) lucid; urgency=low
 
-  * 
+  * Resize application's icon.
 
  -- Fortunato Ventre (voRia) <vorione@gmail.com>  Sat, 10 Apr 2010 12:05:46 +0200
 
