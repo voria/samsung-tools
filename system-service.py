@@ -34,6 +34,7 @@ from backends.system.cpu import Cpu
 from backends.system.fan import Fan
 from backends.system.webcam import Webcam
 from backends.system.wireless import Wireless
+from backends.system.laptopmode import LaptopMode
 
 mainloop = None
 
@@ -114,6 +115,7 @@ if __name__ == '__main__':
 	Options(bus, SYSTEM_OBJECT_PATH_OPTIONS)
 	Backlight(bus, SYSTEM_OBJECT_PATH_BACKLIGHT)
 	Cpu(bus, SYSTEM_OBJECT_PATH_CPU)
+	LaptopMode(bus, SYSTEM_OBJECT_PATH_LAPTOPMODE)
 	# We need these objects for restoring last statuses
 	bluetooth = Bluetooth(bus, SYSTEM_OBJECT_PATH_BLUETOOTH)
 	fan = Fan(bus, SYSTEM_OBJECT_PATH_FAN)

@@ -60,6 +60,7 @@ SYSTEM_OBJECT_PATH_CPU = "/Device/Cpu"
 SYSTEM_OBJECT_PATH_FAN = "/Device/Fan"
 SYSTEM_OBJECT_PATH_WEBCAM = "/Device/Webcam"
 SYSTEM_OBJECT_PATH_WIRELESS = "/Device/Wireless"
+SYSTEM_OBJECT_PATH_LAPTOPMODE = "/LaptopMode"
 # Config/Log
 SYSTEM_CONFIG_FILE = "/etc/samsung-tools/system.conf"
 SYSTEM_LOG_FILE = "/var/log/samsung-tools.log"
