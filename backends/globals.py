@@ -79,8 +79,6 @@ LAST_DEVICE_STATUS_CPUFAN = os.path.join(LAST_DEVICES_STATUS_DIRECTORY, "cpufan"
 COMMAND_MODPROBE = "/sbin/modprobe"
 COMMAND_VBETOOL = "/usr/sbin/vbetool"
 COMMAND_LSMOD = "/sbin/lsmod"
-COMMAND_LSUSB = "/usr/sbin/lsusb"
-COMMAND_LSPCI = "/usr/bin/lspci"
 COMMAND_DMESG = "/bin/dmesg"
 COMMAND_RFKILL = "/sbin/rfkill"
 # Easy slow down manager interface
