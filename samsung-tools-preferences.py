@@ -156,7 +156,6 @@ class LaptopModeDialog():
 		self.closeButton = self.builder.get_object("closeButton")
 		self.closeButton.connect("clicked", self.quit)
 		
-		
 		laptopModeTable = self.builder.get_object("laptopModeTable")
 		laptopmode = self.__connect()
 		# USB autosuspend
@@ -285,12 +284,58 @@ class LaptopModeDialog():
 	
 	def on_hdPowerMgmtSpinbutton_valuechanged(self, button, event = None):
 		self.hdPowerMgmtSpinbuttonValue = button.get_value_as_int()
-		# Value will be actually saved at the time the application is quitted
+		# Value will be actually saved at the time the dialog is quitted
 	
 	def quit(self, widget = None, event = None):
 		conn = self.__connect()
 		conn.SetHDPowerMgmt(self.hdPowerMgmtSpinbuttonValue)
 		conn.RestartDaemon()
+		self.mainDialog.destroy()
+
+class KernelParametersDialog():
+	def __init__(self, parent):
+		# Setup GUI
+		self.builder = gtk.Builder()
+		self.builder.set_translation_domain("samsung-tools")
+		self.builder.add_from_file(os.path.join(WORK_DIRECTORY, "gui/glade/samsung-tools-preferences-kernel-parameters.glade"))
+		
+		self.mainDialog = self.builder.get_object("mainDialog")
+		self.mainDialog.set_icon_from_file(SAMSUNG_TOOLS_ICON)
+		self.mainDialog.set_transient_for(parent)
+		self.mainDialog.connect("delete-event", self.quit)
+		
+		self.closeButton = self.builder.get_object("closeButton")
+		self.closeButton.connect("clicked", self.quit)
+		
+		# Swappiness
+		conn = self.__connect()
+		self.swappinessSpinbutton = self.builder.get_object("swappinessSpinbutton")
+		self.swappinessSpinbuttonValue = conn.GetSwappiness()
+		self.swappinessSpinbutton.set_value(self.swappinessSpinbuttonValue)
+		self.swappinessSpinbutton.connect("value-changed", self.on_swappinessSpinbutton_valuechanged)
+		
+		self.mainDialog.run()
+	
+	def __connect(self):
+		retry = 3
+		while retry > 0:
+			try:
+				bus = dbus.SystemBus()
+				proxy = bus.get_object(SYSTEM_INTERFACE_NAME, SYSTEM_OBJECT_PATH_SYSCTL)
+				return dbus.Interface(proxy, SYSTEM_INTERFACE_NAME)
+			except:
+				retry = retry - 1
+		print unicode(_("Unable to connect to system service!"), "utf-8")
+		sys.exit(1)
+
+	def on_swappinessSpinbutton_valuechanged(self, button, event = None):
+		self.swappinessSpinbuttonValue = button.get_value_as_int()
+		# Value will be actually saved at the time the dialog is quitted
+	
+	def quit(self, widget = None, event = None):
+		conn = self.__connect()
+		conn.SetSwappiness(self.swappinessSpinbuttonValue)
+		conn.ApplySettings()
 		self.mainDialog.destroy()
 
 class Main():
@@ -488,6 +533,10 @@ class Main():
 		###
 		### Advanced power management configuration
 		###
+		# kernel parameters
+		self.sysCtlButton = self.builder.get_object("sysCtlButton")
+		self.sysCtlButton.connect("clicked", self.on_sysCtlButton_clicked)
+		# laptop mode tools
 		self.laptopModeButton = self.builder.get_object("laptopModeButton")
 		conn = self.__connect_system_laptopmode()
 		if not conn.IsAvailable():
@@ -745,6 +794,9 @@ class Main():
 	
 	def on_laptopModeButton_clicked(self, button):
 		LaptopModeDialog(self.mainWindow)
+	
+	def on_sysCtlButton_clicked(self, button):
+		KernelParametersDialog(self.mainWindow)
 	
 	def about(self, button = None):
 		authors = [ "Fortunato Ventre" ]

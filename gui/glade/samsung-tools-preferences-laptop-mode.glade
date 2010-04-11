@@ -7,6 +7,7 @@
     <property name="border_width">5</property>
     <property name="title" translatable="yes">Configure 'laptop mode tools'</property>
     <property name="resizable">False</property>
+    <property name="window_position">mouse</property>
     <property name="type_hint">normal</property>
     <property name="has_separator">False</property>
     <child internal-child="vbox">
@@ -46,7 +47,6 @@
                   <packing>
                     <property name="expand">False</property>
                     <property name="fill">False</property>
-                    <property name="padding">10</property>
                     <property name="position">0</property>
                   </packing>
                 </child>

@@ -554,11 +554,21 @@
                     <property name="tooltip_text" translatable="yes">Configure 'laptop mode tools' for a better power management</property>
                   </object>
                   <packing>
+                    <property name="top_attach">1</property>
+                    <property name="bottom_attach">2</property>
                     <property name="y_options">GTK_EXPAND</property>
                   </packing>
                 </child>
                 <child>
-                  <placeholder/>
+                  <object class="GtkButton" id="sysCtlButton">
+                    <property name="label" translatable="yes">Configure kernel parameters</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                  </object>
+                  <packing>
+                    <property name="y_options">GTK_EXPAND</property>
+                  </packing>
                 </child>
               </object>
               <packing>

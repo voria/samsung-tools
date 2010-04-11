@@ -34,6 +34,7 @@ install:
 	$(install_dir) $(DESTDIR)/usr/lib/samsung-tools/gui/glade/
 	$(install_file) gui/glade/samsung-tools-preferences.glade $(DESTDIR)/usr/lib/samsung-tools/gui/glade/
 	$(install_file) gui/glade/samsung-tools-preferences-laptop-mode.glade $(DESTDIR)/usr/lib/samsung-tools/gui/glade/
+	$(install_file) gui/glade/samsung-tools-preferences-kernel-parameters.glade $(DESTDIR)/usr/lib/samsung-tools/gui/glade/
 	$(install_dir) $(DESTDIR)/usr/bin/
 	$(install_script) samsung-tools-preferences.py $(DESTDIR)/usr/bin/samsung-tools-preferences
 	# Applet
