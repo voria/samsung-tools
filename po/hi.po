@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-11 10:28+0200\n"
+"POT-Creation-Date: 2010-04-11 11:48+0200\n"
 "PO-Revision-Date: 2010-03-29 16:36+0000\n"
 "Last-Translator: subiraj <subiraj@gmail.com>\n"
 "Language-Team: Hindi <hi@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2010-04-09 13:44+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
-#: backends/session/util/locales.py:25 samsung-tools-preferences.py:322
+#: backends/session/util/locales.py:25 samsung-tools-preferences.py:323
 msgid "Backlight"
 msgstr ""
 
@@ -49,7 +49,7 @@ msgstr ""
 msgid "Backlight cannot be toggled"
 msgstr ""
 
-#: backends/session/util/locales.py:34 samsung-tools-preferences.py:331
+#: backends/session/util/locales.py:34 samsung-tools-preferences.py:332
 #: po/samsung-tools-applet.glade.h:1
 msgid "Bluetooth"
 msgstr ""
@@ -86,7 +86,7 @@ msgstr ""
 msgid "Bluetooth control is not available"
 msgstr ""
 
-#: backends/session/util/locales.py:44 samsung-tools-preferences.py:340
+#: backends/session/util/locales.py:44 samsung-tools-preferences.py:341
 msgid "CPU fan"
 msgstr ""
 
@@ -118,7 +118,7 @@ msgstr ""
 msgid "CPU fan control is not available"
 msgstr ""
 
-#: backends/session/util/locales.py:53 samsung-tools-preferences.py:349
+#: backends/session/util/locales.py:53 samsung-tools-preferences.py:350
 #: po/samsung-tools-applet.glade.h:7
 msgid "Webcam"
 msgstr "वेबकैम"
@@ -155,7 +155,7 @@ msgstr ""
 msgid "Webcam control is not available"
 msgstr ""
 
-#: backends/session/util/locales.py:63 samsung-tools-preferences.py:358
+#: backends/session/util/locales.py:63 samsung-tools-preferences.py:359
 #: po/samsung-tools-applet.glade.h:8
 msgid "Wireless"
 msgstr "वायरलेस"
@@ -295,7 +295,7 @@ msgstr ""
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr ""
 
-#: samsung-tools.py:515 samsung-tools-preferences.py:772
+#: samsung-tools.py:515 samsung-tools-preferences.py:773
 msgid "Released under GPLv3 license"
 msgstr ""
 
@@ -335,16 +335,16 @@ msgstr ""
 msgid "None"
 msgstr ""
 
-#: samsung-tools-preferences.py:227 samsung-tools-preferences.py:525
-#: samsung-tools-preferences.py:537
+#: samsung-tools-preferences.py:227 samsung-tools-preferences.py:526
+#: samsung-tools-preferences.py:538
 msgid "Unable to connect to system service!"
 msgstr ""
 
-#: samsung-tools-preferences.py:495
+#: samsung-tools-preferences.py:496
 msgid "Install the 'laptop mode tools' package to configure these options"
 msgstr ""
 
-#: samsung-tools-preferences.py:513
+#: samsung-tools-preferences.py:514
 msgid "Unable to connect to session service!"
 msgstr ""
 
@@ -528,7 +528,7 @@ msgid "Enable USB autosuspend"
 msgstr ""
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:14
-msgid "Hard Disk power management:"
+msgid "Hard disk power management:"
 msgstr ""
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:15
@@ -574,8 +574,8 @@ msgstr ""
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:21
 msgid ""
-"This option sets the disk power management, and it can have a value between "
-"1 and 255. A low value results in a better energy saving but less disk "
+"This option sets the disk power management, it can be a value between 1 and "
+"255. A low value results in a better energy saving but less disk "
 "performance, an high value results in disk performance but less energy "
 "saving."
 msgstr ""

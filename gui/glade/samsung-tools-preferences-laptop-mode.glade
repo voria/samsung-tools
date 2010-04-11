@@ -40,8 +40,8 @@
                 <child>
                   <object class="GtkLabel" id="hdPowerMgmtLabel">
                     <property name="visible">True</property>
-                    <property name="tooltip_text" translatable="yes">This option sets the disk power management, and it can have a value between 1 and 255. A low value results in a better energy saving but less disk performance, an high value results in disk performance but less energy saving.</property>
-                    <property name="label" translatable="yes">Hard Disk power management:</property>
+                    <property name="tooltip_text" translatable="yes">This option sets the disk power management, it can be a value between 1 and 255. A low value results in a better energy saving but less disk performance, an high value results in disk performance but less energy saving.</property>
+                    <property name="label" translatable="yes">Hard disk power management:</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>
@@ -54,7 +54,7 @@
                   <object class="GtkSpinButton" id="hdPowerMgmtSpinbutton">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="tooltip_text" translatable="yes">This option sets the disk power management, and it can have a value between 1 and 255. A low value results in a better energy saving but less disk performance, an high value results in disk performance but less energy saving.</property>
+                    <property name="tooltip_text" translatable="yes">This option sets the disk power management, it can be a value between 1 and 255. A low value results in a better energy saving but less disk performance, an high value results in disk performance but less energy saving.</property>
                     <property name="max_length">3</property>
                     <property name="invisible_char">&#x2022;</property>
                     <property name="xalign">1</property>
