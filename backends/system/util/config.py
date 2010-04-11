@@ -44,7 +44,7 @@ class SystemConfig():
 		except:
 			# configfile not found?
 			# Use default options
-			systemlog.write("WARNING: 'SystemConfig()' - Cannot read '" + configfile + "'. Using default values for all options.")
+			systemlog.write("WARNING: 'SystemConfig' - Cannot read '" + configfile + "'. Using default values for all options.")
 			self.config.add_section("Main")
 			self.config.set("Main", "BLUETOOTH_INITIAL_STATUS", BLUETOOTH_INITIAL_STATUS_DEFAULT)
 			self.config.set("Main", "WEBCAM_INITIAL_STATUS", WEBCAM_INITIAL_STATUS_DEFAULT)
@@ -73,22 +73,22 @@ class SystemConfig():
 		# Options sanity check
 		if self.config.get("Main", "BLUETOOTH_INITIAL_STATUS") not in BLUETOOTH_INITIAL_STATUS_ACCEPTED_VALUES:
 			# Option is invalid, set default value
-			systemlog.write("WARNING: 'SystemConfig()' - 'BLUETOOTH_INITIAL_STATUS' option specified in '" + configfile + 
+			systemlog.write("WARNING: 'SystemConfig' - 'BLUETOOTH_INITIAL_STATUS' option specified in '" + configfile + 
 					"' is invalid. Using default value ('" + BLUETOOTH_INITIAL_STATUS_DEFAULT + "').")
 			self.config.set("Main", "BLUETOOTH_INITIAL_STATUS", BLUETOOTH_INITIAL_STATUS_DEFAULT)
 		if self.config.get("Main", "WEBCAM_INITIAL_STATUS") not in WEBCAM_INITIAL_STATUS_ACCEPTED_VALUES:
 			# Option is invalid, set default value
-			systemlog.write("WARNING: 'SystemConfig()' - 'WEBCAM_INITIAL_STATUS' option specified in '" + configfile + 
+			systemlog.write("WARNING: 'SystemConfig' - 'WEBCAM_INITIAL_STATUS' option specified in '" + configfile + 
 					"' is invalid. Using default value ('" + WEBCAM_INITIAL_STATUS_DEFAULT + "').")
 			self.config.set("Main", "WIRELESS_INITIAL_STATUS", WIRELESS_INITIAL_STATUS_DEFAULT)
 		if self.config.get("Main", "WIRELESS_INITIAL_STATUS") not in WIRELESS_INITIAL_STATUS_ACCEPTED_VALUES:
 			# Option is invalid, set default value
-			systemlog.write("WARNING: 'SystemConfig()' - 'WIRELESS_INITIAL_STATUS' option specified in '" + configfile + 
+			systemlog.write("WARNING: 'SystemConfig' - 'WIRELESS_INITIAL_STATUS' option specified in '" + configfile + 
 					"' is invalid. Using default value ('" + WIRELESS_INITIAL_STATUS_DEFAULT + "').")
 			self.config.set("Main", "WIRELESS_INITIAL_STATUS", WIRELESS_INITIAL_STATUS_DEFAULT)
 		if self.config.get("Main", "CPUFAN_INITIAL_STATUS") not in CPUFAN_INITIAL_STATUS_ACCEPTED_VALUES:
 			# Option is invalid, set default value
-			systemlog.write("WARNING: 'SystemConfig()' - 'CPUFAN_INITIAL_STATUS' option specified in '" + configfile + 
+			systemlog.write("WARNING: 'SystemConfig' - 'CPUFAN_INITIAL_STATUS' option specified in '" + configfile + 
 					"' is invalid. Using default value ('" + CPUFAN_INITIAL_STATUS_DEFAULT + "').")
 			self.config.set("Main", "CPUFAN_INITIAL_STATUS", CPUFAN_INITIAL_STATUS_DEFAULT)
 	
@@ -104,17 +104,17 @@ class SystemConfig():
 		try:
 			oldfile = open(self.configfile, "r")
 		except:
-			systemlog.write("WARNING: 'SystemConfig().__write()' - '" + self.configfile + "' not found. Creating a new one.")
+			systemlog.write("WARNING: 'SystemConfig.__write()' - '" + self.configfile + "' not found. Creating a new one.")
 			try:
 				oldfile = open(self.configfile, "w").close()
 				oldfile = open(self.configfile, "r")
 			except:
-				systemlog.write("ERROR: 'SystemConfig().__write()' - cannot write the config file.")
+				systemlog.write("ERROR: 'SystemConfig.__write()' - cannot write the config file.")
 				return False
 		try:
 			newfile = open(self.configfile + ".new", "w")
 		except:
-			systemlog.write("ERROR: 'SystemConfig().__write()' - cannot write the new config file.")
+			systemlog.write("ERROR: 'SystemConfig.__write()' - cannot write the new config file.")
 			oldfile.close()
 			return False
 		for line in oldfile:
@@ -132,7 +132,7 @@ class SystemConfig():
 					try:					
 						newfile.write(option + "=" + value + "\n")
 					except:
-						systemlog.write("ERROR: 'SystemConfig().__write()' - cannot write the new value for '" + option + "' in the new config file.")
+						systemlog.write("ERROR: 'SystemConfig.__write()' - cannot write the new value for '" + option + "' in the new config file.")
 						oldfile.close()
 						newfile.close()
 						os.remove(self.configfile + ".new")
@@ -146,7 +146,7 @@ class SystemConfig():
 		try:
 			os.remove(self.configfile)
 		except:
-			systemlog.write("ERROR: 'SystemConfig().__write()' - cannot replace old '" + self.configfile + "' with the new version.")
+			systemlog.write("ERROR: 'SystemConfig.__write()' - cannot replace old '" + self.configfile + "' with the new version.")
 			os.remove(self.configfile + ".new")
 			return False
 		shutil.move(self.configfile + ".new", self.configfile)
