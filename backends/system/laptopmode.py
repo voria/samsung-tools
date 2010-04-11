@@ -228,6 +228,7 @@ class LaptopMode(dbus.service.Object):
 	def SetEthernet(self, value, sender = None, conn = None):
 		if value != 0 and value != 1:
 			return False
+		self.__write(ETHERNET_CONFIG_FILE, "ETHERNET_DEVICES", "\"eth0\"")
 		return self.__write(ETHERNET_CONFIG_FILE, "CONTROL_ETHERNET", str(value))
 
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = 'i', out_signature = 'b',
