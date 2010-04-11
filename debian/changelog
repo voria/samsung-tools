@@ -1,3 +1,11 @@
+samsung-tools (0.1~ppa15~loms~lucid) lucid; urgency=low
+
+  * Add support for 'laptop mode tools' package.
+  * Fix log messages in SystemConfig() class.
+  * Update strings and translations.
+
+ -- Fortunato Ventre (voRia) <vorione@gmail.com>  Sun, 11 Apr 2010 11:36:26 +0200
+
 samsung-tools (0.1~ppa14~loms~lucid) lucid; urgency=low
 
   * Resize application's icon.
