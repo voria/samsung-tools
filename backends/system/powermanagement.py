@@ -35,6 +35,9 @@ LM_SCHEDMCPOWERSAVINGS_CONFIG_FILE = "/etc/laptop-mode/conf.d/sched-mc-power-sav
 LM_USBAUTOSUSPEND_CONFIG_FILE = "/etc/laptop-mode/conf.d/usb-autosuspend.conf"
 LM_VIDEOOUT_CONFIG_FILE = "/etc/laptop-mode/conf.d/video-out.conf"
 
+# sysctl configuration file
+SYSCTL_CONFIG_FILE = "/etc/sysctl.d/30-samsung-tools.conf"
+
 class LaptopMode(dbus.service.Object):
 	""" Manage laptop-mode """
 	def __init__(self, conn = None, object_path = None, bus_name = None):
@@ -273,3 +276,46 @@ class LaptopMode(dbus.service.Object):
 			return False
 		self.__write(LM_VIDEOOUT_CONFIG_FILE, "BATT_DISABLE_VIDEO_OUTPUTS", "\"VGA1\"")
 		return self.__write(LM_VIDEOOUT_CONFIG_FILE, "CONTROL_VIDEO_OUTPUTS", str(value))
+
+class SysCtl(dbus.service.Object):
+	""" Manage sysctl options """
+	def __init__(self, conn = None, object_path = None, bus_name = None):
+		dbus.service.Object.__init__(self, conn, object_path, bus_name)
+	
+	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'i',
+						sender_keyword = 'sender', connection_keyword = 'conn')
+	def GetSwappiness(self, sender = None, conn = None):
+		from subprocess import Popen, PIPE
+		command = COMMAND_SYSCTL + " vm.swappiness"
+		process = Popen(command.split(), stdout = PIPE, stderr = PIPE)
+		return int(process.communicate()[0].split(" = ")[1])
+
+	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = 'i', out_signature = 'b',
+						sender_keyword = 'sender', connection_keyword = 'conn')
+	def SetSwappiness(self, value, sender = None, conn = None):
+		if value < 0 or value > 100:
+			return False
+		try:
+			f = open(SYSCTL_CONFIG_FILE, "w")
+			f.write("vm.swappiness = " + str(value) + "\n")
+			f.close()
+			return True
+		except:
+			systemlog.write("ERROR: 'SysCtl.SetSwappiness()' - cannot write the new config file.")
+			return False
+	
+	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
+						sender_keyword = 'sender', connection_keyword = 'conn')
+	def ApplySettings(self, sender = None, conn = None):
+		from subprocess import Popen, PIPE
+		try:
+			command = COMMAND_SERVICE + " procps start"
+			process = Popen(command.split(), stdout = PIPE, stderr = PIPE)
+			process.communicate()
+			if process.returncode != 0:
+				systemlog.write("ERROR: 'SysCtl.ApplySettings()' - COMMAND: '" + command + "' FAILED.")
+				return False
+			return True
+		except:
+			systemlog.write("ERROR: 'SysCtl.ApplySettings()' - COMMAND: '" + command + "' - Exception thrown.")
+			return False
