@@ -82,6 +82,7 @@ COMMAND_VBETOOL = "/usr/sbin/vbetool"
 COMMAND_LSMOD = "/sbin/lsmod"
 COMMAND_DMESG = "/bin/dmesg"
 COMMAND_RFKILL = "/sbin/rfkill"
+COMMAND_SERVICE = "/usr/sbin/service"
 # Easy slow down manager interface
 ESDM_MODULE = "easy_slow_down_manager"
 ESDM_PATH_BACKLIGHT = "/proc/easy_backlight"

@@ -290,6 +290,7 @@ class LaptopModeDialog():
 	def quit(self, widget = None, event = None):
 		conn = self.__connect()
 		conn.SetHDPowerMgmt(self.hdPowerMgmtSpinbuttonValue)
+		conn.RestartDaemon()
 		self.mainDialog.destroy()
 
 class Main():

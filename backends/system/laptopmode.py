@@ -112,6 +112,13 @@ class LaptopMode(dbus.service.Object):
 		f.close()
 		return None
 	
+	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = None,
+						sender_keyword = 'sender', connection_keyword = 'conn')
+	def RestartDaemon(self, sender = None, conn = None):
+		from subprocess import Popen, PIPE
+		command = COMMAND_SERVICE + " laptop-mode restart"
+		process = Popen(command.split(), stdout = PIPE, stderr = PIPE)
+	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def IsAvailable(self, sender = None, conn = None):
