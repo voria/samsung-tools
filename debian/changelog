@@ -1,3 +1,10 @@
+samsung-tools (0.1~ppa16~loms~lucid) lucid; urgency=low
+
+  * Add support for kernel parameters configuration.
+  * Update strings and translations.
+
+ -- Fortunato Ventre (voRia) <vorione@gmail.com>  Sun, 11 Apr 2010 17:14:15 +0200
+
 samsung-tools (0.1~ppa15~loms~lucid) lucid; urgency=low
 
   * Add support for 'laptop mode tools' package.
