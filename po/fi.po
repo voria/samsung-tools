@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-11 10:14+0200\n"
+"POT-Creation-Date: 2010-04-11 10:28+0200\n"
 "PO-Revision-Date: 2010-03-15 17:36+0000\n"
 "Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: Finnish <fi@li.org>\n"
@@ -243,11 +243,11 @@ msgstr ""
 msgid "CPU fan:"
 msgstr ""
 
-#: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:31
+#: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:32
 msgid "Webcam:"
 msgstr ""
 
-#: samsung-tools.py:489 po/samsung-tools-preferences.glade.h:32
+#: samsung-tools.py:489 po/samsung-tools-preferences.glade.h:33
 msgid "Wireless:"
 msgstr ""
 
@@ -341,8 +341,7 @@ msgid "Unable to connect to system service!"
 msgstr ""
 
 #: samsung-tools-preferences.py:495
-msgid ""
-"Install the 'laptop mode tools' package if you want to use these options"
+msgid "Install the 'laptop mode tools' package to configure these options"
 msgstr ""
 
 #: samsung-tools-preferences.py:513
@@ -353,7 +352,7 @@ msgstr ""
 msgid "CPU Fan"
 msgstr ""
 
-#: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:21
+#: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:22
 msgid "Normal"
 msgstr ""
 
@@ -361,11 +360,11 @@ msgstr ""
 msgid "Preferences..."
 msgstr ""
 
-#: po/samsung-tools-applet.glade.h:5 po/samsung-tools-preferences.glade.h:24
+#: po/samsung-tools-applet.glade.h:5 po/samsung-tools-preferences.glade.h:25
 msgid "Silent"
 msgstr ""
 
-#: po/samsung-tools-applet.glade.h:6 po/samsung-tools-preferences.glade.h:25
+#: po/samsung-tools-applet.glade.h:6 po/samsung-tools-preferences.glade.h:26
 msgid "Speed"
 msgstr ""
 
@@ -374,7 +373,7 @@ msgid "Manage devices on Samsung netbooks"
 msgstr ""
 
 #: po/samsung-tools-preferences.desktop.in.h:1
-#: po/samsung-tools-preferences.glade.h:22
+#: po/samsung-tools-preferences.glade.h:23
 msgid "Samsung Tools Preferences"
 msgstr ""
 
@@ -412,66 +411,70 @@ msgid "Configure 'laptop mode tools'"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:11
-msgid "Disabled"
+msgid "Configure 'laptop mode tools' for a better power management"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:12
-msgid "Enable hotkeys"
+msgid "Disabled"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:13
-msgid "Enable this option to use hotkeys"
+msgid "Enable hotkeys"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:14
-msgid "Enabled"
+msgid "Enable this option to use hotkeys"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:15
-msgid "Hotkey used for CPU fan control"
+msgid "Enabled"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:16
-msgid "Hotkey used for backlight control"
+msgid "Hotkey used for CPU fan control"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:17
-msgid "Hotkey used for bluetooth control"
+msgid "Hotkey used for backlight control"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:18
-msgid "Hotkey used for webcam control"
+msgid "Hotkey used for bluetooth control"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:19
-msgid "Hotkey used for wireless control"
+msgid "Hotkey used for webcam control"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:20
+msgid "Hotkey used for wireless control"
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:21
 msgid "Last status"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:23
+#: po/samsung-tools-preferences.glade.h:24
 msgid "Session service"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:26
+#: po/samsung-tools-preferences.glade.h:27
 msgid "System service"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:27
+#: po/samsung-tools-preferences.glade.h:28
 msgid "The initial status at boot for Bluetooth"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:28
+#: po/samsung-tools-preferences.glade.h:29
 msgid "The initial status at boot for CPU fan"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:29
+#: po/samsung-tools-preferences.glade.h:30
 msgid "The initial status at boot for webcam"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:30
+#: po/samsung-tools-preferences.glade.h:31
 msgid "The initial status at boot for wireless"
 msgstr ""
 

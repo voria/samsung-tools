@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-11 10:14+0200\n"
+"POT-Creation-Date: 2010-04-11 10:28+0200\n"
 "PO-Revision-Date: 2010-03-29 09:30+0000\n"
 "Last-Translator: Krzysztof Saja <Unknown>\n"
 "Language-Team: Polish <pl@li.org>\n"
@@ -243,11 +243,11 @@ msgstr "Bluetooth:"
 msgid "CPU fan:"
 msgstr ""
 
-#: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:31
+#: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:32
 msgid "Webcam:"
 msgstr "Kamera internetowa:"
 
-#: samsung-tools.py:489 po/samsung-tools-preferences.glade.h:32
+#: samsung-tools.py:489 po/samsung-tools-preferences.glade.h:33
 msgid "Wireless:"
 msgstr "SIeć bezprzewodowa:"
 
@@ -342,8 +342,7 @@ msgid "Unable to connect to system service!"
 msgstr "NIe da się połączyć z usługą systemową!"
 
 #: samsung-tools-preferences.py:495
-msgid ""
-"Install the 'laptop mode tools' package if you want to use these options"
+msgid "Install the 'laptop mode tools' package to configure these options"
 msgstr ""
 
 #: samsung-tools-preferences.py:513
@@ -354,7 +353,7 @@ msgstr "Nie można połączyć z usługą sesji!"
 msgid "CPU Fan"
 msgstr ""
 
-#: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:21
+#: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:22
 msgid "Normal"
 msgstr ""
 
@@ -362,11 +361,11 @@ msgstr ""
 msgid "Preferences..."
 msgstr ""
 
-#: po/samsung-tools-applet.glade.h:5 po/samsung-tools-preferences.glade.h:24
+#: po/samsung-tools-applet.glade.h:5 po/samsung-tools-preferences.glade.h:25
 msgid "Silent"
 msgstr ""
 
-#: po/samsung-tools-applet.glade.h:6 po/samsung-tools-preferences.glade.h:25
+#: po/samsung-tools-applet.glade.h:6 po/samsung-tools-preferences.glade.h:26
 msgid "Speed"
 msgstr ""
 
@@ -375,7 +374,7 @@ msgid "Manage devices on Samsung netbooks"
 msgstr ""
 
 #: po/samsung-tools-preferences.desktop.in.h:1
-#: po/samsung-tools-preferences.glade.h:22
+#: po/samsung-tools-preferences.glade.h:23
 msgid "Samsung Tools Preferences"
 msgstr "Ustawienia Narzędzi Samsung"
 
@@ -413,66 +412,70 @@ msgid "Configure 'laptop mode tools'"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:11
+msgid "Configure 'laptop mode tools' for a better power management"
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:12
 msgid "Disabled"
 msgstr "Wyłączony"
 
-#: po/samsung-tools-preferences.glade.h:12
+#: po/samsung-tools-preferences.glade.h:13
 msgid "Enable hotkeys"
 msgstr "Włącz skróty klawiszowe"
 
-#: po/samsung-tools-preferences.glade.h:13
+#: po/samsung-tools-preferences.glade.h:14
 msgid "Enable this option to use hotkeys"
 msgstr "Włącz tą opcję, aby używać skrótów klawiszowych"
 
-#: po/samsung-tools-preferences.glade.h:14
+#: po/samsung-tools-preferences.glade.h:15
 msgid "Enabled"
 msgstr "Włączony"
 
-#: po/samsung-tools-preferences.glade.h:15
+#: po/samsung-tools-preferences.glade.h:16
 msgid "Hotkey used for CPU fan control"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:16
+#: po/samsung-tools-preferences.glade.h:17
 msgid "Hotkey used for backlight control"
 msgstr "Skrót klawiaturowy używany do kontroli podświetleniem"
 
-#: po/samsung-tools-preferences.glade.h:17
+#: po/samsung-tools-preferences.glade.h:18
 msgid "Hotkey used for bluetooth control"
 msgstr "Skrót klawiaturowy używany do zarządzania Bluetooth'em"
 
-#: po/samsung-tools-preferences.glade.h:18
+#: po/samsung-tools-preferences.glade.h:19
 msgid "Hotkey used for webcam control"
 msgstr "Skrót klawiaturowy używany do zarządzania kamerą internetową"
 
-#: po/samsung-tools-preferences.glade.h:19
+#: po/samsung-tools-preferences.glade.h:20
 msgid "Hotkey used for wireless control"
 msgstr "Skrót klawiaturowy używany do zarządzania siecią bezprzewodową"
 
-#: po/samsung-tools-preferences.glade.h:20
+#: po/samsung-tools-preferences.glade.h:21
 msgid "Last status"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:23
+#: po/samsung-tools-preferences.glade.h:24
 msgid "Session service"
 msgstr "Usługa sesji"
 
-#: po/samsung-tools-preferences.glade.h:26
+#: po/samsung-tools-preferences.glade.h:27
 msgid "System service"
 msgstr "Usługa systemowa"
 
-#: po/samsung-tools-preferences.glade.h:27
+#: po/samsung-tools-preferences.glade.h:28
 msgid "The initial status at boot for Bluetooth"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:28
+#: po/samsung-tools-preferences.glade.h:29
 msgid "The initial status at boot for CPU fan"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:29
+#: po/samsung-tools-preferences.glade.h:30
 msgid "The initial status at boot for webcam"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:30
+#: po/samsung-tools-preferences.glade.h:31
 msgid "The initial status at boot for wireless"
 msgstr ""
 

@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-11 10:14+0200\n"
-"PO-Revision-Date: 2010-04-11 10:17+0200\n"
+"POT-Creation-Date: 2010-04-11 10:28+0200\n"
+"PO-Revision-Date: 2010-04-11 10:28+0200\n"
 "Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: Italiano <vorione@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -246,11 +246,11 @@ msgstr "Bluetooth:"
 msgid "CPU fan:"
 msgstr "Ventola CPU:"
 
-#: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:31
+#: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:32
 msgid "Webcam:"
 msgstr "Webcam:"
 
-#: samsung-tools.py:489 po/samsung-tools-preferences.glade.h:32
+#: samsung-tools.py:489 po/samsung-tools-preferences.glade.h:33
 msgid "Wireless:"
 msgstr "Rete senza fili:"
 
@@ -346,9 +346,9 @@ msgid "Unable to connect to system service!"
 msgstr "Impossibile connettersi al servizio di sistema!"
 
 #: samsung-tools-preferences.py:495
-msgid ""
-"Install the 'laptop mode tools' package if you want to use these options"
-msgstr "Installa il pacchetto 'laptop mode tools' per usare queste opzioni"
+msgid "Install the 'laptop mode tools' package to configure these options"
+msgstr ""
+"Installa il pacchetto 'laptop mode tools' per configurare queste opzioni"
 
 #: samsung-tools-preferences.py:513
 msgid "Unable to connect to session service!"
@@ -358,7 +358,7 @@ msgstr "Impossibile connettersi al servizio di sessione!"
 msgid "CPU Fan"
 msgstr "Ventola CPU"
 
-#: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:21
+#: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:22
 msgid "Normal"
 msgstr "Normale"
 
@@ -366,11 +366,11 @@ msgstr "Normale"
 msgid "Preferences..."
 msgstr "Preferenze..."
 
-#: po/samsung-tools-applet.glade.h:5 po/samsung-tools-preferences.glade.h:24
+#: po/samsung-tools-applet.glade.h:5 po/samsung-tools-preferences.glade.h:25
 msgid "Silent"
 msgstr "Silenziosa"
 
-#: po/samsung-tools-applet.glade.h:6 po/samsung-tools-preferences.glade.h:25
+#: po/samsung-tools-applet.glade.h:6 po/samsung-tools-preferences.glade.h:26
 msgid "Speed"
 msgstr "Veloce"
 
@@ -379,7 +379,7 @@ msgid "Manage devices on Samsung netbooks"
 msgstr "Gestisce i dispositivi sui netbook Samsung"
 
 #: po/samsung-tools-preferences.desktop.in.h:1
-#: po/samsung-tools-preferences.glade.h:22
+#: po/samsung-tools-preferences.glade.h:23
 msgid "Samsung Tools Preferences"
 msgstr "Preferenze di Samsung Tools"
 
@@ -417,66 +417,72 @@ msgid "Configure 'laptop mode tools'"
 msgstr "Configura 'laptop mode tools'"
 
 #: po/samsung-tools-preferences.glade.h:11
+msgid "Configure 'laptop mode tools' for a better power management"
+msgstr ""
+"Configura 'laptop mode tools' per una migliore gestione del risparmio "
+"energetico"
+
+#: po/samsung-tools-preferences.glade.h:12
 msgid "Disabled"
 msgstr "Disattivato"
 
-#: po/samsung-tools-preferences.glade.h:12
+#: po/samsung-tools-preferences.glade.h:13
 msgid "Enable hotkeys"
 msgstr "Abilita i tasti veloci"
 
-#: po/samsung-tools-preferences.glade.h:13
+#: po/samsung-tools-preferences.glade.h:14
 msgid "Enable this option to use hotkeys"
 msgstr "Attiva questa opzione per utilizzare i tasti veloci"
 
-#: po/samsung-tools-preferences.glade.h:14
+#: po/samsung-tools-preferences.glade.h:15
 msgid "Enabled"
 msgstr "Attivato"
 
-#: po/samsung-tools-preferences.glade.h:15
+#: po/samsung-tools-preferences.glade.h:16
 msgid "Hotkey used for CPU fan control"
 msgstr "Tasto veloce utilizzato per il controllo della ventola della CPU"
 
-#: po/samsung-tools-preferences.glade.h:16
+#: po/samsung-tools-preferences.glade.h:17
 msgid "Hotkey used for backlight control"
 msgstr "Tasto veloce utilizzato per il controllo della retroilluminazione"
 
-#: po/samsung-tools-preferences.glade.h:17
+#: po/samsung-tools-preferences.glade.h:18
 msgid "Hotkey used for bluetooth control"
 msgstr "Tasto veloce utilizzato per il controllo del Bluetooth"
 
-#: po/samsung-tools-preferences.glade.h:18
+#: po/samsung-tools-preferences.glade.h:19
 msgid "Hotkey used for webcam control"
 msgstr "Tasto veloce utilizzato per il controllo della webcam"
 
-#: po/samsung-tools-preferences.glade.h:19
+#: po/samsung-tools-preferences.glade.h:20
 msgid "Hotkey used for wireless control"
 msgstr "Tasto veloce utilizzato per il controllo della rete senza fili"
 
-#: po/samsung-tools-preferences.glade.h:20
+#: po/samsung-tools-preferences.glade.h:21
 msgid "Last status"
 msgstr "Ultimo stato"
 
-#: po/samsung-tools-preferences.glade.h:23
+#: po/samsung-tools-preferences.glade.h:24
 msgid "Session service"
 msgstr "Servizio di sessione"
 
-#: po/samsung-tools-preferences.glade.h:26
+#: po/samsung-tools-preferences.glade.h:27
 msgid "System service"
 msgstr "Servizio di sistema"
 
-#: po/samsung-tools-preferences.glade.h:27
+#: po/samsung-tools-preferences.glade.h:28
 msgid "The initial status at boot for Bluetooth"
 msgstr "Lo stato iniziale del Bluetooth all'avvio"
 
-#: po/samsung-tools-preferences.glade.h:28
+#: po/samsung-tools-preferences.glade.h:29
 msgid "The initial status at boot for CPU fan"
 msgstr "Lo stato iniziale della ventola della CPU all'avvio"
 
-#: po/samsung-tools-preferences.glade.h:29
+#: po/samsung-tools-preferences.glade.h:30
 msgid "The initial status at boot for webcam"
 msgstr "Lo stato iniziale della webcam all'avvio"
 
-#: po/samsung-tools-preferences.glade.h:30
+#: po/samsung-tools-preferences.glade.h:31
 msgid "The initial status at boot for wireless"
 msgstr "Lo stato iniziale della rete senza fili all'avvio"
 
@@ -621,10 +627,6 @@ msgstr "Avvia il servizio di sessione"
 
 #~ msgid "<b>\"Laptop Mode\" options</b>"
 #~ msgstr "<b>Opzioni di \"Laptop Mode\"</b>"
-
-#~ msgid "Use these options for a better power management"
-#~ msgstr ""
-#~ "Usa queste opzioni per una migliore gestione del risparmio energetico"
 
 #~ msgid "CPU/Fan"
 #~ msgstr "CPU/Ventola"
