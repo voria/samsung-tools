@@ -38,7 +38,7 @@ install:
 	$(install_script) samsung-tools-preferences.py $(DESTDIR)/usr/bin/samsung-tools-preferences
 	# Applet
 	$(install_file) gui/glade/samsung-tools-applet.glade $(DESTDIR)/usr/lib/samsung-tools/gui/glade/
-	$(install_script) gui/samsung-tools-applet.py $(DESTDIR)/usr/lib/samsung-tools/gui/
+	$(install_script) samsung-tools-applet.py $(DESTDIR)/usr/lib/samsung-tools/
 	# Icons
 	$(install_dir) $(DESTDIR)/usr/share/icons/
 	$(install_file) gui/icons/*.png $(DESTDIR)/usr/share/icons/
