@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-04-11 17:05+0200\n"
-"PO-Revision-Date: 2010-04-11 11:48+0200\n"
+"PO-Revision-Date: 2010-04-11 17:09+0200\n"
 "Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: Italiano <vorione@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -425,7 +425,7 @@ msgstr ""
 #: po/samsung-tools-preferences.glade.h:12
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:1
 msgid "Configure kernel parameters"
-msgstr ""
+msgstr "Configura i parametri del kernel"
 
 #: po/samsung-tools-preferences.glade.h:13
 msgid "Disabled"
@@ -499,10 +499,16 @@ msgid ""
 "bad results on power consumption and disk performance. Set a low value if "
 "you usually have plenty of unused RAM. The default value is 60."
 msgstr ""
+"Lo Swappiness controlla quanto aggressivamente il kernel esegue lo swap "
+"delle pagine di memoria. Valori alti aumentano l'aggressività, valori bassi "
+"diminuiscono l'aggressività. In altre parole, più alto è il valore, più il "
+"sistema utlizza lo swap, con risultati negativi sul consumo energetico e "
+"sulle performance del disco. Imposta un valore basso se di solito una parte "
+"abbondante della RAM non è utilizzata. Il valore di default è 60."
 
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:3
 msgid "Swappiness:"
-msgstr ""
+msgstr "Swappiness:"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:1
 msgid ""
