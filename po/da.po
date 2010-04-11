@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-11 11:48+0200\n"
+"POT-Creation-Date: 2010-04-11 17:05+0200\n"
 "PO-Revision-Date: 2010-03-14 15:28+0000\n"
 "Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: Danish <da@li.org>\n"
@@ -17,39 +17,46 @@ msgstr ""
 "X-Launchpad-Export-Date: 2010-04-09 13:44+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
-#: backends/session/util/locales.py:25 samsung-tools-preferences.py:323
+#: backends/session/util/locales.py:25 samsung-tools-preferences.py:368
 msgid "Backlight"
 msgstr ""
 
 #: backends/session/util/locales.py:26
+#, fuzzy
 msgid "Backlight is enabled"
-msgstr ""
+msgstr "Bluetooth er aktiveret"
 
 #: backends/session/util/locales.py:27
+#, fuzzy
 msgid "Backlight is disabled"
-msgstr ""
+msgstr "Bluetooth er slået fra"
 
 #: backends/session/util/locales.py:28
+#, fuzzy
 msgid "Backlight enabled"
-msgstr ""
+msgstr "Bluetooth er slået til"
 
 #: backends/session/util/locales.py:29
+#, fuzzy
 msgid "Backlight disabled"
-msgstr ""
+msgstr "Bluetooth er slået fra"
 
 #: backends/session/util/locales.py:30
+#, fuzzy
 msgid "Backlight cannot be enabled"
-msgstr ""
+msgstr "Bluetooth kan ikke blive slået til"
 
 #: backends/session/util/locales.py:31
+#, fuzzy
 msgid "Backlight cannot be disabled"
-msgstr ""
+msgstr "Bluetooth kan ikke blive slået fra"
 
 #: backends/session/util/locales.py:32
+#, fuzzy
 msgid "Backlight cannot be toggled"
-msgstr ""
+msgstr "Bluetooth kan ikke blive slået til"
 
-#: backends/session/util/locales.py:34 samsung-tools-preferences.py:332
+#: backends/session/util/locales.py:34 samsung-tools-preferences.py:377
 #: po/samsung-tools-applet.glade.h:1
 msgid "Bluetooth"
 msgstr "Bluetooth"
@@ -79,14 +86,16 @@ msgid "Bluetooth cannot be disabled"
 msgstr "Bluetooth kan ikke blive slået fra"
 
 #: backends/session/util/locales.py:41
+#, fuzzy
 msgid "Bluetooth cannot be toggled"
-msgstr ""
+msgstr "Bluetooth kan ikke blive slået til"
 
 #: backends/session/util/locales.py:42
+#, fuzzy
 msgid "Bluetooth control is not available"
-msgstr ""
+msgstr "Bluetooth kan ikke blive slået fra"
 
-#: backends/session/util/locales.py:44 samsung-tools-preferences.py:341
+#: backends/session/util/locales.py:44 samsung-tools-preferences.py:386
 msgid "CPU fan"
 msgstr ""
 
@@ -118,34 +127,40 @@ msgstr ""
 msgid "CPU fan control is not available"
 msgstr ""
 
-#: backends/session/util/locales.py:53 samsung-tools-preferences.py:350
+#: backends/session/util/locales.py:53 samsung-tools-preferences.py:395
 #: po/samsung-tools-applet.glade.h:7
 msgid "Webcam"
 msgstr "Webkamera"
 
 #: backends/session/util/locales.py:54
+#, fuzzy
 msgid "Webcam is enabled"
-msgstr ""
+msgstr "Bluetooth er aktiveret"
 
 #: backends/session/util/locales.py:55
+#, fuzzy
 msgid "Webcam is disabled"
-msgstr ""
+msgstr "Bluetooth er slået fra"
 
 #: backends/session/util/locales.py:56
+#, fuzzy
 msgid "Webcam enabled"
-msgstr ""
+msgstr "Webkamera"
 
 #: backends/session/util/locales.py:57
+#, fuzzy
 msgid "Webcam disabled"
-msgstr ""
+msgstr "Slået fra"
 
 #: backends/session/util/locales.py:58
+#, fuzzy
 msgid "Webcam cannot be enabled"
-msgstr ""
+msgstr "Bluetooth kan ikke blive slået til"
 
 #: backends/session/util/locales.py:59
+#, fuzzy
 msgid "Webcam cannot be disabled"
-msgstr ""
+msgstr "Bluetooth kan ikke blive slået fra"
 
 #: backends/session/util/locales.py:60
 msgid "Webcam cannot be toggled"
@@ -155,38 +170,45 @@ msgstr ""
 msgid "Webcam control is not available"
 msgstr ""
 
-#: backends/session/util/locales.py:63 samsung-tools-preferences.py:359
+#: backends/session/util/locales.py:63 samsung-tools-preferences.py:404
 #: po/samsung-tools-applet.glade.h:8
 msgid "Wireless"
 msgstr "Trådløs"
 
 #: backends/session/util/locales.py:64
+#, fuzzy
 msgid "Wireless is enabled"
-msgstr ""
+msgstr "Bluetooth er aktiveret"
 
 #: backends/session/util/locales.py:65
+#, fuzzy
 msgid "Wireless is disabled"
-msgstr ""
+msgstr "Bluetooth er slået fra"
 
 #: backends/session/util/locales.py:66
+#, fuzzy
 msgid "Wireless enabled"
-msgstr ""
+msgstr "Trådløs"
 
 #: backends/session/util/locales.py:67
+#, fuzzy
 msgid "Wireless disabled"
-msgstr ""
+msgstr "Trådløs"
 
 #: backends/session/util/locales.py:68
+#, fuzzy
 msgid "Wireless cannot be enabled"
-msgstr ""
+msgstr "Bluetooth kan ikke blive slået til"
 
 #: backends/session/util/locales.py:69
+#, fuzzy
 msgid "Wireless cannot be disabled"
-msgstr ""
+msgstr "Bluetooth kan ikke blive slået fra"
 
 #: backends/session/util/locales.py:70
+#, fuzzy
 msgid "Wireless cannot be toggled"
-msgstr ""
+msgstr "Bluetooth kan ikke blive slået til"
 
 #: backends/session/util/locales.py:71
 msgid "Wireless control is not available"
@@ -243,17 +265,19 @@ msgstr "Bluetooth:"
 msgid "CPU fan:"
 msgstr ""
 
-#: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:32
+#: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:33
+#, fuzzy
 msgid "Webcam:"
-msgstr ""
+msgstr "Webkamera"
 
-#: samsung-tools.py:489 po/samsung-tools-preferences.glade.h:33
+#: samsung-tools.py:489 po/samsung-tools-preferences.glade.h:34
 msgid "Wireless:"
 msgstr "Trådløs:"
 
 #: samsung-tools.py:493
+#, fuzzy
 msgid "Other options:"
-msgstr ""
+msgstr "Indstillinger"
 
 #: samsung-tools.py:494
 msgid "Show status for all devices."
@@ -272,8 +296,9 @@ msgid "Stop the session service."
 msgstr ""
 
 #: samsung-tools.py:498
+#, fuzzy
 msgid "Stop the system service."
-msgstr ""
+msgstr "System service"
 
 #: samsung-tools.py:500
 msgid "Examples of use:"
@@ -295,7 +320,7 @@ msgstr ""
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "For mere information, besøg 'Linux On My Samsung' forum:"
 
-#: samsung-tools.py:515 samsung-tools-preferences.py:773
+#: samsung-tools.py:515 samsung-tools-preferences.py:825
 msgid "Released under GPLv3 license"
 msgstr "Udgivet under en GPLv3 licens"
 
@@ -312,12 +337,14 @@ msgid "Wrong argument(s)."
 msgstr "Forkert argument(er)."
 
 #: samsung-tools.py:601
+#, fuzzy
 msgid "Session service stopped"
-msgstr ""
+msgstr "System service stoppet"
 
 #: samsung-tools.py:604
+#, fuzzy
 msgid "Cannot stop session service"
-msgstr ""
+msgstr "Kan ikke stoppe system service"
 
 #: samsung-tools.py:614
 msgid "System service stopped"
@@ -335,16 +362,17 @@ msgstr ""
 msgid "None"
 msgstr "Ingen"
 
-#: samsung-tools-preferences.py:227 samsung-tools-preferences.py:526
-#: samsung-tools-preferences.py:538
+#: samsung-tools-preferences.py:226 samsung-tools-preferences.py:328
+#: samsung-tools-preferences.py:575 samsung-tools-preferences.py:587
+#, fuzzy
 msgid "Unable to connect to system service!"
-msgstr ""
+msgstr "Kan ikke stoppe system service"
 
-#: samsung-tools-preferences.py:496
+#: samsung-tools-preferences.py:545
 msgid "Install the 'laptop mode tools' package to configure these options"
 msgstr ""
 
-#: samsung-tools-preferences.py:514
+#: samsung-tools-preferences.py:563
 msgid "Unable to connect to session service!"
 msgstr ""
 
@@ -352,7 +380,7 @@ msgstr ""
 msgid "CPU Fan"
 msgstr ""
 
-#: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:22
+#: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:23
 msgid "Normal"
 msgstr ""
 
@@ -360,11 +388,11 @@ msgstr ""
 msgid "Preferences..."
 msgstr ""
 
-#: po/samsung-tools-applet.glade.h:5 po/samsung-tools-preferences.glade.h:25
+#: po/samsung-tools-applet.glade.h:5 po/samsung-tools-preferences.glade.h:26
 msgid "Silent"
 msgstr ""
 
-#: po/samsung-tools-applet.glade.h:6 po/samsung-tools-preferences.glade.h:26
+#: po/samsung-tools-applet.glade.h:6 po/samsung-tools-preferences.glade.h:27
 msgid "Speed"
 msgstr ""
 
@@ -373,17 +401,19 @@ msgid "Manage devices on Samsung netbooks"
 msgstr ""
 
 #: po/samsung-tools-preferences.desktop.in.h:1
-#: po/samsung-tools-preferences.glade.h:23
+#: po/samsung-tools-preferences.glade.h:24
 msgid "Samsung Tools Preferences"
 msgstr "Samsung Tools indstillinger"
 
 #: po/samsung-tools-preferences.desktop.in.h:2
+#, fuzzy
 msgid "Show and modify Samsung Tools preferences"
-msgstr ""
+msgstr "Samsung Tools indstillinger"
 
 #: po/samsung-tools-preferences.glade.h:1
+#, fuzzy
 msgid "<b>Hotkeys</b>"
-msgstr ""
+msgstr "<b>Trådløs</b>"
 
 #: po/samsung-tools-preferences.glade.h:2
 msgid "<b>Initial status for devices</b>"
@@ -415,67 +445,86 @@ msgid "Configure 'laptop mode tools' for a better power management"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:12
+#: po/samsung-tools-preferences-kernel-parameters.glade.h:1
+msgid "Configure kernel parameters"
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:13
 msgid "Disabled"
 msgstr "Slået fra"
 
-#: po/samsung-tools-preferences.glade.h:13
+#: po/samsung-tools-preferences.glade.h:14
 msgid "Enable hotkeys"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:14
+#: po/samsung-tools-preferences.glade.h:15
 msgid "Enable this option to use hotkeys"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:15
+#: po/samsung-tools-preferences.glade.h:16
 msgid "Enabled"
 msgstr "Slået til"
 
-#: po/samsung-tools-preferences.glade.h:16
+#: po/samsung-tools-preferences.glade.h:17
 msgid "Hotkey used for CPU fan control"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:17
+#: po/samsung-tools-preferences.glade.h:18
 msgid "Hotkey used for backlight control"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:18
+#: po/samsung-tools-preferences.glade.h:19
 msgid "Hotkey used for bluetooth control"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:19
+#: po/samsung-tools-preferences.glade.h:20
 msgid "Hotkey used for webcam control"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:20
+#: po/samsung-tools-preferences.glade.h:21
 msgid "Hotkey used for wireless control"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:21
+#: po/samsung-tools-preferences.glade.h:22
 msgid "Last status"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:24
+#: po/samsung-tools-preferences.glade.h:25
+#, fuzzy
 msgid "Session service"
-msgstr ""
-
-#: po/samsung-tools-preferences.glade.h:27
-msgid "System service"
 msgstr "System service"
 
 #: po/samsung-tools-preferences.glade.h:28
+msgid "System service"
+msgstr "System service"
+
+#: po/samsung-tools-preferences.glade.h:29
 msgid "The initial status at boot for Bluetooth"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:29
+#: po/samsung-tools-preferences.glade.h:30
 msgid "The initial status at boot for CPU fan"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:30
+#: po/samsung-tools-preferences.glade.h:31
 msgid "The initial status at boot for webcam"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:31
+#: po/samsung-tools-preferences.glade.h:32
 msgid "The initial status at boot for wireless"
+msgstr ""
+
+#: po/samsung-tools-preferences-kernel-parameters.glade.h:2
+msgid ""
+"Swappiness controls how aggressively the kernel swaps memory pages. Higher "
+"values increase agressiveness, lower values descrease aggressiveness. In "
+"other words, the higher is the value, the more the system will swap, with "
+"bad results on power consumption and disk performance. Set a low value if "
+"you usually have plenty of unused RAM. The default value is 60."
+msgstr ""
+
+#: po/samsung-tools-preferences-kernel-parameters.glade.h:3
+msgid "Swappiness:"
 msgstr ""
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:1
@@ -589,9 +638,6 @@ msgstr ""
 
 #~ msgid "Device:"
 #~ msgstr "Enhed:"
-
-#~ msgid "<b>Wireless</b>"
-#~ msgstr "<b>Trådløs</b>"
 
 #~ msgid "Kernel module:"
 #~ msgstr "Kernel modul:"

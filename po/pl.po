@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-11 11:48+0200\n"
+"POT-Creation-Date: 2010-04-11 17:05+0200\n"
 "PO-Revision-Date: 2010-03-29 09:30+0000\n"
 "Last-Translator: Krzysztof Saja <Unknown>\n"
 "Language-Team: Polish <pl@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2010-04-09 13:44+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
-#: backends/session/util/locales.py:25 samsung-tools-preferences.py:323
+#: backends/session/util/locales.py:25 samsung-tools-preferences.py:368
 msgid "Backlight"
 msgstr "Podświetlenie"
 
@@ -49,7 +49,7 @@ msgstr "Podświetlenie nie może być wyłączone"
 msgid "Backlight cannot be toggled"
 msgstr "NIe można zmienić stanu podświetlenia"
 
-#: backends/session/util/locales.py:34 samsung-tools-preferences.py:332
+#: backends/session/util/locales.py:34 samsung-tools-preferences.py:377
 #: po/samsung-tools-applet.glade.h:1
 msgid "Bluetooth"
 msgstr "Bluetooth"
@@ -86,9 +86,10 @@ msgstr "Nie można zmienić stanu Bluetooth'a"
 msgid "Bluetooth control is not available"
 msgstr "Zarządzanie Bluetooth'em nie jest dostępne"
 
-#: backends/session/util/locales.py:44 samsung-tools-preferences.py:341
+#: backends/session/util/locales.py:44 samsung-tools-preferences.py:386
+#, fuzzy
 msgid "CPU fan"
-msgstr ""
+msgstr "Wentylator procesora"
 
 #: backends/session/util/locales.py:45
 msgid "CPU Temperature:"
@@ -115,10 +116,11 @@ msgid "Cannot get fan mode"
 msgstr "Nie można sprawdzić trybu wentylatora"
 
 #: backends/session/util/locales.py:51
+#, fuzzy
 msgid "CPU fan control is not available"
-msgstr ""
+msgstr "Zarządzanie kamerą internetową nie jest dostępne"
 
-#: backends/session/util/locales.py:53 samsung-tools-preferences.py:350
+#: backends/session/util/locales.py:53 samsung-tools-preferences.py:395
 #: po/samsung-tools-applet.glade.h:7
 msgid "Webcam"
 msgstr "Kamera internetowa"
@@ -155,7 +157,7 @@ msgstr "Nie można zmienić stanu kamery internetowej"
 msgid "Webcam control is not available"
 msgstr "Zarządzanie kamerą internetową nie jest dostępne"
 
-#: backends/session/util/locales.py:63 samsung-tools-preferences.py:359
+#: backends/session/util/locales.py:63 samsung-tools-preferences.py:404
 #: po/samsung-tools-applet.glade.h:8
 msgid "Wireless"
 msgstr "Sieć bezprzewodowa"
@@ -201,8 +203,9 @@ msgid "Bluetooth control: unable to connect to session service!"
 msgstr "Zarządzanie Bluetooth'em: nie można połączyć z usługą sesji"
 
 #: samsung-tools.py:199
+#, fuzzy
 msgid "CPU fan control: unable to connect to session service!"
-msgstr ""
+msgstr "Zarządzanie kamerą internetową: nie można połączyć z usługą sesji"
 
 #: samsung-tools.py:329
 msgid "Webcam control: unable to connect to session service!"
@@ -240,14 +243,15 @@ msgid "Bluetooth:"
 msgstr "Bluetooth:"
 
 #: samsung-tools.py:483 po/samsung-tools-preferences.glade.h:6
+#, fuzzy
 msgid "CPU fan:"
-msgstr ""
+msgstr "Wentylator procesora"
 
-#: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:32
+#: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:33
 msgid "Webcam:"
 msgstr "Kamera internetowa:"
 
-#: samsung-tools.py:489 po/samsung-tools-preferences.glade.h:33
+#: samsung-tools.py:489 po/samsung-tools-preferences.glade.h:34
 msgid "Wireless:"
 msgstr "SIeć bezprzewodowa:"
 
@@ -296,7 +300,7 @@ msgstr " Wyłącz Bluetooth'a, kamerę internetową i sieć bezprzewodową:"
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Po więcej informacji odwiedź forum 'Linux On My Samsung' :"
 
-#: samsung-tools.py:515 samsung-tools-preferences.py:773
+#: samsung-tools.py:515 samsung-tools-preferences.py:825
 msgid "Released under GPLv3 license"
 msgstr "Wydane na licencji GPLv3"
 
@@ -336,24 +340,25 @@ msgstr "Proszę naciśnij nowy skrót"
 msgid "None"
 msgstr "Brak"
 
-#: samsung-tools-preferences.py:227 samsung-tools-preferences.py:526
-#: samsung-tools-preferences.py:538
+#: samsung-tools-preferences.py:226 samsung-tools-preferences.py:328
+#: samsung-tools-preferences.py:575 samsung-tools-preferences.py:587
 msgid "Unable to connect to system service!"
 msgstr "NIe da się połączyć z usługą systemową!"
 
-#: samsung-tools-preferences.py:496
+#: samsung-tools-preferences.py:545
 msgid "Install the 'laptop mode tools' package to configure these options"
 msgstr ""
 
-#: samsung-tools-preferences.py:514
+#: samsung-tools-preferences.py:563
 msgid "Unable to connect to session service!"
 msgstr "Nie można połączyć z usługą sesji!"
 
 #: po/samsung-tools-applet.glade.h:2
+#, fuzzy
 msgid "CPU Fan"
-msgstr ""
+msgstr "Wentylator procesora"
 
-#: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:22
+#: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:23
 msgid "Normal"
 msgstr ""
 
@@ -361,11 +366,11 @@ msgstr ""
 msgid "Preferences..."
 msgstr ""
 
-#: po/samsung-tools-applet.glade.h:5 po/samsung-tools-preferences.glade.h:25
+#: po/samsung-tools-applet.glade.h:5 po/samsung-tools-preferences.glade.h:26
 msgid "Silent"
 msgstr ""
 
-#: po/samsung-tools-applet.glade.h:6 po/samsung-tools-preferences.glade.h:26
+#: po/samsung-tools-applet.glade.h:6 po/samsung-tools-preferences.glade.h:27
 msgid "Speed"
 msgstr ""
 
@@ -374,7 +379,7 @@ msgid "Manage devices on Samsung netbooks"
 msgstr ""
 
 #: po/samsung-tools-preferences.desktop.in.h:1
-#: po/samsung-tools-preferences.glade.h:23
+#: po/samsung-tools-preferences.glade.h:24
 msgid "Samsung Tools Preferences"
 msgstr "Ustawienia Narzędzi Samsung"
 
@@ -416,67 +421,86 @@ msgid "Configure 'laptop mode tools' for a better power management"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:12
+#: po/samsung-tools-preferences-kernel-parameters.glade.h:1
+msgid "Configure kernel parameters"
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:13
 msgid "Disabled"
 msgstr "Wyłączony"
 
-#: po/samsung-tools-preferences.glade.h:13
+#: po/samsung-tools-preferences.glade.h:14
 msgid "Enable hotkeys"
 msgstr "Włącz skróty klawiszowe"
 
-#: po/samsung-tools-preferences.glade.h:14
+#: po/samsung-tools-preferences.glade.h:15
 msgid "Enable this option to use hotkeys"
 msgstr "Włącz tą opcję, aby używać skrótów klawiszowych"
 
-#: po/samsung-tools-preferences.glade.h:15
+#: po/samsung-tools-preferences.glade.h:16
 msgid "Enabled"
 msgstr "Włączony"
 
-#: po/samsung-tools-preferences.glade.h:16
-msgid "Hotkey used for CPU fan control"
-msgstr ""
-
 #: po/samsung-tools-preferences.glade.h:17
+#, fuzzy
+msgid "Hotkey used for CPU fan control"
+msgstr "Skrót klawiaturowy używany do zarządzania kamerą internetową"
+
+#: po/samsung-tools-preferences.glade.h:18
 msgid "Hotkey used for backlight control"
 msgstr "Skrót klawiaturowy używany do kontroli podświetleniem"
 
-#: po/samsung-tools-preferences.glade.h:18
+#: po/samsung-tools-preferences.glade.h:19
 msgid "Hotkey used for bluetooth control"
 msgstr "Skrót klawiaturowy używany do zarządzania Bluetooth'em"
 
-#: po/samsung-tools-preferences.glade.h:19
+#: po/samsung-tools-preferences.glade.h:20
 msgid "Hotkey used for webcam control"
 msgstr "Skrót klawiaturowy używany do zarządzania kamerą internetową"
 
-#: po/samsung-tools-preferences.glade.h:20
+#: po/samsung-tools-preferences.glade.h:21
 msgid "Hotkey used for wireless control"
 msgstr "Skrót klawiaturowy używany do zarządzania siecią bezprzewodową"
 
-#: po/samsung-tools-preferences.glade.h:21
+#: po/samsung-tools-preferences.glade.h:22
 msgid "Last status"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:24
+#: po/samsung-tools-preferences.glade.h:25
 msgid "Session service"
 msgstr "Usługa sesji"
 
-#: po/samsung-tools-preferences.glade.h:27
+#: po/samsung-tools-preferences.glade.h:28
 msgid "System service"
 msgstr "Usługa systemowa"
 
-#: po/samsung-tools-preferences.glade.h:28
+#: po/samsung-tools-preferences.glade.h:29
 msgid "The initial status at boot for Bluetooth"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:29
+#: po/samsung-tools-preferences.glade.h:30
 msgid "The initial status at boot for CPU fan"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:30
+#: po/samsung-tools-preferences.glade.h:31
 msgid "The initial status at boot for webcam"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:31
+#: po/samsung-tools-preferences.glade.h:32
 msgid "The initial status at boot for wireless"
+msgstr ""
+
+#: po/samsung-tools-preferences-kernel-parameters.glade.h:2
+msgid ""
+"Swappiness controls how aggressively the kernel swaps memory pages. Higher "
+"values increase agressiveness, lower values descrease aggressiveness. In "
+"other words, the higher is the value, the more the system will swap, with "
+"bad results on power consumption and disk performance. Set a low value if "
+"you usually have plenty of unused RAM. The default value is 60."
+msgstr ""
+
+#: po/samsung-tools-preferences-kernel-parameters.glade.h:3
+msgid "Swappiness:"
 msgstr ""
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:1
@@ -584,12 +608,6 @@ msgstr ""
 #: po/samsung-tools-session-service.desktop.in.h:1
 msgid "Start the session service"
 msgstr "Włącz usługę sesji"
-
-#~ msgid "CPU/Fan"
-#~ msgstr "Wentylator procesora"
-
-#~ msgid "CPU/Fan:"
-#~ msgstr "Wentylator procesora"
 
 #~ msgid "<b>General</b>"
 #~ msgstr "<b>Ogólne</b>"
