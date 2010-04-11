@@ -117,6 +117,8 @@ class LaptopMode(dbus.service.Object):
 	def IsAvailable(self, sender = None, conn = None):
 		if os.path.exists("/usr/sbin/laptop_mode"):
 			self.available = True
+		else:
+			self.available = False
 		return self.available
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'i',

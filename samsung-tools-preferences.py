@@ -296,7 +296,7 @@ class Main():
 	def __init__(self):
 		# Get interfaces for D-Bus services
 		session = self.__connect_session()
-		system = self.__connect_system_options()
+		system = self.__connect_system()
 
 		# Setup GUI
 		self.builder = gtk.Builder()
@@ -493,7 +493,7 @@ class Main():
 			self.laptopModeButton.set_sensitive(False)
 			self.laptopModeButton.set_has_tooltip(True)
 			tooltip = unicode(_("Install the 'laptop mode tools' package if you want to use these options"), "utf-8")
-			self.laptopModeOptionsLabel.set_tooltip_text(tooltip)
+			self.laptopModeButton.set_tooltip_text(tooltip)
 		else:
 			self.laptopModeButton.set_sensitive(True)
 		self.laptopModeButton.connect("clicked", self.on_laptopModeButton_clicked)
@@ -513,7 +513,7 @@ class Main():
 		print unicode(_("Unable to connect to session service!"), "utf-8")
 		sys.exit(1)
 		
-	def __connect_system_options(self):
+	def __connect_system(self):
 		retry = 3
 		while retry > 0:
 			try:
@@ -685,7 +685,7 @@ class Main():
 		self.wirelessHotkeyButton.set_label(key, mods, True)
 	
 	def on_bluetoothInitialStatusCombobox_changed(self, combobox = None):
-		system = self.__connect_system_options()
+		system = self.__connect_system()
 		active = combobox.get_active()
 		if active == 0:
 			system.SetBluetoothInitialStatus("last")
@@ -695,7 +695,7 @@ class Main():
 			system.SetBluetoothInitialStatus("off")
 			
 	def on_webcamInitialStatusCombobox_changed(self, combobox = None):
-		system = self.__connect_system_options()
+		system = self.__connect_system()
 		active = combobox.get_active()
 		if active == 0:
 			system.SetWebcamInitialStatus("last")
@@ -705,7 +705,7 @@ class Main():
 			system.SetWebcamInitialStatus("off")
 	
 	def on_wirelessInitialStatusCombobox_changed(self, combobox = None):
-		system = self.__connect_system_options()
+		system = self.__connect_system()
 		active = combobox.get_active()
 		if active == 0:
 			system.SetWirelessInitialStatus("last")
@@ -715,7 +715,7 @@ class Main():
 			system.SetWirelessInitialStatus("off")
 			
 	def on_cpufanInitialStatusCombobox_changed(self, combobox = None):
-		system = self.__connect_system_options()
+		system = self.__connect_system()
 		active = combobox.get_active()
 		if active == 0:
 			system.SetCpufanInitialStatus("normal")
