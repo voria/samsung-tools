@@ -34,7 +34,7 @@ from backends.system.cpu import Cpu
 from backends.system.fan import Fan
 from backends.system.webcam import Webcam
 from backends.system.wireless import Wireless
-from backends.system.laptopmode import LaptopMode
+from backends.system.powermanagement import LaptopMode
 
 mainloop = None
 

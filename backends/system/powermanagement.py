@@ -24,16 +24,16 @@ import dbus.service
 
 from backends.globals import *
 
-# laptop-mode configuration files
-MAIN_CONFIG_FILE = "/etc/laptop-mode/laptop-mode.conf"
-ETHERNET_CONFIG_FILE = "/etc/laptop-mode/conf.d/ethernet.conf"
-HALPOLLING_CONFIG_FILE = "/etc/laptop-mode/conf.d/hal-polling.conf"
-CONFIGURATIONFILESCONTROL_CONFIG_FILE = "/etc/laptop-mode/conf.d/configuration-file-control.conf"
-INTELHDAPOWERSAVE_CONFIG_FILE = "/etc/laptop-mode/conf.d/intel-hda-powersave.conf"
-INTELSATAPOWERMGMT_CONFIG_FILE = "/etc/laptop-mode/conf.d/intel-sata-powermgmt.conf"
-SCHEDMCPOWERSAVINGS_CONFIG_FILE = "/etc/laptop-mode/conf.d/sched-mc-power-savings.conf"
-USBAUTOSUSPEND_CONFIG_FILE = "/etc/laptop-mode/conf.d/usb-autosuspend.conf"
-VIDEOOUT_CONFIG_FILE = "/etc/laptop-mode/conf.d/video-out.conf"
+# 'laptop mode tools' configuration files
+LM_MAIN_CONFIG_FILE = "/etc/laptop-mode/laptop-mode.conf"
+LM_ETHERNET_CONFIG_FILE = "/etc/laptop-mode/conf.d/ethernet.conf"
+LM_HALPOLLING_CONFIG_FILE = "/etc/laptop-mode/conf.d/hal-polling.conf"
+LM_CONFFILESCONTROL_CONFIG_FILE = "/etc/laptop-mode/conf.d/configuration-file-control.conf"
+LM_INTELHDAPOWERSAVE_CONFIG_FILE = "/etc/laptop-mode/conf.d/intel-hda-powersave.conf"
+LM_INTELSATAPOWERMGMT_CONFIG_FILE = "/etc/laptop-mode/conf.d/intel-sata-powermgmt.conf"
+LM_SCHEDMCPOWERSAVINGS_CONFIG_FILE = "/etc/laptop-mode/conf.d/sched-mc-power-savings.conf"
+LM_USBAUTOSUSPEND_CONFIG_FILE = "/etc/laptop-mode/conf.d/usb-autosuspend.conf"
+LM_VIDEOOUT_CONFIG_FILE = "/etc/laptop-mode/conf.d/video-out.conf"
 
 class LaptopMode(dbus.service.Object):
 	""" Manage laptop-mode """
@@ -131,7 +131,7 @@ class LaptopMode(dbus.service.Object):
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'i',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def GetHDPowerMgmt(self, sender = None, conn = None):
-		value = self.__read(MAIN_CONFIG_FILE, "BATT_HD_POWERMGMT")
+		value = self.__read(LM_MAIN_CONFIG_FILE, "BATT_HD_POWERMGMT")
 		if value == None:
 			return (-1)
 		else:
@@ -140,7 +140,7 @@ class LaptopMode(dbus.service.Object):
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'i',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def GetConfigFilesControl(self, sender = None, conn = None):
-		value = self.__read(CONFIGURATIONFILESCONTROL_CONFIG_FILE, "CONTROL_CONFIG_FILES")
+		value = self.__read(LM_CONFFILESCONTROL_CONFIG_FILE, "CONTROL_CONFIG_FILES")
 		if value == None:
 			return (-1)
 		else:
@@ -149,7 +149,7 @@ class LaptopMode(dbus.service.Object):
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'i',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def GetEthernet(self, sender = None, conn = None):
-		value = self.__read(ETHERNET_CONFIG_FILE, "CONTROL_ETHERNET")
+		value = self.__read(LM_ETHERNET_CONFIG_FILE, "CONTROL_ETHERNET")
 		if value == None:
 			return (-1)
 		else:
@@ -158,7 +158,7 @@ class LaptopMode(dbus.service.Object):
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'i',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def GetHalPolling(self, sender = None, conn = None):
-		value = self.__read(HALPOLLING_CONFIG_FILE, "CONTROL_HAL_POLLING")
+		value = self.__read(LM_HALPOLLING_CONFIG_FILE, "CONTROL_HAL_POLLING")
 		if value == None:
 			return (-1)
 		else:
@@ -167,7 +167,7 @@ class LaptopMode(dbus.service.Object):
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'i',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def GetIntelHDAPower(self, sender = None, conn = None):
-		value = self.__read(INTELHDAPOWERSAVE_CONFIG_FILE, "CONTROL_INTEL_HDA_POWER")
+		value = self.__read(LM_INTELHDAPOWERSAVE_CONFIG_FILE, "CONTROL_INTEL_HDA_POWER")
 		if value == None:
 			return (-1)
 		else:
@@ -176,7 +176,7 @@ class LaptopMode(dbus.service.Object):
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'i',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def GetIntelSATAPower(self, sender = None, conn = None):
-		value = self.__read(INTELSATAPOWERMGMT_CONFIG_FILE, "CONTROL_INTEL_SATA_POWER")
+		value = self.__read(LM_INTELSATAPOWERMGMT_CONFIG_FILE, "CONTROL_INTEL_SATA_POWER")
 		if value == None:
 			return (-1)
 		else:
@@ -185,7 +185,7 @@ class LaptopMode(dbus.service.Object):
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'i',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def GetSchedMcPower(self, sender = None, conn = None):
-		value = self.__read(SCHEDMCPOWERSAVINGS_CONFIG_FILE, "CONTROL_SCHED_MC_POWER_SAVINGS")
+		value = self.__read(LM_SCHEDMCPOWERSAVINGS_CONFIG_FILE, "CONTROL_SCHED_MC_POWER_SAVINGS")
 		if value == None:
 			return (-1)
 		else:
@@ -194,7 +194,7 @@ class LaptopMode(dbus.service.Object):
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'i',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def GetUSBAutosuspend(self, sender = None, conn = None):
-		value = self.__read(USBAUTOSUSPEND_CONFIG_FILE, "CONTROL_USB_AUTOSUSPEND")
+		value = self.__read(LM_USBAUTOSUSPEND_CONFIG_FILE, "CONTROL_USB_AUTOSUSPEND")
 		if value == None:
 			return (-1)
 		else:
@@ -203,7 +203,7 @@ class LaptopMode(dbus.service.Object):
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'i',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def GetVideoOutput(self, sender = None, conn = None):
-		value = self.__read(VIDEOOUT_CONFIG_FILE, "CONTROL_VIDEO_OUTPUTS")
+		value = self.__read(LM_VIDEOOUT_CONFIG_FILE, "CONTROL_VIDEO_OUTPUTS")
 		if value == None:
 			return (-1)
 		else:
@@ -214,62 +214,62 @@ class LaptopMode(dbus.service.Object):
 	def SetHDPowerMgmt(self, value, sender = None, conn = None):
 		if value < 1 or value > 255:
 			return False
-		return self.__write(MAIN_CONFIG_FILE, "BATT_HD_POWERMGMT", str(value))
+		return self.__write(LM_MAIN_CONFIG_FILE, "BATT_HD_POWERMGMT", str(value))
 
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = 'i', out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def SetConfigFilesControl(self, value, sender = None, conn = None):
 		if value != 0 and value != 1:
 			return False
-		return self.__write(CONFIGURATIONFILESCONTROL_CONFIG_FILE, "CONTROL_CONFIG_FILES", str(value))
+		return self.__write(LM_CONFFILESCONTROL_CONFIG_FILE, "CONTROL_CONFIG_FILES", str(value))
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = 'i', out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def SetEthernet(self, value, sender = None, conn = None):
 		if value != 0 and value != 1:
 			return False
-		self.__write(ETHERNET_CONFIG_FILE, "ETHERNET_DEVICES", "\"eth0\"")
-		return self.__write(ETHERNET_CONFIG_FILE, "CONTROL_ETHERNET", str(value))
+		self.__write(LM_ETHERNET_CONFIG_FILE, "ETHERNET_DEVICES", "\"eth0\"")
+		return self.__write(LM_ETHERNET_CONFIG_FILE, "CONTROL_ETHERNET", str(value))
 
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = 'i', out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def SetHalPolling(self, value, sender = None, conn = None):
 		if value != 0 and value != 1:
 			return False
-		return self.__write(HALPOLLING_CONFIG_FILE, "CONTROL_HAL_POLLING", str(value))
+		return self.__write(LM_HALPOLLING_CONFIG_FILE, "CONTROL_HAL_POLLING", str(value))
 
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = 'i', out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def SetIntelHDAPower(self, value, sender = None, conn = None):
 		if value != 0 and value != 1:
 			return False
-		return self.__write(INTELHDAPOWERSAVE_CONFIG_FILE, "CONTROL_INTEL_HDA_POWER", str(value))
+		return self.__write(LM_INTELHDAPOWERSAVE_CONFIG_FILE, "CONTROL_INTEL_HDA_POWER", str(value))
 
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = 'i', out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def SetIntelSATAPower(self, value, sender = None, conn = None):
 		if value != 0 and value != 1:
 			return False
-		return self.__write(INTELSATAPOWERMGMT_CONFIG_FILE, "CONTROL_INTEL_SATA_POWER", str(value))
+		return self.__write(LM_INTELSATAPOWERMGMT_CONFIG_FILE, "CONTROL_INTEL_SATA_POWER", str(value))
 
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = 'i', out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def SetSchedMcPower(self, value, sender = None, conn = None):
 		if value != 0 and value != 1:
 			return False
-		return self.__write(SCHEDMCPOWERSAVINGS_CONFIG_FILE, "CONTROL_SCHED_MC_POWER_SAVINGS", str(value))
+		return self.__write(LM_SCHEDMCPOWERSAVINGS_CONFIG_FILE, "CONTROL_SCHED_MC_POWER_SAVINGS", str(value))
 
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = 'i', out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def SetUSBAutosuspend(self, value, sender = None, conn = None):
 		if value != 0 and value != 1:
 			return False
-		return self.__write(USBAUTOSUSPEND_CONFIG_FILE, "CONTROL_USB_AUTOSUSPEND", str(value))
+		return self.__write(LM_USBAUTOSUSPEND_CONFIG_FILE, "CONTROL_USB_AUTOSUSPEND", str(value))
 
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = 'i', out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def SetVideoOutput(self, value, sender = None, conn = None):
 		if value != 0 and value != 1:
 			return False
-		self.__write(VIDEOOUT_CONFIG_FILE, "BATT_DISABLE_VIDEO_OUTPUTS", "\"VGA1\"")
-		return self.__write(VIDEOOUT_CONFIG_FILE, "CONTROL_VIDEO_OUTPUTS", str(value))
+		self.__write(LM_VIDEOOUT_CONFIG_FILE, "BATT_DISABLE_VIDEO_OUTPUTS", "\"VGA1\"")
+		return self.__write(LM_VIDEOOUT_CONFIG_FILE, "CONTROL_VIDEO_OUTPUTS", str(value))
