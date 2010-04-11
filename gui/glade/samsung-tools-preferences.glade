@@ -542,201 +542,22 @@
               <object class="GtkTable" id="advancedPowerManagementTable">
                 <property name="visible">True</property>
                 <property name="border_width">5</property>
+                <property name="n_rows">2</property>
                 <property name="column_spacing">5</property>
                 <property name="row_spacing">5</property>
                 <child>
-                  <object class="GtkTable" id="laptopModeTable">
+                  <object class="GtkButton" id="laptopModeButton">
+                    <property name="label" translatable="yes">Configure 'laptop mode tools'</property>
                     <property name="visible">True</property>
-                    <property name="n_rows">10</property>
-                    <property name="row_spacing">5</property>
-                    <child>
-                      <object class="GtkCheckButton" id="usbAutosuspendCheckbutton">
-                        <property name="label" translatable="yes">Enable USB autosuspend</property>
-                        <property name="visible">True</property>
-                        <property name="can_focus">True</property>
-                        <property name="receives_default">False</property>
-                        <property name="tooltip_text" translatable="yes">If you enable this option, laptop mode tools will automatically enable the USB autosuspend feature for all devices.</property>
-                        <property name="draw_indicator">True</property>
-                      </object>
-                      <packing>
-                        <property name="top_attach">1</property>
-                        <property name="bottom_attach">2</property>
-                        <property name="x_padding">10</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkHBox" id="hdPowerMgmtHbox">
-                        <property name="visible">True</property>
-                        <property name="spacing">5</property>
-                        <child>
-                          <object class="GtkLabel" id="hdPowerMgmtLabel">
-                            <property name="visible">True</property>
-                            <property name="tooltip_text" translatable="yes">This option sets the disk power management, and it can have a value between 1 and 255. A low value results in a better energy saving but less disk performance, an high value results in disk performance but less energy saving.</property>
-                            <property name="label" translatable="yes">Hard Disk power management:</property>
-                          </object>
-                          <packing>
-                            <property name="expand">False</property>
-                            <property name="fill">False</property>
-                            <property name="padding">10</property>
-                            <property name="position">0</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkSpinButton" id="hdPowerMgmtSpinbutton">
-                            <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="tooltip_text" translatable="yes">This option sets the disk power management, and it can have a value between 1 and 255. A low value results in a better energy saving but less disk performance, an high value results in disk performance but less energy saving.</property>
-                            <property name="max_length">3</property>
-                            <property name="invisible_char">&#x2022;</property>
-                            <property name="xalign">1</property>
-                            <property name="adjustment">hdPowerMgmtAdjustment</property>
-                            <property name="numeric">True</property>
-                            <property name="update_policy">if-valid</property>
-                          </object>
-                          <packing>
-                            <property name="expand">False</property>
-                            <property name="position">1</property>
-                          </packing>
-                        </child>
-                      </object>
-                      <packing>
-                        <property name="top_attach">9</property>
-                        <property name="bottom_attach">10</property>
-                        <property name="y_options"></property>
-                        <property name="x_padding">10</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkCheckButton" id="schedMcPowerCheckbutton">
-                        <property name="label" translatable="yes">Control linux scheduler</property>
-                        <property name="visible">True</property>
-                        <property name="can_focus">True</property>
-                        <property name="receives_default">False</property>
-                        <property name="tooltip_text" translatable="yes">If you enable this option, laptop mode tools will automatically configure the Linux scheduler to save power on multi-core processors while running on battery mode.</property>
-                        <property name="draw_indicator">True</property>
-                      </object>
-                      <packing>
-                        <property name="top_attach">8</property>
-                        <property name="bottom_attach">9</property>
-                        <property name="y_options"></property>
-                        <property name="x_padding">10</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkCheckButton" id="videoOutputCheckbutton">
-                        <property name="label" translatable="yes">Control video output settings</property>
-                        <property name="visible">True</property>
-                        <property name="can_focus">True</property>
-                        <property name="receives_default">False</property>
-                        <property name="tooltip_text" translatable="yes">An enabled video output port draws power, even if no display is connected. This option forces the display output off depending on the power mode.</property>
-                        <property name="draw_indicator">True</property>
-                      </object>
-                      <packing>
-                        <property name="top_attach">7</property>
-                        <property name="bottom_attach">8</property>
-                        <property name="y_options"></property>
-                        <property name="x_padding">10</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkCheckButton" id="intelSATAPowerCheckbutton">
-                        <property name="label" translatable="yes">Control Intel SATA chipset power</property>
-                        <property name="visible">True</property>
-                        <property name="can_focus">True</property>
-                        <property name="receives_default">False</property>
-                        <property name="tooltip_text" translatable="yes">If you enable this option, laptop mode tools will automatically enable the link power management mode of Intel AHCI compliant SATA chipsets.</property>
-                        <property name="draw_indicator">True</property>
-                      </object>
-                      <packing>
-                        <property name="top_attach">5</property>
-                        <property name="bottom_attach">6</property>
-                        <property name="y_options"></property>
-                        <property name="x_padding">10</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkCheckButton" id="intelHDAPowerCheckbutton">
-                        <property name="label" translatable="yes">Control Intel HDA audio chipset power</property>
-                        <property name="visible">True</property>
-                        <property name="can_focus">True</property>
-                        <property name="receives_default">False</property>
-                        <property name="tooltip_text" translatable="yes">If you enable this option, laptop mode tools will automatically set the powersave mode of Intel HDA audio chipsets.</property>
-                        <property name="draw_indicator">True</property>
-                      </object>
-                      <packing>
-                        <property name="top_attach">4</property>
-                        <property name="bottom_attach">5</property>
-                        <property name="y_options"></property>
-                        <property name="x_padding">10</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkCheckButton" id="ethernetCheckbutton">
-                        <property name="label" translatable="yes">Control ethernet settings</property>
-                        <property name="visible">True</property>
-                        <property name="can_focus">True</property>
-                        <property name="receives_default">False</property>
-                        <property name="tooltip_text" translatable="yes">If you enable this option, the speed of the Ethernet connection is limited to 100 Mbit. The difference in power usage between 1 Gbit and 100 Mbit Ethernet is quite large, so tuning can yield savings if you don't need the full speed (for instance if you only use Ethernet as to connect to a much slower ADSL modem).</property>
-                        <property name="draw_indicator">True</property>
-                      </object>
-                      <packing>
-                        <property name="top_attach">3</property>
-                        <property name="bottom_attach">4</property>
-                        <property name="y_options"></property>
-                        <property name="x_padding">10</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkCheckButton" id="halPollingCheckbutton">
-                        <property name="label" translatable="yes">Control HAL polling</property>
-                        <property name="visible">True</property>
-                        <property name="can_focus">True</property>
-                        <property name="receives_default">False</property>
-                        <property name="tooltip_text" translatable="yes">If you enable this option, laptop mode tools will control the polling of your CD/DVD drives by HAL. Disabling polling saves a considerable amount of power.</property>
-                        <property name="draw_indicator">True</property>
-                      </object>
-                      <packing>
-                        <property name="top_attach">2</property>
-                        <property name="bottom_attach">3</property>
-                        <property name="y_options"></property>
-                        <property name="x_padding">10</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkCheckButton" id="configFilesCheckbutton">
-                        <property name="label" translatable="yes">Control configuration files</property>
-                        <property name="visible">True</property>
-                        <property name="can_focus">True</property>
-                        <property name="receives_default">False</property>
-                        <property name="tooltip_text" translatable="yes">Laptop mode tools can automatically swap out configuration files depending on the power state of your system.
- 
-The primary use for this feature is for controlling the configuration files of syslog daemons. Syslog daemons have a tendency to sync their log files when entries are written to them. This causes disks to spin up, which is not very nice when you're trying to save power.</property>
-                        <property name="draw_indicator">True</property>
-                      </object>
-                      <packing>
-                        <property name="top_attach">6</property>
-                        <property name="bottom_attach">7</property>
-                        <property name="y_options"></property>
-                        <property name="x_padding">10</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkLabel" id="laptopModeOptionsLabel">
-                        <property name="visible">True</property>
-                        <property name="tooltip_text" translatable="yes">Use these options for a better power management</property>
-                        <property name="xalign">0</property>
-                        <property name="xpad">5</property>
-                        <property name="label" translatable="yes">&lt;b&gt;"Laptop Mode" options&lt;/b&gt;</property>
-                        <property name="use_markup">True</property>
-                      </object>
-                      <packing>
-                        <property name="y_options"></property>
-                      </packing>
-                    </child>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
                   </object>
                   <packing>
-                    <property name="y_options"></property>
+                    <property name="y_options">GTK_EXPAND</property>
                   </packing>
+                </child>
+                <child>
+                  <placeholder/>
                 </child>
               </object>
               <packing>
@@ -840,10 +661,5 @@ The primary use for this feature is for controlling the configuration files of s
         <col id="0" translatable="yes">Last status</col>
       </row>
     </data>
-  </object>
-  <object class="GtkAdjustment" id="hdPowerMgmtAdjustment">
-    <property name="lower">1</property>
-    <property name="upper">255</property>
-    <property name="step_increment">1</property>
   </object>
 </interface>

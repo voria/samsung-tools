@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-10 20:37+0200\n"
+"POT-Creation-Date: 2010-04-11 10:14+0200\n"
 "PO-Revision-Date: 2010-03-29 16:37+0000\n"
 "Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: Turkish <tr@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2010-04-09 13:44+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
-#: backends/session/util/locales.py:25 samsung-tools-preferences.py:171
+#: backends/session/util/locales.py:25 samsung-tools-preferences.py:322
 msgid "Backlight"
 msgstr ""
 
@@ -49,7 +49,7 @@ msgstr ""
 msgid "Backlight cannot be toggled"
 msgstr ""
 
-#: backends/session/util/locales.py:34 samsung-tools-preferences.py:180
+#: backends/session/util/locales.py:34 samsung-tools-preferences.py:331
 #: po/samsung-tools-applet.glade.h:1
 msgid "Bluetooth"
 msgstr "Bluetooth"
@@ -86,7 +86,7 @@ msgstr ""
 msgid "Bluetooth control is not available"
 msgstr ""
 
-#: backends/session/util/locales.py:44 samsung-tools-preferences.py:189
+#: backends/session/util/locales.py:44 samsung-tools-preferences.py:340
 msgid "CPU fan"
 msgstr ""
 
@@ -118,7 +118,7 @@ msgstr ""
 msgid "CPU fan control is not available"
 msgstr ""
 
-#: backends/session/util/locales.py:53 samsung-tools-preferences.py:198
+#: backends/session/util/locales.py:53 samsung-tools-preferences.py:349
 #: po/samsung-tools-applet.glade.h:7
 msgid "Webcam"
 msgstr "Web kamerası"
@@ -155,7 +155,7 @@ msgstr ""
 msgid "Webcam control is not available"
 msgstr ""
 
-#: backends/session/util/locales.py:63 samsung-tools-preferences.py:207
+#: backends/session/util/locales.py:63 samsung-tools-preferences.py:358
 #: po/samsung-tools-applet.glade.h:8
 msgid "Wireless"
 msgstr ""
@@ -221,7 +221,7 @@ msgstr ""
 msgid "Usage: %s <interface> <option> ..."
 msgstr ""
 
-#: samsung-tools.py:477 po/samsung-tools-preferences.glade.h:6
+#: samsung-tools.py:477 po/samsung-tools-preferences.glade.h:4
 msgid "Backlight:"
 msgstr ""
 
@@ -235,19 +235,19 @@ msgstr ""
 msgid "Options"
 msgstr ""
 
-#: samsung-tools.py:480 po/samsung-tools-preferences.glade.h:7
+#: samsung-tools.py:480 po/samsung-tools-preferences.glade.h:5
 msgid "Bluetooth:"
 msgstr "Bluetooth:"
 
-#: samsung-tools.py:483 po/samsung-tools-preferences.glade.h:8
+#: samsung-tools.py:483 po/samsung-tools-preferences.glade.h:6
 msgid "CPU fan:"
 msgstr ""
 
-#: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:52
+#: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:31
 msgid "Webcam:"
 msgstr ""
 
-#: samsung-tools.py:489 po/samsung-tools-preferences.glade.h:53
+#: samsung-tools.py:489 po/samsung-tools-preferences.glade.h:32
 msgid "Wireless:"
 msgstr ""
 
@@ -295,7 +295,7 @@ msgstr ""
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr ""
 
-#: samsung-tools.py:515 samsung-tools-preferences.py:732
+#: samsung-tools.py:515 samsung-tools-preferences.py:772
 msgid "Released under GPLv3 license"
 msgstr ""
 
@@ -335,23 +335,25 @@ msgstr ""
 msgid "None"
 msgstr ""
 
-#: samsung-tools-preferences.py:346
-msgid "Install 'laptop-mode-tools' to use these options"
-msgstr ""
-
-#: samsung-tools-preferences.py:416
-msgid "Unable to connect to session service!"
-msgstr ""
-
-#: samsung-tools-preferences.py:428 samsung-tools-preferences.py:440
+#: samsung-tools-preferences.py:227 samsung-tools-preferences.py:525
+#: samsung-tools-preferences.py:537
 msgid "Unable to connect to system service!"
+msgstr ""
+
+#: samsung-tools-preferences.py:495
+msgid ""
+"Install the 'laptop mode tools' package if you want to use these options"
+msgstr ""
+
+#: samsung-tools-preferences.py:513
+msgid "Unable to connect to session service!"
 msgstr ""
 
 #: po/samsung-tools-applet.glade.h:2
 msgid "CPU Fan"
 msgstr ""
 
-#: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:40
+#: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:21
 msgid "Normal"
 msgstr ""
 
@@ -359,11 +361,11 @@ msgstr ""
 msgid "Preferences..."
 msgstr ""
 
-#: po/samsung-tools-applet.glade.h:5 po/samsung-tools-preferences.glade.h:43
+#: po/samsung-tools-applet.glade.h:5 po/samsung-tools-preferences.glade.h:24
 msgid "Silent"
 msgstr ""
 
-#: po/samsung-tools-applet.glade.h:6 po/samsung-tools-preferences.glade.h:44
+#: po/samsung-tools-applet.glade.h:6 po/samsung-tools-preferences.glade.h:25
 msgid "Speed"
 msgstr ""
 
@@ -372,7 +374,7 @@ msgid "Manage devices on Samsung netbooks"
 msgstr ""
 
 #: po/samsung-tools-preferences.desktop.in.h:1
-#: po/samsung-tools-preferences.glade.h:41
+#: po/samsung-tools-preferences.glade.h:22
 msgid "Samsung Tools Preferences"
 msgstr ""
 
@@ -381,155 +383,101 @@ msgid "Show and modify Samsung Tools preferences"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:1
-msgid "<b>\"Laptop Mode\" options</b>"
-msgstr ""
-
-#: po/samsung-tools-preferences.glade.h:2
 msgid "<b>Hotkeys</b>"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:3
+#: po/samsung-tools-preferences.glade.h:2
 msgid "<b>Initial status for devices</b>"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:4
+#: po/samsung-tools-preferences.glade.h:3
 msgid "Advanced power management"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:5
-msgid ""
-"An enabled video output port draws power, even if no display is connected. "
-"This option forces the display output off depending on the power mode."
-msgstr ""
-
-#: po/samsung-tools-preferences.glade.h:9
+#: po/samsung-tools-preferences.glade.h:7
 msgid "Click here to disable the hotkey"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:10
+#: po/samsung-tools-preferences.glade.h:8
 msgid "Click here to set the default hotkey"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:11
+#: po/samsung-tools-preferences.glade.h:9
 msgid "Click here to set the default value"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:12
-msgid "Control HAL polling"
+#: po/samsung-tools-preferences.glade.h:10
+#: po/samsung-tools-preferences-laptop-mode.glade.h:5
+msgid "Configure 'laptop mode tools'"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:13
-msgid "Control Intel HDA audio chipset power"
-msgstr ""
-
-#: po/samsung-tools-preferences.glade.h:14
-msgid "Control Intel SATA chipset power"
-msgstr ""
-
-#: po/samsung-tools-preferences.glade.h:15
-msgid "Control configuration files"
-msgstr ""
-
-#: po/samsung-tools-preferences.glade.h:16
-msgid "Control ethernet settings"
-msgstr ""
-
-#: po/samsung-tools-preferences.glade.h:17
-msgid "Control linux scheduler"
-msgstr ""
-
-#: po/samsung-tools-preferences.glade.h:18
-msgid "Control video output settings"
-msgstr ""
-
-#: po/samsung-tools-preferences.glade.h:19
+#: po/samsung-tools-preferences.glade.h:11
 msgid "Disabled"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:20
-msgid "Enable USB autosuspend"
-msgstr ""
-
-#: po/samsung-tools-preferences.glade.h:21
+#: po/samsung-tools-preferences.glade.h:12
 msgid "Enable hotkeys"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:22
+#: po/samsung-tools-preferences.glade.h:13
 msgid "Enable this option to use hotkeys"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:23
+#: po/samsung-tools-preferences.glade.h:14
 msgid "Enabled"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:24
-msgid "Hard Disk power management:"
-msgstr ""
-
-#: po/samsung-tools-preferences.glade.h:25
+#: po/samsung-tools-preferences.glade.h:15
 msgid "Hotkey used for CPU fan control"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:26
+#: po/samsung-tools-preferences.glade.h:16
 msgid "Hotkey used for backlight control"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:27
+#: po/samsung-tools-preferences.glade.h:17
 msgid "Hotkey used for bluetooth control"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:28
+#: po/samsung-tools-preferences.glade.h:18
 msgid "Hotkey used for webcam control"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:29
+#: po/samsung-tools-preferences.glade.h:19
 msgid "Hotkey used for wireless control"
 msgstr ""
 
+#: po/samsung-tools-preferences.glade.h:20
+msgid "Last status"
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:23
+msgid "Session service"
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:26
+msgid "System service"
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:27
+msgid "The initial status at boot for Bluetooth"
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:28
+msgid "The initial status at boot for CPU fan"
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:29
+msgid "The initial status at boot for webcam"
+msgstr ""
+
 #: po/samsung-tools-preferences.glade.h:30
-msgid ""
-"If you enable this option, laptop mode tools will automatically configure "
-"the Linux scheduler to save power on multi-core processors while running on "
-"battery mode."
+msgid "The initial status at boot for wireless"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:31
+#: po/samsung-tools-preferences-laptop-mode.glade.h:1
 msgid ""
-"If you enable this option, laptop mode tools will automatically enable the "
-"USB autosuspend feature for all devices."
-msgstr ""
-
-#: po/samsung-tools-preferences.glade.h:32
-msgid ""
-"If you enable this option, laptop mode tools will automatically enable the "
-"link power management mode of Intel AHCI compliant SATA chipsets."
-msgstr ""
-
-#: po/samsung-tools-preferences.glade.h:33
-msgid ""
-"If you enable this option, laptop mode tools will automatically set the "
-"powersave mode of Intel HDA audio chipsets."
-msgstr ""
-
-#: po/samsung-tools-preferences.glade.h:34
-msgid ""
-"If you enable this option, laptop mode tools will control the polling of "
-"your CD/DVD drives by HAL. Disabling polling saves a considerable amount of "
-"power."
-msgstr ""
-
-#: po/samsung-tools-preferences.glade.h:35
-msgid ""
-"If you enable this option, the speed of the Ethernet connection is limited "
-"to 100 Mbit. The difference in power usage between 1 Gbit and 100 Mbit "
-"Ethernet is quite large, so tuning can yield savings if you don't need the "
-"full speed (for instance if you only use Ethernet as to connect to a much "
-"slower ADSL modem)."
-msgstr ""
-
-#: po/samsung-tools-preferences.glade.h:36
-msgid ""
-"Laptop mode tools can automatically swap out configuration files depending "
+"'laptop mode tools' can automatically swap out configuration files depending "
 "on the power state of your system.\n"
 " \n"
 "The primary use for this feature is for controlling the configuration files "
@@ -538,44 +486,95 @@ msgid ""
 "very nice when you're trying to save power."
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:39
-msgid "Last status"
+#: po/samsung-tools-preferences-laptop-mode.glade.h:4
+msgid ""
+"An enabled video output port draws power, even if no display is connected. "
+"This option forces the display output off depending on the power mode."
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:42
-msgid "Session service"
+#: po/samsung-tools-preferences-laptop-mode.glade.h:6
+msgid "Control Ethernet settings"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:45
-msgid "System service"
+#: po/samsung-tools-preferences-laptop-mode.glade.h:7
+msgid "Control HAL polling"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:46
-msgid "The initial status at boot for Bluetooth"
+#: po/samsung-tools-preferences-laptop-mode.glade.h:8
+msgid "Control Intel HDA audio chipset power"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:47
-msgid "The initial status at boot for CPU fan"
+#: po/samsung-tools-preferences-laptop-mode.glade.h:9
+msgid "Control Intel SATA chipset power"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:48
-msgid "The initial status at boot for webcam"
+#: po/samsung-tools-preferences-laptop-mode.glade.h:10
+msgid "Control Linux scheduler"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:49
-msgid "The initial status at boot for wireless"
+#: po/samsung-tools-preferences-laptop-mode.glade.h:11
+msgid "Control configuration files"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:50
+#: po/samsung-tools-preferences-laptop-mode.glade.h:12
+msgid "Control video output settings"
+msgstr ""
+
+#: po/samsung-tools-preferences-laptop-mode.glade.h:13
+msgid "Enable USB autosuspend"
+msgstr ""
+
+#: po/samsung-tools-preferences-laptop-mode.glade.h:14
+msgid "Hard Disk power management:"
+msgstr ""
+
+#: po/samsung-tools-preferences-laptop-mode.glade.h:15
+msgid ""
+"If you enable this option, 'laptop mode tools' will automatically configure "
+"the Linux scheduler to save power on multi-core processors while running on "
+"battery mode."
+msgstr ""
+
+#: po/samsung-tools-preferences-laptop-mode.glade.h:16
+msgid ""
+"If you enable this option, 'laptop mode tools' will automatically enable the "
+"USB autosuspend feature for all devices."
+msgstr ""
+
+#: po/samsung-tools-preferences-laptop-mode.glade.h:17
+msgid ""
+"If you enable this option, 'laptop mode tools' will automatically enable the "
+"link power management mode of Intel AHCI compliant SATA chipsets."
+msgstr ""
+
+#: po/samsung-tools-preferences-laptop-mode.glade.h:18
+msgid ""
+"If you enable this option, 'laptop mode tools' will automatically set the "
+"powersave mode of Intel HDA audio chipsets."
+msgstr ""
+
+#: po/samsung-tools-preferences-laptop-mode.glade.h:19
+msgid ""
+"If you enable this option, 'laptop mode tools' will control the polling of "
+"your CD/DVD drives by HAL. Disabling polling saves a considerable amount of "
+"power."
+msgstr ""
+
+#: po/samsung-tools-preferences-laptop-mode.glade.h:20
+msgid ""
+"If you enable this option, the speed of the Ethernet connection is limited "
+"to 100 Mbit. The difference in power usage between 1 Gbit and 100 Mbit "
+"Ethernet is quite large, so tuning can yield savings if you don't need the "
+"full speed (for instance if you only use Ethernet as to connect to a much "
+"slower ADSL modem)."
+msgstr ""
+
+#: po/samsung-tools-preferences-laptop-mode.glade.h:21
 msgid ""
 "This option sets the disk power management, and it can have a value between "
 "1 and 255. A low value results in a better energy saving but less disk "
 "performance, an high value results in disk performance but less energy "
 "saving."
-msgstr ""
-
-#: po/samsung-tools-preferences.glade.h:51
-msgid "Use these options for a better power management"
 msgstr ""
 
 #: po/samsung-tools-session-service.desktop.in.h:1
