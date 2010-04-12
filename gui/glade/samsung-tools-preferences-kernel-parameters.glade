@@ -6,6 +6,7 @@
     <property name="visible">True</property>
     <property name="border_width">5</property>
     <property name="title" translatable="yes">Configure kernel parameters</property>
+    <property name="resizable">False</property>
     <property name="window_position">mouse</property>
     <property name="type_hint">normal</property>
     <property name="has_separator">False</property>
