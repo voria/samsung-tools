@@ -1,3 +1,10 @@
+samsung-tools (0.1~ppa18~loms~lucid) lucid; urgency=low
+
+  * New application icon.
+  * Add credits for artists.
+
+ -- Fortunato Ventre (voRia) <vorione@gmail.com>  Mon, 12 Apr 2010 12:57:38 +0200
+
 samsung-tools (0.1~ppa17~loms~lucid) lucid; urgency=low
 
   * Add new icons for cpu fan.
