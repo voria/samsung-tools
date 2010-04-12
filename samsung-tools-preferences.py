@@ -800,6 +800,7 @@ class Main():
 	
 	def about(self, button = None):
 		authors = [ "Fortunato Ventre" ]
+		artists = [ "http://icons.mysitemyway.com" ]
 		translators = [
 					"Fortunato Ventre",
 					"Lionel BASTET",
@@ -827,6 +828,7 @@ class Main():
 		dialog.set_website("http://www.voria.org/forum")
 		dialog.set_website_label("Linux On My Samsung")
 		dialog.set_authors(authors)
+		dialog.set_artists(artists)
 		temp = ""
 		for name in translators:
 			temp += name + "\n"
