@@ -138,7 +138,7 @@ class Hotkeys():
 				process.communicate()
 				returncode = process.returncode
 			except:
-				sessionlog.write("ERROR: 'Hotkeys.__stop_daemon()' - COMMAND: '" + command + "' - Exception thrown")
+				sessionlog.write("ERROR: 'Hotkeys.__stop_daemon()' - COMMAND: '" + command + "' - Exception thrown.")
 				return
 
 	def __restart_daemon(self):

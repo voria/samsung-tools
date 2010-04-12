@@ -59,7 +59,7 @@ class Notification():
 				self.setUrgency(urgency)
 				self.initialized = True
 			else:
-				sessionlog.write("ERROR: 'Notification()' - cannot use 'pynotify' method. Trying with 'dbus' one.")
+				sessionlog.write("ERROR: 'Notification' - cannot use 'pynotify' method. Trying with 'dbus' one.")
 				method = "dbus"
 		if method == "dbus":
 			if self.__connect() != None:

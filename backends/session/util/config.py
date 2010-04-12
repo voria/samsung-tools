@@ -43,7 +43,7 @@ class SessionConfig():
 		except:
 			# configfile not found?
 			# Use default options
-			sessionlog.write("WARNING: 'SessionConfig()' - '" + configfile + "' not found. Using default values for all options.")
+			sessionlog.write("WARNING: 'SessionConfig' - '" + configfile + "' not found. Using default values for all options.")
 			self.config.add_section("Main")
 			self.config.set("Main", "USE_HOTKEYS", USE_HOTKEYS_DEFAULT)
 			self.config.set("Main", "BACKLIGHT_HOTKEY", BACKLIGHT_HOTKEY_DEFAULT)
@@ -82,7 +82,7 @@ class SessionConfig():
 		# Options sanity check
 		if self.config.get("Main", "USE_HOTKEYS") not in USE_HOTKEYS_ACCEPTED_VALUES:
 			# Option is invalid, set default value
-			sessionlog.write("WARNING: 'SessionConfig()' - 'USE_HOTKEYS' option specified in '" + configfile + 
+			sessionlog.write("WARNING: 'SessionConfig' - 'USE_HOTKEYS' option specified in '" + configfile + 
 					"' is invalid. Using default value ('" + USE_HOTKEYS_DEFAULT + "').")
 			self.config.set("Main", "USE_HOTKEYS", USE_HOTKEYS_DEFAULT)
 		
@@ -98,25 +98,25 @@ class SessionConfig():
 		try:
 			oldfile = open(self.configfile, "r")
 		except:
-			sessionlog.write("ERROR: 'SessionConfig().__write()' - '" + self.configfile + "' not found. Creating a new one.")
+			sessionlog.write("ERROR: 'SessionConfig.__write()' - '" + self.configfile + "' not found. Creating a new one.")
 			try:
 				shutil.copy(SESSION_CONFIG_FILE, self.configfile)
 			except:
-				sessionlog.write("ERROR: 'SessionConfig().__write()' - Cannot find the global user configuration file. Creating an empty one.")
+				sessionlog.write("ERROR: 'SessionConfig.__write()' - Cannot find the global user configuration file. Creating an empty one.")
 				try:
 					oldfile = open(self.configfile, "w").close()
 				except:
-					sessionlog.write("ERROR: 'SessionConfig().__write()' - Cannot create a new config file.")
+					sessionlog.write("ERROR: 'SessionConfig.__write()' - Cannot create a new config file.")
 					return False
 			try:
 				oldfile = open(self.configfile, "r")
 			except:
-				sessionlog.write("ERROR: 'SessionConfig().__write()' - cannot read the config file.")
+				sessionlog.write("ERROR: 'SessionConfig.__write()' - cannot read the config file.")
 				return False
 		try:
 			newfile = open(self.configfile + ".new", "w")
 		except:
-			sessionlog.write("ERROR: 'SessionConfig().__write()' - cannot write the new config file.")
+			sessionlog.write("ERROR: 'SessionConfig.__write()' - cannot write the new config file.")
 			oldfile.close()
 			return False
 		for line in oldfile:
@@ -134,7 +134,7 @@ class SessionConfig():
 					try:					
 						newfile.write(option + "=" + value + "\n")
 					except:
-						sessionlog.write("ERROR: 'SessionConfig().__write()' - cannot write the new value for '" + option + "' in the new config file.")
+						sessionlog.write("ERROR: 'SessionConfig.__write()' - cannot write the new value for '" + option + "' in the new config file.")
 						oldfile.close()
 						newfile.close()
 						os.remove(self.configfile + ".new")
@@ -148,7 +148,7 @@ class SessionConfig():
 		try:
 			os.remove(self.configfile)
 		except:
-			sessionlog.write("ERROR: 'SessionConfig().__write()' - cannot replace old '" + self.configfile + "' with the new version.")
+			sessionlog.write("ERROR: 'SessionConfig.__write()' - cannot replace old '" + self.configfile + "' with the new version.")
 			os.remove(self.configfile + ".new")
 			return False
 		shutil.move(self.configfile + ".new", self.configfile)
