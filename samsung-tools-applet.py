@@ -46,6 +46,8 @@ class Applet():
 		image.set_from_pixbuf(pixbuf)
 		eventbox = gtk.EventBox()
 		eventbox.add(image)
+		eventbox.set_has_tooltip(True)
+		eventbox.set_tooltip_text("Samsung Tools")
 		eventbox.connect("button-press-event", self.showMenu)
 		applet.add(eventbox)
 		
