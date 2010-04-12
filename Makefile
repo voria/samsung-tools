@@ -42,7 +42,9 @@ install:
 	$(install_script) samsung-tools-applet.py $(DESTDIR)/usr/lib/samsung-tools/
 	# Icons
 	$(install_dir) $(DESTDIR)/usr/share/icons/
-	$(install_file) gui/icons/*.png $(DESTDIR)/usr/share/icons/
+	$(install_file) gui/icons/samsung-tools.png $(DESTDIR)/usr/share/icons/
+	$(install_dir) $(DESTDIR)/usr/lib/samsung-tools/gui/icons/
+	$(install_file) gui/icons/fan-*.png $(DESTDIR)/usr/lib/samsung-tools/gui/icons/
 	# .desktop files
 	$(shell desktop/prepare.sh desktop/samsung-tools-session-service.desktop.in)
 	$(install_dir) $(DESTDIR)/etc/xdg/autostart/
