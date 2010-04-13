@@ -338,6 +338,98 @@ class KernelParametersDialog():
 		conn.ApplySettings()
 		self.mainDialog.destroy()
 
+class PhcDialog():
+	def __init__(self, parent):
+		# Setup GUI
+		self.builder = gtk.Builder()
+		self.builder.set_translation_domain("samsung-tools")
+		self.builder.add_from_file(os.path.join(WORK_DIRECTORY, "gui/glade/samsung-tools-preferences-phc.glade"))
+		
+		self.mainDialog = self.builder.get_object("mainDialog")
+		self.mainDialog.set_icon_from_file(SAMSUNG_TOOLS_ICON)
+		self.mainDialog.set_transient_for(parent)
+		self.mainDialog.connect("delete-event", self.quit)
+		
+		self.closeButton = self.builder.get_object("closeButton")
+		self.closeButton.connect("clicked", self.quit)
+		
+		# Get all remaining widgets
+		self.freqLabels = [
+						self.builder.get_object("freq1Label"),
+						self.builder.get_object("freq2Label"),
+						self.builder.get_object("freq3Label"),
+						self.builder.get_object("freq4Label"),
+						self.builder.get_object("freq5Label")
+						]
+		self.defaultVidLabels = [
+								self.builder.get_object("defaultVid1Label"),
+								self.builder.get_object("defaultVid2Label"),
+								self.builder.get_object("defaultVid3Label"),
+								self.builder.get_object("defaultVid4Label"),
+								self.builder.get_object("defaultVid5Label")
+								]
+		self.vidSpinbuttons = [
+							self.builder.get_object("vid1Spinbutton"),
+							self.builder.get_object("vid2Spinbutton"),
+							self.builder.get_object("vid3Spinbutton"),
+							self.builder.get_object("vid4Spinbutton"),
+							self.builder.get_object("vid5Spinbutton")
+							]
+		self.vidAdjustments = [
+							self.builder.get_object("vid1Adjustment"),
+							self.builder.get_object("vid2Adjustment"),
+							self.builder.get_object("vid3Adjustment"),
+							self.builder.get_object("vid4Adjustment"),
+							self.builder.get_object("vid5Adjustment")
+							]
+		
+		conn = self.__connect()
+		frequencies = conn.GetFrequencies().split()
+		defaultvids = conn.GetDefaultVids().split()
+		currentvids = conn.GetCurrentVids().split()
+		self.freqsnum = len(frequencies) # How many frequencies/vids we have?
+		i = 0
+		
+		while i < self.freqsnum:
+			self.freqLabels[i].set_text(frequencies[i] + " MHz")
+			self.freqLabels[i].show()
+			self.defaultVidLabels[i].set_text(defaultvids[i])
+			self.defaultVidLabels[i].show()
+			self.vidAdjustments[i].set_upper(int(defaultvids[i]))
+			self.vidSpinbuttons[i].set_value(int(currentvids[i]))
+			self.vidSpinbuttons[i].show()
+			i += 1
+		
+	def __connect(self):
+		retry = 3
+		while retry > 0:
+			try:
+				bus = dbus.SystemBus()
+				proxy = bus.get_object(SYSTEM_INTERFACE_NAME, SYSTEM_OBJECT_PATH_CPU)
+				return dbus.Interface(proxy, SYSTEM_INTERFACE_NAME)
+			except:
+				retry = retry - 1
+		print unicode(_("Unable to connect to system service!"), "utf-8")
+		sys.exit(1)
+	
+	def quit(self, widget = None, event = None):
+		title = unicode(_("Confirm"), "utf-8")
+		message = unicode(_("Apply the new VIDs?"), "utf-8")
+		dialog = gtk.MessageDialog(self.mainDialog, gtk.DIALOG_MODAL, gtk.MESSAGE_QUESTION,
+								gtk.BUTTONS_YES_NO, message)
+		dialog.set_title(title)
+		response = dialog.run()
+		dialog.destroy()
+		if response == gtk.RESPONSE_YES:
+			i = 0
+			newvids = ""
+			while i < self.freqsnum:
+				newvids += str(self.vidSpinbuttons[i].get_value_as_int()) + " "
+				i += 1
+			conn = self.__connect()
+			conn.SetCurrentVids(newvids.strip())
+		self.mainDialog.destroy()
+
 class Main():
 	def __init__(self):
 		# Get interfaces for D-Bus services
@@ -547,6 +639,18 @@ class Main():
 		else:
 			self.laptopModeButton.set_sensitive(True)
 		self.laptopModeButton.connect("clicked", self.on_laptopModeButton_clicked)
+		# PHC
+		self.phcButton = self.builder.get_object("phcButton")
+		conn = self.__connect_system_cpu()
+		if not conn.IsPHCAvailable():
+			self.phcButton.set_sensitive(False)
+			self.phcButton.set_has_tooltip(True)
+			tooltip = unicode(_("You need a PHC enabled kernel to use this feature"), "utf-8")
+			self.phcButton.set_tooltip_text(tooltip)
+		else:
+			self.phcButton.set_sensitive(True)
+		self.phcButton.connect("clicked", self.on_phcButton_clicked)
+		self.phcButton.show()
 		
 		# All ready
 		self.mainWindow.show()
@@ -581,6 +685,18 @@ class Main():
 			try:
 				bus = dbus.SystemBus()
 				proxy = bus.get_object(SYSTEM_INTERFACE_NAME, SYSTEM_OBJECT_PATH_LAPTOPMODE)
+				return dbus.Interface(proxy, SYSTEM_INTERFACE_NAME)
+			except:
+				retry = retry - 1
+		print unicode(_("Unable to connect to system service!"), "utf-8")
+		sys.exit(1)
+	
+	def __connect_system_cpu(self):
+		retry = 3
+		while retry > 0:
+			try:
+				bus = dbus.SystemBus()
+				proxy = bus.get_object(SYSTEM_INTERFACE_NAME, SYSTEM_OBJECT_PATH_CPU)
 				return dbus.Interface(proxy, SYSTEM_INTERFACE_NAME)
 			except:
 				retry = retry - 1
@@ -797,6 +913,21 @@ class Main():
 	
 	def on_sysCtlButton_clicked(self, button):
 		KernelParametersDialog(self.mainWindow)
+	
+	def on_phcButton_clicked(self, button):
+		title = unicode(_("Caution!"), "utf-8")
+		message = unicode(_("CPU undervolt can lead to significant gains in terms of power energy saving, \
+however <b>IT IS A RISKY PRACTICE</b> that might lead to various malfunctions \
+and losses of data. Please be sure to know what you are doing, prior to use these options.\n\n\
+Are you sure you want to continue?"), "utf-8")
+		dialog = gtk.MessageDialog(self.mainWindow, gtk.DIALOG_MODAL, gtk.MESSAGE_WARNING,
+								gtk.BUTTONS_YES_NO, None)
+		dialog.set_title(title)
+		dialog.set_markup(message)
+		response = dialog.run()
+		dialog.destroy()
+		if response == gtk.RESPONSE_YES:
+			PhcDialog(self.mainWindow)
 	
 	def about(self, button = None):
 		authors = [ "Fortunato Ventre" ]

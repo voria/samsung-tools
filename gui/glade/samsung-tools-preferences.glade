@@ -542,7 +542,7 @@
               <object class="GtkTable" id="advancedPowerManagementTable">
                 <property name="visible">True</property>
                 <property name="border_width">5</property>
-                <property name="n_rows">2</property>
+                <property name="n_rows">3</property>
                 <property name="column_spacing">5</property>
                 <property name="row_spacing">5</property>
                 <child>
@@ -568,6 +568,18 @@
                     <property name="tooltip_text" translatable="yes">Configure kernel parameters</property>
                   </object>
                   <packing>
+                    <property name="y_options">GTK_EXPAND</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="phcButton">
+                    <property name="label" translatable="yes">Undervolt CPU</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                  </object>
+                  <packing>
+                    <property name="top_attach">2</property>
+                    <property name="bottom_attach">3</property>
                     <property name="y_options">GTK_EXPAND</property>
                   </packing>
                 </child>
