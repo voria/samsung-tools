@@ -1,3 +1,10 @@
+samsung-tools (0.2~ppa1~loms~lucid) lucid; urgency=low
+
+  * Add support to CPU undervolting.
+  * Update strings and translations.
+
+ -- Fortunato Ventre (voRia) <vorione@gmail.com>  Tue, 13 Apr 2010 16:50:37 +0200
+
 samsung-tools (0.1~ppa18~loms~lucid) lucid; urgency=low
 
   * New application icon.
