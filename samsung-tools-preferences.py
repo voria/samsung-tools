@@ -353,6 +353,11 @@ class PhcDialog():
 		self.closeButton = self.builder.get_object("closeButton")
 		self.closeButton.connect("clicked", self.quit)
 		
+		self.applyAtBootCheckbutton = self.builder.get_object("applyAtBootCheckbutton")
+		conn = self.__connect_options()
+		if conn.GetPHCVids() != "":
+			self.applyAtBootCheckbutton.set_active(True)
+		
 		# Get all remaining widgets
 		self.freqLabels = [
 						self.builder.get_object("freq1Label"),
@@ -383,7 +388,7 @@ class PhcDialog():
 							self.builder.get_object("vid5Adjustment")
 							]
 		
-		conn = self.__connect()
+		conn = self.__connect_cpu()
 		frequencies = conn.GetFrequencies().split()
 		defaultvids = conn.GetDefaultVids().split()
 		currentvids = conn.GetCurrentVids().split()
@@ -400,7 +405,7 @@ class PhcDialog():
 			self.vidSpinbuttons[i].show()
 			i += 1
 		
-	def __connect(self):
+	def __connect_cpu(self):
 		retry = 3
 		while retry > 0:
 			try:
@@ -412,22 +417,42 @@ class PhcDialog():
 		print unicode(_("Unable to connect to system service!"), "utf-8")
 		sys.exit(1)
 	
+	def __connect_options(self):
+		retry = 3
+		while retry > 0:
+			try:
+				bus = dbus.SystemBus()
+				proxy = bus.get_object(SYSTEM_INTERFACE_NAME, SYSTEM_OBJECT_PATH_OPTIONS)
+				return dbus.Interface(proxy, SYSTEM_INTERFACE_NAME)
+			except:
+				retry = retry - 1
+		print unicode(_("Unable to connect to system service!"), "utf-8")
+		sys.exit(1)
+	
 	def quit(self, widget = None, event = None):
-		title = unicode(_("Confirm"), "utf-8")
-		message = unicode(_("Apply the new VIDs?"), "utf-8")
-		dialog = gtk.MessageDialog(self.mainDialog, gtk.DIALOG_MODAL, gtk.MESSAGE_QUESTION,
-								gtk.BUTTONS_YES_NO, message)
-		dialog.set_title(title)
-		response = dialog.run()
-		dialog.destroy()
-		if response == gtk.RESPONSE_YES:
-			i = 0
-			newvids = ""
-			while i < self.freqsnum:
-				newvids += str(self.vidSpinbuttons[i].get_value_as_int()) + " "
-				i += 1
-			conn = self.__connect()
-			conn.SetCurrentVids(newvids.strip())
+		i = 0
+		newvids = ""
+		while i < self.freqsnum:
+			newvids += str(self.vidSpinbuttons[i].get_value_as_int()) + " "
+			i += 1
+		newvids = newvids.strip()
+		conn = self.__connect_cpu()
+		if conn.GetCurrentVids() != newvids:
+			title = unicode(_("Confirm"), "utf-8")
+			message = unicode(_("Apply the new VIDs?"), "utf-8")
+			dialog = gtk.MessageDialog(self.mainDialog, gtk.DIALOG_MODAL, gtk.MESSAGE_QUESTION,
+									gtk.BUTTONS_YES_NO, message)
+			dialog.set_title(title)
+			response = dialog.run()
+			dialog.destroy()
+			if response == gtk.RESPONSE_YES:
+				conn.SetCurrentVids(newvids)
+		conn = self.__connect_options()
+		if self.applyAtBootCheckbutton.get_active() == True:
+			conn.SetPHCVids(newvids)
+		else:
+			conn.SetPHCVids("default")
+			
 		self.mainDialog.destroy()
 
 class Main():
@@ -916,9 +941,9 @@ class Main():
 	
 	def on_phcButton_clicked(self, button):
 		title = unicode(_("Caution!"), "utf-8")
-		message = unicode(_("CPU undervolt can lead to significant gains in terms of power energy saving, \
+		message = unicode(_("CPU undervolting can lead to significant gains in terms of power energy saving, \
 however <b>IT IS A RISKY PRACTICE</b> that might lead to various malfunctions \
-and losses of data. Please be sure to know what you are doing, prior to use these options.\n\n\
+and loss of data. Please be sure to know what you are doing, prior to use these options.\n\n\
 Are you sure you want to continue?"), "utf-8")
 		dialog = gtk.MessageDialog(self.mainWindow, gtk.DIALOG_MODAL, gtk.MESSAGE_WARNING,
 								gtk.BUTTONS_YES_NO, None)

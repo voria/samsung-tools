@@ -29,6 +29,7 @@ BLUETOOTH_INITIAL_STATUS_DEFAULT = "last"
 WEBCAM_INITIAL_STATUS_DEFAULT = "last"
 WIRELESS_INITIAL_STATUS_DEFAULT = "last"
 CPUFAN_INITIAL_STATUS_DEFAULT = "normal"
+PHC_VIDS_DEFAULT = ""
 BLUETOOTH_INITIAL_STATUS_ACCEPTED_VALUES = ['on', 'off', 'last']
 WEBCAM_INITIAL_STATUS_ACCEPTED_VALUES = ['on', 'off', 'last']
 WIRELESS_INITIAL_STATUS_ACCEPTED_VALUES = ['on', 'off', 'last']
@@ -50,6 +51,7 @@ class SystemConfig():
 			self.config.set("Main", "WEBCAM_INITIAL_STATUS", WEBCAM_INITIAL_STATUS_DEFAULT)
 			self.config.set("Main", "WIRELESS_INITIAL_STATUS", WIRELESS_INITIAL_STATUS_DEFAULT)
 			self.config.set("Main", "CPUFAN_INITIAL_STATUS", CPUFAN_INITIAL_STATUS_DEFAULT)
+			self.config.set("Main", "PHC_VIDS", PHC_VIDS_DEFAULT)
 		# Check if all options are specified in the config file
 		else:
 			if not self.config.has_section("Main"):
@@ -70,6 +72,10 @@ class SystemConfig():
 				self.config.get("Main", "CPUFAN_INITIAL_STATUS")
 			except:
 				self.config.set("Main", "CPUFAN_INITIAL_STATUS", CPUFAN_INITIAL_STATUS_DEFAULT)
+			try:
+				self.config.get("Main", "PHC_VIDS")
+			except:
+				self.config.set("Main", "PHC_VIDS", PHC_VIDS_DEFAULT)
 		# Options sanity check
 		if self.config.get("Main", "BLUETOOTH_INITIAL_STATUS") not in BLUETOOTH_INITIAL_STATUS_ACCEPTED_VALUES:
 			# Option is invalid, set default value
@@ -168,6 +174,10 @@ class SystemConfig():
 		""" Return the CPUFAN_INITIAL_STATUS option. """
 		return self.config.get("Main", "CPUFAN_INITIAL_STATUS")
 	
+	def getPHCVids(self):
+		""" Return the PHC_VIDS option. """
+		return self.config.get("Main", "PHC_VIDS").strip("\"")
+	
 	def setBluetoothInitialStatus(self, value):
 		""" Set the BLUETOOTH_INITIAL_STATUS option. """
 		""" Return 'True' on success, 'False' otherwise. """
@@ -207,3 +217,11 @@ class SystemConfig():
 			return False
 		self.config.set("Main", "CPUFAN_INITIAL_STATUS", value)
 		return self.__write("CPUFAN_INITIAL_STATUS")
+
+	def setPHCVids(self, value):
+		""" Set the PHC_VIDS option. """
+		""" Return 'True' on success, 'False' otherwise. """
+		if value == "default": # set default
+			value = PHC_VIDS_DEFAULT
+		self.config.set("Main", "PHC_VIDS", "\"" + value + "\"")
+		return self.__write("PHC_VIDS")

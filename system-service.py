@@ -39,6 +39,7 @@ from backends.system.powermanagement import LaptopMode, SysCtl
 mainloop = None
 
 bluetooth = None
+cpu = None
 fan = None
 webcam = None
 wireless = None
@@ -99,6 +100,10 @@ class General(dbus.service.Object):
 			fan.SetSpeed()
 		else: # status == "last"
 			fan.RestoreLastStatus()
+		# PHC
+		status = systemconfig.getPHCVids()
+		if status != "":
+			cpu.SetCurrentVids(status)
 
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = None,
 						sender_keyword = 'sender', connection_keyword = 'conn')
@@ -114,11 +119,11 @@ if __name__ == '__main__':
 	General(bus, SYSTEM_OBJECT_PATH_GENERAL)
 	Options(bus, SYSTEM_OBJECT_PATH_OPTIONS)
 	Backlight(bus, SYSTEM_OBJECT_PATH_BACKLIGHT)
-	Cpu(bus, SYSTEM_OBJECT_PATH_CPU)
 	LaptopMode(bus, SYSTEM_OBJECT_PATH_LAPTOPMODE)
 	SysCtl(bus, SYSTEM_OBJECT_PATH_SYSCTL)
 	# We need these objects for restoring last statuses
 	bluetooth = Bluetooth(bus, SYSTEM_OBJECT_PATH_BLUETOOTH)
+	cpu = Cpu(bus, SYSTEM_OBJECT_PATH_CPU)
 	fan = Fan(bus, SYSTEM_OBJECT_PATH_FAN)
 	webcam = Webcam(bus, SYSTEM_OBJECT_PATH_WEBCAM)
 	wireless = Wireless(bus, SYSTEM_OBJECT_PATH_WIRELESS)
