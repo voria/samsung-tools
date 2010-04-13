@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-11 17:05+0200\n"
+"POT-Creation-Date: 2010-04-13 14:18+0200\n"
 "PO-Revision-Date: 2010-04-08 19:28+0000\n"
 "Last-Translator: Lionel BASTET <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2010-04-09 13:44+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
-#: backends/session/util/locales.py:25 samsung-tools-preferences.py:368
+#: backends/session/util/locales.py:25 samsung-tools-preferences.py:485
 msgid "Backlight"
 msgstr "Rétroéclairage"
 
@@ -49,7 +49,7 @@ msgstr "Le rétroéclairage ne peut être désactivé"
 msgid "Backlight cannot be toggled"
 msgstr "Changement d'état du rétroéclairage impossible"
 
-#: backends/session/util/locales.py:34 samsung-tools-preferences.py:377
+#: backends/session/util/locales.py:34 samsung-tools-preferences.py:494
 #: po/samsung-tools-applet.glade.h:1
 msgid "Bluetooth"
 msgstr "Bluetooth"
@@ -86,7 +86,7 @@ msgstr "Bluetooth: changement d'état impossible"
 msgid "Bluetooth control is not available"
 msgstr "Contrôle du Bluetooth non disponible"
 
-#: backends/session/util/locales.py:44 samsung-tools-preferences.py:386
+#: backends/session/util/locales.py:44 samsung-tools-preferences.py:503
 msgid "CPU fan"
 msgstr "Ventilateur processeur"
 
@@ -118,7 +118,7 @@ msgstr "Ne peut trouver le mode du ventilateur"
 msgid "CPU fan control is not available"
 msgstr "Le contrôle du ventilateur processeur n'est pas disponible"
 
-#: backends/session/util/locales.py:53 samsung-tools-preferences.py:395
+#: backends/session/util/locales.py:53 samsung-tools-preferences.py:512
 #: po/samsung-tools-applet.glade.h:7
 msgid "Webcam"
 msgstr "Webcam"
@@ -155,7 +155,7 @@ msgstr "Changement d'état de la webcam impossible"
 msgid "Webcam control is not available"
 msgstr "Contrôle de la webcam non disponible"
 
-#: backends/session/util/locales.py:63 samsung-tools-preferences.py:404
+#: backends/session/util/locales.py:63 samsung-tools-preferences.py:521
 #: po/samsung-tools-applet.glade.h:8
 msgid "Wireless"
 msgstr "Réseau sans fil"
@@ -250,11 +250,11 @@ msgstr "Bluetooth:"
 msgid "CPU fan:"
 msgstr "Ventilateur processeur"
 
-#: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:33
+#: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:35
 msgid "Webcam:"
 msgstr "Webcam:"
 
-#: samsung-tools.py:489 po/samsung-tools-preferences.glade.h:34
+#: samsung-tools.py:489 po/samsung-tools-preferences.glade.h:36
 msgid "Wireless:"
 msgstr "Réseau sans fil:"
 
@@ -304,7 +304,7 @@ msgstr " - Désactiver le Bluetooth, la webcam et le réseau sans fil:"
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Pour plus d'informations, visitez le forum \"Linux On My Samsung\":"
 
-#: samsung-tools.py:515 samsung-tools-preferences.py:825
+#: samsung-tools.py:515 samsung-tools-preferences.py:982
 msgid "Released under GPLv3 license"
 msgstr "Publié sous licence GPLv3"
 
@@ -345,23 +345,51 @@ msgid "None"
 msgstr "Aucun"
 
 #: samsung-tools-preferences.py:226 samsung-tools-preferences.py:328
-#: samsung-tools-preferences.py:575 samsung-tools-preferences.py:587
+#: samsung-tools-preferences.py:417 samsung-tools-preferences.py:429
+#: samsung-tools-preferences.py:704 samsung-tools-preferences.py:716
+#: samsung-tools-preferences.py:728
 msgid "Unable to connect to system service!"
 msgstr "Impossible de se connecter au service système!"
 
-#: samsung-tools-preferences.py:545
+#: samsung-tools-preferences.py:441
+msgid "Confirm"
+msgstr ""
+
+#: samsung-tools-preferences.py:442
+msgid "Apply the new VIDs?"
+msgstr ""
+
+#: samsung-tools-preferences.py:662
 msgid "Install the 'laptop mode tools' package to configure these options"
 msgstr ""
 
-#: samsung-tools-preferences.py:563
+#: samsung-tools-preferences.py:673
+msgid "You need a PHC enabled kernel to use this feature"
+msgstr ""
+
+#: samsung-tools-preferences.py:692
 msgid "Unable to connect to session service!"
 msgstr "Impossible de se connecter au service de session!"
+
+#: samsung-tools-preferences.py:943
+msgid "Caution!"
+msgstr ""
+
+#: samsung-tools-preferences.py:944
+msgid ""
+"CPU undervolting can lead to significant gains in terms of power energy "
+"saving, however <b>IT IS A RISKY PRACTICE</b> that might result in "
+"malfunctions and loss of data. Please be sure to know what you are doing, "
+"prior to use these options.\n"
+"\n"
+"Are you sure you want to continue?"
+msgstr ""
 
 #: po/samsung-tools-applet.glade.h:2
 msgid "CPU Fan"
 msgstr "Ventilateur processeur"
 
-#: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:23
+#: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:24
 msgid "Normal"
 msgstr "Normal"
 
@@ -369,11 +397,11 @@ msgstr "Normal"
 msgid "Preferences..."
 msgstr "Préférences..."
 
-#: po/samsung-tools-applet.glade.h:5 po/samsung-tools-preferences.glade.h:26
+#: po/samsung-tools-applet.glade.h:5 po/samsung-tools-preferences.glade.h:27
 msgid "Silent"
 msgstr "Silencieux"
 
-#: po/samsung-tools-applet.glade.h:6 po/samsung-tools-preferences.glade.h:27
+#: po/samsung-tools-applet.glade.h:6 po/samsung-tools-preferences.glade.h:28
 msgid "Speed"
 msgstr "Rapide"
 
@@ -382,7 +410,7 @@ msgid "Manage devices on Samsung netbooks"
 msgstr "Gérer les périphériques sur les netbooks Samsung"
 
 #: po/samsung-tools-preferences.desktop.in.h:1
-#: po/samsung-tools-preferences.glade.h:24
+#: po/samsung-tools-preferences.glade.h:25
 msgid "Samsung Tools Preferences"
 msgstr "Préférences de Samsung Tools"
 
@@ -404,94 +432,102 @@ msgid "Advanced power management"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:7
+msgid "CPU undervolting"
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:8
 msgid "Click here to disable the hotkey"
 msgstr "Cliquez ici pour désactiver le raccourci clavier"
 
-#: po/samsung-tools-preferences.glade.h:8
+#: po/samsung-tools-preferences.glade.h:9
 msgid "Click here to set the default hotkey"
 msgstr "Cliquez ici pour fixer le raccourci clavier par défaut"
 
-#: po/samsung-tools-preferences.glade.h:9
+#: po/samsung-tools-preferences.glade.h:10
 msgid "Click here to set the default value"
 msgstr "Cliquez ici pour fixer la valeur par défaut"
 
-#: po/samsung-tools-preferences.glade.h:10
+#: po/samsung-tools-preferences.glade.h:11
 #: po/samsung-tools-preferences-laptop-mode.glade.h:5
 msgid "Configure 'laptop mode tools'"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:11
+#: po/samsung-tools-preferences.glade.h:12
 msgid "Configure 'laptop mode tools' for a better power management"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:12
+#: po/samsung-tools-preferences.glade.h:13
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:1
 msgid "Configure kernel parameters"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:13
+#: po/samsung-tools-preferences.glade.h:14
 msgid "Disabled"
 msgstr "Désactivé"
 
-#: po/samsung-tools-preferences.glade.h:14
+#: po/samsung-tools-preferences.glade.h:15
 msgid "Enable hotkeys"
 msgstr "Activer les raccourcis clavier"
 
-#: po/samsung-tools-preferences.glade.h:15
+#: po/samsung-tools-preferences.glade.h:16
 msgid "Enable this option to use hotkeys"
 msgstr "Activer cette option pour utiliser les raccourcis clavier"
 
-#: po/samsung-tools-preferences.glade.h:16
+#: po/samsung-tools-preferences.glade.h:17
 msgid "Enabled"
 msgstr "Activé"
 
-#: po/samsung-tools-preferences.glade.h:17
+#: po/samsung-tools-preferences.glade.h:18
 msgid "Hotkey used for CPU fan control"
 msgstr "Raccourci clavier utilisé pour le contrôle du ventilateur processeur"
 
-#: po/samsung-tools-preferences.glade.h:18
+#: po/samsung-tools-preferences.glade.h:19
 msgid "Hotkey used for backlight control"
 msgstr "Raccourci clavier pour le contrôle du rétroéclairage"
 
-#: po/samsung-tools-preferences.glade.h:19
+#: po/samsung-tools-preferences.glade.h:20
 msgid "Hotkey used for bluetooth control"
 msgstr "Raccourci clavier pour le contrôle du Bluetooth"
 
-#: po/samsung-tools-preferences.glade.h:20
+#: po/samsung-tools-preferences.glade.h:21
 msgid "Hotkey used for webcam control"
 msgstr "Raccourci clavier pour le contrôle de la webcam"
 
-#: po/samsung-tools-preferences.glade.h:21
+#: po/samsung-tools-preferences.glade.h:22
 msgid "Hotkey used for wireless control"
 msgstr "Raccourci clavier pour le contrôle du réseau sans fil"
 
-#: po/samsung-tools-preferences.glade.h:22
+#: po/samsung-tools-preferences.glade.h:23
 msgid "Last status"
 msgstr "Dernier état"
 
-#: po/samsung-tools-preferences.glade.h:25
+#: po/samsung-tools-preferences.glade.h:26
 msgid "Session service"
 msgstr "Service de session"
 
-#: po/samsung-tools-preferences.glade.h:28
+#: po/samsung-tools-preferences.glade.h:29
 msgid "System service"
 msgstr "Service système"
 
-#: po/samsung-tools-preferences.glade.h:29
+#: po/samsung-tools-preferences.glade.h:30
 msgid "The initial status at boot for Bluetooth"
 msgstr "L'état initial du Bluetooth au démarrage"
 
-#: po/samsung-tools-preferences.glade.h:30
+#: po/samsung-tools-preferences.glade.h:31
 msgid "The initial status at boot for CPU fan"
 msgstr "L'état initial du ventilateur processeur au démarrage"
 
-#: po/samsung-tools-preferences.glade.h:31
+#: po/samsung-tools-preferences.glade.h:32
 msgid "The initial status at boot for webcam"
 msgstr "L'état initial de la webcam au démarrage"
 
-#: po/samsung-tools-preferences.glade.h:32
+#: po/samsung-tools-preferences.glade.h:33
 msgid "The initial status at boot for wireless"
 msgstr "L'état initial du réseau sans fil au démarrage"
+
+#: po/samsung-tools-preferences.glade.h:34
+msgid "Undervolt the CPU in order to save energy"
+msgstr ""
 
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:2
 msgid ""
@@ -608,6 +644,39 @@ msgid ""
 "saving."
 msgstr ""
 
+#: po/samsung-tools-preferences-phc.glade.h:1
+#, fuzzy
+msgid "<b>Default VIDs</b>"
+msgstr "<b>Général</b>"
+
+#: po/samsung-tools-preferences-phc.glade.h:2
+#, fuzzy
+msgid "<b>Frequencies</b>"
+msgstr "<b>Réseau sans fil</b>"
+
+#: po/samsung-tools-preferences-phc.glade.h:3
+#, fuzzy
+msgid "<b>New VIDs</b>"
+msgstr "<b>Raccourcis clavier</b>"
+
+#: po/samsung-tools-preferences-phc.glade.h:4
+msgid "CPU Undervolt"
+msgstr ""
+
+#: po/samsung-tools-preferences-phc.glade.h:5
+msgid ""
+"Enable this option only if the new VIDs are tested and safe, otherwise the "
+"machine might be no more bootable!"
+msgstr ""
+
+#: po/samsung-tools-preferences-phc.glade.h:6
+msgid "Note: the new VIDs will be applied when this window will be closed."
+msgstr ""
+
+#: po/samsung-tools-preferences-phc.glade.h:7
+msgid "Set the new VIDs automatically at boot"
+msgstr ""
+
 #: po/samsung-tools-session-service.desktop.in.h:1
 msgid "Start the session service"
 msgstr "Lancer le service de session"
@@ -632,12 +701,6 @@ msgstr "Lancer le service de session"
 
 #~ msgid "Toggle method:"
 #~ msgstr "Méthode de changement d'état:"
-
-#~ msgid "<b>General</b>"
-#~ msgstr "<b>Général</b>"
-
-#~ msgid "<b>Wireless</b>"
-#~ msgstr "<b>Réseau sans fil</b>"
 
 #~ msgid "Device:"
 #~ msgstr "Périphérique :"

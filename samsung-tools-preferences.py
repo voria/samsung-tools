@@ -942,7 +942,7 @@ class Main():
 	def on_phcButton_clicked(self, button):
 		title = unicode(_("Caution!"), "utf-8")
 		message = unicode(_("CPU undervolting can lead to significant gains in terms of power energy saving, \
-however <b>IT IS A RISKY PRACTICE</b> that might lead to various malfunctions \
+however <b>IT IS A RISKY PRACTICE</b> that might result in malfunctions \
 and loss of data. Please be sure to know what you are doing, prior to use these options.\n\n\
 Are you sure you want to continue?"), "utf-8")
 		dialog = gtk.MessageDialog(self.mainWindow, gtk.DIALOG_MODAL, gtk.MESSAGE_WARNING,

@@ -573,9 +573,10 @@
                 </child>
                 <child>
                   <object class="GtkButton" id="phcButton">
-                    <property name="label" translatable="yes">Undervolt CPU</property>
+                    <property name="label" translatable="yes">CPU undervolting</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
+                    <property name="tooltip_text" translatable="yes">Undervolt the CPU in order to save energy</property>
                   </object>
                   <packing>
                     <property name="top_attach">2</property>
