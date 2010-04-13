@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-13 14:18+0200\n"
+"POT-Creation-Date: 2010-04-13 17:12+0200\n"
 "PO-Revision-Date: 2010-04-08 19:28+0000\n"
 "Last-Translator: Lionel BASTET <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -432,6 +432,7 @@ msgid "Advanced power management"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:7
+#: po/samsung-tools-preferences-phc.glade.h:4
 msgid "CPU undervolting"
 msgstr ""
 
@@ -658,10 +659,6 @@ msgstr "<b>Réseau sans fil</b>"
 #, fuzzy
 msgid "<b>New VIDs</b>"
 msgstr "<b>Raccourcis clavier</b>"
-
-#: po/samsung-tools-preferences-phc.glade.h:4
-msgid "CPU Undervolt"
-msgstr ""
 
 #: po/samsung-tools-preferences-phc.glade.h:5
 msgid ""

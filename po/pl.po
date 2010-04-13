@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-13 14:18+0200\n"
+"POT-Creation-Date: 2010-04-13 17:12+0200\n"
 "PO-Revision-Date: 2010-03-29 09:30+0000\n"
 "Last-Translator: Krzysztof Saja <Unknown>\n"
 "Language-Team: Polish <pl@li.org>\n"
@@ -428,6 +428,7 @@ msgid "Advanced power management"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:7
+#: po/samsung-tools-preferences-phc.glade.h:4
 msgid "CPU undervolting"
 msgstr ""
 
@@ -655,10 +656,6 @@ msgstr "<b>SIeć bezprzewodowa</b>"
 #, fuzzy
 msgid "<b>New VIDs</b>"
 msgstr "<b>Skróty klawiszowe</b>"
-
-#: po/samsung-tools-preferences-phc.glade.h:4
-msgid "CPU Undervolt"
-msgstr ""
 
 #: po/samsung-tools-preferences-phc.glade.h:5
 msgid ""

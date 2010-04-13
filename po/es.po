@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-13 14:18+0200\n"
+"POT-Creation-Date: 2010-04-13 17:12+0200\n"
 "PO-Revision-Date: 2010-04-13 12:36+0000\n"
 "Last-Translator: ironfisher <dgvalde@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -209,8 +209,7 @@ msgstr ""
 
 #: samsung-tools.py:329
 msgid "Webcam control: unable to connect to session service!"
-msgstr ""
-"Control de la cámara web: ¡Incapaz de conectar al servicio de sesión!"
+msgstr "Control de la cámara web: ¡Incapaz de conectar al servicio de sesión!"
 
 #: samsung-tools.py:408
 msgid "Wireless control: unable to connect to session service!"
@@ -360,8 +359,7 @@ msgstr ""
 
 #: samsung-tools-preferences.py:662
 msgid "Install the 'laptop mode tools' package to configure these options"
-msgstr ""
-"Instala el paquete 'laptop mode tools' para configurar estas opciones"
+msgstr "Instala el paquete 'laptop mode tools' para configurar estas opciones"
 
 #: samsung-tools-preferences.py:673
 msgid "You need a PHC enabled kernel to use this feature"
@@ -431,6 +429,7 @@ msgid "Advanced power management"
 msgstr "Administración avanzada de la potencia"
 
 #: po/samsung-tools-preferences.glade.h:7
+#: po/samsung-tools-preferences-phc.glade.h:4
 msgid "CPU undervolting"
 msgstr ""
 
@@ -696,10 +695,6 @@ msgstr ""
 msgid "<b>New VIDs</b>"
 msgstr ""
 
-#: po/samsung-tools-preferences-phc.glade.h:4
-msgid "CPU Undervolt"
-msgstr ""
-
 #: po/samsung-tools-preferences-phc.glade.h:5
 msgid ""
 "Enable this option only if the new VIDs are tested and safe, otherwise the "
@@ -738,8 +733,8 @@ msgstr "Inicia el servicio de sesión"
 #~ "\n"
 #~ "'iwconfig' - Usa el comando iwconfig.\n"
 #~ "'module' - Inserta/elimina el módulo kernel.\n"
-#~ "'esdm' - Usa la interfaz esdm: 'administador de sencilla disminución de la "
-#~ "velocidad'."
+#~ "'esdm' - Usa la interfaz esdm: 'administador de sencilla disminución de "
+#~ "la velocidad'."
 
 #~ msgid "Webcam initial status:"
 #~ msgstr "Estado inicial de la cámara web"

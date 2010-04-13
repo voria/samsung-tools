@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-13 14:18+0200\n"
+"POT-Creation-Date: 2010-04-13 17:12+0200\n"
 "PO-Revision-Date: 2010-04-13 16:36+0200\n"
 "Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: Italiano <vorione@gmail.com>\n"
@@ -435,6 +435,7 @@ msgid "Advanced power management"
 msgstr "Gestione energetica avanzata"
 
 #: po/samsung-tools-preferences.glade.h:7
+#: po/samsung-tools-preferences-phc.glade.h:4
 msgid "CPU undervolting"
 msgstr "Undervolt della CPU"
 
@@ -700,10 +701,6 @@ msgstr "<b>Frequenze</b>"
 msgid "<b>New VIDs</b>"
 msgstr "<b>Nuovi VID</b>"
 
-#: po/samsung-tools-preferences-phc.glade.h:4
-msgid "CPU Undervolt"
-msgstr "Undervolt della CPU"
-
 #: po/samsung-tools-preferences-phc.glade.h:5
 msgid ""
 "Enable this option only if the new VIDs are tested and safe, otherwise the "
@@ -724,6 +721,9 @@ msgstr "Imposta i nuovi VID automaticamente all'avvio"
 #: po/samsung-tools-session-service.desktop.in.h:1
 msgid "Start the session service"
 msgstr "Avvia il servizio di sessione"
+
+#~ msgid "CPU Undervolt"
+#~ msgstr "Undervolt della CPU"
 
 #~ msgid "<b>\"Laptop Mode\" options</b>"
 #~ msgstr "<b>Opzioni di \"Laptop Mode\"</b>"

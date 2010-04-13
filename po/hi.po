@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-13 14:18+0200\n"
+"POT-Creation-Date: 2010-04-13 17:12+0200\n"
 "PO-Revision-Date: 2010-03-29 16:36+0000\n"
 "Last-Translator: subiraj <subiraj@gmail.com>\n"
 "Language-Team: Hindi <hi@li.org>\n"
@@ -457,6 +457,7 @@ msgid "Advanced power management"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:7
+#: po/samsung-tools-preferences-phc.glade.h:4
 msgid "CPU undervolting"
 msgstr ""
 
@@ -679,10 +680,6 @@ msgstr ""
 
 #: po/samsung-tools-preferences-phc.glade.h:3
 msgid "<b>New VIDs</b>"
-msgstr ""
-
-#: po/samsung-tools-preferences-phc.glade.h:4
-msgid "CPU Undervolt"
 msgstr ""
 
 #: po/samsung-tools-preferences-phc.glade.h:5
