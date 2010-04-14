@@ -1,3 +1,11 @@
+samsung-tools (0.2~ppa3~loms~lucid) lucid; urgency=low
+
+  * Set the 'No' button as default response in the warning dialogs
+    in the CPU undervolting section.
+  * Update french translation to latest version available on Launchpad. 
+
+ -- Fortunato Ventre (voRia) <vorione@gmail.com>  Wed, 14 Apr 2010 15:37:34 +0200
+
 samsung-tools (0.2~ppa2~loms~lucid) lucid; urgency=low
 
   * Do not fail wireless control if the 'rfkill' command is not
