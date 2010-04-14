@@ -443,6 +443,7 @@ class PhcDialog():
 			dialog = gtk.MessageDialog(self.mainDialog, gtk.DIALOG_MODAL, gtk.MESSAGE_QUESTION,
 									gtk.BUTTONS_YES_NO, message)
 			dialog.set_title(title)
+			dialog.set_default_response(gtk.RESPONSE_NO)
 			response = dialog.run()
 			dialog.destroy()
 			if response == gtk.RESPONSE_YES:
@@ -949,6 +950,7 @@ Are you sure you want to continue?"), "utf-8")
 								gtk.BUTTONS_YES_NO, None)
 		dialog.set_title(title)
 		dialog.set_markup(message)
+		dialog.set_default_response(gtk.RESPONSE_NO)
 		response = dialog.run()
 		dialog.destroy()
 		if response == gtk.RESPONSE_YES:
