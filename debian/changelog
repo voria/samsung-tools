@@ -1,3 +1,10 @@
+samsung-tools (0.2~ppa4~loms~lucid) lucid; urgency=low
+
+  * Set lower available VID for all spinbuttons.
+  * Update strings and translations.
+
+ -- Fortunato Ventre (voRia) <vorione@gmail.com>  Thu, 15 Apr 2010 22:10:15 +0200
+
 samsung-tools (0.2~ppa3~loms~lucid) lucid; urgency=low
 
   * Set the 'No' button as default response in the warning dialogs
