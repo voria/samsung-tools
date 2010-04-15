@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-04-15 14:11+0200\n"
-"PO-Revision-Date: 2010-04-14 12:47+0000\n"
+"PO-Revision-Date: 2010-04-15 18:47+0000\n"
 "Last-Translator: Lionel BASTET <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-04-14 13:28+0000\n"
+"X-Launchpad-Export-Date: 2010-04-15 20:08+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: backends/session/util/locales.py:25 samsung-tools-preferences.py:487
@@ -361,7 +361,8 @@ msgstr "Appliquer les nouveaux VID processeur?"
 
 #: samsung-tools-preferences.py:664
 msgid "Install the 'laptop mode tools' package to configure these options"
-msgstr "Installer le paquet \"laptop mode tools\" pour configurer ces options."
+msgstr ""
+"Installer le paquet \"laptop mode tools\" pour configurer ces options."
 
 #: samsung-tools-preferences.py:675
 msgid "You need a PHC enabled kernel to use this feature"
@@ -540,7 +541,7 @@ msgstr "Sous-volter le processeur pour économiser de l'énergie"
 
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:2
 msgid "Swap control:"
-msgstr ""
+msgstr "Contrôle du swap:"
 
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:3
 msgid ""
@@ -560,7 +561,6 @@ msgstr ""
 "par défaut est fixée à 60."
 
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:4
-#, fuzzy
 msgid ""
 "This option controls how aggressively the kernel swaps memory pages. Higher "
 "values increase agressiveness, lower values descrease aggressiveness. In "
@@ -568,14 +568,14 @@ msgid ""
 "bad results on power consumption and disk performance. Set a low value if "
 "you usually have plenty of unused RAM. The default value is 60."
 msgstr ""
-"La variable de réglage du swap contrôle avec quelle \"agressivité\" le noyau "
-"gère les swaps.Les valeurs hautes de cette variable augmentent l'agressivité "
-"et les valeurs basses la diminuent.En d'autres termes, plus la variable de "
-"réglage du swap est élevée, plus le système réalisera de swaps, avec de "
-"mauvais résultats pour la consommation d'énergie et pour les performances du "
-"disque dur.Fixez une valeur de réglage basse si le système dispose "
-"habituellement de beaucoup de mémoire vive inutilisée.La valeur de réglage "
-"par défaut est fixée à 60."
+"Cette option contrôle avec quelle \"agressivité\" le noyau gère les swaps "
+"entre la mémoire vive et le disque dur.Les valeurs hautes augmentent "
+"l'agressivité et les valeurs basses la diminuent.En d'autres termes, plus la "
+"valeur de réglage du swap est élevée, plus le système réalisera de swaps, "
+"avec de mauvais résultats pour la consommation d'énergie et pour les "
+"performances du disque dur.Fixez une valeur de réglage basse si le système "
+"dispose habituellement de beaucoup de mémoire vive inutilisée.La valeur de "
+"réglage par défaut est fixée à 60."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:1
 msgid ""
@@ -666,7 +666,7 @@ msgid ""
 "link power management mode of Intel AHCI compliant SATA chipsets."
 msgstr ""
 "Si vous activez cette option, \"laptop mode tools\" activera automatiquement "
-"le mode de gestion d'énergie pour les chipsets Intel AHCI compatibles SATA."
+"le mode de gestion d'énergie pour les chipsets Intel SATA compatibles AHCI."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:18
 msgid ""
@@ -695,11 +695,11 @@ msgid ""
 "slower ADSL modem)."
 msgstr ""
 "Si vous activez cette option, la vitesse de la connexion Ethernet est "
-"limitée à 100Mbit.La différence de consommation d'énergie entre des "
-"connexions Ethernet à 1Gbit ou à 100Mbit est assez importante, donc ce "
-"réglage peut apporter des économies d'énergie (par exemple si vous utilisez "
-"seulement la liaison Ethernet pour vous connecter à un modem ADSL bien plus "
-"lent)."
+"limitée à 100 Mbits/s.La différence de consommation d'énergie entre des "
+"connexions Ethernet à 1 Gbits/s ou à 100 Mbits/s est assez importante, donc "
+"ce réglage peut apporter des économies d'énergie (par exemple si vous "
+"utilisez seulement la liaison Ethernet pour vous connecter à un modem ADSL "
+"bien plus lent)."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:21
 msgid ""
@@ -716,7 +716,7 @@ msgstr ""
 
 #: po/samsung-tools-preferences-phc.glade.h:1
 msgid "<b>Default VIDs</b>"
-msgstr "<b>VID processeur par défaut</b>"
+msgstr "<b>VIDs par défaut</b>"
 
 #: po/samsung-tools-preferences-phc.glade.h:2
 msgid "<b>Frequencies</b>"
@@ -724,32 +724,28 @@ msgstr "<b>Fréquences</b>"
 
 #: po/samsung-tools-preferences-phc.glade.h:3
 msgid "<b>New VIDs</b>"
-msgstr "<b>Nouveaux VID processeur</b>"
+msgstr "<b>Nouveaux VIDs</b>"
 
 #: po/samsung-tools-preferences-phc.glade.h:5
 msgid ""
 "Enable this option only if the new VIDs are tested and safe, otherwise the "
 "machine might be no more bootable!"
 msgstr ""
-"Activez cette option seulement si les nouveaux VID processeur sont testés et "
-"sûrs, sinon la machine pourrait ne pas démarrer!"
+"Activez cette option seulement si les nouveaux VIDs sont testés et sûrs, "
+"sinon la machine pourrait ne pas démarrer!"
 
 #: po/samsung-tools-preferences-phc.glade.h:6
 msgid "Note: the new VIDs will be applied when this window will be closed."
 msgstr ""
-"Note: les nouveaux VID processeur seront appliqués quand cette fenêtre sera "
-"fermée."
+"Note: les nouveaux VIDs seront appliqués quand cette fenêtre sera fermée."
 
 #: po/samsung-tools-preferences-phc.glade.h:7
 msgid "Set the new VIDs automatically at boot"
-msgstr "Fixer automatiquement les nouveaux VID processeur au démarrage."
+msgstr "Fixer automatiquement les nouveaux VIDs au démarrage."
 
 #: po/samsung-tools-session-service.desktop.in.h:1
 msgid "Start the session service"
 msgstr "Lancer le service de session"
-
-#~ msgid "Swappiness:"
-#~ msgstr "Variable de réglage du swap (\"swappiness\")"
 
 #~ msgid "Fan mode changed: Normal"
 #~ msgstr "Changement de mode ventilateur: Normal"
@@ -779,8 +775,8 @@ msgstr "Lancer le service de session"
 #~ "If enabled, the status of all devices will be restored after a suspend, "
 #~ "hibernate, reboot cycle"
 #~ msgstr ""
-#~ "Si activé, l'état de tous les périphériques sera restauré après une mise "
-#~ "en veille, une hibernation ou un redémarrage"
+#~ "Si activé, l'état de tous les périphériques sera restauré après une mise en "
+#~ "veille, une hibernation ou un redémarrage"
 
 #~ msgid ""
 #~ "How the wireless is toggled.\n"
@@ -803,3 +799,6 @@ msgstr "Lancer le service de session"
 
 #~ msgid "Wireless initial status:"
 #~ msgstr "Etat initial du réseau sans fil:"
+
+#~ msgid "Swappiness:"
+#~ msgstr "Variable de réglage du swap (\"swappiness\")"
