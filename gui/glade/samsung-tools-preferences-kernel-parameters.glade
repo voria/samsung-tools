@@ -24,8 +24,8 @@
             <child>
               <object class="GtkLabel" id="swappinessLabel">
                 <property name="visible">True</property>
-                <property name="tooltip_text" translatable="yes">Swappiness controls how aggressively the kernel swaps memory pages. Higher values increase agressiveness, lower values descrease aggressiveness. In other words, the higher is the value, the more the system will swap, with bad results on power consumption and disk performance. Set a low value if you usually have plenty of unused RAM. The default value is 60.</property>
-                <property name="label" translatable="yes">Swappiness:</property>
+                <property name="tooltip_text" translatable="yes">This option controls how aggressively the kernel swaps memory pages. Higher values increase agressiveness, lower values descrease aggressiveness. In other words, the higher is the value, the more the system will swap, with bad results on power consumption and disk performance. Set a low value if you usually have plenty of unused RAM. The default value is 60.</property>
+                <property name="label" translatable="yes">Swap control:</property>
               </object>
               <packing>
                 <property name="x_options"></property>

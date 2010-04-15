@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-13 17:12+0200\n"
+"POT-Creation-Date: 2010-04-15 14:11+0200\n"
 "PO-Revision-Date: 2010-04-14 12:47+0000\n"
 "Last-Translator: Lionel BASTET <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2010-04-14 13:28+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
-#: backends/session/util/locales.py:25 samsung-tools-preferences.py:485
+#: backends/session/util/locales.py:25 samsung-tools-preferences.py:487
 msgid "Backlight"
 msgstr "Rétroéclairage"
 
@@ -49,7 +49,7 @@ msgstr "Le rétroéclairage ne peut être désactivé"
 msgid "Backlight cannot be toggled"
 msgstr "Changement d'état du rétroéclairage impossible"
 
-#: backends/session/util/locales.py:34 samsung-tools-preferences.py:494
+#: backends/session/util/locales.py:34 samsung-tools-preferences.py:496
 #: po/samsung-tools-applet.glade.h:1
 msgid "Bluetooth"
 msgstr "Bluetooth"
@@ -86,7 +86,7 @@ msgstr "Bluetooth: changement d'état impossible"
 msgid "Bluetooth control is not available"
 msgstr "Contrôle du Bluetooth non disponible"
 
-#: backends/session/util/locales.py:44 samsung-tools-preferences.py:503
+#: backends/session/util/locales.py:44 samsung-tools-preferences.py:505
 msgid "CPU fan"
 msgstr "Ventilateur processeur"
 
@@ -118,7 +118,7 @@ msgstr "Ne peut trouver le mode du ventilateur"
 msgid "CPU fan control is not available"
 msgstr "Le contrôle du ventilateur processeur n'est pas disponible"
 
-#: backends/session/util/locales.py:53 samsung-tools-preferences.py:512
+#: backends/session/util/locales.py:53 samsung-tools-preferences.py:514
 #: po/samsung-tools-applet.glade.h:7
 msgid "Webcam"
 msgstr "Webcam"
@@ -155,7 +155,7 @@ msgstr "Changement d'état de la webcam impossible"
 msgid "Webcam control is not available"
 msgstr "Contrôle de la webcam non disponible"
 
-#: backends/session/util/locales.py:63 samsung-tools-preferences.py:521
+#: backends/session/util/locales.py:63 samsung-tools-preferences.py:523
 #: po/samsung-tools-applet.glade.h:8
 msgid "Wireless"
 msgstr "Réseau sans fil"
@@ -304,7 +304,7 @@ msgstr " - Désactiver le Bluetooth, la webcam et le réseau sans fil:"
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Pour plus d'informations, visitez le forum \"Linux On My Samsung\":"
 
-#: samsung-tools.py:515 samsung-tools-preferences.py:982
+#: samsung-tools.py:515 samsung-tools-preferences.py:985
 msgid "Released under GPLv3 license"
 msgstr "Publié sous licence GPLv3"
 
@@ -345,40 +345,39 @@ msgid "None"
 msgstr "Aucun"
 
 #: samsung-tools-preferences.py:226 samsung-tools-preferences.py:328
-#: samsung-tools-preferences.py:417 samsung-tools-preferences.py:429
-#: samsung-tools-preferences.py:704 samsung-tools-preferences.py:716
-#: samsung-tools-preferences.py:728
+#: samsung-tools-preferences.py:418 samsung-tools-preferences.py:430
+#: samsung-tools-preferences.py:706 samsung-tools-preferences.py:718
+#: samsung-tools-preferences.py:730
 msgid "Unable to connect to system service!"
 msgstr "Impossible de se connecter au service système!"
 
-#: samsung-tools-preferences.py:441
+#: samsung-tools-preferences.py:442
 msgid "Confirm"
 msgstr "Confirmer"
 
-#: samsung-tools-preferences.py:442
+#: samsung-tools-preferences.py:443
 msgid "Apply the new VIDs?"
 msgstr "Appliquer les nouveaux VID processeur?"
 
-#: samsung-tools-preferences.py:662
+#: samsung-tools-preferences.py:664
 msgid "Install the 'laptop mode tools' package to configure these options"
-msgstr ""
-"Installer le paquet \"laptop mode tools\" pour configurer ces options."
+msgstr "Installer le paquet \"laptop mode tools\" pour configurer ces options."
 
-#: samsung-tools-preferences.py:673
+#: samsung-tools-preferences.py:675
 msgid "You need a PHC enabled kernel to use this feature"
 msgstr ""
 "Pour utiliser cette caractéristique, un noyau avec la fonctionnalité PHC "
 "implémentée est nécessaire."
 
-#: samsung-tools-preferences.py:692
+#: samsung-tools-preferences.py:694
 msgid "Unable to connect to session service!"
 msgstr "Impossible de se connecter au service de session!"
 
-#: samsung-tools-preferences.py:943
+#: samsung-tools-preferences.py:945
 msgid "Caution!"
 msgstr "Attention !"
 
-#: samsung-tools-preferences.py:944
+#: samsung-tools-preferences.py:946
 msgid ""
 "CPU undervolting can lead to significant gains in terms of power energy "
 "saving, however <b>IT IS A RISKY PRACTICE</b> that might result in "
@@ -540,6 +539,10 @@ msgid "Undervolt the CPU in order to save energy"
 msgstr "Sous-volter le processeur pour économiser de l'énergie"
 
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:2
+msgid "Swap control:"
+msgstr ""
+
+#: po/samsung-tools-preferences-kernel-parameters.glade.h:3
 msgid ""
 "Swappiness controls how aggressively the kernel swaps memory pages. Higher "
 "values increase agressiveness, lower values descrease aggressiveness. In "
@@ -556,9 +559,23 @@ msgstr ""
 "habituellement de beaucoup de mémoire vive inutilisée.La valeur de réglage "
 "par défaut est fixée à 60."
 
-#: po/samsung-tools-preferences-kernel-parameters.glade.h:3
-msgid "Swappiness:"
-msgstr "Variable de réglage du swap (\"swappiness\")"
+#: po/samsung-tools-preferences-kernel-parameters.glade.h:4
+#, fuzzy
+msgid ""
+"This option controls how aggressively the kernel swaps memory pages. Higher "
+"values increase agressiveness, lower values descrease aggressiveness. In "
+"other words, the higher is the value, the more the system will swap, with "
+"bad results on power consumption and disk performance. Set a low value if "
+"you usually have plenty of unused RAM. The default value is 60."
+msgstr ""
+"La variable de réglage du swap contrôle avec quelle \"agressivité\" le noyau "
+"gère les swaps.Les valeurs hautes de cette variable augmentent l'agressivité "
+"et les valeurs basses la diminuent.En d'autres termes, plus la variable de "
+"réglage du swap est élevée, plus le système réalisera de swaps, avec de "
+"mauvais résultats pour la consommation d'énergie et pour les performances du "
+"disque dur.Fixez une valeur de réglage basse si le système dispose "
+"habituellement de beaucoup de mémoire vive inutilisée.La valeur de réglage "
+"par défaut est fixée à 60."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:1
 msgid ""
@@ -731,6 +748,9 @@ msgstr "Fixer automatiquement les nouveaux VID processeur au démarrage."
 msgid "Start the session service"
 msgstr "Lancer le service de session"
 
+#~ msgid "Swappiness:"
+#~ msgstr "Variable de réglage du swap (\"swappiness\")"
+
 #~ msgid "Fan mode changed: Normal"
 #~ msgstr "Changement de mode ventilateur: Normal"
 
@@ -759,8 +779,8 @@ msgstr "Lancer le service de session"
 #~ "If enabled, the status of all devices will be restored after a suspend, "
 #~ "hibernate, reboot cycle"
 #~ msgstr ""
-#~ "Si activé, l'état de tous les périphériques sera restauré après une mise en "
-#~ "veille, une hibernation ou un redémarrage"
+#~ "Si activé, l'état de tous les périphériques sera restauré après une mise "
+#~ "en veille, une hibernation ou un redémarrage"
 
 #~ msgid ""
 #~ "How the wireless is toggled.\n"

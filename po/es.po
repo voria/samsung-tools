@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-13 17:12+0200\n"
+"POT-Creation-Date: 2010-04-15 14:11+0200\n"
 "PO-Revision-Date: 2010-04-13 12:36+0000\n"
 "Last-Translator: ironfisher <dgvalde@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2010-04-13 14:32+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
-#: backends/session/util/locales.py:25 samsung-tools-preferences.py:485
+#: backends/session/util/locales.py:25 samsung-tools-preferences.py:487
 msgid "Backlight"
 msgstr "Luz de fondo"
 
@@ -49,7 +49,7 @@ msgstr "La luz de fondo no puede deshabilitarse"
 msgid "Backlight cannot be toggled"
 msgstr "La luz de fondo no puede ser conmutada"
 
-#: backends/session/util/locales.py:34 samsung-tools-preferences.py:494
+#: backends/session/util/locales.py:34 samsung-tools-preferences.py:496
 #: po/samsung-tools-applet.glade.h:1
 msgid "Bluetooth"
 msgstr "Bluetooth"
@@ -86,7 +86,7 @@ msgstr "Bluetooth no puede ser conmutado"
 msgid "Bluetooth control is not available"
 msgstr "El control de bluetooth no está disponible"
 
-#: backends/session/util/locales.py:44 samsung-tools-preferences.py:503
+#: backends/session/util/locales.py:44 samsung-tools-preferences.py:505
 msgid "CPU fan"
 msgstr "Ventilador de la CPU"
 
@@ -118,7 +118,7 @@ msgstr "No se puede obtener el modo del ventilador"
 msgid "CPU fan control is not available"
 msgstr "El control del ventilador de la CPU no está disponible"
 
-#: backends/session/util/locales.py:53 samsung-tools-preferences.py:512
+#: backends/session/util/locales.py:53 samsung-tools-preferences.py:514
 #: po/samsung-tools-applet.glade.h:7
 msgid "Webcam"
 msgstr "Cámara web"
@@ -155,7 +155,7 @@ msgstr "La cámara web no puede ser conmutada"
 msgid "Webcam control is not available"
 msgstr "El control de la cámara web no está disponible"
 
-#: backends/session/util/locales.py:63 samsung-tools-preferences.py:521
+#: backends/session/util/locales.py:63 samsung-tools-preferences.py:523
 #: po/samsung-tools-applet.glade.h:8
 msgid "Wireless"
 msgstr "Redes inalámbricas"
@@ -302,7 +302,7 @@ msgstr " - Deshabilita bluetooth, la cámara web y las redes inalámbricas:"
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Para mas información visita el foro \"Linux On My Samsung\":"
 
-#: samsung-tools.py:515 samsung-tools-preferences.py:982
+#: samsung-tools.py:515 samsung-tools-preferences.py:985
 msgid "Released under GPLv3 license"
 msgstr "Liberado bajo licencia GPLv3"
 
@@ -343,37 +343,37 @@ msgid "None"
 msgstr "Ninguno"
 
 #: samsung-tools-preferences.py:226 samsung-tools-preferences.py:328
-#: samsung-tools-preferences.py:417 samsung-tools-preferences.py:429
-#: samsung-tools-preferences.py:704 samsung-tools-preferences.py:716
-#: samsung-tools-preferences.py:728
+#: samsung-tools-preferences.py:418 samsung-tools-preferences.py:430
+#: samsung-tools-preferences.py:706 samsung-tools-preferences.py:718
+#: samsung-tools-preferences.py:730
 msgid "Unable to connect to system service!"
 msgstr "¡Incapaz de conectar con el servicio de sistema!"
 
-#: samsung-tools-preferences.py:441
+#: samsung-tools-preferences.py:442
 msgid "Confirm"
 msgstr ""
 
-#: samsung-tools-preferences.py:442
+#: samsung-tools-preferences.py:443
 msgid "Apply the new VIDs?"
 msgstr ""
 
-#: samsung-tools-preferences.py:662
+#: samsung-tools-preferences.py:664
 msgid "Install the 'laptop mode tools' package to configure these options"
 msgstr "Instala el paquete 'laptop mode tools' para configurar estas opciones"
 
-#: samsung-tools-preferences.py:673
+#: samsung-tools-preferences.py:675
 msgid "You need a PHC enabled kernel to use this feature"
 msgstr ""
 
-#: samsung-tools-preferences.py:692
+#: samsung-tools-preferences.py:694
 msgid "Unable to connect to session service!"
 msgstr "¡Incapaz de conectar con el servicio de sesión!"
 
-#: samsung-tools-preferences.py:943
+#: samsung-tools-preferences.py:945
 msgid "Caution!"
 msgstr ""
 
-#: samsung-tools-preferences.py:944
+#: samsung-tools-preferences.py:946
 msgid ""
 "CPU undervolting can lead to significant gains in terms of power energy "
 "saving, however <b>IT IS A RISKY PRACTICE</b> that might result in "
@@ -529,6 +529,10 @@ msgid "Undervolt the CPU in order to save energy"
 msgstr ""
 
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:2
+msgid "Swap control:"
+msgstr ""
+
+#: po/samsung-tools-preferences-kernel-parameters.glade.h:3
 msgid ""
 "Swappiness controls how aggressively the kernel swaps memory pages. Higher "
 "values increase agressiveness, lower values descrease aggressiveness. In "
@@ -544,9 +548,22 @@ msgstr ""
 "bajo si normalmente tiene mucha memoria RAM sin usar. El valor por defecto "
 "es 60."
 
-#: po/samsung-tools-preferences-kernel-parameters.glade.h:3
-msgid "Swappiness:"
-msgstr "Grado de intercambio:"
+#: po/samsung-tools-preferences-kernel-parameters.glade.h:4
+#, fuzzy
+msgid ""
+"This option controls how aggressively the kernel swaps memory pages. Higher "
+"values increase agressiveness, lower values descrease aggressiveness. In "
+"other words, the higher is the value, the more the system will swap, with "
+"bad results on power consumption and disk performance. Set a low value if "
+"you usually have plenty of unused RAM. The default value is 60."
+msgstr ""
+"El grado de intercambio controla como de agresivo debe ser el kernel al "
+"intercambiar páginas de memoria. Valores altos incrementarán esta "
+"agresividad mientras que valores bajos la decrementarán. En otras palabras, "
+"cuanto mayor sea el valor mas intercambios hará el sistema con malos "
+"resultados sobre consumo de potencia y rendimiento del disco. Use un valor "
+"bajo si normalmente tiene mucha memoria RAM sin usar. El valor por defecto "
+"es 60."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:1
 msgid ""
@@ -712,6 +729,9 @@ msgstr ""
 #: po/samsung-tools-session-service.desktop.in.h:1
 msgid "Start the session service"
 msgstr "Inicia el servicio de sesión"
+
+#~ msgid "Swappiness:"
+#~ msgstr "Grado de intercambio:"
 
 #~ msgid "Bluetooth initial status:"
 #~ msgstr "Estado inicial de bluetooth:"

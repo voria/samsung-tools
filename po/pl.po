@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-13 17:12+0200\n"
+"POT-Creation-Date: 2010-04-15 14:11+0200\n"
 "PO-Revision-Date: 2010-03-29 09:30+0000\n"
 "Last-Translator: Krzysztof Saja <Unknown>\n"
 "Language-Team: Polish <pl@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2010-04-09 13:44+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
-#: backends/session/util/locales.py:25 samsung-tools-preferences.py:485
+#: backends/session/util/locales.py:25 samsung-tools-preferences.py:487
 msgid "Backlight"
 msgstr "Podświetlenie"
 
@@ -49,7 +49,7 @@ msgstr "Podświetlenie nie może być wyłączone"
 msgid "Backlight cannot be toggled"
 msgstr "NIe można zmienić stanu podświetlenia"
 
-#: backends/session/util/locales.py:34 samsung-tools-preferences.py:494
+#: backends/session/util/locales.py:34 samsung-tools-preferences.py:496
 #: po/samsung-tools-applet.glade.h:1
 msgid "Bluetooth"
 msgstr "Bluetooth"
@@ -86,7 +86,7 @@ msgstr "Nie można zmienić stanu Bluetooth'a"
 msgid "Bluetooth control is not available"
 msgstr "Zarządzanie Bluetooth'em nie jest dostępne"
 
-#: backends/session/util/locales.py:44 samsung-tools-preferences.py:503
+#: backends/session/util/locales.py:44 samsung-tools-preferences.py:505
 #, fuzzy
 msgid "CPU fan"
 msgstr "Wentylator procesora"
@@ -120,7 +120,7 @@ msgstr "Nie można sprawdzić trybu wentylatora"
 msgid "CPU fan control is not available"
 msgstr "Zarządzanie kamerą internetową nie jest dostępne"
 
-#: backends/session/util/locales.py:53 samsung-tools-preferences.py:512
+#: backends/session/util/locales.py:53 samsung-tools-preferences.py:514
 #: po/samsung-tools-applet.glade.h:7
 msgid "Webcam"
 msgstr "Kamera internetowa"
@@ -157,7 +157,7 @@ msgstr "Nie można zmienić stanu kamery internetowej"
 msgid "Webcam control is not available"
 msgstr "Zarządzanie kamerą internetową nie jest dostępne"
 
-#: backends/session/util/locales.py:63 samsung-tools-preferences.py:521
+#: backends/session/util/locales.py:63 samsung-tools-preferences.py:523
 #: po/samsung-tools-applet.glade.h:8
 msgid "Wireless"
 msgstr "Sieć bezprzewodowa"
@@ -300,7 +300,7 @@ msgstr " Wyłącz Bluetooth'a, kamerę internetową i sieć bezprzewodową:"
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Po więcej informacji odwiedź forum 'Linux On My Samsung' :"
 
-#: samsung-tools.py:515 samsung-tools-preferences.py:982
+#: samsung-tools.py:515 samsung-tools-preferences.py:985
 msgid "Released under GPLv3 license"
 msgstr "Wydane na licencji GPLv3"
 
@@ -341,37 +341,37 @@ msgid "None"
 msgstr "Brak"
 
 #: samsung-tools-preferences.py:226 samsung-tools-preferences.py:328
-#: samsung-tools-preferences.py:417 samsung-tools-preferences.py:429
-#: samsung-tools-preferences.py:704 samsung-tools-preferences.py:716
-#: samsung-tools-preferences.py:728
+#: samsung-tools-preferences.py:418 samsung-tools-preferences.py:430
+#: samsung-tools-preferences.py:706 samsung-tools-preferences.py:718
+#: samsung-tools-preferences.py:730
 msgid "Unable to connect to system service!"
 msgstr "NIe da się połączyć z usługą systemową!"
 
-#: samsung-tools-preferences.py:441
+#: samsung-tools-preferences.py:442
 msgid "Confirm"
 msgstr ""
 
-#: samsung-tools-preferences.py:442
+#: samsung-tools-preferences.py:443
 msgid "Apply the new VIDs?"
 msgstr ""
 
-#: samsung-tools-preferences.py:662
+#: samsung-tools-preferences.py:664
 msgid "Install the 'laptop mode tools' package to configure these options"
 msgstr ""
 
-#: samsung-tools-preferences.py:673
+#: samsung-tools-preferences.py:675
 msgid "You need a PHC enabled kernel to use this feature"
 msgstr ""
 
-#: samsung-tools-preferences.py:692
+#: samsung-tools-preferences.py:694
 msgid "Unable to connect to session service!"
 msgstr "Nie można połączyć z usługą sesji!"
 
-#: samsung-tools-preferences.py:943
+#: samsung-tools-preferences.py:945
 msgid "Caution!"
 msgstr ""
 
-#: samsung-tools-preferences.py:944
+#: samsung-tools-preferences.py:946
 msgid ""
 "CPU undervolting can lead to significant gains in terms of power energy "
 "saving, however <b>IT IS A RISKY PRACTICE</b> that might result in "
@@ -528,6 +528,10 @@ msgid "Undervolt the CPU in order to save energy"
 msgstr ""
 
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:2
+msgid "Swap control:"
+msgstr ""
+
+#: po/samsung-tools-preferences-kernel-parameters.glade.h:3
 msgid ""
 "Swappiness controls how aggressively the kernel swaps memory pages. Higher "
 "values increase agressiveness, lower values descrease aggressiveness. In "
@@ -536,8 +540,13 @@ msgid ""
 "you usually have plenty of unused RAM. The default value is 60."
 msgstr ""
 
-#: po/samsung-tools-preferences-kernel-parameters.glade.h:3
-msgid "Swappiness:"
+#: po/samsung-tools-preferences-kernel-parameters.glade.h:4
+msgid ""
+"This option controls how aggressively the kernel swaps memory pages. Higher "
+"values increase agressiveness, lower values descrease aggressiveness. In "
+"other words, the higher is the value, the more the system will swap, with "
+"bad results on power consumption and disk performance. Set a low value if "
+"you usually have plenty of unused RAM. The default value is 60."
 msgstr ""
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:1
