@@ -393,13 +393,14 @@ class PhcDialog():
 		defaultvids = conn.GetDefaultVids().split()
 		currentvids = conn.GetCurrentVids().split()
 		self.freqsnum = len(frequencies) # How many frequencies/vids we have?
+		minvid = int(defaultvids[self.freqsnum - 1])
 		i = 0
-		
 		while i < self.freqsnum:
 			self.freqLabels[i].set_text(frequencies[i] + " MHz")
 			self.freqLabels[i].show()
 			self.defaultVidLabels[i].set_text(defaultvids[i])
 			self.defaultVidLabels[i].show()
+			self.vidAdjustments[i].set_lower(minvid)
 			self.vidAdjustments[i].set_upper(int(defaultvids[i]))
 			self.vidSpinbuttons[i].set_value(int(currentvids[i]))
 			self.vidSpinbuttons[i].show()
