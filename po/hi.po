@@ -14,43 +14,36 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-04-09 13:44+0000\n"
+"X-Launchpad-Export-Date: 2010-04-16 14:00+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: backends/session/util/locales.py:25 samsung-tools-preferences.py:487
-#, fuzzy
 msgid "Backlight"
-msgstr "बेकलाईट:"
+msgstr ""
 
 #: backends/session/util/locales.py:26
-#, fuzzy
 msgid "Backlight is enabled"
-msgstr "वायरलेस संचार शुरू है"
+msgstr ""
 
 #: backends/session/util/locales.py:27
-#, fuzzy
 msgid "Backlight is disabled"
-msgstr "वायरलेस संचार बन्द है"
+msgstr ""
 
 #: backends/session/util/locales.py:28
-#, fuzzy
 msgid "Backlight enabled"
-msgstr "बेकलाईट:"
+msgstr ""
 
 #: backends/session/util/locales.py:29
-#, fuzzy
 msgid "Backlight disabled"
-msgstr "बेकलाईट:"
+msgstr ""
 
 #: backends/session/util/locales.py:30
-#, fuzzy
 msgid "Backlight cannot be enabled"
-msgstr "वायरलेस शुरू नही किया जा सकता"
+msgstr ""
 
 #: backends/session/util/locales.py:31
-#, fuzzy
 msgid "Backlight cannot be disabled"
-msgstr "वायरलेस बन्द नही किया जा सकता"
+msgstr ""
 
 #: backends/session/util/locales.py:32
 msgid "Backlight cannot be toggled"
@@ -58,49 +51,40 @@ msgstr ""
 
 #: backends/session/util/locales.py:34 samsung-tools-preferences.py:496
 #: po/samsung-tools-applet.glade.h:1
-#, fuzzy
 msgid "Bluetooth"
-msgstr "बलूटुथ:"
+msgstr ""
 
 #: backends/session/util/locales.py:35
-#, fuzzy
 msgid "Bluetooth is enabled"
-msgstr "वायरलेस संचार शुरू है"
+msgstr ""
 
 #: backends/session/util/locales.py:36
-#, fuzzy
 msgid "Bluetooth is disabled"
-msgstr "वायरलेस संचार बन्द है"
+msgstr ""
 
 #: backends/session/util/locales.py:37
-#, fuzzy
 msgid "Bluetooth enabled"
-msgstr "बलूटुथ:"
+msgstr ""
 
 #: backends/session/util/locales.py:38
-#, fuzzy
 msgid "Bluetooth disabled"
-msgstr "बलूटुथ:"
+msgstr ""
 
 #: backends/session/util/locales.py:39
-#, fuzzy
 msgid "Bluetooth cannot be enabled"
-msgstr "वायरलेस शुरू नही किया जा सकता"
+msgstr ""
 
 #: backends/session/util/locales.py:40
-#, fuzzy
 msgid "Bluetooth cannot be disabled"
-msgstr "वायरलेस बन्द नही किया जा सकता"
+msgstr ""
 
 #: backends/session/util/locales.py:41
-#, fuzzy
 msgid "Bluetooth cannot be toggled"
-msgstr "वायरलेस शुरू नही किया जा सकता"
+msgstr ""
 
 #: backends/session/util/locales.py:42
-#, fuzzy
 msgid "Bluetooth control is not available"
-msgstr "वायरलेस नियंत्रित नही किया जा सकता"
+msgstr ""
 
 #: backends/session/util/locales.py:44 samsung-tools-preferences.py:505
 msgid "CPU fan"
@@ -131,9 +115,8 @@ msgid "Cannot get fan mode"
 msgstr ""
 
 #: backends/session/util/locales.py:51
-#, fuzzy
 msgid "CPU fan control is not available"
-msgstr "वायरलेस नियंत्रित नही किया जा सकता"
+msgstr ""
 
 #: backends/session/util/locales.py:53 samsung-tools-preferences.py:514
 #: po/samsung-tools-applet.glade.h:7
@@ -141,44 +124,36 @@ msgid "Webcam"
 msgstr "वेबकैम"
 
 #: backends/session/util/locales.py:54
-#, fuzzy
 msgid "Webcam is enabled"
-msgstr "वायरलेस संचार शुरू है"
+msgstr ""
 
 #: backends/session/util/locales.py:55
-#, fuzzy
 msgid "Webcam is disabled"
-msgstr "वायरलेस संचार बन्द है"
+msgstr ""
 
 #: backends/session/util/locales.py:56
-#, fuzzy
 msgid "Webcam enabled"
-msgstr "वायरलेस संचार शुरू"
+msgstr ""
 
 #: backends/session/util/locales.py:57
-#, fuzzy
 msgid "Webcam disabled"
-msgstr "वायरलेस संचार बन्द"
+msgstr ""
 
 #: backends/session/util/locales.py:58
-#, fuzzy
 msgid "Webcam cannot be enabled"
-msgstr "वायरलेस शुरू नही किया जा सकता"
+msgstr ""
 
 #: backends/session/util/locales.py:59
-#, fuzzy
 msgid "Webcam cannot be disabled"
-msgstr "वायरलेस बन्द नही किया जा सकता"
+msgstr ""
 
 #: backends/session/util/locales.py:60
-#, fuzzy
 msgid "Webcam cannot be toggled"
-msgstr "वायरलेस शुरू नही किया जा सकता"
+msgstr ""
 
 #: backends/session/util/locales.py:61
-#, fuzzy
 msgid "Webcam control is not available"
-msgstr "वायरलेस नियंत्रित नही किया जा सकता"
+msgstr ""
 
 #: backends/session/util/locales.py:63 samsung-tools-preferences.py:523
 #: po/samsung-tools-applet.glade.h:8
@@ -210,9 +185,8 @@ msgid "Wireless cannot be disabled"
 msgstr "वायरलेस बन्द नही किया जा सकता"
 
 #: backends/session/util/locales.py:70
-#, fuzzy
 msgid "Wireless cannot be toggled"
-msgstr "वायरलेस शुरू नही किया जा सकता"
+msgstr ""
 
 #: backends/session/util/locales.py:71
 msgid "Wireless control is not available"
@@ -227,19 +201,16 @@ msgid "Bluetooth control: unable to connect to session service!"
 msgstr "बलूटुथ नियंत्रण: सैशन सर्विस से संंपर्क नही!"
 
 #: samsung-tools.py:199
-#, fuzzy
 msgid "CPU fan control: unable to connect to session service!"
-msgstr "बेकलाईट नियंत्रण: सैशन सर्विस से संंपर्क नही!"
+msgstr ""
 
 #: samsung-tools.py:329
-#, fuzzy
 msgid "Webcam control: unable to connect to session service!"
-msgstr "बेकलाईट नियंत्रण: सैशन सर्विस से संंपर्क नही!"
+msgstr ""
 
 #: samsung-tools.py:408
-#, fuzzy
 msgid "Wireless control: unable to connect to session service!"
-msgstr "बलूटुथ नियंत्रण: सैशन सर्विस से संंपर्क नही!"
+msgstr ""
 
 #: samsung-tools.py:473
 msgid "Samsung Tools - Command Line Utility"
@@ -273,19 +244,16 @@ msgid "CPU fan:"
 msgstr ""
 
 #: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:35
-#, fuzzy
 msgid "Webcam:"
-msgstr "वेबकैम"
+msgstr ""
 
 #: samsung-tools.py:489 po/samsung-tools-preferences.glade.h:36
-#, fuzzy
 msgid "Wireless:"
-msgstr "वायरलेस"
+msgstr ""
 
 #: samsung-tools.py:493
-#, fuzzy
 msgid "Other options:"
-msgstr "विकल्प"
+msgstr ""
 
 #: samsung-tools.py:494
 msgid "Show status for all devices."
@@ -312,9 +280,8 @@ msgid "Examples of use:"
 msgstr ""
 
 #: samsung-tools.py:501
-#, fuzzy
 msgid " - Toggle backlight:"
-msgstr "बेकलाईट:"
+msgstr ""
 
 #: samsung-tools.py:504
 msgid " - Toggle wireless and set CPU fan mode to 'silent':"
@@ -372,9 +339,8 @@ msgstr ""
 #: samsung-tools-preferences.py:418 samsung-tools-preferences.py:430
 #: samsung-tools-preferences.py:706 samsung-tools-preferences.py:718
 #: samsung-tools-preferences.py:730
-#, fuzzy
 msgid "Unable to connect to system service!"
-msgstr "बेकलाईट नियंत्रण: सैशन सर्विस से संंपर्क नही!"
+msgstr ""
 
 #: samsung-tools-preferences.py:442
 msgid "Confirm"
@@ -393,9 +359,8 @@ msgid "You need a PHC enabled kernel to use this feature"
 msgstr ""
 
 #: samsung-tools-preferences.py:694
-#, fuzzy
 msgid "Unable to connect to session service!"
-msgstr "बेकलाईट नियंत्रण: सैशन सर्विस से संंपर्क नही!"
+msgstr ""
 
 #: samsung-tools-preferences.py:945
 msgid "Caution!"

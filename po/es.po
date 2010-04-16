@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-04-15 14:11+0200\n"
-"PO-Revision-Date: 2010-04-13 12:36+0000\n"
+"PO-Revision-Date: 2010-04-16 09:20+0000\n"
 "Last-Translator: ironfisher <dgvalde@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-04-13 14:32+0000\n"
+"X-Launchpad-Export-Date: 2010-04-16 14:00+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: backends/session/util/locales.py:25 samsung-tools-preferences.py:487
@@ -209,7 +209,8 @@ msgstr ""
 
 #: samsung-tools.py:329
 msgid "Webcam control: unable to connect to session service!"
-msgstr "Control de la cámara web: ¡Incapaz de conectar al servicio de sesión!"
+msgstr ""
+"Control de la cámara web: ¡Incapaz de conectar al servicio de sesión!"
 
 #: samsung-tools.py:408
 msgid "Wireless control: unable to connect to session service!"
@@ -351,19 +352,21 @@ msgstr "¡Incapaz de conectar con el servicio de sistema!"
 
 #: samsung-tools-preferences.py:442
 msgid "Confirm"
-msgstr ""
+msgstr "Confirmar"
 
 #: samsung-tools-preferences.py:443
 msgid "Apply the new VIDs?"
-msgstr ""
+msgstr "¿Aplicar las nuevas VIDs?"
 
 #: samsung-tools-preferences.py:664
 msgid "Install the 'laptop mode tools' package to configure these options"
-msgstr "Instala el paquete 'laptop mode tools' para configurar estas opciones"
+msgstr ""
+"Instala el paquete 'laptop mode tools' para configurar estas opciones"
 
 #: samsung-tools-preferences.py:675
 msgid "You need a PHC enabled kernel to use this feature"
 msgstr ""
+"Necesita un núcleo (kernel) PCH habilitado para usar esta característica"
 
 #: samsung-tools-preferences.py:694
 msgid "Unable to connect to session service!"
@@ -371,7 +374,7 @@ msgstr "¡Incapaz de conectar con el servicio de sesión!"
 
 #: samsung-tools-preferences.py:945
 msgid "Caution!"
-msgstr ""
+msgstr "¡Cuidado!"
 
 #: samsung-tools-preferences.py:946
 msgid ""
@@ -382,6 +385,12 @@ msgid ""
 "\n"
 "Are you sure you want to continue?"
 msgstr ""
+"Alimentar la CPU a menor voltaje puede conllevar una significante ganancia "
+"en términos de ahorro de energía, aún así <b> ES UN RIESGO PRÁCTICO</b> que "
+"puede resultar en una mal funcionamiento y una pérdida de datos. Por favor, "
+"asegúrese de saber lo que hace antes de usar estas opciones.\n"
+"\n"
+"¿Está seguro de que desea continuar?"
 
 #: po/samsung-tools-applet.glade.h:2
 msgid "CPU Fan"
@@ -431,7 +440,7 @@ msgstr "Administración avanzada de la potencia"
 #: po/samsung-tools-preferences.glade.h:7
 #: po/samsung-tools-preferences-phc.glade.h:4
 msgid "CPU undervolting"
-msgstr ""
+msgstr "Disminución en el voltaje de la CPU"
 
 #: po/samsung-tools-preferences.glade.h:8
 msgid "Click here to disable the hotkey"
@@ -526,11 +535,11 @@ msgstr "El estado inicial al encender el equipo para las redes inalámbricas"
 
 #: po/samsung-tools-preferences.glade.h:34
 msgid "Undervolt the CPU in order to save energy"
-msgstr ""
+msgstr "Disminuye en el voltaje en la CPU para ahorrar energía."
 
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:2
 msgid "Swap control:"
-msgstr ""
+msgstr "Control del intercambio (swap):"
 
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:3
 msgid ""
@@ -549,7 +558,6 @@ msgstr ""
 "es 60."
 
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:4
-#, fuzzy
 msgid ""
 "This option controls how aggressively the kernel swaps memory pages. Higher "
 "values increase agressiveness, lower values descrease aggressiveness. In "
@@ -557,13 +565,12 @@ msgid ""
 "bad results on power consumption and disk performance. Set a low value if "
 "you usually have plenty of unused RAM. The default value is 60."
 msgstr ""
-"El grado de intercambio controla como de agresivo debe ser el kernel al "
-"intercambiar páginas de memoria. Valores altos incrementarán esta "
-"agresividad mientras que valores bajos la decrementarán. En otras palabras, "
-"cuanto mayor sea el valor mas intercambios hará el sistema con malos "
-"resultados sobre consumo de potencia y rendimiento del disco. Use un valor "
-"bajo si normalmente tiene mucha memoria RAM sin usar. El valor por defecto "
-"es 60."
+"Esta opción controla cómo de agresivo ha de ser el núcleo (kernel) al "
+"intercambiar páginas de memoria. Valores altos incrementa esta agresividad "
+"mientras que valores bajos la decrementan. En otras palabras, cuanto mayor "
+"sea el valor mas intercambios hará el sistema, con malos resultados en el "
+"consumo de potencia y el rendimiento del disco. Use un valor bajo si "
+"normalmente dispone de mucha memoria RAM sin uso. El valor por defecto es 60."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:1
 msgid ""
@@ -702,36 +709,35 @@ msgstr ""
 
 #: po/samsung-tools-preferences-phc.glade.h:1
 msgid "<b>Default VIDs</b>"
-msgstr ""
+msgstr "<b>VIDs por defecto</b>"
 
 #: po/samsung-tools-preferences-phc.glade.h:2
 msgid "<b>Frequencies</b>"
-msgstr ""
+msgstr "<b>Frecuencias</b>"
 
 #: po/samsung-tools-preferences-phc.glade.h:3
 msgid "<b>New VIDs</b>"
-msgstr ""
+msgstr "<b>Nuevos VIDs</b>"
 
 #: po/samsung-tools-preferences-phc.glade.h:5
 msgid ""
 "Enable this option only if the new VIDs are tested and safe, otherwise the "
 "machine might be no more bootable!"
 msgstr ""
+"Habilite esta opción solo si los nuevos VIDs han sido probados y son "
+"seguros, de otro modo puede que la máquina ¡no sea reiniciable!"
 
 #: po/samsung-tools-preferences-phc.glade.h:6
 msgid "Note: the new VIDs will be applied when this window will be closed."
-msgstr ""
+msgstr "Nota: Los nuevos VIDs serán aplicados cuando esta ventana se cierre."
 
 #: po/samsung-tools-preferences-phc.glade.h:7
 msgid "Set the new VIDs automatically at boot"
-msgstr ""
+msgstr "Ajusta los automaticamente los nuevos VIDs al inicio"
 
 #: po/samsung-tools-session-service.desktop.in.h:1
 msgid "Start the session service"
 msgstr "Inicia el servicio de sesión"
-
-#~ msgid "Swappiness:"
-#~ msgstr "Grado de intercambio:"
 
 #~ msgid "Bluetooth initial status:"
 #~ msgstr "Estado inicial de bluetooth:"
@@ -753,8 +759,8 @@ msgstr "Inicia el servicio de sesión"
 #~ "\n"
 #~ "'iwconfig' - Usa el comando iwconfig.\n"
 #~ "'module' - Inserta/elimina el módulo kernel.\n"
-#~ "'esdm' - Usa la interfaz esdm: 'administador de sencilla disminución de "
-#~ "la velocidad'."
+#~ "'esdm' - Usa la interfaz esdm: 'administador de sencilla disminución de la "
+#~ "velocidad'."
 
 #~ msgid "Webcam initial status:"
 #~ msgstr "Estado inicial de la cámara web"
@@ -764,3 +770,6 @@ msgstr "Inicia el servicio de sesión"
 
 #~ msgid "Toggle method:"
 #~ msgstr "Método de conmutación:"
+
+#~ msgid "Swappiness:"
+#~ msgstr "Grado de intercambio:"

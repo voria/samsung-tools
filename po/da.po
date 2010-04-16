@@ -14,7 +14,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-04-09 13:44+0000\n"
+"X-Launchpad-Export-Date: 2010-04-16 14:00+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: backends/session/util/locales.py:25 samsung-tools-preferences.py:487
@@ -22,39 +22,32 @@ msgid "Backlight"
 msgstr ""
 
 #: backends/session/util/locales.py:26
-#, fuzzy
 msgid "Backlight is enabled"
-msgstr "Bluetooth er aktiveret"
+msgstr ""
 
 #: backends/session/util/locales.py:27
-#, fuzzy
 msgid "Backlight is disabled"
-msgstr "Bluetooth er slået fra"
+msgstr ""
 
 #: backends/session/util/locales.py:28
-#, fuzzy
 msgid "Backlight enabled"
-msgstr "Bluetooth er slået til"
+msgstr ""
 
 #: backends/session/util/locales.py:29
-#, fuzzy
 msgid "Backlight disabled"
-msgstr "Bluetooth er slået fra"
+msgstr ""
 
 #: backends/session/util/locales.py:30
-#, fuzzy
 msgid "Backlight cannot be enabled"
-msgstr "Bluetooth kan ikke blive slået til"
+msgstr ""
 
 #: backends/session/util/locales.py:31
-#, fuzzy
 msgid "Backlight cannot be disabled"
-msgstr "Bluetooth kan ikke blive slået fra"
+msgstr ""
 
 #: backends/session/util/locales.py:32
-#, fuzzy
 msgid "Backlight cannot be toggled"
-msgstr "Bluetooth kan ikke blive slået til"
+msgstr ""
 
 #: backends/session/util/locales.py:34 samsung-tools-preferences.py:496
 #: po/samsung-tools-applet.glade.h:1
@@ -86,14 +79,12 @@ msgid "Bluetooth cannot be disabled"
 msgstr "Bluetooth kan ikke blive slået fra"
 
 #: backends/session/util/locales.py:41
-#, fuzzy
 msgid "Bluetooth cannot be toggled"
-msgstr "Bluetooth kan ikke blive slået til"
+msgstr ""
 
 #: backends/session/util/locales.py:42
-#, fuzzy
 msgid "Bluetooth control is not available"
-msgstr "Bluetooth kan ikke blive slået fra"
+msgstr ""
 
 #: backends/session/util/locales.py:44 samsung-tools-preferences.py:505
 msgid "CPU fan"
@@ -133,34 +124,28 @@ msgid "Webcam"
 msgstr "Webkamera"
 
 #: backends/session/util/locales.py:54
-#, fuzzy
 msgid "Webcam is enabled"
-msgstr "Bluetooth er aktiveret"
+msgstr ""
 
 #: backends/session/util/locales.py:55
-#, fuzzy
 msgid "Webcam is disabled"
-msgstr "Bluetooth er slået fra"
+msgstr ""
 
 #: backends/session/util/locales.py:56
-#, fuzzy
 msgid "Webcam enabled"
-msgstr "Webkamera"
+msgstr ""
 
 #: backends/session/util/locales.py:57
-#, fuzzy
 msgid "Webcam disabled"
-msgstr "Slået fra"
+msgstr ""
 
 #: backends/session/util/locales.py:58
-#, fuzzy
 msgid "Webcam cannot be enabled"
-msgstr "Bluetooth kan ikke blive slået til"
+msgstr ""
 
 #: backends/session/util/locales.py:59
-#, fuzzy
 msgid "Webcam cannot be disabled"
-msgstr "Bluetooth kan ikke blive slået fra"
+msgstr ""
 
 #: backends/session/util/locales.py:60
 msgid "Webcam cannot be toggled"
@@ -176,39 +161,32 @@ msgid "Wireless"
 msgstr "Trådløs"
 
 #: backends/session/util/locales.py:64
-#, fuzzy
 msgid "Wireless is enabled"
-msgstr "Bluetooth er aktiveret"
+msgstr ""
 
 #: backends/session/util/locales.py:65
-#, fuzzy
 msgid "Wireless is disabled"
-msgstr "Bluetooth er slået fra"
+msgstr ""
 
 #: backends/session/util/locales.py:66
-#, fuzzy
 msgid "Wireless enabled"
-msgstr "Trådløs"
+msgstr ""
 
 #: backends/session/util/locales.py:67
-#, fuzzy
 msgid "Wireless disabled"
-msgstr "Trådløs"
+msgstr ""
 
 #: backends/session/util/locales.py:68
-#, fuzzy
 msgid "Wireless cannot be enabled"
-msgstr "Bluetooth kan ikke blive slået til"
+msgstr ""
 
 #: backends/session/util/locales.py:69
-#, fuzzy
 msgid "Wireless cannot be disabled"
-msgstr "Bluetooth kan ikke blive slået fra"
+msgstr ""
 
 #: backends/session/util/locales.py:70
-#, fuzzy
 msgid "Wireless cannot be toggled"
-msgstr "Bluetooth kan ikke blive slået til"
+msgstr ""
 
 #: backends/session/util/locales.py:71
 msgid "Wireless control is not available"
@@ -266,18 +244,16 @@ msgid "CPU fan:"
 msgstr ""
 
 #: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:35
-#, fuzzy
 msgid "Webcam:"
-msgstr "Webkamera"
+msgstr ""
 
 #: samsung-tools.py:489 po/samsung-tools-preferences.glade.h:36
 msgid "Wireless:"
 msgstr "Trådløs:"
 
 #: samsung-tools.py:493
-#, fuzzy
 msgid "Other options:"
-msgstr "Indstillinger"
+msgstr ""
 
 #: samsung-tools.py:494
 msgid "Show status for all devices."
@@ -296,9 +272,8 @@ msgid "Stop the session service."
 msgstr ""
 
 #: samsung-tools.py:498
-#, fuzzy
 msgid "Stop the system service."
-msgstr "System service"
+msgstr ""
 
 #: samsung-tools.py:500
 msgid "Examples of use:"
@@ -337,14 +312,12 @@ msgid "Wrong argument(s)."
 msgstr "Forkert argument(er)."
 
 #: samsung-tools.py:601
-#, fuzzy
 msgid "Session service stopped"
-msgstr "System service stoppet"
+msgstr ""
 
 #: samsung-tools.py:604
-#, fuzzy
 msgid "Cannot stop session service"
-msgstr "Kan ikke stoppe system service"
+msgstr ""
 
 #: samsung-tools.py:614
 msgid "System service stopped"
@@ -366,9 +339,8 @@ msgstr "Ingen"
 #: samsung-tools-preferences.py:418 samsung-tools-preferences.py:430
 #: samsung-tools-preferences.py:706 samsung-tools-preferences.py:718
 #: samsung-tools-preferences.py:730
-#, fuzzy
 msgid "Unable to connect to system service!"
-msgstr "Kan ikke stoppe system service"
+msgstr ""
 
 #: samsung-tools-preferences.py:442
 msgid "Confirm"
@@ -434,14 +406,12 @@ msgid "Samsung Tools Preferences"
 msgstr "Samsung Tools indstillinger"
 
 #: po/samsung-tools-preferences.desktop.in.h:2
-#, fuzzy
 msgid "Show and modify Samsung Tools preferences"
-msgstr "Samsung Tools indstillinger"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:1
-#, fuzzy
 msgid "<b>Hotkeys</b>"
-msgstr "<b>Trådløs</b>"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:2
 msgid "<b>Initial status for devices</b>"
@@ -523,9 +493,8 @@ msgid "Last status"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:26
-#, fuzzy
 msgid "Session service"
-msgstr "System service"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:29
 msgid "System service"
@@ -676,19 +645,16 @@ msgid ""
 msgstr ""
 
 #: po/samsung-tools-preferences-phc.glade.h:1
-#, fuzzy
 msgid "<b>Default VIDs</b>"
-msgstr "<b>Generelt</b>"
+msgstr ""
 
 #: po/samsung-tools-preferences-phc.glade.h:2
-#, fuzzy
 msgid "<b>Frequencies</b>"
-msgstr "<b>Generelt</b>"
+msgstr ""
 
 #: po/samsung-tools-preferences-phc.glade.h:3
-#, fuzzy
 msgid "<b>New VIDs</b>"
-msgstr "<b>Trådløs</b>"
+msgstr ""
 
 #: po/samsung-tools-preferences-phc.glade.h:5
 msgid ""

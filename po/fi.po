@@ -14,7 +14,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-04-09 13:44+0000\n"
+"X-Launchpad-Export-Date: 2010-04-16 14:00+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: backends/session/util/locales.py:25 samsung-tools-preferences.py:487
@@ -87,9 +87,8 @@ msgid "Bluetooth control is not available"
 msgstr "Bluetoothia ei voida konrolloida"
 
 #: backends/session/util/locales.py:44 samsung-tools-preferences.py:505
-#, fuzzy
 msgid "CPU fan"
-msgstr "Suoritin/Tuuletin"
+msgstr ""
 
 #: backends/session/util/locales.py:45
 msgid "CPU Temperature:"
@@ -116,9 +115,8 @@ msgid "Cannot get fan mode"
 msgstr "Tuulettimen tilaa ei saatu"
 
 #: backends/session/util/locales.py:51
-#, fuzzy
 msgid "CPU fan control is not available"
-msgstr "Bluetoothia ei voida konrolloida"
+msgstr ""
 
 #: backends/session/util/locales.py:53 samsung-tools-preferences.py:514
 #: po/samsung-tools-applet.glade.h:7
@@ -142,24 +140,20 @@ msgid "Webcam disabled"
 msgstr "Web-kamera pois käytöstä"
 
 #: backends/session/util/locales.py:58
-#, fuzzy
 msgid "Webcam cannot be enabled"
-msgstr "Taustavaloa ei voida ottaa päälle"
+msgstr ""
 
 #: backends/session/util/locales.py:59
-#, fuzzy
 msgid "Webcam cannot be disabled"
-msgstr "Taustavaloa ei voida ottaa pois päältä"
+msgstr ""
 
 #: backends/session/util/locales.py:60
-#, fuzzy
 msgid "Webcam cannot be toggled"
-msgstr "Taustavaloa ei voitu muuttaa"
+msgstr ""
 
 #: backends/session/util/locales.py:61
-#, fuzzy
 msgid "Webcam control is not available"
-msgstr "Bluetoothia ei voida konrolloida"
+msgstr ""
 
 #: backends/session/util/locales.py:63 samsung-tools-preferences.py:523
 #: po/samsung-tools-applet.glade.h:8
@@ -167,43 +161,36 @@ msgid "Wireless"
 msgstr "Langaton"
 
 #: backends/session/util/locales.py:64
-#, fuzzy
 msgid "Wireless is enabled"
-msgstr "Langaton pois käytöstä"
+msgstr ""
 
 #: backends/session/util/locales.py:65
-#, fuzzy
 msgid "Wireless is disabled"
-msgstr "Langaton pois käytöstä"
+msgstr ""
 
 #: backends/session/util/locales.py:66
-#, fuzzy
 msgid "Wireless enabled"
-msgstr "Langaton pois käytöstä"
+msgstr ""
 
 #: backends/session/util/locales.py:67
 msgid "Wireless disabled"
 msgstr "Langaton pois käytöstä"
 
 #: backends/session/util/locales.py:68
-#, fuzzy
 msgid "Wireless cannot be enabled"
-msgstr "Bluetoothia ei saada päälle"
+msgstr ""
 
 #: backends/session/util/locales.py:69
-#, fuzzy
 msgid "Wireless cannot be disabled"
-msgstr "Langaton pois käytöstä"
+msgstr ""
 
 #: backends/session/util/locales.py:70
-#, fuzzy
 msgid "Wireless cannot be toggled"
-msgstr "Bluetoothia ei saada muutettua"
+msgstr ""
 
 #: backends/session/util/locales.py:71
-#, fuzzy
 msgid "Wireless control is not available"
-msgstr "Bluetoothia ei voida konrolloida"
+msgstr ""
 
 #: samsung-tools.py:54
 msgid "Backlight control: unable to connect to session service!"
@@ -235,9 +222,8 @@ msgid "Usage: %s <interface> <option> ..."
 msgstr ""
 
 #: samsung-tools.py:477 po/samsung-tools-preferences.glade.h:4
-#, fuzzy
 msgid "Backlight:"
-msgstr "Taustavalo"
+msgstr ""
 
 #: samsung-tools.py:478 samsung-tools.py:481 samsung-tools.py:484
 #: samsung-tools.py:487 samsung-tools.py:490
@@ -250,24 +236,20 @@ msgid "Options"
 msgstr ""
 
 #: samsung-tools.py:480 po/samsung-tools-preferences.glade.h:5
-#, fuzzy
 msgid "Bluetooth:"
-msgstr "Bluetooth"
+msgstr ""
 
 #: samsung-tools.py:483 po/samsung-tools-preferences.glade.h:6
-#, fuzzy
 msgid "CPU fan:"
-msgstr "Suoritin/Tuuletin"
+msgstr ""
 
 #: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:35
-#, fuzzy
 msgid "Webcam:"
-msgstr "Web-kamera"
+msgstr ""
 
 #: samsung-tools.py:489 po/samsung-tools-preferences.glade.h:36
-#, fuzzy
 msgid "Wireless:"
-msgstr "Langaton"
+msgstr ""
 
 #: samsung-tools.py:493
 msgid "Other options:"
@@ -395,9 +377,8 @@ msgid ""
 msgstr ""
 
 #: po/samsung-tools-applet.glade.h:2
-#, fuzzy
 msgid "CPU Fan"
-msgstr "Suoritin/Tuuletin"
+msgstr ""
 
 #: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:24
 msgid "Normal"
@@ -472,9 +453,8 @@ msgid "Configure kernel parameters"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:14
-#, fuzzy
 msgid "Disabled"
-msgstr "Web-kamera pois käytöstä"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:15
 msgid "Enable hotkeys"
