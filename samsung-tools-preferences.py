@@ -139,6 +139,8 @@ class KeyGrabber(gtk.Button):
 				label = "Fn-F8"
 			if label == "XF86WLAN":
 				label = "Fn-F9"
+			if label == "XF86TouchpadToggle":
+				label = "Fn-F10"
 		gtk.Button.set_label(self, label)
 
 class LaptopModeDialog():
