@@ -1,3 +1,10 @@
+samsung-tools (0.2~ppa5~loms~lucid) lucid; urgency=low
+
+  * Update translations to latest version from Launchpad.
+  * Update translators credits list.
+  
+ -- Fortunato Ventre (voRia) <vorione@gmail.com>  Tue, 20 Apr 2010 10:22:32 +0200
+
 samsung-tools (0.2~ppa4~loms~lucid) lucid; urgency=low
 
   * Set lower available VID for all spinbuttons.
