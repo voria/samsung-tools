@@ -1,3 +1,12 @@
+samsung-tools (0.2~ppa7~loms~lucid) lucid; urgency=low
+
+  * Update 'system.conf'.
+  * debian/control:
+    - Add 'laptop-mode-tools' and 'phc-intel' as suggestions.
+    - Update package description.
+
+ -- Fortunato Ventre (voRia) <vorione@gmail.com>  Thu, 22 Apr 2010 16:31:16 +0200
+
 samsung-tools (0.2~ppa6~loms~lucid) lucid; urgency=low
 
   * Add alias for 'XF86TouchpadToggle'.
