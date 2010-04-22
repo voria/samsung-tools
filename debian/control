@@ -8,6 +8,7 @@ Homepage: http://www.voria.org/forum
 
 Package: samsung-tools
 Architecture: all
+Suggests: laptop-mode-tools, phc-intel
 Depends: python-gtk2, xbindkeys, easy-slow-down-manager
 Description: Samsung Tools
  Tools for Samsung netbooks.
