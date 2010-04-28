@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-16 16:02+0200\n"
+"POT-Creation-Date: 2010-04-28 17:38+0200\n"
 "PO-Revision-Date: 2010-04-16 15:01+0000\n"
 "Last-Translator: ironfisher <dgvalde@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2010-04-20 07:12+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
-#: backends/session/util/locales.py:25 samsung-tools-preferences.py:487
+#: backends/session/util/locales.py:25 samsung-tools-preferences.py:489
 msgid "Backlight"
 msgstr "Luz de fondo"
 
@@ -49,7 +49,7 @@ msgstr "La luz de fondo no puede deshabilitarse"
 msgid "Backlight cannot be toggled"
 msgstr "La luz de fondo no puede ser conmutada"
 
-#: backends/session/util/locales.py:34 samsung-tools-preferences.py:496
+#: backends/session/util/locales.py:34 samsung-tools-preferences.py:498
 #: po/samsung-tools-applet.glade.h:1
 msgid "Bluetooth"
 msgstr "Bluetooth"
@@ -86,7 +86,7 @@ msgstr "Bluetooth no puede ser conmutado"
 msgid "Bluetooth control is not available"
 msgstr "El control de bluetooth no está disponible"
 
-#: backends/session/util/locales.py:44 samsung-tools-preferences.py:505
+#: backends/session/util/locales.py:44 samsung-tools-preferences.py:507
 msgid "CPU fan"
 msgstr "Ventilador de la CPU"
 
@@ -118,7 +118,7 @@ msgstr "No se puede obtener el modo del ventilador"
 msgid "CPU fan control is not available"
 msgstr "El control del ventilador de la CPU no está disponible"
 
-#: backends/session/util/locales.py:53 samsung-tools-preferences.py:514
+#: backends/session/util/locales.py:53 samsung-tools-preferences.py:516
 #: po/samsung-tools-applet.glade.h:7
 msgid "Webcam"
 msgstr "Cámara web"
@@ -155,7 +155,7 @@ msgstr "La cámara web no puede ser conmutada"
 msgid "Webcam control is not available"
 msgstr "El control de la cámara web no está disponible"
 
-#: backends/session/util/locales.py:63 samsung-tools-preferences.py:523
+#: backends/session/util/locales.py:63 samsung-tools-preferences.py:525
 #: po/samsung-tools-applet.glade.h:8
 msgid "Wireless"
 msgstr "Redes inalámbricas"
@@ -209,8 +209,7 @@ msgstr ""
 
 #: samsung-tools.py:329
 msgid "Webcam control: unable to connect to session service!"
-msgstr ""
-"Control de la cámara web: ¡Incapaz de conectar al servicio de sesión!"
+msgstr "Control de la cámara web: ¡Incapaz de conectar al servicio de sesión!"
 
 #: samsung-tools.py:408
 msgid "Wireless control: unable to connect to session service!"
@@ -303,7 +302,7 @@ msgstr " - Deshabilita bluetooth, la cámara web y las redes inalámbricas:"
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Para mas información visita el foro \"Linux On My Samsung\":"
 
-#: samsung-tools.py:515 samsung-tools-preferences.py:985
+#: samsung-tools.py:515 samsung-tools-preferences.py:992
 msgid "Released under GPLv3 license"
 msgstr "Liberado bajo licencia GPLv3"
 
@@ -343,40 +342,39 @@ msgstr "Por favor, presione una nueva \"tecla caliente\""
 msgid "None"
 msgstr "Ninguno"
 
-#: samsung-tools-preferences.py:226 samsung-tools-preferences.py:328
-#: samsung-tools-preferences.py:418 samsung-tools-preferences.py:430
-#: samsung-tools-preferences.py:706 samsung-tools-preferences.py:718
-#: samsung-tools-preferences.py:730
+#: samsung-tools-preferences.py:228 samsung-tools-preferences.py:330
+#: samsung-tools-preferences.py:420 samsung-tools-preferences.py:432
+#: samsung-tools-preferences.py:708 samsung-tools-preferences.py:720
+#: samsung-tools-preferences.py:732
 msgid "Unable to connect to system service!"
 msgstr "¡Incapaz de conectar con el servicio de sistema!"
 
-#: samsung-tools-preferences.py:442
+#: samsung-tools-preferences.py:444
 msgid "Confirm"
 msgstr "Confirmar"
 
-#: samsung-tools-preferences.py:443
+#: samsung-tools-preferences.py:445
 msgid "Apply the new VIDs?"
 msgstr "¿Aplicar las nuevas VIDs?"
 
-#: samsung-tools-preferences.py:664
+#: samsung-tools-preferences.py:666
 msgid "Install the 'laptop mode tools' package to configure these options"
-msgstr ""
-"Instala el paquete 'laptop mode tools' para configurar estas opciones"
+msgstr "Instala el paquete 'laptop mode tools' para configurar estas opciones"
 
-#: samsung-tools-preferences.py:675
+#: samsung-tools-preferences.py:677
 msgid "You need a PHC enabled kernel to use this feature"
 msgstr ""
 "Necesita un núcleo (kernel) PCH habilitado para usar esta característica"
 
-#: samsung-tools-preferences.py:694
+#: samsung-tools-preferences.py:696
 msgid "Unable to connect to session service!"
 msgstr "¡Incapaz de conectar con el servicio de sesión!"
 
-#: samsung-tools-preferences.py:945
+#: samsung-tools-preferences.py:947
 msgid "Caution!"
 msgstr "¡Cuidado!"
 
-#: samsung-tools-preferences.py:946
+#: samsung-tools-preferences.py:948
 msgid ""
 "CPU undervolting can lead to significant gains in terms of power energy "
 "saving, however <b>IT IS A RISKY PRACTICE</b> that might result in "
@@ -759,8 +757,8 @@ msgstr "Inicia el servicio de sesión"
 #~ "\n"
 #~ "'iwconfig' - Usa el comando iwconfig.\n"
 #~ "'module' - Inserta/elimina el módulo kernel.\n"
-#~ "'esdm' - Usa la interfaz esdm: 'administador de sencilla disminución de la "
-#~ "velocidad'."
+#~ "'esdm' - Usa la interfaz esdm: 'administador de sencilla disminución de "
+#~ "la velocidad'."
 
 #~ msgid "Webcam initial status:"
 #~ msgstr "Estado inicial de la cámara web"

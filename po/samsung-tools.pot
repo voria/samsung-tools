@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-20 09:14+0200\n"
+"POT-Creation-Date: 2010-04-28 17:38+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: backends/session/util/locales.py:25 samsung-tools-preferences.py:487
+#: backends/session/util/locales.py:25 samsung-tools-preferences.py:489
 msgid "Backlight"
 msgstr ""
 
@@ -48,7 +48,7 @@ msgstr ""
 msgid "Backlight cannot be toggled"
 msgstr ""
 
-#: backends/session/util/locales.py:34 samsung-tools-preferences.py:496
+#: backends/session/util/locales.py:34 samsung-tools-preferences.py:498
 #: po/samsung-tools-applet.glade.h:1
 msgid "Bluetooth"
 msgstr ""
@@ -85,7 +85,7 @@ msgstr ""
 msgid "Bluetooth control is not available"
 msgstr ""
 
-#: backends/session/util/locales.py:44 samsung-tools-preferences.py:505
+#: backends/session/util/locales.py:44 samsung-tools-preferences.py:507
 msgid "CPU fan"
 msgstr ""
 
@@ -117,7 +117,7 @@ msgstr ""
 msgid "CPU fan control is not available"
 msgstr ""
 
-#: backends/session/util/locales.py:53 samsung-tools-preferences.py:514
+#: backends/session/util/locales.py:53 samsung-tools-preferences.py:516
 #: po/samsung-tools-applet.glade.h:7
 msgid "Webcam"
 msgstr ""
@@ -154,7 +154,7 @@ msgstr ""
 msgid "Webcam control is not available"
 msgstr ""
 
-#: backends/session/util/locales.py:63 samsung-tools-preferences.py:523
+#: backends/session/util/locales.py:63 samsung-tools-preferences.py:525
 #: po/samsung-tools-applet.glade.h:8
 msgid "Wireless"
 msgstr ""
@@ -294,7 +294,7 @@ msgstr ""
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr ""
 
-#: samsung-tools.py:515 samsung-tools-preferences.py:985
+#: samsung-tools.py:515 samsung-tools-preferences.py:992
 msgid "Released under GPLv3 license"
 msgstr ""
 
@@ -334,38 +334,38 @@ msgstr ""
 msgid "None"
 msgstr ""
 
-#: samsung-tools-preferences.py:226 samsung-tools-preferences.py:328
-#: samsung-tools-preferences.py:418 samsung-tools-preferences.py:430
-#: samsung-tools-preferences.py:706 samsung-tools-preferences.py:718
-#: samsung-tools-preferences.py:730
+#: samsung-tools-preferences.py:228 samsung-tools-preferences.py:330
+#: samsung-tools-preferences.py:420 samsung-tools-preferences.py:432
+#: samsung-tools-preferences.py:708 samsung-tools-preferences.py:720
+#: samsung-tools-preferences.py:732
 msgid "Unable to connect to system service!"
 msgstr ""
 
-#: samsung-tools-preferences.py:442
+#: samsung-tools-preferences.py:444
 msgid "Confirm"
 msgstr ""
 
-#: samsung-tools-preferences.py:443
+#: samsung-tools-preferences.py:445
 msgid "Apply the new VIDs?"
 msgstr ""
 
-#: samsung-tools-preferences.py:664
+#: samsung-tools-preferences.py:666
 msgid "Install the 'laptop mode tools' package to configure these options"
 msgstr ""
 
-#: samsung-tools-preferences.py:675
+#: samsung-tools-preferences.py:677
 msgid "You need a PHC enabled kernel to use this feature"
 msgstr ""
 
-#: samsung-tools-preferences.py:694
+#: samsung-tools-preferences.py:696
 msgid "Unable to connect to session service!"
 msgstr ""
 
-#: samsung-tools-preferences.py:945
+#: samsung-tools-preferences.py:947
 msgid "Caution!"
 msgstr ""
 
-#: samsung-tools-preferences.py:946
+#: samsung-tools-preferences.py:948
 msgid ""
 "CPU undervolting can lead to significant gains in terms of power energy "
 "saving, however <b>IT IS A RISKY PRACTICE</b> that might result in "
