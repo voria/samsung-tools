@@ -93,7 +93,7 @@ if __name__ == '__main__':
 	# Set initial devices status
 	system_bus = dbus.SystemBus()
 	system_proxy = system_bus.get_object(SYSTEM_INTERFACE_NAME, SYSTEM_OBJECT_PATH_GENERAL)
-	dbus.Interface(proxy, SYSTEM_INTERFACE_NAME).SetInitialDevicesStatus()
+	dbus.Interface(system_proxy, SYSTEM_INTERFACE_NAME).SetInitialDevicesStatus()
 	
 	mainloop = gobject.MainLoop()
 	mainloop.run()
