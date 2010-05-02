@@ -90,5 +90,10 @@ if __name__ == '__main__':
 	Webcam(notify, session_bus, SESSION_OBJECT_PATH_WEBCAM)
 	Wireless(notify, session_bus, SESSION_OBJECT_PATH_WIRELESS)
 	
+	# Set initial devices status
+	system_bus = dbus.SystemBus()
+	system_proxy = system_bus.get_object(SYSTEM_INTERFACE_NAME, SYSTEM_OBJECT_PATH_GENERAL)
+	dbus.Interface(proxy, SYSTEM_INTERFACE_NAME).SetInitialDevicesStatus()
+	
 	mainloop = gobject.MainLoop()
 	mainloop.run()

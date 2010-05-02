@@ -23,8 +23,6 @@ install:
 	$(install_file) configs/*.conf $(DESTDIR)/etc/samsung-tools/
 	$(install_dir) $(DESTDIR)/etc/pm/sleep.d/
 	$(install_script) sleep.d/20_samsung-tools $(DESTDIR)/etc/pm/sleep.d/
-	$(install_dir) $(DESTDIR)/etc/init/
-	$(install_file) upstart/samsung-tools.conf $(DESTDIR)/etc/init/
 	# Locales
 	$(shell po/install.sh ${DESTDIR})
 	# CLI
@@ -71,7 +69,6 @@ uninstall:
 	rm -rf $(DESTDIR)/usr/share/dbus-1/services/org.voria.SamsungTools.Session.service
 	rm -rf $(DESTDIR)/etc/samsung-tools/
 	rm -rf $(DESTDIR)/etc/pm/sleep.d/20_samsung-tools
-	rm -rf $(DESTDIR)/etc/init/samsung-tools.conf
 	rm -rf $(DESTDIR)/usr/share/applications/samsung-tools-preferences.desktop
 	rm -rf $(DESTDIR)/etc/xdg/autostart/samsung-tools-session-service.desktop
 	rm -rf $(DESTDIR)/usr/lib/bonobo/servers/samsung-tools-applet.server
