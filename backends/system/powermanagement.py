@@ -119,7 +119,7 @@ class LaptopMode(dbus.service.Object):
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def RestartDaemon(self, sender = None, conn = None):
 		from subprocess import Popen, PIPE
-		command = COMMAND_SERVICE + " laptop-mode restart"
+		command = "/etc/init.d/laptop-mode restart"
 		process = Popen(command.split(), stdout = PIPE, stderr = PIPE)
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
@@ -309,7 +309,7 @@ class SysCtl(dbus.service.Object):
 	def ApplySettings(self, sender = None, conn = None):
 		from subprocess import Popen, PIPE
 		try:
-			command = COMMAND_SERVICE + " procps start"
+			command = "/etc/init.d/procps start"
 			process = Popen(command.split(), stdout = PIPE, stderr = PIPE)
 			process.communicate()
 			if process.returncode != 0:
