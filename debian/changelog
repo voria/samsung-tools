@@ -1,3 +1,10 @@
+samsung-tools (1.0.2~ppa1~loms~lucid) lucid; urgency=low
+
+  * Fix applet icon.
+  * Update turkish translation to latest version from Launchpad.
+
+ -- Fortunato Ventre (voRia) <vorione@gmail.com>  Tue, 04 May 2010 12:52:07 +0200
+
 samsung-tools (1.0.1~ppa1~loms~lucid) lucid; urgency=low
 
   * Set initial devices status when the session service is started

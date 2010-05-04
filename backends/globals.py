@@ -22,7 +22,7 @@
 from backends.log import Log
 
 APP_NAME = "Samsung Tools"
-APP_VERSION = "1.0.1"
+APP_VERSION = "1.0.2"
 WORK_DIRECTORY = "/usr/lib/samsung-tools/"
 
 ###
