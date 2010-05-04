@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-04-28 17:38+0200\n"
-"PO-Revision-Date: 2010-03-29 16:37+0000\n"
-"Last-Translator: Fortunato Ventre (voRia) <vorione@gmail.com>\n"
+"PO-Revision-Date: 2010-05-03 20:56+0000\n"
+"Last-Translator: zeugma <Unknown>\n"
 "Language-Team: Turkish <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-04-20 07:12+0000\n"
+"X-Launchpad-Export-Date: 2010-05-04 10:32+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: backends/session/util/locales.py:25 samsung-tools-preferences.py:489
@@ -68,7 +68,7 @@ msgstr ""
 
 #: backends/session/util/locales.py:38
 msgid "Bluetooth disabled"
-msgstr ""
+msgstr "Bluetooth devre dışı"
 
 #: backends/session/util/locales.py:39
 msgid "Bluetooth cannot be enabled"
@@ -88,11 +88,11 @@ msgstr ""
 
 #: backends/session/util/locales.py:44 samsung-tools-preferences.py:507
 msgid "CPU fan"
-msgstr ""
+msgstr "CPU fan"
 
 #: backends/session/util/locales.py:45
 msgid "CPU Temperature:"
-msgstr ""
+msgstr "CPU Sıcaklığı:"
 
 #: backends/session/util/locales.py:46
 msgid "Fan mode cannot be changed"
@@ -100,15 +100,15 @@ msgstr ""
 
 #: backends/session/util/locales.py:47
 msgid "Fan mode: Normal"
-msgstr ""
+msgstr "Fan modu: Normal"
 
 #: backends/session/util/locales.py:48
 msgid "Fan mode: Silent"
-msgstr ""
+msgstr "Fan modu: Sessiz"
 
 #: backends/session/util/locales.py:49
 msgid "Fan mode: Speed"
-msgstr ""
+msgstr "Fan modu: Hız"
 
 #: backends/session/util/locales.py:50
 msgid "Cannot get fan mode"
@@ -158,31 +158,31 @@ msgstr ""
 #: backends/session/util/locales.py:63 samsung-tools-preferences.py:525
 #: po/samsung-tools-applet.glade.h:8
 msgid "Wireless"
-msgstr ""
+msgstr "Kablosuz"
 
 #: backends/session/util/locales.py:64
 msgid "Wireless is enabled"
-msgstr ""
+msgstr "Kablosuz etkindir"
 
 #: backends/session/util/locales.py:65
 msgid "Wireless is disabled"
-msgstr ""
+msgstr "Kablosuz devre dışı"
 
 #: backends/session/util/locales.py:66
 msgid "Wireless enabled"
-msgstr ""
+msgstr "Kablosuz etkin"
 
 #: backends/session/util/locales.py:67
 msgid "Wireless disabled"
-msgstr ""
+msgstr "Kablosuz devre dışı"
 
 #: backends/session/util/locales.py:68
 msgid "Wireless cannot be enabled"
-msgstr ""
+msgstr "Kablosuz etkin olamaz"
 
 #: backends/session/util/locales.py:69
 msgid "Wireless cannot be disabled"
-msgstr ""
+msgstr "Kablosuz devre dışı bırakılamaz"
 
 #: backends/session/util/locales.py:70
 msgid "Wireless cannot be toggled"
@@ -228,12 +228,12 @@ msgstr ""
 #: samsung-tools.py:478 samsung-tools.py:481 samsung-tools.py:484
 #: samsung-tools.py:487 samsung-tools.py:490
 msgid "Interface"
-msgstr ""
+msgstr "Arayüz"
 
 #: samsung-tools.py:479 samsung-tools.py:482 samsung-tools.py:485
 #: samsung-tools.py:488 samsung-tools.py:491
 msgid "Options"
-msgstr ""
+msgstr "Seçenekler"
 
 #: samsung-tools.py:480 po/samsung-tools-preferences.glade.h:5
 msgid "Bluetooth:"
@@ -241,15 +241,15 @@ msgstr "Bluetooth:"
 
 #: samsung-tools.py:483 po/samsung-tools-preferences.glade.h:6
 msgid "CPU fan:"
-msgstr ""
+msgstr "CPU fan:"
 
 #: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:35
 msgid "Webcam:"
-msgstr ""
+msgstr "Webcam:"
 
 #: samsung-tools.py:489 po/samsung-tools-preferences.glade.h:36
 msgid "Wireless:"
-msgstr ""
+msgstr "Wireless(Kablosuz:):"
 
 #: samsung-tools.py:493
 msgid "Other options:"
@@ -333,7 +333,7 @@ msgstr ""
 
 #: samsung-tools-preferences.py:122
 msgid "None"
-msgstr ""
+msgstr "Hiçbiri"
 
 #: samsung-tools-preferences.py:228 samsung-tools-preferences.py:330
 #: samsung-tools-preferences.py:420 samsung-tools-preferences.py:432
@@ -378,11 +378,11 @@ msgstr ""
 
 #: po/samsung-tools-applet.glade.h:2
 msgid "CPU Fan"
-msgstr ""
+msgstr "CPU Fan"
 
 #: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:24
 msgid "Normal"
-msgstr ""
+msgstr "Normal"
 
 #: po/samsung-tools-applet.glade.h:4
 msgid "Preferences..."
@@ -390,11 +390,11 @@ msgstr ""
 
 #: po/samsung-tools-applet.glade.h:5 po/samsung-tools-preferences.glade.h:27
 msgid "Silent"
-msgstr ""
+msgstr "Sessiz"
 
 #: po/samsung-tools-applet.glade.h:6 po/samsung-tools-preferences.glade.h:28
 msgid "Speed"
-msgstr ""
+msgstr "Hız"
 
 #: po/samsung-tools-applet.server.in.h:1
 msgid "Manage devices on Samsung netbooks"
