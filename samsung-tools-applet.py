@@ -41,13 +41,14 @@ class Applet():
 	def __init__(self, applet, iid):
 		# Set panel icon
 		pixbuf = gtk.gdk.pixbuf_new_from_file(SAMSUNG_TOOLS_ICON)
-		pixbuf = pixbuf.scale_simple(24, 24, gtk.gdk.INTERP_BILINEAR)
+		pixbuf = pixbuf.scale_simple(22, 22, gtk.gdk.INTERP_BILINEAR)
 		image = gtk.Image()
 		image.set_from_pixbuf(pixbuf)
 		eventbox = gtk.EventBox()
 		eventbox.add(image)
 		eventbox.set_has_tooltip(True)
 		eventbox.set_tooltip_text("Samsung Tools")
+		eventbox.set_visible_window(False)
 		eventbox.connect("button-press-event", self.showMenu)
 		applet.add(eventbox)
 		
