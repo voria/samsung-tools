@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-28 17:38+0200\n"
-"PO-Revision-Date: 2010-03-29 09:30+0000\n"
-"Last-Translator: Krzysztof Saja <Unknown>\n"
+"POT-Creation-Date: 2010-05-04 12:50+0200\n"
+"PO-Revision-Date: 2010-05-06 11:10+0000\n"
+"Last-Translator: Cezary Jackiewicz <cjackiewicz@poczta.onet.pl>\n"
 "Language-Team: Polish <pl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-04-20 07:12+0000\n"
+"X-Launchpad-Export-Date: 2010-05-06 21:36+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: backends/session/util/locales.py:25 samsung-tools-preferences.py:489
@@ -47,7 +47,7 @@ msgstr "Podświetlenie nie może być wyłączone"
 
 #: backends/session/util/locales.py:32
 msgid "Backlight cannot be toggled"
-msgstr "NIe można zmienić stanu podświetlenia"
+msgstr "Nie można zmienić stanu podświetlenia"
 
 #: backends/session/util/locales.py:34 samsung-tools-preferences.py:498
 #: po/samsung-tools-applet.glade.h:1
@@ -68,7 +68,7 @@ msgstr "Bluetooth włączony"
 
 #: backends/session/util/locales.py:38
 msgid "Bluetooth disabled"
-msgstr "Bluetooth włyączony"
+msgstr "Bluetooth wyłączony"
 
 #: backends/session/util/locales.py:39
 msgid "Bluetooth cannot be enabled"
@@ -88,7 +88,7 @@ msgstr "Zarządzanie Bluetooth'em nie jest dostępne"
 
 #: backends/session/util/locales.py:44 samsung-tools-preferences.py:507
 msgid "CPU fan"
-msgstr ""
+msgstr "Wentylator procesora"
 
 #: backends/session/util/locales.py:45
 msgid "CPU Temperature:"
@@ -96,7 +96,7 @@ msgstr "Temperatura procesora"
 
 #: backends/session/util/locales.py:46
 msgid "Fan mode cannot be changed"
-msgstr "NIe można zmienić trybu wentylatora"
+msgstr "Nie można zmienić trybu wentylatora"
 
 #: backends/session/util/locales.py:47
 msgid "Fan mode: Normal"
@@ -108,7 +108,7 @@ msgstr "Tryb wentylatora: wolny"
 
 #: backends/session/util/locales.py:49
 msgid "Fan mode: Speed"
-msgstr "Tryb wentylatora: Szybki"
+msgstr "Tryb wentylatora: szybki"
 
 #: backends/session/util/locales.py:50
 msgid "Cannot get fan mode"
@@ -116,7 +116,7 @@ msgstr "Nie można sprawdzić trybu wentylatora"
 
 #: backends/session/util/locales.py:51
 msgid "CPU fan control is not available"
-msgstr ""
+msgstr "Zarządzanie wentylatorem procesora nie jest dostępne"
 
 #: backends/session/util/locales.py:53 samsung-tools-preferences.py:516
 #: po/samsung-tools-applet.glade.h:7
@@ -141,11 +141,11 @@ msgstr "Kamera internetowa wyłączona"
 
 #: backends/session/util/locales.py:58
 msgid "Webcam cannot be enabled"
-msgstr "NIe można włączyć kamery internetowej"
+msgstr "Nie można włączyć kamery internetowej"
 
 #: backends/session/util/locales.py:59
 msgid "Webcam cannot be disabled"
-msgstr "NIe można wyłączyć kamery internetowej"
+msgstr "Nie można wyłączyć kamery internetowej"
 
 #: backends/session/util/locales.py:60
 msgid "Webcam cannot be toggled"
@@ -203,6 +203,7 @@ msgstr "Zarządzanie Bluetooth'em: nie można połączyć z usługą sesji"
 #: samsung-tools.py:199
 msgid "CPU fan control: unable to connect to session service!"
 msgstr ""
+"Zarządzanie wentylatorem procesora: nie można połączyć z usługą sesji"
 
 #: samsung-tools.py:329
 msgid "Webcam control: unable to connect to session service!"
@@ -241,7 +242,7 @@ msgstr "Bluetooth:"
 
 #: samsung-tools.py:483 po/samsung-tools-preferences.glade.h:6
 msgid "CPU fan:"
-msgstr ""
+msgstr "Wentylator procesora:"
 
 #: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:35
 msgid "Webcam:"
@@ -249,7 +250,7 @@ msgstr "Kamera internetowa:"
 
 #: samsung-tools.py:489 po/samsung-tools-preferences.glade.h:36
 msgid "Wireless:"
-msgstr "SIeć bezprzewodowa:"
+msgstr "Sieć bezprzewodowa:"
 
 #: samsung-tools.py:493
 msgid "Other options:"
@@ -257,7 +258,7 @@ msgstr "Inne opcje:"
 
 #: samsung-tools.py:494
 msgid "Show status for all devices."
-msgstr ""
+msgstr "Pokaż status wszystkich urządzeń."
 
 #: samsung-tools.py:495
 msgid "Show graphical notifications."
@@ -265,7 +266,7 @@ msgstr "Pokazuj graficzne powiadomienia"
 
 #: samsung-tools.py:496
 msgid "Do not print messages on standard output."
-msgstr "NIe można wyświetlić wiadomości na standardowym wyjściu"
+msgstr "Nie można wyświetlić wiadomości na standardowym wyjściu"
 
 #: samsung-tools.py:497
 msgid "Stop the session service."
@@ -314,19 +315,19 @@ msgstr "Złe argumenty"
 
 #: samsung-tools.py:601
 msgid "Session service stopped"
-msgstr "Usługa sesji zastopowana"
+msgstr "Usługa sesji zatrzymana"
 
 #: samsung-tools.py:604
 msgid "Cannot stop session service"
-msgstr "Nie można zastopować usługi sesji"
+msgstr "Nie można zatrzymać usługi sesji"
 
 #: samsung-tools.py:614
 msgid "System service stopped"
-msgstr "Usługa systemowa zastopowana"
+msgstr "Usługa systemowa zatrzymana"
 
 #: samsung-tools.py:617
 msgid "Cannot stop system service"
-msgstr "Nie można zastopować usługi systemowej"
+msgstr "Nie można zatrzymać usługi systemowej"
 
 #: samsung-tools-preferences.py:80
 msgid "Please press the new hotkey"
@@ -341,11 +342,11 @@ msgstr "Brak"
 #: samsung-tools-preferences.py:708 samsung-tools-preferences.py:720
 #: samsung-tools-preferences.py:732
 msgid "Unable to connect to system service!"
-msgstr "NIe da się połączyć z usługą systemową!"
+msgstr "Nie można połączyć z usługą systemową!"
 
 #: samsung-tools-preferences.py:444
 msgid "Confirm"
-msgstr ""
+msgstr "Zatwierdź"
 
 #: samsung-tools-preferences.py:445
 msgid "Apply the new VIDs?"
@@ -353,7 +354,7 @@ msgstr ""
 
 #: samsung-tools-preferences.py:666
 msgid "Install the 'laptop mode tools' package to configure these options"
-msgstr ""
+msgstr "Zainstaluj pakiet 'laptop mode tools' aby ustawić te opcje"
 
 #: samsung-tools-preferences.py:677
 msgid "You need a PHC enabled kernel to use this feature"
@@ -365,7 +366,7 @@ msgstr "Nie można połączyć z usługą sesji!"
 
 #: samsung-tools-preferences.py:947
 msgid "Caution!"
-msgstr ""
+msgstr "Uwaga!"
 
 #: samsung-tools-preferences.py:948
 msgid ""
@@ -379,11 +380,11 @@ msgstr ""
 
 #: po/samsung-tools-applet.glade.h:2
 msgid "CPU Fan"
-msgstr ""
+msgstr "Wentylator procesora"
 
 #: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:24
 msgid "Normal"
-msgstr ""
+msgstr "Normalny"
 
 #: po/samsung-tools-applet.glade.h:4
 msgid "Preferences..."
@@ -391,11 +392,11 @@ msgstr ""
 
 #: po/samsung-tools-applet.glade.h:5 po/samsung-tools-preferences.glade.h:27
 msgid "Silent"
-msgstr ""
+msgstr "Wolny"
 
 #: po/samsung-tools-applet.glade.h:6 po/samsung-tools-preferences.glade.h:28
 msgid "Speed"
-msgstr ""
+msgstr "Szybki"
 
 #: po/samsung-tools-applet.server.in.h:1
 msgid "Manage devices on Samsung netbooks"
@@ -416,7 +417,7 @@ msgstr "<b>Skróty klawiszowe</b>"
 
 #: po/samsung-tools-preferences.glade.h:2
 msgid "<b>Initial status for devices</b>"
-msgstr ""
+msgstr "<b>Początkowy status dla urządzeń</b>"
 
 #: po/samsung-tools-preferences.glade.h:3
 msgid "Advanced power management"
@@ -491,7 +492,7 @@ msgstr "Skrót klawiaturowy używany do zarządzania siecią bezprzewodową"
 
 #: po/samsung-tools-preferences.glade.h:23
 msgid "Last status"
-msgstr ""
+msgstr "Ostatni status"
 
 #: po/samsung-tools-preferences.glade.h:26
 msgid "Session service"
@@ -503,19 +504,19 @@ msgstr "Usługa systemowa"
 
 #: po/samsung-tools-preferences.glade.h:30
 msgid "The initial status at boot for Bluetooth"
-msgstr ""
+msgstr "Początkowy status po uruchomieniu dla Bluetooth"
 
 #: po/samsung-tools-preferences.glade.h:31
 msgid "The initial status at boot for CPU fan"
-msgstr ""
+msgstr "Początkowy status po uruchomieniu dla wentylatora procesora"
 
 #: po/samsung-tools-preferences.glade.h:32
 msgid "The initial status at boot for webcam"
-msgstr ""
+msgstr "Początkowy status po uruchomieniu dla kamery internetowej"
 
 #: po/samsung-tools-preferences.glade.h:33
 msgid "The initial status at boot for wireless"
-msgstr ""
+msgstr "Początkowy status po uruchomieniu dla sieci bezprzewodowej"
 
 #: po/samsung-tools-preferences.glade.h:34
 msgid "Undervolt the CPU in order to save energy"
@@ -636,6 +637,11 @@ msgid ""
 "full speed (for instance if you only use Ethernet as to connect to a much "
 "slower ADSL modem)."
 msgstr ""
+"Jeżeli ta opcja jest włączona, szybkość połączenia Ethernet jest obniżona do "
+"100Mbit. Różnica w zużyciu energii pomiędzy 1Gbit a 100Mbit jest całkiem "
+"spora, więc ustawienie pozwoli na zaoszczędzenie energii jeżeli nie ma "
+"potrzeby stosowania pełnej prędkości (np. jeżeli połączenie jest do o wiele "
+"wolniejszego modemu ADSL)"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:21
 msgid ""
