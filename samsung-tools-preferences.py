@@ -976,8 +976,6 @@ Are you sure you want to continue?"), "utf-8")
 					"subiraj",
 					"Jonay",
 					"zeugma",
-					"aralbers",
-					"Felix Stacenko",
 					"Joshua Schroijen",
 					"Sukochev Roman (Leolik)",
 					"Andrey Kulakov"
