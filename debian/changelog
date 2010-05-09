@@ -1,3 +1,9 @@
+samsung-tools (1.0.3~ppa1~loms~lucid) UNRELEASED; urgency=low
+
+  * 
+
+ -- Fortunato Ventre (voRia) <vorione@gmail.com>  Sun, 09 May 2010 17:51:02 +0200
+
 samsung-tools (1.0.2~ppa1~loms~lucid) lucid; urgency=low
 
   * Fix applet icon.
