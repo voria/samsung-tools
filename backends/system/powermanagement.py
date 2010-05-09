@@ -138,7 +138,11 @@ class LaptopMode(dbus.service.Object):
 		if value == None:
 			return (-1)
 		else:
-			return int(value)
+			try:
+				return int(value)
+			except:
+				# Not an int value, assume '1'
+				return 1
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'i',
 						sender_keyword = 'sender', connection_keyword = 'conn')
@@ -147,7 +151,11 @@ class LaptopMode(dbus.service.Object):
 		if value == None:
 			return (-1)
 		else:
-			return int(value)
+			try:
+				return int(value)
+			except:
+				# Not an int value, assume '1'
+				return 1
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'i',
 						sender_keyword = 'sender', connection_keyword = 'conn')
@@ -156,7 +164,11 @@ class LaptopMode(dbus.service.Object):
 		if value == None:
 			return (-1)
 		else:
-			return int(value)
+			try:
+				return int(value)
+			except:
+				# Not an int value, assume '1'
+				return 1
 
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'i',
 						sender_keyword = 'sender', connection_keyword = 'conn')
@@ -165,7 +177,11 @@ class LaptopMode(dbus.service.Object):
 		if value == None:
 			return (-1)
 		else:
-			return int(value)
+			try:
+				return int(value)
+			except:
+				# Not an int value, assume '1'
+				return 1
 
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'i',
 						sender_keyword = 'sender', connection_keyword = 'conn')
@@ -174,7 +190,11 @@ class LaptopMode(dbus.service.Object):
 		if value == None:
 			return (-1)
 		else:
-			return int(value)
+			try:
+				return int(value)
+			except:
+				# Not an int value, assume '1'
+				return 1
 		
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'i',
 						sender_keyword = 'sender', connection_keyword = 'conn')
@@ -183,7 +203,11 @@ class LaptopMode(dbus.service.Object):
 		if value == None:
 			return (-1)
 		else:
-			return int(value)
+			try:
+				return int(value)
+			except:
+				# Not an int value, assume '1'
+				return 1
 
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'i',
 						sender_keyword = 'sender', connection_keyword = 'conn')
@@ -192,7 +216,11 @@ class LaptopMode(dbus.service.Object):
 		if value == None:
 			return (-1)
 		else:
-			return int(value)
+			try:
+				return int(value)
+			except:
+				# Not an int value, assume '1'
+				return 1
 
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'i',
 						sender_keyword = 'sender', connection_keyword = 'conn')
@@ -201,7 +229,11 @@ class LaptopMode(dbus.service.Object):
 		if value == None:
 			return (-1)
 		else:
-			return int(value)
+			try:
+				return int(value)
+			except:
+				# Not an int value, assume '1'
+				return 1
 
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'i',
 						sender_keyword = 'sender', connection_keyword = 'conn')
@@ -210,7 +242,11 @@ class LaptopMode(dbus.service.Object):
 		if value == None:
 			return (-1)
 		else:
-			return int(value)
+			try:
+				return int(value)
+			except:
+				# Not an int value, assume '1'
+				return 1
 		
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = 'i', out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
