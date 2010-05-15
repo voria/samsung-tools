@@ -1,0 +1,695 @@
+# Hungarian translation for samsung-tools
+# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
+# This file is distributed under the same license as the samsung-tools package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: samsung-tools\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-05-15 10:42+0200\n"
+"PO-Revision-Date: 2010-05-14 00:32+0000\n"
+"Last-Translator: Dr. Alex Arutyunjan <Unknown>\n"
+"Language-Team: Hungarian <hu@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2010-05-15 08:40+0000\n"
+"X-Generator: Launchpad (build Unknown)\n"
+
+#: backends/session/util/locales.py:25 samsung-tools-preferences.py:489
+msgid "Backlight"
+msgstr "Háttérvilágítás"
+
+#: backends/session/util/locales.py:26
+msgid "Backlight is enabled"
+msgstr "Háttérvilágítás bekapcsolva"
+
+#: backends/session/util/locales.py:27
+msgid "Backlight is disabled"
+msgstr "Háttérvilágítás kikapcsolva"
+
+#: backends/session/util/locales.py:28
+msgid "Backlight enabled"
+msgstr "Háttérvilágítás bekapcsolva"
+
+#: backends/session/util/locales.py:29
+msgid "Backlight disabled"
+msgstr "Háttérvilágítás kikapcsolva"
+
+#: backends/session/util/locales.py:30
+msgid "Backlight cannot be enabled"
+msgstr "Háttérvilágítás nem kapcsolható be"
+
+#: backends/session/util/locales.py:31
+msgid "Backlight cannot be disabled"
+msgstr "Háttérvilágítás nem kapcsolható ki"
+
+#: backends/session/util/locales.py:32
+msgid "Backlight cannot be toggled"
+msgstr "Háttérvilágítás nem kapcsolható"
+
+#: backends/session/util/locales.py:34 samsung-tools-preferences.py:498
+#: po/samsung-tools-applet.glade.h:1
+msgid "Bluetooth"
+msgstr "Bluetooth"
+
+#: backends/session/util/locales.py:35
+msgid "Bluetooth is enabled"
+msgstr "Bluetooth bekapcsolva"
+
+#: backends/session/util/locales.py:36
+msgid "Bluetooth is disabled"
+msgstr "Bluetooth kikapcsolva"
+
+#: backends/session/util/locales.py:37
+msgid "Bluetooth enabled"
+msgstr "Bluetooth bekapcsolva"
+
+#: backends/session/util/locales.py:38
+msgid "Bluetooth disabled"
+msgstr "Bluetooth kikapcsolva"
+
+#: backends/session/util/locales.py:39
+msgid "Bluetooth cannot be enabled"
+msgstr "Bluetooth nem kapcsolható be"
+
+#: backends/session/util/locales.py:40
+msgid "Bluetooth cannot be disabled"
+msgstr "Bluetooth nem kapcsolható ki"
+
+#: backends/session/util/locales.py:41
+msgid "Bluetooth cannot be toggled"
+msgstr "Bluetooth nem kapcsolható"
+
+#: backends/session/util/locales.py:42
+msgid "Bluetooth control is not available"
+msgstr "Bluetooth nem szabályozható"
+
+#: backends/session/util/locales.py:44 samsung-tools-preferences.py:507
+msgid "CPU fan"
+msgstr "CPU hűtő"
+
+#: backends/session/util/locales.py:45
+msgid "CPU Temperature:"
+msgstr "CPU hőmérséklete"
+
+#: backends/session/util/locales.py:46
+msgid "Fan mode cannot be changed"
+msgstr "Hűtésmód nem változtatható"
+
+#: backends/session/util/locales.py:47
+msgid "Fan mode: Normal"
+msgstr "Hűtésmód: Normál"
+
+#: backends/session/util/locales.py:48
+msgid "Fan mode: Silent"
+msgstr "Hűtésmód: Csendes"
+
+#: backends/session/util/locales.py:49
+msgid "Fan mode: Speed"
+msgstr "Hűtésmód: Sebesség"
+
+#: backends/session/util/locales.py:50
+msgid "Cannot get fan mode"
+msgstr "Hűtésmód nem érzékelhető"
+
+#: backends/session/util/locales.py:51
+msgid "CPU fan control is not available"
+msgstr "CPU hűtése nem szabályozható"
+
+#: backends/session/util/locales.py:53 samsung-tools-preferences.py:516
+#: po/samsung-tools-applet.glade.h:7
+msgid "Webcam"
+msgstr "Webkamera"
+
+#: backends/session/util/locales.py:54
+msgid "Webcam is enabled"
+msgstr "Webkamera bekapcsolva"
+
+#: backends/session/util/locales.py:55
+msgid "Webcam is disabled"
+msgstr "Webkamera kikapcsolva"
+
+#: backends/session/util/locales.py:56
+msgid "Webcam enabled"
+msgstr "Webkamera bekapcsolva"
+
+#: backends/session/util/locales.py:57
+msgid "Webcam disabled"
+msgstr "Webkamera kikapcsolva"
+
+#: backends/session/util/locales.py:58
+msgid "Webcam cannot be enabled"
+msgstr "Webkamera nem kapcsolható be"
+
+#: backends/session/util/locales.py:59
+msgid "Webcam cannot be disabled"
+msgstr "Webkamera nem kapcsolható ki"
+
+#: backends/session/util/locales.py:60
+msgid "Webcam cannot be toggled"
+msgstr "Webkamera nem kapcsolható"
+
+#: backends/session/util/locales.py:61
+msgid "Webcam control is not available"
+msgstr "Webkamera nem szabályozható"
+
+#: backends/session/util/locales.py:63 samsung-tools-preferences.py:525
+#: po/samsung-tools-applet.glade.h:8
+msgid "Wireless"
+msgstr "Vezeték néküli hálózat"
+
+#: backends/session/util/locales.py:64
+msgid "Wireless is enabled"
+msgstr "Vezeték néküli hálózat bekapcsolva"
+
+#: backends/session/util/locales.py:65
+msgid "Wireless is disabled"
+msgstr "Vezeték néküli hálózat kikapcsolva"
+
+#: backends/session/util/locales.py:66
+msgid "Wireless enabled"
+msgstr "Vezeték néküli hálózat bekapcsolva"
+
+#: backends/session/util/locales.py:67
+msgid "Wireless disabled"
+msgstr "Vezeték néküli hálózat kikapcsolva"
+
+#: backends/session/util/locales.py:68
+msgid "Wireless cannot be enabled"
+msgstr "Vezeték néküli hálózat nem kapcsolható be"
+
+#: backends/session/util/locales.py:69
+msgid "Wireless cannot be disabled"
+msgstr "Vezeték néküli hálózat nem kapcsolható ki"
+
+#: backends/session/util/locales.py:70
+msgid "Wireless cannot be toggled"
+msgstr "Vezeték néküli hálózat nem kapcsolható"
+
+#: backends/session/util/locales.py:71
+msgid "Wireless control is not available"
+msgstr "Vezeték néküli hálózat nem szabályozható"
+
+#: samsung-tools.py:54
+msgid "Backlight control: unable to connect to session service!"
+msgstr "Háttérvilágítás-szabályozás: session service nem érhető el!"
+
+#: samsung-tools.py:120
+msgid "Bluetooth control: unable to connect to session service!"
+msgstr "Bluetooth-szabályozás: session service nem érhető el!"
+
+#: samsung-tools.py:199
+msgid "CPU fan control: unable to connect to session service!"
+msgstr "CPU-hűtés szabályozás: session service nem érhető el!"
+
+#: samsung-tools.py:329
+msgid "Webcam control: unable to connect to session service!"
+msgstr "Webkamera-szabályozás: session service nem érhető el!"
+
+#: samsung-tools.py:408
+msgid "Wireless control: unable to connect to session service!"
+msgstr "Vezeték nélküli hálózat szabályozás: session service nem érhető el!"
+
+#: samsung-tools.py:473
+msgid "Samsung Tools - Command Line Utility"
+msgstr "Samsung Tools - parancssori segédprogram"
+
+#: samsung-tools.py:475 samsung-tools.py:524
+#, python-format
+msgid "Usage: %s <interface> <option> ..."
+msgstr "Alkalmazás: %s <interfész> <opció> ..."
+
+#: samsung-tools.py:477 po/samsung-tools-preferences.glade.h:4
+msgid "Backlight:"
+msgstr "Háttérvilágítás"
+
+#: samsung-tools.py:478 samsung-tools.py:481 samsung-tools.py:484
+#: samsung-tools.py:487 samsung-tools.py:490
+msgid "Interface"
+msgstr "Interfész"
+
+#: samsung-tools.py:479 samsung-tools.py:482 samsung-tools.py:485
+#: samsung-tools.py:488 samsung-tools.py:491
+msgid "Options"
+msgstr "Beállítások"
+
+#: samsung-tools.py:480 po/samsung-tools-preferences.glade.h:5
+msgid "Bluetooth:"
+msgstr "Bluetooth:"
+
+#: samsung-tools.py:483 po/samsung-tools-preferences.glade.h:6
+msgid "CPU fan:"
+msgstr "CPU-hűtő:"
+
+#: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:35
+msgid "Webcam:"
+msgstr "Webkamera:"
+
+#: samsung-tools.py:489 po/samsung-tools-preferences.glade.h:36
+msgid "Wireless:"
+msgstr "Vezeték nélküli hálózat:"
+
+#: samsung-tools.py:493
+msgid "Other options:"
+msgstr "Egyéb beállítások:"
+
+#: samsung-tools.py:494
+msgid "Show status for all devices."
+msgstr "Mutassa minden eszköz állapotát."
+
+#: samsung-tools.py:495
+msgid "Show graphical notifications."
+msgstr "Mutasson grafikai értesítéseket."
+
+#: samsung-tools.py:496
+msgid "Do not print messages on standard output."
+msgstr "Ne nyomtasson üzeneteket szabványos kimeneten."
+
+#: samsung-tools.py:497
+msgid "Stop the session service."
+msgstr ""
+
+#: samsung-tools.py:498
+msgid "Stop the system service."
+msgstr "System service leállítása."
+
+#: samsung-tools.py:500
+msgid "Examples of use:"
+msgstr "Alkalmazási példa:"
+
+#: samsung-tools.py:501
+msgid " - Toggle backlight:"
+msgstr " - Háttérvilágítás kapcsolása:"
+
+#: samsung-tools.py:504
+msgid " - Toggle wireless and set CPU fan mode to 'silent':"
+msgstr ""
+" - Vezeték nélküli hálózat kapcsolása és CPU-hűtés állítása \"csendes\" "
+"üzemmódra:"
+
+#: samsung-tools.py:507
+msgid " - Disable bluetooth, webcam and wireless:"
+msgstr " - Bluetooth, webkamera és vezeték nélküli hálózat kikapcsolása:"
+
+#: samsung-tools.py:510
+msgid "For more informations, visit the 'Linux On My Samsung' forum:"
+msgstr "További információért látogasson a \"Linux on My Samsung\" fórumra:"
+
+#: samsung-tools.py:515 samsung-tools-preferences.py:992
+msgid "Released under GPLv3 license"
+msgstr ""
+
+#: samsung-tools.py:520
+msgid "No action(s) specified."
+msgstr "Nincs megadva művelet."
+
+#: samsung-tools.py:521 samsung-tools.py:585
+msgid "Use --help for instructions."
+msgstr "Útbaigazításhoz használja --help opciót."
+
+#: samsung-tools.py:584
+msgid "Wrong argument(s)."
+msgstr "Rossz argumentum(ok)."
+
+#: samsung-tools.py:601
+msgid "Session service stopped"
+msgstr ""
+
+#: samsung-tools.py:604
+msgid "Cannot stop session service"
+msgstr ""
+
+#: samsung-tools.py:614
+msgid "System service stopped"
+msgstr ""
+
+#: samsung-tools.py:617
+msgid "Cannot stop system service"
+msgstr ""
+
+#: samsung-tools-preferences.py:80
+msgid "Please press the new hotkey"
+msgstr "Nyomja meg az új billentyűkombinációt"
+
+#: samsung-tools-preferences.py:122
+msgid "None"
+msgstr "Semmi"
+
+#: samsung-tools-preferences.py:228 samsung-tools-preferences.py:330
+#: samsung-tools-preferences.py:420 samsung-tools-preferences.py:432
+#: samsung-tools-preferences.py:708 samsung-tools-preferences.py:720
+#: samsung-tools-preferences.py:732
+msgid "Unable to connect to system service!"
+msgstr "System sevice nem érhető el!"
+
+#: samsung-tools-preferences.py:444
+msgid "Confirm"
+msgstr "Megerősít"
+
+#: samsung-tools-preferences.py:445
+msgid "Apply the new VIDs?"
+msgstr ""
+
+#: samsung-tools-preferences.py:666
+msgid "Install the 'laptop mode tools' package to configure these options"
+msgstr "Ezen beállításokhoz telepítse a \"laptop mode tools\" csomagot"
+
+#: samsung-tools-preferences.py:677
+msgid "You need a PHC enabled kernel to use this feature"
+msgstr "E tulajdonság használatához PHC-engedélyezett kernel-re van szüksége"
+
+#: samsung-tools-preferences.py:696
+msgid "Unable to connect to session service!"
+msgstr "Session service nem érhető el!"
+
+#: samsung-tools-preferences.py:947
+msgid "Caution!"
+msgstr "Figyelem!"
+
+#: samsung-tools-preferences.py:948
+msgid ""
+"CPU undervolting can lead to significant gains in terms of power energy "
+"saving, however <b>IT IS A RISKY PRACTICE</b> that might result in "
+"malfunctions and loss of data. Please be sure to know what you are doing, "
+"prior to use these options.\n"
+"\n"
+"Are you sure you want to continue?"
+msgstr ""
+"CPU-feszültség csökkentése energiamegtakarításhoz és üzemidő növekedéséhez "
+"vezethet, azonban <b>EZ KOCKÁZATOS</b>, ami meghibásodáshoz és "
+"adatvesztéshez végződhet. Ezen beállítások alkalmazása előtt bizonyosodjon "
+"meg, hogy tudja, mit csinál.\n"
+"\n"
+"Biztos, hogy akarja folytatni?"
+
+#: po/samsung-tools-applet.glade.h:2
+msgid "CPU Fan"
+msgstr "CPU-hűtő"
+
+#: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:24
+msgid "Normal"
+msgstr "Normál"
+
+#: po/samsung-tools-applet.glade.h:4
+msgid "Preferences..."
+msgstr "Beállítások…"
+
+#: po/samsung-tools-applet.glade.h:5 po/samsung-tools-preferences.glade.h:27
+msgid "Silent"
+msgstr "Csendes"
+
+#: po/samsung-tools-applet.glade.h:6 po/samsung-tools-preferences.glade.h:28
+msgid "Speed"
+msgstr "Sebesség"
+
+#: po/samsung-tools-applet.server.in.h:1
+msgid "Manage devices on Samsung netbooks"
+msgstr ""
+
+#: po/samsung-tools-preferences.desktop.in.h:1
+#: po/samsung-tools-preferences.glade.h:25
+msgid "Samsung Tools Preferences"
+msgstr "Samsung Tools beállítások"
+
+#: po/samsung-tools-preferences.desktop.in.h:2
+msgid "Show and modify Samsung Tools preferences"
+msgstr "Mutatassa és változtassa a Samsung Tools beállításokat"
+
+#: po/samsung-tools-preferences.glade.h:1
+msgid "<b>Hotkeys</b>"
+msgstr "<b>Billentyűkombinációk</b>"
+
+#: po/samsung-tools-preferences.glade.h:2
+msgid "<b>Initial status for devices</b>"
+msgstr "<b>Az eszközök indulási állapota</b>"
+
+#: po/samsung-tools-preferences.glade.h:3
+msgid "Advanced power management"
+msgstr "Összetett energiagazdálkodás"
+
+#: po/samsung-tools-preferences.glade.h:7
+#: po/samsung-tools-preferences-phc.glade.h:4
+msgid "CPU undervolting"
+msgstr "CPU-feszültség csökkentése"
+
+#: po/samsung-tools-preferences.glade.h:8
+msgid "Click here to disable the hotkey"
+msgstr "Kattintson ide a billentyűkombinációk letiltásához"
+
+#: po/samsung-tools-preferences.glade.h:9
+msgid "Click here to set the default hotkey"
+msgstr "Kattintson ide az alapértelmezett billentyűkombináció beállításához"
+
+#: po/samsung-tools-preferences.glade.h:10
+msgid "Click here to set the default value"
+msgstr "Kattintson ide az alapértelmezett érték beállításához"
+
+#: po/samsung-tools-preferences.glade.h:11
+#: po/samsung-tools-preferences-laptop-mode.glade.h:5
+msgid "Configure 'laptop mode tools'"
+msgstr "\"laptop mode tools\" beállítása"
+
+#: po/samsung-tools-preferences.glade.h:12
+msgid "Configure 'laptop mode tools' for a better power management"
+msgstr "\"laptop mode tools\" beállítása jobb energiagazdálkodáshoz"
+
+#: po/samsung-tools-preferences.glade.h:13
+#: po/samsung-tools-preferences-kernel-parameters.glade.h:1
+msgid "Configure kernel parameters"
+msgstr "Kernel-paraméterek beállítása"
+
+#: po/samsung-tools-preferences.glade.h:14
+msgid "Disabled"
+msgstr "Letiltva"
+
+#: po/samsung-tools-preferences.glade.h:15
+msgid "Enable hotkeys"
+msgstr "Engedélyezett billentyűkombinációk"
+
+#: po/samsung-tools-preferences.glade.h:16
+msgid "Enable this option to use hotkeys"
+msgstr "Engedélyezze ezt a beállítást billentyűkombinációk használatához"
+
+#: po/samsung-tools-preferences.glade.h:17
+msgid "Enabled"
+msgstr "Engedélyezve"
+
+#: po/samsung-tools-preferences.glade.h:18
+msgid "Hotkey used for CPU fan control"
+msgstr "Billentyűkombináció CPU-hűtés szabályozásához"
+
+#: po/samsung-tools-preferences.glade.h:19
+msgid "Hotkey used for backlight control"
+msgstr "Billentyűkombináció háttérvilágítás szabályozásához"
+
+#: po/samsung-tools-preferences.glade.h:20
+msgid "Hotkey used for bluetooth control"
+msgstr "Billentyűkombináció Bluetooth szabályozásához"
+
+#: po/samsung-tools-preferences.glade.h:21
+msgid "Hotkey used for webcam control"
+msgstr "Billentyűkombináció webkamera szabályozásához"
+
+#: po/samsung-tools-preferences.glade.h:22
+msgid "Hotkey used for wireless control"
+msgstr "Billentyűkombináció vezeték nélküli hálózat szabályozásához"
+
+#: po/samsung-tools-preferences.glade.h:23
+msgid "Last status"
+msgstr "Előző állapot"
+
+#: po/samsung-tools-preferences.glade.h:26
+msgid "Session service"
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:29
+msgid "System service"
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:30
+msgid "The initial status at boot for Bluetooth"
+msgstr "Bluetooth rendszerindításkori állapota"
+
+#: po/samsung-tools-preferences.glade.h:31
+msgid "The initial status at boot for CPU fan"
+msgstr "CPU-hűtés rendszerindításkori állapota"
+
+#: po/samsung-tools-preferences.glade.h:32
+msgid "The initial status at boot for webcam"
+msgstr "Webkamera rendszerindításkori állapota"
+
+#: po/samsung-tools-preferences.glade.h:33
+msgid "The initial status at boot for wireless"
+msgstr "Vezeték nélküli hálózat rendszerindításkori állapota"
+
+#: po/samsung-tools-preferences.glade.h:34
+msgid "Undervolt the CPU in order to save energy"
+msgstr "CPU-feszültség csökkentése energiamegtakarításhoz"
+
+#: po/samsung-tools-preferences-kernel-parameters.glade.h:2
+msgid "Swap control:"
+msgstr "Swap szabályozás:"
+
+#: po/samsung-tools-preferences-kernel-parameters.glade.h:3
+msgid ""
+"Swappiness controls how aggressively the kernel swaps memory pages. Higher "
+"values increase agressiveness, lower values descrease aggressiveness. In "
+"other words, the higher is the value, the more the system will swap, with "
+"bad results on power consumption and disk performance. Set a low value if "
+"you usually have plenty of unused RAM. The default value is 60."
+msgstr ""
+"Swappiness szabályozza, mennyire agresszívan cseréli a memóriaoldalakat a "
+"kernel. Magasabb érték növeli az agresszívitást, alacsonyabb — csökkenti. "
+"Más szóval, minél magasabb az érték, annál többet cserél a rendszer, ami "
+"rossz hatással van energiafogyasztásra és lemezkapacitásra. Állítcson be "
+"alacsonyabb értéket, ha általában sok RAM marad kihasználatlanul. Az "
+"alapértelmezet érték — 60."
+
+#: po/samsung-tools-preferences-kernel-parameters.glade.h:4
+msgid ""
+"This option controls how aggressively the kernel swaps memory pages. Higher "
+"values increase agressiveness, lower values descrease aggressiveness. In "
+"other words, the higher is the value, the more the system will swap, with "
+"bad results on power consumption and disk performance. Set a low value if "
+"you usually have plenty of unused RAM. The default value is 60."
+msgstr ""
+"Ez a beállítás szabályozza, mennyire agresszívan cseréli a memóriaoldalakat "
+"a kernel. Magasabb érték növeli az agresszívitást, alacsonyabb — csökkenti. "
+"Más szóval, minél magasabb az érték, annál többet cserél a rendszer, ami "
+"rossz hatással van energiafogyasztásra és lemezkapacitásra. Állítcson be "
+"alacsonyabb értéket, ha általában sok RAM marad kihasználatlanul. Az "
+"alapértelmezet érték — 60."
+
+#: po/samsung-tools-preferences-laptop-mode.glade.h:1
+msgid ""
+"'laptop mode tools' can automatically swap out configuration files depending "
+"on the power state of your system.\n"
+" \n"
+"The primary use for this feature is for controlling the configuration files "
+"of syslog daemons. Syslog daemons have a tendency to sync their log files "
+"when entries are written to them. This causes disks to spin up, which is not "
+"very nice when you're trying to save power."
+msgstr ""
+
+#: po/samsung-tools-preferences-laptop-mode.glade.h:4
+msgid ""
+"An enabled video output port draws power, even if no display is connected. "
+"This option forces the display output off depending on the power mode."
+msgstr ""
+
+#: po/samsung-tools-preferences-laptop-mode.glade.h:6
+msgid "Control Ethernet settings"
+msgstr ""
+
+#: po/samsung-tools-preferences-laptop-mode.glade.h:7
+msgid "Control HAL polling"
+msgstr ""
+
+#: po/samsung-tools-preferences-laptop-mode.glade.h:8
+msgid "Control Intel HDA audio chipset power"
+msgstr ""
+
+#: po/samsung-tools-preferences-laptop-mode.glade.h:9
+msgid "Control Intel SATA chipset power"
+msgstr ""
+
+#: po/samsung-tools-preferences-laptop-mode.glade.h:10
+msgid "Control Linux scheduler"
+msgstr ""
+
+#: po/samsung-tools-preferences-laptop-mode.glade.h:11
+msgid "Control configuration files"
+msgstr ""
+
+#: po/samsung-tools-preferences-laptop-mode.glade.h:12
+msgid "Control video output settings"
+msgstr ""
+
+#: po/samsung-tools-preferences-laptop-mode.glade.h:13
+msgid "Enable USB autosuspend"
+msgstr ""
+
+#: po/samsung-tools-preferences-laptop-mode.glade.h:14
+msgid "Hard disk power management:"
+msgstr ""
+
+#: po/samsung-tools-preferences-laptop-mode.glade.h:15
+msgid ""
+"If you enable this option, 'laptop mode tools' will automatically configure "
+"the Linux scheduler to save power on multi-core processors while running on "
+"battery mode."
+msgstr ""
+
+#: po/samsung-tools-preferences-laptop-mode.glade.h:16
+msgid ""
+"If you enable this option, 'laptop mode tools' will automatically enable the "
+"USB autosuspend feature for all devices."
+msgstr ""
+
+#: po/samsung-tools-preferences-laptop-mode.glade.h:17
+msgid ""
+"If you enable this option, 'laptop mode tools' will automatically enable the "
+"link power management mode of Intel AHCI compliant SATA chipsets."
+msgstr ""
+
+#: po/samsung-tools-preferences-laptop-mode.glade.h:18
+msgid ""
+"If you enable this option, 'laptop mode tools' will automatically set the "
+"powersave mode of Intel HDA audio chipsets."
+msgstr ""
+
+#: po/samsung-tools-preferences-laptop-mode.glade.h:19
+msgid ""
+"If you enable this option, 'laptop mode tools' will control the polling of "
+"your CD/DVD drives by HAL. Disabling polling saves a considerable amount of "
+"power."
+msgstr ""
+
+#: po/samsung-tools-preferences-laptop-mode.glade.h:20
+msgid ""
+"If you enable this option, the speed of the Ethernet connection is limited "
+"to 100 Mbit. The difference in power usage between 1 Gbit and 100 Mbit "
+"Ethernet is quite large, so tuning can yield savings if you don't need the "
+"full speed (for instance if you only use Ethernet as to connect to a much "
+"slower ADSL modem)."
+msgstr ""
+
+#: po/samsung-tools-preferences-laptop-mode.glade.h:21
+msgid ""
+"This option sets the disk power management, it can be a value between 1 and "
+"255. A low value results in a better energy saving but less disk "
+"performance, an high value results in disk performance but less energy "
+"saving."
+msgstr ""
+
+#: po/samsung-tools-preferences-phc.glade.h:1
+msgid "<b>Default VIDs</b>"
+msgstr ""
+
+#: po/samsung-tools-preferences-phc.glade.h:2
+msgid "<b>Frequencies</b>"
+msgstr ""
+
+#: po/samsung-tools-preferences-phc.glade.h:3
+msgid "<b>New VIDs</b>"
+msgstr ""
+
+#: po/samsung-tools-preferences-phc.glade.h:5
+msgid ""
+"Enable this option only if the new VIDs are tested and safe, otherwise the "
+"machine might be no more bootable!"
+msgstr ""
+
+#: po/samsung-tools-preferences-phc.glade.h:6
+msgid "Note: the new VIDs will be applied when this window will be closed."
+msgstr ""
+
+#: po/samsung-tools-preferences-phc.glade.h:7
+msgid "Set the new VIDs automatically at boot"
+msgstr ""
+
+#: po/samsung-tools-session-service.desktop.in.h:1
+msgid "Start the session service"
+msgstr ""
