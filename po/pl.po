@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-04 12:50+0200\n"
+"POT-Creation-Date: 2010-05-16 12:02+0200\n"
 "PO-Revision-Date: 2010-05-06 11:10+0000\n"
 "Last-Translator: Cezary Jackiewicz <cjackiewicz@poczta.onet.pl>\n"
 "Language-Team: Polish <pl@li.org>\n"
@@ -202,8 +202,7 @@ msgstr "Zarządzanie Bluetooth'em: nie można połączyć z usługą sesji"
 
 #: samsung-tools.py:199
 msgid "CPU fan control: unable to connect to session service!"
-msgstr ""
-"Zarządzanie wentylatorem procesora: nie można połączyć z usługą sesji"
+msgstr "Zarządzanie wentylatorem procesora: nie można połączyć z usługą sesji"
 
 #: samsung-tools.py:329
 msgid "Webcam control: unable to connect to session service!"
@@ -297,7 +296,7 @@ msgstr " Wyłącz Bluetooth'a, kamerę internetową i sieć bezprzewodową:"
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Po więcej informacji odwiedź forum 'Linux On My Samsung' :"
 
-#: samsung-tools.py:515 samsung-tools-preferences.py:992
+#: samsung-tools.py:515 samsung-tools-preferences.py:993
 msgid "Released under GPLv3 license"
 msgstr "Wydane na licencji GPLv3"
 

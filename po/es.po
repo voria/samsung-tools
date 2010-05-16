@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-28 17:38+0200\n"
+"POT-Creation-Date: 2010-05-16 12:02+0200\n"
 "PO-Revision-Date: 2010-04-16 15:01+0000\n"
 "Last-Translator: ironfisher <dgvalde@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -302,7 +302,7 @@ msgstr " - Deshabilita bluetooth, la cámara web y las redes inalámbricas:"
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Para mas información visita el foro \"Linux On My Samsung\":"
 
-#: samsung-tools.py:515 samsung-tools-preferences.py:992
+#: samsung-tools.py:515 samsung-tools-preferences.py:993
 msgid "Released under GPLv3 license"
 msgstr "Liberado bajo licencia GPLv3"
 

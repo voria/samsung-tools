@@ -980,7 +980,8 @@ Are you sure you want to continue?"), "utf-8")
 					"Sukochev Roman (Leolik)",
 					"Andrey Kulakov",
 					"Dr. Alex Arutyunjan",
-					"Cezary Jackiewicz"
+					"Cezary Jackiewicz",
+					"Lars Karlsson"
 					]
 		
 		translators.sort(cmp = lambda x, y: cmp(x.lower(), y.lower()))

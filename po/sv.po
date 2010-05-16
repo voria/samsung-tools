@@ -1,52 +1,53 @@
-# Samsung Tools - Italian translation.
-# This file is distributed under BSD license.
-# Fortunato Ventre (voRia) <vorione@gmail.com>, 2010.
-# Fortunato Ventre <vorione@gmail.com>, 2010.
+# Swedish translation for samsung-tools
+# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
+# This file is distributed under the same license as the samsung-tools package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: 0.1\n"
+"Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-05-16 12:02+0200\n"
-"PO-Revision-Date: 2010-04-16 15:01+0000\n"
-"Last-Translator: Fortunato Ventre (voRia) <vorione@gmail.com>\n"
-"Language-Team: Italiano <vorione@gmail.com>\n"
+"PO-Revision-Date: 2010-05-15 21:21+0000\n"
+"Last-Translator: Lars Karlsson <Unknown>\n"
+"Language-Team: Swedish <sv@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-04-20 07:12+0000\n"
+"X-Launchpad-Export-Date: 2010-05-16 10:00+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: backends/session/util/locales.py:25 samsung-tools-preferences.py:489
 msgid "Backlight"
-msgstr "Retroilluminazione"
+msgstr "Skärmljus"
 
 #: backends/session/util/locales.py:26
 msgid "Backlight is enabled"
-msgstr "La retroilluminazione è attivata"
+msgstr "Skärmljus är aktiverat"
 
 #: backends/session/util/locales.py:27
 msgid "Backlight is disabled"
-msgstr "La retroilluminazione è disattivata"
+msgstr "Skärmljus är inte aktiverat"
 
 #: backends/session/util/locales.py:28
 msgid "Backlight enabled"
-msgstr "Retroilluminazione attivata"
+msgstr "Skärmljus aktiverat"
 
 #: backends/session/util/locales.py:29
 msgid "Backlight disabled"
-msgstr "Retroilluminazione disattivata"
+msgstr "Skärmljus insaktiverat"
 
 #: backends/session/util/locales.py:30
 msgid "Backlight cannot be enabled"
-msgstr "La retroilluminazione non può essere attivata"
+msgstr "Skärmljus kan inte aktiveras"
 
 #: backends/session/util/locales.py:31
 msgid "Backlight cannot be disabled"
-msgstr "La retroilluminazione non può essere disattivata"
+msgstr "Skärmljus kan inte inaktiveras"
 
 #: backends/session/util/locales.py:32
 msgid "Backlight cannot be toggled"
-msgstr "La retroilluminazione non può essere commutata"
+msgstr "Skärmljus kan inte ändras"
 
 #: backends/session/util/locales.py:34 samsung-tools-preferences.py:498
 #: po/samsung-tools-applet.glade.h:1
@@ -55,188 +56,184 @@ msgstr "Bluetooth"
 
 #: backends/session/util/locales.py:35
 msgid "Bluetooth is enabled"
-msgstr "Il Bluetooth è attivato"
+msgstr "Bluetooth är aktiverat"
 
 #: backends/session/util/locales.py:36
 msgid "Bluetooth is disabled"
-msgstr "Il Bluetooth è disattivato"
+msgstr "Bluetooth är inaktiverat"
 
 #: backends/session/util/locales.py:37
 msgid "Bluetooth enabled"
-msgstr "Bluetooth attivato"
+msgstr "Bluetooth aktiverat"
 
 #: backends/session/util/locales.py:38
 msgid "Bluetooth disabled"
-msgstr "Bluetooth disattivato"
+msgstr "Bluetooth inaktiverat"
 
 #: backends/session/util/locales.py:39
 msgid "Bluetooth cannot be enabled"
-msgstr "Il Bluetooth non può essere attivato"
+msgstr "Bluetooth kan inte aktiveras"
 
 #: backends/session/util/locales.py:40
 msgid "Bluetooth cannot be disabled"
-msgstr "Il Bluetooth non può essere disattivato"
+msgstr "Bluetooth kan inte inaktiveras"
 
 #: backends/session/util/locales.py:41
 msgid "Bluetooth cannot be toggled"
-msgstr "Il Bluetooth non può essere commutato"
+msgstr "Bluetoothstatus kan inte ändras"
 
 #: backends/session/util/locales.py:42
 msgid "Bluetooth control is not available"
-msgstr "Il controllo Bluetooth non è disponibile"
+msgstr "Bluetooth-kontroll är inte tillgängligt"
 
 #: backends/session/util/locales.py:44 samsung-tools-preferences.py:507
 msgid "CPU fan"
-msgstr "Ventola CPU"
+msgstr "CPU-fläkt"
 
 #: backends/session/util/locales.py:45
 msgid "CPU Temperature:"
-msgstr "Temperatura CPU:"
+msgstr "CPU-temperatur"
 
 #: backends/session/util/locales.py:46
 msgid "Fan mode cannot be changed"
-msgstr "La modalità della ventola non può essere cambiata"
+msgstr "Fläktläge kan inte ändras"
 
 #: backends/session/util/locales.py:47
 msgid "Fan mode: Normal"
-msgstr "Modalità ventola: Normale"
+msgstr "Fläktläge: normal"
 
 #: backends/session/util/locales.py:48
 msgid "Fan mode: Silent"
-msgstr "Modalità ventola: Silenziosa"
+msgstr "Fläktläge: tyst"
 
 #: backends/session/util/locales.py:49
 msgid "Fan mode: Speed"
-msgstr "Modalità ventola: Veloce"
+msgstr "Fläktläge: prestanda"
 
 #: backends/session/util/locales.py:50
 msgid "Cannot get fan mode"
-msgstr "Impossibile recuperare la modalità della ventola"
+msgstr "Kan inte läsa fläktläge"
 
 #: backends/session/util/locales.py:51
 msgid "CPU fan control is not available"
-msgstr "Il controllo della ventola della CPU non è disponibile"
+msgstr "CPU-fläktkontroll är inte tillgänglig"
 
 #: backends/session/util/locales.py:53 samsung-tools-preferences.py:516
 #: po/samsung-tools-applet.glade.h:7
 msgid "Webcam"
-msgstr "Webcam"
+msgstr "Webbkamera"
 
 #: backends/session/util/locales.py:54
 msgid "Webcam is enabled"
-msgstr "La webcam è attivata"
+msgstr "Webbkamera är aktiverad"
 
 #: backends/session/util/locales.py:55
 msgid "Webcam is disabled"
-msgstr "La webcam è disattivata"
+msgstr "Webbkamera är inaktiverad"
 
 #: backends/session/util/locales.py:56
 msgid "Webcam enabled"
-msgstr "Webcam attivata"
+msgstr "Webbkamera aktiverad"
 
 #: backends/session/util/locales.py:57
 msgid "Webcam disabled"
-msgstr "Webcam disattivata"
+msgstr "Webbkamera inaktiverad"
 
 #: backends/session/util/locales.py:58
 msgid "Webcam cannot be enabled"
-msgstr "La webcam non può essere attivata"
+msgstr "Webbkamera kan inte aktiveras"
 
 #: backends/session/util/locales.py:59
 msgid "Webcam cannot be disabled"
-msgstr "La webcam non può essere disattivata"
+msgstr "Webbkamera kan inte inaktiveras"
 
 #: backends/session/util/locales.py:60
 msgid "Webcam cannot be toggled"
-msgstr "La webcam non può essere commutata"
+msgstr "Kan inte ändra läge på webbkameran"
 
 #: backends/session/util/locales.py:61
 msgid "Webcam control is not available"
-msgstr "Il controllo webcam non è disponibile"
+msgstr "Webbkamerakontroll inte tillgänglig"
 
 #: backends/session/util/locales.py:63 samsung-tools-preferences.py:525
 #: po/samsung-tools-applet.glade.h:8
 msgid "Wireless"
-msgstr "Rete senza fili"
+msgstr "Trådlöst nätverk"
 
 #: backends/session/util/locales.py:64
 msgid "Wireless is enabled"
-msgstr "La rete senza fili è attivata"
+msgstr "Trådlöst nätverk är aktiverad"
 
 #: backends/session/util/locales.py:65
 msgid "Wireless is disabled"
-msgstr "La rete senza fili è disattivata"
+msgstr "Trådlöst nätverk är inaktiverat"
 
 #: backends/session/util/locales.py:66
 msgid "Wireless enabled"
-msgstr "Rete senza fili attivata"
+msgstr "Trådlöst nätverk aktiverat"
 
 #: backends/session/util/locales.py:67
 msgid "Wireless disabled"
-msgstr "Rete senza fili disattivata"
+msgstr "Trådlöst nätverk inaktiverat"
 
 #: backends/session/util/locales.py:68
 msgid "Wireless cannot be enabled"
-msgstr "La rete senza fili non può essere attivata"
+msgstr "Trådlöst nätverk kan inte aktiveras"
 
 #: backends/session/util/locales.py:69
 msgid "Wireless cannot be disabled"
-msgstr "La rete senza fili non può essere disattivata"
+msgstr "Trådlöst nätverk kan inte inaktiveras"
 
 #: backends/session/util/locales.py:70
 msgid "Wireless cannot be toggled"
-msgstr "La rete senza fili non può essere commutata"
+msgstr "Trådlöst nätverk kan inte ändras"
 
 #: backends/session/util/locales.py:71
 msgid "Wireless control is not available"
-msgstr "Il controllo della rete senza fili non è disponibile"
+msgstr "Kontroll för trådlöst nätverk inte tillgängligt"
 
 #: samsung-tools.py:54
 msgid "Backlight control: unable to connect to session service!"
-msgstr ""
-"Controllo retroilluminazione: impossibile connettersi al servizio di "
-"sessione!"
+msgstr "Skärmljuskontroll: kan inte ansluta till sessionen!"
 
 #: samsung-tools.py:120
 msgid "Bluetooth control: unable to connect to session service!"
-msgstr "Controllo Bluetooth: impossibile connettersi al servizio di sessione!"
+msgstr "Bluetooth-kontroll: kan inte ansluta till sessionen!"
 
 #: samsung-tools.py:199
 msgid "CPU fan control: unable to connect to session service!"
-msgstr ""
-"Controllo ventola CPU: impossibile connettersi al servizio di sessione!"
+msgstr "CPU-fläktkontroll: kan inte ansluta till sessionen!"
 
 #: samsung-tools.py:329
 msgid "Webcam control: unable to connect to session service!"
-msgstr "Controllo webcam: impossibile connettersi al servizio di sessione!"
+msgstr "Webbkamerakontroll: kan inte ansluta till sessionen!"
 
 #: samsung-tools.py:408
 msgid "Wireless control: unable to connect to session service!"
-msgstr ""
-"Controllo rete senza fili: impossibile connettersi al servizio di sessione!"
+msgstr "Kontroll av trådlöst nätverk: kan inte ansluta till sessionen!"
 
 #: samsung-tools.py:473
 msgid "Samsung Tools - Command Line Utility"
-msgstr "Samsung Tools - Utilità da linea di comando"
+msgstr "Samsung Tools - kommandoradsverktyget"
 
 #: samsung-tools.py:475 samsung-tools.py:524
 #, python-format
 msgid "Usage: %s <interface> <option> ..."
-msgstr "Uso: %s <interfaccia> <opzione> ..."
+msgstr "Användning: %s <gränssnitt> <alternativ> ..."
 
 #: samsung-tools.py:477 po/samsung-tools-preferences.glade.h:4
 msgid "Backlight:"
-msgstr "Retroilluminazione:"
+msgstr "Skärmljus:"
 
 #: samsung-tools.py:478 samsung-tools.py:481 samsung-tools.py:484
 #: samsung-tools.py:487 samsung-tools.py:490
 msgid "Interface"
-msgstr "Interfaccia"
+msgstr "Gränssnitt"
 
 #: samsung-tools.py:479 samsung-tools.py:482 samsung-tools.py:485
 #: samsung-tools.py:488 samsung-tools.py:491
 msgid "Options"
-msgstr "Opzioni"
+msgstr "Alternativ"
 
 #: samsung-tools.py:480 po/samsung-tools-preferences.glade.h:5
 msgid "Bluetooth:"
@@ -244,134 +241,131 @@ msgstr "Bluetooth:"
 
 #: samsung-tools.py:483 po/samsung-tools-preferences.glade.h:6
 msgid "CPU fan:"
-msgstr "Ventola CPU:"
+msgstr "CPU-fläkt:"
 
 #: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:35
 msgid "Webcam:"
-msgstr "Webcam:"
+msgstr "Webbkamera"
 
 #: samsung-tools.py:489 po/samsung-tools-preferences.glade.h:36
 msgid "Wireless:"
-msgstr "Rete senza fili:"
+msgstr "Trådlöst nätverk:"
 
 #: samsung-tools.py:493
 msgid "Other options:"
-msgstr "Altre opzioni:"
+msgstr "Andra alternativ:"
 
 #: samsung-tools.py:494
 msgid "Show status for all devices."
-msgstr "Mostra lo stato di tutti i dispositivi."
+msgstr "Visa status för alla enheter."
 
 #: samsung-tools.py:495
 msgid "Show graphical notifications."
-msgstr "Mostra notifiche grafiche."
+msgstr "Visa grafiska meddelanden."
 
 #: samsung-tools.py:496
 msgid "Do not print messages on standard output."
-msgstr "Non stampare messaggi sullo standard output."
+msgstr "Skriv inte ut meddelanden om standardhändelser."
 
 #: samsung-tools.py:497
 msgid "Stop the session service."
-msgstr "Ferma il servizio di sessione."
+msgstr "Stoppa sessionsservicen."
 
 #: samsung-tools.py:498
 msgid "Stop the system service."
-msgstr "Ferma il servizio di sistema."
+msgstr "Stoppa systemservicen."
 
 #: samsung-tools.py:500
 msgid "Examples of use:"
-msgstr "Esempi d'uso:"
+msgstr "Användningsexempel:"
 
 #: samsung-tools.py:501
 msgid " - Toggle backlight:"
-msgstr " - Commuta la retroilluminazione:"
+msgstr " - Ändra skärmljus"
 
 #: samsung-tools.py:504
 msgid " - Toggle wireless and set CPU fan mode to 'silent':"
-msgstr ""
-" - Commuta la rete senza fili e imposta la ventola della CPU in modalità "
-"'silenziosa':"
+msgstr " - Ändra trådlöst nätverk och byt CPU-fläktläge till 'tyst':"
 
 #: samsung-tools.py:507
 msgid " - Disable bluetooth, webcam and wireless:"
-msgstr " - Disattiva il Bluetooth, la webcam e la rete senza fili:"
+msgstr " - Inaktivera bluetooth, webbkamera och det trådlösa nätverket:"
 
 #: samsung-tools.py:510
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
-msgstr "Per maggiori informazioni, visita il forum 'Linux On My Samsung':"
+msgstr "För mer information, gå till 'Linux On My Samsung'-forumet:"
 
 #: samsung-tools.py:515 samsung-tools-preferences.py:993
 msgid "Released under GPLv3 license"
-msgstr "Rilasciato con licenza GPLv3"
+msgstr "Publicerat under GPLv3-licensen"
 
 #: samsung-tools.py:520
 msgid "No action(s) specified."
-msgstr "Nessuna azione specificata."
+msgstr "Inga handlingar specificerade."
 
 #: samsung-tools.py:521 samsung-tools.py:585
 msgid "Use --help for instructions."
-msgstr "Usa --help per le istruzioni."
+msgstr "Skriv '--help' för användarinstruktioner."
 
 #: samsung-tools.py:584
 msgid "Wrong argument(s)."
-msgstr "Argomenti errati."
+msgstr "Fel argument."
 
 #: samsung-tools.py:601
 msgid "Session service stopped"
-msgstr "Servizio di sessione fermato"
+msgstr "Sessionsservicen stoppad"
 
 #: samsung-tools.py:604
 msgid "Cannot stop session service"
-msgstr "Impossibile fermare il servizio di sessione"
+msgstr "Kan inte stoppa sessionservice"
 
 #: samsung-tools.py:614
 msgid "System service stopped"
-msgstr "Servizio di sistema fermato"
+msgstr "Systemservice stoppad"
 
 #: samsung-tools.py:617
 msgid "Cannot stop system service"
-msgstr "Impossibile fermare il servizio di sistema"
+msgstr "Kan inte stoppa systemservice"
 
 #: samsung-tools-preferences.py:80
 msgid "Please press the new hotkey"
-msgstr "Premere la nuova combinazione di tasti"
+msgstr "Tryck in en ny knapp för kortkommandot"
 
 #: samsung-tools-preferences.py:122
 msgid "None"
-msgstr "Nessuno"
+msgstr "Ingen"
 
 #: samsung-tools-preferences.py:228 samsung-tools-preferences.py:330
 #: samsung-tools-preferences.py:420 samsung-tools-preferences.py:432
 #: samsung-tools-preferences.py:708 samsung-tools-preferences.py:720
 #: samsung-tools-preferences.py:732
 msgid "Unable to connect to system service!"
-msgstr "Impossibile connettersi al servizio di sistema!"
+msgstr "Kan inte ansluta till systemtjänsten!"
 
 #: samsung-tools-preferences.py:444
 msgid "Confirm"
-msgstr "Conferma"
+msgstr "Bekräfta"
 
 #: samsung-tools-preferences.py:445
 msgid "Apply the new VIDs?"
-msgstr "Applicare i nuovi VID?"
+msgstr "Använde de nya VID:erna?"
 
 #: samsung-tools-preferences.py:666
 msgid "Install the 'laptop mode tools' package to configure these options"
 msgstr ""
-"Installa il pacchetto 'laptop mode tools' per configurare queste opzioni"
+"Installera 'laptop mode tools'-paketet för att ställa in dessa alternativ"
 
 #: samsung-tools-preferences.py:677
 msgid "You need a PHC enabled kernel to use this feature"
-msgstr ""
-"Per utilizzare questa caratteristica è necessario un kernel abilitato PHC"
+msgstr "Du behöver en PHC-aktiverad kernel för att använda denna funktion"
 
 #: samsung-tools-preferences.py:696
 msgid "Unable to connect to session service!"
-msgstr "Impossibile connettersi al servizio di sessione!"
+msgstr "Kan inte ansluta till systemtjänsten!"
 
 #: samsung-tools-preferences.py:947
 msgid "Caution!"
-msgstr "Cautela!"
+msgstr "Försiktigt!"
 
 #: samsung-tools-preferences.py:948
 msgid ""
@@ -382,162 +376,159 @@ msgid ""
 "\n"
 "Are you sure you want to continue?"
 msgstr ""
-"L'undervolt della CPU può portare a guadagni significativi in termini di "
-"risparmio energetico, tuttavia <b>È UNA PRATICA RISCHIOSA</b> che potrebbe "
-"risultare in malfunzionamenti e perdita di dati. Assicurarsi di sapere cosa "
-"si sta facendo prima di utilizzare queste opzioni.\n"
+"Att undervolta processorn kan leda till att mindre energi används, men "
+"<b>DET ÄR RISKABELT</b> och kan leda till dataförluster. Var säker på vad du "
+"gör innan du använder dessa alternativ.\n"
 "\n"
-"Sicuro di voler continuare?"
+"Är du säker på att du vill fortsätta?"
 
 #: po/samsung-tools-applet.glade.h:2
 msgid "CPU Fan"
-msgstr "Ventola CPU"
+msgstr "CPU-fläkt"
 
 #: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:24
 msgid "Normal"
-msgstr "Normale"
+msgstr "Normalt"
 
 #: po/samsung-tools-applet.glade.h:4
 msgid "Preferences..."
-msgstr "Preferenze..."
+msgstr "Inställningar..."
 
 #: po/samsung-tools-applet.glade.h:5 po/samsung-tools-preferences.glade.h:27
 msgid "Silent"
-msgstr "Silenziosa"
+msgstr "Tyst"
 
 #: po/samsung-tools-applet.glade.h:6 po/samsung-tools-preferences.glade.h:28
 msgid "Speed"
-msgstr "Veloce"
+msgstr "Hastighet"
 
 #: po/samsung-tools-applet.server.in.h:1
 msgid "Manage devices on Samsung netbooks"
-msgstr "Gestisce i dispositivi sui netbook Samsung"
+msgstr "Hantera enheter på Samsung netbooks"
 
 #: po/samsung-tools-preferences.desktop.in.h:1
 #: po/samsung-tools-preferences.glade.h:25
 msgid "Samsung Tools Preferences"
-msgstr "Preferenze di Samsung Tools"
+msgstr "Samsung Tools-inställningar"
 
 #: po/samsung-tools-preferences.desktop.in.h:2
 msgid "Show and modify Samsung Tools preferences"
-msgstr "Visualizza e modifica le preferenze di Samsung Tools"
+msgstr "Visa och ändra Samsung Tools-inställningar"
 
 #: po/samsung-tools-preferences.glade.h:1
 msgid "<b>Hotkeys</b>"
-msgstr "<b>Tasti veloci</b>"
+msgstr "<b>Tangentbordsgenvägar</b>"
 
 #: po/samsung-tools-preferences.glade.h:2
 msgid "<b>Initial status for devices</b>"
-msgstr "<b>Stato iniziale dei dispositivi</b>"
+msgstr "<b>Initial status för enheter</b>"
 
 #: po/samsung-tools-preferences.glade.h:3
 msgid "Advanced power management"
-msgstr "Gestione energetica avanzata"
+msgstr "Avancerad energisparhantering"
 
 #: po/samsung-tools-preferences.glade.h:7
 #: po/samsung-tools-preferences-phc.glade.h:4
 msgid "CPU undervolting"
-msgstr "Undervolt della CPU"
+msgstr "CPU-undervoltning"
 
 #: po/samsung-tools-preferences.glade.h:8
 msgid "Click here to disable the hotkey"
-msgstr "Clicca qui per disattivare il tasto veloce"
+msgstr "Klicka här för att inaktivera tangentbordsgenvägar"
 
 #: po/samsung-tools-preferences.glade.h:9
 msgid "Click here to set the default hotkey"
-msgstr "Clicca qui per impostare il tasto veloce predefinito"
+msgstr "Klicka här för att ställa in standardtangenten"
 
 #: po/samsung-tools-preferences.glade.h:10
 msgid "Click here to set the default value"
-msgstr "Clicca qui per impostare il valore predefinito"
+msgstr "Klicka här för att använda standardinställningarna"
 
 #: po/samsung-tools-preferences.glade.h:11
 #: po/samsung-tools-preferences-laptop-mode.glade.h:5
 msgid "Configure 'laptop mode tools'"
-msgstr "Configura 'laptop mode tools'"
+msgstr "Ställ in 'laptop mode tools'"
 
 #: po/samsung-tools-preferences.glade.h:12
 msgid "Configure 'laptop mode tools' for a better power management"
-msgstr ""
-"Configura 'laptop mode tools' per una migliore gestione del risparmio "
-"energetico"
+msgstr "Ställ in 'laptop mode tools' för att energieffektivisera"
 
 #: po/samsung-tools-preferences.glade.h:13
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:1
 msgid "Configure kernel parameters"
-msgstr "Configura i parametri del kernel"
+msgstr "Ställ in kernelparametrar"
 
 #: po/samsung-tools-preferences.glade.h:14
 msgid "Disabled"
-msgstr "Disattivato"
+msgstr "Inaktiverad"
 
 #: po/samsung-tools-preferences.glade.h:15
 msgid "Enable hotkeys"
-msgstr "Abilita i tasti veloci"
+msgstr "Aktivera tangentbordsgenvägar"
 
 #: po/samsung-tools-preferences.glade.h:16
 msgid "Enable this option to use hotkeys"
-msgstr "Attiva questa opzione per utilizzare i tasti veloci"
+msgstr "Aktivera alternativet för att använda tangentbordsgenvägar"
 
 #: po/samsung-tools-preferences.glade.h:17
 msgid "Enabled"
-msgstr "Attivato"
+msgstr "Aktiverad"
 
 #: po/samsung-tools-preferences.glade.h:18
 msgid "Hotkey used for CPU fan control"
-msgstr "Tasto veloce utilizzato per il controllo della ventola della CPU"
+msgstr "Genväg för CPU-fläktkontroll"
 
 #: po/samsung-tools-preferences.glade.h:19
 msgid "Hotkey used for backlight control"
-msgstr "Tasto veloce utilizzato per il controllo della retroilluminazione"
+msgstr "Genväg för skärmljuskontroll"
 
 #: po/samsung-tools-preferences.glade.h:20
 msgid "Hotkey used for bluetooth control"
-msgstr "Tasto veloce utilizzato per il controllo del Bluetooth"
+msgstr "Genväg för bluetoothkontroll"
 
 #: po/samsung-tools-preferences.glade.h:21
 msgid "Hotkey used for webcam control"
-msgstr "Tasto veloce utilizzato per il controllo della webcam"
+msgstr "Genväg för webbkamerakontroll"
 
 #: po/samsung-tools-preferences.glade.h:22
 msgid "Hotkey used for wireless control"
-msgstr "Tasto veloce utilizzato per il controllo della rete senza fili"
+msgstr "Genväg för trådlöst nätverk"
 
 #: po/samsung-tools-preferences.glade.h:23
 msgid "Last status"
-msgstr "Ultimo stato"
+msgstr "Senaste status"
 
 #: po/samsung-tools-preferences.glade.h:26
 msgid "Session service"
-msgstr "Servizio di sessione"
+msgstr "Sessionstjänst"
 
 #: po/samsung-tools-preferences.glade.h:29
 msgid "System service"
-msgstr "Servizio di sistema"
+msgstr "Systemtjänst"
 
 #: po/samsung-tools-preferences.glade.h:30
 msgid "The initial status at boot for Bluetooth"
-msgstr "Lo stato iniziale del Bluetooth all'avvio"
+msgstr "Status vid start för bluetooth"
 
 #: po/samsung-tools-preferences.glade.h:31
 msgid "The initial status at boot for CPU fan"
-msgstr "Lo stato iniziale della ventola della CPU all'avvio"
+msgstr "Status vid start för CPU-fläkt"
 
 #: po/samsung-tools-preferences.glade.h:32
 msgid "The initial status at boot for webcam"
-msgstr "Lo stato iniziale della webcam all'avvio"
+msgstr "Status vid start för webbkamera"
 
 #: po/samsung-tools-preferences.glade.h:33
 msgid "The initial status at boot for wireless"
-msgstr "Lo stato iniziale della rete senza fili all'avvio"
+msgstr "Status för det trådlösa nätverket vid start"
 
 #: po/samsung-tools-preferences.glade.h:34
 msgid "Undervolt the CPU in order to save energy"
-msgstr "Imposta l'undervolt della CPU per risparmiare energia"
+msgstr "Undervolta processorn för att spara energi"
 
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:2
 msgid "Swap control:"
-msgstr "Controllo dello swap:"
+msgstr "Swap-kontroll"
 
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:3
 msgid ""
@@ -547,12 +538,11 @@ msgid ""
 "bad results on power consumption and disk performance. Set a low value if "
 "you usually have plenty of unused RAM. The default value is 60."
 msgstr ""
-"Lo swappiness controlla quanto aggressivamente il kernel esegue lo swap "
-"delle pagine di memoria. Valori alti aumentano l'aggressività, valori bassi "
-"diminuiscono l'aggressività. In altre parole, più alto è il valore, più il "
-"sistema utlizza lo swap, con risultati negativi sul consumo energetico e "
-"sulle performance del disco. Imposta un valore basso se di solito una parte "
-"abbondante della RAM non è utilizzata. Il valore di default è 60."
+"Swap-kontrollen kontrollerar hur aggressivt kernelen byter minnessidor. Ju "
+"högre värde, desto mer aggressivt. Ju lägre värde, desto mindre aggressivt. "
+"Med andra ord, ju högre värde, desto mer kommer systemet byta, med hög "
+"energianvändning och disk-prestanda. Ställ in ett lågt värde om du oftast "
+"har mycket oanvänt RAM-minne. Standardvärdet är 60."
 
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:4
 msgid ""
@@ -562,12 +552,11 @@ msgid ""
 "bad results on power consumption and disk performance. Set a low value if "
 "you usually have plenty of unused RAM. The default value is 60."
 msgstr ""
-"Questa opzione controlla quanto aggressivamente il kernel esegue lo swap "
-"delle pagine di memoria. Valori alti aumentano l'aggressività, valori bassi "
-"diminuiscono l'aggressività. In altre parole, più alto è il valore, più il "
-"sistema utlizza lo swap, con risultati negativi sul consumo energetico e "
-"sulle performance del disco. Imposta un valore basso se di solito una parte "
-"abbondante della RAM non è utilizzata. Il valore di default è 60."
+"Det här alternativet kontrollerar hur aggressivt kernelen byter minnessidor. "
+"Ju högre värde, desto mer aggressivt. Ju lägre värde, desto mindre "
+"aggressivt. Med andra ord, ju högre värde, desto mer kommer systemet byta, "
+"med hög energianvändning och disk-prestanda. Ställ in ett lågt värde om du "
+"oftast har mycket oanvänt RAM-minne. Standardvärdet är 60."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:1
 msgid ""
@@ -579,59 +568,57 @@ msgid ""
 "when entries are written to them. This causes disks to spin up, which is not "
 "very nice when you're trying to save power."
 msgstr ""
-"'laptop mode tools' può automaticamente eseguire lo swap dei file di "
-"configurazione a seconda della modalità di alimentazione.\n"
-"\n"
-"L'uso principale di questa caratteristica è il controllo dei file di "
-"configurazione dei demoni syslog. I demoni syslog hanno la tendenza a "
-"sincronizzare i loro file di log quando in questi ultimi viene scritto nuovo "
-"testo. Questo causa il risveglio dei dischi, effetto indesiderato quando si "
-"è interessati al risparmio energetico."
+"'laptop mode tools' kan automatiskt byta konfigurationsfiler beroende på "
+"ditt systems energiläge.\n"
+" \n"
+"Det primära syftet med den här funktionen är att kontrollera "
+"konfigurationsfilernas systemloggsdaemoner. Systemloggsdaemonerna tenderar "
+"att synkronisera loggfilerna när kommandon skrivs till dem. Det här får "
+"hårddiskarna att varva upp, vilket inte är bra när du vill spara energi."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:4
 msgid ""
 "An enabled video output port draws power, even if no display is connected. "
 "This option forces the display output off depending on the power mode."
 msgstr ""
-"Un'uscita video attiva consuma energia, anche se ad essa non è connesso "
-"alcun display. Questa opzione disattiva l'uscita video a seconda della "
-"modalità di alimentazione."
+"En aktiverad VGA-anslutning drar energi även om ingen skärm är ansluten i "
+"den. Det här tvingar porten att stänga av vid energisparläge."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:6
 msgid "Control Ethernet settings"
-msgstr "Controlla le impostazioni dell'Ethernet"
+msgstr "Kontrollera ethernet-inställningar"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:7
 msgid "Control HAL polling"
-msgstr "Controlla il polling di HAL"
+msgstr "Kontrollera HAL-förfrågningar"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:8
 msgid "Control Intel HDA audio chipset power"
-msgstr "Controlla il consumo del chipset audio Intel HDA"
+msgstr "Kontrollera Intel HDA ljudchippets ström"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:9
 msgid "Control Intel SATA chipset power"
-msgstr "Controlla il consumo del chipset SATA Intel"
+msgstr "Kontrollera Intel SATA chippets ström"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:10
 msgid "Control Linux scheduler"
-msgstr "Controlla lo scheduler di Linux"
+msgstr "Kontrollera Linux schemaläggare"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:11
 msgid "Control configuration files"
-msgstr "Controlla i file di configurazione"
+msgstr "Kontrollera konfigurationsfiler"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:12
 msgid "Control video output settings"
-msgstr "Controlla le impostazioni dell'uscita video"
+msgstr "Kontrollera videoanslutningsalternativ"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:13
 msgid "Enable USB autosuspend"
-msgstr "Abilita l'autosospensione USB"
+msgstr "Aktivera USB autoavstängning"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:14
 msgid "Hard disk power management:"
-msgstr "Gestione energetica dell'hard disk:"
+msgstr "Energianvändning för hårddiskarna:"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:15
 msgid ""
@@ -639,33 +626,33 @@ msgid ""
 "the Linux scheduler to save power on multi-core processors while running on "
 "battery mode."
 msgstr ""
-"Se questa opzione è attiva, 'laptop mode tools' configurerà automaticamente "
-"lo scheduler di Linux per risparmiare energia con i processori multi-core "
-"quando si utilizza la batteria."
+"Om du aktiverar detta alternativ kommer 'laptop mode tools' automatiskt "
+"ändra Linux schemaläggare för att spara energi i flerkärnsprocessorer som "
+"kör på batteri."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:16
 msgid ""
 "If you enable this option, 'laptop mode tools' will automatically enable the "
 "USB autosuspend feature for all devices."
 msgstr ""
-"Se questa opzione è attiva, 'laptop mode tools' abiliterà automaticamente la "
-"funzione di autosospensione USB per tutti i dispositivi."
+"Om du aktiverar detta alternativ kommer 'laptop mode tools' automatiskt "
+"aktivera USB-autoavstängning för alla enheter."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:17
 msgid ""
 "If you enable this option, 'laptop mode tools' will automatically enable the "
 "link power management mode of Intel AHCI compliant SATA chipsets."
 msgstr ""
-"Se questa opzione è attiva, 'laptop mode tools' abiliterà automaticamente la "
-"modalità di gestione energetica per i chipset Intel SATA compatibili AHCI."
+"Om du aktiverar detta alternativ kommer 'laptop mode tools' automatiskt "
+"aktivera känkströmhanteringsläget på Intel AHCI inrättade chip."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:18
 msgid ""
 "If you enable this option, 'laptop mode tools' will automatically set the "
 "powersave mode of Intel HDA audio chipsets."
 msgstr ""
-"Se questa opzione è attiva, 'laptop mode tools' abiliterà automaticamente la "
-"modalità di risparmio energetico per i chipset audio Intel HDA."
+"Om du aktiverar detta alternativ kommer 'laptop mode tools' automatiskt "
+"ställa in strömsparhanteringen på Intel HDA ljudchip."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:19
 msgid ""
@@ -673,9 +660,9 @@ msgid ""
 "your CD/DVD drives by HAL. Disabling polling saves a considerable amount of "
 "power."
 msgstr ""
-"Se questa opzione è attiva, 'laptop mode tools' controllerà il polling dei "
-"drive CD/DVD di HAL. Disattivare il polling comporta un risparmio notevole "
-"di energia."
+"Om du aktiverar detta alternativ kommer 'laptop mode tools' kontrollera "
+"efterfrågningarna till CD/DVD-drivrutinerna av HAL. Att inaktivera "
+"efterfrågningar sparar mycket energi."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:20
 msgid ""
@@ -685,12 +672,12 @@ msgid ""
 "full speed (for instance if you only use Ethernet as to connect to a much "
 "slower ADSL modem)."
 msgstr ""
-"Se questa opzione è attiva, la velocità della connessione Ethernet sarà "
-"limitata a 100 Mbit. La differenza nel consumo di energia tra connessioni a "
-"1Gbit e a 100Mbit è notevole, e la regolazione può portare ad un buon "
-"risparmio energetico nel caso in cui non ci sia la necessità di connessioni "
-"a velocità piena (ad esempio se si utilizza l'Ethernet solo per connettersi "
-"a model ADSL molto più lenti)."
+"Om du kativerar detta alternativ kommer hastigheten på din "
+"internetanslutning begränsas till 100 Mbit. Skillnaden i energi mellan 1 "
+"Gbit och 100 Mbit är ganska stor, så att justera detta kan spara mycket "
+"energi om du inte behöver så snabb uppkoppling (till exempel om du bara "
+"använder internetanslutningen för att ansluta till ett mycket långsammare "
+"ADSL-modem)."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:21
 msgid ""
@@ -699,198 +686,39 @@ msgid ""
 "performance, an high value results in disk performance but less energy "
 "saving."
 msgstr ""
-"Questa opzione imposta la gestione energetica del disco, può assumere valori "
-"tra 1 e 255. Un valore basso risulta in un migliore risparmio energetico ma "
-"peggiori performance del disco, un valore alto risulta in migliori "
-"performance del disco ma un peggiore risparmio energetico."
+"Det här alternativet ställer in hårddiskströmhanteringen. Det kan vara ett "
+"värde mellan 1 och 255. Ett lågt värde innebär effektivare energisparning, "
+"ett högt värde innebär hög hårrdiskprestanda, men mindre energi sparad."
 
 #: po/samsung-tools-preferences-phc.glade.h:1
 msgid "<b>Default VIDs</b>"
-msgstr "<b>VID di default</b>"
+msgstr "<b>Standard VIDs</b>"
 
 #: po/samsung-tools-preferences-phc.glade.h:2
 msgid "<b>Frequencies</b>"
-msgstr "<b>Frequenze</b>"
+msgstr "<b>Frekvenser</b>"
 
 #: po/samsung-tools-preferences-phc.glade.h:3
 msgid "<b>New VIDs</b>"
-msgstr "<b>Nuovi VID</b>"
+msgstr "<b>Nya VIDs</b>"
 
 #: po/samsung-tools-preferences-phc.glade.h:5
 msgid ""
 "Enable this option only if the new VIDs are tested and safe, otherwise the "
 "machine might be no more bootable!"
 msgstr ""
-"Abilita questa opzione solo se i nuovi VID sono testati e sicuri, altrimenti "
-"la macchina potrebbe non essere più avviabile!"
+"Aktivera detta alternativ endast om de nya VIDsen är testade och säkra, "
+"annars riskerar du att inte kunna starta datorn mer!"
 
 #: po/samsung-tools-preferences-phc.glade.h:6
 msgid "Note: the new VIDs will be applied when this window will be closed."
 msgstr ""
-"Nota: i nuovi VID saranno applicati quando questa finestra verrà chiusa"
+"Notera: De nya VIDsen kommer börja användas när det här fönstret stängs."
 
 #: po/samsung-tools-preferences-phc.glade.h:7
 msgid "Set the new VIDs automatically at boot"
-msgstr "Imposta i nuovi VID automaticamente all'avvio"
+msgstr "Ställ in de nya VIDsen automatiskt vid start."
 
 #: po/samsung-tools-session-service.desktop.in.h:1
 msgid "Start the session service"
-msgstr "Avvia il servizio di sessione"
-
-#~ msgid "CPU/Fan"
-#~ msgstr "CPU/Ventola"
-
-#~ msgid "CPU temperature is not available"
-#~ msgstr "La temperatura CPU non è disponibile"
-
-#~ msgid "Fan mode changed: Normal"
-#~ msgstr "Modalità ventola cambiata: Normale"
-
-#~ msgid "Fan mode changed: Silent"
-#~ msgstr "Modalità ventola cambiata: Silenziosa"
-
-#~ msgid "Fan mode changed: Speed"
-#~ msgstr "Modalità ventola cambiata: Veloce"
-
-#~ msgid "CPU:"
-#~ msgstr "CPU:"
-
-#~ msgid "CPU/Fan:"
-#~ msgstr "CPU/Ventola:"
-
-#~ msgid "Device:"
-#~ msgstr "Dispositivo:"
-
-#~ msgid ""
-#~ "How the wireless is toggled.\n"
-#~ "\n"
-#~ "'iwconfig' - Use iwconfig commands.\n"
-#~ "'module' - Insert/remove kernel module.\n"
-#~ "'esdm' - Use the 'easy slow down manager' interface."
-#~ msgstr ""
-#~ "La modalità di commutazione del wireless.\n"
-#~ "\n"
-#~ "'iwconfig' - Usa i comandi iwconfig.\n"
-#~ "'module' - Inserisce/rimuove il modulo del kernel.\n"
-#~ "'esdm' - Usa l'interfaccia 'easy-slow-down-manager'."
-
-#~ msgid ""
-#~ "If enabled, the status of all devices will be restored after a suspend, "
-#~ "hibernate, reboot cycle"
-#~ msgstr ""
-#~ "Se attivo, lo stato di tutti i dispositivi viene ripristinato dopo un "
-#~ "ciclo di sospensione, ibernazione o riavvio"
-
-#~ msgid "Kernel module:"
-#~ msgstr "Modulo del kernel:"
-
-#~ msgid "Toggle method:"
-#~ msgstr "Metodo commutazione:"
-
-#~ msgid "Bluetooth initial status:"
-#~ msgstr "Stato iniziale Bluetooth:"
-
-#~ msgid ""
-#~ "The status to set at boot for Bluetooth.\n"
-#~ "\n"
-#~ "Note: this option is only used when  'Last status restore' is set to "
-#~ "'Disabled'."
-#~ msgstr ""
-#~ "Lo stato da impostare all'avvio per il Bluetooth.\n"
-#~ "\n"
-#~ "Nota: questa opzione è usata solo quando 'Ripristina ultimo stato' è "
-#~ "impostato a 'Disattivato'."
-
-#~ msgid ""
-#~ "The status to set at boot for webcam.\n"
-#~ "\n"
-#~ "Note: this option is only used when  'Last status restore' is set to "
-#~ "'Disabled'."
-#~ msgstr ""
-#~ "Lo stato da impostare all'avvio per la webcam.\n"
-#~ "\n"
-#~ "Nota: questa opzione è usata solo quando 'Ripristina ultimo stato' è "
-#~ "impostato a 'Disattivato'."
-
-#~ msgid ""
-#~ "The status to set at boot for wireless.\n"
-#~ "\n"
-#~ "Note: this option is only used when  'Last status restore' is set to "
-#~ "'Disabled'."
-#~ msgstr ""
-#~ "Lo stato da impostare all'avvio per il wireless.\n"
-#~ "\n"
-#~ "Nota: questa opzione è usata solo quando 'Ripristina ultimo stato' è "
-#~ "impostato a 'Disattivato'."
-
-#~ msgid "Webcam initial status:"
-#~ msgstr "Stato iniziale webcam:"
-
-#~ msgid "CPU fan initial status:"
-#~ msgstr "Stato iniziale ventola CPU:"
-
-#~ msgid ""
-#~ "The kernel module to handle, when the 'Toggle method' option is set to "
-#~ "'module'."
-#~ msgstr ""
-#~ "Il modulo del kernel da gestire, quando l'opzione 'Metodo commutazione' è "
-#~ "impostata a 'module'."
-
-#~ msgid ""
-#~ "The method used to toggle wireless.\n"
-#~ "\n"
-#~ " - esdm:\n"
-#~ "   Use the 'easy slow down manager' interface.\n"
-#~ "   This is the default option and it should work on all netbook\n"
-#~ "   models.\n"
-#~ " - iwconfig:\n"
-#~ "   Use iwconfig commands to toggle the radio transmit power.\n"
-#~ "   On models like the NC10 shipped with Atheros wireless card,\n"
-#~ "   this method disables wireless AND turns off the radio\n"
-#~ "   transmit power. On other models this might not work as\n"
-#~ "   expected: in these cases it's preferable to use the 'module'\n"
-#~ "   or 'esdm' method instead.\n"
-#~ " - module:\n"
-#~ "   Insert/remove kernel module to toggle wireless.\n"
-#~ "   On some netbook models the radio transmit power is not\n"
-#~ "   actually killed when the kernel module is removed: in these\n"
-#~ "   cases it's preferable to use the 'esdm' method instead."
-#~ msgstr ""
-#~ "Metodo usato per la commutazione della rete senza fili.\n"
-#~ "\n"
-#~ " - esdm:\n"
-#~ "   Usa l'interfaccia 'easy slow down manager'.\n"
-#~ "   Questa è l'opzione di default e dovrebbe funzionare su\n"
-#~ "   tutti i modelli di netbook.\n"
-#~ " - iwconfig:\n"
-#~ "   Usa comandi iwconfig per commutare la potenza di\n"
-#~ "   trasmissione radio. Sui modelli come l'NC10 forniti di\n"
-#~ "   scheda wireless Atheros, questo metodo disabilita la\n"
-#~ "   rete senza fili e spegne la trasmissione radio. Su altri\n"
-#~ "   modelli potrebbe non funzionare come previsto: in questi\n"
-#~ "   casi è preferibile invece usare il metodo 'esdm' o 'module'.\n"
-#~ " - module:\n"
-#~ "   Inserisce/rimuove il modulo del kernel per commutare la\n"
-#~ "   rete senza fili. Con alcuni modelli di netbook la trasmissione\n"
-#~ "   radio non è davvero disabilitata quando il modulo del kernel\n"
-#~ "   viene rimosso: in questi casi è preferibile invece usare il\n"
-#~ "   methodo 'esdm'."
-
-#~ msgid ""
-#~ "The wireless device to use, when the 'Toggle method' option is set to "
-#~ "'iwconfig'."
-#~ msgstr ""
-#~ "Il dispositivo wireless da utilizzare, quando l'opzione 'Metodo "
-#~ "commutazione' è impostata a 'iwconfig'."
-
-#~ msgid "Wireless initial status:"
-#~ msgstr "Stato iniziale rete senza fili:"
-
-#~ msgid "<b>\"Laptop Mode\" options</b>"
-#~ msgstr "<b>Opzioni di \"Laptop Mode\"</b>"
-
-#~ msgid "Swappiness:"
-#~ msgstr "Swappiness:"
-
-#~ msgid "CPU Undervolt"
-#~ msgstr "Undervolt della CPU"
+msgstr "Starta sessionstjänsten"
