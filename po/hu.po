@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-05-16 12:02+0200\n"
-"PO-Revision-Date: 2010-05-14 00:32+0000\n"
+"PO-Revision-Date: 2010-05-19 00:47+0000\n"
 "Last-Translator: Dr. Alex Arutyunjan <Unknown>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-05-15 08:40+0000\n"
+"X-Launchpad-Export-Date: 2010-05-19 08:48+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: backends/session/util/locales.py:25 samsung-tools-preferences.py:489
@@ -269,7 +269,7 @@ msgstr "Ne nyomtasson üzeneteket szabványos kimeneten."
 
 #: samsung-tools.py:497
 msgid "Stop the session service."
-msgstr ""
+msgstr "Session service leállítása."
 
 #: samsung-tools.py:498
 msgid "Stop the system service."
@@ -277,7 +277,7 @@ msgstr "System service leállítása."
 
 #: samsung-tools.py:500
 msgid "Examples of use:"
-msgstr "Alkalmazási példa:"
+msgstr "Alkalmazási példák:"
 
 #: samsung-tools.py:501
 msgid " - Toggle backlight:"
@@ -299,7 +299,7 @@ msgstr "További információért látogasson a \"Linux on My Samsung\" fórumra
 
 #: samsung-tools.py:515 samsung-tools-preferences.py:993
 msgid "Released under GPLv3 license"
-msgstr ""
+msgstr "Kibocsátva GPLv3 licenc alatt"
 
 #: samsung-tools.py:520
 msgid "No action(s) specified."
@@ -307,7 +307,7 @@ msgstr "Nincs megadva művelet."
 
 #: samsung-tools.py:521 samsung-tools.py:585
 msgid "Use --help for instructions."
-msgstr "Útbaigazításhoz használja --help opciót."
+msgstr "Útbaigazításhoz használja a --help opciót."
 
 #: samsung-tools.py:584
 msgid "Wrong argument(s)."
@@ -315,19 +315,19 @@ msgstr "Rossz argumentum(ok)."
 
 #: samsung-tools.py:601
 msgid "Session service stopped"
-msgstr ""
+msgstr "Session service leállítva"
 
 #: samsung-tools.py:604
 msgid "Cannot stop session service"
-msgstr ""
+msgstr "Session service nem állítható le"
 
 #: samsung-tools.py:614
 msgid "System service stopped"
-msgstr ""
+msgstr "System service leállítva"
 
 #: samsung-tools.py:617
 msgid "Cannot stop system service"
-msgstr ""
+msgstr "System service nem állítható le"
 
 #: samsung-tools-preferences.py:80
 msgid "Please press the new hotkey"
@@ -350,7 +350,7 @@ msgstr "Megerősít"
 
 #: samsung-tools-preferences.py:445
 msgid "Apply the new VIDs?"
-msgstr ""
+msgstr "Alkalmazza az új CPU-feszültségi értékeket (VID)?"
 
 #: samsung-tools-preferences.py:666
 msgid "Install the 'laptop mode tools' package to configure these options"
@@ -406,7 +406,7 @@ msgstr "Sebesség"
 
 #: po/samsung-tools-applet.server.in.h:1
 msgid "Manage devices on Samsung netbooks"
-msgstr ""
+msgstr "Eszközkezelés Samsung netbook-okon"
 
 #: po/samsung-tools-preferences.desktop.in.h:1
 #: po/samsung-tools-preferences.glade.h:25
@@ -449,11 +449,11 @@ msgstr "Kattintson ide az alapértelmezett érték beállításához"
 #: po/samsung-tools-preferences.glade.h:11
 #: po/samsung-tools-preferences-laptop-mode.glade.h:5
 msgid "Configure 'laptop mode tools'"
-msgstr "\"laptop mode tools\" beállítása"
+msgstr "'laptop mode tools' beállítása"
 
 #: po/samsung-tools-preferences.glade.h:12
 msgid "Configure 'laptop mode tools' for a better power management"
-msgstr "\"laptop mode tools\" beállítása jobb energiagazdálkodáshoz"
+msgstr "'laptop mode tool' beállítása jobb energiagazdálkodáshoz"
 
 #: po/samsung-tools-preferences.glade.h:13
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:1
@@ -466,7 +466,7 @@ msgstr "Letiltva"
 
 #: po/samsung-tools-preferences.glade.h:15
 msgid "Enable hotkeys"
-msgstr "Engedélyezett billentyűkombinációk"
+msgstr "Billentyűkombinációk engedélyezése"
 
 #: po/samsung-tools-preferences.glade.h:16
 msgid "Enable this option to use hotkeys"
@@ -502,11 +502,11 @@ msgstr "Előző állapot"
 
 #: po/samsung-tools-preferences.glade.h:26
 msgid "Session service"
-msgstr ""
+msgstr "Session service"
 
 #: po/samsung-tools-preferences.glade.h:29
 msgid "System service"
-msgstr ""
+msgstr "System service"
 
 #: po/samsung-tools-preferences.glade.h:30
 msgid "The initial status at boot for Bluetooth"
@@ -540,7 +540,7 @@ msgid ""
 "bad results on power consumption and disk performance. Set a low value if "
 "you usually have plenty of unused RAM. The default value is 60."
 msgstr ""
-"Swappiness szabályozza, mennyire agresszívan cseréli a memóriaoldalakat a "
+"Swappiness szabályozza, mennyire agresszívan cserél memóriaoldalakat a "
 "kernel. Magasabb érték növeli az agresszívitást, alacsonyabb — csökkenti. "
 "Más szóval, minél magasabb az érték, annál többet cserél a rendszer, ami "
 "rossz hatással van energiafogyasztásra és lemezkapacitásra. Állítcson be "
@@ -555,8 +555,8 @@ msgid ""
 "bad results on power consumption and disk performance. Set a low value if "
 "you usually have plenty of unused RAM. The default value is 60."
 msgstr ""
-"Ez a beállítás szabályozza, mennyire agresszívan cseréli a memóriaoldalakat "
-"a kernel. Magasabb érték növeli az agresszívitást, alacsonyabb — csökkenti. "
+"Ez a beállítás szabályozza, mennyire agresszívan cserél memóriaoldalakat a "
+"kernel. Magasabb érték növeli az agresszívitást, alacsonyabb — csökkenti. "
 "Más szóval, minél magasabb az érték, annál többet cserél a rendszer, ami "
 "rossz hatással van energiafogyasztásra és lemezkapacitásra. Állítcson be "
 "alacsonyabb értéket, ha általában sok RAM marad kihasználatlanul. Az "
@@ -572,48 +572,59 @@ msgid ""
 "when entries are written to them. This causes disks to spin up, which is not "
 "very nice when you're trying to save power."
 msgstr ""
+"'laptop mode tools' ki tudja tölteni automatikusan a konfigurációs fájlokat "
+"a rendszer energiaállapotának megfelelően.\n"
+" \n"
+"Ezen tulajdonság alkalmazásának elsődleges célja a rendszernaplók (syslog "
+"daemons) konfigurációs fájljainak kezelése. Syslog daemons tendenciája, hogy "
+"szinkronizálják naplófájljaikat, amikor új bejegyzések kerülnek beléjük. Ez "
+"a merevlemezek felpörgését okozhatja, ami nem túl szép, amikor energiát "
+"próbál megtakarítani."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:4
 msgid ""
 "An enabled video output port draws power, even if no display is connected. "
 "This option forces the display output off depending on the power mode."
 msgstr ""
+"Az engedélyezett videókimenetek áramot vesznek fel akkor is, ha nincsenek "
+"csatlakozva. Ez a beállítás kényszerűen kikapcsolja a képernyőkimenetet az "
+"energiaüzemmódnak megfelelően."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:6
 msgid "Control Ethernet settings"
-msgstr ""
+msgstr "Ethernet beállítások kezelése"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:7
 msgid "Control HAL polling"
-msgstr ""
+msgstr "HAL lekérdezések kezelése"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:8
 msgid "Control Intel HDA audio chipset power"
-msgstr ""
+msgstr "Intel HDA audio chipset energiakezelése"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:9
 msgid "Control Intel SATA chipset power"
-msgstr ""
+msgstr "Intel SATA chipset energiakezelése"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:10
 msgid "Control Linux scheduler"
-msgstr ""
+msgstr "Linux időzítő (scheduler) beállítása"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:11
 msgid "Control configuration files"
-msgstr ""
+msgstr "Konfigurációs fájlok kezelése"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:12
 msgid "Control video output settings"
-msgstr ""
+msgstr "Videókimenet beállításainak kezelése"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:13
 msgid "Enable USB autosuspend"
-msgstr ""
+msgstr "USB automatikus felfüggesztésének engedélyezése"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:14
 msgid "Hard disk power management:"
-msgstr ""
+msgstr "Merevlemez engergiakezelése:"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:15
 msgid ""
@@ -621,24 +632,34 @@ msgid ""
 "the Linux scheduler to save power on multi-core processors while running on "
 "battery mode."
 msgstr ""
+"Ha engedélyezi ezt a beállítást 'laptop mode tools' automatikusan "
+"konfigurálja a Linux időzítőt (scheduler-t), hogy áramot takarítson többmagú "
+"processzorokon, ha akkumulátorról működik."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:16
 msgid ""
 "If you enable this option, 'laptop mode tools' will automatically enable the "
 "USB autosuspend feature for all devices."
 msgstr ""
+"Ha engedélyezi ezt a beállítást, a 'laptop mode tools' automatikusan "
+"engedélyezi az USB-autofelfüggesztési tulajdonságokat minden eszköz részére."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:17
 msgid ""
 "If you enable this option, 'laptop mode tools' will automatically enable the "
 "link power management mode of Intel AHCI compliant SATA chipsets."
 msgstr ""
+"Ha engedélyezi ezt a beállítást, a 'laptop mode tools' automatikusan "
+"engedélyezi a \"link power management\" üzemmódot az Intel AHCI kompatibilis "
+"SATA chipset-eknél."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:18
 msgid ""
 "If you enable this option, 'laptop mode tools' will automatically set the "
 "powersave mode of Intel HDA audio chipsets."
 msgstr ""
+"Ha engedélyezi ezt a beállítást, a 'laptop mode tools' automatikusan "
+"beállítja az energiamegtakarítási üzemmódot az Intel HDA audió chipset-eknél."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:19
 msgid ""
@@ -646,6 +667,9 @@ msgid ""
 "your CD/DVD drives by HAL. Disabling polling saves a considerable amount of "
 "power."
 msgstr ""
+"Ha engedélyezi ezt a beállítást, a 'laptop mode tools' kezeli a HAL "
+"hozzáférését CD/DVD meghajtóhoz. A hozzáférés letiltása észrevehető "
+"energiamegtakarítást eredményez."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:20
 msgid ""
@@ -655,6 +679,11 @@ msgid ""
 "full speed (for instance if you only use Ethernet as to connect to a much "
 "slower ADSL modem)."
 msgstr ""
+"Ha engedélyezi ezt a beállítást, lekorlátozza az Ethernet kapcsolat "
+"sebességét 100 Mbit-re. Jelentős az energiafelhasználás-különbség 1 Gbit és "
+"100 Mbit Ethernet között, így a beállítás energiát takaríthat meg, ha nincs "
+"szüksége teljes sebességre (például ha az Ethernet-tel csak a sokkal lassabb "
+"ADSL-modemhez kapcsolódik)."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:21
 msgid ""
@@ -663,33 +692,42 @@ msgid ""
 "performance, an high value results in disk performance but less energy "
 "saving."
 msgstr ""
+"Ezzel a beállítással a lemez energiakezelését szabályozza, értéke 1 és 255 "
+"között lehet. Alacsonyabb érték jobb energiamegtakarítást, de rosszabb "
+"lemezteljesítményt eredményez, magasabb érték jobb lemezteljesítményt és "
+"kisebb energiamegtakarítást jelent."
 
 #: po/samsung-tools-preferences-phc.glade.h:1
 msgid "<b>Default VIDs</b>"
-msgstr ""
+msgstr "<b>Alapértelmezett CPU-feszültségi értékek (VID)</b>"
 
 #: po/samsung-tools-preferences-phc.glade.h:2
 msgid "<b>Frequencies</b>"
-msgstr ""
+msgstr "<b>Frekvenciák</b>"
 
 #: po/samsung-tools-preferences-phc.glade.h:3
 msgid "<b>New VIDs</b>"
-msgstr ""
+msgstr "<b>Új CPU-feszültségi értékek</b>"
 
 #: po/samsung-tools-preferences-phc.glade.h:5
 msgid ""
 "Enable this option only if the new VIDs are tested and safe, otherwise the "
 "machine might be no more bootable!"
 msgstr ""
+"Akkor engedélyezze ezt a beállítást, ha tesztelte az új VIDs-t és az "
+"biztonságos, ellenkező esetben előfordulhat, hogy a gép nem boot-ol be többé!"
 
 #: po/samsung-tools-preferences-phc.glade.h:6
 msgid "Note: the new VIDs will be applied when this window will be closed."
 msgstr ""
+"Megjegyzés: az új CPU-feszültségi értékek ezen ablak bezárásával lépnek "
+"életbe."
 
 #: po/samsung-tools-preferences-phc.glade.h:7
 msgid "Set the new VIDs automatically at boot"
 msgstr ""
+"Az új CPU-feszültségi értékek automatikus beállítása rendszerbetöltéskor"
 
 #: po/samsung-tools-session-service.desktop.in.h:1
 msgid "Start the session service"
-msgstr ""
+msgstr "Session service indítása"
