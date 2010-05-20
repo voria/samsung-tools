@@ -668,7 +668,7 @@ class Main():
 		if not conn.IsAvailable():
 			self.laptopModeButton.set_sensitive(False)
 			self.laptopModeButton.set_has_tooltip(True)
-			tooltip = unicode(_("Install the 'laptop mode tools' package to configure these options"), "utf-8")
+			tooltip = unicode(_("Install 'laptop-mode' to enable and configure these options"), "utf-8")
 			self.laptopModeButton.set_tooltip_text(tooltip)
 		else:
 			self.laptopModeButton.set_sensitive(True)
