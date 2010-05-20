@@ -118,9 +118,13 @@ class LaptopMode(dbus.service.Object):
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = None,
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def RestartDaemon(self, sender = None, conn = None):
-		from subprocess import Popen, PIPE
-		command = "/etc/init.d/laptop-mode restart"
-		process = Popen(command.split(), stdout = PIPE, stderr = PIPE)
+		if COMMAND_LAPTOPMODE_RESTART != "":
+			try:
+				from subprocess import Popen, PIPE
+				process = Popen(COMMAND_LAPTOPMODE_RESTART.split(), stdout = PIPE, stderr = PIPE)
+			except:
+				systemlog.write("ERROR: 'LaptopMode.RestartDaemon()' - COMMAND: '"
+							+ COMMAND_LAPTOPMODE_RESTART + "' - Exception thrown.")
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
