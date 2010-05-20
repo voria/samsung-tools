@@ -277,16 +277,13 @@ class Cpu():
 		if self.option == "hotkey":
 			from time import sleep
 			from subprocess import Popen, PIPE
-			tempfiles = ".hotkey-tempfile-"
-			tempfile = os.path.join(USER_DIRECTORY, tempfiles + str(os.getpid()))
+			tempfiles = ".samsung-tools-" + str(os.getuid()) + "-"
+			tempfile = "/tmp/" + tempfiles + str(os.getpid())
 			action = "status"
 			try:
-				ls = Popen(['ls', '-a', USER_DIRECTORY], stdout = PIPE)
-				output = ls.communicate()[0].split()
-				for line in output:
-					if line[0:len(tempfiles)] == tempfiles:
-						action = "cycle"
-						break
+				ls = Popen(['ls /tmp/' + tempfiles + '*'], stdout = PIPE, stderr = PIPE, shell = True)
+				if len(ls.communicate()[0]) != 0:
+					action = "cycle"
 			except:
 				pass
 			Cpu(action, self.use_notify).apply()
