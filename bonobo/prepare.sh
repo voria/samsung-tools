@@ -17,7 +17,7 @@ sed -n '1,/.*_value/p' "$FILE" | sed 's/_value/value/' > $NEWFILE
 # Add translations
 if [ -n "$VALUE" ]; then
 	# For each language specified in po/LINGUAS, take the translation from the .po file and
-	# add it to the new .desktop file as Name[language]
+	# add it to the new .server file
 	for lang in `cat po/LINGUAS`; do
 		TRANSLATION=`msggrep --msgid -F -e "$VALUE" po/$lang.po | tac | sed -n '1p' | cut -d\" -f 2`
 		if [ -n "$TRANSLATION" ]; then
