@@ -1,5 +1,5 @@
 <oaf_info>
-	<oaf_server ubuntu-gettext-domain="samsung-tools" iid="OAFIID:GNOME_SamsungTools_Applet"
+	<oaf_server iid="OAFIID:GNOME_SamsungTools_Applet"
 	type="exe" location="/usr/lib/samsung-tools/samsung-tools-applet.py">
 	
 		<oaf_attribute name="repo_ids" type="stringv">
@@ -7,7 +7,7 @@
 			<item value="IDL:Bonobo/Unknown:1.0"/>
 		</oaf_attribute>
 			<oaf_attribute name="name" type="string" value="Samsung Tools"/>
-			<oaf_attribute name="description" type="string" _value="Manage devices on Samsung netbooks"/>
+			<oaf_attribute name="description" type="string" value="Manage devices on Samsung netbooks"/>
 	</oaf_server>
 
 	<oaf_server ubuntu-gettext-domain="samsung-tools" iid="OAFIID:GNOME_SamsungTools" type="factory" location="OAFIID:GNOME_SamsungTools_Applet">
@@ -18,7 +18,7 @@
 			<item value="IDL:Bonobo/Unknown:1.0"/>
 		</oaf_attribute>
 		<oaf_attribute name="name" type="string" value="Samsung Tools"/>
-		<oaf_attribute name="description" type="string" value="Manage devices on Samsung netbooks"/>
+		<oaf_attribute name="description" type="string" _value="Manage devices on Samsung netbooks"/>
 		<oaf_attribute name="panel:category" type="string" value="Utility"/>
 		<oaf_attribute name="panel:icon" type="string" value="samsung-tools.png"/>
 	</oaf_server>

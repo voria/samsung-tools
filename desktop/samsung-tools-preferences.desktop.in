@@ -8,4 +8,3 @@ Type=Application
 Categories=Settings;X-GNOME-SystemSettings;
 OnlyShowIn=GNOME;XFCE;KDE;
 StartupNotify=true
-X-Ubuntu-Gettext-Domain=samsung-tools
