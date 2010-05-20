@@ -78,15 +78,15 @@ if os.path.basename(sys.argv[0]) == "system-service.py":
 	LAST_DEVICE_STATUS_WEBCAM = os.path.join(LAST_DEVICES_STATUS_DIRECTORY, "webcam")
 	LAST_DEVICE_STATUS_WIRELESS = os.path.join(LAST_DEVICES_STATUS_DIRECTORY, "wireless")
 	LAST_DEVICE_STATUS_CPUFAN = os.path.join(LAST_DEVICES_STATUS_DIRECTORY, "cpufan")
-	# Commands:
-	# system service needs commands to be specified with absolute paths,
-	# or else it will fail to find them.
-	COMMAND_MODPROBE = "/sbin/modprobe"
-	COMMAND_VBETOOL = "/usr/sbin/vbetool"
-	COMMAND_LSMOD = "/sbin/lsmod"
-	COMMAND_DMESG = "/bin/dmesg"
-	COMMAND_RFKILL = "/sbin/rfkill"
-	COMMAND_SYSCTL = "/sbin/sysctl"
+	# system service does not have a PATH specified, so we will specify one manually.
+	os.environ['PATH'] = "/sbin:/usr/sbin:/bin:/usr/bin"
+	# Commands
+	COMMAND_MODPROBE = "modprobe"
+	COMMAND_VBETOOL = "vbetool"
+	COMMAND_LSMOD = "lsmod"
+	COMMAND_DMESG = "dmesg"
+	COMMAND_RFKILL = "rfkill"
+	COMMAND_SYSCTL = "sysctl"
 	# Easy slow down manager interface
 	ESDM_MODULE = "easy_slow_down_manager"
 	ESDM_PATH_BACKLIGHT = "/proc/easy_backlight"
