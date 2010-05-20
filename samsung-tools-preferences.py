@@ -656,7 +656,12 @@ class Main():
 		###
 		# kernel parameters
 		self.sysCtlButton = self.builder.get_object("sysCtlButton")
-		self.sysCtlButton.connect("clicked", self.on_sysCtlButton_clicked)
+		conn = self.__connect_system_sysctl()
+		if not conn.IsAvailable():
+			self.sysCtlButton.set_sensitive(False)
+		else:
+			self.sysCtlButton.set_sensitive(True)
+			self.sysCtlButton.connect("clicked", self.on_sysCtlButton_clicked)
 		# laptop mode tools
 		self.laptopModeButton = self.builder.get_object("laptopModeButton")
 		conn = self.__connect_system_laptopmode()
@@ -702,6 +707,18 @@ class Main():
 			try:
 				bus = dbus.SystemBus()
 				proxy = bus.get_object(SYSTEM_INTERFACE_NAME, SYSTEM_OBJECT_PATH_OPTIONS)
+				return dbus.Interface(proxy, SYSTEM_INTERFACE_NAME)
+			except:
+				retry = retry - 1
+		print unicode(_("Unable to connect to system service!"), "utf-8")
+		sys.exit(1)
+	
+	def __connect_system_sysctl(self):
+		retry = 3
+		while retry > 0:
+			try:
+				bus = dbus.SystemBus()
+				proxy = bus.get_object(SYSTEM_INTERFACE_NAME, SYSTEM_OBJECT_PATH_SYSCTL)
 				return dbus.Interface(proxy, SYSTEM_INTERFACE_NAME)
 			except:
 				retry = retry - 1
