@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-20 20:26+0200\n"
-"PO-Revision-Date: 2010-05-20 20:26+0200\n"
+"POT-Creation-Date: 2010-05-20 22:48+0200\n"
+"PO-Revision-Date: 2010-05-20 22:49+0200\n"
 "Last-Translator: Fortunato Ventre (voRia) <vorione@gmail.com>\n"
 "Language-Team: Italiano <vorione@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -452,14 +452,13 @@ msgstr "Clicca qui per impostare il valore predefinito"
 
 #: po/samsung-tools-preferences.glade.h:11
 #: po/samsung-tools-preferences-laptop-mode.glade.h:5
-msgid "Configure 'laptop mode tools'"
-msgstr "Configura 'laptop mode tools'"
+msgid "Configure 'laptop-mode'"
+msgstr "Configura 'laptop-mode'"
 
 #: po/samsung-tools-preferences.glade.h:12
-msgid "Configure 'laptop mode tools' for a better power management"
+msgid "Configure 'laptop-mode' for a better power management"
 msgstr ""
-"Configura 'laptop mode tools' per una migliore gestione del risparmio "
-"energetico"
+"Configura 'laptop-mode' per una migliore gestione del risparmio energetico"
 
 #: po/samsung-tools-preferences.glade.h:13
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:1
@@ -570,15 +569,15 @@ msgstr ""
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:1
 msgid ""
-"'laptop mode tools' can automatically swap out configuration files depending "
-"on the power state of your system.\n"
+"'laptop-mode' can automatically swap out configuration files depending on "
+"the power state of your system.\n"
 " \n"
 "The primary use for this feature is for controlling the configuration files "
 "of syslog daemons. Syslog daemons have a tendency to sync their log files "
 "when entries are written to them. This causes disks to spin up, which is not "
 "very nice when you're trying to save power."
 msgstr ""
-"'laptop mode tools' può automaticamente eseguire lo swap dei file di "
+"'laptop-mode' può automaticamente eseguire lo swap dei file di "
 "configurazione a seconda della modalità di alimentazione.\n"
 "\n"
 "L'uso principale di questa caratteristica è il controllo dei file di "
@@ -634,47 +633,46 @@ msgstr "Gestione energetica dell'hard disk:"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:15
 msgid ""
-"If you enable this option, 'laptop mode tools' will automatically configure "
-"the Linux scheduler to save power on multi-core processors while running on "
+"If you enable this option, 'laptop-mode' will automatically configure the "
+"Linux scheduler to save power on multi-core processors while running on "
 "battery mode."
 msgstr ""
-"Se questa opzione è attiva, 'laptop mode tools' configurerà automaticamente "
-"lo scheduler di Linux per risparmiare energia con i processori multi-core "
+"Se questa opzione è attiva, 'laptop-mode' configurerà automaticamente lo "
+"scheduler di Linux per risparmiare energia con i processori multi-core "
 "quando si utilizza la batteria."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:16
 msgid ""
-"If you enable this option, 'laptop mode tools' will automatically enable the "
-"USB autosuspend feature for all devices."
+"If you enable this option, 'laptop-mode' will automatically enable the USB "
+"autosuspend feature for all devices."
 msgstr ""
-"Se questa opzione è attiva, 'laptop mode tools' abiliterà automaticamente la "
+"Se questa opzione è attiva, 'laptop-mode' abiliterà automaticamente la "
 "funzione di autosospensione USB per tutti i dispositivi."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:17
 msgid ""
-"If you enable this option, 'laptop mode tools' will automatically enable the "
-"link power management mode of Intel AHCI compliant SATA chipsets."
+"If you enable this option, 'laptop-mode' will automatically enable the link "
+"power management mode of Intel AHCI compliant SATA chipsets."
 msgstr ""
-"Se questa opzione è attiva, 'laptop mode tools' abiliterà automaticamente la "
+"Se questa opzione è attiva, 'laptop-mode' abiliterà automaticamente la "
 "modalità di gestione energetica per i chipset Intel SATA compatibili AHCI."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:18
 msgid ""
-"If you enable this option, 'laptop mode tools' will automatically set the "
+"If you enable this option, 'laptop-mode' will automatically set the "
 "powersave mode of Intel HDA audio chipsets."
 msgstr ""
-"Se questa opzione è attiva, 'laptop mode tools' abiliterà automaticamente la "
+"Se questa opzione è attiva, 'laptop-mode' abiliterà automaticamente la "
 "modalità di risparmio energetico per i chipset audio Intel HDA."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:19
 msgid ""
-"If you enable this option, 'laptop mode tools' will control the polling of "
-"your CD/DVD drives by HAL. Disabling polling saves a considerable amount of "
-"power."
+"If you enable this option, 'laptop-mode' will control the polling of your CD/"
+"DVD drives by HAL. Disabling polling saves a considerable amount of power."
 msgstr ""
-"Se questa opzione è attiva, 'laptop mode tools' controllerà il polling dei "
-"drive CD/DVD di HAL. Disattivare il polling comporta un risparmio notevole "
-"di energia."
+"Se questa opzione è attiva, 'laptop-mode' controllerà il polling dei drive "
+"CD/DVD di HAL. Disattivare il polling comporta un risparmio notevole di "
+"energia."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:20
 msgid ""

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-20 20:26+0200\n"
+"POT-Creation-Date: 2010-05-20 22:48+0200\n"
 "PO-Revision-Date: 2010-04-17 23:13+0000\n"
 "Last-Translator: Joshua Schroijen <Unknown>\n"
 "Language-Team: Dutch <nl@li.org>\n"
@@ -440,11 +440,11 @@ msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:11
 #: po/samsung-tools-preferences-laptop-mode.glade.h:5
-msgid "Configure 'laptop mode tools'"
+msgid "Configure 'laptop-mode'"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:12
-msgid "Configure 'laptop mode tools' for a better power management"
+msgid "Configure 'laptop-mode' for a better power management"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:13
@@ -544,8 +544,8 @@ msgstr ""
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:1
 msgid ""
-"'laptop mode tools' can automatically swap out configuration files depending "
-"on the power state of your system.\n"
+"'laptop-mode' can automatically swap out configuration files depending on "
+"the power state of your system.\n"
 " \n"
 "The primary use for this feature is for controlling the configuration files "
 "of syslog daemons. Syslog daemons have a tendency to sync their log files "
@@ -597,34 +597,33 @@ msgstr ""
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:15
 msgid ""
-"If you enable this option, 'laptop mode tools' will automatically configure "
-"the Linux scheduler to save power on multi-core processors while running on "
+"If you enable this option, 'laptop-mode' will automatically configure the "
+"Linux scheduler to save power on multi-core processors while running on "
 "battery mode."
 msgstr ""
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:16
 msgid ""
-"If you enable this option, 'laptop mode tools' will automatically enable the "
-"USB autosuspend feature for all devices."
+"If you enable this option, 'laptop-mode' will automatically enable the USB "
+"autosuspend feature for all devices."
 msgstr ""
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:17
 msgid ""
-"If you enable this option, 'laptop mode tools' will automatically enable the "
-"link power management mode of Intel AHCI compliant SATA chipsets."
+"If you enable this option, 'laptop-mode' will automatically enable the link "
+"power management mode of Intel AHCI compliant SATA chipsets."
 msgstr ""
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:18
 msgid ""
-"If you enable this option, 'laptop mode tools' will automatically set the "
+"If you enable this option, 'laptop-mode' will automatically set the "
 "powersave mode of Intel HDA audio chipsets."
 msgstr ""
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:19
 msgid ""
-"If you enable this option, 'laptop mode tools' will control the polling of "
-"your CD/DVD drives by HAL. Disabling polling saves a considerable amount of "
-"power."
+"If you enable this option, 'laptop-mode' will control the polling of your CD/"
+"DVD drives by HAL. Disabling polling saves a considerable amount of power."
 msgstr ""
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:20

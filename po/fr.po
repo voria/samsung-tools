@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-20 20:26+0200\n"
+"POT-Creation-Date: 2010-05-20 22:48+0200\n"
 "PO-Revision-Date: 2010-04-16 15:03+0000\n"
 "Last-Translator: Fortunato Ventre (voRia) <vorione@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -458,11 +458,13 @@ msgstr "Cliquez ici pour fixer la valeur par défaut"
 
 #: po/samsung-tools-preferences.glade.h:11
 #: po/samsung-tools-preferences-laptop-mode.glade.h:5
-msgid "Configure 'laptop mode tools'"
+#, fuzzy
+msgid "Configure 'laptop-mode'"
 msgstr "Configurer \"laptop mode tools\""
 
 #: po/samsung-tools-preferences.glade.h:12
-msgid "Configure 'laptop mode tools' for a better power management"
+#, fuzzy
+msgid "Configure 'laptop-mode' for a better power management"
 msgstr ""
 "Configurer \"laptop mode tools\" pour une meilleure gestion de l'énergie"
 
@@ -578,9 +580,10 @@ msgstr ""
 "réglage par défaut est fixée à 60."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:1
+#, fuzzy
 msgid ""
-"'laptop mode tools' can automatically swap out configuration files depending "
-"on the power state of your system.\n"
+"'laptop-mode' can automatically swap out configuration files depending on "
+"the power state of your system.\n"
 " \n"
 "The primary use for this feature is for controlling the configuration files "
 "of syslog daemons. Syslog daemons have a tendency to sync their log files "
@@ -643,9 +646,10 @@ msgid "Hard disk power management:"
 msgstr "Gestion de l'alimentation du disque dur"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:15
+#, fuzzy
 msgid ""
-"If you enable this option, 'laptop mode tools' will automatically configure "
-"the Linux scheduler to save power on multi-core processors while running on "
+"If you enable this option, 'laptop-mode' will automatically configure the "
+"Linux scheduler to save power on multi-core processors while running on "
 "battery mode."
 msgstr ""
 "Si vous activez cette option, \"laptop mode tools\" configurera "
@@ -653,34 +657,37 @@ msgstr ""
 "les processeurs multi-coeurs lors du fonctionnement sur batterie."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:16
+#, fuzzy
 msgid ""
-"If you enable this option, 'laptop mode tools' will automatically enable the "
-"USB autosuspend feature for all devices."
+"If you enable this option, 'laptop-mode' will automatically enable the USB "
+"autosuspend feature for all devices."
 msgstr ""
 "Si vous activez cette option, \"laptop mode tools\" activera automatiquement "
 "la fonction d'autosuspension USB pour tous les dispositifs."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:17
+#, fuzzy
 msgid ""
-"If you enable this option, 'laptop mode tools' will automatically enable the "
-"link power management mode of Intel AHCI compliant SATA chipsets."
+"If you enable this option, 'laptop-mode' will automatically enable the link "
+"power management mode of Intel AHCI compliant SATA chipsets."
 msgstr ""
 "Si vous activez cette option, \"laptop mode tools\" activera automatiquement "
 "le mode de gestion d'énergie pour les chipsets Intel SATA compatibles AHCI."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:18
+#, fuzzy
 msgid ""
-"If you enable this option, 'laptop mode tools' will automatically set the "
+"If you enable this option, 'laptop-mode' will automatically set the "
 "powersave mode of Intel HDA audio chipsets."
 msgstr ""
 "Si vous activez cette option, \"laptop mode tools\" activera automatiquement "
 "le mode d'économie d'énergie pour les chipsets audio HDA Intel."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:19
+#, fuzzy
 msgid ""
-"If you enable this option, 'laptop mode tools' will control the polling of "
-"your CD/DVD drives by HAL. Disabling polling saves a considerable amount of "
-"power."
+"If you enable this option, 'laptop-mode' will control the polling of your CD/"
+"DVD drives by HAL. Disabling polling saves a considerable amount of power."
 msgstr ""
 "Si vous activez cette option, \"laptop mode tools\" contrôlera la scrutation "
 "de vos lecteurs CD/DVD par HAL.Désactiver cette scrutation économise "

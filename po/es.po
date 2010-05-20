@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-20 20:26+0200\n"
+"POT-Creation-Date: 2010-05-20 22:48+0200\n"
 "PO-Revision-Date: 2010-04-16 15:01+0000\n"
 "Last-Translator: ironfisher <dgvalde@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -455,11 +455,13 @@ msgstr "Haga click aquí para seleccionar el valor por defecto"
 
 #: po/samsung-tools-preferences.glade.h:11
 #: po/samsung-tools-preferences-laptop-mode.glade.h:5
-msgid "Configure 'laptop mode tools'"
+#, fuzzy
+msgid "Configure 'laptop-mode'"
 msgstr "Configura 'laptop mode tools'"
 
 #: po/samsung-tools-preferences.glade.h:12
-msgid "Configure 'laptop mode tools' for a better power management"
+#, fuzzy
+msgid "Configure 'laptop-mode' for a better power management"
 msgstr ""
 "Configura 'laptop mode tools' para una mejor administración de la potencia"
 
@@ -572,9 +574,10 @@ msgstr ""
 "normalmente dispone de mucha memoria RAM sin uso. El valor por defecto es 60."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:1
+#, fuzzy
 msgid ""
-"'laptop mode tools' can automatically swap out configuration files depending "
-"on the power state of your system.\n"
+"'laptop-mode' can automatically swap out configuration files depending on "
+"the power state of your system.\n"
 " \n"
 "The primary use for this feature is for controlling the configuration files "
 "of syslog daemons. Syslog daemons have a tendency to sync their log files "
@@ -636,9 +639,10 @@ msgid "Hard disk power management:"
 msgstr "Administración de la potencia del disco duro:"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:15
+#, fuzzy
 msgid ""
-"If you enable this option, 'laptop mode tools' will automatically configure "
-"the Linux scheduler to save power on multi-core processors while running on "
+"If you enable this option, 'laptop-mode' will automatically configure the "
+"Linux scheduler to save power on multi-core processors while running on "
 "battery mode."
 msgstr ""
 "Si habilitas esta opción 'laptop mode tools' configurarán automáticamente el "
@@ -646,35 +650,38 @@ msgstr ""
 "núcleo mientras se esté funcionando con baterías."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:16
+#, fuzzy
 msgid ""
-"If you enable this option, 'laptop mode tools' will automatically enable the "
-"USB autosuspend feature for all devices."
+"If you enable this option, 'laptop-mode' will automatically enable the USB "
+"autosuspend feature for all devices."
 msgstr ""
 "Si habilitas esta opción 'laptop mode tools' habilitará automáticamente la "
 "característica de auto-suspensión del USB para todos los dispositivos."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:17
+#, fuzzy
 msgid ""
-"If you enable this option, 'laptop mode tools' will automatically enable the "
-"link power management mode of Intel AHCI compliant SATA chipsets."
+"If you enable this option, 'laptop-mode' will automatically enable the link "
+"power management mode of Intel AHCI compliant SATA chipsets."
 msgstr ""
 "Si habilitas esta opción 'laptop mode tools' habilitará automáticamente el "
 "modo de administración del enlace de potencia del chipset Intel SATA "
 "compatible con AHCI."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:18
+#, fuzzy
 msgid ""
-"If you enable this option, 'laptop mode tools' will automatically set the "
+"If you enable this option, 'laptop-mode' will automatically set the "
 "powersave mode of Intel HDA audio chipsets."
 msgstr ""
 "Si habilitas esta opción 'laptop mode tools' seleccionará automáticamente el "
 "modo de ahorro de potencia del chipset de audio Intel HDA."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:19
+#, fuzzy
 msgid ""
-"If you enable this option, 'laptop mode tools' will control the polling of "
-"your CD/DVD drives by HAL. Disabling polling saves a considerable amount of "
-"power."
+"If you enable this option, 'laptop-mode' will control the polling of your CD/"
+"DVD drives by HAL. Disabling polling saves a considerable amount of power."
 msgstr ""
 "Si habilitas esta opción 'laptop mode tools' controlará automáticamente el "
 "sondeo de sus unidades de CD/DVD através de HAL. Deshabilitar el sondeo "

@@ -5,7 +5,7 @@
   <object class="GtkDialog" id="mainDialog">
     <property name="visible">True</property>
     <property name="border_width">5</property>
-    <property name="title" translatable="yes">Configure 'laptop mode tools'</property>
+    <property name="title" translatable="yes">Configure 'laptop-mode'</property>
     <property name="resizable">False</property>
     <property name="window_position">mouse</property>
     <property name="type_hint">normal</property>
@@ -13,7 +13,6 @@
     <child internal-child="vbox">
       <object class="GtkVBox" id="dialog-vbox2">
         <property name="visible">True</property>
-        <property name="orientation">vertical</property>
         <property name="spacing">2</property>
         <child>
           <object class="GtkTable" id="laptopModeTable">
@@ -26,7 +25,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">False</property>
-                <property name="tooltip_text" translatable="yes">If you enable this option, 'laptop mode tools' will automatically enable the USB autosuspend feature for all devices.</property>
+                <property name="tooltip_text" translatable="yes">If you enable this option, 'laptop-mode' will automatically enable the USB autosuspend feature for all devices.</property>
                 <property name="draw_indicator">True</property>
               </object>
               <packing>
@@ -81,7 +80,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">False</property>
-                <property name="tooltip_text" translatable="yes">If you enable this option, 'laptop mode tools' will automatically configure the Linux scheduler to save power on multi-core processors while running on battery mode.</property>
+                <property name="tooltip_text" translatable="yes">If you enable this option, 'laptop-mode' will automatically configure the Linux scheduler to save power on multi-core processors while running on battery mode.</property>
                 <property name="draw_indicator">True</property>
               </object>
               <packing>
@@ -113,7 +112,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">False</property>
-                <property name="tooltip_text" translatable="yes">If you enable this option, 'laptop mode tools' will automatically enable the link power management mode of Intel AHCI compliant SATA chipsets.</property>
+                <property name="tooltip_text" translatable="yes">If you enable this option, 'laptop-mode' will automatically enable the link power management mode of Intel AHCI compliant SATA chipsets.</property>
                 <property name="draw_indicator">True</property>
               </object>
               <packing>
@@ -129,7 +128,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">False</property>
-                <property name="tooltip_text" translatable="yes">If you enable this option, 'laptop mode tools' will automatically set the powersave mode of Intel HDA audio chipsets.</property>
+                <property name="tooltip_text" translatable="yes">If you enable this option, 'laptop-mode' will automatically set the powersave mode of Intel HDA audio chipsets.</property>
                 <property name="draw_indicator">True</property>
               </object>
               <packing>
@@ -161,7 +160,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">False</property>
-                <property name="tooltip_text" translatable="yes">If you enable this option, 'laptop mode tools' will control the polling of your CD/DVD drives by HAL. Disabling polling saves a considerable amount of power.</property>
+                <property name="tooltip_text" translatable="yes">If you enable this option, 'laptop-mode' will control the polling of your CD/DVD drives by HAL. Disabling polling saves a considerable amount of power.</property>
                 <property name="draw_indicator">True</property>
               </object>
               <packing>
@@ -177,7 +176,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">False</property>
-                <property name="tooltip_text" translatable="yes">'laptop mode tools' can automatically swap out configuration files depending on the power state of your system.
+                <property name="tooltip_text" translatable="yes">'laptop-mode' can automatically swap out configuration files depending on the power state of your system.
  
 The primary use for this feature is for controlling the configuration files of syslog daemons. Syslog daemons have a tendency to sync their log files when entries are written to them. This causes disks to spin up, which is not very nice when you're trying to save power.</property>
                 <property name="draw_indicator">True</property>

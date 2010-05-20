@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-20 20:26+0200\n"
+"POT-Creation-Date: 2010-05-20 22:48+0200\n"
 "PO-Revision-Date: 2010-05-15 21:21+0000\n"
 "Last-Translator: Lars Karlsson <Unknown>\n"
 "Language-Team: Swedish <sv@li.org>\n"
@@ -447,11 +447,13 @@ msgstr "Klicka här för att använda standardinställningarna"
 
 #: po/samsung-tools-preferences.glade.h:11
 #: po/samsung-tools-preferences-laptop-mode.glade.h:5
-msgid "Configure 'laptop mode tools'"
+#, fuzzy
+msgid "Configure 'laptop-mode'"
 msgstr "Ställ in 'laptop mode tools'"
 
 #: po/samsung-tools-preferences.glade.h:12
-msgid "Configure 'laptop mode tools' for a better power management"
+#, fuzzy
+msgid "Configure 'laptop-mode' for a better power management"
 msgstr "Ställ in 'laptop mode tools' för att energieffektivisera"
 
 #: po/samsung-tools-preferences.glade.h:13
@@ -560,9 +562,10 @@ msgstr ""
 "oftast har mycket oanvänt RAM-minne. Standardvärdet är 60."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:1
+#, fuzzy
 msgid ""
-"'laptop mode tools' can automatically swap out configuration files depending "
-"on the power state of your system.\n"
+"'laptop-mode' can automatically swap out configuration files depending on "
+"the power state of your system.\n"
 " \n"
 "The primary use for this feature is for controlling the configuration files "
 "of syslog daemons. Syslog daemons have a tendency to sync their log files "
@@ -622,9 +625,10 @@ msgid "Hard disk power management:"
 msgstr "Energianvändning för hårddiskarna:"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:15
+#, fuzzy
 msgid ""
-"If you enable this option, 'laptop mode tools' will automatically configure "
-"the Linux scheduler to save power on multi-core processors while running on "
+"If you enable this option, 'laptop-mode' will automatically configure the "
+"Linux scheduler to save power on multi-core processors while running on "
 "battery mode."
 msgstr ""
 "Om du aktiverar detta alternativ kommer 'laptop mode tools' automatiskt "
@@ -632,34 +636,37 @@ msgstr ""
 "kör på batteri."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:16
+#, fuzzy
 msgid ""
-"If you enable this option, 'laptop mode tools' will automatically enable the "
-"USB autosuspend feature for all devices."
+"If you enable this option, 'laptop-mode' will automatically enable the USB "
+"autosuspend feature for all devices."
 msgstr ""
 "Om du aktiverar detta alternativ kommer 'laptop mode tools' automatiskt "
 "aktivera USB-autoavstängning för alla enheter."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:17
+#, fuzzy
 msgid ""
-"If you enable this option, 'laptop mode tools' will automatically enable the "
-"link power management mode of Intel AHCI compliant SATA chipsets."
+"If you enable this option, 'laptop-mode' will automatically enable the link "
+"power management mode of Intel AHCI compliant SATA chipsets."
 msgstr ""
 "Om du aktiverar detta alternativ kommer 'laptop mode tools' automatiskt "
 "aktivera känkströmhanteringsläget på Intel AHCI inrättade chip."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:18
+#, fuzzy
 msgid ""
-"If you enable this option, 'laptop mode tools' will automatically set the "
+"If you enable this option, 'laptop-mode' will automatically set the "
 "powersave mode of Intel HDA audio chipsets."
 msgstr ""
 "Om du aktiverar detta alternativ kommer 'laptop mode tools' automatiskt "
 "ställa in strömsparhanteringen på Intel HDA ljudchip."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:19
+#, fuzzy
 msgid ""
-"If you enable this option, 'laptop mode tools' will control the polling of "
-"your CD/DVD drives by HAL. Disabling polling saves a considerable amount of "
-"power."
+"If you enable this option, 'laptop-mode' will control the polling of your CD/"
+"DVD drives by HAL. Disabling polling saves a considerable amount of power."
 msgstr ""
 "Om du aktiverar detta alternativ kommer 'laptop mode tools' kontrollera "
 "efterfrågningarna till CD/DVD-drivrutinerna av HAL. Att inaktivera "
