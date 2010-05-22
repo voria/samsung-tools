@@ -138,6 +138,19 @@ class LaptopMode(dbus.service.Object):
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'i',
 						sender_keyword = 'sender', connection_keyword = 'conn')
+	def GetControlHDPowerMgmt(self, sender = None, conn = None):
+		value = self.__read(LM_MAIN_CONFIG_FILE, "CONTROL_HD_POWERMGMT")
+		if value == None:
+			return (-1)
+		else:
+			try:
+				return int(value)
+			except:
+				# Not an int value, assume '1'
+				return 1
+	
+	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'i',
+						sender_keyword = 'sender', connection_keyword = 'conn')
 	def GetHDPowerMgmt(self, sender = None, conn = None):
 		value = self.__read(LM_MAIN_CONFIG_FILE, "BATT_HD_POWERMGMT")
 		if value == None:
@@ -252,7 +265,14 @@ class LaptopMode(dbus.service.Object):
 			except:
 				# Not an int value, assume '1'
 				return 1
-		
+	
+	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = 'i', out_signature = 'b',
+						sender_keyword = 'sender', connection_keyword = 'conn')
+	def SetControlHDPowerMgmt(self, value, sender = None, conn = None):
+		if value != 0 and value != 1:
+			return False
+		return self.__write(LM_MAIN_CONFIG_FILE, "CONTROL_HD_POWERMGMT", str(value))
+	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = 'i', out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def SetHDPowerMgmt(self, value, sender = None, conn = None):

@@ -17,7 +17,7 @@
         <child>
           <object class="GtkTable" id="laptopModeTable">
             <property name="visible">True</property>
-            <property name="n_rows">9</property>
+            <property name="n_rows">10</property>
             <property name="row_spacing">5</property>
             <child>
               <object class="GtkCheckButton" id="usbAutosuspendCheckbutton">
@@ -40,7 +40,7 @@
                 <child>
                   <object class="GtkLabel" id="hdPowerMgmtLabel">
                     <property name="visible">True</property>
-                    <property name="tooltip_text" translatable="yes">This option sets the disk power management, it can be a value between 1 and 255. A low value results in a better energy saving but less disk performance, an high value results in disk performance but less energy saving.</property>
+                    <property name="tooltip_text" translatable="yes">This option sets the disk power management when on battery, it can be a value between 1 and 255. A low value results in a better energy saving but less disk performance, an high value results in disk performance but less energy saving.</property>
                     <property name="label" translatable="yes">Hard disk power management:</property>
                   </object>
                   <packing>
@@ -53,7 +53,7 @@
                   <object class="GtkSpinButton" id="hdPowerMgmtSpinbutton">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="tooltip_text" translatable="yes">This option sets the disk power management, it can be a value between 1 and 255. A low value results in a better energy saving but less disk performance, an high value results in disk performance but less energy saving.</property>
+                    <property name="tooltip_text" translatable="yes">This option sets the disk power management when on battery, it can be a value between 1 and 255. A low value results in a better energy saving but less disk performance, an high value results in disk performance but less energy saving.</property>
                     <property name="max_length">3</property>
                     <property name="invisible_char">&#x2022;</property>
                     <property name="xalign">1</property>
@@ -68,8 +68,8 @@
                 </child>
               </object>
               <packing>
-                <property name="top_attach">8</property>
-                <property name="bottom_attach">9</property>
+                <property name="top_attach">9</property>
+                <property name="bottom_attach">10</property>
                 <property name="y_options"></property>
                 <property name="x_padding">10</property>
               </packing>
@@ -184,6 +184,22 @@ The primary use for this feature is for controlling the configuration files of s
               <packing>
                 <property name="top_attach">5</property>
                 <property name="bottom_attach">6</property>
+                <property name="y_options"></property>
+                <property name="x_padding">10</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkCheckButton" id="controlHdPowerMgmtCheckbutton">
+                <property name="label" translatable="yes">Control hard disk power management</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">False</property>
+                <property name="tooltip_text" translatable="yes">If you enable this option, 'laptop-mode' will take control of the hard disk power management.</property>
+                <property name="draw_indicator">True</property>
+              </object>
+              <packing>
+                <property name="top_attach">8</property>
+                <property name="bottom_attach">9</property>
                 <property name="y_options"></property>
                 <property name="x_padding">10</property>
               </packing>

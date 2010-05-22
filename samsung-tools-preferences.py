@@ -208,6 +208,18 @@ class LaptopModeDialog():
 		if option == 1:
 			self.schedMcPowerCheckbutton.set_active(True)
 		self.schedMcPowerCheckbutton.connect("toggled", self.on_schedMcPowerCheckbutton_toggled)
+		
+		# Control HD power management
+		self.controlHdPowerMgmtCheckbutton = self.builder.get_object("controlHdPowerMgmtCheckbutton")
+		self.hdPowerMgmtHbox = self.builder.get_object("hdPowerMgmtHbox")
+		self.controlHdPowerMgmtCheckbutton.connect("toggled", self.on_controlHdPowerMgmtCheckbutton_toggled)
+		option = laptopmode.GetControlHDPowerMgmt()
+		if option == 1:
+			self.controlHdPowerMgmtCheckbutton.set_active(True)
+		else:
+			self.controlHdPowerMgmtCheckbutton.set_active(False)
+			self.hdPowerMgmtHbox.set_sensitive(False)
+		
 		# HD power management
 		self.hdPowerMgmtSpinbutton = self.builder.get_object("hdPowerMgmtSpinbutton")
 		self.hdPowerMgmtSpinbuttonValue = laptopmode.GetHDPowerMgmt()
@@ -283,6 +295,15 @@ class LaptopModeDialog():
 			conn.SetSchedMcPower(1)
 		else:
 			conn.SetSchedMcPower(0)
+
+	def on_controlHdPowerMgmtCheckbutton_toggled(self, checkbutton):
+		conn = self.__connect()
+		if checkbutton.get_active() == True:
+			conn.SetControlHDPowerMgmt(1)
+			self.hdPowerMgmtHbox.set_sensitive(True)
+		else:
+			conn.SetControlHDPowerMgmt(0)
+			self.hdPowerMgmtHbox.set_sensitive(False)
 	
 	def on_hdPowerMgmtSpinbutton_valuechanged(self, button, event = None):
 		self.hdPowerMgmtSpinbuttonValue = button.get_value_as_int()
