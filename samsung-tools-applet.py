@@ -75,6 +75,9 @@ class Applet():
 		self.fanSpeed_sid = self.fanSpeedRadiomenuitem.connect("toggled", self.on_fanRadiomenuitem_activate, "speed")
 		self.preferencesMenuitem.connect("activate", self.on_preferencesMenuitem_activate)
 		
+		applet.set_background_widget(applet) # enable transparency hack
+
+		
 		applet.show_all()
 
 	def __connect_bluetooth(self):
