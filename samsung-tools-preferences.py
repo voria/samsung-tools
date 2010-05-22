@@ -671,6 +671,32 @@ class Main():
 		self.cpufanInitialStatusCleanButton = self.builder.get_object("cpufanInitialStatusCleanButton")
 		self.cpufanInitialStatusCleanButton.set_image(gtk.image_new_from_stock(gtk.STOCK_CLEAR, gtk.ICON_SIZE_MENU))
 		self.cpufanInitialStatusCleanButton.connect("clicked", self.on_cpufanInitialStatusCleanButton_clicked)
+		## Disable widgets for devices not available
+		# Get remaining widgets
+		self.bluetoothInitialStatusLabel = self.builder.get_object("bluetoothInitialStatusLabel")
+		self.webcamInitialStatusLabel = self.builder.get_object("webcamInitialStatusLabel")
+		self.wirelessInitialStatusLabel = self.builder.get_object("wirelessInitialStatusLabel")
+		self.cpufanInitialStatusLabel = self.builder.get_object("cpufanInitialStatusLabel")
+		conn = self.__connect_session_bluetooth()
+		if not conn.IsAvailable():
+			self.bluetoothInitialStatusLabel.set_sensitive(False)
+			self.bluetoothInitialStatusCombobox.set_sensitive(False)
+			self.bluetoothInitialStatusCleanButton.set_sensitive(False)
+		conn = self.__connect_session_webcam()
+		if not conn.IsAvailable():
+			self.webcamInitialStatusLabel.set_sensitive(False)
+			self.webcamInitialStatusCombobox.set_sensitive(False)
+			self.webcamInitialStatusCleanButton.set_sensitive(False)
+		conn = self.__connect_session_wireless()
+		if not conn.IsAvailable():
+			self.wirelessInitialStatusLabel.set_sensitive(False)
+			self.wirelessInitialStatusCombobox.set_sensitive(False)
+			self.wirelessInitialStatusCleanButton.set_sensitive(False)
+		conn = self.__connect_session_cpu()
+		if not conn.IsFanAvailable():
+			self.cpufanInitialStatusLabel.set_sensitive(False)
+			self.cpufanInitialStatusCombobox.set_sensitive(False)
+			self.cpufanInitialStatusCleanButton.set_sensitive(False)
 		
 		###
 		### Advanced power management configuration
