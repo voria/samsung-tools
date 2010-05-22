@@ -142,6 +142,8 @@ class Wireless(dbus.service.Object):
 		try:
 			command = COMMAND_RFKILL + " block wifi"
 			process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+			# Wait for the process to finish
+			process.wait()
 		except:
 			pass
 		# Disable wireless through the 'easy slow down manager' interface
