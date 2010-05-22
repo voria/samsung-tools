@@ -109,7 +109,7 @@ class KeyGrabber(gtk.Button):
 
 	def set_label(self, key = None, mods = None, valid = False):
 		if key != None and mods != None:
-			# emit 'changed' signal only when key is validated (valud = True)
+			# emit 'changed' signal only when key is validated (valid = True)
 			if valid:
 				self.key = key
 				self.mods = mods
@@ -483,8 +483,8 @@ class PhcDialog():
 class Main():
 	def __init__(self):
 		# Get interfaces for D-Bus services
-		session = self.__connect_session()
-		system = self.__connect_system()
+		session = self.__connect_session_options()
+		system = self.__connect_system_options()
 
 		# Setup GUI
 		self.builder = gtk.Builder()
@@ -710,7 +710,7 @@ class Main():
 		# All ready
 		self.mainWindow.show()
 	
-	def __connect_session(self):
+	def __connect_session_options(self):
 		retry = 3
 		while retry > 0:
 			try:
@@ -721,8 +721,56 @@ class Main():
 				retry = retry - 1
 		print unicode(_("Unable to connect to session service!"), "utf-8")
 		sys.exit(1)
+	
+	def __connect_session_bluetooth(self):
+		""" Connect to session service for bluetooth control """
+		retry = 3
+		while retry > 0:
+			try:
+				bus = dbus.SessionBus()
+				proxy = bus.get_object(SESSION_INTERFACE_NAME, SESSION_OBJECT_PATH_BLUETOOTH)
+				return dbus.Interface(proxy, SESSION_INTERFACE_NAME)
+			except:
+				retry = retry - 1
+		sys.exit(1)
+	
+	def __connect_session_webcam(self):
+		""" Connect to session service for webcam control """
+		retry = 3
+		while retry > 0:
+			try:
+				bus = dbus.SessionBus()
+				proxy = bus.get_object(SESSION_INTERFACE_NAME, SESSION_OBJECT_PATH_WEBCAM)
+				return dbus.Interface(proxy, SESSION_INTERFACE_NAME)
+			except:
+				retry = retry - 1
+		sys.exit(1)
+	
+	def __connect_session_wireless(self):
+		""" Connect to session service for wireless control """
+		retry = 3
+		while retry > 0:
+			try:
+				bus = dbus.SessionBus()
+				proxy = bus.get_object(SESSION_INTERFACE_NAME, SESSION_OBJECT_PATH_WIRELESS)
+				return dbus.Interface(proxy, SESSION_INTERFACE_NAME)
+			except:
+				retry = retry - 1
+		sys.exit(1)
 		
-	def __connect_system(self):
+	def __connect_session_cpu(self):
+		""" Connect to session service for cpu fan control """
+		retry = 3
+		while retry > 0:
+			try:
+				bus = dbus.SessionBus()
+				proxy = bus.get_object(SESSION_INTERFACE_NAME, SESSION_OBJECT_PATH_CPU)
+				return dbus.Interface(proxy, SESSION_INTERFACE_NAME)
+			except:
+				retry = retry - 1
+		sys.exit(1)
+		
+	def __connect_system_options(self):
 		retry = 3
 		while retry > 0:
 			try:
@@ -757,6 +805,8 @@ class Main():
 				retry = retry - 1
 		print unicode(_("Unable to connect to system service!"), "utf-8")
 		sys.exit(1)
+	
+	
 	
 	def __connect_system_cpu(self):
 		retry = 3
@@ -794,33 +844,73 @@ class Main():
 				result += ">"
 		return result
 	
+	def __set_backlight_hotkey_sensitiveness(self, active):
+		self.backlightHotkeyLabel.set_sensitive(active)
+		self.backlightHotkeyButton.set_sensitive(active)
+		self.backlightHotkeyCleanButton.set_sensitive(active)
+		self.backlightHotkeyDefaultButton.set_sensitive(active)
+	
+	def __set_bluetooth_hotkey_sensitiveness(self, active):
+		# Check if bluetooth is actually available
+		conn = self.__connect_session_bluetooth()
+		if not conn.IsAvailable():
+			# Not available, disable the hotkey
+			self.bluetoothHotkeyButton.set_label(0, 0, True)
+			# Disable the widgets
+			active = False
+		self.bluetoothHotkeyLabel.set_sensitive(active)
+		self.bluetoothHotkeyButton.set_sensitive(active)
+		self.bluetoothHotkeyCleanButton.set_sensitive(active)
+		self.bluetoothHotkeyDefaultButton.set_sensitive(active)
+	
+	def __set_cpu_hotkey_sensitiveness(self, active):
+		# Check if cpu fan control is actually available
+		conn = self.__connect_session_cpu()
+		if not conn.IsFanAvailable():
+			# Not available, disable the hotkey
+			self.cpuHotkeyButton.set_label(0, 0, True)
+			# Disable the widgets
+			active = False
+		self.cpuHotkeyLabel.set_sensitive(active)
+		self.cpuHotkeyButton.set_sensitive(active)
+		self.cpuHotkeyCleanButton.set_sensitive(active)
+		self.cpuHotkeyDefaultButton.set_sensitive(active)
+	
+	def __set_webcam_hotkey_sensitiveness(self, active):
+		# Check if webcam is actually available
+		conn = self.__connect_session_webcam()
+		if not conn.IsAvailable():
+			# Not available, disable the hotkey
+			self.webcamHotkeyButton.set_label(0, 0, True)
+			# Disable the widgets
+			active = False
+		self.webcamHotkeyLabel.set_sensitive(active)
+		self.webcamHotkeyButton.set_sensitive(active)
+		self.webcamHotkeyCleanButton.set_sensitive(active)
+		self.webcamHotkeyDefaultButton.set_sensitive(active)
+	
+	def __set_wireless_hotkey_sensitiveness(self, active):
+		# Check if wireless is actually available
+		conn = self.__connect_session_wireless()
+		if not conn.IsAvailable():
+			# Not available, disable the hotkey
+			self.wirelessHotkeyButton.set_label(0, 0, True)
+			# Disable the widgets
+			active = False
+		self.wirelessHotkeyLabel.set_sensitive(active)
+		self.wirelessHotkeyButton.set_sensitive(active)
+		self.wirelessHotkeyCleanButton.set_sensitive(active)
+		self.wirelessHotkeyDefaultButton.set_sensitive(active)
+	
 	def on_useHotkeysCheckbutton_toggled(self, checkbutton = None, toggle_widgets_only = False):
-		self.backlightHotkeyLabel.set_sensitive(checkbutton.get_active())
-		self.bluetoothHotkeyLabel.set_sensitive(checkbutton.get_active())
-		self.cpuHotkeyLabel.set_sensitive(checkbutton.get_active())
-		self.webcamHotkeyLabel.set_sensitive(checkbutton.get_active())
-		self.wirelessHotkeyLabel.set_sensitive(checkbutton.get_active())
-		
-		self.backlightHotkeyButton.set_sensitive(checkbutton.get_active())
-		self.bluetoothHotkeyButton.set_sensitive(checkbutton.get_active())
-		self.cpuHotkeyButton.set_sensitive(checkbutton.get_active())
-		self.webcamHotkeyButton.set_sensitive(checkbutton.get_active())
-		self.wirelessHotkeyButton.set_sensitive(checkbutton.get_active())
-		
-		self.backlightHotkeyCleanButton.set_sensitive(checkbutton.get_active())
-		self.bluetoothHotkeyCleanButton.set_sensitive(checkbutton.get_active())
-		self.cpuHotkeyCleanButton.set_sensitive(checkbutton.get_active())
-		self.webcamHotkeyCleanButton.set_sensitive(checkbutton.get_active())
-		self.wirelessHotkeyCleanButton.set_sensitive(checkbutton.get_active())
-		
-		self.backlightHotkeyDefaultButton.set_sensitive(checkbutton.get_active())
-		self.bluetoothHotkeyDefaultButton.set_sensitive(checkbutton.get_active())
-		self.cpuHotkeyDefaultButton.set_sensitive(checkbutton.get_active())
-		self.webcamHotkeyDefaultButton.set_sensitive(checkbutton.get_active())
-		self.wirelessHotkeyDefaultButton.set_sensitive(checkbutton.get_active())
+		self.__set_backlight_hotkey_sensitiveness(checkbutton.get_active())
+		self.__set_bluetooth_hotkey_sensitiveness(checkbutton.get_active())
+		self.__set_cpu_hotkey_sensitiveness(checkbutton.get_active())
+		self.__set_webcam_hotkey_sensitiveness(checkbutton.get_active())
+		self.__set_wireless_hotkey_sensitiveness(checkbutton.get_active())
 		
 		if toggle_widgets_only == False:
-			session = self.__connect_session()
+			session = self.__connect_session_options()
 			if checkbutton.get_active() == True:
 				session.SetUseHotkeys("true")
 			else:
@@ -831,7 +921,7 @@ class Main():
 			new = "disable"
 		else:
 			new = gtk.accelerator_name(key, mods)
-		session = self.__connect_session()
+		session = self.__connect_session_options()
 		session.SetBacklightHotkey(self.__convert_gtk_to_xbindkeys(new))
 		
 	
@@ -840,7 +930,7 @@ class Main():
 			new = "disable"
 		else:
 			new = gtk.accelerator_name(key, mods) 
-		session = self.__connect_session()
+		session = self.__connect_session_options()
 		session.SetBluetoothHotkey(self.__convert_gtk_to_xbindkeys(new))
 		
 	def on_cpuHotkeyButton_changed(self, button = None, key = None, mods = None):
@@ -848,7 +938,7 @@ class Main():
 			new = "disable"
 		else:
 			new = gtk.accelerator_name(key, mods) 
-		session = self.__connect_session()
+		session = self.__connect_session_options()
 		session.SetCpuHotkey(self.__convert_gtk_to_xbindkeys(new))
 		
 	def on_webcamHotkeyButton_changed(self, button = None, key = None, mods = None):
@@ -856,7 +946,7 @@ class Main():
 			new = "disable"
 		else:
 			new = gtk.accelerator_name(key, mods) 
-		session = self.__connect_session()
+		session = self.__connect_session_options()
 		session.SetWebcamHotkey(self.__convert_gtk_to_xbindkeys(new))
 		
 	def on_wirelessHotkeyButton_changed(self, button = None, key = None, mods = None):
@@ -864,7 +954,7 @@ class Main():
 			new = "disable"
 		else:
 			new = gtk.accelerator_name(key, mods) 
-		session = self.__connect_session()
+		session = self.__connect_session_options()
 		session.SetWirelessHotkey(self.__convert_gtk_to_xbindkeys(new))
 	
 	def on_backlightHotkeyCleanButton_clicked(self, button = None):
@@ -883,42 +973,42 @@ class Main():
 		self.wirelessHotkeyButton.set_label(0, 0, True)
 	
 	def on_backlightHotkeyDefaultButton_clicked(self, button = None):
-		session = self.__connect_session()
+		session = self.__connect_session_options()
 		session.SetBacklightHotkey("default")
 		hotkey = session.GetBacklightHotkey()
 		(key, mods) = gtk.accelerator_parse(self.__convert_xbindkeys_to_gtk(hotkey))
 		self.backlightHotkeyButton.set_label(key, mods, True)
 	
 	def on_bluetoothHotkeyDefaultButton_clicked(self, button = None):
-		session = self.__connect_session()
+		session = self.__connect_session_options()
 		session.SetBluetoothHotkey("default")
 		hotkey = session.GetBluetoothHotkey()
 		(key, mods) = gtk.accelerator_parse(self.__convert_xbindkeys_to_gtk(hotkey))
 		self.bluetoothHotkeyButton.set_label(key, mods, True)
 	
 	def on_cpuHotkeyDefaultButton_clicked(self, button = None):
-		session = self.__connect_session()
+		session = self.__connect_session_options()
 		session.SetCpuHotkey("default")
 		hotkey = session.GetCpuHotkey()
 		(key, mods) = gtk.accelerator_parse(self.__convert_xbindkeys_to_gtk(hotkey))
 		self.cpuHotkeyButton.set_label(key, mods, True)
 	
 	def on_webcamHotkeyDefaultButton_clicked(self, button = None):
-		session = self.__connect_session()
+		session = self.__connect_session_options()
 		session.SetWebcamHotkey("default")
 		hotkey = session.GetWebcamHotkey()
 		(key, mods) = gtk.accelerator_parse(self.__convert_xbindkeys_to_gtk(hotkey))
 		self.webcamHotkeyButton.set_label(key, mods, True)
 	
 	def on_wirelessHotkeyDefaultButton_clicked(self, button = None):
-		session = self.__connect_session()
+		session = self.__connect_session_options()
 		session.SetWirelessHotkey("default")
 		hotkey = session.GetWirelessHotkey()
 		(key, mods) = gtk.accelerator_parse(self.__convert_xbindkeys_to_gtk(hotkey))
 		self.wirelessHotkeyButton.set_label(key, mods, True)
 	
 	def on_bluetoothInitialStatusCombobox_changed(self, combobox = None):
-		system = self.__connect_system()
+		system = self.__connect_system_options()
 		active = combobox.get_active()
 		if active == 0:
 			system.SetBluetoothInitialStatus("last")
@@ -928,7 +1018,7 @@ class Main():
 			system.SetBluetoothInitialStatus("off")
 			
 	def on_webcamInitialStatusCombobox_changed(self, combobox = None):
-		system = self.__connect_system()
+		system = self.__connect_system_options()
 		active = combobox.get_active()
 		if active == 0:
 			system.SetWebcamInitialStatus("last")
@@ -938,7 +1028,7 @@ class Main():
 			system.SetWebcamInitialStatus("off")
 	
 	def on_wirelessInitialStatusCombobox_changed(self, combobox = None):
-		system = self.__connect_system()
+		system = self.__connect_system_options()
 		active = combobox.get_active()
 		if active == 0:
 			system.SetWirelessInitialStatus("last")
@@ -948,7 +1038,7 @@ class Main():
 			system.SetWirelessInitialStatus("off")
 			
 	def on_cpufanInitialStatusCombobox_changed(self, combobox = None):
-		system = self.__connect_system()
+		system = self.__connect_system_options()
 		active = combobox.get_active()
 		if active == 0:
 			system.SetCpufanInitialStatus("normal")
