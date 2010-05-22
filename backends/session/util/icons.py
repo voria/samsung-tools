@@ -28,5 +28,12 @@ FAN_NORMAL_ICON = "/usr/lib/samsung-tools/gui/icons/fan-normal.png"
 FAN_SILENT_ICON = "/usr/lib/samsung-tools/gui/icons/fan-silent.png"
 FAN_SPEED_ICON = "/usr/lib/samsung-tools/gui/icons/fan-speed.png"
 WEBCAM_ICON = "camera-web"
-WIRELESS_ENABLED_ICON = "notification-network-wireless-none"
-WIRELESS_DISABLED_ICON = "notification-network-wireless-disconnected"
+
+# Check for wireless icons to use 
+import os.path
+if os.path.exists("/usr/share/notify-osd/icons/"):
+	WIRELESS_ENABLED_ICON = "notification-network-wireless-none"
+	WIRELESS_DISABLED_ICON = "notification-network-wireless-disconnected"
+else:
+	WIRELESS_ENABLED_ICON = "network-wireless"
+	WIRELESS_DISABLED_ICON = "network-wireless"
