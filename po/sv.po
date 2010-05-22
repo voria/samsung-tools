@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-20 22:48+0200\n"
+"POT-Creation-Date: 2010-05-22 14:15+0200\n"
 "PO-Revision-Date: 2010-05-15 21:21+0000\n"
 "Last-Translator: Lars Karlsson <Unknown>\n"
 "Language-Team: Swedish <sv@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2010-05-16 10:00+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
-#: backends/session/util/locales.py:25 samsung-tools-preferences.py:489
+#: backends/session/util/locales.py:25 samsung-tools-preferences.py:510
 msgid "Backlight"
 msgstr "Skärmljus"
 
@@ -49,7 +49,7 @@ msgstr "Skärmljus kan inte inaktiveras"
 msgid "Backlight cannot be toggled"
 msgstr "Skärmljus kan inte ändras"
 
-#: backends/session/util/locales.py:34 samsung-tools-preferences.py:498
+#: backends/session/util/locales.py:34 samsung-tools-preferences.py:519
 #: po/samsung-tools-applet.glade.h:1
 msgid "Bluetooth"
 msgstr "Bluetooth"
@@ -86,7 +86,7 @@ msgstr "Bluetoothstatus kan inte ändras"
 msgid "Bluetooth control is not available"
 msgstr "Bluetooth-kontroll är inte tillgängligt"
 
-#: backends/session/util/locales.py:44 samsung-tools-preferences.py:507
+#: backends/session/util/locales.py:44 samsung-tools-preferences.py:528
 msgid "CPU fan"
 msgstr "CPU-fläkt"
 
@@ -118,7 +118,7 @@ msgstr "Kan inte läsa fläktläge"
 msgid "CPU fan control is not available"
 msgstr "CPU-fläktkontroll är inte tillgänglig"
 
-#: backends/session/util/locales.py:53 samsung-tools-preferences.py:516
+#: backends/session/util/locales.py:53 samsung-tools-preferences.py:537
 #: po/samsung-tools-applet.glade.h:7
 msgid "Webcam"
 msgstr "Webbkamera"
@@ -155,7 +155,7 @@ msgstr "Kan inte ändra läge på webbkameran"
 msgid "Webcam control is not available"
 msgstr "Webbkamerakontroll inte tillgänglig"
 
-#: backends/session/util/locales.py:63 samsung-tools-preferences.py:525
+#: backends/session/util/locales.py:63 samsung-tools-preferences.py:546
 #: po/samsung-tools-applet.glade.h:8
 msgid "Wireless"
 msgstr "Trådlöst nätverk"
@@ -295,7 +295,7 @@ msgstr " - Inaktivera bluetooth, webbkamera och det trådlösa nätverket:"
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "För mer information, gå till 'Linux On My Samsung'-forumet:"
 
-#: samsung-tools.py:512 samsung-tools-preferences.py:1010
+#: samsung-tools.py:512 samsung-tools-preferences.py:1147
 msgid "Released under GPLv3 license"
 msgstr "Publicerat under GPLv3-licensen"
 
@@ -335,40 +335,40 @@ msgstr "Tryck in en ny knapp för kortkommandot"
 msgid "None"
 msgstr "Ingen"
 
-#: samsung-tools-preferences.py:228 samsung-tools-preferences.py:330
-#: samsung-tools-preferences.py:420 samsung-tools-preferences.py:432
-#: samsung-tools-preferences.py:713 samsung-tools-preferences.py:725
-#: samsung-tools-preferences.py:737 samsung-tools-preferences.py:749
+#: samsung-tools-preferences.py:240 samsung-tools-preferences.py:351
+#: samsung-tools-preferences.py:441 samsung-tools-preferences.py:453
+#: samsung-tools-preferences.py:808 samsung-tools-preferences.py:820
+#: samsung-tools-preferences.py:832 samsung-tools-preferences.py:846
 msgid "Unable to connect to system service!"
 msgstr "Kan inte ansluta till systemtjänsten!"
 
-#: samsung-tools-preferences.py:444
+#: samsung-tools-preferences.py:465
 msgid "Confirm"
 msgstr "Bekräfta"
 
-#: samsung-tools-preferences.py:445
+#: samsung-tools-preferences.py:466
 msgid "Apply the new VIDs?"
 msgstr "Använde de nya VID:erna?"
 
-#: samsung-tools-preferences.py:671
+#: samsung-tools-preferences.py:718
 #, fuzzy
 msgid "Install 'laptop-mode' to enable and configure these options"
 msgstr ""
 "Installera 'laptop mode tools'-paketet för att ställa in dessa alternativ"
 
-#: samsung-tools-preferences.py:682
+#: samsung-tools-preferences.py:729
 msgid "You need a PHC enabled kernel to use this feature"
 msgstr "Du behöver en PHC-aktiverad kernel för att använda denna funktion"
 
-#: samsung-tools-preferences.py:701
+#: samsung-tools-preferences.py:748
 msgid "Unable to connect to session service!"
 msgstr "Kan inte ansluta till systemtjänsten!"
 
-#: samsung-tools-preferences.py:964
+#: samsung-tools-preferences.py:1101
 msgid "Caution!"
 msgstr "Försiktigt!"
 
-#: samsung-tools-preferences.py:965
+#: samsung-tools-preferences.py:1102
 msgid ""
 "CPU undervolting can lead to significant gains in terms of power energy "
 "saving, however <b>IT IS A RISKY PRACTICE</b> that might result in "
@@ -613,18 +613,23 @@ msgid "Control configuration files"
 msgstr "Kontrollera konfigurationsfiler"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:12
+#, fuzzy
+msgid "Control hard disk power management"
+msgstr "Energianvändning för hårddiskarna:"
+
+#: po/samsung-tools-preferences-laptop-mode.glade.h:13
 msgid "Control video output settings"
 msgstr "Kontrollera videoanslutningsalternativ"
 
-#: po/samsung-tools-preferences-laptop-mode.glade.h:13
+#: po/samsung-tools-preferences-laptop-mode.glade.h:14
 msgid "Enable USB autosuspend"
 msgstr "Aktivera USB autoavstängning"
 
-#: po/samsung-tools-preferences-laptop-mode.glade.h:14
+#: po/samsung-tools-preferences-laptop-mode.glade.h:15
 msgid "Hard disk power management:"
 msgstr "Energianvändning för hårddiskarna:"
 
-#: po/samsung-tools-preferences-laptop-mode.glade.h:15
+#: po/samsung-tools-preferences-laptop-mode.glade.h:16
 #, fuzzy
 msgid ""
 "If you enable this option, 'laptop-mode' will automatically configure the "
@@ -635,7 +640,7 @@ msgstr ""
 "ändra Linux schemaläggare för att spara energi i flerkärnsprocessorer som "
 "kör på batteri."
 
-#: po/samsung-tools-preferences-laptop-mode.glade.h:16
+#: po/samsung-tools-preferences-laptop-mode.glade.h:17
 #, fuzzy
 msgid ""
 "If you enable this option, 'laptop-mode' will automatically enable the USB "
@@ -644,7 +649,7 @@ msgstr ""
 "Om du aktiverar detta alternativ kommer 'laptop mode tools' automatiskt "
 "aktivera USB-autoavstängning för alla enheter."
 
-#: po/samsung-tools-preferences-laptop-mode.glade.h:17
+#: po/samsung-tools-preferences-laptop-mode.glade.h:18
 #, fuzzy
 msgid ""
 "If you enable this option, 'laptop-mode' will automatically enable the link "
@@ -653,7 +658,7 @@ msgstr ""
 "Om du aktiverar detta alternativ kommer 'laptop mode tools' automatiskt "
 "aktivera känkströmhanteringsläget på Intel AHCI inrättade chip."
 
-#: po/samsung-tools-preferences-laptop-mode.glade.h:18
+#: po/samsung-tools-preferences-laptop-mode.glade.h:19
 #, fuzzy
 msgid ""
 "If you enable this option, 'laptop-mode' will automatically set the "
@@ -662,7 +667,7 @@ msgstr ""
 "Om du aktiverar detta alternativ kommer 'laptop mode tools' automatiskt "
 "ställa in strömsparhanteringen på Intel HDA ljudchip."
 
-#: po/samsung-tools-preferences-laptop-mode.glade.h:19
+#: po/samsung-tools-preferences-laptop-mode.glade.h:20
 #, fuzzy
 msgid ""
 "If you enable this option, 'laptop-mode' will control the polling of your CD/"
@@ -672,7 +677,16 @@ msgstr ""
 "efterfrågningarna till CD/DVD-drivrutinerna av HAL. Att inaktivera "
 "efterfrågningar sparar mycket energi."
 
-#: po/samsung-tools-preferences-laptop-mode.glade.h:20
+#: po/samsung-tools-preferences-laptop-mode.glade.h:21
+#, fuzzy
+msgid ""
+"If you enable this option, 'laptop-mode' will take control of the hard disk "
+"power management."
+msgstr ""
+"Om du aktiverar detta alternativ kommer 'laptop mode tools' automatiskt "
+"ställa in strömsparhanteringen på Intel HDA ljudchip."
+
+#: po/samsung-tools-preferences-laptop-mode.glade.h:22
 msgid ""
 "If you enable this option, the speed of the Ethernet connection is limited "
 "to 100 Mbit. The difference in power usage between 1 Gbit and 100 Mbit "
@@ -687,12 +701,13 @@ msgstr ""
 "använder internetanslutningen för att ansluta till ett mycket långsammare "
 "ADSL-modem)."
 
-#: po/samsung-tools-preferences-laptop-mode.glade.h:21
+#: po/samsung-tools-preferences-laptop-mode.glade.h:23
+#, fuzzy
 msgid ""
-"This option sets the disk power management, it can be a value between 1 and "
-"255. A low value results in a better energy saving but less disk "
-"performance, an high value results in disk performance but less energy "
-"saving."
+"This option sets the disk power management when on battery, it can be a "
+"value between 1 and 255. A low value results in a better energy saving but "
+"less disk performance, an high value results in disk performance but less "
+"energy saving."
 msgstr ""
 "Det här alternativet ställer in hårddiskströmhanteringen. Det kan vara ett "
 "värde mellan 1 och 255. Ett lågt värde innebär effektivare energisparning, "

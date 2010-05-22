@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-20 22:48+0200\n"
+"POT-Creation-Date: 2010-05-22 14:15+0200\n"
 "PO-Revision-Date: 2010-03-14 15:28+0000\n"
 "Last-Translator: Fortunato Ventre (voRia) <vorione@gmail.com>\n"
 "Language-Team: Danish <da@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2010-04-20 07:12+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
-#: backends/session/util/locales.py:25 samsung-tools-preferences.py:489
+#: backends/session/util/locales.py:25 samsung-tools-preferences.py:510
 msgid "Backlight"
 msgstr ""
 
@@ -49,7 +49,7 @@ msgstr ""
 msgid "Backlight cannot be toggled"
 msgstr ""
 
-#: backends/session/util/locales.py:34 samsung-tools-preferences.py:498
+#: backends/session/util/locales.py:34 samsung-tools-preferences.py:519
 #: po/samsung-tools-applet.glade.h:1
 msgid "Bluetooth"
 msgstr "Bluetooth"
@@ -86,7 +86,7 @@ msgstr ""
 msgid "Bluetooth control is not available"
 msgstr ""
 
-#: backends/session/util/locales.py:44 samsung-tools-preferences.py:507
+#: backends/session/util/locales.py:44 samsung-tools-preferences.py:528
 msgid "CPU fan"
 msgstr ""
 
@@ -118,7 +118,7 @@ msgstr ""
 msgid "CPU fan control is not available"
 msgstr ""
 
-#: backends/session/util/locales.py:53 samsung-tools-preferences.py:516
+#: backends/session/util/locales.py:53 samsung-tools-preferences.py:537
 #: po/samsung-tools-applet.glade.h:7
 msgid "Webcam"
 msgstr "Webkamera"
@@ -155,7 +155,7 @@ msgstr ""
 msgid "Webcam control is not available"
 msgstr ""
 
-#: backends/session/util/locales.py:63 samsung-tools-preferences.py:525
+#: backends/session/util/locales.py:63 samsung-tools-preferences.py:546
 #: po/samsung-tools-applet.glade.h:8
 msgid "Wireless"
 msgstr "Trådløs"
@@ -295,7 +295,7 @@ msgstr ""
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "For mere information, besøg 'Linux On My Samsung' forum:"
 
-#: samsung-tools.py:512 samsung-tools-preferences.py:1010
+#: samsung-tools.py:512 samsung-tools-preferences.py:1147
 msgid "Released under GPLv3 license"
 msgstr "Udgivet under en GPLv3 licens"
 
@@ -335,38 +335,38 @@ msgstr ""
 msgid "None"
 msgstr "Ingen"
 
-#: samsung-tools-preferences.py:228 samsung-tools-preferences.py:330
-#: samsung-tools-preferences.py:420 samsung-tools-preferences.py:432
-#: samsung-tools-preferences.py:713 samsung-tools-preferences.py:725
-#: samsung-tools-preferences.py:737 samsung-tools-preferences.py:749
+#: samsung-tools-preferences.py:240 samsung-tools-preferences.py:351
+#: samsung-tools-preferences.py:441 samsung-tools-preferences.py:453
+#: samsung-tools-preferences.py:808 samsung-tools-preferences.py:820
+#: samsung-tools-preferences.py:832 samsung-tools-preferences.py:846
 msgid "Unable to connect to system service!"
 msgstr ""
 
-#: samsung-tools-preferences.py:444
+#: samsung-tools-preferences.py:465
 msgid "Confirm"
 msgstr ""
 
-#: samsung-tools-preferences.py:445
+#: samsung-tools-preferences.py:466
 msgid "Apply the new VIDs?"
 msgstr ""
 
-#: samsung-tools-preferences.py:671
+#: samsung-tools-preferences.py:718
 msgid "Install 'laptop-mode' to enable and configure these options"
 msgstr ""
 
-#: samsung-tools-preferences.py:682
+#: samsung-tools-preferences.py:729
 msgid "You need a PHC enabled kernel to use this feature"
 msgstr ""
 
-#: samsung-tools-preferences.py:701
+#: samsung-tools-preferences.py:748
 msgid "Unable to connect to session service!"
 msgstr ""
 
-#: samsung-tools-preferences.py:964
+#: samsung-tools-preferences.py:1101
 msgid "Caution!"
 msgstr ""
 
-#: samsung-tools-preferences.py:965
+#: samsung-tools-preferences.py:1102
 msgid ""
 "CPU undervolting can lead to significant gains in terms of power energy "
 "saving, however <b>IT IS A RISKY PRACTICE</b> that might result in "
@@ -584,49 +584,59 @@ msgid "Control configuration files"
 msgstr ""
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:12
-msgid "Control video output settings"
+msgid "Control hard disk power management"
 msgstr ""
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:13
-msgid "Enable USB autosuspend"
+msgid "Control video output settings"
 msgstr ""
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:14
-msgid "Hard disk power management:"
+msgid "Enable USB autosuspend"
 msgstr ""
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:15
+msgid "Hard disk power management:"
+msgstr ""
+
+#: po/samsung-tools-preferences-laptop-mode.glade.h:16
 msgid ""
 "If you enable this option, 'laptop-mode' will automatically configure the "
 "Linux scheduler to save power on multi-core processors while running on "
 "battery mode."
 msgstr ""
 
-#: po/samsung-tools-preferences-laptop-mode.glade.h:16
+#: po/samsung-tools-preferences-laptop-mode.glade.h:17
 msgid ""
 "If you enable this option, 'laptop-mode' will automatically enable the USB "
 "autosuspend feature for all devices."
 msgstr ""
 
-#: po/samsung-tools-preferences-laptop-mode.glade.h:17
+#: po/samsung-tools-preferences-laptop-mode.glade.h:18
 msgid ""
 "If you enable this option, 'laptop-mode' will automatically enable the link "
 "power management mode of Intel AHCI compliant SATA chipsets."
 msgstr ""
 
-#: po/samsung-tools-preferences-laptop-mode.glade.h:18
+#: po/samsung-tools-preferences-laptop-mode.glade.h:19
 msgid ""
 "If you enable this option, 'laptop-mode' will automatically set the "
 "powersave mode of Intel HDA audio chipsets."
 msgstr ""
 
-#: po/samsung-tools-preferences-laptop-mode.glade.h:19
+#: po/samsung-tools-preferences-laptop-mode.glade.h:20
 msgid ""
 "If you enable this option, 'laptop-mode' will control the polling of your CD/"
 "DVD drives by HAL. Disabling polling saves a considerable amount of power."
 msgstr ""
 
-#: po/samsung-tools-preferences-laptop-mode.glade.h:20
+#: po/samsung-tools-preferences-laptop-mode.glade.h:21
+msgid ""
+"If you enable this option, 'laptop-mode' will take control of the hard disk "
+"power management."
+msgstr ""
+
+#: po/samsung-tools-preferences-laptop-mode.glade.h:22
 msgid ""
 "If you enable this option, the speed of the Ethernet connection is limited "
 "to 100 Mbit. The difference in power usage between 1 Gbit and 100 Mbit "
@@ -635,12 +645,12 @@ msgid ""
 "slower ADSL modem)."
 msgstr ""
 
-#: po/samsung-tools-preferences-laptop-mode.glade.h:21
+#: po/samsung-tools-preferences-laptop-mode.glade.h:23
 msgid ""
-"This option sets the disk power management, it can be a value between 1 and "
-"255. A low value results in a better energy saving but less disk "
-"performance, an high value results in disk performance but less energy "
-"saving."
+"This option sets the disk power management when on battery, it can be a "
+"value between 1 and 255. A low value results in a better energy saving but "
+"less disk performance, an high value results in disk performance but less "
+"energy saving."
 msgstr ""
 
 #: po/samsung-tools-preferences-phc.glade.h:1

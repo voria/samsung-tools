@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-20 22:48+0200\n"
+"POT-Creation-Date: 2010-05-22 14:15+0200\n"
 "PO-Revision-Date: 2010-04-23 13:41+0000\n"
 "Last-Translator: Jonathan Cragg <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2010-04-28 15:36+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
-#: backends/session/util/locales.py:25 samsung-tools-preferences.py:489
+#: backends/session/util/locales.py:25 samsung-tools-preferences.py:510
 msgid "Backlight"
 msgstr "Hintergrundbeleuchtung"
 
@@ -49,7 +49,7 @@ msgstr "Hintergrundbeleuchtung kann nicht abgeschaltet werden"
 msgid "Backlight cannot be toggled"
 msgstr "Hintergrundbeleuchtung kann nicht ein-/augeschaltet werden"
 
-#: backends/session/util/locales.py:34 samsung-tools-preferences.py:498
+#: backends/session/util/locales.py:34 samsung-tools-preferences.py:519
 #: po/samsung-tools-applet.glade.h:1
 msgid "Bluetooth"
 msgstr "Bluetooth"
@@ -86,7 +86,7 @@ msgstr "Bluetooth kann nicht ein-/ausgeschaltet werden"
 msgid "Bluetooth control is not available"
 msgstr "Bluetooth-Steuerung ist nicht verfügbar"
 
-#: backends/session/util/locales.py:44 samsung-tools-preferences.py:507
+#: backends/session/util/locales.py:44 samsung-tools-preferences.py:528
 msgid "CPU fan"
 msgstr "CPU-Lüfter"
 
@@ -118,7 +118,7 @@ msgstr "Lüftermodus kann nicht ermittelt werden"
 msgid "CPU fan control is not available"
 msgstr "CPU-Lüftersteuerung ist nicht verfügbar"
 
-#: backends/session/util/locales.py:53 samsung-tools-preferences.py:516
+#: backends/session/util/locales.py:53 samsung-tools-preferences.py:537
 #: po/samsung-tools-applet.glade.h:7
 msgid "Webcam"
 msgstr "Webcam"
@@ -155,7 +155,7 @@ msgstr "Webcam kann nicht ein-/ausgeschaltet werden"
 msgid "Webcam control is not available"
 msgstr "Webcam-Steuerung nicht verfügbar"
 
-#: backends/session/util/locales.py:63 samsung-tools-preferences.py:525
+#: backends/session/util/locales.py:63 samsung-tools-preferences.py:546
 #: po/samsung-tools-applet.glade.h:8
 msgid "Wireless"
 msgstr "WLAN-Karte"
@@ -300,7 +300,7 @@ msgstr ""
 "Für weitere Informationen, besuche doch das Internetforum \"Linux On My "
 "Samsung\"."
 
-#: samsung-tools.py:512 samsung-tools-preferences.py:1010
+#: samsung-tools.py:512 samsung-tools-preferences.py:1147
 msgid "Released under GPLv3 license"
 msgstr "Veröffentlicht unter der GPLv3-Lizenz"
 
@@ -340,42 +340,42 @@ msgstr "Bitte drücke die neue Tastenkombination"
 msgid "None"
 msgstr "Keine"
 
-#: samsung-tools-preferences.py:228 samsung-tools-preferences.py:330
-#: samsung-tools-preferences.py:420 samsung-tools-preferences.py:432
-#: samsung-tools-preferences.py:713 samsung-tools-preferences.py:725
-#: samsung-tools-preferences.py:737 samsung-tools-preferences.py:749
+#: samsung-tools-preferences.py:240 samsung-tools-preferences.py:351
+#: samsung-tools-preferences.py:441 samsung-tools-preferences.py:453
+#: samsung-tools-preferences.py:808 samsung-tools-preferences.py:820
+#: samsung-tools-preferences.py:832 samsung-tools-preferences.py:846
 msgid "Unable to connect to system service!"
 msgstr "Kann nicht mit Systemdienst verbinden"
 
-#: samsung-tools-preferences.py:444
+#: samsung-tools-preferences.py:465
 msgid "Confirm"
 msgstr "Bestätige"
 
-#: samsung-tools-preferences.py:445
+#: samsung-tools-preferences.py:466
 msgid "Apply the new VIDs?"
 msgstr "Die neuen  VIDs annehmen?"
 
-#: samsung-tools-preferences.py:671
+#: samsung-tools-preferences.py:718
 #, fuzzy
 msgid "Install 'laptop-mode' to enable and configure these options"
 msgstr ""
 "Installiere das Paket \"laptop mode tools\", um diese Einstellungen zu "
 "konfigurieren."
 
-#: samsung-tools-preferences.py:682
+#: samsung-tools-preferences.py:729
 msgid "You need a PHC enabled kernel to use this feature"
 msgstr ""
 "In Ihrem Kernel muss PHC aktiviert sein, um diese Funktion nutzen zu können."
 
-#: samsung-tools-preferences.py:701
+#: samsung-tools-preferences.py:748
 msgid "Unable to connect to session service!"
 msgstr "Kann nicht mit Sitzungsdienst verbinden"
 
-#: samsung-tools-preferences.py:964
+#: samsung-tools-preferences.py:1101
 msgid "Caution!"
 msgstr "Achtung!"
 
-#: samsung-tools-preferences.py:965
+#: samsung-tools-preferences.py:1102
 msgid ""
 "CPU undervolting can lead to significant gains in terms of power energy "
 "saving, however <b>IT IS A RISKY PRACTICE</b> that might result in "
@@ -620,18 +620,23 @@ msgid "Control configuration files"
 msgstr "Kontrolliere Konfigurationsdateien"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:12
+#, fuzzy
+msgid "Control hard disk power management"
+msgstr "Festplatten-Energie-Management"
+
+#: po/samsung-tools-preferences-laptop-mode.glade.h:13
 msgid "Control video output settings"
 msgstr "Kontrolliere Einstellungen des Video-Ausgangs"
 
-#: po/samsung-tools-preferences-laptop-mode.glade.h:13
+#: po/samsung-tools-preferences-laptop-mode.glade.h:14
 msgid "Enable USB autosuspend"
 msgstr "Automatisches Ausschalten ungenutzter USB-Ports einschalten"
 
-#: po/samsung-tools-preferences-laptop-mode.glade.h:14
+#: po/samsung-tools-preferences-laptop-mode.glade.h:15
 msgid "Hard disk power management:"
 msgstr "Festplatten-Energie-Management"
 
-#: po/samsung-tools-preferences-laptop-mode.glade.h:15
+#: po/samsung-tools-preferences-laptop-mode.glade.h:16
 #, fuzzy
 msgid ""
 "If you enable this option, 'laptop-mode' will automatically configure the "
@@ -642,7 +647,7 @@ msgstr ""
 "Linux-Aufgabenplaner so konfigurieren, dass auf einem Mehrkern-System "
 "Energieeinsparungen getroffen werden, um Ihren Akku zu schonen."
 
-#: po/samsung-tools-preferences-laptop-mode.glade.h:16
+#: po/samsung-tools-preferences-laptop-mode.glade.h:17
 #, fuzzy
 msgid ""
 "If you enable this option, 'laptop-mode' will automatically enable the USB "
@@ -651,7 +656,7 @@ msgstr ""
 "Wenn Sie diese Option aktivieren, wird \"laptop mode tools\" automatisch für "
 "alle Komponenten die USB-Energiespar-Funktion einschalten."
 
-#: po/samsung-tools-preferences-laptop-mode.glade.h:17
+#: po/samsung-tools-preferences-laptop-mode.glade.h:18
 #, fuzzy
 msgid ""
 "If you enable this option, 'laptop-mode' will automatically enable the link "
@@ -660,7 +665,7 @@ msgstr ""
 "Wenn Sie diese Option aktivieren, wird \"laptop mode tools\" automatisch den "
 "gewählten Enrgiesparmodus für Intel AHCI SATA Chipsätze anwenden."
 
-#: po/samsung-tools-preferences-laptop-mode.glade.h:18
+#: po/samsung-tools-preferences-laptop-mode.glade.h:19
 #, fuzzy
 msgid ""
 "If you enable this option, 'laptop-mode' will automatically set the "
@@ -669,7 +674,7 @@ msgstr ""
 "Wenn Sie diese Option aktivieren, wird \"laptop mode tools\" automatisch den "
 "Energiesparmodus für die Soundkarte Intel HDA Audio anwenden."
 
-#: po/samsung-tools-preferences-laptop-mode.glade.h:19
+#: po/samsung-tools-preferences-laptop-mode.glade.h:20
 #, fuzzy
 msgid ""
 "If you enable this option, 'laptop-mode' will control the polling of your CD/"
@@ -679,7 +684,16 @@ msgstr ""
 "Zugriffe auf Ihr CD-/DVD-Laufwerk kontrollieren mit HAL. Das Verhindern "
 "solcher Zugriffe spart Unmengen an Energie ein."
 
-#: po/samsung-tools-preferences-laptop-mode.glade.h:20
+#: po/samsung-tools-preferences-laptop-mode.glade.h:21
+#, fuzzy
+msgid ""
+"If you enable this option, 'laptop-mode' will take control of the hard disk "
+"power management."
+msgstr ""
+"Wenn Sie diese Option aktivieren, wird \"laptop mode tools\" automatisch den "
+"Energiesparmodus für die Soundkarte Intel HDA Audio anwenden."
+
+#: po/samsung-tools-preferences-laptop-mode.glade.h:22
 msgid ""
 "If you enable this option, the speed of the Ethernet connection is limited "
 "to 100 Mbit. The difference in power usage between 1 Gbit and 100 Mbit "
@@ -693,12 +707,13 @@ msgstr ""
 "eine Menge Energie einsparen (vor allem, wenn Sie nur ein langsames ADSL-"
 "Modem besitzen sollten)."
 
-#: po/samsung-tools-preferences-laptop-mode.glade.h:21
+#: po/samsung-tools-preferences-laptop-mode.glade.h:23
+#, fuzzy
 msgid ""
-"This option sets the disk power management, it can be a value between 1 and "
-"255. A low value results in a better energy saving but less disk "
-"performance, an high value results in disk performance but less energy "
-"saving."
+"This option sets the disk power management when on battery, it can be a "
+"value between 1 and 255. A low value results in a better energy saving but "
+"less disk performance, an high value results in disk performance but less "
+"energy saving."
 msgstr ""
 "Diese Option legt die Energieeinstellungen der Festplatte fest. Werte sind "
 "zwischen 1 und 255 möglich. Geringe Werte bedeuten hohe Energieeinsparungen, "

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-20 22:48+0200\n"
+"POT-Creation-Date: 2010-05-22 14:15+0200\n"
 "PO-Revision-Date: 2010-04-27 20:04+0000\n"
 "Last-Translator: Andrey Kulakov <Unknown>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2010-04-28 15:36+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
-#: backends/session/util/locales.py:25 samsung-tools-preferences.py:489
+#: backends/session/util/locales.py:25 samsung-tools-preferences.py:510
 msgid "Backlight"
 msgstr "Подсветка"
 
@@ -49,7 +49,7 @@ msgstr "Невозможно выключить подсветку"
 msgid "Backlight cannot be toggled"
 msgstr "Невозможно переключить подсветку"
 
-#: backends/session/util/locales.py:34 samsung-tools-preferences.py:498
+#: backends/session/util/locales.py:34 samsung-tools-preferences.py:519
 #: po/samsung-tools-applet.glade.h:1
 msgid "Bluetooth"
 msgstr "Bluetooth"
@@ -86,7 +86,7 @@ msgstr "Невозможно вкл/выкл Bluetooth"
 msgid "Bluetooth control is not available"
 msgstr "Управление Bluetooth не доступно"
 
-#: backends/session/util/locales.py:44 samsung-tools-preferences.py:507
+#: backends/session/util/locales.py:44 samsung-tools-preferences.py:528
 msgid "CPU fan"
 msgstr "Режим охлаждения процессора (CPU)"
 
@@ -118,7 +118,7 @@ msgstr "Невозможно узнать режим охлаждения"
 msgid "CPU fan control is not available"
 msgstr "Управление режимом охлаждения не доступно"
 
-#: backends/session/util/locales.py:53 samsung-tools-preferences.py:516
+#: backends/session/util/locales.py:53 samsung-tools-preferences.py:537
 #: po/samsung-tools-applet.glade.h:7
 msgid "Webcam"
 msgstr "Веб-камера"
@@ -155,7 +155,7 @@ msgstr "Невозможно вкл/выкл Веб-камеру"
 msgid "Webcam control is not available"
 msgstr "Управление Веб-камерой не доступно"
 
-#: backends/session/util/locales.py:63 samsung-tools-preferences.py:525
+#: backends/session/util/locales.py:63 samsung-tools-preferences.py:546
 #: po/samsung-tools-applet.glade.h:8
 msgid "Wireless"
 msgstr "Беспроводная сеть"
@@ -299,7 +299,7 @@ msgstr " - Отключить Bluetooth, Веб-камеру и Беспрово
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Для большей информации, посетите 'Linux On My Samsung' форум:"
 
-#: samsung-tools.py:512 samsung-tools-preferences.py:1010
+#: samsung-tools.py:512 samsung-tools-preferences.py:1147
 msgid "Released under GPLv3 license"
 msgstr "Выпущен под GPLv3 лицензией"
 
@@ -339,39 +339,39 @@ msgstr "Пожалуйста нажмите новое сочетание кла
 msgid "None"
 msgstr "Нет"
 
-#: samsung-tools-preferences.py:228 samsung-tools-preferences.py:330
-#: samsung-tools-preferences.py:420 samsung-tools-preferences.py:432
-#: samsung-tools-preferences.py:713 samsung-tools-preferences.py:725
-#: samsung-tools-preferences.py:737 samsung-tools-preferences.py:749
+#: samsung-tools-preferences.py:240 samsung-tools-preferences.py:351
+#: samsung-tools-preferences.py:441 samsung-tools-preferences.py:453
+#: samsung-tools-preferences.py:808 samsung-tools-preferences.py:820
+#: samsung-tools-preferences.py:832 samsung-tools-preferences.py:846
 msgid "Unable to connect to system service!"
 msgstr "Не удается подключиться к системной службе!"
 
-#: samsung-tools-preferences.py:444
+#: samsung-tools-preferences.py:465
 msgid "Confirm"
 msgstr "Подтвердить"
 
-#: samsung-tools-preferences.py:445
+#: samsung-tools-preferences.py:466
 msgid "Apply the new VIDs?"
 msgstr "Применить новые VIDы?"
 
-#: samsung-tools-preferences.py:671
+#: samsung-tools-preferences.py:718
 #, fuzzy
 msgid "Install 'laptop-mode' to enable and configure these options"
 msgstr "Устновите пакет 'laptop mode tools' для настройки этих опций"
 
-#: samsung-tools-preferences.py:682
+#: samsung-tools-preferences.py:729
 msgid "You need a PHC enabled kernel to use this feature"
 msgstr "Вам нужно ядро с включенным PHC, для использования этой опции"
 
-#: samsung-tools-preferences.py:701
+#: samsung-tools-preferences.py:748
 msgid "Unable to connect to session service!"
 msgstr "Не удается подключиться к службе сессии!"
 
-#: samsung-tools-preferences.py:964
+#: samsung-tools-preferences.py:1101
 msgid "Caution!"
 msgstr "Внимание!"
 
-#: samsung-tools-preferences.py:965
+#: samsung-tools-preferences.py:1102
 msgid ""
 "CPU undervolting can lead to significant gains in terms of power energy "
 "saving, however <b>IT IS A RISKY PRACTICE</b> that might result in "
@@ -619,18 +619,23 @@ msgid "Control configuration files"
 msgstr "Управление конфигурационными файлами"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:12
+#, fuzzy
+msgid "Control hard disk power management"
+msgstr "Управление питанием жесткого диска:"
+
+#: po/samsung-tools-preferences-laptop-mode.glade.h:13
 msgid "Control video output settings"
 msgstr "Управление настройками видео вывода"
 
-#: po/samsung-tools-preferences-laptop-mode.glade.h:13
+#: po/samsung-tools-preferences-laptop-mode.glade.h:14
 msgid "Enable USB autosuspend"
 msgstr "Включить автоматическую приостановку USB устройств"
 
-#: po/samsung-tools-preferences-laptop-mode.glade.h:14
+#: po/samsung-tools-preferences-laptop-mode.glade.h:15
 msgid "Hard disk power management:"
 msgstr "Управление питанием жесткого диска:"
 
-#: po/samsung-tools-preferences-laptop-mode.glade.h:15
+#: po/samsung-tools-preferences-laptop-mode.glade.h:16
 #, fuzzy
 msgid ""
 "If you enable this option, 'laptop-mode' will automatically configure the "
@@ -641,7 +646,7 @@ msgstr ""
 "Linux планировщик для экономии питания на многоядерных процессорах, когда "
 "ноутбук(нетбук) работает от батареи."
 
-#: po/samsung-tools-preferences-laptop-mode.glade.h:16
+#: po/samsung-tools-preferences-laptop-mode.glade.h:17
 #, fuzzy
 msgid ""
 "If you enable this option, 'laptop-mode' will automatically enable the USB "
@@ -650,7 +655,7 @@ msgstr ""
 "Если вы включите эту опцию, 'laptop mode tools' автоматически включит "
 "функцию авто-приостановки USB для все устройств."
 
-#: po/samsung-tools-preferences-laptop-mode.glade.h:17
+#: po/samsung-tools-preferences-laptop-mode.glade.h:18
 #, fuzzy
 msgid ""
 "If you enable this option, 'laptop-mode' will automatically enable the link "
@@ -659,7 +664,7 @@ msgstr ""
 "Если вы включите эту опцию, 'laptop mode tools' автоматически включит режим "
 "управления питанием (LPM) Intel AHCI совместимых SATA чипсетов."
 
-#: po/samsung-tools-preferences-laptop-mode.glade.h:18
+#: po/samsung-tools-preferences-laptop-mode.glade.h:19
 #, fuzzy
 msgid ""
 "If you enable this option, 'laptop-mode' will automatically set the "
@@ -668,7 +673,7 @@ msgstr ""
 "Если вы включите эту опцию, 'laptop mode tools' автоматически установит "
 "режим энергосбережения для аудио чипа Intel HDA."
 
-#: po/samsung-tools-preferences-laptop-mode.glade.h:19
+#: po/samsung-tools-preferences-laptop-mode.glade.h:20
 #, fuzzy
 msgid ""
 "If you enable this option, 'laptop-mode' will control the polling of your CD/"
@@ -678,7 +683,16 @@ msgstr ""
 "опрашивание ваших CD/DVD приводов с помощью HAL. Отключение опрашивания "
 "позволяет значительно сэкономить заряд аккумулятора."
 
-#: po/samsung-tools-preferences-laptop-mode.glade.h:20
+#: po/samsung-tools-preferences-laptop-mode.glade.h:21
+#, fuzzy
+msgid ""
+"If you enable this option, 'laptop-mode' will take control of the hard disk "
+"power management."
+msgstr ""
+"Если вы включите эту опцию, 'laptop mode tools' автоматически установит "
+"режим энергосбережения для аудио чипа Intel HDA."
+
+#: po/samsung-tools-preferences-laptop-mode.glade.h:22
 msgid ""
 "If you enable this option, the speed of the Ethernet connection is limited "
 "to 100 Mbit. The difference in power usage between 1 Gbit and 100 Mbit "
@@ -692,12 +706,13 @@ msgstr ""
 "если вы используете Ethernet только для подключения ADSL модема) лучше ее "
 "включить."
 
-#: po/samsung-tools-preferences-laptop-mode.glade.h:21
+#: po/samsung-tools-preferences-laptop-mode.glade.h:23
+#, fuzzy
 msgid ""
-"This option sets the disk power management, it can be a value between 1 and "
-"255. A low value results in a better energy saving but less disk "
-"performance, an high value results in disk performance but less energy "
-"saving."
+"This option sets the disk power management when on battery, it can be a "
+"value between 1 and 255. A low value results in a better energy saving but "
+"less disk performance, an high value results in disk performance but less "
+"energy saving."
 msgstr ""
 "Эта опция задает управление питанием диска, она может принимать значения от "
 "1 до 255. Чем меньше значение, тем экономнее используется энергия и тем "

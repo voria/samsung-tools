@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-20 22:48+0200\n"
+"POT-Creation-Date: 2010-05-22 14:15+0200\n"
 "PO-Revision-Date: 2010-05-19 00:47+0000\n"
 "Last-Translator: Dr. Alex Arutyunjan <Unknown>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2010-05-19 08:48+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
-#: backends/session/util/locales.py:25 samsung-tools-preferences.py:489
+#: backends/session/util/locales.py:25 samsung-tools-preferences.py:510
 msgid "Backlight"
 msgstr "Háttérvilágítás"
 
@@ -49,7 +49,7 @@ msgstr "Háttérvilágítás nem kapcsolható ki"
 msgid "Backlight cannot be toggled"
 msgstr "Háttérvilágítás nem kapcsolható"
 
-#: backends/session/util/locales.py:34 samsung-tools-preferences.py:498
+#: backends/session/util/locales.py:34 samsung-tools-preferences.py:519
 #: po/samsung-tools-applet.glade.h:1
 msgid "Bluetooth"
 msgstr "Bluetooth"
@@ -86,7 +86,7 @@ msgstr "Bluetooth nem kapcsolható"
 msgid "Bluetooth control is not available"
 msgstr "Bluetooth nem szabályozható"
 
-#: backends/session/util/locales.py:44 samsung-tools-preferences.py:507
+#: backends/session/util/locales.py:44 samsung-tools-preferences.py:528
 msgid "CPU fan"
 msgstr "CPU hűtő"
 
@@ -118,7 +118,7 @@ msgstr "Hűtésmód nem érzékelhető"
 msgid "CPU fan control is not available"
 msgstr "CPU hűtése nem szabályozható"
 
-#: backends/session/util/locales.py:53 samsung-tools-preferences.py:516
+#: backends/session/util/locales.py:53 samsung-tools-preferences.py:537
 #: po/samsung-tools-applet.glade.h:7
 msgid "Webcam"
 msgstr "Webkamera"
@@ -155,7 +155,7 @@ msgstr "Webkamera nem kapcsolható"
 msgid "Webcam control is not available"
 msgstr "Webkamera nem szabályozható"
 
-#: backends/session/util/locales.py:63 samsung-tools-preferences.py:525
+#: backends/session/util/locales.py:63 samsung-tools-preferences.py:546
 #: po/samsung-tools-applet.glade.h:8
 msgid "Wireless"
 msgstr "Vezeték néküli hálózat"
@@ -297,7 +297,7 @@ msgstr " - Bluetooth, webkamera és vezeték nélküli hálózat kikapcsolása:"
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "További információért látogasson a \"Linux on My Samsung\" fórumra:"
 
-#: samsung-tools.py:512 samsung-tools-preferences.py:1010
+#: samsung-tools.py:512 samsung-tools-preferences.py:1147
 msgid "Released under GPLv3 license"
 msgstr "Kibocsátva GPLv3 licenc alatt"
 
@@ -337,39 +337,39 @@ msgstr "Nyomja meg az új billentyűkombinációt"
 msgid "None"
 msgstr "Semmi"
 
-#: samsung-tools-preferences.py:228 samsung-tools-preferences.py:330
-#: samsung-tools-preferences.py:420 samsung-tools-preferences.py:432
-#: samsung-tools-preferences.py:713 samsung-tools-preferences.py:725
-#: samsung-tools-preferences.py:737 samsung-tools-preferences.py:749
+#: samsung-tools-preferences.py:240 samsung-tools-preferences.py:351
+#: samsung-tools-preferences.py:441 samsung-tools-preferences.py:453
+#: samsung-tools-preferences.py:808 samsung-tools-preferences.py:820
+#: samsung-tools-preferences.py:832 samsung-tools-preferences.py:846
 msgid "Unable to connect to system service!"
 msgstr "System sevice nem érhető el!"
 
-#: samsung-tools-preferences.py:444
+#: samsung-tools-preferences.py:465
 msgid "Confirm"
 msgstr "Megerősít"
 
-#: samsung-tools-preferences.py:445
+#: samsung-tools-preferences.py:466
 msgid "Apply the new VIDs?"
 msgstr "Alkalmazza az új CPU-feszültségi értékeket (VID)?"
 
-#: samsung-tools-preferences.py:671
+#: samsung-tools-preferences.py:718
 #, fuzzy
 msgid "Install 'laptop-mode' to enable and configure these options"
 msgstr "Ezen beállításokhoz telepítse a \"laptop mode tools\" csomagot"
 
-#: samsung-tools-preferences.py:682
+#: samsung-tools-preferences.py:729
 msgid "You need a PHC enabled kernel to use this feature"
 msgstr "E tulajdonság használatához PHC-engedélyezett kernel-re van szüksége"
 
-#: samsung-tools-preferences.py:701
+#: samsung-tools-preferences.py:748
 msgid "Unable to connect to session service!"
 msgstr "Session service nem érhető el!"
 
-#: samsung-tools-preferences.py:964
+#: samsung-tools-preferences.py:1101
 msgid "Caution!"
 msgstr "Figyelem!"
 
-#: samsung-tools-preferences.py:965
+#: samsung-tools-preferences.py:1102
 msgid ""
 "CPU undervolting can lead to significant gains in terms of power energy "
 "saving, however <b>IT IS A RISKY PRACTICE</b> that might result in "
@@ -619,18 +619,23 @@ msgid "Control configuration files"
 msgstr "Konfigurációs fájlok kezelése"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:12
+#, fuzzy
+msgid "Control hard disk power management"
+msgstr "Merevlemez engergiakezelése:"
+
+#: po/samsung-tools-preferences-laptop-mode.glade.h:13
 msgid "Control video output settings"
 msgstr "Videókimenet beállításainak kezelése"
 
-#: po/samsung-tools-preferences-laptop-mode.glade.h:13
+#: po/samsung-tools-preferences-laptop-mode.glade.h:14
 msgid "Enable USB autosuspend"
 msgstr "USB automatikus felfüggesztésének engedélyezése"
 
-#: po/samsung-tools-preferences-laptop-mode.glade.h:14
+#: po/samsung-tools-preferences-laptop-mode.glade.h:15
 msgid "Hard disk power management:"
 msgstr "Merevlemez engergiakezelése:"
 
-#: po/samsung-tools-preferences-laptop-mode.glade.h:15
+#: po/samsung-tools-preferences-laptop-mode.glade.h:16
 #, fuzzy
 msgid ""
 "If you enable this option, 'laptop-mode' will automatically configure the "
@@ -641,7 +646,7 @@ msgstr ""
 "konfigurálja a Linux időzítőt (scheduler-t), hogy áramot takarítson többmagú "
 "processzorokon, ha akkumulátorról működik."
 
-#: po/samsung-tools-preferences-laptop-mode.glade.h:16
+#: po/samsung-tools-preferences-laptop-mode.glade.h:17
 #, fuzzy
 msgid ""
 "If you enable this option, 'laptop-mode' will automatically enable the USB "
@@ -650,7 +655,7 @@ msgstr ""
 "Ha engedélyezi ezt a beállítást, a 'laptop mode tools' automatikusan "
 "engedélyezi az USB-autofelfüggesztési tulajdonságokat minden eszköz részére."
 
-#: po/samsung-tools-preferences-laptop-mode.glade.h:17
+#: po/samsung-tools-preferences-laptop-mode.glade.h:18
 #, fuzzy
 msgid ""
 "If you enable this option, 'laptop-mode' will automatically enable the link "
@@ -660,7 +665,7 @@ msgstr ""
 "engedélyezi a \"link power management\" üzemmódot az Intel AHCI kompatibilis "
 "SATA chipset-eknél."
 
-#: po/samsung-tools-preferences-laptop-mode.glade.h:18
+#: po/samsung-tools-preferences-laptop-mode.glade.h:19
 #, fuzzy
 msgid ""
 "If you enable this option, 'laptop-mode' will automatically set the "
@@ -669,7 +674,7 @@ msgstr ""
 "Ha engedélyezi ezt a beállítást, a 'laptop mode tools' automatikusan "
 "beállítja az energiamegtakarítási üzemmódot az Intel HDA audió chipset-eknél."
 
-#: po/samsung-tools-preferences-laptop-mode.glade.h:19
+#: po/samsung-tools-preferences-laptop-mode.glade.h:20
 #, fuzzy
 msgid ""
 "If you enable this option, 'laptop-mode' will control the polling of your CD/"
@@ -679,7 +684,16 @@ msgstr ""
 "hozzáférését CD/DVD meghajtóhoz. A hozzáférés letiltása észrevehető "
 "energiamegtakarítást eredményez."
 
-#: po/samsung-tools-preferences-laptop-mode.glade.h:20
+#: po/samsung-tools-preferences-laptop-mode.glade.h:21
+#, fuzzy
+msgid ""
+"If you enable this option, 'laptop-mode' will take control of the hard disk "
+"power management."
+msgstr ""
+"Ha engedélyezi ezt a beállítást, a 'laptop mode tools' automatikusan "
+"beállítja az energiamegtakarítási üzemmódot az Intel HDA audió chipset-eknél."
+
+#: po/samsung-tools-preferences-laptop-mode.glade.h:22
 msgid ""
 "If you enable this option, the speed of the Ethernet connection is limited "
 "to 100 Mbit. The difference in power usage between 1 Gbit and 100 Mbit "
@@ -693,12 +707,13 @@ msgstr ""
 "szüksége teljes sebességre (például ha az Ethernet-tel csak a sokkal lassabb "
 "ADSL-modemhez kapcsolódik)."
 
-#: po/samsung-tools-preferences-laptop-mode.glade.h:21
+#: po/samsung-tools-preferences-laptop-mode.glade.h:23
+#, fuzzy
 msgid ""
-"This option sets the disk power management, it can be a value between 1 and "
-"255. A low value results in a better energy saving but less disk "
-"performance, an high value results in disk performance but less energy "
-"saving."
+"This option sets the disk power management when on battery, it can be a "
+"value between 1 and 255. A low value results in a better energy saving but "
+"less disk performance, an high value results in disk performance but less "
+"energy saving."
 msgstr ""
 "Ezzel a beállítással a lemez energiakezelését szabályozza, értéke 1 és 255 "
 "között lehet. Alacsonyabb érték jobb energiamegtakarítást, de rosszabb "
