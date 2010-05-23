@@ -1,6 +1,6 @@
 # samsung-tools - Tools for Samsung netbooks
 #
-# Restore the last status for devices on Samsung netbooks
+# Set the initial status of devices on Samsung netbooks
  
 description     "Tools for Samsung netbooks"
 author          "Fortunato Ventre (voRia) - <vorione@gmail.com>"
