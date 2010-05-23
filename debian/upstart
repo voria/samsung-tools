@@ -1,0 +1,18 @@
+# samsung-tools - Tools for Samsung netbooks
+#
+# Restore the last status for devices on Samsung netbooks
+ 
+description     "Tools for Samsung netbooks"
+author          "Fortunato Ventre (voRia) - <vorione@gmail.com>"
+ 
+start on (stopped rc and (started gdm or started kdm))
+ 
+task
+
+script
+	# Wait some time, just in case...
+	sleep 3
+	# Start the system service and set initial status for devices
+	dbus-send --system --print-reply=literal --dest='org.voria.SamsungTools.System' \
+	'/' org.voria.SamsungTools.System.SetInitialDevicesStatus
+end script
