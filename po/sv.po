@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-22 14:15+0200\n"
+"POT-Creation-Date: 2010-05-28 12:42+0200\n"
 "PO-Revision-Date: 2010-05-15 21:21+0000\n"
 "Last-Translator: Lars Karlsson <Unknown>\n"
 "Language-Team: Swedish <sv@li.org>\n"
@@ -295,7 +295,7 @@ msgstr " - Inaktivera bluetooth, webbkamera och det trådlösa nätverket:"
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "För mer information, gå till 'Linux On My Samsung'-forumet:"
 
-#: samsung-tools.py:512 samsung-tools-preferences.py:1147
+#: samsung-tools.py:512 samsung-tools-preferences.py:1148
 msgid "Released under GPLv3 license"
 msgstr "Publicerat under GPLv3-licensen"
 

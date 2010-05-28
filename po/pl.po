@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-22 14:15+0200\n"
+"POT-Creation-Date: 2010-05-28 12:42+0200\n"
 "PO-Revision-Date: 2010-05-06 11:10+0000\n"
 "Last-Translator: Cezary Jackiewicz <cjackiewicz@poczta.onet.pl>\n"
 "Language-Team: Polish <pl@li.org>\n"
@@ -296,7 +296,7 @@ msgstr " Wyłącz Bluetooth'a, kamerę internetową i sieć bezprzewodową:"
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Po więcej informacji odwiedź forum 'Linux On My Samsung' :"
 
-#: samsung-tools.py:512 samsung-tools-preferences.py:1147
+#: samsung-tools.py:512 samsung-tools-preferences.py:1148
 msgid "Released under GPLv3 license"
 msgstr "Wydane na licencji GPLv3"
 
