@@ -19,7 +19,7 @@
 # See the GNU General Public License for more details.
 # <http://www.gnu.org/licenses/gpl.txt>
 
-SAMSUNG_TOOLS_ICON = "/usr/share/icons/samsung-tools.png"
+SAMSUNG_TOOLS_ICON = "/usr/lib/samsung-tools/gui/icons/samsung-tools.png"
 
 ERROR_ICON = "error"
 STOP_ICON = "stop"

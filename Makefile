@@ -40,9 +40,8 @@ install:
 	$(install_file) gui/glade/samsung-tools-applet.glade $(DESTDIR)/usr/lib/samsung-tools/gui/glade/
 	$(install_script) samsung-tools-applet.py $(DESTDIR)/usr/lib/samsung-tools/
 	# Icons
-	$(install_dir) $(DESTDIR)/usr/share/icons/
-	$(install_file) gui/icons/samsung-tools.png $(DESTDIR)/usr/share/icons/
 	$(install_dir) $(DESTDIR)/usr/lib/samsung-tools/gui/icons/
+	$(install_file) gui/icons/samsung-tools.png $(DESTDIR)/usr/lib/samsung-tools/gui/icons/
 	$(install_file) gui/icons/fan-*.png $(DESTDIR)/usr/lib/samsung-tools/gui/icons/
 	$(install_file) gui/icons/bluetooth.png $(DESTDIR)/usr/lib/samsung-tools/gui/icons/
 	# .desktop files
@@ -73,4 +72,3 @@ uninstall:
 	rm -rf $(DESTDIR)/usr/share/applications/samsung-tools-preferences.desktop
 	rm -rf $(DESTDIR)/etc/xdg/autostart/samsung-tools-session-service.desktop
 	rm -rf $(DESTDIR)/usr/lib/bonobo/servers/samsung-tools-applet.server
-	rm -rf $(DESTDIR)/usr/share/icons/samsung-tools.*

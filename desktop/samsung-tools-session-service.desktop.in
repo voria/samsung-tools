@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Samsung Tools
 _Comment=Start the session service
-Icon=samsung-tools
+Icon=/usr/lib/samsung-tools/gui/icons/samsung-tools.png
 Exec=/usr/lib/samsung-tools/session-service.py
 Terminal=false
 Type=Application

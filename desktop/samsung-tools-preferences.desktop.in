@@ -1,7 +1,7 @@
 [Desktop Entry]
 _Name=Samsung Tools Preferences
 _Comment=Show and modify Samsung Tools preferences
-Icon=samsung-tools
+Icon=/usr/lib/samsung-tools/gui/icons/samsung-tools.png
 Exec=samsung-tools-preferences
 Terminal=false
 Type=Application
