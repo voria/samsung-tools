@@ -563,7 +563,7 @@ def main():
 					action = "store_true",
 					dest = "status",
 					default = False)
-		
+	
 	(options, args) = parser.parse_args()
 	
 	global quiet
@@ -576,6 +576,10 @@ def main():
 		options.webcam = "status"
 		options.wireless = "status"
 		quiet = False
+		
+	if os.getuid() == 0:
+		print unicode(_("This program is intended to be used only by non-privileged users."), "utf-8")
+		sys.exit(1)
 		
 	if len(args) != 0:
 		print unicode(_("Wrong argument(s)."), "utf-8")
