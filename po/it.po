@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-05-31 13:05+0200\n"
-"PO-Revision-Date: 2010-05-22 14:18+0200\n"
+"PO-Revision-Date: 2010-05-31 13:13+0200\n"
 "Last-Translator: Fortunato Ventre (voRia) <vorione@gmail.com>\n"
 "Language-Team: Italiano <vorione@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -315,6 +315,7 @@ msgstr "Usa --help per le istruzioni."
 #: samsung-tools.py:581
 msgid "This program is intended to be used only by non-privileged users."
 msgstr ""
+"Questo programma può essere utilizzato solo da utenti non privilegiati."
 
 #: samsung-tools.py:585
 msgid "Wrong argument(s)."
