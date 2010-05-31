@@ -10,7 +10,7 @@
 			<oaf_attribute name="description" type="string" value="Manage devices on Samsung netbooks"/>
 	</oaf_server>
 
-	<oaf_server ubuntu-gettext-domain="samsung-tools" iid="OAFIID:GNOME_SamsungTools" type="factory" location="OAFIID:GNOME_SamsungTools_Applet">
+	<oaf_server iid="OAFIID:GNOME_SamsungTools" type="factory" location="OAFIID:GNOME_SamsungTools_Applet">
 
 		<oaf_attribute name="repo_ids" type="stringv">
 			<item value="IDL:GNOME/Vertigo/PanelAppletShell:1.0"/>
