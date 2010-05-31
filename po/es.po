@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-28 12:42+0200\n"
+"POT-Creation-Date: 2010-05-31 13:05+0200\n"
 "PO-Revision-Date: 2010-05-25 11:33+0000\n"
 "Last-Translator: Jonay <jonay.santana@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -310,27 +310,31 @@ msgstr "Liberado bajo licencia GPLv3"
 msgid "No action(s) specified."
 msgstr "Ninguna acción escificada."
 
-#: samsung-tools.py:518 samsung-tools.py:582
+#: samsung-tools.py:518 samsung-tools.py:586
 msgid "Use --help for instructions."
 msgstr "Use --help para instrucciones."
 
 #: samsung-tools.py:581
+msgid "This program is intended to be used only by non-privileged users."
+msgstr ""
+
+#: samsung-tools.py:585
 msgid "Wrong argument(s)."
 msgstr "Argumento u argumentos inválidos"
 
-#: samsung-tools.py:598
+#: samsung-tools.py:602
 msgid "Session service stopped"
 msgstr "Servicio de sesión detenido"
 
-#: samsung-tools.py:601
+#: samsung-tools.py:605
 msgid "Cannot stop session service"
 msgstr "No se puede detener el servicio de sesión"
 
-#: samsung-tools.py:611
+#: samsung-tools.py:615
 msgid "System service stopped"
 msgstr "Servicio de sistema detenido"
 
-#: samsung-tools.py:614
+#: samsung-tools.py:618
 msgid "Cannot stop system service"
 msgstr "No se puede detener el servicio de sistema"
 

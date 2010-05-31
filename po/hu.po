@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-28 12:42+0200\n"
+"POT-Creation-Date: 2010-05-31 13:05+0200\n"
 "PO-Revision-Date: 2010-05-23 18:58+0000\n"
 "Last-Translator: Dr. Alex Arutyunjan <Unknown>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -305,27 +305,31 @@ msgstr "Kibocsátva GPLv3 licenc alatt"
 msgid "No action(s) specified."
 msgstr "Nincs megadva művelet."
 
-#: samsung-tools.py:518 samsung-tools.py:582
+#: samsung-tools.py:518 samsung-tools.py:586
 msgid "Use --help for instructions."
 msgstr "Útbaigazításhoz használja a --help opciót."
 
 #: samsung-tools.py:581
+msgid "This program is intended to be used only by non-privileged users."
+msgstr ""
+
+#: samsung-tools.py:585
 msgid "Wrong argument(s)."
 msgstr "Rossz argumentum(ok)."
 
-#: samsung-tools.py:598
+#: samsung-tools.py:602
 msgid "Session service stopped"
 msgstr "Session service leállítva"
 
-#: samsung-tools.py:601
+#: samsung-tools.py:605
 msgid "Cannot stop session service"
 msgstr "Session service nem állítható le"
 
-#: samsung-tools.py:611
+#: samsung-tools.py:615
 msgid "System service stopped"
 msgstr "System service leállítva"
 
-#: samsung-tools.py:614
+#: samsung-tools.py:618
 msgid "Cannot stop system service"
 msgstr "System service nem állítható le"
 
