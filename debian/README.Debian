@@ -3,3 +3,15 @@ Released under GPL3 terms - See 'copyright' for more details
 
 Copyleft by
 Fortunato Ventre (voRia) - vorione@gmail.com - http://www.voria.org/forum
+
+Dependencies:
+- easy-slow-down-manager
+- dbus-python
+- pygtk
+- python-notify
+- rfkill
+- xbindkeys
+
+Optional dependencies:
+- laptop-mode-tools
+- phc-intel
