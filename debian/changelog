@@ -1,6 +1,28 @@
-samsung-tools (1.1~ppa1~loms~lucid) UNRELEASED; urgency=low
-
-  * 
+samsung-tools (1.1~ppa1~loms~lucid) lucid; urgency=low
+  
+  * Specify a default $PATH for system service, so the commands' paths can be
+    dynamically found at runtime, indipendently from the distro in use.
+  * Search for 'laptop-mode' init script in '/etc/init.d/' and '/etc/rc.d/'
+    when system service is started.
+  * Rewrite SysCtl() class in order to use '/etc/sysctl.conf' configuration
+    file only, which should be available in all distros.
+  * Disable the 'Configure Kernel Parameters' button if control of the kernel
+    parameters is not available.
+  * Remove "ubuntu-xgettext" extension support from .desktop and .server files
+    because it's not available in other distros. Use old-style files instead.
+  * Add a new option in 'laptop-mode' configuration dialog to toggle the
+    HD power management.
+  * Disable hotkeys and initial statuses for devices that are not available.
+  * Fix wireless disabling.
+  * Use default system icons for wireless and bluetooth if notify-osd icons are
+    not available.
+  * Fix applet icon transparency.
+  * Make the PHC preferences dialog modal.
+  * Make the samsung-tools command line utility usable only by regular users.
+  * Do not set initial devices statuses when session service is started, instead
+    install an upstart job in order to set them.
+  * Update translations to latest versions from Launchpad.
+  * Update translators' credits list.
 
  -- Fortunato Ventre (voRia) <vorione@gmail.com>  Wed, 19 May 2010 10:50:32 +0200
 
