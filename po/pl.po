@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-31 13:05+0200\n"
-"PO-Revision-Date: 2010-05-06 11:10+0000\n"
+"POT-Creation-Date: 2010-06-03 13:34+0200\n"
+"PO-Revision-Date: 2010-05-06 22:18+0000\n"
 "Last-Translator: Cezary Jackiewicz <cjackiewicz@poczta.onet.pl>\n"
 "Language-Team: Polish <pl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-05-06 21:36+0000\n"
+"X-Launchpad-Export-Date: 2010-06-17 16:24+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: backends/session/util/locales.py:25 samsung-tools-preferences.py:510
@@ -202,7 +202,8 @@ msgstr "Zarządzanie Bluetooth'em: nie można połączyć z usługą sesji"
 
 #: samsung-tools.py:199
 msgid "CPU fan control: unable to connect to session service!"
-msgstr "Zarządzanie wentylatorem procesora: nie można połączyć z usługą sesji"
+msgstr ""
+"Zarządzanie wentylatorem procesora: nie można połączyć z usługą sesji"
 
 #: samsung-tools.py:326
 msgid "Webcam control: unable to connect to session service!"
@@ -356,9 +357,8 @@ msgid "Apply the new VIDs?"
 msgstr ""
 
 #: samsung-tools-preferences.py:718
-#, fuzzy
 msgid "Install 'laptop-mode' to enable and configure these options"
-msgstr "Zainstaluj pakiet 'laptop mode tools' aby ustawić te opcje"
+msgstr ""
 
 #: samsung-tools-preferences.py:729
 msgid "You need a PHC enabled kernel to use this feature"
@@ -632,8 +632,8 @@ msgstr ""
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:20
 msgid ""
-"If you enable this option, 'laptop-mode' will control the polling of your CD/"
-"DVD drives by HAL. Disabling polling saves a considerable amount of power."
+"If you enable this option, 'laptop-mode' will control the polling of your "
+"CD/DVD drives by HAL. Disabling polling saves a considerable amount of power."
 msgstr ""
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:21

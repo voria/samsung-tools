@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-31 13:05+0200\n"
+"POT-Creation-Date: 2010-06-03 13:34+0200\n"
 "PO-Revision-Date: 2010-04-16 15:03+0000\n"
-"Last-Translator: Fortunato Ventre (voRia) <vorione@gmail.com>\n"
+"Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-04-20 07:12+0000\n"
+"X-Launchpad-Export-Date: 2010-06-17 16:24+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: backends/session/util/locales.py:25 samsung-tools-preferences.py:510
@@ -364,9 +364,8 @@ msgid "Apply the new VIDs?"
 msgstr "Appliquer les nouveaux VID processeur?"
 
 #: samsung-tools-preferences.py:718
-#, fuzzy
 msgid "Install 'laptop-mode' to enable and configure these options"
-msgstr "Installer le paquet \"laptop mode tools\" pour configurer ces options."
+msgstr ""
 
 #: samsung-tools-preferences.py:729
 msgid "You need a PHC enabled kernel to use this feature"
@@ -462,15 +461,12 @@ msgstr "Cliquez ici pour fixer la valeur par défaut"
 
 #: po/samsung-tools-preferences.glade.h:11
 #: po/samsung-tools-preferences-laptop-mode.glade.h:5
-#, fuzzy
 msgid "Configure 'laptop-mode'"
-msgstr "Configurer \"laptop mode tools\""
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:12
-#, fuzzy
 msgid "Configure 'laptop-mode' for a better power management"
 msgstr ""
-"Configurer \"laptop mode tools\" pour une meilleure gestion de l'énergie"
 
 #: po/samsung-tools-preferences.glade.h:13
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:1
@@ -584,7 +580,6 @@ msgstr ""
 "réglage par défaut est fixée à 60."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:1
-#, fuzzy
 msgid ""
 "'laptop-mode' can automatically swap out configuration files depending on "
 "the power state of your system.\n"
@@ -594,15 +589,6 @@ msgid ""
 "when entries are written to them. This causes disks to spin up, which is not "
 "very nice when you're trying to save power."
 msgstr ""
-"\"laptop mode tools\" peut automatiquement exécuter le swap des fichiers de "
-"configuration, selon le mode d'alimentation de votre système.\n"
-" \n"
-"L'utilisation principale de cette fonction est le contrôle des fichiers de "
-"configuration des processus de journalisation système (\"syslog daemons\")."
-"Les processus  de journalisation système ont une tendance à synchroniser "
-"leurs fichiers de journalisation quand des entrées y sont écrites.Ceci "
-"entraîne la mise en rotation du disque dur, ce qui n'est pas très bon quand "
-"on cherche à économiser l'énergie."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:4
 msgid ""
@@ -638,9 +624,8 @@ msgid "Control configuration files"
 msgstr "Contrôler les fichiers de configuration"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:12
-#, fuzzy
 msgid "Control hard disk power management"
-msgstr "Gestion de l'alimentation du disque dur"
+msgstr ""
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:13
 msgid "Control video output settings"
@@ -655,61 +640,41 @@ msgid "Hard disk power management:"
 msgstr "Gestion de l'alimentation du disque dur"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:16
-#, fuzzy
 msgid ""
 "If you enable this option, 'laptop-mode' will automatically configure the "
 "Linux scheduler to save power on multi-core processors while running on "
 "battery mode."
 msgstr ""
-"Si vous activez cette option, \"laptop mode tools\" configurera "
-"automatiquement l'ordonnanceur de Linux afin d' économiser l'énergie pour "
-"les processeurs multi-coeurs lors du fonctionnement sur batterie."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:17
-#, fuzzy
 msgid ""
 "If you enable this option, 'laptop-mode' will automatically enable the USB "
 "autosuspend feature for all devices."
 msgstr ""
-"Si vous activez cette option, \"laptop mode tools\" activera automatiquement "
-"la fonction d'autosuspension USB pour tous les dispositifs."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:18
-#, fuzzy
 msgid ""
 "If you enable this option, 'laptop-mode' will automatically enable the link "
 "power management mode of Intel AHCI compliant SATA chipsets."
 msgstr ""
-"Si vous activez cette option, \"laptop mode tools\" activera automatiquement "
-"le mode de gestion d'énergie pour les chipsets Intel SATA compatibles AHCI."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:19
-#, fuzzy
 msgid ""
 "If you enable this option, 'laptop-mode' will automatically set the "
 "powersave mode of Intel HDA audio chipsets."
 msgstr ""
-"Si vous activez cette option, \"laptop mode tools\" activera automatiquement "
-"le mode d'économie d'énergie pour les chipsets audio HDA Intel."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:20
-#, fuzzy
 msgid ""
-"If you enable this option, 'laptop-mode' will control the polling of your CD/"
-"DVD drives by HAL. Disabling polling saves a considerable amount of power."
+"If you enable this option, 'laptop-mode' will control the polling of your "
+"CD/DVD drives by HAL. Disabling polling saves a considerable amount of power."
 msgstr ""
-"Si vous activez cette option, \"laptop mode tools\" contrôlera la scrutation "
-"de vos lecteurs CD/DVD par HAL.Désactiver cette scrutation économise "
-"beaucoup d'énergie."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:21
-#, fuzzy
 msgid ""
 "If you enable this option, 'laptop-mode' will take control of the hard disk "
 "power management."
 msgstr ""
-"Si vous activez cette option, \"laptop mode tools\" activera automatiquement "
-"le mode d'économie d'énergie pour les chipsets audio HDA Intel."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:22
 msgid ""
@@ -727,18 +692,12 @@ msgstr ""
 "bien plus lent)."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:23
-#, fuzzy
 msgid ""
 "This option sets the disk power management when on battery, it can be a "
 "value between 1 and 255. A low value results in a better energy saving but "
 "less disk performance, an high value results in disk performance but less "
 "energy saving."
 msgstr ""
-"Cette option règle la gestion d'énergie du disque dur, elle peut prendre "
-"toute valeur entière entre 1 et 255.Une valeur basse conduit à une meilleure "
-"économie d'énergie au détriment de la performance du disque dur.Une valeur "
-"haute améliore la performance du disque dur, mais diminue l'économie "
-"d'énergie."
 
 #: po/samsung-tools-preferences-phc.glade.h:1
 msgid "<b>Default VIDs</b>"
@@ -801,8 +760,8 @@ msgstr "Lancer le service de session"
 #~ "If enabled, the status of all devices will be restored after a suspend, "
 #~ "hibernate, reboot cycle"
 #~ msgstr ""
-#~ "Si activé, l'état de tous les périphériques sera restauré après une mise "
-#~ "en veille, une hibernation ou un redémarrage"
+#~ "Si activé, l'état de tous les périphériques sera restauré après une mise en "
+#~ "veille, une hibernation ou un redémarrage"
 
 #~ msgid ""
 #~ "How the wireless is toggled.\n"
