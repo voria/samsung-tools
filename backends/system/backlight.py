@@ -19,13 +19,11 @@
 # See the GNU General Public License for more details.
 # <http://www.gnu.org/licenses/gpl.txt>
 
+from __future__ import with_statement
+
 import os
 import subprocess
 import dbus.service
-
-from sys import version_info
-if version_info < (2, 6):
-	from __future__ import with_statement
 
 from backends.globals import *
 
