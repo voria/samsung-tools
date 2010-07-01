@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-17 18:26+0200\n"
+"POT-Creation-Date: 2010-07-01 16:22+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -294,7 +294,7 @@ msgstr ""
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr ""
 
-#: samsung-tools.py:512 samsung-tools-preferences.py:1148
+#: samsung-tools.py:512 samsung-tools-preferences.py:1149
 msgid "Released under GPLv3 license"
 msgstr ""
 

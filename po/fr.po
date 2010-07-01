@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-03 13:34+0200\n"
-"PO-Revision-Date: 2010-04-16 15:03+0000\n"
-"Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
+"POT-Creation-Date: 2010-07-01 16:22+0200\n"
+"PO-Revision-Date: 2010-06-22 20:49+0000\n"
+"Last-Translator: Lionel BASTET <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-06-17 16:24+0000\n"
+"X-Launchpad-Export-Date: 2010-07-01 14:20+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: backends/session/util/locales.py:25 samsung-tools-preferences.py:510
@@ -304,7 +304,7 @@ msgstr " - Désactiver le Bluetooth, la webcam et le réseau sans fil:"
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Pour plus d'informations, visitez le forum \"Linux On My Samsung\":"
 
-#: samsung-tools.py:512 samsung-tools-preferences.py:1148
+#: samsung-tools.py:512 samsung-tools-preferences.py:1149
 msgid "Released under GPLv3 license"
 msgstr "Publié sous licence GPLv3"
 
@@ -645,12 +645,17 @@ msgid ""
 "Linux scheduler to save power on multi-core processors while running on "
 "battery mode."
 msgstr ""
+"Si vous activez cette option, \"laptop-mode\" configurera automatiquement "
+"l'ordonnanceur de Linux pour économiser l'énergie consommée par les "
+"processeurs multi-coeurs lors du fonctionnement sur batterie."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:17
 msgid ""
 "If you enable this option, 'laptop-mode' will automatically enable the USB "
 "autosuspend feature for all devices."
 msgstr ""
+"Si vous activez cette option, \"laptop-mode\" activera automatiquement "
+"l'autosuspension pour tous les périphériques USB."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:18
 msgid ""
@@ -666,8 +671,8 @@ msgstr ""
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:20
 msgid ""
-"If you enable this option, 'laptop-mode' will control the polling of your "
-"CD/DVD drives by HAL. Disabling polling saves a considerable amount of power."
+"If you enable this option, 'laptop-mode' will control the polling of your CD/"
+"DVD drives by HAL. Disabling polling saves a considerable amount of power."
 msgstr ""
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:21
@@ -675,6 +680,8 @@ msgid ""
 "If you enable this option, 'laptop-mode' will take control of the hard disk "
 "power management."
 msgstr ""
+"Si vous activez cette option, \"laptop-mode\" prendra le contrôle de la "
+"gestion d'énergie du disque dur."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:22
 msgid ""
@@ -760,8 +767,8 @@ msgstr "Lancer le service de session"
 #~ "If enabled, the status of all devices will be restored after a suspend, "
 #~ "hibernate, reboot cycle"
 #~ msgstr ""
-#~ "Si activé, l'état de tous les périphériques sera restauré après une mise en "
-#~ "veille, une hibernation ou un redémarrage"
+#~ "Si activé, l'état de tous les périphériques sera restauré après une mise "
+#~ "en veille, une hibernation ou un redémarrage"
 
 #~ msgid ""
 #~ "How the wireless is toggled.\n"
