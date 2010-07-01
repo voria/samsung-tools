@@ -1,3 +1,11 @@
+samsung-tools (1.1.1~ppa1~loms~lucid) lucid; urgency=low
+
+  * Add support for python 2.5.
+  * Update translations to latest versions from Launchpad.
+  * Add Ukranian translation (thanks to Sergiy Gavrylov). 
+
+ -- Fortunato Ventre (voRia) <vorione@gmail.com>  Thu, 01 Jul 2010 16:25:13 +0200
+
 samsung-tools (1.1~ppa1~loms~lucid) lucid; urgency=low
   
   * Specify a default $PATH for system service, so the commands' paths can be
