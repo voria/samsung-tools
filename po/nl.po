@@ -7,56 +7,56 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-01 16:22+0200\n"
-"PO-Revision-Date: 2010-04-20 08:09+0000\n"
-"Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
+"POT-Creation-Date: 2010-07-12 15:06+0200\n"
+"PO-Revision-Date: 2010-07-08 11:21+0000\n"
+"Last-Translator: Dirk Roos <Unknown>\n"
 "Language-Team: Dutch <nl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-07-01 14:20+0000\n"
+"X-Launchpad-Export-Date: 2010-07-12 13:04+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: backends/session/util/locales.py:25 samsung-tools-preferences.py:510
 msgid "Backlight"
-msgstr ""
+msgstr "Achtergrondverlichting"
 
 #: backends/session/util/locales.py:26
 msgid "Backlight is enabled"
-msgstr ""
+msgstr "Achtergrondverlichting is ingeschakeld"
 
 #: backends/session/util/locales.py:27
 msgid "Backlight is disabled"
-msgstr ""
+msgstr "Achtergrondverlichting is uitgeschakeld"
 
 #: backends/session/util/locales.py:28
 msgid "Backlight enabled"
-msgstr ""
+msgstr "Achtergrondverlichting ingeschakeld"
 
 #: backends/session/util/locales.py:29
 msgid "Backlight disabled"
-msgstr ""
+msgstr "Achtergrondverlichting uitgeschakeld"
 
 #: backends/session/util/locales.py:30
 msgid "Backlight cannot be enabled"
-msgstr ""
+msgstr "Achtergrondverlichting kan niet ingeschakeld worden"
 
 #: backends/session/util/locales.py:31
 msgid "Backlight cannot be disabled"
-msgstr ""
+msgstr "Achtergrondverlichting kan niet uitgeschakeld worden"
 
 #: backends/session/util/locales.py:32
 msgid "Backlight cannot be toggled"
-msgstr ""
+msgstr "Achtergrondverlichting status kan niet gewisseld worden"
 
 #: backends/session/util/locales.py:34 samsung-tools-preferences.py:519
 #: po/samsung-tools-applet.glade.h:1
 msgid "Bluetooth"
-msgstr ""
+msgstr "Bluetooth"
 
 #: backends/session/util/locales.py:35
 msgid "Bluetooth is enabled"
-msgstr ""
+msgstr "Bluetooth is geactiveerd"
 
 #: backends/session/util/locales.py:36
 msgid "Bluetooth is disabled"
@@ -80,7 +80,7 @@ msgstr "Bluetooth kan niet uitgeschakeld worden"
 
 #: backends/session/util/locales.py:41
 msgid "Bluetooth cannot be toggled"
-msgstr ""
+msgstr "Bluetooth status kan niet gewisseld worden"
 
 #: backends/session/util/locales.py:42
 msgid "Bluetooth control is not available"
@@ -88,7 +88,7 @@ msgstr "Bluetooth control is niet beschikbaar"
 
 #: backends/session/util/locales.py:44 samsung-tools-preferences.py:528
 msgid "CPU fan"
-msgstr ""
+msgstr "CPU ventilator"
 
 #: backends/session/util/locales.py:45
 msgid "CPU Temperature:"
@@ -96,7 +96,7 @@ msgstr "CPU tempratuur"
 
 #: backends/session/util/locales.py:46
 msgid "Fan mode cannot be changed"
-msgstr "Ventilator mode kan niet worden verandert"
+msgstr "Ventilator mode kan niet worden veranderd"
 
 #: backends/session/util/locales.py:47
 msgid "Fan mode: Normal"
@@ -149,226 +149,229 @@ msgstr "De webcam kan niet worden uitgeschakeld"
 
 #: backends/session/util/locales.py:60
 msgid "Webcam cannot be toggled"
-msgstr ""
+msgstr "Webcam status kan niet gewisseld worden"
 
 #: backends/session/util/locales.py:61
 msgid "Webcam control is not available"
-msgstr ""
+msgstr "Webcam instelling is niet beschikbaar"
 
 #: backends/session/util/locales.py:63 samsung-tools-preferences.py:546
 #: po/samsung-tools-applet.glade.h:8
 msgid "Wireless"
-msgstr ""
+msgstr "Draadloos netwerk"
 
 #: backends/session/util/locales.py:64
 msgid "Wireless is enabled"
-msgstr ""
+msgstr "Draadloos netwerk is ingeschakeld"
 
 #: backends/session/util/locales.py:65
 msgid "Wireless is disabled"
-msgstr ""
+msgstr "Draadloos netwerk is uitgeschakeld"
 
 #: backends/session/util/locales.py:66
 msgid "Wireless enabled"
-msgstr ""
+msgstr "Draadloos netwerk ingeschakeld"
 
 #: backends/session/util/locales.py:67
 msgid "Wireless disabled"
-msgstr ""
+msgstr "Draadloos netwerk uitgeschakeld"
 
 #: backends/session/util/locales.py:68
 msgid "Wireless cannot be enabled"
-msgstr ""
+msgstr "Draadloos netwerk kan niet ingeschakeld worden"
 
 #: backends/session/util/locales.py:69
 msgid "Wireless cannot be disabled"
-msgstr ""
+msgstr "Draadloos netwerk kan niet uitgeschakeld worden"
 
 #: backends/session/util/locales.py:70
 msgid "Wireless cannot be toggled"
-msgstr ""
+msgstr "Draadloos netwerk status kan niet gewisseld worden"
 
 #: backends/session/util/locales.py:71
 msgid "Wireless control is not available"
-msgstr ""
+msgstr "Draadloos netwerk instellingen is niet beschikbaar"
 
 #: samsung-tools.py:54
 msgid "Backlight control: unable to connect to session service!"
 msgstr ""
+"Achtergrondverlichting instellingen: kan niet verbinden met sessiedienst!"
 
 #: samsung-tools.py:120
 msgid "Bluetooth control: unable to connect to session service!"
-msgstr ""
+msgstr "Bluetooth instellingen: kan niet verbinden met sessiedienst!"
 
 #: samsung-tools.py:199
 msgid "CPU fan control: unable to connect to session service!"
-msgstr ""
+msgstr "CPU ventilator instellingen: kan niet verbinden met sessiedienst!"
 
 #: samsung-tools.py:326
 msgid "Webcam control: unable to connect to session service!"
-msgstr ""
+msgstr "Webcam instellingen instellingen: kan niet verbinden met sessiedienst!"
 
 #: samsung-tools.py:405
 msgid "Wireless control: unable to connect to session service!"
-msgstr ""
+msgstr "Draadloos netwerk instellingen: kan niet verbinden met sessiedienst!"
 
 #: samsung-tools.py:470
 msgid "Samsung Tools - Command Line Utility"
-msgstr ""
+msgstr "Samsung Gereedschap - Opdrachtregel hulpprogramma"
 
 #: samsung-tools.py:472 samsung-tools.py:521
 #, python-format
 msgid "Usage: %s <interface> <option> ..."
-msgstr ""
+msgstr "Gebruik: %s <interface> <optie>"
 
 #: samsung-tools.py:474 po/samsung-tools-preferences.glade.h:4
 msgid "Backlight:"
-msgstr ""
+msgstr "Achtergrondverlichting:"
 
 #: samsung-tools.py:475 samsung-tools.py:478 samsung-tools.py:481
 #: samsung-tools.py:484 samsung-tools.py:487
 msgid "Interface"
-msgstr ""
+msgstr "Interface:"
 
 #: samsung-tools.py:476 samsung-tools.py:479 samsung-tools.py:482
 #: samsung-tools.py:485 samsung-tools.py:488
 msgid "Options"
-msgstr ""
+msgstr "Opties"
 
 #: samsung-tools.py:477 po/samsung-tools-preferences.glade.h:5
 msgid "Bluetooth:"
-msgstr ""
+msgstr "Bluetooth:"
 
 #: samsung-tools.py:480 po/samsung-tools-preferences.glade.h:6
 msgid "CPU fan:"
-msgstr ""
+msgstr "CPU venilator:"
 
 #: samsung-tools.py:483 po/samsung-tools-preferences.glade.h:35
 msgid "Webcam:"
-msgstr ""
+msgstr "Webcam:"
 
 #: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:36
 msgid "Wireless:"
-msgstr ""
+msgstr "Draadloos netwerk:"
 
 #: samsung-tools.py:490
 msgid "Other options:"
-msgstr ""
+msgstr "Andere opties"
 
 #: samsung-tools.py:491
 msgid "Show status for all devices."
-msgstr ""
+msgstr "Toon status voor alle apparaten."
 
 #: samsung-tools.py:492
 msgid "Show graphical notifications."
-msgstr ""
+msgstr "Toon grafische meldingen."
 
 #: samsung-tools.py:493
 msgid "Do not print messages on standard output."
-msgstr ""
+msgstr "Geef geen boodschappen op standaard uitvoer weer."
 
 #: samsung-tools.py:494
 msgid "Stop the session service."
-msgstr ""
+msgstr "Stop de sessiedienst."
 
 #: samsung-tools.py:495
 msgid "Stop the system service."
-msgstr ""
+msgstr "Stop de systeemdienst."
 
 #: samsung-tools.py:497
 msgid "Examples of use:"
-msgstr ""
+msgstr "Voorbeelden van gebruik:"
 
 #: samsung-tools.py:498
 msgid " - Toggle backlight:"
-msgstr ""
+msgstr " - Wissel achtergrondverlichting:"
 
 #: samsung-tools.py:501
 msgid " - Toggle wireless and set CPU fan mode to 'silent':"
-msgstr ""
+msgstr " - wissel draadloos netwerk and zet CPU ventilator op 'stil':"
 
 #: samsung-tools.py:504
 msgid " - Disable bluetooth, webcam and wireless:"
-msgstr ""
+msgstr " - Schakel bluetooth, webcam ean draadloos netwerk uit:"
 
 #: samsung-tools.py:507
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
-msgstr ""
+msgstr "Voor meer informatie, bezoek het 'Linux On My Samsung' forum:"
 
-#: samsung-tools.py:512 samsung-tools-preferences.py:1149
+#: samsung-tools.py:512 samsung-tools-preferences.py:1150
 msgid "Released under GPLv3 license"
-msgstr ""
+msgstr "Vrijgegeven onder de GPLv3 licentie"
 
 #: samsung-tools.py:517
 msgid "No action(s) specified."
-msgstr ""
+msgstr "Geen actie(s) opgegeven."
 
 #: samsung-tools.py:518 samsung-tools.py:586
 msgid "Use --help for instructions."
-msgstr ""
+msgstr "Gebruik --help voor instructies."
 
 #: samsung-tools.py:581
 msgid "This program is intended to be used only by non-privileged users."
-msgstr ""
+msgstr "Dit programma is enkel voor niet-gepriviligieerde gebruikers bedoeld."
 
 #: samsung-tools.py:585
 msgid "Wrong argument(s)."
-msgstr ""
+msgstr "Verkeerd(e) argument(en)."
 
 #: samsung-tools.py:602
 msgid "Session service stopped"
-msgstr ""
+msgstr "Sessiedienst gestopt."
 
 #: samsung-tools.py:605
 msgid "Cannot stop session service"
-msgstr ""
+msgstr "Kan de sessiedienst niet stoppen"
 
 #: samsung-tools.py:615
 msgid "System service stopped"
-msgstr ""
+msgstr "Systeemdienst gestopt"
 
 #: samsung-tools.py:618
 msgid "Cannot stop system service"
-msgstr ""
+msgstr "Kan de systeemdienst niet stoppen"
 
 #: samsung-tools-preferences.py:80
 msgid "Please press the new hotkey"
-msgstr ""
+msgstr "Druk de nieuwe sneltoets in"
 
 #: samsung-tools-preferences.py:122
 msgid "None"
-msgstr ""
+msgstr "Geen"
 
 #: samsung-tools-preferences.py:240 samsung-tools-preferences.py:351
 #: samsung-tools-preferences.py:441 samsung-tools-preferences.py:453
 #: samsung-tools-preferences.py:808 samsung-tools-preferences.py:820
 #: samsung-tools-preferences.py:832 samsung-tools-preferences.py:846
 msgid "Unable to connect to system service!"
-msgstr ""
+msgstr "Kan niet met de systeemdienst verbinden!"
 
 #: samsung-tools-preferences.py:465
 msgid "Confirm"
-msgstr ""
+msgstr "Bevestigen"
 
 #: samsung-tools-preferences.py:466
 msgid "Apply the new VIDs?"
-msgstr ""
+msgstr "De nieuwe VIDs toepassen?"
 
 #: samsung-tools-preferences.py:718
 msgid "Install 'laptop-mode' to enable and configure these options"
 msgstr ""
+"Installeer 'laptop-mode' om toegang te kijgen tot deze opties en hun "
+"instellingen"
 
 #: samsung-tools-preferences.py:729
 msgid "You need a PHC enabled kernel to use this feature"
-msgstr ""
+msgstr "Je moet een kernel met PHC hebben om deze mogelijkheid te gebruiken"
 
 #: samsung-tools-preferences.py:748
 msgid "Unable to connect to session service!"
-msgstr ""
+msgstr "Kan niet met de sessiedienst verbinden!"
 
 #: samsung-tools-preferences.py:1101
 msgid "Caution!"
-msgstr ""
+msgstr "Opgelet!"
 
 #: samsung-tools-preferences.py:1102
 msgid ""
@@ -379,154 +382,158 @@ msgid ""
 "\n"
 "Are you sure you want to continue?"
 msgstr ""
+"Verlaagde spanning op de CPU kan tot aanzienlijke prestaties op vlak van "
+"energiebesparing leiden, dit is echter <b>niet zonder risico</b> en kan tot "
+"falen en dataverlies leiden. Zorg dat je weet wat je doet vooraleer deze "
+"opties te gebruiken."
 
 #: po/samsung-tools-applet.glade.h:2
 msgid "CPU Fan"
-msgstr ""
+msgstr "CPU ventilator"
 
 #: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:24
 msgid "Normal"
-msgstr ""
+msgstr "Normaal"
 
 #: po/samsung-tools-applet.glade.h:4
 msgid "Preferences..."
-msgstr ""
+msgstr "Voorkeuren..."
 
 #: po/samsung-tools-applet.glade.h:5 po/samsung-tools-preferences.glade.h:27
 msgid "Silent"
-msgstr ""
+msgstr "Stil"
 
 #: po/samsung-tools-applet.glade.h:6 po/samsung-tools-preferences.glade.h:28
 msgid "Speed"
-msgstr ""
+msgstr "Snelheid"
 
 #: po/samsung-tools-applet.server.in.h:1
 msgid "Manage devices on Samsung netbooks"
-msgstr ""
+msgstr "Beheer apparaten op Samsung netbooks"
 
 #: po/samsung-tools-preferences.desktop.in.h:1
 #: po/samsung-tools-preferences.glade.h:25
 msgid "Samsung Tools Preferences"
-msgstr ""
+msgstr "Voorkeuren Samsung hulpprogramma's"
 
 #: po/samsung-tools-preferences.desktop.in.h:2
 msgid "Show and modify Samsung Tools preferences"
-msgstr ""
+msgstr "Toon en wijzig voorkeuren van Samsung hulpprogramma's."
 
 #: po/samsung-tools-preferences.glade.h:1
 msgid "<b>Hotkeys</b>"
-msgstr ""
+msgstr "<b>sneltoetsen</b>"
 
 #: po/samsung-tools-preferences.glade.h:2
 msgid "<b>Initial status for devices</b>"
-msgstr ""
+msgstr "<b>Oospronkelijke status voor apparaten</b>"
 
 #: po/samsung-tools-preferences.glade.h:3
 msgid "Advanced power management"
-msgstr ""
+msgstr "Geavanceerd energiebeheer"
 
 #: po/samsung-tools-preferences.glade.h:7
 #: po/samsung-tools-preferences-phc.glade.h:4
 msgid "CPU undervolting"
-msgstr ""
+msgstr "Verlaagde spanning CPU"
 
 #: po/samsung-tools-preferences.glade.h:8
 msgid "Click here to disable the hotkey"
-msgstr ""
+msgstr "Klik hier om de sneltoets uit te schakelen"
 
 #: po/samsung-tools-preferences.glade.h:9
 msgid "Click here to set the default hotkey"
-msgstr ""
+msgstr "Klik hier om de standaard sneltoets in te stellen"
 
 #: po/samsung-tools-preferences.glade.h:10
 msgid "Click here to set the default value"
-msgstr ""
+msgstr "Klik hier om de standaard waarde in te stellen"
 
 #: po/samsung-tools-preferences.glade.h:11
 #: po/samsung-tools-preferences-laptop-mode.glade.h:5
 msgid "Configure 'laptop-mode'"
-msgstr ""
+msgstr "Instellen 'laptop-modus'"
 
 #: po/samsung-tools-preferences.glade.h:12
 msgid "Configure 'laptop-mode' for a better power management"
-msgstr ""
+msgstr "Stel 'laptop-modus' in voor betere energieprestaties"
 
 #: po/samsung-tools-preferences.glade.h:13
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:1
 msgid "Configure kernel parameters"
-msgstr ""
+msgstr "Configureer kernel parameters"
 
 #: po/samsung-tools-preferences.glade.h:14
 msgid "Disabled"
-msgstr ""
+msgstr "Uitgeschakeld"
 
 #: po/samsung-tools-preferences.glade.h:15
 msgid "Enable hotkeys"
-msgstr ""
+msgstr "Sneltoetsen inschakelen"
 
 #: po/samsung-tools-preferences.glade.h:16
 msgid "Enable this option to use hotkeys"
-msgstr ""
+msgstr "Schakel deze optie in om sneltoetsen te gebruiken"
 
 #: po/samsung-tools-preferences.glade.h:17
 msgid "Enabled"
-msgstr ""
+msgstr "Ingeschakeld"
 
 #: po/samsung-tools-preferences.glade.h:18
 msgid "Hotkey used for CPU fan control"
-msgstr ""
+msgstr "Sneltoets voor controle van de CPU ventilator"
 
 #: po/samsung-tools-preferences.glade.h:19
 msgid "Hotkey used for backlight control"
-msgstr ""
+msgstr "Sneltoets voor controle van de achtergrondverlichting"
 
 #: po/samsung-tools-preferences.glade.h:20
 msgid "Hotkey used for bluetooth control"
-msgstr ""
+msgstr "Sneltoets voor controle van Bluetooth"
 
 #: po/samsung-tools-preferences.glade.h:21
 msgid "Hotkey used for webcam control"
-msgstr ""
+msgstr "Sneltoets voor controle van de webcam"
 
 #: po/samsung-tools-preferences.glade.h:22
 msgid "Hotkey used for wireless control"
-msgstr ""
+msgstr "Sneltoets voor controle van het draadloos netwerk"
 
 #: po/samsung-tools-preferences.glade.h:23
 msgid "Last status"
-msgstr ""
+msgstr "Laatste status"
 
 #: po/samsung-tools-preferences.glade.h:26
 msgid "Session service"
-msgstr ""
+msgstr "Sessiedienst"
 
 #: po/samsung-tools-preferences.glade.h:29
 msgid "System service"
-msgstr ""
+msgstr "Systeemdienst"
 
 #: po/samsung-tools-preferences.glade.h:30
 msgid "The initial status at boot for Bluetooth"
-msgstr ""
+msgstr "De initiele status van Bluetooth bij opstarten"
 
 #: po/samsung-tools-preferences.glade.h:31
 msgid "The initial status at boot for CPU fan"
-msgstr ""
+msgstr "De initiele status van de CPU ventilator bij opstarten"
 
 #: po/samsung-tools-preferences.glade.h:32
 msgid "The initial status at boot for webcam"
-msgstr ""
+msgstr "De initiele status van de webcam bij opstarten"
 
 #: po/samsung-tools-preferences.glade.h:33
 msgid "The initial status at boot for wireless"
-msgstr ""
+msgstr "De initiele status van het draadloos netwerk bij opstarten"
 
 #: po/samsung-tools-preferences.glade.h:34
 msgid "Undervolt the CPU in order to save energy"
-msgstr ""
+msgstr "Spanning over de CPU verlagen om energie te besparen"
 
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:2
 msgid "Swap control:"
-msgstr ""
+msgstr "Swap controle:"
 
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:3
 msgid ""
@@ -536,6 +543,12 @@ msgid ""
 "bad results on power consumption and disk performance. Set a low value if "
 "you usually have plenty of unused RAM. The default value is 60."
 msgstr ""
+"Swappiness controleert hoe sterk de kernel geheugenpagina's wisselt. Hogere "
+"waarden verhogen de swapping, lagere waarden verlagen de swapping. Met "
+"andere woorden, hoe hoger de waarde is, hoe meer het systeem zal swappen met "
+"slechte resultaten op het vlak van energieprestatie en schijfperformantie. "
+"Stel een lage waarde in wanneer je gewoonlijk veel ongebruikte RAM hebt. De "
+"standaard waarde is 60."
 
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:4
 msgid ""
@@ -545,6 +558,12 @@ msgid ""
 "bad results on power consumption and disk performance. Set a low value if "
 "you usually have plenty of unused RAM. The default value is 60."
 msgstr ""
+"Swappiness controleert hoe sterk de kernel geheugenpagina's wisselt. Hogere "
+"waarden verhogen de swapping, lagere waarden verlagen de swapping. Met "
+"andere woorden, hoe hoger de waarde is, hoe meer het systeem zal swappen met "
+"slechte resultaten op het vlak van energieprestatie en schijfperformantie. "
+"Stel een lage waarde in wanneer je gewoonlijk veel ongebruikte RAM hebt. De "
+"standaard waarde is 60."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:1
 msgid ""
@@ -556,52 +575,63 @@ msgid ""
 "when entries are written to them. This causes disks to spin up, which is not "
 "very nice when you're trying to save power."
 msgstr ""
+"'laptop-mode' kan automatisch configuratiebestanden swappen afhankelijk van "
+"de energiestatus van uw systeem.\n"
+" \n"
+"Het voornaamste gebruik van deze mogelijkheid is het beheren van de "
+"configuratiebestanden van syslog deamons. Syslog daemons hebben de neiging "
+"om hun logbestanden te synchroniseren telkens regels worden weggeschreven. "
+"Dit veroorzaakt schijfactiviteit wat niet goed is wanneer energie moet "
+"bespaard worden."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:4
 msgid ""
 "An enabled video output port draws power, even if no display is connected. "
 "This option forces the display output off depending on the power mode."
 msgstr ""
+"Een ingeschakelde video uitvoer gebruikt energie, zelfs als er geen "
+"beeldscherm verbonden is. Deze optie schakelt de uitvoer uit afhankelijk van "
+"het energieschema."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:6
 msgid "Control Ethernet settings"
-msgstr ""
+msgstr "Aanpassen Ethernet instellingen"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:7
 msgid "Control HAL polling"
-msgstr ""
+msgstr "Aanpassen HAL polling"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:8
 msgid "Control Intel HDA audio chipset power"
-msgstr ""
+msgstr "Aanpassen vermogen van Intel HDA audio chipset"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:9
 msgid "Control Intel SATA chipset power"
-msgstr ""
+msgstr "Aanpassen vermogen van Intel SATA chipset"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:10
 msgid "Control Linux scheduler"
-msgstr ""
+msgstr "Aanpassen Linux scheduler"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:11
 msgid "Control configuration files"
-msgstr ""
+msgstr "Aanpassen configuratiebestanden"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:12
 msgid "Control hard disk power management"
-msgstr ""
+msgstr "Aanpassen energieprestaties harde schijf"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:13
 msgid "Control video output settings"
-msgstr ""
+msgstr "Aanpassen video output instellingen"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:14
 msgid "Enable USB autosuspend"
-msgstr ""
+msgstr "USB autosuspend inschakelen"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:15
 msgid "Hard disk power management:"
-msgstr ""
+msgstr "Energieprestaties harde schijf:"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:16
 msgid ""
@@ -609,36 +639,50 @@ msgid ""
 "Linux scheduler to save power on multi-core processors while running on "
 "battery mode."
 msgstr ""
+"Met deze optie ingeschakeld zal 'laptop-mode' automatisch de Linux scheduler "
+"instellen om energie te sparen bij multi-core processoren bij werken op "
+"batterij."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:17
 msgid ""
 "If you enable this option, 'laptop-mode' will automatically enable the USB "
 "autosuspend feature for all devices."
 msgstr ""
+"Met deze optie ingeschakeld zal 'laptop-mode' automatisch USB autosuspend "
+"inschakelen voor alle apparaten."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:18
 msgid ""
 "If you enable this option, 'laptop-mode' will automatically enable the link "
 "power management mode of Intel AHCI compliant SATA chipsets."
 msgstr ""
+"Met deze optie ingeschakeld zal 'laptop-mode' automatisch de link power "
+"management van Intel AHCI compliant SATA chipsets inschakelen."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:19
 msgid ""
 "If you enable this option, 'laptop-mode' will automatically set the "
 "powersave mode of Intel HDA audio chipsets."
 msgstr ""
+"Met deze optie ingeschakeld zal 'laptop-mode' automatisch de "
+"energiespaarstand van Intel HDA audio chipsets instellen."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:20
 msgid ""
 "If you enable this option, 'laptop-mode' will control the polling of your CD/"
 "DVD drives by HAL. Disabling polling saves a considerable amount of power."
 msgstr ""
+"Met deze optie ingeschakeld zal 'laptop-mode' het pollen van de CD/DVD "
+"drives by HAL controleren. Polling uitschakelen spaart een aanzienlijke "
+"hoeveelheid energie."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:21
 msgid ""
 "If you enable this option, 'laptop-mode' will take control of the hard disk "
 "power management."
 msgstr ""
+"Met deze optie ingeschakeld zal 'laptop-mode' de energieprestaties van de "
+"harde schijf overnemen."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:22
 msgid ""
@@ -648,6 +692,11 @@ msgid ""
 "full speed (for instance if you only use Ethernet as to connect to a much "
 "slower ADSL modem)."
 msgstr ""
+"Met deze optie ingeschakeld is de snelheid van de ethernetverbinding "
+"gelimiteerd tot 100Mbit. Het verschil in energieverbruik tussen 1Gbit en "
+"100Mbet ethernet is aanzienlijk, het instellen kan besparing opleveren "
+"wanneer je niet de volle snelheid behoeft (bijvoorbeeld wanneer je Ethernet "
+"enkel gebruikt voor verbinding met een veel tragere ADSL modem)."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:23
 msgid ""
@@ -656,33 +705,40 @@ msgid ""
 "less disk performance, an high value results in disk performance but less "
 "energy saving."
 msgstr ""
+"Deze optie beheert de energieprestaties van de hardeschijf wanneer op "
+"batterij gewerkt wordt, de waarde kan tussen 1 en 255 liggen. Een lage "
+"waarde resulteert in een betere energieprestatie maar een lagere "
+"schijfperformantie, een hoge waarde resulteert in betere schijfperformantie "
+"maar een lagere energieprestatie."
 
 #: po/samsung-tools-preferences-phc.glade.h:1
 msgid "<b>Default VIDs</b>"
-msgstr ""
+msgstr "<b>Standaard VIDs</b>"
 
 #: po/samsung-tools-preferences-phc.glade.h:2
 msgid "<b>Frequencies</b>"
-msgstr ""
+msgstr "<b>Frequenties</b>"
 
 #: po/samsung-tools-preferences-phc.glade.h:3
 msgid "<b>New VIDs</b>"
-msgstr ""
+msgstr "<b>Nieuwe VIDs</b>"
 
 #: po/samsung-tools-preferences-phc.glade.h:5
 msgid ""
 "Enable this option only if the new VIDs are tested and safe, otherwise the "
 "machine might be no more bootable!"
 msgstr ""
+"Schakel deze optie enkel in wanneer de nieuwe VIDs getest en veilig zijn, "
+"zoniet is de computer mogelijk niet meer op te starten!"
 
 #: po/samsung-tools-preferences-phc.glade.h:6
 msgid "Note: the new VIDs will be applied when this window will be closed."
-msgstr ""
+msgstr "Opmerking: de nieuwe VIDs worden toegepast na sluiten van dit venster"
 
 #: po/samsung-tools-preferences-phc.glade.h:7
 msgid "Set the new VIDs automatically at boot"
-msgstr ""
+msgstr "Stel de nieuwe VIDs automatisch in bij opstarten"
 
 #: po/samsung-tools-session-service.desktop.in.h:1
 msgid "Start the session service"
-msgstr ""
+msgstr "Start de sessiedienst"

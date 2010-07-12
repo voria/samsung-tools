@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-01 16:22+0200\n"
+"POT-Creation-Date: 2010-07-12 15:06+0200\n"
 "PO-Revision-Date: 2010-06-17 17:25+0000\n"
 "Last-Translator: Sergiy Gavrylov <sergiovana@bigmir.net>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
@@ -298,7 +298,7 @@ msgstr " - Вимкнути bluetooth, веб-камеру та бездрото
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Детальніша інформація на форумі «Linux On My Samsung»:"
 
-#: samsung-tools.py:512 samsung-tools-preferences.py:1149
+#: samsung-tools.py:512 samsung-tools-preferences.py:1150
 msgid "Released under GPLv3 license"
 msgstr "Випущено за умовами ліцензії GPLv3"
 

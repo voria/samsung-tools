@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-01 16:22+0200\n"
+"POT-Creation-Date: 2010-07-12 15:06+0200\n"
 "PO-Revision-Date: 2010-06-17 17:21+0000\n"
 "Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -297,7 +297,7 @@ msgstr " - Bluetooth, webkamera és vezeték nélküli hálózat kikapcsolása:"
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "További információért látogasson a \"Linux on My Samsung\" fórumra:"
 
-#: samsung-tools.py:512 samsung-tools-preferences.py:1149
+#: samsung-tools.py:512 samsung-tools-preferences.py:1150
 msgid "Released under GPLv3 license"
 msgstr "Kibocsátva GPLv3 licenc alatt"
 

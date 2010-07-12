@@ -1137,7 +1137,8 @@ Are you sure you want to continue?"), "utf-8")
 					"Cezary Jackiewicz",
 					"Lars Karlsson",
 					"Krasznecz Zoltán",
-					"Sergiy Gavrylov"
+					"Sergiy Gavrylov",
+					"Dirk Roos"
 					]
 		
 		translators.sort(cmp = lambda x, y: cmp(x.lower(), y.lower()))
