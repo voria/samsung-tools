@@ -1,3 +1,11 @@
+samsung-tools (1.1.2~ppa1~loms~lucid) lucid; urgency=low
+
+  * Update translations to latest versions from Launchpad.
+  * Update translators' credits list (thanks to Dirk Roos
+    for the new Dutch translation). 
+
+ -- Fortunato Ventre (voRia) <vorione@gmail.com>  Sat, 14 Aug 2010 18:05:51 +0200
+
 samsung-tools (1.1.1~ppa1~loms~lucid) lucid; urgency=low
 
   * Add support for python 2.5.
