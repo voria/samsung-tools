@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-07-12 15:06+0200\n"
-"PO-Revision-Date: 2010-04-28 16:44+0000\n"
-"Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
+"PO-Revision-Date: 2010-08-31 19:47+0000\n"
+"Last-Translator: Michael Likholet <mlih@mail.ru>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-07-01 14:20+0000\n"
+"X-Launchpad-Export-Date: 2010-09-05 14:32+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: backends/session/util/locales.py:25 samsung-tools-preferences.py:510
@@ -212,7 +212,8 @@ msgstr "Управление Веб-камерой: не удается подк
 
 #: samsung-tools.py:405
 msgid "Wireless control: unable to connect to session service!"
-msgstr "Управление Беспроводной сети: не удается подключиться к службе сессии!"
+msgstr ""
+"Управление Беспроводной сети: не удается подключиться к службе сессии!"
 
 #: samsung-tools.py:470
 msgid "Samsung Tools - Command Line Utility"
@@ -314,6 +315,8 @@ msgstr "Используйте --help для получения инструкц
 #: samsung-tools.py:581
 msgid "This program is intended to be used only by non-privileged users."
 msgstr ""
+"Предполагается, что данная программа будет использваться только не "
+"привилегированными пользователями."
 
 #: samsung-tools.py:585
 msgid "Wrong argument(s)."
@@ -361,6 +364,8 @@ msgstr "Применить новые VIDы?"
 #: samsung-tools-preferences.py:718
 msgid "Install 'laptop-mode' to enable and configure these options"
 msgstr ""
+"Установите 'портативный режим' ('laptop mode') для включения и возможности "
+"настройки данных опций"
 
 #: samsung-tools-preferences.py:729
 msgid "You need a PHC enabled kernel to use this feature"
@@ -455,11 +460,11 @@ msgstr "Нажмите сюда, для установки значения по
 #: po/samsung-tools-preferences.glade.h:11
 #: po/samsung-tools-preferences-laptop-mode.glade.h:5
 msgid "Configure 'laptop-mode'"
-msgstr ""
+msgstr "Настроить 'портативный режим' ('laptop mode')"
 
 #: po/samsung-tools-preferences.glade.h:12
 msgid "Configure 'laptop-mode' for a better power management"
-msgstr ""
+msgstr "Настроить 'портативный режим' для оптимизации расхода электроэнергии"
 
 #: po/samsung-tools-preferences.glade.h:13
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:1
@@ -578,6 +583,14 @@ msgid ""
 "when entries are written to them. This causes disks to spin up, which is not "
 "very nice when you're trying to save power."
 msgstr ""
+"'портативный режим' может автоматически выгружать конфигурационные файлы в "
+"зависимости от нагрузки на вашу систему.\n"
+" \n"
+"Основное назначение данного режима - это контроль конфигурационных файлов "
+"демонов системных логгирования, которые имеют тенденцию синхронизировать "
+"содержимое лог-файлов в то время, когда в них производится запись. Это "
+"приводит к излишней раскрутке жестких дисков, что отрицательно сказывается "
+"на экономии электроэнергии."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:4
 msgid ""
@@ -613,7 +626,7 @@ msgstr "Управление конфигурационными файлами"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:12
 msgid "Control hard disk power management"
-msgstr ""
+msgstr "Контроль энергопотребления жестких дисков"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:13
 msgid "Control video output settings"
@@ -633,36 +646,50 @@ msgid ""
 "Linux scheduler to save power on multi-core processors while running on "
 "battery mode."
 msgstr ""
+"При включении данной опции 'портативный режим' будет автоматически "
+"настраивать планировщик задач линукса на режим энергосбережения для "
+"многоядерных систем при работе от батареи."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:17
 msgid ""
 "If you enable this option, 'laptop-mode' will automatically enable the USB "
 "autosuspend feature for all devices."
 msgstr ""
+"При включении данной опции 'портативный режим' автоматически разрешит "
+"использование спящего режима для всех USB устройств в системе."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:18
 msgid ""
 "If you enable this option, 'laptop-mode' will automatically enable the link "
 "power management mode of Intel AHCI compliant SATA chipsets."
 msgstr ""
+"При включении данной опции 'портативный режим' автоматически разрешит "
+"использовать функции энергосбережния SATA чипсетов, совместимых с Intel AHCI."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:19
 msgid ""
 "If you enable this option, 'laptop-mode' will automatically set the "
 "powersave mode of Intel HDA audio chipsets."
 msgstr ""
+"При включении данной опции 'портативный режим' автоматически включит режим "
+"энергосбережения для аудио чипсета Intel HDA."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:20
 msgid ""
-"If you enable this option, 'laptop-mode' will control the polling of your CD/"
-"DVD drives by HAL. Disabling polling saves a considerable amount of power."
+"If you enable this option, 'laptop-mode' will control the polling of your "
+"CD/DVD drives by HAL. Disabling polling saves a considerable amount of power."
 msgstr ""
+"При включении данной опции 'портативный режим' будет производить контроль "
+"опросов HAL вашего CD/DVD привода. Отключение данных запросов может "
+"сэкономить значительное количество электроэнергии."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:21
 msgid ""
 "If you enable this option, 'laptop-mode' will take control of the hard disk "
 "power management."
 msgstr ""
+"При включении данной опции 'портативный режим' будет производить контроль "
+"энергопотребления жестких дисков."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:22
 msgid ""
@@ -685,6 +712,10 @@ msgid ""
 "less disk performance, an high value results in disk performance but less "
 "energy saving."
 msgstr ""
+"Данная опция отвечает за функцию энергосбережения жестких дисков при работе "
+"от батареи и может принимать значения от 1 до 255. Меньшее число дает "
+"меньшее энергопотребление и меньшую производительность; большее число - "
+"большую производительность и больший расход электроэнергии."
 
 #: po/samsung-tools-preferences-phc.glade.h:1
 msgid "<b>Default VIDs</b>"
