@@ -97,7 +97,14 @@ class Fan(dbus.service.Object):
 			return 3
 		try:
 			with open(ESDM_PATH_FAN, 'r') as file:
-				return int(file.read(1))
+				status = int(file.read(1))
+				if status == 0:
+					self.__save_last_status("normal")
+				elif status == 1:
+					self.__save_last_status("silent")
+				else:
+					self.__save_last_status("speed")
+				return status
 		except:
 			systemlog.write("ERROR: 'Fan.Status()' - cannot read from '" + ESDM_PATH_FAN + "'.")
 			return 3

@@ -99,9 +99,11 @@ class Webcam(dbus.service.Object):
 				systemlog.write("ERROR: 'Webcam.IsEnabled()' - COMMAND: '" + COMMAND_LSMOD + "' FAILED.")
 				return False
 			if "uvcvideo" in output:
-				return True
+				status = True
 			else:
-				return False
+				status = False
+			self.__save_last_status(status)
+			return status
 		except:
 			systemlog.write("ERROR: 'Webcam.IsEnabled()' - COMMAND: '" + COMMAND_LSMOD + "' - Exception thrown.")
 			return False

@@ -95,9 +95,11 @@ class Bluetooth(dbus.service.Object):
 				systemlog.write("ERROR: 'Bluetooth.IsEnabled()' - COMMAND: '" + command + "' FAILED.")
 				return False
 			if output.split()[5] == "yes":
-				return False
+				status = False
 			else:
-				return True			
+				status = True
+			self.__save_last_status(status)
+			return status
 		except:
 			systemlog.write("ERROR: 'Bluetooth.IsEnabled()' - COMMAND: '" + command + "' - Exception thrown.")
 			return False

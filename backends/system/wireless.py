@@ -98,9 +98,11 @@ class Wireless(dbus.service.Object):
 			with open(ESDM_PATH_WIRELESS, 'r') as file:
 				result = int(file.read(1))
 				if result == 0:
-					return False
+					status = False
 				else:
-					return True
+					status = True
+				self.__save_last_status(status)	
+				return status
 		except:
 			systemlog.write("ERROR: 'Wireless.IsEnabled()' - cannot read from '" + ESDM_PATH_WIRELESS + "'.")
 			return False
