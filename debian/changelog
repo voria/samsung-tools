@@ -1,7 +1,10 @@
-samsung-tools (1.1.3~ppa1~loms~lucid) UNRELEASED; urgency=low
+samsung-tools (1.1.3~ppa1~loms~lucid) lucid; urgency=low
 
-  * 
-
+  * Make sure last status is always saved correctly for all devices.
+  * Update translations to latest version from Launchpad.
+  * Add Michael Likholet to translators' credits list (thank you!).
+  * Clean up 'copyright' file.
+  
  -- Fortunato Ventre (voRia) <vorione@gmail.com>  Tue, 14 Sep 2010 12:15:51 +0200
 
 samsung-tools (1.1.2~ppa1~loms~lucid) lucid; urgency=low
