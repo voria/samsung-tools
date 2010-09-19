@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-12 15:06+0200\n"
+"POT-Creation-Date: 2010-09-19 10:38+0200\n"
 "PO-Revision-Date: 2010-07-01 15:06+0000\n"
 "Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -304,7 +304,7 @@ msgstr " - Désactiver le Bluetooth, la webcam et le réseau sans fil:"
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Pour plus d'informations, visitez le forum \"Linux On My Samsung\":"
 
-#: samsung-tools.py:512 samsung-tools-preferences.py:1150
+#: samsung-tools.py:512 samsung-tools-preferences.py:1152
 msgid "Released under GPLv3 license"
 msgstr "Publié sous licence GPLv3"
 
@@ -671,8 +671,8 @@ msgstr ""
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:20
 msgid ""
-"If you enable this option, 'laptop-mode' will control the polling of your "
-"CD/DVD drives by HAL. Disabling polling saves a considerable amount of power."
+"If you enable this option, 'laptop-mode' will control the polling of your CD/"
+"DVD drives by HAL. Disabling polling saves a considerable amount of power."
 msgstr ""
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:21
@@ -767,8 +767,8 @@ msgstr "Lancer le service de session"
 #~ "If enabled, the status of all devices will be restored after a suspend, "
 #~ "hibernate, reboot cycle"
 #~ msgstr ""
-#~ "Si activé, l'état de tous les périphériques sera restauré après une mise en "
-#~ "veille, une hibernation ou un redémarrage"
+#~ "Si activé, l'état de tous les périphériques sera restauré après une mise "
+#~ "en veille, une hibernation ou un redémarrage"
 
 #~ msgid ""
 #~ "How the wireless is toggled.\n"

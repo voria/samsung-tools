@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-12 15:06+0200\n"
+"POT-Creation-Date: 2010-09-19 10:38+0200\n"
 "PO-Revision-Date: 2010-06-17 17:21+0000\n"
 "Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -297,7 +297,7 @@ msgstr " - Bluetooth, webkamera és vezeték nélküli hálózat kikapcsolása:"
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "További információért látogasson a \"Linux on My Samsung\" fórumra:"
 
-#: samsung-tools.py:512 samsung-tools-preferences.py:1150
+#: samsung-tools.py:512 samsung-tools-preferences.py:1152
 msgid "Released under GPLv3 license"
 msgstr "Kibocsátva GPLv3 licenc alatt"
 
@@ -674,8 +674,8 @@ msgstr ""
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:20
 msgid ""
-"If you enable this option, 'laptop-mode' will control the polling of your "
-"CD/DVD drives by HAL. Disabling polling saves a considerable amount of power."
+"If you enable this option, 'laptop-mode' will control the polling of your CD/"
+"DVD drives by HAL. Disabling polling saves a considerable amount of power."
 msgstr ""
 "Ha engedélyezi ezt a beállítást, a 'laptop-mode' kezeli a HAL hozzáférését "
 "CD/DVD meghajtóhoz. A hozzáférés letiltása észrevehető energiamegtakarítást "

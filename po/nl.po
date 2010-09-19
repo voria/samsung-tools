@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-12 15:06+0200\n"
+"POT-Creation-Date: 2010-09-19 10:38+0200\n"
 "PO-Revision-Date: 2010-07-12 14:15+0000\n"
 "Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: Dutch <nl@li.org>\n"
@@ -207,8 +207,7 @@ msgstr "CPU ventilator instellingen: kan niet verbinden met sessiedienst!"
 
 #: samsung-tools.py:326
 msgid "Webcam control: unable to connect to session service!"
-msgstr ""
-"Webcam instellingen instellingen: kan niet verbinden met sessiedienst!"
+msgstr "Webcam instellingen instellingen: kan niet verbinden met sessiedienst!"
 
 #: samsung-tools.py:405
 msgid "Wireless control: unable to connect to session service!"
@@ -297,7 +296,7 @@ msgstr " - Schakel bluetooth, webcam ean draadloos netwerk uit:"
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Voor meer informatie, bezoek het 'Linux On My Samsung' forum:"
 
-#: samsung-tools.py:512 samsung-tools-preferences.py:1150
+#: samsung-tools.py:512 samsung-tools-preferences.py:1152
 msgid "Released under GPLv3 license"
 msgstr "Vrijgegeven onder de GPLv3 licentie"
 
@@ -311,8 +310,7 @@ msgstr "Gebruik --help voor instructies."
 
 #: samsung-tools.py:581
 msgid "This program is intended to be used only by non-privileged users."
-msgstr ""
-"Dit programma is enkel voor niet-gepriviligieerde gebruikers bedoeld."
+msgstr "Dit programma is enkel voor niet-gepriviligieerde gebruikers bedoeld."
 
 #: samsung-tools.py:585
 msgid "Wrong argument(s)."
@@ -671,8 +669,8 @@ msgstr ""
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:20
 msgid ""
-"If you enable this option, 'laptop-mode' will control the polling of your "
-"CD/DVD drives by HAL. Disabling polling saves a considerable amount of power."
+"If you enable this option, 'laptop-mode' will control the polling of your CD/"
+"DVD drives by HAL. Disabling polling saves a considerable amount of power."
 msgstr ""
 "Met deze optie ingeschakeld zal 'laptop-mode' het pollen van de CD/DVD "
 "drives by HAL controleren. Polling uitschakelen spaart een aanzienlijke "
@@ -735,8 +733,7 @@ msgstr ""
 
 #: po/samsung-tools-preferences-phc.glade.h:6
 msgid "Note: the new VIDs will be applied when this window will be closed."
-msgstr ""
-"Opmerking: de nieuwe VIDs worden toegepast na sluiten van dit venster"
+msgstr "Opmerking: de nieuwe VIDs worden toegepast na sluiten van dit venster"
 
 #: po/samsung-tools-preferences-phc.glade.h:7
 msgid "Set the new VIDs automatically at boot"

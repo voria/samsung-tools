@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-12 15:06+0200\n"
+"POT-Creation-Date: 2010-09-19 10:38+0200\n"
 "PO-Revision-Date: 2010-05-31 11:24+0000\n"
 "Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: Italiano <vorione@gmail.com>\n"
@@ -199,8 +199,7 @@ msgstr ""
 
 #: samsung-tools.py:120
 msgid "Bluetooth control: unable to connect to session service!"
-msgstr ""
-"Controllo Bluetooth: impossibile connettersi al servizio di sessione!"
+msgstr "Controllo Bluetooth: impossibile connettersi al servizio di sessione!"
 
 #: samsung-tools.py:199
 msgid "CPU fan control: unable to connect to session service!"
@@ -301,7 +300,7 @@ msgstr " - Disattiva il Bluetooth, la webcam e la rete senza fili:"
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Per maggiori informazioni, visita il forum 'Linux On My Samsung':"
 
-#: samsung-tools.py:512 samsung-tools-preferences.py:1150
+#: samsung-tools.py:512 samsung-tools-preferences.py:1152
 msgid "Released under GPLv3 license"
 msgstr "Rilasciato con licenza GPLv3"
 
@@ -677,8 +676,8 @@ msgstr ""
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:20
 msgid ""
-"If you enable this option, 'laptop-mode' will control the polling of your "
-"CD/DVD drives by HAL. Disabling polling saves a considerable amount of power."
+"If you enable this option, 'laptop-mode' will control the polling of your CD/"
+"DVD drives by HAL. Disabling polling saves a considerable amount of power."
 msgstr ""
 "Se questa opzione è attiva, 'laptop-mode' controllerà il polling dei drive "
 "CD/DVD di HAL. Disattivare il polling comporta un risparmio notevole di "
@@ -794,8 +793,8 @@ msgstr "Avvia il servizio di sessione"
 #~ "If enabled, the status of all devices will be restored after a suspend, "
 #~ "hibernate, reboot cycle"
 #~ msgstr ""
-#~ "Se attivo, lo stato di tutti i dispositivi viene ripristinato dopo un ciclo "
-#~ "di sospensione, ibernazione o riavvio"
+#~ "Se attivo, lo stato di tutti i dispositivi viene ripristinato dopo un "
+#~ "ciclo di sospensione, ibernazione o riavvio"
 
 #~ msgid "Kernel module:"
 #~ msgstr "Modulo del kernel:"

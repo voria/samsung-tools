@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-12 15:06+0200\n"
+"POT-Creation-Date: 2010-09-19 10:38+0200\n"
 "PO-Revision-Date: 2010-08-31 19:47+0000\n"
 "Last-Translator: Michael Likholet <mlih@mail.ru>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -212,8 +212,7 @@ msgstr "Управление Веб-камерой: не удается подк
 
 #: samsung-tools.py:405
 msgid "Wireless control: unable to connect to session service!"
-msgstr ""
-"Управление Беспроводной сети: не удается подключиться к службе сессии!"
+msgstr "Управление Беспроводной сети: не удается подключиться к службе сессии!"
 
 #: samsung-tools.py:470
 msgid "Samsung Tools - Command Line Utility"
@@ -300,7 +299,7 @@ msgstr " - Отключить Bluetooth, Веб-камеру и Беспрово
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Для большей информации, посетите 'Linux On My Samsung' форум:"
 
-#: samsung-tools.py:512 samsung-tools-preferences.py:1150
+#: samsung-tools.py:512 samsung-tools-preferences.py:1152
 msgid "Released under GPLv3 license"
 msgstr "Выпущен под GPLv3 лицензией"
 
@@ -676,8 +675,8 @@ msgstr ""
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:20
 msgid ""
-"If you enable this option, 'laptop-mode' will control the polling of your "
-"CD/DVD drives by HAL. Disabling polling saves a considerable amount of power."
+"If you enable this option, 'laptop-mode' will control the polling of your CD/"
+"DVD drives by HAL. Disabling polling saves a considerable amount of power."
 msgstr ""
 "При включении данной опции 'портативный режим' будет производить контроль "
 "опросов HAL вашего CD/DVD привода. Отключение данных запросов может "

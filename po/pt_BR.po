@@ -1,4 +1,4 @@
-# Danish translation for samsung-tools
+# Brazilian Portuguese translation for samsung-tools
 # Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
 # This file is distributed under the same license as the samsung-tools package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
@@ -8,46 +8,46 @@ msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-09-19 10:38+0200\n"
-"PO-Revision-Date: 2010-03-14 15:28+0000\n"
-"Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
-"Language-Team: Danish <da@li.org>\n"
+"PO-Revision-Date: 2010-09-17 00:34+0000\n"
+"Last-Translator: Kristian Gomes <Unknown>\n"
+"Language-Team: Brazilian Portuguese <pt_BR@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-09-05 14:32+0000\n"
+"X-Launchpad-Export-Date: 2010-09-19 08:36+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: backends/session/util/locales.py:25 samsung-tools-preferences.py:510
 msgid "Backlight"
-msgstr ""
+msgstr "Luz de fundo"
 
 #: backends/session/util/locales.py:26
 msgid "Backlight is enabled"
-msgstr ""
+msgstr "Luz de fundo está ativa"
 
 #: backends/session/util/locales.py:27
 msgid "Backlight is disabled"
-msgstr ""
+msgstr "Luz de fundo está desativada"
 
 #: backends/session/util/locales.py:28
 msgid "Backlight enabled"
-msgstr ""
+msgstr "Luz de fundo ativa"
 
 #: backends/session/util/locales.py:29
 msgid "Backlight disabled"
-msgstr ""
+msgstr "Luz de fundo desativada"
 
 #: backends/session/util/locales.py:30
 msgid "Backlight cannot be enabled"
-msgstr ""
+msgstr "Luz de fundo não pode ser ativada"
 
 #: backends/session/util/locales.py:31
 msgid "Backlight cannot be disabled"
-msgstr ""
+msgstr "Luz de fundo não pode ser desativada"
 
 #: backends/session/util/locales.py:32
 msgid "Backlight cannot be toggled"
-msgstr ""
+msgstr "Luz de fundo não pode ser alternada"
 
 #: backends/session/util/locales.py:34 samsung-tools-preferences.py:519
 #: po/samsung-tools-applet.glade.h:1
@@ -56,212 +56,213 @@ msgstr "Bluetooth"
 
 #: backends/session/util/locales.py:35
 msgid "Bluetooth is enabled"
-msgstr "Bluetooth er aktiveret"
+msgstr "Bluetooth está habilitado"
 
 #: backends/session/util/locales.py:36
 msgid "Bluetooth is disabled"
-msgstr "Bluetooth er slået fra"
+msgstr "Bluetooth está desativado"
 
 #: backends/session/util/locales.py:37
 msgid "Bluetooth enabled"
-msgstr "Bluetooth er slået til"
+msgstr "Bluetooth ativado"
 
 #: backends/session/util/locales.py:38
 msgid "Bluetooth disabled"
-msgstr "Bluetooth er slået fra"
+msgstr "Bluetooth desativado"
 
 #: backends/session/util/locales.py:39
 msgid "Bluetooth cannot be enabled"
-msgstr "Bluetooth kan ikke blive slået til"
+msgstr "Bluetooth não pode ser ativado"
 
 #: backends/session/util/locales.py:40
 msgid "Bluetooth cannot be disabled"
-msgstr "Bluetooth kan ikke blive slået fra"
+msgstr "Bluetooth não pode ser desativado"
 
 #: backends/session/util/locales.py:41
 msgid "Bluetooth cannot be toggled"
-msgstr ""
+msgstr "Bluetooth não pode ser alternado"
 
 #: backends/session/util/locales.py:42
 msgid "Bluetooth control is not available"
-msgstr ""
+msgstr "Controle Bluetooth não está disponível"
 
 #: backends/session/util/locales.py:44 samsung-tools-preferences.py:528
 msgid "CPU fan"
-msgstr ""
+msgstr "Cooler da CPU"
 
 #: backends/session/util/locales.py:45
 msgid "CPU Temperature:"
-msgstr ""
+msgstr "Temperatura da CPU:"
 
 #: backends/session/util/locales.py:46
 msgid "Fan mode cannot be changed"
-msgstr ""
+msgstr "Modo do cooler não pode ser alterado"
 
 #: backends/session/util/locales.py:47
 msgid "Fan mode: Normal"
-msgstr ""
+msgstr "Modo Cooler: Normal"
 
 #: backends/session/util/locales.py:48
 msgid "Fan mode: Silent"
-msgstr ""
+msgstr "Modo Cooler: Silencioso"
 
 #: backends/session/util/locales.py:49
 msgid "Fan mode: Speed"
-msgstr ""
+msgstr "Modo Cooler: Velocidade"
 
 #: backends/session/util/locales.py:50
 msgid "Cannot get fan mode"
-msgstr ""
+msgstr "Não pode obter o modo Cooler"
 
 #: backends/session/util/locales.py:51
 msgid "CPU fan control is not available"
-msgstr ""
+msgstr "O controle do Cooler da CPU não está disponível"
 
 #: backends/session/util/locales.py:53 samsung-tools-preferences.py:537
 #: po/samsung-tools-applet.glade.h:7
 msgid "Webcam"
-msgstr "Webkamera"
+msgstr "Webcam"
 
 #: backends/session/util/locales.py:54
 msgid "Webcam is enabled"
-msgstr ""
+msgstr "Webcam está ativada"
 
 #: backends/session/util/locales.py:55
 msgid "Webcam is disabled"
-msgstr ""
+msgstr "Webcam está desativada"
 
 #: backends/session/util/locales.py:56
 msgid "Webcam enabled"
-msgstr ""
+msgstr "Webcam ativada"
 
 #: backends/session/util/locales.py:57
 msgid "Webcam disabled"
-msgstr ""
+msgstr "Webcam desativada"
 
 #: backends/session/util/locales.py:58
 msgid "Webcam cannot be enabled"
-msgstr ""
+msgstr "Webcam não pode ser ativada"
 
 #: backends/session/util/locales.py:59
 msgid "Webcam cannot be disabled"
-msgstr ""
+msgstr "Webcam não pode ser desativada"
 
 #: backends/session/util/locales.py:60
 msgid "Webcam cannot be toggled"
-msgstr ""
+msgstr "Webcam não pode ser alternada"
 
 #: backends/session/util/locales.py:61
 msgid "Webcam control is not available"
-msgstr ""
+msgstr "O controle da Webcam não está disponível"
 
 #: backends/session/util/locales.py:63 samsung-tools-preferences.py:546
 #: po/samsung-tools-applet.glade.h:8
 msgid "Wireless"
-msgstr "Trådløs"
+msgstr "Rede sem fio"
 
 #: backends/session/util/locales.py:64
 msgid "Wireless is enabled"
-msgstr ""
+msgstr "Rede sem fio está ativada"
 
 #: backends/session/util/locales.py:65
 msgid "Wireless is disabled"
-msgstr ""
+msgstr "Rede sem fio está desativada"
 
 #: backends/session/util/locales.py:66
 msgid "Wireless enabled"
-msgstr ""
+msgstr "Rede sem fio ativada"
 
 #: backends/session/util/locales.py:67
 msgid "Wireless disabled"
-msgstr ""
+msgstr "Rede sem fio desativada"
 
 #: backends/session/util/locales.py:68
 msgid "Wireless cannot be enabled"
-msgstr ""
+msgstr "Rede sem fio não pode ser ativada"
 
 #: backends/session/util/locales.py:69
 msgid "Wireless cannot be disabled"
-msgstr ""
+msgstr "Rede sem fio não pode ser desativada"
 
 #: backends/session/util/locales.py:70
 msgid "Wireless cannot be toggled"
-msgstr ""
+msgstr "Rede sem fio não pode ser alternada"
 
 #: backends/session/util/locales.py:71
 msgid "Wireless control is not available"
-msgstr ""
+msgstr "O controle da rede sem fio não está disponível"
 
 #: samsung-tools.py:54
 msgid "Backlight control: unable to connect to session service!"
-msgstr ""
+msgstr "Controle da luz de fundo: não é possível conectar à sessão do serviço!"
 
 #: samsung-tools.py:120
 msgid "Bluetooth control: unable to connect to session service!"
-msgstr ""
+msgstr "Controle do Bluetooth: não é possível conectar à sessão do serviço!"
 
 #: samsung-tools.py:199
 msgid "CPU fan control: unable to connect to session service!"
 msgstr ""
+"Controle do Cooler da CPU: não é possível conectar à sessão do serviço!"
 
 #: samsung-tools.py:326
 msgid "Webcam control: unable to connect to session service!"
-msgstr ""
+msgstr "Controle da Webcam: não é possível conectar à sessão do serviço!"
 
 #: samsung-tools.py:405
 msgid "Wireless control: unable to connect to session service!"
-msgstr ""
+msgstr "Controle da rede sem fio: não é possível conectar à sessão do serviço!"
 
 #: samsung-tools.py:470
 msgid "Samsung Tools - Command Line Utility"
-msgstr ""
+msgstr "Ferramentas Samsung - Utilitário da linha de comando"
 
 #: samsung-tools.py:472 samsung-tools.py:521
 #, python-format
 msgid "Usage: %s <interface> <option> ..."
-msgstr ""
+msgstr "Uso: %s <interface> <opção> ..."
 
 #: samsung-tools.py:474 po/samsung-tools-preferences.glade.h:4
 msgid "Backlight:"
-msgstr ""
+msgstr "Luz de fundo:"
 
 #: samsung-tools.py:475 samsung-tools.py:478 samsung-tools.py:481
 #: samsung-tools.py:484 samsung-tools.py:487
 msgid "Interface"
-msgstr "Grænseflade"
+msgstr "Interface"
 
 #: samsung-tools.py:476 samsung-tools.py:479 samsung-tools.py:482
 #: samsung-tools.py:485 samsung-tools.py:488
 msgid "Options"
-msgstr "Indstillinger"
+msgstr "Opções"
 
 #: samsung-tools.py:477 po/samsung-tools-preferences.glade.h:5
 msgid "Bluetooth:"
-msgstr "Bluetooth:"
+msgstr "Bluetooth"
 
 #: samsung-tools.py:480 po/samsung-tools-preferences.glade.h:6
 msgid "CPU fan:"
-msgstr ""
+msgstr "Cooler da CPU:"
 
 #: samsung-tools.py:483 po/samsung-tools-preferences.glade.h:35
 msgid "Webcam:"
-msgstr ""
+msgstr "Webcam:"
 
 #: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:36
 msgid "Wireless:"
-msgstr "Trådløs:"
+msgstr "Rede sem fio:"
 
 #: samsung-tools.py:490
 msgid "Other options:"
-msgstr ""
+msgstr "Outras opções:"
 
 #: samsung-tools.py:491
 msgid "Show status for all devices."
-msgstr ""
+msgstr "Exibir o estado de todos os dispositivos."
 
 #: samsung-tools.py:492
 msgid "Show graphical notifications."
-msgstr ""
+msgstr "Exibir notificações gráficas."
 
 #: samsung-tools.py:493
 msgid "Do not print messages on standard output."
@@ -293,11 +294,11 @@ msgstr ""
 
 #: samsung-tools.py:507
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
-msgstr "For mere information, besøg 'Linux On My Samsung' forum:"
+msgstr ""
 
 #: samsung-tools.py:512 samsung-tools-preferences.py:1152
 msgid "Released under GPLv3 license"
-msgstr "Udgivet under en GPLv3 licens"
+msgstr ""
 
 #: samsung-tools.py:517
 msgid "No action(s) specified."
@@ -313,7 +314,7 @@ msgstr ""
 
 #: samsung-tools.py:585
 msgid "Wrong argument(s)."
-msgstr "Forkert argument(er)."
+msgstr ""
 
 #: samsung-tools.py:602
 msgid "Session service stopped"
@@ -325,11 +326,11 @@ msgstr ""
 
 #: samsung-tools.py:615
 msgid "System service stopped"
-msgstr "System service stoppet"
+msgstr ""
 
 #: samsung-tools.py:618
 msgid "Cannot stop system service"
-msgstr "Kan ikke stoppe system service"
+msgstr ""
 
 #: samsung-tools-preferences.py:80
 msgid "Please press the new hotkey"
@@ -337,7 +338,7 @@ msgstr ""
 
 #: samsung-tools-preferences.py:122
 msgid "None"
-msgstr "Ingen"
+msgstr ""
 
 #: samsung-tools-preferences.py:240 samsung-tools-preferences.py:351
 #: samsung-tools-preferences.py:441 samsung-tools-preferences.py:453
@@ -407,7 +408,7 @@ msgstr ""
 #: po/samsung-tools-preferences.desktop.in.h:1
 #: po/samsung-tools-preferences.glade.h:25
 msgid "Samsung Tools Preferences"
-msgstr "Samsung Tools indstillinger"
+msgstr ""
 
 #: po/samsung-tools-preferences.desktop.in.h:2
 msgid "Show and modify Samsung Tools preferences"
@@ -458,7 +459,7 @@ msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:14
 msgid "Disabled"
-msgstr "Slået fra"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:15
 msgid "Enable hotkeys"
@@ -470,7 +471,7 @@ msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:17
 msgid "Enabled"
-msgstr "Slået til"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:18
 msgid "Hotkey used for CPU fan control"
@@ -502,7 +503,7 @@ msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:29
 msgid "System service"
-msgstr "System service"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:30
 msgid "The initial status at boot for Bluetooth"
@@ -686,9 +687,3 @@ msgstr ""
 #: po/samsung-tools-session-service.desktop.in.h:1
 msgid "Start the session service"
 msgstr ""
-
-#~ msgid "Device:"
-#~ msgstr "Enhed:"
-
-#~ msgid "Kernel module:"
-#~ msgstr "Kernel modul:"

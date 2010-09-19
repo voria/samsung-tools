@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-12 15:06+0200\n"
+"POT-Creation-Date: 2010-09-19 10:38+0200\n"
 "PO-Revision-Date: 2010-06-17 17:25+0000\n"
 "Last-Translator: Sergiy Gavrylov <sergiovana@bigmir.net>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
@@ -298,7 +298,7 @@ msgstr " - Вимкнути bluetooth, веб-камеру та бездрото
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Детальніша інформація на форумі «Linux On My Samsung»:"
 
-#: samsung-tools.py:512 samsung-tools-preferences.py:1150
+#: samsung-tools.py:512 samsung-tools-preferences.py:1152
 msgid "Released under GPLv3 license"
 msgstr "Випущено за умовами ліцензії GPLv3"
 
@@ -460,8 +460,7 @@ msgstr "Налаштувати «портативний» режим"
 
 #: po/samsung-tools-preferences.glade.h:12
 msgid "Configure 'laptop-mode' for a better power management"
-msgstr ""
-"Налаштування «портативного» режиму для покращеного керування живленням"
+msgstr "Налаштування «портативного» режиму для покращеного керування живленням"
 
 #: po/samsung-tools-preferences.glade.h:13
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:1
@@ -643,17 +642,17 @@ msgid ""
 "Linux scheduler to save power on multi-core processors while running on "
 "battery mode."
 msgstr ""
-"Якщо цей параметр увімкнений, «портативний» режим автоматично "
-"налаштовуватиме планувальник Linux для економії енергії в системах з "
-"багатоядерними процесорами під час роботи від батареї."
+"Якщо цей параметр увімкнений, «портативний» режим автоматично налаштовуватиме "
+"планувальник Linux для економії енергії в системах з багатоядерними "
+"процесорами під час роботи від батареї."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:17
 msgid ""
 "If you enable this option, 'laptop-mode' will automatically enable the USB "
 "autosuspend feature for all devices."
 msgstr ""
-"Якщо цей параметр увімкнений, «портативний» режим автоматично "
-"уможливлюватиме авто-призупинення USB для всіх пристроїв."
+"Якщо цей параметр увімкнений, «портативний» режим автоматично уможливлюватиме "
+"авто-призупинення USB для всіх пристроїв."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:18
 msgid ""
@@ -668,13 +667,13 @@ msgid ""
 "If you enable this option, 'laptop-mode' will automatically set the "
 "powersave mode of Intel HDA audio chipsets."
 msgstr ""
-"Якщо цей параметр увімкнений, «портативний» режим автоматично "
-"встановлюватиме режим енергозбереження для аудіо чипсетів Intel HDA."
+"Якщо цей параметр увімкнений, «портативний» режим автоматично встановлюватиме "
+"режим енергозбереження для аудіо чипсетів Intel HDA."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:20
 msgid ""
-"If you enable this option, 'laptop-mode' will control the polling of your "
-"CD/DVD drives by HAL. Disabling polling saves a considerable amount of power."
+"If you enable this option, 'laptop-mode' will control the polling of your CD/"
+"DVD drives by HAL. Disabling polling saves a considerable amount of power."
 msgstr ""
 "Якщо цей параметр увімкнений, «портативний» режим автоматично керуватиме "
 "опитуванням CD/DVD пристроїв через HAL. Вимкнення опитування економить "
