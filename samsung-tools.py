@@ -93,7 +93,30 @@ class Backlight():
 					else:
 						print BACKLIGHT_DISABLED
 				else:
-					print BACKLIGHT_TOGGLING_ERROR				
+					print BACKLIGHT_TOGGLING_ERROR
+		if self.option == "hotkey":
+			from time import sleep
+			from subprocess import Popen, PIPE
+			tempfiles = ".samsung-tools-backlight-" + str(os.getuid()) + "-"
+			tempfile = "/tmp/" + tempfiles + str(os.getpid())
+			toggle = True
+			try:
+				ls = Popen(['ls /tmp/' + tempfiles + '*'], stdout = PIPE, stderr = PIPE, shell = True)
+				if len(ls.communicate()[0]) != 0:
+					toggle = False
+			except:
+				pass
+			if toggle == True:
+				Backlight("toggle", self.use_notify).apply()
+				try:
+					file = open(tempfile, "w").close() # create temp file
+				except:
+					pass
+				sleep(2)
+				try:
+					os.remove(tempfile)
+				except:
+					pass
 		if self.option == "status":
 			result = self.__status()
 			if not quiet:
@@ -173,6 +196,29 @@ class Bluetooth():
 						print BLUETOOTH_DISABLED
 				else:
 					print BLUETOOTH_TOGGLING_ERROR
+		if self.option == "hotkey":
+			from time import sleep
+			from subprocess import Popen, PIPE
+			tempfiles = ".samsung-tools-bluetooth-" + str(os.getuid()) + "-"
+			tempfile = "/tmp/" + tempfiles + str(os.getpid())
+			toggle = True
+			try:
+				ls = Popen(['ls /tmp/' + tempfiles + '*'], stdout = PIPE, stderr = PIPE, shell = True)
+				if len(ls.communicate()[0]) != 0:
+					toggle = False
+			except:
+				pass
+			if toggle == True:
+				Bluetooth("toggle", self.use_notify).apply()
+				try:
+					file = open(tempfile, "w").close() # create temp file
+				except:
+					pass
+				sleep(2)
+				try:
+					os.remove(tempfile)
+				except:
+					pass
 		if self.option == "status":
 			result = self.__status()
 			if not quiet:
@@ -379,6 +425,29 @@ class Webcam():
 						print WEBCAM_DISABLED
 				else:
 					print WEBCAM_TOGGLING_ERROR
+		if self.option == "hotkey":
+			from time import sleep
+			from subprocess import Popen, PIPE
+			tempfiles = ".samsung-tools-webcam-" + str(os.getuid()) + "-"
+			tempfile = "/tmp/" + tempfiles + str(os.getpid())
+			toggle = True
+			try:
+				ls = Popen(['ls /tmp/' + tempfiles + '*'], stdout = PIPE, stderr = PIPE, shell = True)
+				if len(ls.communicate()[0]) != 0:
+					toggle = False
+			except:
+				pass
+			if toggle == True:
+				Webcam("toggle", self.use_notify).apply()
+				try:
+					file = open(tempfile, "w").close() # create temp file
+				except:
+					pass
+				sleep(2)
+				try:
+					os.remove(tempfile)
+				except:
+					pass
 		if self.option == "status":
 			result = self.__status()
 			if not quiet:
@@ -476,7 +545,7 @@ class Wireless():
 					file = open(tempfile, "w").close() # create temp file
 				except:
 					pass
-				sleep(4)
+				sleep(2)
 				try:
 					os.remove(tempfile)
 				except:
@@ -496,16 +565,16 @@ def usage(option = None, opt = None, value = None, parser = None):
 	print
 	print unicode(_("Backlight:"), "utf-8")
 	print "\t" + unicode(_("Interface"), "utf-8") + ":\t-b | --backlight"
-	print "\t" + unicode(_("Options"), "utf-8") + ":\ton | off | toggle | status"
+	print "\t" + unicode(_("Options"), "utf-8") + ":\ton | off | toggle | hotkey | status"
 	print unicode(_("Bluetooth:"), "utf-8")
 	print "\t" + unicode(_("Interface"), "utf-8") + ":\t-B | --bluetooth"
-	print "\t" + unicode(_("Options"), "utf-8") + ":\ton | off | toggle | status"
+	print "\t" + unicode(_("Options"), "utf-8") + ":\ton | off | toggle | hotkey | status"
 	print unicode(_("CPU fan:"), "utf-8")
 	print "\t" + unicode(_("Interface"), "utf-8") + ":\t-c | --cpu"
 	print "\t" + unicode(_("Options"), "utf-8") + ":\tnormal | silent | speed | cycle | hotkey | status"
 	print unicode(_("Webcam:"), "utf-8")
 	print "\t" + unicode(_("Interface"), "utf-8") + ":\t-w | --webcam"
-	print "\t" + unicode(_("Options"), "utf-8") + ":\ton | off | toggle | status"
+	print "\t" + unicode(_("Options"), "utf-8") + ":\ton | off | toggle | hotkey | status"
 	print unicode(_("Wireless:"), "utf-8")
 	print "\t" + unicode(_("Interface"), "utf-8") + ":\t-W | --wireless"
 	print "\t" + unicode(_("Options"), "utf-8") + ":\ton | off | toggle | hotkey | status"

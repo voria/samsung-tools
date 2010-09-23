@@ -25,12 +25,16 @@ import subprocess
 
 from backends.globals import *
 
-BACKLIGHT_HOTKEY_COMMAND = "samsung-tools --show-notify --quiet --backlight toggle"
-BLUETOOTH_HOTKEY_COMMAND = "samsung-tools --show-notify --quiet --bluetooth toggle"
+BACKLIGHT_HOTKEY_COMMAND = "samsung-tools --show-notify --quiet --backlight hotkey"
+BLUETOOTH_HOTKEY_COMMAND = "samsung-tools --show-notify --quiet --bluetooth hotkey"
 CPU_HOTKEY_COMMAND = "samsung-tools --show-notify --quiet --cpu hotkey"
-WEBCAM_HOTKEY_COMMAND = "samsung-tools --show-notify --quiet --webcam toggle"
+WEBCAM_HOTKEY_COMMAND = "samsung-tools --show-notify --quiet --webcam hotkey"
 WIRELESS_HOTKEY_COMMAND = "samsung-tools --show-notify --quiet --wireless hotkey"
-WIRELESS_HOTKEY_COMMAND_OLD = "samsung-tools --show-notify --quiet --wireless toggle" # Will be removed at some point in the future
+# TODO: These will be removed at some point in the future
+BACKLIGHT_HOTKEY_COMMAND_OLD = "samsung-tools --show-notify --quiet --backlight toggle"
+BLUETOOTH_HOTKEY_COMMAND_OLD = "samsung-tools --show-notify --quiet --bluetooth toggle"
+WEBCAM_HOTKEY_COMMAND_OLD = "samsung-tools --show-notify --quiet --webcam toggle"
+WIRELESS_HOTKEY_COMMAND_OLD = "samsung-tools --show-notify --quiet --wireless toggle"
 DUMMY_HOTKEY_COMMAND = "SamsungToolsDummyCommand"
 DUMMY_HOTKEY = "Control+Alt+Shift+Mod4+F1+F2+F3"
 
@@ -167,6 +171,8 @@ class Hotkeys():
 	def setBacklightHotkey(self, hotkey):
 		""" Set the new hotkey. """
 		""" Return 'True' on success, 'False' otherwise. """
+		# TODO: Make sure the old toggle hotkey is removed. This check will be removed at some point in the future.
+		self.__remove_hotkey(BACKLIGHT_HOTKEY_COMMAND_OLD)
 		if hotkey == "disable":
 			result = self.__remove_hotkey(BACKLIGHT_HOTKEY_COMMAND)
 		else:
@@ -177,6 +183,8 @@ class Hotkeys():
 	def setBluetoothHotkey(self, hotkey):
 		""" Set the new hotkey. """
 		""" Return 'True' on success, 'False' otherwise. """
+		# TODO: Make sure the old toggle hotkey is removed. This check will be removed at some point in the future.
+		self.__remove_hotkey(BLUETOOTH_HOTKEY_COMMAND_OLD)
 		if hotkey == "disable":
 			result = self.__remove_hotkey(BLUETOOTH_HOTKEY_COMMAND)
 		else:
@@ -197,6 +205,8 @@ class Hotkeys():
 	def setWebcamHotkey(self, hotkey):
 		""" Set the new hotkey. """
 		""" Return 'True' on success, 'False' otherwise. """
+		# TODO: Make sure the old toggle hotkey is removed. This check will be removed at some point in the future.
+		self.__remove_hotkey(WEBCAM_HOTKEY_COMMAND_OLD)
 		if hotkey == "disable":
 			result = self.__remove_hotkey(WEBCAM_HOTKEY_COMMAND)
 		else:
@@ -207,7 +217,7 @@ class Hotkeys():
 	def setWirelessHotkey(self, hotkey):
 		""" Set the new hotkey. """
 		""" Return 'True' on success, 'False' otherwise. """
-		# Make sure the old wireless toggle hotkey is removed. This check will be removed at some point in the future.
+		# TODO: Make sure the old toggle hotkey is removed. This check will be removed at some point in the future.
 		self.__remove_hotkey(WIRELESS_HOTKEY_COMMAND_OLD)
 		if hotkey == "disable":
 			result = self.__remove_hotkey(WIRELESS_HOTKEY_COMMAND)
