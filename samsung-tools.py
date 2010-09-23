@@ -112,7 +112,7 @@ class Backlight():
 					file = open(tempfile, "w").close() # create temp file
 				except:
 					pass
-				sleep(2)
+				sleep(1)
 				try:
 					os.remove(tempfile)
 				except:
@@ -214,7 +214,7 @@ class Bluetooth():
 					file = open(tempfile, "w").close() # create temp file
 				except:
 					pass
-				sleep(2)
+				sleep(1)
 				try:
 					os.remove(tempfile)
 				except:
@@ -325,6 +325,29 @@ class Cpu():
 			from subprocess import Popen, PIPE
 			tempfiles = ".samsung-tools-cpu-" + str(os.getuid()) + "-"
 			tempfile = "/tmp/" + tempfiles + str(os.getpid())
+			hotkey = True
+			try:
+				ls = Popen(['ls /tmp/' + tempfiles + '*'], stdout = PIPE, stderr = PIPE, shell = True)
+				if len(ls.communicate()[0]) != 0:
+					hotkey = False
+			except:
+				pass
+			if hotkey == True:
+				Cpu("hotkey2", self.use_notify).apply()
+				try:
+					file = open(tempfile, "w").close() # create temp file
+				except:
+					pass
+				sleep(1)
+				try:
+					os.remove(tempfile)
+				except:
+					pass
+		if self.option == "hotkey2":
+			from time import sleep
+			from subprocess import Popen, PIPE
+			tempfiles = ".samsung-tools-cpufan-" + str(os.getuid()) + "-"
+			tempfile = "/tmp/" + tempfiles + str(os.getpid())
 			action = "status"
 			try:
 				ls = Popen(['ls /tmp/' + tempfiles + '*'], stdout = PIPE, stderr = PIPE, shell = True)
@@ -337,7 +360,7 @@ class Cpu():
 				file = open(tempfile, "w").close() # create temp file
 			except:
 				pass
-			sleep(10)
+			sleep(9)
 			try:
 				os.remove(tempfile)
 			except:
@@ -443,7 +466,7 @@ class Webcam():
 					file = open(tempfile, "w").close() # create temp file
 				except:
 					pass
-				sleep(2)
+				sleep(1)
 				try:
 					os.remove(tempfile)
 				except:
@@ -545,7 +568,7 @@ class Wireless():
 					file = open(tempfile, "w").close() # create temp file
 				except:
 					pass
-				sleep(2)
+				sleep(1)
 				try:
 					os.remove(tempfile)
 				except:
