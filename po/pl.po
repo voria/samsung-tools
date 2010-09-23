@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-09-19 10:38+0200\n"
-"PO-Revision-Date: 2010-05-06 22:18+0000\n"
-"Last-Translator: Cezary Jackiewicz <cjackiewicz@poczta.onet.pl>\n"
+"POT-Creation-Date: 2010-09-23 10:02+0200\n"
+"PO-Revision-Date: 2010-09-19 22:20+0000\n"
+"Last-Translator: Inox <Unknown>\n"
 "Language-Team: Polish <pl@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-09-05 14:32+0000\n"
+"X-Launchpad-Export-Date: 2010-09-23 07:56+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: backends/session/util/locales.py:25 samsung-tools-preferences.py:510
@@ -23,7 +23,7 @@ msgstr "Podświetlenie"
 
 #: backends/session/util/locales.py:26
 msgid "Backlight is enabled"
-msgstr "Podświetlenie jes włączone"
+msgstr "Podświetlenie jest włączone"
 
 #: backends/session/util/locales.py:27
 msgid "Backlight is disabled"
@@ -84,7 +84,7 @@ msgstr "Nie można zmienić stanu Bluetooth'a"
 
 #: backends/session/util/locales.py:42
 msgid "Bluetooth control is not available"
-msgstr "Zarządzanie Bluetooth'em nie jest dostępne"
+msgstr "Zarządzanie Bluetooth'em jest niedostępne"
 
 #: backends/session/util/locales.py:44 samsung-tools-preferences.py:528
 msgid "CPU fan"
@@ -104,7 +104,7 @@ msgstr "Tryb wentylatora: normalny"
 
 #: backends/session/util/locales.py:48
 msgid "Fan mode: Silent"
-msgstr "Tryb wentylatora: wolny"
+msgstr "Tryb wentylatora: cichy"
 
 #: backends/session/util/locales.py:49
 msgid "Fan mode: Speed"
@@ -116,7 +116,7 @@ msgstr "Nie można sprawdzić trybu wentylatora"
 
 #: backends/session/util/locales.py:51
 msgid "CPU fan control is not available"
-msgstr "Zarządzanie wentylatorem procesora nie jest dostępne"
+msgstr "Zarządzanie wentylatorem procesora jest niedostępne"
 
 #: backends/session/util/locales.py:53 samsung-tools-preferences.py:537
 #: po/samsung-tools-applet.glade.h:7
@@ -153,7 +153,7 @@ msgstr "Nie można zmienić stanu kamery internetowej"
 
 #: backends/session/util/locales.py:61
 msgid "Webcam control is not available"
-msgstr "Zarządzanie kamerą internetową nie jest dostępne"
+msgstr "Zarządzanie kamerą internetową jest niedostępne"
 
 #: backends/session/util/locales.py:63 samsung-tools-preferences.py:546
 #: po/samsung-tools-applet.glade.h:8
@@ -190,7 +190,7 @@ msgstr "Nie można zmienić stanu sieci bezprzewodowej"
 
 #: backends/session/util/locales.py:71
 msgid "Wireless control is not available"
-msgstr "Zarządzanie siecią bezprzewodową nie dostępne"
+msgstr "Zarządzanie siecią bezprzewodową niedostępne"
 
 #: samsung-tools.py:54
 msgid "Backlight control: unable to connect to session service!"
@@ -214,12 +214,12 @@ msgstr "Zarządzanie siecią bezprzewodową: nie można połączyć z usługą s
 
 #: samsung-tools.py:470
 msgid "Samsung Tools - Command Line Utility"
-msgstr ""
+msgstr "Samsung Tools - narzędzie wiersza poleceń"
 
 #: samsung-tools.py:472 samsung-tools.py:521
 #, python-format
 msgid "Usage: %s <interface> <option> ..."
-msgstr "Użyj: %s <interfejs> <opcja> ..."
+msgstr "Użycie: %s <interfejs> <opcja> ..."
 
 #: samsung-tools.py:474 po/samsung-tools-preferences.glade.h:4
 msgid "Backlight:"
@@ -261,23 +261,23 @@ msgstr "Pokaż status wszystkich urządzeń."
 
 #: samsung-tools.py:492
 msgid "Show graphical notifications."
-msgstr "Pokazuj graficzne powiadomienia"
+msgstr "Pokazuj graficzne powiadomienia."
 
 #: samsung-tools.py:493
 msgid "Do not print messages on standard output."
-msgstr "Nie można wyświetlić wiadomości na standardowym wyjściu"
+msgstr "Nie wyświetlaj wiadomości na standardowym wyjściu."
 
 #: samsung-tools.py:494
 msgid "Stop the session service."
-msgstr "Zatrzymaj usługę sesji"
+msgstr "Zatrzymaj usługę sesji."
 
 #: samsung-tools.py:495
 msgid "Stop the system service."
-msgstr "Zatrzymaj usługę systemową"
+msgstr "Zatrzymaj usługę systemową."
 
 #: samsung-tools.py:497
 msgid "Examples of use:"
-msgstr "Przykład użycia:"
+msgstr "Przykłady użycia:"
 
 #: samsung-tools.py:498
 msgid " - Toggle backlight:"
@@ -286,7 +286,7 @@ msgstr " Przełącz stan podświetlenia"
 #: samsung-tools.py:501
 msgid " - Toggle wireless and set CPU fan mode to 'silent':"
 msgstr ""
-" Przełącz sieć bezprzewodową i ustaw szybkość wentylatora procesora na wolną:"
+" Przełącz sieć bezprzewodową i ustaw szybkość wentylatora procesora na cichą:"
 
 #: samsung-tools.py:504
 msgid " - Disable bluetooth, webcam and wireless:"
@@ -294,9 +294,9 @@ msgstr " Wyłącz Bluetooth'a, kamerę internetową i sieć bezprzewodową:"
 
 #: samsung-tools.py:507
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
-msgstr "Po więcej informacji odwiedź forum 'Linux On My Samsung' :"
+msgstr "Po więcej informacji odwiedź forum 'Linux On My Samsung':"
 
-#: samsung-tools.py:512 samsung-tools-preferences.py:1152
+#: samsung-tools.py:512 samsung-tools-preferences.py:1155
 msgid "Released under GPLv3 license"
 msgstr "Wydane na licencji GPLv3"
 
@@ -306,15 +306,17 @@ msgstr "Nie ustalono akcji"
 
 #: samsung-tools.py:518 samsung-tools.py:586
 msgid "Use --help for instructions."
-msgstr "Użyj --help, aby zobaczyć pomoc"
+msgstr "Użyj --help, aby zobaczyć pomoc."
 
 #: samsung-tools.py:581
 msgid "This program is intended to be used only by non-privileged users."
 msgstr ""
+"Ten program powinien być używany tylko przez użytkowników "
+"nieuprzywilejowanych."
 
 #: samsung-tools.py:585
 msgid "Wrong argument(s)."
-msgstr "Złe argumenty"
+msgstr "Złe argumenty."
 
 #: samsung-tools.py:602
 msgid "Session service stopped"
@@ -353,15 +355,15 @@ msgstr "Zatwierdź"
 
 #: samsung-tools-preferences.py:466
 msgid "Apply the new VIDs?"
-msgstr ""
+msgstr "Zastosować nowe VIDy?"
 
 #: samsung-tools-preferences.py:718
 msgid "Install 'laptop-mode' to enable and configure these options"
-msgstr ""
+msgstr "Zainstaluj pakiet 'laptop-mode', by akytować i konfigurować te opcje"
 
 #: samsung-tools-preferences.py:729
 msgid "You need a PHC enabled kernel to use this feature"
-msgstr ""
+msgstr "Potrzebujesz jądra z obsługą PHC, by użyć tej opcji"
 
 #: samsung-tools-preferences.py:748
 msgid "Unable to connect to session service!"
@@ -380,6 +382,12 @@ msgid ""
 "\n"
 "Are you sure you want to continue?"
 msgstr ""
+"Obniżenie napięcia procesora może prowadzić do zysków (w rozumieniu "
+"oszczędzania energii), ale to <b>RYZYKOWNA PRAKTYKA</b>, która może "
+"spowodować utratę danych lub po prostu niestabilności. Upewnij się, że "
+"wiesz, co robisz, nim użyjesz tej opcji.\n"
+"\n"
+"Na pewno kontynuować?"
 
 #: po/samsung-tools-applet.glade.h:2
 msgid "CPU Fan"
@@ -391,11 +399,11 @@ msgstr "Normalny"
 
 #: po/samsung-tools-applet.glade.h:4
 msgid "Preferences..."
-msgstr ""
+msgstr "Ustawienia..."
 
 #: po/samsung-tools-applet.glade.h:5 po/samsung-tools-preferences.glade.h:27
 msgid "Silent"
-msgstr "Wolny"
+msgstr "Cichy"
 
 #: po/samsung-tools-applet.glade.h:6 po/samsung-tools-preferences.glade.h:28
 msgid "Speed"
@@ -403,7 +411,7 @@ msgstr "Szybki"
 
 #: po/samsung-tools-applet.server.in.h:1
 msgid "Manage devices on Samsung netbooks"
-msgstr ""
+msgstr "Zarządzaj urządzeniami w notebookach Samsung"
 
 #: po/samsung-tools-preferences.desktop.in.h:1
 #: po/samsung-tools-preferences.glade.h:25
@@ -424,12 +432,12 @@ msgstr "<b>Początkowy status dla urządzeń</b>"
 
 #: po/samsung-tools-preferences.glade.h:3
 msgid "Advanced power management"
-msgstr ""
+msgstr "Zaawansowane zarządzanie energią"
 
 #: po/samsung-tools-preferences.glade.h:7
 #: po/samsung-tools-preferences-phc.glade.h:4
 msgid "CPU undervolting"
-msgstr ""
+msgstr "Obniżanie napięcia procesora"
 
 #: po/samsung-tools-preferences.glade.h:8
 msgid "Click here to disable the hotkey"
@@ -446,16 +454,16 @@ msgstr "Kliknij tutaj, aby ustawić domyślną wartość"
 #: po/samsung-tools-preferences.glade.h:11
 #: po/samsung-tools-preferences-laptop-mode.glade.h:5
 msgid "Configure 'laptop-mode'"
-msgstr ""
+msgstr "Konfiguruj 'laptop-mode'"
 
 #: po/samsung-tools-preferences.glade.h:12
 msgid "Configure 'laptop-mode' for a better power management"
-msgstr ""
+msgstr "Skonfiguruj 'laptop-mode', dla lepszego zarządzania energią"
 
 #: po/samsung-tools-preferences.glade.h:13
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:1
 msgid "Configure kernel parameters"
-msgstr ""
+msgstr "Konfiguruj parametry jądra"
 
 #: po/samsung-tools-preferences.glade.h:14
 msgid "Disabled"
@@ -475,7 +483,7 @@ msgstr "Włączony"
 
 #: po/samsung-tools-preferences.glade.h:18
 msgid "Hotkey used for CPU fan control"
-msgstr ""
+msgstr "Skróty klawiszowe używane do sterowania wentylatorem procesora"
 
 #: po/samsung-tools-preferences.glade.h:19
 msgid "Hotkey used for backlight control"
@@ -523,11 +531,11 @@ msgstr "Początkowy status po uruchomieniu dla sieci bezprzewodowej"
 
 #: po/samsung-tools-preferences.glade.h:34
 msgid "Undervolt the CPU in order to save energy"
-msgstr ""
+msgstr "Obniż napięcie procesora, by oszczędzać energię"
 
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:2
 msgid "Swap control:"
-msgstr ""
+msgstr "Sterowanie wymianą:"
 
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:3
 msgid ""
@@ -537,6 +545,11 @@ msgid ""
 "bad results on power consumption and disk performance. Set a low value if "
 "you usually have plenty of unused RAM. The default value is 60."
 msgstr ""
+"Parametr wymiany definiuje sposób, w jaki jądro zarządza stronami pamięci. "
+"Wyższe wartości oznaczają wyższą agresywność, a niższe - niższą. Innymi "
+"słowy, im wyższe wartości parametru, tym system częściej przenosi strony z "
+"pamięci na dysk, co zwiększa zużycie energii i zmniejsza wydajność. Jeśli "
+"masz dużo RAMu, ustaw niską wartość. Domyślna to 60."
 
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:4
 msgid ""
@@ -546,6 +559,11 @@ msgid ""
 "bad results on power consumption and disk performance. Set a low value if "
 "you usually have plenty of unused RAM. The default value is 60."
 msgstr ""
+"Ta opcja definiuje sposób, w jaki jądro zarządza stronami pamięci. Wyższe "
+"wartości oznaczają wyższą agresywność, a niższe - niższą. Innymi słowy, im "
+"wyższe wartości parametru, tym system częściej przenosi strony z pamięci na "
+"dysk, co zwiększa zużycie energii i zmniejsza wydajność. Jeśli masz dużo "
+"RAMu, ustaw niską wartość. Domyślna to 60."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:1
 msgid ""
@@ -557,52 +575,62 @@ msgid ""
 "when entries are written to them. This causes disks to spin up, which is not "
 "very nice when you're trying to save power."
 msgstr ""
+"'laptop-mode' może automatycznie podmieniać pliki konfiguracyjne, w "
+"zależności od stanu zasilania systemu.\n"
+" \n"
+"Podstawowe zastosowanie to kontrolowanie plików konfiguracyjnych usługi "
+"syslog. Demon syslog zapisuje swoje dzienniki zdarzeń do plików, gdy tylko "
+"pojawiają się w nich nowe wpisy. Powoduje to konieczność uruchomienia dysku, "
+"co niepotrzebnie zwiększa zużycie energii."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:4
 msgid ""
 "An enabled video output port draws power, even if no display is connected. "
 "This option forces the display output off depending on the power mode."
 msgstr ""
+"Aktywny port video pobiera prąd nawet wtedy, gdy nic nie jest do niego "
+"podłączone. Ta opcja wymusza wyłącznie portu video w zależności od stanu "
+"zasilania."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:6
 msgid "Control Ethernet settings"
-msgstr ""
+msgstr "Kontrola ustawień Ethernet"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:7
 msgid "Control HAL polling"
-msgstr ""
+msgstr "Kontrola obchodzenia HAL"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:8
 msgid "Control Intel HDA audio chipset power"
-msgstr ""
+msgstr "Kontrola czipu Intel HDA"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:9
 msgid "Control Intel SATA chipset power"
-msgstr ""
+msgstr "Kontrola mocy czipu Intel SATA"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:10
 msgid "Control Linux scheduler"
-msgstr ""
+msgstr "Kontrola szeregowania w Linuksie"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:11
 msgid "Control configuration files"
-msgstr ""
+msgstr "Kontrola plików konfiguracyjnych"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:12
 msgid "Control hard disk power management"
-msgstr ""
+msgstr "Kontrola zasilania dysku twardego"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:13
 msgid "Control video output settings"
-msgstr ""
+msgstr "Kontrola portu video"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:14
 msgid "Enable USB autosuspend"
-msgstr ""
+msgstr "Automatyczne uśpienie USB"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:15
 msgid "Hard disk power management:"
-msgstr ""
+msgstr "Zarządzanie energią dysku twardego:"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:16
 msgid ""
@@ -610,36 +638,48 @@ msgid ""
 "Linux scheduler to save power on multi-core processors while running on "
 "battery mode."
 msgstr ""
+"Jeśli włączysz tę opcję, 'laptop-mode' automatycznie rozpocznie oszczędzanie "
+"energii w procesorach wielordzeniowych podczas pracy na zasilaniu bateryjnym."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:17
 msgid ""
 "If you enable this option, 'laptop-mode' will automatically enable the USB "
 "autosuspend feature for all devices."
 msgstr ""
+"Jeśli włączysz tę opcję, 'laptop-mode' zajmie się automatycznym usypianiem "
+"urządzeń USB."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:18
 msgid ""
 "If you enable this option, 'laptop-mode' will automatically enable the link "
 "power management mode of Intel AHCI compliant SATA chipsets."
 msgstr ""
+"Jeśli włączysz tę opcję, 'laptop-mode' automatycznie zajmie się zarządzaniem "
+"energii czipu SATA"
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:19
 msgid ""
 "If you enable this option, 'laptop-mode' will automatically set the "
 "powersave mode of Intel HDA audio chipsets."
 msgstr ""
+"Jeśli włączysz tę opcję, 'laptop-mode' automatycznie zajmie się zarządzaniem "
+"energii czipu Intel HDA."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:20
 msgid ""
 "If you enable this option, 'laptop-mode' will control the polling of your CD/"
 "DVD drives by HAL. Disabling polling saves a considerable amount of power."
 msgstr ""
+"Jeśli włączysz tę opcję, 'laptop-mode' będzie kontrolował odpytywanie "
+"napędów CD/DVD przez HAL. Wyłącznie pozwoli oszczędzić nieco mocy."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:21
 msgid ""
 "If you enable this option, 'laptop-mode' will take control of the hard disk "
 "power management."
 msgstr ""
+"Jeśli włączysz tę opcję, 'laptop-mode' przejmie kontrolę nad zarządzaniem "
+"energii zużywanej przez twardy dysk."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:22
 msgid ""
@@ -662,32 +702,37 @@ msgid ""
 "less disk performance, an high value results in disk performance but less "
 "energy saving."
 msgstr ""
+"Ta opcje ustawia zarządzanie energią zużywaną przez dysk twardy. Może ona "
+"miec wartość od 1 do 255. Niższa wartość to większe oszczędności i mniejsza "
+"wydajność, i na odwrót."
 
 #: po/samsung-tools-preferences-phc.glade.h:1
 msgid "<b>Default VIDs</b>"
-msgstr ""
+msgstr "<b>Domyślne VIDy</b>"
 
 #: po/samsung-tools-preferences-phc.glade.h:2
 msgid "<b>Frequencies</b>"
-msgstr ""
+msgstr "<b>Częstotliwości</b>"
 
 #: po/samsung-tools-preferences-phc.glade.h:3
 msgid "<b>New VIDs</b>"
-msgstr ""
+msgstr "<b>Nowe VIDy</b>"
 
 #: po/samsung-tools-preferences-phc.glade.h:5
 msgid ""
 "Enable this option only if the new VIDs are tested and safe, otherwise the "
 "machine might be no more bootable!"
 msgstr ""
+"Uruchom tę opcję tylko, gdy nowe VIDy są przetestowane i bezpieczne, bo "
+"maszyna może się już ponownie nie uruchomić!"
 
 #: po/samsung-tools-preferences-phc.glade.h:6
 msgid "Note: the new VIDs will be applied when this window will be closed."
-msgstr ""
+msgstr "Uwaga: Nowe VIDy zostaną zastosowane po zamknięciu tego okna."
 
 #: po/samsung-tools-preferences-phc.glade.h:7
 msgid "Set the new VIDs automatically at boot"
-msgstr ""
+msgstr "Ustaw nowe VIDy automatycznie w czasie startu"
 
 #: po/samsung-tools-session-service.desktop.in.h:1
 msgid "Start the session service"
