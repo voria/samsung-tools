@@ -112,7 +112,7 @@ class Backlight():
 					file = open(tempfile, "w").close() # create temp file
 				except:
 					pass
-				sleep(1)
+				sleep(0.5)
 				try:
 					os.remove(tempfile)
 				except:
@@ -214,7 +214,7 @@ class Bluetooth():
 					file = open(tempfile, "w").close() # create temp file
 				except:
 					pass
-				sleep(1)
+				sleep(0.5)
 				try:
 					os.remove(tempfile)
 				except:
@@ -338,7 +338,7 @@ class Cpu():
 					file = open(tempfile, "w").close() # create temp file
 				except:
 					pass
-				sleep(1)
+				sleep(0.5)
 				try:
 					os.remove(tempfile)
 				except:
@@ -360,7 +360,7 @@ class Cpu():
 				file = open(tempfile, "w").close() # create temp file
 			except:
 				pass
-			sleep(9)
+			sleep(9.5)
 			try:
 				os.remove(tempfile)
 			except:
@@ -466,7 +466,7 @@ class Webcam():
 					file = open(tempfile, "w").close() # create temp file
 				except:
 					pass
-				sleep(1)
+				sleep(0.5)
 				try:
 					os.remove(tempfile)
 				except:
@@ -568,7 +568,7 @@ class Wireless():
 					file = open(tempfile, "w").close() # create temp file
 				except:
 					pass
-				sleep(1)
+				sleep(0.5)
 				try:
 					os.remove(tempfile)
 				except:
