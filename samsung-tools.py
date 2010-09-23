@@ -107,7 +107,7 @@ class Backlight():
 			except:
 				pass
 			if toggle == True:
-				Backlight("toggle", self.use_notify).apply()
+				Backlight("toggle").apply()
 				try:
 					file = open(tempfile, "w").close() # create temp file
 				except:
