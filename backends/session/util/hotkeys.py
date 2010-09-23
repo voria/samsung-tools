@@ -29,7 +29,8 @@ BACKLIGHT_HOTKEY_COMMAND = "samsung-tools --show-notify --quiet --backlight togg
 BLUETOOTH_HOTKEY_COMMAND = "samsung-tools --show-notify --quiet --bluetooth toggle"
 CPU_HOTKEY_COMMAND = "samsung-tools --show-notify --quiet --cpu hotkey"
 WEBCAM_HOTKEY_COMMAND = "samsung-tools --show-notify --quiet --webcam toggle"
-WIRELESS_HOTKEY_COMMAND = "samsung-tools --show-notify --quiet --wireless toggle"
+WIRELESS_HOTKEY_COMMAND = "samsung-tools --show-notify --quiet --wireless hotkey"
+WIRELESS_HOTKEY_COMMAND_OLD = "samsung-tools --show-notify --quiet --wireless toggle" # Will be removed at some point in the future
 DUMMY_HOTKEY_COMMAND = "SamsungToolsDummyCommand"
 DUMMY_HOTKEY = "Control+Alt+Shift+Mod4+F1+F2+F3"
 
@@ -206,6 +207,8 @@ class Hotkeys():
 	def setWirelessHotkey(self, hotkey):
 		""" Set the new hotkey. """
 		""" Return 'True' on success, 'False' otherwise. """
+		# Make sure the old wireless toggle hotkey is removed. This check will be removed at some point in the future.
+		self.__remove_hotkey(WIRELESS_HOTKEY_COMMAND_OLD)
 		if hotkey == "disable":
 			result = self.__remove_hotkey(WIRELESS_HOTKEY_COMMAND)
 		else:

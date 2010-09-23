@@ -277,7 +277,7 @@ class Cpu():
 		if self.option == "hotkey":
 			from time import sleep
 			from subprocess import Popen, PIPE
-			tempfiles = ".samsung-tools-" + str(os.getuid()) + "-"
+			tempfiles = ".samsung-tools-cpu-" + str(os.getuid()) + "-"
 			tempfile = "/tmp/" + tempfiles + str(os.getpid())
 			action = "status"
 			try:
@@ -458,6 +458,29 @@ class Wireless():
 						print WIRELESS_STATUS_DISABLED
 				else:
 					print WIRELESS_TOGGLING_ERROR
+		if self.option == "hotkey":
+			from time import sleep
+			from subprocess import Popen, PIPE
+			tempfiles = ".samsung-tools-wireless-" + str(os.getuid()) + "-"
+			tempfile = "/tmp/" + tempfiles + str(os.getpid())
+			toggle = True
+			try:
+				ls = Popen(['ls /tmp/' + tempfiles + '*'], stdout = PIPE, stderr = PIPE, shell = True)
+				if len(ls.communicate()[0]) != 0:
+					toggle = False
+			except:
+				pass
+			if toggle == True:
+				Wireless("toggle", self.use_notify).apply()
+				try:
+					file = open(tempfile, "w").close() # create temp file
+				except:
+					pass
+				sleep(4)
+				try:
+					os.remove(tempfile)
+				except:
+					pass
 		if self.option == "status":
 			result = self.__status()
 			if not quiet:
@@ -485,7 +508,7 @@ def usage(option = None, opt = None, value = None, parser = None):
 	print "\t" + unicode(_("Options"), "utf-8") + ":\ton | off | toggle | status"
 	print unicode(_("Wireless:"), "utf-8")
 	print "\t" + unicode(_("Interface"), "utf-8") + ":\t-W | --wireless"
-	print "\t" + unicode(_("Options"), "utf-8") + ":\ton | off | toggle | status"
+	print "\t" + unicode(_("Options"), "utf-8") + ":\ton | off | toggle | hotkey | status"
 	print
 	print unicode(_("Other options:"), "utf-8")
 	print " -a | --status\t\t" + unicode(_("Show status for all devices."), "utf-8")
@@ -542,7 +565,7 @@ def main():
 	parser.add_option('-W', '--wireless',
 					dest = "wireless",
 					type = "choice",
-					choices = ['on', 'off', 'toggle', 'status'])
+					choices = ['on', 'off', 'toggle', 'hotkey', 'status'])
 	parser.add_option('-n', '--show-notify',
 					action = "store_true",
 					dest = "show_notify",
