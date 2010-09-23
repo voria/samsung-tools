@@ -1,6 +1,12 @@
 samsung-tools (1.1.4~ppa1~loms~lucid) lucid; urgency=low
 
-  * 
+  * Add a new option "hotkey" to "samsung-tools" command line utility
+    for all interfaces, in order to check time between toggling calls.
+    If more toggling calls happen in less than 0.5 seconds, only the
+    first one is executed. This fixes the problem on some notebook/netbook
+    models, where the Fn keys generate 2 KeyPress events at once.
+  * Update translations to latest version from Launchpad.
+  * Update translators' credits list.
 
  -- Fortunato Ventre (voRia) <vorione@gmail.com>  Thu, 23 Sep 2010 11:13:48 +0200
 
