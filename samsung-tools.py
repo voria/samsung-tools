@@ -641,11 +641,11 @@ def main():
 	parser.add_option('-b', '--backlight',
 					dest = "backlight",
 					type = "choice",
-					choices = ['on', 'off', 'toggle', 'status'])
+					choices = ['on', 'off', 'toggle', 'hotkey', 'status'])
 	parser.add_option('-B', '--bluetooth',
 					dest = "bluetooth",
 					type = "choice",
-					choices = ['on', 'off', 'toggle', 'status'])
+					choices = ['on', 'off', 'toggle', 'hotkey', 'status'])
 	parser.add_option('-c', '--cpu',
 					dest = "cpu",
 					type = "choice",
@@ -653,7 +653,7 @@ def main():
 	parser.add_option('-w', '--webcam',
 					dest = "webcam",
 					type = "choice",
-					choices = ['on', 'off', 'toggle', 'status'])
+					choices = ['on', 'off', 'toggle', 'hotkey', 'status'])
 	parser.add_option('-W', '--wireless',
 					dest = "wireless",
 					type = "choice",
