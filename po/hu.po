@@ -7,14 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-09-23 10:02+0200\n"
+"POT-Creation-Date: 2010-10-10 14:19+0200\n"
 "PO-Revision-Date: 2010-06-17 17:21+0000\n"
 "Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
+"Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-09-23 07:56+0000\n"
+"X-Launchpad-Export-Date: 2010-10-10 12:16+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: backends/session/util/locales.py:25 samsung-tools-preferences.py:510
@@ -196,142 +197,142 @@ msgstr "Vezeték néküli hálózat nem szabályozható"
 msgid "Backlight control: unable to connect to session service!"
 msgstr "Háttérvilágítás-szabályozás: session service nem érhető el!"
 
-#: samsung-tools.py:120
+#: samsung-tools.py:143
 msgid "Bluetooth control: unable to connect to session service!"
 msgstr "Bluetooth-szabályozás: session service nem érhető el!"
 
-#: samsung-tools.py:199
+#: samsung-tools.py:245
 msgid "CPU fan control: unable to connect to session service!"
 msgstr "CPU-hűtés szabályozás: session service nem érhető el!"
 
-#: samsung-tools.py:326
+#: samsung-tools.py:395
 msgid "Webcam control: unable to connect to session service!"
 msgstr "Webkamera-szabályozás: session service nem érhető el!"
 
-#: samsung-tools.py:405
+#: samsung-tools.py:497
 msgid "Wireless control: unable to connect to session service!"
 msgstr "Vezeték nélküli hálózat szabályozás: session service nem érhető el!"
 
-#: samsung-tools.py:470
+#: samsung-tools.py:585
 msgid "Samsung Tools - Command Line Utility"
 msgstr "Samsung Tools - parancssori segédprogram"
 
-#: samsung-tools.py:472 samsung-tools.py:521
+#: samsung-tools.py:587 samsung-tools.py:636
 #, python-format
 msgid "Usage: %s <interface> <option> ..."
 msgstr "Alkalmazás: %s <interfész> <opció> ..."
 
-#: samsung-tools.py:474 po/samsung-tools-preferences.glade.h:4
+#: samsung-tools.py:589 po/samsung-tools-preferences.glade.h:4
 msgid "Backlight:"
 msgstr "Háttérvilágítás"
 
-#: samsung-tools.py:475 samsung-tools.py:478 samsung-tools.py:481
-#: samsung-tools.py:484 samsung-tools.py:487
+#: samsung-tools.py:590 samsung-tools.py:593 samsung-tools.py:596
+#: samsung-tools.py:599 samsung-tools.py:602
 msgid "Interface"
 msgstr "Interfész"
 
-#: samsung-tools.py:476 samsung-tools.py:479 samsung-tools.py:482
-#: samsung-tools.py:485 samsung-tools.py:488
+#: samsung-tools.py:591 samsung-tools.py:594 samsung-tools.py:597
+#: samsung-tools.py:600 samsung-tools.py:603
 msgid "Options"
 msgstr "Beállítások"
 
-#: samsung-tools.py:477 po/samsung-tools-preferences.glade.h:5
+#: samsung-tools.py:592 po/samsung-tools-preferences.glade.h:5
 msgid "Bluetooth:"
 msgstr "Bluetooth:"
 
-#: samsung-tools.py:480 po/samsung-tools-preferences.glade.h:6
+#: samsung-tools.py:595 po/samsung-tools-preferences.glade.h:6
 msgid "CPU fan:"
 msgstr "CPU-hűtő:"
 
-#: samsung-tools.py:483 po/samsung-tools-preferences.glade.h:35
+#: samsung-tools.py:598 po/samsung-tools-preferences.glade.h:35
 msgid "Webcam:"
 msgstr "Webkamera:"
 
-#: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:36
+#: samsung-tools.py:601 po/samsung-tools-preferences.glade.h:36
 msgid "Wireless:"
 msgstr "Vezeték nélküli hálózat:"
 
-#: samsung-tools.py:490
+#: samsung-tools.py:605
 msgid "Other options:"
 msgstr "Egyéb beállítások:"
 
-#: samsung-tools.py:491
+#: samsung-tools.py:606
 msgid "Show status for all devices."
 msgstr "Mutassa minden eszköz állapotát."
 
-#: samsung-tools.py:492
+#: samsung-tools.py:607
 msgid "Show graphical notifications."
 msgstr "Mutasson grafikai értesítéseket."
 
-#: samsung-tools.py:493
+#: samsung-tools.py:608
 msgid "Do not print messages on standard output."
 msgstr "Ne nyomtasson üzeneteket szabványos kimeneten."
 
-#: samsung-tools.py:494
+#: samsung-tools.py:609
 msgid "Stop the session service."
 msgstr "Session service leállítása."
 
-#: samsung-tools.py:495
+#: samsung-tools.py:610
 msgid "Stop the system service."
 msgstr "System service leállítása."
 
-#: samsung-tools.py:497
+#: samsung-tools.py:612
 msgid "Examples of use:"
 msgstr "Alkalmazási példák:"
 
-#: samsung-tools.py:498
+#: samsung-tools.py:613
 msgid " - Toggle backlight:"
 msgstr " - Háttérvilágítás kapcsolása:"
 
-#: samsung-tools.py:501
+#: samsung-tools.py:616
 msgid " - Toggle wireless and set CPU fan mode to 'silent':"
 msgstr ""
 " - Vezeték nélküli hálózat kapcsolása és CPU-hűtés állítása \"csendes\" "
 "üzemmódra:"
 
-#: samsung-tools.py:504
+#: samsung-tools.py:619
 msgid " - Disable bluetooth, webcam and wireless:"
 msgstr " - Bluetooth, webkamera és vezeték nélküli hálózat kikapcsolása:"
 
-#: samsung-tools.py:507
+#: samsung-tools.py:622
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "További információért látogasson a \"Linux on My Samsung\" fórumra:"
 
-#: samsung-tools.py:512 samsung-tools-preferences.py:1155
+#: samsung-tools.py:627 samsung-tools-preferences.py:1157
 msgid "Released under GPLv3 license"
 msgstr "Kibocsátva GPLv3 licenc alatt"
 
-#: samsung-tools.py:517
+#: samsung-tools.py:632
 msgid "No action(s) specified."
 msgstr "Nincs megadva művelet."
 
-#: samsung-tools.py:518 samsung-tools.py:586
+#: samsung-tools.py:633 samsung-tools.py:701
 msgid "Use --help for instructions."
 msgstr "Útbaigazításhoz használja a --help opciót."
 
-#: samsung-tools.py:581
+#: samsung-tools.py:696
 msgid "This program is intended to be used only by non-privileged users."
 msgstr ""
 "Ez a program csak rendszergazda- és egyéb kiemelt jogok nélküli "
 "felhasználóként használandó."
 
-#: samsung-tools.py:585
+#: samsung-tools.py:700
 msgid "Wrong argument(s)."
 msgstr "Rossz argumentum(ok)."
 
-#: samsung-tools.py:602
+#: samsung-tools.py:717
 msgid "Session service stopped"
 msgstr "Session service leállítva"
 
-#: samsung-tools.py:605
+#: samsung-tools.py:720
 msgid "Cannot stop session service"
 msgstr "Session service nem állítható le"
 
-#: samsung-tools.py:615
+#: samsung-tools.py:730
 msgid "System service stopped"
 msgstr "System service leállítva"
 
-#: samsung-tools.py:618
+#: samsung-tools.py:733
 msgid "Cannot stop system service"
 msgstr "System service nem állítható le"
 

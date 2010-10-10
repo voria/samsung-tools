@@ -7,14 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-09-23 10:02+0200\n"
+"POT-Creation-Date: 2010-10-10 14:19+0200\n"
 "PO-Revision-Date: 2010-06-17 17:25+0000\n"
 "Last-Translator: Sergiy Gavrylov <sergiovana@bigmir.net>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
+"Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-09-23 07:56+0000\n"
+"X-Launchpad-Export-Date: 2010-10-10 12:16+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: backends/session/util/locales.py:25 samsung-tools-preferences.py:510
@@ -196,143 +197,143 @@ msgstr "Керування бездротовим зв’язком не дос�
 msgid "Backlight control: unable to connect to session service!"
 msgstr "Керування підсвічуванням: не вдалось під’єднатись до служби сеансу!"
 
-#: samsung-tools.py:120
+#: samsung-tools.py:143
 msgid "Bluetooth control: unable to connect to session service!"
 msgstr "Керування Bluetooth: не вдалось під’єднатись до служби сеансу!"
 
-#: samsung-tools.py:199
+#: samsung-tools.py:245
 msgid "CPU fan control: unable to connect to session service!"
 msgstr "Керування охолодженням ЦП: не вдалось під’єднатись до служби сеансу!"
 
-#: samsung-tools.py:326
+#: samsung-tools.py:395
 msgid "Webcam control: unable to connect to session service!"
 msgstr "Керування веб-камерою: не вдалось під’єднатись до служби сеансу!"
 
-#: samsung-tools.py:405
+#: samsung-tools.py:497
 msgid "Wireless control: unable to connect to session service!"
 msgstr ""
 "Керування бездротовим зв’язком: не вдалось під’єднатись до служби сеансу!"
 
-#: samsung-tools.py:470
+#: samsung-tools.py:585
 msgid "Samsung Tools - Command Line Utility"
 msgstr "Інструменти Samsung - Утиліта командного рядка"
 
-#: samsung-tools.py:472 samsung-tools.py:521
+#: samsung-tools.py:587 samsung-tools.py:636
 #, python-format
 msgid "Usage: %s <interface> <option> ..."
 msgstr "Використання: %s <interface> <option> ..."
 
-#: samsung-tools.py:474 po/samsung-tools-preferences.glade.h:4
+#: samsung-tools.py:589 po/samsung-tools-preferences.glade.h:4
 msgid "Backlight:"
 msgstr "Підсвічування:"
 
-#: samsung-tools.py:475 samsung-tools.py:478 samsung-tools.py:481
-#: samsung-tools.py:484 samsung-tools.py:487
+#: samsung-tools.py:590 samsung-tools.py:593 samsung-tools.py:596
+#: samsung-tools.py:599 samsung-tools.py:602
 msgid "Interface"
 msgstr "Інтерфейс"
 
-#: samsung-tools.py:476 samsung-tools.py:479 samsung-tools.py:482
-#: samsung-tools.py:485 samsung-tools.py:488
+#: samsung-tools.py:591 samsung-tools.py:594 samsung-tools.py:597
+#: samsung-tools.py:600 samsung-tools.py:603
 msgid "Options"
 msgstr "Параметри"
 
-#: samsung-tools.py:477 po/samsung-tools-preferences.glade.h:5
+#: samsung-tools.py:592 po/samsung-tools-preferences.glade.h:5
 msgid "Bluetooth:"
 msgstr "Bluetooth:"
 
-#: samsung-tools.py:480 po/samsung-tools-preferences.glade.h:6
+#: samsung-tools.py:595 po/samsung-tools-preferences.glade.h:6
 msgid "CPU fan:"
 msgstr "Охолодження ЦП:"
 
-#: samsung-tools.py:483 po/samsung-tools-preferences.glade.h:35
+#: samsung-tools.py:598 po/samsung-tools-preferences.glade.h:35
 msgid "Webcam:"
 msgstr "Веб-камера:"
 
-#: samsung-tools.py:486 po/samsung-tools-preferences.glade.h:36
+#: samsung-tools.py:601 po/samsung-tools-preferences.glade.h:36
 msgid "Wireless:"
 msgstr "Бездротовий зв’язок:"
 
-#: samsung-tools.py:490
+#: samsung-tools.py:605
 msgid "Other options:"
 msgstr "Інші параметри:"
 
-#: samsung-tools.py:491
+#: samsung-tools.py:606
 msgid "Show status for all devices."
 msgstr "Показати стан усіх пристроїв."
 
-#: samsung-tools.py:492
+#: samsung-tools.py:607
 msgid "Show graphical notifications."
 msgstr "Показувати графічні повідомлення."
 
-#: samsung-tools.py:493
+#: samsung-tools.py:608
 msgid "Do not print messages on standard output."
 msgstr "Не виводити повідомлення на стандартний вивід."
 
-#: samsung-tools.py:494
+#: samsung-tools.py:609
 msgid "Stop the session service."
 msgstr "Зупинити службу сеансу."
 
-#: samsung-tools.py:495
+#: samsung-tools.py:610
 msgid "Stop the system service."
 msgstr "Зупинити системну службу."
 
-#: samsung-tools.py:497
+#: samsung-tools.py:612
 msgid "Examples of use:"
 msgstr "Приклади використання:"
 
-#: samsung-tools.py:498
+#: samsung-tools.py:613
 msgid " - Toggle backlight:"
 msgstr " - Перемикнути підсвічування:"
 
-#: samsung-tools.py:501
+#: samsung-tools.py:616
 msgid " - Toggle wireless and set CPU fan mode to 'silent':"
 msgstr ""
 " - Перемикнути бездротовий зв’язок та встановити «безшумний» режим "
 "охолодження ЦП:"
 
-#: samsung-tools.py:504
+#: samsung-tools.py:619
 msgid " - Disable bluetooth, webcam and wireless:"
 msgstr " - Вимкнути bluetooth, веб-камеру та бездротовий зв’язок:"
 
-#: samsung-tools.py:507
+#: samsung-tools.py:622
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Детальніша інформація на форумі «Linux On My Samsung»:"
 
-#: samsung-tools.py:512 samsung-tools-preferences.py:1155
+#: samsung-tools.py:627 samsung-tools-preferences.py:1157
 msgid "Released under GPLv3 license"
 msgstr "Випущено за умовами ліцензії GPLv3"
 
-#: samsung-tools.py:517
+#: samsung-tools.py:632
 msgid "No action(s) specified."
 msgstr "Жодних(ої) дій(ї) не вказано."
 
-#: samsung-tools.py:518 samsung-tools.py:586
+#: samsung-tools.py:633 samsung-tools.py:701
 msgid "Use --help for instructions."
 msgstr "Використовуйте --help для довідки."
 
-#: samsung-tools.py:581
+#: samsung-tools.py:696
 msgid "This program is intended to be used only by non-privileged users."
 msgstr ""
 "Ця програма призначена для використання лише не привілейованими "
 "користувачами."
 
-#: samsung-tools.py:585
+#: samsung-tools.py:700
 msgid "Wrong argument(s)."
 msgstr "Неправильний(і) аргумент(и)"
 
-#: samsung-tools.py:602
+#: samsung-tools.py:717
 msgid "Session service stopped"
 msgstr "Служба сеансу зупинена"
 
-#: samsung-tools.py:605
+#: samsung-tools.py:720
 msgid "Cannot stop session service"
 msgstr "Не вдалось зупинити службу сеансу"
 
-#: samsung-tools.py:615
+#: samsung-tools.py:730
 msgid "System service stopped"
 msgstr "Системна служба зупинена"
 
-#: samsung-tools.py:618
+#: samsung-tools.py:733
 msgid "Cannot stop system service"
 msgstr "Не вдалось зупинити системну службу"
 
@@ -642,17 +643,17 @@ msgid ""
 "Linux scheduler to save power on multi-core processors while running on "
 "battery mode."
 msgstr ""
-"Якщо цей параметр увімкнений, «портативний» режим автоматично налаштовуватиме "
-"планувальник Linux для економії енергії в системах з багатоядерними "
-"процесорами під час роботи від батареї."
+"Якщо цей параметр увімкнений, «портативний» режим автоматично "
+"налаштовуватиме планувальник Linux для економії енергії в системах з "
+"багатоядерними процесорами під час роботи від батареї."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:17
 msgid ""
 "If you enable this option, 'laptop-mode' will automatically enable the USB "
 "autosuspend feature for all devices."
 msgstr ""
-"Якщо цей параметр увімкнений, «портативний» режим автоматично уможливлюватиме "
-"авто-призупинення USB для всіх пристроїв."
+"Якщо цей параметр увімкнений, «портативний» режим автоматично "
+"уможливлюватиме авто-призупинення USB для всіх пристроїв."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:18
 msgid ""
@@ -667,8 +668,8 @@ msgid ""
 "If you enable this option, 'laptop-mode' will automatically set the "
 "powersave mode of Intel HDA audio chipsets."
 msgstr ""
-"Якщо цей параметр увімкнений, «портативний» режим автоматично встановлюватиме "
-"режим енергозбереження для аудіо чипсетів Intel HDA."
+"Якщо цей параметр увімкнений, «портативний» режим автоматично "
+"встановлюватиме режим енергозбереження для аудіо чипсетів Intel HDA."
 
 #: po/samsung-tools-preferences-laptop-mode.glade.h:20
 msgid ""
