@@ -143,178 +143,6 @@ class KeyGrabber(gtk.Button):
 				label = "Fn-F10"
 		gtk.Button.set_label(self, label)
 
-class LaptopModeDialog():
-	def __init__(self, parent):
-		# Setup GUI
-		self.builder = gtk.Builder()
-		self.builder.set_translation_domain("samsung-tools")
-		self.builder.add_from_file(os.path.join(WORK_DIRECTORY, "gui/glade/samsung-tools-preferences-laptop-mode.glade"))
-		
-		self.mainDialog = self.builder.get_object("mainDialog")
-		self.mainDialog.set_icon_from_file(SAMSUNG_TOOLS_ICON)
-		self.mainDialog.set_transient_for(parent)
-		self.mainDialog.connect("delete-event", self.quit)
-		
-		self.closeButton = self.builder.get_object("closeButton")
-		self.closeButton.connect("clicked", self.quit)
-		
-		laptopModeTable = self.builder.get_object("laptopModeTable")
-		laptopmode = self.__connect()
-		# USB autosuspend
-		self.usbAutosuspendCheckbutton = self.builder.get_object("usbAutosuspendCheckbutton")
-		option = laptopmode.GetUSBAutosuspend()
-		if option == 1:
-			self.usbAutosuspendCheckbutton.set_active(True)
-		self.usbAutosuspendCheckbutton.connect("toggled", self.on_usbAutosuspendCheckbutton_toggled)
-		# HAL polling
-		self.halPollingCheckbutton = self.builder.get_object("halPollingCheckbutton")
-		option = laptopmode.GetHalPolling()
-		if option == 1:
-			self.halPollingCheckbutton.set_active(True)
-		self.halPollingCheckbutton.connect("toggled", self.on_halPollingCheckbutton_toggled)
-		# Ethernet
-		self.ethernetCheckbutton = self.builder.get_object("ethernetCheckbutton")
-		option = laptopmode.GetEthernet()
-		if option == 1:
-			self.ethernetCheckbutton.set_active(True)
-		self.ethernetCheckbutton.connect("toggled", self.on_ethernetCheckbutton_toggled)
-		# Sound
-		self.intelHDAPowerCheckbutton = self.builder.get_object("intelHDAPowerCheckbutton")
-		option = laptopmode.GetIntelHDAPower()
-		if option == 1:
-			self.intelHDAPowerCheckbutton.set_active(True)
-		self.intelHDAPowerCheckbutton.connect("toggled", self.on_intelHDAPowerCheckbutton_toggled)
-		# SATA
-		self.intelSATAPowerCheckbutton = self.builder.get_object("intelSATAPowerCheckbutton")
-		option = laptopmode.GetIntelSATAPower()
-		if option == 1:
-			self.intelSATAPowerCheckbutton.set_active(True)
-		self.intelSATAPowerCheckbutton.connect("toggled", self.on_intelSATAPowerCheckbutton_toggled)
-		# Configuration files
-		self.configFilesCheckbutton = self.builder.get_object("configFilesCheckbutton")
-		option = laptopmode.GetConfigFilesControl()
-		if option == 1:
-			self.configFilesCheckbutton.set_active(True)
-		self.configFilesCheckbutton.connect("toggled", self.on_configFilesCheckbutton_toggled)
-		# Video output
-		self.videoOutputCheckbutton = self.builder.get_object("videoOutputCheckbutton")
-		option = laptopmode.GetVideoOutput()
-		if option == 1:
-			self.videoOutputCheckbutton.set_active(True)
-		self.videoOutputCheckbutton.connect("toggled", self.on_videoOutputCheckbutton_toggled)
-		# Linux scheduler
-		self.schedMcPowerCheckbutton = self.builder.get_object("schedMcPowerCheckbutton")
-		option = laptopmode.GetSchedMcPower()
-		if option == 1:
-			self.schedMcPowerCheckbutton.set_active(True)
-		self.schedMcPowerCheckbutton.connect("toggled", self.on_schedMcPowerCheckbutton_toggled)
-		
-		# Control HD power management
-		self.controlHdPowerMgmtCheckbutton = self.builder.get_object("controlHdPowerMgmtCheckbutton")
-		self.hdPowerMgmtHbox = self.builder.get_object("hdPowerMgmtHbox")
-		self.controlHdPowerMgmtCheckbutton.connect("toggled", self.on_controlHdPowerMgmtCheckbutton_toggled)
-		option = laptopmode.GetControlHDPowerMgmt()
-		if option == 1:
-			self.controlHdPowerMgmtCheckbutton.set_active(True)
-		else:
-			self.controlHdPowerMgmtCheckbutton.set_active(False)
-			self.hdPowerMgmtHbox.set_sensitive(False)
-		
-		# HD power management
-		self.hdPowerMgmtSpinbutton = self.builder.get_object("hdPowerMgmtSpinbutton")
-		self.hdPowerMgmtSpinbuttonValue = laptopmode.GetHDPowerMgmt()
-		self.hdPowerMgmtSpinbutton.set_value(self.hdPowerMgmtSpinbuttonValue)
-		self.hdPowerMgmtSpinbutton.connect("value-changed", self.on_hdPowerMgmtSpinbutton_valuechanged)
-
-		self.mainDialog.run()
-	
-	def __connect(self):
-		retry = 3
-		while retry > 0:
-			try:
-				bus = dbus.SystemBus()
-				proxy = bus.get_object(SYSTEM_INTERFACE_NAME, SYSTEM_OBJECT_PATH_LAPTOPMODE)
-				return dbus.Interface(proxy, SYSTEM_INTERFACE_NAME)
-			except:
-				retry = retry - 1
-		print unicode(_("Unable to connect to system service!"), "utf-8")
-		sys.exit(1)
-	
-	def on_usbAutosuspendCheckbutton_toggled(self, checkbutton):
-		conn = self.__connect()
-		if checkbutton.get_active() == True:
-			conn.SetUSBAutosuspend(1)
-		else:
-			conn.SetUSBAutosuspend(0)
-	
-	def on_halPollingCheckbutton_toggled(self, checkbutton):
-		conn = self.__connect()
-		if checkbutton.get_active() == True:
-			conn.SetHalPolling(1)
-		else:
-			conn.SetHalPolling(0)
-	
-	def on_ethernetCheckbutton_toggled(self, checkbutton):
-		conn = self.__connect()
-		if checkbutton.get_active() == True:
-			conn.SetEthernet(1)
-		else:
-			conn.SetEthernet(0)
-	
-	def on_intelHDAPowerCheckbutton_toggled(self, checkbutton):
-		conn = self.__connect()
-		if checkbutton.get_active() == True:
-			conn.SetIntelHDAPower(1)
-		else:
-			conn.SetIntelHDAPower(0)
-	
-	def on_intelSATAPowerCheckbutton_toggled(self, checkbutton):
-		conn = self.__connect()
-		if checkbutton.get_active() == True:
-			conn.SetIntelSATAPower(1)
-		else:
-			conn.SetIntelSATAPower(0)
-	
-	def on_configFilesCheckbutton_toggled(self, checkbutton):
-		conn = self.__connect()
-		if checkbutton.get_active() == True:
-			conn.SetConfigFilesControl(1)
-		else:
-			conn.SetConfigFilesControl(0)
-	
-	def on_videoOutputCheckbutton_toggled(self, checkbutton):
-		conn = self.__connect()
-		if checkbutton.get_active() == True:
-			conn.SetVideoOutput(1)
-		else:
-			conn.SetVideoOutput(0)
-
-	def on_schedMcPowerCheckbutton_toggled(self, checkbutton):
-		conn = self.__connect()
-		if checkbutton.get_active() == True:
-			conn.SetSchedMcPower(1)
-		else:
-			conn.SetSchedMcPower(0)
-
-	def on_controlHdPowerMgmtCheckbutton_toggled(self, checkbutton):
-		conn = self.__connect()
-		if checkbutton.get_active() == True:
-			conn.SetControlHDPowerMgmt(1)
-			self.hdPowerMgmtHbox.set_sensitive(True)
-		else:
-			conn.SetControlHDPowerMgmt(0)
-			self.hdPowerMgmtHbox.set_sensitive(False)
-	
-	def on_hdPowerMgmtSpinbutton_valuechanged(self, button, event = None):
-		self.hdPowerMgmtSpinbuttonValue = button.get_value_as_int()
-		# Value will be actually saved at the time the dialog is quitted
-	
-	def quit(self, widget = None, event = None):
-		conn = self.__connect()
-		conn.SetHDPowerMgmt(self.hdPowerMgmtSpinbuttonValue)
-		conn.RestartDaemon()
-		self.mainDialog.destroy()
-
 class KernelParametersDialog():
 	def __init__(self, parent):
 		# Setup GUI
@@ -709,17 +537,6 @@ class Main():
 		else:
 			self.sysCtlButton.set_sensitive(True)
 			self.sysCtlButton.connect("clicked", self.on_sysCtlButton_clicked)
-		# laptop mode tools
-		self.laptopModeButton = self.builder.get_object("laptopModeButton")
-		conn = self.__connect_system_laptopmode()
-		if not conn.IsAvailable():
-			self.laptopModeButton.set_sensitive(False)
-			self.laptopModeButton.set_has_tooltip(True)
-			tooltip = unicode(_("Install 'laptop-mode' to enable and configure these options"), "utf-8")
-			self.laptopModeButton.set_tooltip_text(tooltip)
-		else:
-			self.laptopModeButton.set_sensitive(True)
-		self.laptopModeButton.connect("clicked", self.on_laptopModeButton_clicked)
 		# PHC
 		self.phcButton = self.builder.get_object("phcButton")
 		conn = self.__connect_system_cpu()
@@ -819,21 +636,7 @@ class Main():
 				retry = retry - 1
 		print unicode(_("Unable to connect to system service!"), "utf-8")
 		sys.exit(1)
-	
-	def __connect_system_laptopmode(self):
-		retry = 3
-		while retry > 0:
-			try:
-				bus = dbus.SystemBus()
-				proxy = bus.get_object(SYSTEM_INTERFACE_NAME, SYSTEM_OBJECT_PATH_LAPTOPMODE)
-				return dbus.Interface(proxy, SYSTEM_INTERFACE_NAME)
-			except:
-				retry = retry - 1
-		print unicode(_("Unable to connect to system service!"), "utf-8")
-		sys.exit(1)
-	
-	
-	
+
 	def __connect_system_cpu(self):
 		retry = 3
 		while retry > 0:
@@ -1090,9 +893,6 @@ class Main():
 	def on_cpufanInitialStatusCleanButton_clicked(self, button = None):
 		if self.cpufanInitialStatusCombobox.get_active() != 0:
 			self.cpufanInitialStatusCombobox.set_active(0)
-	
-	def on_laptopModeButton_clicked(self, button):
-		LaptopModeDialog(self.mainWindow)
 	
 	def on_sysCtlButton_clicked(self, button):
 		KernelParametersDialog(self.mainWindow)

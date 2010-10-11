@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <interface>
   <requires lib="gtk+" version="2.16"/>
   <!-- interface-naming-policy project-wide -->
@@ -7,7 +7,6 @@
     <property name="title" translatable="yes">Samsung Tools Preferences</property>
     <property name="default_width">400</property>
     <property name="type_hint">normal</property>
-    <property name="has_separator">False</property>
     <child internal-child="vbox">
       <object class="GtkVBox" id="dialog-vbox1">
         <property name="visible">True</property>
@@ -541,23 +540,9 @@
               <object class="GtkTable" id="advancedPowerManagementTable">
                 <property name="visible">True</property>
                 <property name="border_width">5</property>
-                <property name="n_rows">3</property>
+                <property name="n_rows">2</property>
                 <property name="column_spacing">5</property>
                 <property name="row_spacing">5</property>
-                <child>
-                  <object class="GtkButton" id="laptopModeButton">
-                    <property name="label" translatable="yes">Configure 'laptop-mode'</property>
-                    <property name="visible">True</property>
-                    <property name="can_focus">True</property>
-                    <property name="receives_default">True</property>
-                    <property name="tooltip_text" translatable="yes">Configure 'laptop-mode' for a better power management</property>
-                  </object>
-                  <packing>
-                    <property name="top_attach">1</property>
-                    <property name="bottom_attach">2</property>
-                    <property name="y_options">GTK_EXPAND</property>
-                  </packing>
-                </child>
                 <child>
                   <object class="GtkButton" id="sysCtlButton">
                     <property name="label" translatable="yes">Configure kernel parameters</property>
@@ -578,8 +563,8 @@
                     <property name="tooltip_text" translatable="yes">Undervolt the CPU in order to save energy</property>
                   </object>
                   <packing>
-                    <property name="top_attach">2</property>
-                    <property name="bottom_attach">3</property>
+                    <property name="top_attach">1</property>
+                    <property name="bottom_attach">2</property>
                     <property name="y_options">GTK_EXPAND</property>
                   </packing>
                 </child>
