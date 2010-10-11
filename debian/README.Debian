@@ -5,6 +5,7 @@ Copyleft by
 Fortunato Ventre (voRia) - vorione@gmail.com - http://www.voria.org/forum
 
 Dependencies:
+- pm-utils
 - easy-slow-down-manager
 - dbus-python
 - pygtk
