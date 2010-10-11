@@ -1,6 +1,12 @@
-samsung-tools (1.2~ppa1~loms~lucid) maverick; urgency=low
+samsung-tools (1.2~ppa1~loms~maverick) maverick; urgency=low
 
-  * 
+  * Drop 'laptop-mode-tools' support, since it's deprecated and no more needed.
+  * Add new pm scripts to handle devices powersave.
+  * debian/control:
+    remove 'laptop-mode-tools' as suggestion and add 'pm-utils' as a dependency.
+  * Remove old xbindkeys commands.
+  * Update translations to latest version from Launchpad.
+  * Update translators' credits list.
 
  -- Fortunato Ventre (voRia) <vorione@gmail.com>  Mon, 11 Oct 2010 13:13:44 +0200
 
