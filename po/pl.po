@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-10 14:19+0200\n"
+"POT-Creation-Date: 2010-10-11 13:14+0200\n"
 "PO-Revision-Date: 2010-09-23 10:13+0000\n"
 "Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: Polish <pl@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2010-10-10 12:16+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
-#: backends/session/util/locales.py:25 samsung-tools-preferences.py:510
+#: backends/session/util/locales.py:25 samsung-tools-preferences.py:338
 msgid "Backlight"
 msgstr "Podświetlenie"
 
@@ -50,7 +50,7 @@ msgstr "Podświetlenie nie może być wyłączone"
 msgid "Backlight cannot be toggled"
 msgstr "Nie można zmienić stanu podświetlenia"
 
-#: backends/session/util/locales.py:34 samsung-tools-preferences.py:519
+#: backends/session/util/locales.py:34 samsung-tools-preferences.py:347
 #: po/samsung-tools-applet.glade.h:1
 msgid "Bluetooth"
 msgstr "Bluetooth"
@@ -87,7 +87,7 @@ msgstr "Nie można zmienić stanu Bluetooth'a"
 msgid "Bluetooth control is not available"
 msgstr "Zarządzanie Bluetooth'em jest niedostępne"
 
-#: backends/session/util/locales.py:44 samsung-tools-preferences.py:528
+#: backends/session/util/locales.py:44 samsung-tools-preferences.py:356
 msgid "CPU fan"
 msgstr "Wentylator procesora"
 
@@ -119,7 +119,7 @@ msgstr "Nie można sprawdzić trybu wentylatora"
 msgid "CPU fan control is not available"
 msgstr "Zarządzanie wentylatorem procesora jest niedostępne"
 
-#: backends/session/util/locales.py:53 samsung-tools-preferences.py:537
+#: backends/session/util/locales.py:53 samsung-tools-preferences.py:365
 #: po/samsung-tools-applet.glade.h:7
 msgid "Webcam"
 msgstr "Kamera internetowa"
@@ -156,7 +156,7 @@ msgstr "Nie można zmienić stanu kamery internetowej"
 msgid "Webcam control is not available"
 msgstr "Zarządzanie kamerą internetową jest niedostępne"
 
-#: backends/session/util/locales.py:63 samsung-tools-preferences.py:546
+#: backends/session/util/locales.py:63 samsung-tools-preferences.py:374
 #: po/samsung-tools-applet.glade.h:8
 msgid "Wireless"
 msgstr "Sieć bezprzewodowa"
@@ -244,11 +244,11 @@ msgstr "Bluetooth:"
 msgid "CPU fan:"
 msgstr "Wentylator procesora:"
 
-#: samsung-tools.py:598 po/samsung-tools-preferences.glade.h:35
+#: samsung-tools.py:598 po/samsung-tools-preferences.glade.h:33
 msgid "Webcam:"
 msgstr "Kamera internetowa:"
 
-#: samsung-tools.py:601 po/samsung-tools-preferences.glade.h:36
+#: samsung-tools.py:601 po/samsung-tools-preferences.glade.h:34
 msgid "Wireless:"
 msgstr "Sieć bezprzewodowa:"
 
@@ -297,7 +297,7 @@ msgstr " Wyłącz Bluetooth'a, kamerę internetową i sieć bezprzewodową:"
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Po więcej informacji odwiedź forum 'Linux On My Samsung':"
 
-#: samsung-tools.py:627 samsung-tools-preferences.py:1157
+#: samsung-tools.py:627 samsung-tools-preferences.py:957
 msgid "Released under GPLv3 license"
 msgstr "Wydane na licencji GPLv3"
 
@@ -343,38 +343,33 @@ msgstr "Proszę naciśnij nowy skrót"
 msgid "None"
 msgstr "Brak"
 
-#: samsung-tools-preferences.py:240 samsung-tools-preferences.py:351
-#: samsung-tools-preferences.py:441 samsung-tools-preferences.py:453
-#: samsung-tools-preferences.py:808 samsung-tools-preferences.py:820
-#: samsung-tools-preferences.py:832 samsung-tools-preferences.py:846
+#: samsung-tools-preferences.py:179 samsung-tools-preferences.py:269
+#: samsung-tools-preferences.py:281 samsung-tools-preferences.py:625
+#: samsung-tools-preferences.py:637 samsung-tools-preferences.py:649
 msgid "Unable to connect to system service!"
 msgstr "Nie można połączyć z usługą systemową!"
 
-#: samsung-tools-preferences.py:465
+#: samsung-tools-preferences.py:293
 msgid "Confirm"
 msgstr "Zatwierdź"
 
-#: samsung-tools-preferences.py:466
+#: samsung-tools-preferences.py:294
 msgid "Apply the new VIDs?"
 msgstr "Zastosować nowe VIDy?"
 
-#: samsung-tools-preferences.py:718
-msgid "Install 'laptop-mode' to enable and configure these options"
-msgstr "Zainstaluj pakiet 'laptop-mode', by akytować i konfigurować te opcje"
-
-#: samsung-tools-preferences.py:729
+#: samsung-tools-preferences.py:546
 msgid "You need a PHC enabled kernel to use this feature"
 msgstr "Potrzebujesz jądra z obsługą PHC, by użyć tej opcji"
 
-#: samsung-tools-preferences.py:748
+#: samsung-tools-preferences.py:565
 msgid "Unable to connect to session service!"
 msgstr "Nie można połączyć z usługą sesji!"
 
-#: samsung-tools-preferences.py:1101
+#: samsung-tools-preferences.py:901
 msgid "Caution!"
 msgstr "Uwaga!"
 
-#: samsung-tools-preferences.py:1102
+#: samsung-tools-preferences.py:902
 msgid ""
 "CPU undervolting can lead to significant gains in terms of power energy "
 "saving, however <b>IT IS A RISKY PRACTICE</b> that might result in "
@@ -394,7 +389,7 @@ msgstr ""
 msgid "CPU Fan"
 msgstr "Wentylator procesora"
 
-#: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:24
+#: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:22
 msgid "Normal"
 msgstr "Normalny"
 
@@ -402,11 +397,11 @@ msgstr "Normalny"
 msgid "Preferences..."
 msgstr "Ustawienia..."
 
-#: po/samsung-tools-applet.glade.h:5 po/samsung-tools-preferences.glade.h:27
+#: po/samsung-tools-applet.glade.h:5 po/samsung-tools-preferences.glade.h:25
 msgid "Silent"
 msgstr "Cichy"
 
-#: po/samsung-tools-applet.glade.h:6 po/samsung-tools-preferences.glade.h:28
+#: po/samsung-tools-applet.glade.h:6 po/samsung-tools-preferences.glade.h:26
 msgid "Speed"
 msgstr "Szybki"
 
@@ -415,7 +410,7 @@ msgid "Manage devices on Samsung netbooks"
 msgstr "Zarządzaj urządzeniami w notebookach Samsung"
 
 #: po/samsung-tools-preferences.desktop.in.h:1
-#: po/samsung-tools-preferences.glade.h:25
+#: po/samsung-tools-preferences.glade.h:23
 msgid "Samsung Tools Preferences"
 msgstr "Ustawienia Narzędzi Samsung"
 
@@ -453,84 +448,75 @@ msgid "Click here to set the default value"
 msgstr "Kliknij tutaj, aby ustawić domyślną wartość"
 
 #: po/samsung-tools-preferences.glade.h:11
-#: po/samsung-tools-preferences-laptop-mode.glade.h:5
-msgid "Configure 'laptop-mode'"
-msgstr "Konfiguruj 'laptop-mode'"
-
-#: po/samsung-tools-preferences.glade.h:12
-msgid "Configure 'laptop-mode' for a better power management"
-msgstr "Skonfiguruj 'laptop-mode', dla lepszego zarządzania energią"
-
-#: po/samsung-tools-preferences.glade.h:13
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:1
 msgid "Configure kernel parameters"
 msgstr "Konfiguruj parametry jądra"
 
-#: po/samsung-tools-preferences.glade.h:14
+#: po/samsung-tools-preferences.glade.h:12
 msgid "Disabled"
 msgstr "Wyłączony"
 
-#: po/samsung-tools-preferences.glade.h:15
+#: po/samsung-tools-preferences.glade.h:13
 msgid "Enable hotkeys"
 msgstr "Włącz skróty klawiszowe"
 
-#: po/samsung-tools-preferences.glade.h:16
+#: po/samsung-tools-preferences.glade.h:14
 msgid "Enable this option to use hotkeys"
 msgstr "Włącz tą opcję, aby używać skrótów klawiszowych"
 
-#: po/samsung-tools-preferences.glade.h:17
+#: po/samsung-tools-preferences.glade.h:15
 msgid "Enabled"
 msgstr "Włączony"
 
-#: po/samsung-tools-preferences.glade.h:18
+#: po/samsung-tools-preferences.glade.h:16
 msgid "Hotkey used for CPU fan control"
 msgstr "Skróty klawiszowe używane do sterowania wentylatorem procesora"
 
-#: po/samsung-tools-preferences.glade.h:19
+#: po/samsung-tools-preferences.glade.h:17
 msgid "Hotkey used for backlight control"
 msgstr "Skrót klawiaturowy używany do kontroli podświetleniem"
 
-#: po/samsung-tools-preferences.glade.h:20
+#: po/samsung-tools-preferences.glade.h:18
 msgid "Hotkey used for bluetooth control"
 msgstr "Skrót klawiaturowy używany do zarządzania Bluetooth'em"
 
-#: po/samsung-tools-preferences.glade.h:21
+#: po/samsung-tools-preferences.glade.h:19
 msgid "Hotkey used for webcam control"
 msgstr "Skrót klawiaturowy używany do zarządzania kamerą internetową"
 
-#: po/samsung-tools-preferences.glade.h:22
+#: po/samsung-tools-preferences.glade.h:20
 msgid "Hotkey used for wireless control"
 msgstr "Skrót klawiaturowy używany do zarządzania siecią bezprzewodową"
 
-#: po/samsung-tools-preferences.glade.h:23
+#: po/samsung-tools-preferences.glade.h:21
 msgid "Last status"
 msgstr "Ostatni status"
 
-#: po/samsung-tools-preferences.glade.h:26
+#: po/samsung-tools-preferences.glade.h:24
 msgid "Session service"
 msgstr "Usługa sesji"
 
-#: po/samsung-tools-preferences.glade.h:29
+#: po/samsung-tools-preferences.glade.h:27
 msgid "System service"
 msgstr "Usługa systemowa"
 
-#: po/samsung-tools-preferences.glade.h:30
+#: po/samsung-tools-preferences.glade.h:28
 msgid "The initial status at boot for Bluetooth"
 msgstr "Początkowy status po uruchomieniu dla Bluetooth"
 
-#: po/samsung-tools-preferences.glade.h:31
+#: po/samsung-tools-preferences.glade.h:29
 msgid "The initial status at boot for CPU fan"
 msgstr "Początkowy status po uruchomieniu dla wentylatora procesora"
 
-#: po/samsung-tools-preferences.glade.h:32
+#: po/samsung-tools-preferences.glade.h:30
 msgid "The initial status at boot for webcam"
 msgstr "Początkowy status po uruchomieniu dla kamery internetowej"
 
-#: po/samsung-tools-preferences.glade.h:33
+#: po/samsung-tools-preferences.glade.h:31
 msgid "The initial status at boot for wireless"
 msgstr "Początkowy status po uruchomieniu dla sieci bezprzewodowej"
 
-#: po/samsung-tools-preferences.glade.h:34
+#: po/samsung-tools-preferences.glade.h:32
 msgid "Undervolt the CPU in order to save energy"
 msgstr "Obniż napięcie procesora, by oszczędzać energię"
 
@@ -566,147 +552,6 @@ msgstr ""
 "dysk, co zwiększa zużycie energii i zmniejsza wydajność. Jeśli masz dużo "
 "RAMu, ustaw niską wartość. Domyślna to 60."
 
-#: po/samsung-tools-preferences-laptop-mode.glade.h:1
-msgid ""
-"'laptop-mode' can automatically swap out configuration files depending on "
-"the power state of your system.\n"
-" \n"
-"The primary use for this feature is for controlling the configuration files "
-"of syslog daemons. Syslog daemons have a tendency to sync their log files "
-"when entries are written to them. This causes disks to spin up, which is not "
-"very nice when you're trying to save power."
-msgstr ""
-"'laptop-mode' może automatycznie podmieniać pliki konfiguracyjne, w "
-"zależności od stanu zasilania systemu.\n"
-" \n"
-"Podstawowe zastosowanie to kontrolowanie plików konfiguracyjnych usługi "
-"syslog. Demon syslog zapisuje swoje dzienniki zdarzeń do plików, gdy tylko "
-"pojawiają się w nich nowe wpisy. Powoduje to konieczność uruchomienia dysku, "
-"co niepotrzebnie zwiększa zużycie energii."
-
-#: po/samsung-tools-preferences-laptop-mode.glade.h:4
-msgid ""
-"An enabled video output port draws power, even if no display is connected. "
-"This option forces the display output off depending on the power mode."
-msgstr ""
-"Aktywny port video pobiera prąd nawet wtedy, gdy nic nie jest do niego "
-"podłączone. Ta opcja wymusza wyłącznie portu video w zależności od stanu "
-"zasilania."
-
-#: po/samsung-tools-preferences-laptop-mode.glade.h:6
-msgid "Control Ethernet settings"
-msgstr "Kontrola ustawień Ethernet"
-
-#: po/samsung-tools-preferences-laptop-mode.glade.h:7
-msgid "Control HAL polling"
-msgstr "Kontrola obchodzenia HAL"
-
-#: po/samsung-tools-preferences-laptop-mode.glade.h:8
-msgid "Control Intel HDA audio chipset power"
-msgstr "Kontrola czipu Intel HDA"
-
-#: po/samsung-tools-preferences-laptop-mode.glade.h:9
-msgid "Control Intel SATA chipset power"
-msgstr "Kontrola mocy czipu Intel SATA"
-
-#: po/samsung-tools-preferences-laptop-mode.glade.h:10
-msgid "Control Linux scheduler"
-msgstr "Kontrola szeregowania w Linuksie"
-
-#: po/samsung-tools-preferences-laptop-mode.glade.h:11
-msgid "Control configuration files"
-msgstr "Kontrola plików konfiguracyjnych"
-
-#: po/samsung-tools-preferences-laptop-mode.glade.h:12
-msgid "Control hard disk power management"
-msgstr "Kontrola zasilania dysku twardego"
-
-#: po/samsung-tools-preferences-laptop-mode.glade.h:13
-msgid "Control video output settings"
-msgstr "Kontrola portu video"
-
-#: po/samsung-tools-preferences-laptop-mode.glade.h:14
-msgid "Enable USB autosuspend"
-msgstr "Automatyczne uśpienie USB"
-
-#: po/samsung-tools-preferences-laptop-mode.glade.h:15
-msgid "Hard disk power management:"
-msgstr "Zarządzanie energią dysku twardego:"
-
-#: po/samsung-tools-preferences-laptop-mode.glade.h:16
-msgid ""
-"If you enable this option, 'laptop-mode' will automatically configure the "
-"Linux scheduler to save power on multi-core processors while running on "
-"battery mode."
-msgstr ""
-"Jeśli włączysz tę opcję, 'laptop-mode' automatycznie rozpocznie oszczędzanie "
-"energii w procesorach wielordzeniowych podczas pracy na zasilaniu bateryjnym."
-
-#: po/samsung-tools-preferences-laptop-mode.glade.h:17
-msgid ""
-"If you enable this option, 'laptop-mode' will automatically enable the USB "
-"autosuspend feature for all devices."
-msgstr ""
-"Jeśli włączysz tę opcję, 'laptop-mode' zajmie się automatycznym usypianiem "
-"urządzeń USB."
-
-#: po/samsung-tools-preferences-laptop-mode.glade.h:18
-msgid ""
-"If you enable this option, 'laptop-mode' will automatically enable the link "
-"power management mode of Intel AHCI compliant SATA chipsets."
-msgstr ""
-"Jeśli włączysz tę opcję, 'laptop-mode' automatycznie zajmie się zarządzaniem "
-"energii czipu SATA"
-
-#: po/samsung-tools-preferences-laptop-mode.glade.h:19
-msgid ""
-"If you enable this option, 'laptop-mode' will automatically set the "
-"powersave mode of Intel HDA audio chipsets."
-msgstr ""
-"Jeśli włączysz tę opcję, 'laptop-mode' automatycznie zajmie się zarządzaniem "
-"energii czipu Intel HDA."
-
-#: po/samsung-tools-preferences-laptop-mode.glade.h:20
-msgid ""
-"If you enable this option, 'laptop-mode' will control the polling of your CD/"
-"DVD drives by HAL. Disabling polling saves a considerable amount of power."
-msgstr ""
-"Jeśli włączysz tę opcję, 'laptop-mode' będzie kontrolował odpytywanie "
-"napędów CD/DVD przez HAL. Wyłącznie pozwoli oszczędzić nieco mocy."
-
-#: po/samsung-tools-preferences-laptop-mode.glade.h:21
-msgid ""
-"If you enable this option, 'laptop-mode' will take control of the hard disk "
-"power management."
-msgstr ""
-"Jeśli włączysz tę opcję, 'laptop-mode' przejmie kontrolę nad zarządzaniem "
-"energii zużywanej przez twardy dysk."
-
-#: po/samsung-tools-preferences-laptop-mode.glade.h:22
-msgid ""
-"If you enable this option, the speed of the Ethernet connection is limited "
-"to 100 Mbit. The difference in power usage between 1 Gbit and 100 Mbit "
-"Ethernet is quite large, so tuning can yield savings if you don't need the "
-"full speed (for instance if you only use Ethernet as to connect to a much "
-"slower ADSL modem)."
-msgstr ""
-"Jeżeli ta opcja jest włączona, szybkość połączenia Ethernet jest obniżona do "
-"100Mbit. Różnica w zużyciu energii pomiędzy 1Gbit a 100Mbit jest całkiem "
-"spora, więc ustawienie pozwoli na zaoszczędzenie energii jeżeli nie ma "
-"potrzeby stosowania pełnej prędkości (np. jeżeli połączenie jest do o wiele "
-"wolniejszego modemu ADSL)"
-
-#: po/samsung-tools-preferences-laptop-mode.glade.h:23
-msgid ""
-"This option sets the disk power management when on battery, it can be a "
-"value between 1 and 255. A low value results in a better energy saving but "
-"less disk performance, an high value results in disk performance but less "
-"energy saving."
-msgstr ""
-"Ta opcje ustawia zarządzanie energią zużywaną przez dysk twardy. Może ona "
-"miec wartość od 1 do 255. Niższa wartość to większe oszczędności i mniejsza "
-"wydajność, i na odwrót."
-
 #: po/samsung-tools-preferences-phc.glade.h:1
 msgid "<b>Default VIDs</b>"
 msgstr "<b>Domyślne VIDy</b>"
@@ -738,6 +583,140 @@ msgstr "Ustaw nowe VIDy automatycznie w czasie startu"
 #: po/samsung-tools-session-service.desktop.in.h:1
 msgid "Start the session service"
 msgstr "Włącz usługę sesji"
+
+#~ msgid "Install 'laptop-mode' to enable and configure these options"
+#~ msgstr ""
+#~ "Zainstaluj pakiet 'laptop-mode', by akytować i konfigurować te opcje"
+
+#~ msgid "Configure 'laptop-mode'"
+#~ msgstr "Konfiguruj 'laptop-mode'"
+
+#~ msgid "Configure 'laptop-mode' for a better power management"
+#~ msgstr "Skonfiguruj 'laptop-mode', dla lepszego zarządzania energią"
+
+#~ msgid ""
+#~ "'laptop-mode' can automatically swap out configuration files depending on "
+#~ "the power state of your system.\n"
+#~ " \n"
+#~ "The primary use for this feature is for controlling the configuration "
+#~ "files of syslog daemons. Syslog daemons have a tendency to sync their log "
+#~ "files when entries are written to them. This causes disks to spin up, "
+#~ "which is not very nice when you're trying to save power."
+#~ msgstr ""
+#~ "'laptop-mode' może automatycznie podmieniać pliki konfiguracyjne, w "
+#~ "zależności od stanu zasilania systemu.\n"
+#~ " \n"
+#~ "Podstawowe zastosowanie to kontrolowanie plików konfiguracyjnych usługi "
+#~ "syslog. Demon syslog zapisuje swoje dzienniki zdarzeń do plików, gdy "
+#~ "tylko pojawiają się w nich nowe wpisy. Powoduje to konieczność "
+#~ "uruchomienia dysku, co niepotrzebnie zwiększa zużycie energii."
+
+#~ msgid ""
+#~ "An enabled video output port draws power, even if no display is "
+#~ "connected. This option forces the display output off depending on the "
+#~ "power mode."
+#~ msgstr ""
+#~ "Aktywny port video pobiera prąd nawet wtedy, gdy nic nie jest do niego "
+#~ "podłączone. Ta opcja wymusza wyłącznie portu video w zależności od stanu "
+#~ "zasilania."
+
+#~ msgid "Control Ethernet settings"
+#~ msgstr "Kontrola ustawień Ethernet"
+
+#~ msgid "Control HAL polling"
+#~ msgstr "Kontrola obchodzenia HAL"
+
+#~ msgid "Control Intel HDA audio chipset power"
+#~ msgstr "Kontrola czipu Intel HDA"
+
+#~ msgid "Control Intel SATA chipset power"
+#~ msgstr "Kontrola mocy czipu Intel SATA"
+
+#~ msgid "Control Linux scheduler"
+#~ msgstr "Kontrola szeregowania w Linuksie"
+
+#~ msgid "Control configuration files"
+#~ msgstr "Kontrola plików konfiguracyjnych"
+
+#~ msgid "Control hard disk power management"
+#~ msgstr "Kontrola zasilania dysku twardego"
+
+#~ msgid "Control video output settings"
+#~ msgstr "Kontrola portu video"
+
+#~ msgid "Enable USB autosuspend"
+#~ msgstr "Automatyczne uśpienie USB"
+
+#~ msgid "Hard disk power management:"
+#~ msgstr "Zarządzanie energią dysku twardego:"
+
+#~ msgid ""
+#~ "If you enable this option, 'laptop-mode' will automatically configure the "
+#~ "Linux scheduler to save power on multi-core processors while running on "
+#~ "battery mode."
+#~ msgstr ""
+#~ "Jeśli włączysz tę opcję, 'laptop-mode' automatycznie rozpocznie "
+#~ "oszczędzanie energii w procesorach wielordzeniowych podczas pracy na "
+#~ "zasilaniu bateryjnym."
+
+#~ msgid ""
+#~ "If you enable this option, 'laptop-mode' will automatically enable the "
+#~ "USB autosuspend feature for all devices."
+#~ msgstr ""
+#~ "Jeśli włączysz tę opcję, 'laptop-mode' zajmie się automatycznym "
+#~ "usypianiem urządzeń USB."
+
+#~ msgid ""
+#~ "If you enable this option, 'laptop-mode' will automatically enable the "
+#~ "link power management mode of Intel AHCI compliant SATA chipsets."
+#~ msgstr ""
+#~ "Jeśli włączysz tę opcję, 'laptop-mode' automatycznie zajmie się "
+#~ "zarządzaniem energii czipu SATA"
+
+#~ msgid ""
+#~ "If you enable this option, 'laptop-mode' will automatically set the "
+#~ "powersave mode of Intel HDA audio chipsets."
+#~ msgstr ""
+#~ "Jeśli włączysz tę opcję, 'laptop-mode' automatycznie zajmie się "
+#~ "zarządzaniem energii czipu Intel HDA."
+
+#~ msgid ""
+#~ "If you enable this option, 'laptop-mode' will control the polling of your "
+#~ "CD/DVD drives by HAL. Disabling polling saves a considerable amount of "
+#~ "power."
+#~ msgstr ""
+#~ "Jeśli włączysz tę opcję, 'laptop-mode' będzie kontrolował odpytywanie "
+#~ "napędów CD/DVD przez HAL. Wyłącznie pozwoli oszczędzić nieco mocy."
+
+#~ msgid ""
+#~ "If you enable this option, 'laptop-mode' will take control of the hard "
+#~ "disk power management."
+#~ msgstr ""
+#~ "Jeśli włączysz tę opcję, 'laptop-mode' przejmie kontrolę nad zarządzaniem "
+#~ "energii zużywanej przez twardy dysk."
+
+#~ msgid ""
+#~ "If you enable this option, the speed of the Ethernet connection is "
+#~ "limited to 100 Mbit. The difference in power usage between 1 Gbit and 100 "
+#~ "Mbit Ethernet is quite large, so tuning can yield savings if you don't "
+#~ "need the full speed (for instance if you only use Ethernet as to connect "
+#~ "to a much slower ADSL modem)."
+#~ msgstr ""
+#~ "Jeżeli ta opcja jest włączona, szybkość połączenia Ethernet jest obniżona "
+#~ "do 100Mbit. Różnica w zużyciu energii pomiędzy 1Gbit a 100Mbit jest "
+#~ "całkiem spora, więc ustawienie pozwoli na zaoszczędzenie energii jeżeli "
+#~ "nie ma potrzeby stosowania pełnej prędkości (np. jeżeli połączenie jest "
+#~ "do o wiele wolniejszego modemu ADSL)"
+
+#~ msgid ""
+#~ "This option sets the disk power management when on battery, it can be a "
+#~ "value between 1 and 255. A low value results in a better energy saving "
+#~ "but less disk performance, an high value results in disk performance but "
+#~ "less energy saving."
+#~ msgstr ""
+#~ "Ta opcje ustawia zarządzanie energią zużywaną przez dysk twardy. Może ona "
+#~ "miec wartość od 1 do 255. Niższa wartość to większe oszczędności i "
+#~ "mniejsza wydajność, i na odwrót."
 
 #~ msgid "Bluetooth initial status:"
 #~ msgstr "Początkowy stan Bluetooth'a"

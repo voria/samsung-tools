@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-10 14:19+0200\n"
+"POT-Creation-Date: 2010-10-11 13:14+0200\n"
 "PO-Revision-Date: 2010-06-17 17:25+0000\n"
 "Last-Translator: Sergiy Gavrylov <sergiovana@bigmir.net>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2010-10-10 12:16+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
-#: backends/session/util/locales.py:25 samsung-tools-preferences.py:510
+#: backends/session/util/locales.py:25 samsung-tools-preferences.py:338
 msgid "Backlight"
 msgstr "Підсвічування"
 
@@ -50,7 +50,7 @@ msgstr "Не вдалось вимкнути підсвічування"
 msgid "Backlight cannot be toggled"
 msgstr "Не вдалось перемикнути підсвічування"
 
-#: backends/session/util/locales.py:34 samsung-tools-preferences.py:519
+#: backends/session/util/locales.py:34 samsung-tools-preferences.py:347
 #: po/samsung-tools-applet.glade.h:1
 msgid "Bluetooth"
 msgstr "Bluetooth"
@@ -87,7 +87,7 @@ msgstr "Не вдалось перемикнути Bluetooth"
 msgid "Bluetooth control is not available"
 msgstr "Керування Bluetooth не доступно"
 
-#: backends/session/util/locales.py:44 samsung-tools-preferences.py:528
+#: backends/session/util/locales.py:44 samsung-tools-preferences.py:356
 msgid "CPU fan"
 msgstr "Охолодження процесора"
 
@@ -119,7 +119,7 @@ msgstr "Не вдалось визначити режим охолодження
 msgid "CPU fan control is not available"
 msgstr "Керування режимом охолодження ЦП не доступно"
 
-#: backends/session/util/locales.py:53 samsung-tools-preferences.py:537
+#: backends/session/util/locales.py:53 samsung-tools-preferences.py:365
 #: po/samsung-tools-applet.glade.h:7
 msgid "Webcam"
 msgstr "Веб-камера"
@@ -156,7 +156,7 @@ msgstr "Не вдалось перемикнути веб-камеру"
 msgid "Webcam control is not available"
 msgstr "Керування веб-камерою не доступно"
 
-#: backends/session/util/locales.py:63 samsung-tools-preferences.py:546
+#: backends/session/util/locales.py:63 samsung-tools-preferences.py:374
 #: po/samsung-tools-applet.glade.h:8
 msgid "Wireless"
 msgstr "Бездротовий зв’язок"
@@ -245,11 +245,11 @@ msgstr "Bluetooth:"
 msgid "CPU fan:"
 msgstr "Охолодження ЦП:"
 
-#: samsung-tools.py:598 po/samsung-tools-preferences.glade.h:35
+#: samsung-tools.py:598 po/samsung-tools-preferences.glade.h:33
 msgid "Webcam:"
 msgstr "Веб-камера:"
 
-#: samsung-tools.py:601 po/samsung-tools-preferences.glade.h:36
+#: samsung-tools.py:601 po/samsung-tools-preferences.glade.h:34
 msgid "Wireless:"
 msgstr "Бездротовий зв’язок:"
 
@@ -299,7 +299,7 @@ msgstr " - Вимкнути bluetooth, веб-камеру та бездрото
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Детальніша інформація на форумі «Linux On My Samsung»:"
 
-#: samsung-tools.py:627 samsung-tools-preferences.py:1157
+#: samsung-tools.py:627 samsung-tools-preferences.py:957
 msgid "Released under GPLv3 license"
 msgstr "Випущено за умовами ліцензії GPLv3"
 
@@ -345,39 +345,33 @@ msgstr "Будь ласка, натисніть нову «гарячу» кла
 msgid "None"
 msgstr "Немає"
 
-#: samsung-tools-preferences.py:240 samsung-tools-preferences.py:351
-#: samsung-tools-preferences.py:441 samsung-tools-preferences.py:453
-#: samsung-tools-preferences.py:808 samsung-tools-preferences.py:820
-#: samsung-tools-preferences.py:832 samsung-tools-preferences.py:846
+#: samsung-tools-preferences.py:179 samsung-tools-preferences.py:269
+#: samsung-tools-preferences.py:281 samsung-tools-preferences.py:625
+#: samsung-tools-preferences.py:637 samsung-tools-preferences.py:649
 msgid "Unable to connect to system service!"
 msgstr "Не вдалось під’єднатись до системної служби!"
 
-#: samsung-tools-preferences.py:465
+#: samsung-tools-preferences.py:293
 msgid "Confirm"
 msgstr "Підтвердити"
 
-#: samsung-tools-preferences.py:466
+#: samsung-tools-preferences.py:294
 msgid "Apply the new VIDs?"
 msgstr "Застосувати нові VID?"
 
-#: samsung-tools-preferences.py:718
-msgid "Install 'laptop-mode' to enable and configure these options"
-msgstr ""
-"Встановити «портативний» режим, щоб увімкнути та налаштувати ці параметри"
-
-#: samsung-tools-preferences.py:729
+#: samsung-tools-preferences.py:546
 msgid "You need a PHC enabled kernel to use this feature"
 msgstr "Потрібне увімкнене ядро PHC, щоб отримати цю можливість"
 
-#: samsung-tools-preferences.py:748
+#: samsung-tools-preferences.py:565
 msgid "Unable to connect to session service!"
 msgstr "Не вдалось під’єднатись до служби сеансу!"
 
-#: samsung-tools-preferences.py:1101
+#: samsung-tools-preferences.py:901
 msgid "Caution!"
 msgstr "Увага!"
 
-#: samsung-tools-preferences.py:1102
+#: samsung-tools-preferences.py:902
 msgid ""
 "CPU undervolting can lead to significant gains in terms of power energy "
 "saving, however <b>IT IS A RISKY PRACTICE</b> that might result in "
@@ -396,7 +390,7 @@ msgstr ""
 msgid "CPU Fan"
 msgstr "Охолодження ЦП"
 
-#: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:24
+#: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:22
 msgid "Normal"
 msgstr "Звичайне"
 
@@ -404,11 +398,11 @@ msgstr "Звичайне"
 msgid "Preferences..."
 msgstr "Налаштування..."
 
-#: po/samsung-tools-applet.glade.h:5 po/samsung-tools-preferences.glade.h:27
+#: po/samsung-tools-applet.glade.h:5 po/samsung-tools-preferences.glade.h:25
 msgid "Silent"
 msgstr "Безшумний"
 
-#: po/samsung-tools-applet.glade.h:6 po/samsung-tools-preferences.glade.h:28
+#: po/samsung-tools-applet.glade.h:6 po/samsung-tools-preferences.glade.h:26
 msgid "Speed"
 msgstr "Швидкісний"
 
@@ -417,7 +411,7 @@ msgid "Manage devices on Samsung netbooks"
 msgstr "Керування пристроями нетбуків Samsung"
 
 #: po/samsung-tools-preferences.desktop.in.h:1
-#: po/samsung-tools-preferences.glade.h:25
+#: po/samsung-tools-preferences.glade.h:23
 msgid "Samsung Tools Preferences"
 msgstr "Інструменти налаштування Samsung"
 
@@ -455,84 +449,75 @@ msgid "Click here to set the default value"
 msgstr "Натисніть тут, щоб встановити типове значення"
 
 #: po/samsung-tools-preferences.glade.h:11
-#: po/samsung-tools-preferences-laptop-mode.glade.h:5
-msgid "Configure 'laptop-mode'"
-msgstr "Налаштувати «портативний» режим"
-
-#: po/samsung-tools-preferences.glade.h:12
-msgid "Configure 'laptop-mode' for a better power management"
-msgstr "Налаштування «портативного» режиму для покращеного керування живленням"
-
-#: po/samsung-tools-preferences.glade.h:13
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:1
 msgid "Configure kernel parameters"
 msgstr "Налаштування параметрів ядра"
 
-#: po/samsung-tools-preferences.glade.h:14
+#: po/samsung-tools-preferences.glade.h:12
 msgid "Disabled"
 msgstr "Вимкнено"
 
-#: po/samsung-tools-preferences.glade.h:15
+#: po/samsung-tools-preferences.glade.h:13
 msgid "Enable hotkeys"
 msgstr "Увімкнути комбінації клавіш"
 
-#: po/samsung-tools-preferences.glade.h:16
+#: po/samsung-tools-preferences.glade.h:14
 msgid "Enable this option to use hotkeys"
 msgstr "Увімкнути цей параметр, щоб використовувати комбінації клавіш"
 
-#: po/samsung-tools-preferences.glade.h:17
+#: po/samsung-tools-preferences.glade.h:15
 msgid "Enabled"
 msgstr "Увімкнено"
 
-#: po/samsung-tools-preferences.glade.h:18
+#: po/samsung-tools-preferences.glade.h:16
 msgid "Hotkey used for CPU fan control"
 msgstr "Комбінація клавіш, що використовується для керування охолодженням ЦП"
 
-#: po/samsung-tools-preferences.glade.h:19
+#: po/samsung-tools-preferences.glade.h:17
 msgid "Hotkey used for backlight control"
 msgstr "Комбінація клавіш для керування підсвічуванням"
 
-#: po/samsung-tools-preferences.glade.h:20
+#: po/samsung-tools-preferences.glade.h:18
 msgid "Hotkey used for bluetooth control"
 msgstr "Комбінація клавіш для керування Bluetooth"
 
-#: po/samsung-tools-preferences.glade.h:21
+#: po/samsung-tools-preferences.glade.h:19
 msgid "Hotkey used for webcam control"
 msgstr "Комбінація клавіш для керування веб-камерою"
 
-#: po/samsung-tools-preferences.glade.h:22
+#: po/samsung-tools-preferences.glade.h:20
 msgid "Hotkey used for wireless control"
 msgstr "Комбінація клавіш для керування бездротовим зв’язком"
 
-#: po/samsung-tools-preferences.glade.h:23
+#: po/samsung-tools-preferences.glade.h:21
 msgid "Last status"
 msgstr "Останній стан"
 
-#: po/samsung-tools-preferences.glade.h:26
+#: po/samsung-tools-preferences.glade.h:24
 msgid "Session service"
 msgstr "Служба сеансу"
 
-#: po/samsung-tools-preferences.glade.h:29
+#: po/samsung-tools-preferences.glade.h:27
 msgid "System service"
 msgstr "Системна служба"
 
-#: po/samsung-tools-preferences.glade.h:30
+#: po/samsung-tools-preferences.glade.h:28
 msgid "The initial status at boot for Bluetooth"
 msgstr "Початковий стан Bluetooth під час завантаження"
 
-#: po/samsung-tools-preferences.glade.h:31
+#: po/samsung-tools-preferences.glade.h:29
 msgid "The initial status at boot for CPU fan"
 msgstr "Початковий стан охолодження ЦП під час завантаження"
 
-#: po/samsung-tools-preferences.glade.h:32
+#: po/samsung-tools-preferences.glade.h:30
 msgid "The initial status at boot for webcam"
 msgstr "Початковий стан веб-камери під час завантаження"
 
-#: po/samsung-tools-preferences.glade.h:33
+#: po/samsung-tools-preferences.glade.h:31
 msgid "The initial status at boot for wireless"
 msgstr "Початковий стан бездротового зв’язку під час завантаження"
 
-#: po/samsung-tools-preferences.glade.h:34
+#: po/samsung-tools-preferences.glade.h:32
 msgid "Undervolt the CPU in order to save energy"
 msgstr "Зниження напруги живлення ЦП для збереження енергії"
 
@@ -570,150 +555,6 @@ msgstr ""
 "низьке значення, якщо ви маєте велику кількість невикористаної пам’яті. "
 "Типове значення дорівнює 60."
 
-#: po/samsung-tools-preferences-laptop-mode.glade.h:1
-msgid ""
-"'laptop-mode' can automatically swap out configuration files depending on "
-"the power state of your system.\n"
-" \n"
-"The primary use for this feature is for controlling the configuration files "
-"of syslog daemons. Syslog daemons have a tendency to sync their log files "
-"when entries are written to them. This causes disks to spin up, which is not "
-"very nice when you're trying to save power."
-msgstr ""
-"«Портативний» режим може автоматично замінювати файли конфігурації в "
-"залежності від стану живлення в системі.\n"
-" \n"
-"Основне призначення цієї функції — керування конфігураційними файлами "
-"демонів syslog. Демони syslog мають тенденцію до синхронізації своїх лог-"
-"файлів під час запису в них. Це призводить до зростання швидкості обертання "
-"дисків, що призводить до зростання використання електроенергії."
-
-#: po/samsung-tools-preferences-laptop-mode.glade.h:4
-msgid ""
-"An enabled video output port draws power, even if no display is connected. "
-"This option forces the display output off depending on the power mode."
-msgstr ""
-"Увімкнений порт відео-виходу споживає додаткову енергію, навіть якщо дисплей "
-"не під’єднаний. Цей параметр примушує відео-вихід вимикатись в залежності "
-"від режиму живлення."
-
-#: po/samsung-tools-preferences-laptop-mode.glade.h:6
-msgid "Control Ethernet settings"
-msgstr "Керування параметрами Ethernet"
-
-#: po/samsung-tools-preferences-laptop-mode.glade.h:7
-msgid "Control HAL polling"
-msgstr "Керування опитуванням HAL"
-
-#: po/samsung-tools-preferences-laptop-mode.glade.h:8
-msgid "Control Intel HDA audio chipset power"
-msgstr "Керування живленням аудіо чипсету Intel HDA"
-
-#: po/samsung-tools-preferences-laptop-mode.glade.h:9
-msgid "Control Intel SATA chipset power"
-msgstr "Керування живленням чипсету Intel SATA"
-
-#: po/samsung-tools-preferences-laptop-mode.glade.h:10
-msgid "Control Linux scheduler"
-msgstr "Керування планувальником Linux"
-
-#: po/samsung-tools-preferences-laptop-mode.glade.h:11
-msgid "Control configuration files"
-msgstr "Керування конфігураційними файлами"
-
-#: po/samsung-tools-preferences-laptop-mode.glade.h:12
-msgid "Control hard disk power management"
-msgstr "Керування живленням твердого диска"
-
-#: po/samsung-tools-preferences-laptop-mode.glade.h:13
-msgid "Control video output settings"
-msgstr "Керування параметрами відео-виходу"
-
-#: po/samsung-tools-preferences-laptop-mode.glade.h:14
-msgid "Enable USB autosuspend"
-msgstr "Увімкнути авто-призупинку USB"
-
-#: po/samsung-tools-preferences-laptop-mode.glade.h:15
-msgid "Hard disk power management:"
-msgstr "Керування живленням твердого диска:"
-
-#: po/samsung-tools-preferences-laptop-mode.glade.h:16
-msgid ""
-"If you enable this option, 'laptop-mode' will automatically configure the "
-"Linux scheduler to save power on multi-core processors while running on "
-"battery mode."
-msgstr ""
-"Якщо цей параметр увімкнений, «портативний» режим автоматично "
-"налаштовуватиме планувальник Linux для економії енергії в системах з "
-"багатоядерними процесорами під час роботи від батареї."
-
-#: po/samsung-tools-preferences-laptop-mode.glade.h:17
-msgid ""
-"If you enable this option, 'laptop-mode' will automatically enable the USB "
-"autosuspend feature for all devices."
-msgstr ""
-"Якщо цей параметр увімкнений, «портативний» режим автоматично "
-"уможливлюватиме авто-призупинення USB для всіх пристроїв."
-
-#: po/samsung-tools-preferences-laptop-mode.glade.h:18
-msgid ""
-"If you enable this option, 'laptop-mode' will automatically enable the link "
-"power management mode of Intel AHCI compliant SATA chipsets."
-msgstr ""
-"Якщо цей параметр увімкнений, «портативний» режим автоматично вмикатиме "
-"пов’язаний режим живлення для Intel AHCI-сумісних чипсетів SATA."
-
-#: po/samsung-tools-preferences-laptop-mode.glade.h:19
-msgid ""
-"If you enable this option, 'laptop-mode' will automatically set the "
-"powersave mode of Intel HDA audio chipsets."
-msgstr ""
-"Якщо цей параметр увімкнений, «портативний» режим автоматично "
-"встановлюватиме режим енергозбереження для аудіо чипсетів Intel HDA."
-
-#: po/samsung-tools-preferences-laptop-mode.glade.h:20
-msgid ""
-"If you enable this option, 'laptop-mode' will control the polling of your CD/"
-"DVD drives by HAL. Disabling polling saves a considerable amount of power."
-msgstr ""
-"Якщо цей параметр увімкнений, «портативний» режим автоматично керуватиме "
-"опитуванням CD/DVD пристроїв через HAL. Вимкнення опитування економить "
-"значну кількість енергії."
-
-#: po/samsung-tools-preferences-laptop-mode.glade.h:21
-msgid ""
-"If you enable this option, 'laptop-mode' will take control of the hard disk "
-"power management."
-msgstr ""
-"Якщо цей параметр увімкнений, «портативний» режим автоматично керуватиме "
-"живленням твердого диска."
-
-#: po/samsung-tools-preferences-laptop-mode.glade.h:22
-msgid ""
-"If you enable this option, the speed of the Ethernet connection is limited "
-"to 100 Mbit. The difference in power usage between 1 Gbit and 100 Mbit "
-"Ethernet is quite large, so tuning can yield savings if you don't need the "
-"full speed (for instance if you only use Ethernet as to connect to a much "
-"slower ADSL modem)."
-msgstr ""
-"Якщо цей параметр увімкнений, швидкість з’єднання з Ethernet буде обмежена "
-"до 100 Мб. Різниця в енергоспоживанні між режимами 1 Гбіт та 100 Мбіт "
-"Ethernet досить велика, тому, якщо ви не потребуєте повної швидкості "
-"(наприклад, якщо ви використовуєте Ethernet лише для під’єднання модема "
-"ADSL) увімкніть цей параметр."
-
-#: po/samsung-tools-preferences-laptop-mode.glade.h:23
-msgid ""
-"This option sets the disk power management when on battery, it can be a "
-"value between 1 and 255. A low value results in a better energy saving but "
-"less disk performance, an high value results in disk performance but less "
-"energy saving."
-msgstr ""
-"Цей параметр встановлює режим керування живленням твердого диска під час "
-"роботи від батареї, значення може бути від 1 до 255. Низьке значення сприяє "
-"кращому енергозбереженню, але меншій продуктивності диска, високе значення "
-"покращує продуктивність диска, але погіршує енергозбереження."
-
 #: po/samsung-tools-preferences-phc.glade.h:1
 msgid "<b>Default VIDs</b>"
 msgstr "<b>Типові VID</b>"
@@ -745,3 +586,140 @@ msgstr "Встановлювати нові VID автоматично під ч
 #: po/samsung-tools-session-service.desktop.in.h:1
 msgid "Start the session service"
 msgstr "Запустити службу сеансу"
+
+#~ msgid "Install 'laptop-mode' to enable and configure these options"
+#~ msgstr ""
+#~ "Встановити «портативний» режим, щоб увімкнути та налаштувати ці параметри"
+
+#~ msgid "Configure 'laptop-mode'"
+#~ msgstr "Налаштувати «портативний» режим"
+
+#~ msgid "Configure 'laptop-mode' for a better power management"
+#~ msgstr ""
+#~ "Налаштування «портативного» режиму для покращеного керування живленням"
+
+#~ msgid ""
+#~ "'laptop-mode' can automatically swap out configuration files depending on "
+#~ "the power state of your system.\n"
+#~ " \n"
+#~ "The primary use for this feature is for controlling the configuration "
+#~ "files of syslog daemons. Syslog daemons have a tendency to sync their log "
+#~ "files when entries are written to them. This causes disks to spin up, "
+#~ "which is not very nice when you're trying to save power."
+#~ msgstr ""
+#~ "«Портативний» режим може автоматично замінювати файли конфігурації в "
+#~ "залежності від стану живлення в системі.\n"
+#~ " \n"
+#~ "Основне призначення цієї функції — керування конфігураційними файлами "
+#~ "демонів syslog. Демони syslog мають тенденцію до синхронізації своїх лог-"
+#~ "файлів під час запису в них. Це призводить до зростання швидкості "
+#~ "обертання дисків, що призводить до зростання використання електроенергії."
+
+#~ msgid ""
+#~ "An enabled video output port draws power, even if no display is "
+#~ "connected. This option forces the display output off depending on the "
+#~ "power mode."
+#~ msgstr ""
+#~ "Увімкнений порт відео-виходу споживає додаткову енергію, навіть якщо "
+#~ "дисплей не під’єднаний. Цей параметр примушує відео-вихід вимикатись в "
+#~ "залежності від режиму живлення."
+
+#~ msgid "Control Ethernet settings"
+#~ msgstr "Керування параметрами Ethernet"
+
+#~ msgid "Control HAL polling"
+#~ msgstr "Керування опитуванням HAL"
+
+#~ msgid "Control Intel HDA audio chipset power"
+#~ msgstr "Керування живленням аудіо чипсету Intel HDA"
+
+#~ msgid "Control Intel SATA chipset power"
+#~ msgstr "Керування живленням чипсету Intel SATA"
+
+#~ msgid "Control Linux scheduler"
+#~ msgstr "Керування планувальником Linux"
+
+#~ msgid "Control configuration files"
+#~ msgstr "Керування конфігураційними файлами"
+
+#~ msgid "Control hard disk power management"
+#~ msgstr "Керування живленням твердого диска"
+
+#~ msgid "Control video output settings"
+#~ msgstr "Керування параметрами відео-виходу"
+
+#~ msgid "Enable USB autosuspend"
+#~ msgstr "Увімкнути авто-призупинку USB"
+
+#~ msgid "Hard disk power management:"
+#~ msgstr "Керування живленням твердого диска:"
+
+#~ msgid ""
+#~ "If you enable this option, 'laptop-mode' will automatically configure the "
+#~ "Linux scheduler to save power on multi-core processors while running on "
+#~ "battery mode."
+#~ msgstr ""
+#~ "Якщо цей параметр увімкнений, «портативний» режим автоматично "
+#~ "налаштовуватиме планувальник Linux для економії енергії в системах з "
+#~ "багатоядерними процесорами під час роботи від батареї."
+
+#~ msgid ""
+#~ "If you enable this option, 'laptop-mode' will automatically enable the "
+#~ "USB autosuspend feature for all devices."
+#~ msgstr ""
+#~ "Якщо цей параметр увімкнений, «портативний» режим автоматично "
+#~ "уможливлюватиме авто-призупинення USB для всіх пристроїв."
+
+#~ msgid ""
+#~ "If you enable this option, 'laptop-mode' will automatically enable the "
+#~ "link power management mode of Intel AHCI compliant SATA chipsets."
+#~ msgstr ""
+#~ "Якщо цей параметр увімкнений, «портативний» режим автоматично вмикатиме "
+#~ "пов’язаний режим живлення для Intel AHCI-сумісних чипсетів SATA."
+
+#~ msgid ""
+#~ "If you enable this option, 'laptop-mode' will automatically set the "
+#~ "powersave mode of Intel HDA audio chipsets."
+#~ msgstr ""
+#~ "Якщо цей параметр увімкнений, «портативний» режим автоматично "
+#~ "встановлюватиме режим енергозбереження для аудіо чипсетів Intel HDA."
+
+#~ msgid ""
+#~ "If you enable this option, 'laptop-mode' will control the polling of your "
+#~ "CD/DVD drives by HAL. Disabling polling saves a considerable amount of "
+#~ "power."
+#~ msgstr ""
+#~ "Якщо цей параметр увімкнений, «портативний» режим автоматично керуватиме "
+#~ "опитуванням CD/DVD пристроїв через HAL. Вимкнення опитування економить "
+#~ "значну кількість енергії."
+
+#~ msgid ""
+#~ "If you enable this option, 'laptop-mode' will take control of the hard "
+#~ "disk power management."
+#~ msgstr ""
+#~ "Якщо цей параметр увімкнений, «портативний» режим автоматично керуватиме "
+#~ "живленням твердого диска."
+
+#~ msgid ""
+#~ "If you enable this option, the speed of the Ethernet connection is "
+#~ "limited to 100 Mbit. The difference in power usage between 1 Gbit and 100 "
+#~ "Mbit Ethernet is quite large, so tuning can yield savings if you don't "
+#~ "need the full speed (for instance if you only use Ethernet as to connect "
+#~ "to a much slower ADSL modem)."
+#~ msgstr ""
+#~ "Якщо цей параметр увімкнений, швидкість з’єднання з Ethernet буде "
+#~ "обмежена до 100 Мб. Різниця в енергоспоживанні між режимами 1 Гбіт та 100 "
+#~ "Мбіт Ethernet досить велика, тому, якщо ви не потребуєте повної швидкості "
+#~ "(наприклад, якщо ви використовуєте Ethernet лише для під’єднання модема "
+#~ "ADSL) увімкніть цей параметр."
+
+#~ msgid ""
+#~ "This option sets the disk power management when on battery, it can be a "
+#~ "value between 1 and 255. A low value results in a better energy saving "
+#~ "but less disk performance, an high value results in disk performance but "
+#~ "less energy saving."
+#~ msgstr ""
+#~ "Цей параметр встановлює режим керування живленням твердого диска під час "
+#~ "роботи від батареї, значення може бути від 1 до 255. Низьке значення "
+#~ "сприяє кращому енергозбереженню, але меншій продуктивності диска, високе "
+#~ "значення покращує продуктивність диска, але погіршує енергозбереження."
