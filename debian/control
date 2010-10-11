@@ -15,5 +15,4 @@ Description: Tools for Samsung netbooks.
  .
  It allows the complete configuration and the control in a friendly way of the devices found on Samsung
  netbooks (bluetooth, wireless, webcam, backlight, CPU fan, special keys) and the control of various
- aspects related to power management, like the 'laptop-mode' tools and the undervolting of the CPU
- (when a PHC-enabled kernel is available).
+ aspects related to power management, like the undervolting of the CPU (when a PHC-enabled kernel is available).
