@@ -1,3 +1,9 @@
+samsung-tools (1.2~ppa1~loms~lucid) maverick; urgency=low
+
+  * 
+
+ -- Fortunato Ventre (voRia) <vorione@gmail.com>  Mon, 11 Oct 2010 13:13:44 +0200
+
 samsung-tools (1.1.4~ppa1~loms~lucid) lucid; urgency=low
 
   * Add a new option "hotkey" to "samsung-tools" command line utility
