@@ -1,0 +1,43 @@
+#!/bin/bash
+
+# Enable USB autosuspend.
+
+USB_AUTOSUSPEND=${USB_AUTOSUSPEND:-true}
+
+help() {
+cat <<EOF
+--------
+$0: USB autosuspend.
+
+This hook has 1 tuneable parameter. 
+USB_AUTOSUSPEND = controls whether we will try to save power on battery.
+Defaults to true.
+
+EOF
+}
+
+usb_autosuspend() {
+	[ "$USB_AUTOSUSPEND" = "true" ] || exit $NA
+	if [ "$1" = "auto" ]; then
+		printf "Enabling USB autosuspend... "
+	else
+		printf "Disabling USB autosuspend... "
+	fi
+	for i in /sys/bus/usb/devices/*/power/level; do
+		echo "$1" > $i
+	done
+	for i in /sys/bus/usb/devices/*/power/autosuspend; do
+		echo "2" > $i
+	done
+	echo Done.
+	
+}
+
+case $1 in
+    true) usb_autosuspend auto ;;
+    false) usb_autosuspend on ;;
+    help) help;;
+    *) exit $NA
+esac
+
+exit 0

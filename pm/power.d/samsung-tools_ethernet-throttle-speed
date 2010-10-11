@@ -1,0 +1,70 @@
+#! /bin/sh
+
+# Set the throttle speed of ethernet card.
+
+ETHERNET_THROTTLE_SPEED=${ETHERNET_THROTTLE_SPEED:-true}
+
+help() {
+cat <<EOF
+--------
+$0: Ethernet throttle speed.
+
+This hook has 1 tuneable parameter. 
+ETHERNET_THROTTLE_SPEED = controls whether we will try to save power on battery.
+Defaults to true.
+
+EOF
+}
+
+throttle_speed() {
+	[ "$ETHERNET_THROTTLE_SPEED" = "true" ] || exit $NA
+	if [ $1 -eq 1 ]; then
+		# Handle auto-negotiation
+		printf "Switching auto-negotiation to off for eth0... "
+		ret=`ethtool -s eth0 autoneg off 2>&1`
+                exit_status=$?;
+		if [ $exit_status -eq 0 ]; then
+			echo Done.
+		else
+			echo Failed.
+		fi
+		# Handle Speed Throttling
+		printf "Throttling speed to 100 Mbit for eth0... "
+		ret=`ethtool -s eth0 speed 100 2>&1`
+		exit_status=$?;
+                if [ $exit_status -eq 0 ]; then
+			echo Done.
+		else
+			echo Failed.
+		fi
+	else
+		# Handle auto-negotiation
+		printf "Switching auto-negotiation to on for eth0... "
+		ret=`ethtool -s eth0 autoneg on 2>&1`
+                exit_status=$?;
+		if [ $exit_status -eq 0 ]; then
+			echo Done.
+		else
+			echo Failed.
+		fi
+		# Handle Speed Throttling
+		printf "Throttling speed to 1000 Mbit for eth0... "
+		ret=`ethtool -s eth0 speed 1000 2>&1`
+		exit_status=$?;
+                if [ $exit_status -eq 0 ]; then
+			echo Done.
+		else
+			echo Failed.
+		fi
+	fi
+}
+
+case $1 in
+    true) throttle_speed 1 ;;
+    false) throttle_speed 0 ;;
+    help) help;;
+    *) exit $NA
+esac
+
+exit 0
+

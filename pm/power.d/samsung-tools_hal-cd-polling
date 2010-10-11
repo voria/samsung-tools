@@ -1,0 +1,53 @@
+#!/bin/sh
+
+. "${PM_FUNCTIONS}"
+
+DISABLE_HAL_POLLING="${DISABLE_HAL_POLLING:-true}"
+
+help() {
+    cat <<"EOF"
+---
+$0: Keep HAL from polling optical media for disk insertion
+
+Keep HAL from polling optical media while on battery. This saves a few
+tenths of a watt.
+
+This hook has 1 parameter:
+DISABLE_HAL_POLLING = true or false.
+If true, this hook will turn off the poll HAL does every 2 seconds to see
+if media has been inserted into an optical drive.  
+
+If false, this hook does nothing. 
+
+EOF
+}
+
+stop_polling() {
+    [ "$DISABLE_HAL_POLLING" = "true" ] || exit $NA
+    command_exists hal-disable-polling || exit $NA
+    local disks="$(for c in /dev/cd*; do readlink -f "$c"; done |sort |uniq)"
+    [ "$disks" ] || exit $NA
+    for c in $disks; do
+	printf "Disabling HAL polling of %s... " "$c"
+	hal-disable-polling --device "$c" >/dev/null 2>&1 \
+	    && echo Done. || echo Failed.
+    done
+}
+
+restart_polling() {
+    command_exists hal-disable-polling || exit $NA
+    local disks="$(for c in /dev/cd*; do readlink -f "$c"; done |sort |uniq)"
+    [ "$disks" ] || exit $NA
+    for c in $disks; do
+	printf "Reenabling HAL polling of %s... " "$c"
+	hal-disable-polling --enable-polling --device "$c" >/dev/null 2>&1 \
+            && echo Done. || echo Failed.
+    done
+}
+
+case $1 in
+    true) stop_polling;;
+    false) restart_polling;;
+    help) help;;
+    *) exit $NA;;
+esac

@@ -22,7 +22,7 @@ install:
 	$(install_dir) $(DESTDIR)/etc/samsung-tools/
 	$(install_file) configs/*.conf $(DESTDIR)/etc/samsung-tools/
 	$(install_dir) $(DESTDIR)/etc/pm/sleep.d/
-	$(install_script) sleep.d/20_samsung-tools $(DESTDIR)/etc/pm/sleep.d/
+	$(install_script) pm/sleep.d/20_samsung-tools $(DESTDIR)/etc/pm/sleep.d/
 	# Locales
 	$(shell po/install.sh ${DESTDIR})
 	# CLI
