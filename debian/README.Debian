@@ -13,5 +13,4 @@ Dependencies:
 - xbindkeys
 
 Optional dependencies:
-- laptop-mode-tools
 - phc-intel
