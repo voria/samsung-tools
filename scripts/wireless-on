@@ -1,0 +1,6 @@
+#!/bin/bash
+#
+# This script is automatically executed when wireless is turned on.
+#
+
+exit 0
