@@ -2,5 +2,3 @@
 #
 # This script is automatically executed when wireless is turned off.
 #
-
-exit 0
