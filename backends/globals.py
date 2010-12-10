@@ -87,12 +87,6 @@ if os.path.basename(sys.argv[0]) == "system-service.py":
 	COMMAND_DMESG = "dmesg"
 	COMMAND_RFKILL = "rfkill"
 	COMMAND_SYSCTL = "sysctl"
-	# Search for laptop-mode init script
-	COMMAND_LAPTOPMODE_RESTART = ""
-	if os.path.exists("/etc/init.d/laptop-mode"):
-		COMMAND_LAPTOPMODE_RESTART = "/etc/init.d/laptop-mode restart"
-	elif os.path.exists("/etc/rc.d/laptop-mode"):
-		COMMAND_LAPTOPMODE_RESTART = "/etc/rc.d/laptop-mode restart"
 	# Easy slow down manager interface
 	ESDM_MODULE = "easy_slow_down_manager"
 	ESDM_PATH_BACKLIGHT = "/proc/easy_backlight"
