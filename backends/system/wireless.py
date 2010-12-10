@@ -134,6 +134,7 @@ class Wireless(dbus.service.Object):
 			command = SCRIPT_WIRELESS_ON
 			process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 		except:
+			systemlog.write("WARNING: 'Wireless.Enable()' - Error while executing '" + SCRIPT_WIRELESS_ON + "'.")
 			pass
 		# Save wireless status
 		self.__save_last_status(True)
@@ -168,6 +169,7 @@ class Wireless(dbus.service.Object):
 			command = SCRIPT_WIRELESS_OFF
 			process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 		except:
+			systemlog.write("WARNING: 'Wireless.Disable()' - Error while executing '" + SCRIPT_WIRELESS_OFF + "'.")
 			pass
 		# Save wireless status
 		self.__save_last_status(False)
