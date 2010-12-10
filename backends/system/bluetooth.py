@@ -124,6 +124,12 @@ class Bluetooth(dbus.service.Object):
 		except:
 			systemlog.write("ERROR: 'Bluetooth.Enable()' - COMMAND: '" + command + "' - Exception thrown.")
 			return False
+		# Exec script
+		try:
+			command = SCRIPT_BLUETOOTH_ON
+			process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+		except:
+			pass
 		# Save bluetooth status
 		self.__save_last_status(True)
 		return True
@@ -148,6 +154,12 @@ class Bluetooth(dbus.service.Object):
 		except:
 			systemlog.write("ERROR: 'Bluetooth.Disable()' - COMMAND: '" + command + "' - Exception thrown.")
 			return False
+		# Exec script
+		try:
+			command = SCRIPT_BLUETOOTH_OFF
+			process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+		except:
+			pass
 		# Save bluetooth status
 		self.__save_last_status(False)
 		return True

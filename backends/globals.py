@@ -88,6 +88,8 @@ if os.path.basename(sys.argv[0]) == "system-service.py":
 	COMMAND_RFKILL = "rfkill"
 	COMMAND_SYSCTL = "sysctl"
 	# Scripts
+	SCRIPT_BLUETOOTH_ON="/etc/samsung-tools/scripts/bluetooth-on"
+	SCRIPT_BLUETOOTH_OFF="/etc/samsung-tools/scripts/bluetooth-off"
 	SCRIPT_WIRELESS_ON="/etc/samsung-tools/scripts/wireless-on"
 	SCRIPT_WIRELESS_OFF="/etc/samsung-tools/scripts/wireless-off"
 	# Easy slow down manager interface
