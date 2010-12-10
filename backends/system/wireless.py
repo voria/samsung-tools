@@ -129,6 +129,12 @@ class Wireless(dbus.service.Object):
 			process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 		except:
 			pass
+		# Exec script
+		try:
+			command = SCRIPT_WIRELESS_ON
+			process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+		except:
+			pass
 		# Save wireless status
 		self.__save_last_status(True)
 		return True
@@ -157,6 +163,12 @@ class Wireless(dbus.service.Object):
 		except:
 			systemlog.write("ERROR: 'Wireless.Disable()' - cannot write to '" + ESDM_PATH_WIRELESS + "'.")
 			return False
+		# Exec script
+		try:
+			command = SCRIPT_WIRELESS_OFF
+			process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+		except:
+			pass
 		# Save wireless status
 		self.__save_last_status(False)
 		return True

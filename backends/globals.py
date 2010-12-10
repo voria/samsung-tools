@@ -22,7 +22,7 @@
 from backends.log import Log
 
 APP_NAME = "Samsung Tools"
-APP_VERSION = "1.2"
+APP_VERSION = "1.3"
 WORK_DIRECTORY = "/usr/lib/samsung-tools/"
 
 # Interface/Objects for session service
@@ -87,6 +87,9 @@ if os.path.basename(sys.argv[0]) == "system-service.py":
 	COMMAND_DMESG = "dmesg"
 	COMMAND_RFKILL = "rfkill"
 	COMMAND_SYSCTL = "sysctl"
+	# Scripts
+	SCRIPT_WIRELESS_ON="/etc/samsung-tools/scripts/wireless-on"
+	SCRIPT_WIRELESS_OFF="/etc/samsung-tools/scripts/wireless-off"
 	# Easy slow down manager interface
 	ESDM_MODULE = "easy_slow_down_manager"
 	ESDM_PATH_BACKLIGHT = "/proc/easy_backlight"
