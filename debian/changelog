@@ -1,8 +1,12 @@
 samsung-tools (1.3~ppa1~loms~maverick) maverick; urgency=low
 
-  * 
-
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Mon, 10 Dec 2010 14:29:44 +0200
+  * Install scripts in /etc/samsung-tools/scripts/ which are automatically
+    executed when devices are toggled. This way it's possible to execute
+    custom commands when devices are toggled.
+  * Update translations to latest version from Launchpad.
+  * Update translators' credits list.
+ 
+ -- Fortunato Ventre (voRia) <vorione@gmail.com>  Fri, 10 Dec 2010 14:56:02 +0100
 
 samsung-tools (1.2~ppa1~loms~maverick) maverick; urgency=low
 
