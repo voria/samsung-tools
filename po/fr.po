@@ -7,15 +7,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-11 13:14+0200\n"
-"PO-Revision-Date: 2010-09-29 20:37+0000\n"
-"Last-Translator: Thibault Févry <Unknown>\n"
+"POT-Creation-Date: 2010-12-10 13:53+0100\n"
+"PO-Revision-Date: 2010-10-10 14:43+0000\n"
+"Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-10-10 12:16+0000\n"
+"X-Launchpad-Export-Date: 2010-12-10 12:48+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: backends/session/util/locales.py:25 samsung-tools-preferences.py:338
@@ -305,7 +305,7 @@ msgstr " - Désactiver le Bluetooth, la webcam et le réseau sans fil:"
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Pour plus d'informations, visitez le forum \"Linux On My Samsung\":"
 
-#: samsung-tools.py:627 samsung-tools-preferences.py:957
+#: samsung-tools.py:627 samsung-tools-preferences.py:959
 msgid "Released under GPLv3 license"
 msgstr "Publié sous licence GPLv3"
 
@@ -599,91 +599,6 @@ msgstr "Fixer automatiquement les nouveaux VIDs au démarrage."
 msgid "Start the session service"
 msgstr "Lancer le service de session"
 
-#~ msgid "Install 'laptop-mode' to enable and configure these options"
-#~ msgstr "Installez « laptop-mode » pour activer et configurer ces options"
-
-#~ msgid "Configure 'laptop-mode'"
-#~ msgstr "Configurer « laptop-mode »"
-
-#~ msgid "Configure 'laptop-mode' for a better power management"
-#~ msgstr "Configure « laptop-mode » pour une meilleur gestion de l'énergie"
-
-#~ msgid ""
-#~ "An enabled video output port draws power, even if no display is "
-#~ "connected. This option forces the display output off depending on the "
-#~ "power mode."
-#~ msgstr ""
-#~ "Un port activé de sortie vidéo consomme de l'énergie, même s'il n'y a pas "
-#~ "d'écran connecté.Cette option désactive la sortie vidéo en fonction du "
-#~ "mode d'alimentation."
-
-#~ msgid "Control Ethernet settings"
-#~ msgstr "Contrôler les réglages Ethernet"
-
-#~ msgid "Control HAL polling"
-#~ msgstr "Contrôler la scrutation par HAL"
-
-#~ msgid "Control Intel HDA audio chipset power"
-#~ msgstr "Contrôler la consommation du chipset audio HDA d'Intel"
-
-#~ msgid "Control Intel SATA chipset power"
-#~ msgstr "Contrôler la consommation du chipset SATA d'Intel"
-
-#~ msgid "Control Linux scheduler"
-#~ msgstr "Contrôler l'ordonnanceur de Linux"
-
-#~ msgid "Control configuration files"
-#~ msgstr "Contrôler les fichiers de configuration"
-
-#~ msgid "Control hard disk power management"
-#~ msgstr "Contrôler la gestion de l'alimentation du disque dur"
-
-#~ msgid "Control video output settings"
-#~ msgstr "Contrôler les réglages de la sortie video"
-
-#~ msgid "Enable USB autosuspend"
-#~ msgstr "Activer l'autosuspension USB"
-
-#~ msgid "Hard disk power management:"
-#~ msgstr "Gestion de l'alimentation du disque dur"
-
-#~ msgid ""
-#~ "If you enable this option, 'laptop-mode' will automatically configure the "
-#~ "Linux scheduler to save power on multi-core processors while running on "
-#~ "battery mode."
-#~ msgstr ""
-#~ "Si vous activez cette option, \"laptop-mode\" configurera automatiquement "
-#~ "l'ordonnanceur de Linux pour économiser l'énergie consommée par les "
-#~ "processeurs multi-coeurs lors du fonctionnement sur batterie."
-
-#~ msgid ""
-#~ "If you enable this option, 'laptop-mode' will automatically enable the "
-#~ "USB autosuspend feature for all devices."
-#~ msgstr ""
-#~ "Si vous activez cette option, \"laptop-mode\" activera automatiquement "
-#~ "l'autosuspension pour tous les périphériques USB."
-
-#~ msgid ""
-#~ "If you enable this option, 'laptop-mode' will take control of the hard "
-#~ "disk power management."
-#~ msgstr ""
-#~ "Si vous activez cette option, \"laptop-mode\" prendra le contrôle de la "
-#~ "gestion d'énergie du disque dur."
-
-#~ msgid ""
-#~ "If you enable this option, the speed of the Ethernet connection is "
-#~ "limited to 100 Mbit. The difference in power usage between 1 Gbit and 100 "
-#~ "Mbit Ethernet is quite large, so tuning can yield savings if you don't "
-#~ "need the full speed (for instance if you only use Ethernet as to connect "
-#~ "to a much slower ADSL modem)."
-#~ msgstr ""
-#~ "Si vous activez cette option, la vitesse de la connexion Ethernet est "
-#~ "limitée à 100 Mbits/s.La différence de consommation d'énergie entre des "
-#~ "connexions Ethernet à 1 Gbits/s ou à 100 Mbits/s est assez importante, "
-#~ "donc ce réglage peut apporter des économies d'énergie (par exemple si "
-#~ "vous utilisez seulement la liaison Ethernet pour vous connecter à un "
-#~ "modem ADSL bien plus lent)."
-
 #~ msgid "Fan mode changed: Normal"
 #~ msgstr "Changement de mode ventilateur: Normal"
 
@@ -737,5 +652,90 @@ msgstr "Lancer le service de session"
 #~ msgid "Wireless initial status:"
 #~ msgstr "Etat initial du réseau sans fil:"
 
+#~ msgid "Control Linux scheduler"
+#~ msgstr "Contrôler l'ordonnanceur de Linux"
+
+#~ msgid "Hard disk power management:"
+#~ msgstr "Gestion de l'alimentation du disque dur"
+
+#~ msgid "Control video output settings"
+#~ msgstr "Contrôler les réglages de la sortie video"
+
+#~ msgid "Control configuration files"
+#~ msgstr "Contrôler les fichiers de configuration"
+
+#~ msgid "Control Intel HDA audio chipset power"
+#~ msgstr "Contrôler la consommation du chipset audio HDA d'Intel"
+
+#~ msgid "Control Ethernet settings"
+#~ msgstr "Contrôler les réglages Ethernet"
+
+#~ msgid "Control Intel SATA chipset power"
+#~ msgstr "Contrôler la consommation du chipset SATA d'Intel"
+
+#~ msgid "Enable USB autosuspend"
+#~ msgstr "Activer l'autosuspension USB"
+
+#~ msgid "Control HAL polling"
+#~ msgstr "Contrôler la scrutation par HAL"
+
 #~ msgid "Swappiness:"
 #~ msgstr "Variable de réglage du swap (\"swappiness\")"
+
+#~ msgid ""
+#~ "An enabled video output port draws power, even if no display is "
+#~ "connected. This option forces the display output off depending on the "
+#~ "power mode."
+#~ msgstr ""
+#~ "Un port activé de sortie vidéo consomme de l'énergie, même s'il n'y a pas "
+#~ "d'écran connecté.Cette option désactive la sortie vidéo en fonction du "
+#~ "mode d'alimentation."
+
+#~ msgid ""
+#~ "If you enable this option, the speed of the Ethernet connection is "
+#~ "limited to 100 Mbit. The difference in power usage between 1 Gbit and 100 "
+#~ "Mbit Ethernet is quite large, so tuning can yield savings if you don't "
+#~ "need the full speed (for instance if you only use Ethernet as to connect "
+#~ "to a much slower ADSL modem)."
+#~ msgstr ""
+#~ "Si vous activez cette option, la vitesse de la connexion Ethernet est "
+#~ "limitée à 100 Mbits/s.La différence de consommation d'énergie entre des "
+#~ "connexions Ethernet à 1 Gbits/s ou à 100 Mbits/s est assez importante, "
+#~ "donc ce réglage peut apporter des économies d'énergie (par exemple si "
+#~ "vous utilisez seulement la liaison Ethernet pour vous connecter à un "
+#~ "modem ADSL bien plus lent)."
+
+#~ msgid ""
+#~ "If you enable this option, 'laptop-mode' will take control of the hard "
+#~ "disk power management."
+#~ msgstr ""
+#~ "Si vous activez cette option, \"laptop-mode\" prendra le contrôle de la "
+#~ "gestion d'énergie du disque dur."
+
+#~ msgid ""
+#~ "If you enable this option, 'laptop-mode' will automatically configure the "
+#~ "Linux scheduler to save power on multi-core processors while running on "
+#~ "battery mode."
+#~ msgstr ""
+#~ "Si vous activez cette option, \"laptop-mode\" configurera automatiquement "
+#~ "l'ordonnanceur de Linux pour économiser l'énergie consommée par les "
+#~ "processeurs multi-coeurs lors du fonctionnement sur batterie."
+
+#~ msgid ""
+#~ "If you enable this option, 'laptop-mode' will automatically enable the "
+#~ "USB autosuspend feature for all devices."
+#~ msgstr ""
+#~ "Si vous activez cette option, \"laptop-mode\" activera automatiquement "
+#~ "l'autosuspension pour tous les périphériques USB."
+
+#~ msgid "Control hard disk power management"
+#~ msgstr "Contrôler la gestion de l'alimentation du disque dur"
+
+#~ msgid "Install 'laptop-mode' to enable and configure these options"
+#~ msgstr "Installez « laptop-mode » pour activer et configurer ces options"
+
+#~ msgid "Configure 'laptop-mode' for a better power management"
+#~ msgstr "Configure « laptop-mode » pour une meilleur gestion de l'énergie"
+
+#~ msgid "Configure 'laptop-mode'"
+#~ msgstr "Configurer « laptop-mode »"

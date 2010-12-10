@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-10-11 13:14+0200\n"
+"POT-Creation-Date: 2010-12-10 13:53+0100\n"
 "PO-Revision-Date: 2010-05-16 10:37+0000\n"
 "Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2010-10-10 12:16+0000\n"
+"X-Launchpad-Export-Date: 2010-12-10 12:48+0000\n"
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: backends/session/util/locales.py:25 samsung-tools-preferences.py:338
@@ -296,7 +296,7 @@ msgstr " - Inaktivera bluetooth, webbkamera och det trådlösa nätverket:"
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "För mer information, gå till 'Linux On My Samsung'-forumet:"
 
-#: samsung-tools.py:627 samsung-tools-preferences.py:957
+#: samsung-tools.py:627 samsung-tools-preferences.py:959
 msgid "Released under GPLv3 license"
 msgstr "Publicerat under GPLv3-licensen"
 
@@ -581,6 +581,18 @@ msgstr "Ställ in de nya VIDsen automatiskt vid start."
 msgid "Start the session service"
 msgstr "Starta sessionstjänsten"
 
+#~ msgid "Control Intel HDA audio chipset power"
+#~ msgstr "Kontrollera Intel HDA ljudchippets ström"
+
+#~ msgid "Control Intel SATA chipset power"
+#~ msgstr "Kontrollera Intel SATA chippets ström"
+
+#~ msgid "Control Ethernet settings"
+#~ msgstr "Kontrollera ethernet-inställningar"
+
+#~ msgid "Control HAL polling"
+#~ msgstr "Kontrollera HAL-förfrågningar"
+
 #~ msgid ""
 #~ "An enabled video output port draws power, even if no display is "
 #~ "connected. This option forces the display output off depending on the "
@@ -589,32 +601,20 @@ msgstr "Starta sessionstjänsten"
 #~ "En aktiverad VGA-anslutning drar energi även om ingen skärm är ansluten i "
 #~ "den. Det här tvingar porten att stänga av vid energisparläge."
 
-#~ msgid "Control Ethernet settings"
-#~ msgstr "Kontrollera ethernet-inställningar"
-
-#~ msgid "Control HAL polling"
-#~ msgstr "Kontrollera HAL-förfrågningar"
-
-#~ msgid "Control Intel HDA audio chipset power"
-#~ msgstr "Kontrollera Intel HDA ljudchippets ström"
-
-#~ msgid "Control Intel SATA chipset power"
-#~ msgstr "Kontrollera Intel SATA chippets ström"
-
-#~ msgid "Control Linux scheduler"
-#~ msgstr "Kontrollera Linux schemaläggare"
-
-#~ msgid "Control configuration files"
-#~ msgstr "Kontrollera konfigurationsfiler"
-
 #~ msgid "Control video output settings"
 #~ msgstr "Kontrollera videoanslutningsalternativ"
 
 #~ msgid "Enable USB autosuspend"
 #~ msgstr "Aktivera USB autoavstängning"
 
+#~ msgid "Control Linux scheduler"
+#~ msgstr "Kontrollera Linux schemaläggare"
+
 #~ msgid "Hard disk power management:"
 #~ msgstr "Energianvändning för hårddiskarna:"
+
+#~ msgid "Control configuration files"
+#~ msgstr "Kontrollera konfigurationsfiler"
 
 #~ msgid ""
 #~ "If you enable this option, the speed of the Ethernet connection is "

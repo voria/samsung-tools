@@ -945,7 +945,9 @@ Are you sure you want to continue?"), "utf-8")
 					"zzz",
 					"Inox",
 					"Thibault Févry",
-					"Fitoschido"
+					"Fitoschido",
+					"Adriano Steffler",
+					"taha"
 					]
 		
 		translators.sort(cmp = lambda x, y: cmp(x.lower(), y.lower()))
