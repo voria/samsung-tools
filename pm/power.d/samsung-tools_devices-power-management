@@ -24,9 +24,8 @@ dpm() {
 		printf "Disabling Devices Power Management... "
 	fi
 	for i in /sys/bus/{pci,spi,i2c}/devices/*/power/control; do
-		if [ -f $i ]; then
-			echo "$1" > $i
-		fi
+		[ -w $i ] || continue
+		echo "$1" > $i
 	done
 	echo Done.
 	
