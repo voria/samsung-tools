@@ -1,0 +1,42 @@
+#!/bin/bash
+
+# Enable Devices Power Management.
+
+DPM=${DPM:-true}
+
+help() {
+cat <<EOF
+--------
+$0: Devices Power Management.
+
+This hook has 1 tuneable parameter. 
+DPM = controls whether we will try to save power on battery.
+Defaults to true.
+
+EOF
+}
+
+dpm() {
+	[ "$DPM" = "true" ] || exit $NA
+	if [ "$1" = "auto" ]; then
+		printf "Enabling Devices Power Management... "
+	else
+		printf "Disabling Devices Power Management... "
+	fi
+	for i in /sys/bus/{pci,spi,i2c}/devices/*/power/control; do
+		if [ -f $i ]; then
+			echo "$1" > $i
+		fi
+	done
+	echo Done.
+	
+}
+
+case $1 in
+    true) dpm auto ;;
+    false) dpm on ;;
+    help) help;;
+    *) exit $NA
+esac
+
+exit 0
