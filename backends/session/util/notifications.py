@@ -23,8 +23,8 @@ import subprocess
 from backends.globals import *
 
 # Try to use these notification methods, in order:
-# "pynotify" - Use pynotify module (ubuntu - notify-osd)
-# "dbus" - Use "org.freedesktop.Notifications" interface through dbus (kubuntu)
+# "pynotify" - Use pynotify module (notify-osd / gnome)
+# "dbus" - Use "org.freedesktop.Notifications" interface through dbus (kde)
 # None - Do not use notification system
 
 try:

@@ -21,20 +21,22 @@
 
 SAMSUNG_TOOLS_ICON = "/usr/lib/samsung-tools/gui/icons/samsung-tools.png"
 
-ERROR_ICON = "error"
-STOP_ICON = "stop"
 FAN_NORMAL_ICON = "/usr/lib/samsung-tools/gui/icons/fan-normal.png"
 FAN_SILENT_ICON = "/usr/lib/samsung-tools/gui/icons/fan-silent.png"
 FAN_SPEED_ICON = "/usr/lib/samsung-tools/gui/icons/fan-speed.png"
 WEBCAM_ICON = "camera-web"
 
-# If notify-osd icons are not available, use the default ones 
+# If notify-osd icons are not available, use the default ones
 from os.path import exists
 if exists("/usr/share/notify-osd/icons/"):
 	BLUETOOTH_ICON = "bluetooth"
 	WIRELESS_ENABLED_ICON = "notification-network-wireless-none"
 	WIRELESS_DISABLED_ICON = "notification-network-wireless-disconnected"
+	ERROR_ICON = "error"
+	STOP_ICON = "stop"
 else:
 	BLUETOOTH_ICON = "/usr/lib/samsung-tools/gui/icons/bluetooth.png"
 	WIRELESS_ENABLED_ICON = "network-wireless"
 	WIRELESS_DISABLED_ICON = "network-wireless"
+	ERROR_ICON = "dialog-error"
+	STOP_ICON = "process-stop"
