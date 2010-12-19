@@ -690,7 +690,6 @@ def main():
 		options.cpu = "status"
 		options.webcam = "status"
 		options.wireless = "status"
-		quiet = False
 		
 	if os.getuid() == 0:
 		print unicode(_("This program is intended to be used only by non-privileged users."), "utf-8")
