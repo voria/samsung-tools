@@ -1,3 +1,11 @@
+samsung-tools (1.3.1~ppa1~loms~maverick) maverick; urgency=low
+
+  * Add a new pm script to enable devices power management when on battery.
+  * Properly show error and stop icons in notification messages when
+    notify-osd is not available (ie, KDE environment).
+
+ -- Fortunato Ventre (voRia) <vorione@gmail.com>  Sun, 19 Dec 2010 15:07:50 +0100
+
 samsung-tools (1.3~ppa1~loms~maverick) maverick; urgency=low
 
   * Install scripts in /etc/samsung-tools/scripts/ which are automatically
