@@ -62,7 +62,7 @@ class Cpu(dbus.service.Object):
 		if self.notify != None:
 			temp = self.GetTemperature()
 			if temp != "none":
-				message = CPU_TEMPERATURE + " " + temp + " °C" + "\n\n" + message
+				message = CPU_TEMPERATURE + " " + temp + unicode(" °C", "utf8") + "\n" + message
 			self.notify.setTitle(title)
 			self.notify.setMessage(message)
 			self.notify.setIcon(icon)

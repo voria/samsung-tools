@@ -273,7 +273,7 @@ class Cpu():
 		if self.option == None:
 			return
 		if self.__is_temperature_available() and self.option != "hotkey" and not quiet:
-			print CPU_TEMPERATURE + " " + self.__temp() + " °C"
+			print CPU_TEMPERATURE + " " + self.__temp() + unicode(" °C", "utf8")
 		if not self.__is_fan_available():
 			if not quiet:
 				print FAN_NOT_AVAILABLE
