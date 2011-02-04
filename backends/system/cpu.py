@@ -128,4 +128,4 @@ class Cpu(dbus.service.Object):
 		except:
 			systemlog.write("ERROR: 'Cpu.GetTemperature()' - Cannot read temperature from '" + CPU_TEMPERATURE_PATH + "'.")
 			return "none"
-		return file.read().split(':')[1].strip()
+		return str(float(file.read()) / 1000)
