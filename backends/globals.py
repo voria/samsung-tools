@@ -22,7 +22,7 @@
 from backends.log import Log
 
 APP_NAME = "Samsung Tools"
-APP_VERSION = "1.3.1"
+APP_VERSION = "1.3.2"
 WORK_DIRECTORY = "/usr/lib/samsung-tools/"
 
 # Interface/Objects for session service
