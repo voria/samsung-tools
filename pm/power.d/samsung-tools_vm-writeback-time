@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# Manage VM subsystem in the linux kernel in order to optimize disk I/O when on battery.
+
+VM_WRITEBACK_TIME_POWERSAVE=${VM_WRITEBACK_TIME_POWERSAVE:-true}
+
+help() {
+cat <<EOF
+--------
+$0: VM writeback time parameters.
+
+This hook has 1 tuneable parameter. 
+VM_WRITEBACK_TIME_POWERSAVE = controls whether we will try to save power on battery.
+Defaults to true.
+
+EOF
+}
+
+vm_writeback_time_powersave() {
+    [ "$VM_WRITEBACK_TIME_POWERSAVE" = "true" ] || exit $NA
+    printf "Setting VM writeback time to %d..." "$1"
+    echo $1 > "/proc/sys/vm/dirty_writeback_centisecs" && echo Done. || echo Failed.
+}
+
+case $1 in
+    true) vm_writeback_time_powersave 1500 ;;
+    false) vm_writeback_time_powersave 500 ;;
+    help) help;;
+    *) exit $NA
+esac
+
+exit 0
