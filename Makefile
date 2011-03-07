@@ -26,7 +26,7 @@ install:
 	$(install_dir) $(DESTDIR)/etc/pm/sleep.d/
 	$(install_script) pm/sleep.d/20_samsung-tools $(DESTDIR)/etc/pm/sleep.d/
 	$(install_dir) $(DESTDIR)/etc/pm/power.d/
-	$(install_script) pm/power.d/* $(DESTDIR)/etc/pm/power.d/
+	$(install_file) pm/power.d/* $(DESTDIR)/etc/pm/power.d/
 	# Locales
 	$(shell po/install.sh ${DESTDIR})
 	# CLI
