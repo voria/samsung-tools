@@ -17,15 +17,17 @@ backup=(etc/samsung-tools/system.conf
         etc/samsung-tools/scripts/wireless-off)
 install=samsung-tools.install
 source=(http://launchpad.net/samsung-tools/trunk/$pkgver/+download/$pkgname-$pkgver.tar.gz
-	samsung-tools.rcd
-	fix_shebangs.patch)
+	samsung-tools.rcd)
 md5sums=('7a260c9ecf2d42f9838d04755760b4d3'
-         '60e9ef24018192c6475c59cd7ce99a7b'
-         '6e409f164942008270ecaf7e50a7adf0')
+         '60e9ef24018192c6475c59cd7ce99a7b')
 build() {
   cd "$srcdir/$pkgname-$pkgver"
-  patch -p1 -i "$srcdir/fix_shebangs.patch" || return 1
-
+  
+  # Fix shebangs in all .py files in order to use python2
+  find . -name \*.py | while read FILE; do
+    sed -i "1s:#!/usr/bin/env python:#!/usr/bin/env python2:" "$FILE"
+  done
+  
   make DESTDIR="$pkgdir/" install || return 1
   install -D -m755 "${srcdir}/samsung-tools.rcd" "${pkgdir}/etc/rc.d/samsung-tools" || return 1
 }
