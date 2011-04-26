@@ -1,0 +1,32 @@
+#!/bin/sh
+
+# Toggle NMI watchdog in order to save energy when on battery.
+
+NMI_WATCHDOG_POWERSAVE=${NMI_WATCHDOG_POWERSAVE:-true}
+
+help() {
+cat <<EOF
+--------
+$0: NMI watchdog parameters.
+
+This hook has 1 tuneable parameter. 
+NMI_WATCHDOG_POWERSAVE = controls whether we will try to save power on battery.
+Defaults to true.
+
+EOF
+}
+
+nmi_watchdog_powersave() {
+    [ "$NMI_WATCHDOG_POWERSAVE" = "true" ] || exit $NA
+    printf "Setting NMI watchdog to %d..." "$1"
+    echo $1 > "/proc/sys/kernel/nmi_watchdog" && echo Done. || echo Failed.
+}
+
+case $1 in
+    true) nmi_watchdog_powersave 0 ;;
+    false) nmi_watchdog_powersave 1 ;;
+    help) help;;
+    *) exit $NA
+esac
+
+exit 0
