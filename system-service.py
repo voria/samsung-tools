@@ -54,17 +54,21 @@ class General(dbus.service.Object):
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = None,
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def RestoreDevicesLastStatus(self, sender = None, conn = None):
-		""" Restore last status for webcam, bluetooth, wireless. """
+		""" Restore last status for everything. """
 		""" Return nothing. """
 		bluetooth.RestoreLastStatus()
 		webcam.RestoreLastStatus()
 		wireless.RestoreLastStatus()
 		fan.RestoreLastStatus()
+		# Restore also PHC values, just in case they have been resetted
+		status = systemconfig.getPHCVids()
+		if status != "":
+			cpu.SetCurrentVids(status)
 		
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = None,
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def SetInitialDevicesStatus(self, sender = None, conn = None):
-		""" Set initial status for webcam, bluetooth, wireless. """
+		""" Set initial status for everything. """
 		""" Return nothing. """
 		# Bluetooth
 		status = systemconfig.getBluetoothInitialStatus()
