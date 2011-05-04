@@ -19,7 +19,8 @@ install=samsung-tools.install
 source=(http://launchpad.net/samsung-tools/trunk/$pkgver/+download/$pkgname-$pkgver.tar.gz
 	samsung-tools.rcd)
 md5sums=('03d7f89985f06244ad3e425dcd41a2ec'
-         '60e9ef24018192c6475c59cd7ce99a7b')
+         'bb55fb6a753102546a909e634eb6c797')
+         
 build() {
   cd "$srcdir/$pkgname-$pkgver"
   
