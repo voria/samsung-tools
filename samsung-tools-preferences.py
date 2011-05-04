@@ -213,7 +213,7 @@ class PowerManagementDialog():
 		while retry > 0:
 			try:
 				bus = dbus.SystemBus()
-				proxy = bus.get_object(SYSTEM_INTERFACE_NAME, SYSTEM_OBJECT_PATH_SYSCTL)
+				proxy = bus.get_object(SYSTEM_INTERFACE_NAME, SYSTEM_OBJECT_PATH_POWERMANAGEMENT)
 				return dbus.Interface(proxy, SYSTEM_INTERFACE_NAME)
 			except:
 				retry = retry - 1

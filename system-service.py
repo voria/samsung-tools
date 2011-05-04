@@ -124,6 +124,7 @@ if __name__ == '__main__':
 	Options(bus, SYSTEM_OBJECT_PATH_OPTIONS)
 	Backlight(bus, SYSTEM_OBJECT_PATH_BACKLIGHT)
 	SysCtl(bus, SYSTEM_OBJECT_PATH_SYSCTL)
+	PowerManagement(bus, SYSTEM_OBJECT_PATH_POWERMANAGEMENT)
 	# We need these objects for restoring last statuses
 	bluetooth = Bluetooth(bus, SYSTEM_OBJECT_PATH_BLUETOOTH)
 	cpu = Cpu(bus, SYSTEM_OBJECT_PATH_CPU)

@@ -142,3 +142,8 @@ class SysCtl(dbus.service.Object):
 		except:
 			systemlog.write("ERROR: 'SysCtl.ApplySettings()' - COMMAND: '" + command + "' - Exception thrown.")
 			return False
+
+class PowerManagement(dbus.service.Object):
+	""" Manage power save options """
+	def __init__(self, conn = None, object_path = None, bus_name = None):
+		dbus.service.Object.__init__(self, conn, object_path, bus_name)
