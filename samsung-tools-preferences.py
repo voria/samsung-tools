@@ -586,7 +586,6 @@ class Main():
 		else:
 			self.phcButton.set_sensitive(True)
 		self.phcButton.connect("clicked", self.on_phcButton_clicked)
-		self.phcButton.show()
 		
 		# All ready
 		self.mainWindow.show()
