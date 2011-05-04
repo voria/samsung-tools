@@ -1,17 +1,97 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <interface>
   <requires lib="gtk+" version="2.16"/>
-  <!-- interface-naming-policy project-wide -->
+  <object class="GtkListStore" id="cpufanInitialStatusListstore">
+    <columns>
+      <!-- column-name Status -->
+      <column type="gchararray"/>
+    </columns>
+    <data>
+      <row>
+        <col id="0" translatable="yes">Normal</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Silent</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Speed</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Last status</col>
+      </row>
+    </data>
+  </object>
+  <object class="GtkListStore" id="initialStatusListstore">
+    <columns>
+      <!-- column-name State -->
+      <column type="gchararray"/>
+    </columns>
+    <data>
+      <row>
+        <col id="0" translatable="yes">Last status</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Enabled</col>
+      </row>
+      <row>
+        <col id="0" translatable="yes">Disabled</col>
+      </row>
+    </data>
+  </object>
   <object class="GtkDialog" id="mainWindow">
+    <property name="can_focus">False</property>
     <property name="border_width">5</property>
     <property name="title" translatable="yes">Samsung Tools Preferences</property>
     <property name="default_width">400</property>
     <property name="type_hint">normal</property>
     <child internal-child="vbox">
-      <object class="GtkVBox" id="dialog-vbox1">
+      <object class="GtkBox" id="dialog-vbox1">
         <property name="visible">True</property>
+        <property name="can_focus">False</property>
         <property name="orientation">vertical</property>
         <property name="spacing">2</property>
+        <child internal-child="action_area">
+          <object class="GtkButtonBox" id="dialog-action_area1">
+            <property name="visible">True</property>
+            <property name="can_focus">False</property>
+            <child>
+              <object class="GtkButton" id="aboutButton">
+                <property name="label">gtk-about</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
+                <property name="use_stock">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="closeButton">
+                <property name="label">gtk-close</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="use_action_appearance">False</property>
+                <property name="use_stock">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">1</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="pack_type">end</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
         <child>
           <object class="GtkNotebook" id="mainNotebook">
             <property name="visible">True</property>
@@ -20,6 +100,7 @@
             <child>
               <object class="GtkTable" id="sessionTable">
                 <property name="visible">True</property>
+                <property name="can_focus">False</property>
                 <property name="border_width">5</property>
                 <property name="n_rows">7</property>
                 <property name="n_columns">4</property>
@@ -28,6 +109,7 @@
                 <child>
                   <object class="GtkLabel" id="webcamHotkeyLabel">
                     <property name="visible">True</property>
+                    <property name="can_focus">False</property>
                     <property name="tooltip_text" translatable="yes">Hotkey used for webcam control</property>
                     <property name="label" translatable="yes">Webcam:</property>
                     <property name="single_line_mode">True</property>
@@ -43,6 +125,7 @@
                 <child>
                   <object class="GtkLabel" id="cpuHotkeyLabel">
                     <property name="visible">True</property>
+                    <property name="can_focus">False</property>
                     <property name="tooltip_text" translatable="yes">Hotkey used for CPU fan control</property>
                     <property name="label" translatable="yes">CPU fan:</property>
                     <property name="single_line_mode">True</property>
@@ -58,6 +141,7 @@
                 <child>
                   <object class="GtkLabel" id="bluetoothHotkeyLabel">
                     <property name="visible">True</property>
+                    <property name="can_focus">False</property>
                     <property name="tooltip_text" translatable="yes">Hotkey used for bluetooth control</property>
                     <property name="label" translatable="yes">Bluetooth:</property>
                     <property name="single_line_mode">True</property>
@@ -73,6 +157,7 @@
                 <child>
                   <object class="GtkLabel" id="backlightHotkeyLabel">
                     <property name="visible">True</property>
+                    <property name="can_focus">False</property>
                     <property name="tooltip_text" translatable="yes">Hotkey used for backlight control</property>
                     <property name="label" translatable="yes">Backlight:</property>
                     <property name="single_line_mode">True</property>
@@ -91,6 +176,7 @@
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
                     <property name="tooltip_text" translatable="yes">Click here to disable the hotkey</property>
+                    <property name="use_action_appearance">False</property>
                   </object>
                   <packing>
                     <property name="left_attach">2</property>
@@ -107,6 +193,7 @@
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
                     <property name="tooltip_text" translatable="yes">Click here to disable the hotkey</property>
+                    <property name="use_action_appearance">False</property>
                   </object>
                   <packing>
                     <property name="left_attach">2</property>
@@ -123,6 +210,7 @@
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
                     <property name="tooltip_text" translatable="yes">Click here to disable the hotkey</property>
+                    <property name="use_action_appearance">False</property>
                   </object>
                   <packing>
                     <property name="left_attach">2</property>
@@ -136,6 +224,7 @@
                 <child>
                   <object class="GtkLabel" id="hotkeysConfigurationLabel">
                     <property name="visible">True</property>
+                    <property name="can_focus">False</property>
                     <property name="xalign">0</property>
                     <property name="xpad">5</property>
                     <property name="label" translatable="yes">&lt;b&gt;Hotkeys&lt;/b&gt;</property>
@@ -149,6 +238,7 @@
                 <child>
                   <object class="GtkLabel" id="wirelessHotkeyLabel">
                     <property name="visible">True</property>
+                    <property name="can_focus">False</property>
                     <property name="tooltip_text" translatable="yes">Hotkey used for wireless control</property>
                     <property name="label" translatable="yes">Wireless:</property>
                     <property name="single_line_mode">True</property>
@@ -167,6 +257,7 @@
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
                     <property name="tooltip_text" translatable="yes">Click here to disable the hotkey</property>
+                    <property name="use_action_appearance">False</property>
                   </object>
                   <packing>
                     <property name="left_attach">2</property>
@@ -183,6 +274,7 @@
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
                     <property name="tooltip_text" translatable="yes">Click here to disable the hotkey</property>
+                    <property name="use_action_appearance">False</property>
                     <property name="image_position">top</property>
                   </object>
                   <packing>
@@ -200,6 +292,7 @@
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
                     <property name="tooltip_text" translatable="yes">Click here to set the default hotkey</property>
+                    <property name="use_action_appearance">False</property>
                   </object>
                   <packing>
                     <property name="left_attach">3</property>
@@ -216,6 +309,7 @@
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
                     <property name="tooltip_text" translatable="yes">Click here to set the default hotkey</property>
+                    <property name="use_action_appearance">False</property>
                   </object>
                   <packing>
                     <property name="left_attach">3</property>
@@ -232,6 +326,7 @@
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
                     <property name="tooltip_text" translatable="yes">Click here to set the default hotkey</property>
+                    <property name="use_action_appearance">False</property>
                   </object>
                   <packing>
                     <property name="left_attach">3</property>
@@ -248,6 +343,7 @@
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
                     <property name="tooltip_text" translatable="yes">Click here to set the default hotkey</property>
+                    <property name="use_action_appearance">False</property>
                   </object>
                   <packing>
                     <property name="left_attach">3</property>
@@ -264,6 +360,7 @@
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
                     <property name="tooltip_text" translatable="yes">Click here to set the default hotkey</property>
+                    <property name="use_action_appearance">False</property>
                   </object>
                   <packing>
                     <property name="left_attach">3</property>
@@ -281,6 +378,7 @@
                     <property name="can_focus">True</property>
                     <property name="receives_default">False</property>
                     <property name="tooltip_text" translatable="yes">Enable this option to use hotkeys</property>
+                    <property name="use_action_appearance">False</property>
                     <property name="draw_indicator">True</property>
                   </object>
                   <packing>
@@ -311,6 +409,7 @@
             <child type="tab">
               <object class="GtkLabel" id="sessionLabel">
                 <property name="visible">True</property>
+                <property name="can_focus">False</property>
                 <property name="label" translatable="yes">Session service</property>
               </object>
               <packing>
@@ -320,6 +419,7 @@
             <child>
               <object class="GtkTable" id="systemTable">
                 <property name="visible">True</property>
+                <property name="can_focus">False</property>
                 <property name="border_width">5</property>
                 <property name="n_rows">5</property>
                 <property name="n_columns">3</property>
@@ -328,6 +428,7 @@
                 <child>
                   <object class="GtkLabel" id="initialStatusForDevicesConfigurationLabel">
                     <property name="visible">True</property>
+                    <property name="can_focus">False</property>
                     <property name="xalign">0</property>
                     <property name="xpad">5</property>
                     <property name="label" translatable="yes">&lt;b&gt;Initial status for devices&lt;/b&gt;</property>
@@ -341,6 +442,7 @@
                 <child>
                   <object class="GtkLabel" id="bluetoothInitialStatusLabel">
                     <property name="visible">True</property>
+                    <property name="can_focus">False</property>
                     <property name="tooltip_text" translatable="yes">The initial status at boot for Bluetooth</property>
                     <property name="label" translatable="yes">Bluetooth:</property>
                   </object>
@@ -355,6 +457,7 @@
                 <child>
                   <object class="GtkComboBox" id="bluetoothInitialStatusCombobox">
                     <property name="visible">True</property>
+                    <property name="can_focus">False</property>
                     <property name="tooltip_text" translatable="yes">The initial status at boot for Bluetooth</property>
                     <property name="model">initialStatusListstore</property>
                     <property name="active">0</property>
@@ -373,6 +476,7 @@
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
                     <property name="tooltip_text" translatable="yes">Click here to set the default value</property>
+                    <property name="use_action_appearance">False</property>
                     <property name="image_position">top</property>
                   </object>
                   <packing>
@@ -387,6 +491,7 @@
                 <child>
                   <object class="GtkLabel" id="webcamInitialStatusLabel">
                     <property name="visible">True</property>
+                    <property name="can_focus">False</property>
                     <property name="tooltip_text" translatable="yes">The initial status at boot for webcam</property>
                     <property name="label" translatable="yes">Webcam:</property>
                   </object>
@@ -401,6 +506,7 @@
                 <child>
                   <object class="GtkComboBox" id="webcamInitialStatusCombobox">
                     <property name="visible">True</property>
+                    <property name="can_focus">False</property>
                     <property name="tooltip_text" translatable="yes">The initial status at boot for webcam</property>
                     <property name="model">initialStatusListstore</property>
                     <property name="active">0</property>
@@ -419,6 +525,7 @@
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
                     <property name="tooltip_text" translatable="yes">Click here to set the default value</property>
+                    <property name="use_action_appearance">False</property>
                     <property name="image_position">top</property>
                   </object>
                   <packing>
@@ -436,6 +543,7 @@
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
                     <property name="tooltip_text" translatable="yes">Click here to set the default value</property>
+                    <property name="use_action_appearance">False</property>
                     <property name="image_position">top</property>
                   </object>
                   <packing>
@@ -450,6 +558,7 @@
                 <child>
                   <object class="GtkComboBox" id="wirelessInitialStatusCombobox">
                     <property name="visible">True</property>
+                    <property name="can_focus">False</property>
                     <property name="tooltip_text" translatable="yes">The initial status at boot for wireless</property>
                     <property name="model">initialStatusListstore</property>
                     <property name="active">0</property>
@@ -465,6 +574,7 @@
                 <child>
                   <object class="GtkLabel" id="wirelessInitialStatusLabel">
                     <property name="visible">True</property>
+                    <property name="can_focus">False</property>
                     <property name="tooltip_text" translatable="yes">The initial status at boot for wireless</property>
                     <property name="label" translatable="yes">Wireless:</property>
                   </object>
@@ -479,6 +589,7 @@
                 <child>
                   <object class="GtkLabel" id="cpufanInitialStatusLabel">
                     <property name="visible">True</property>
+                    <property name="can_focus">False</property>
                     <property name="tooltip_text" translatable="yes">The initial status at boot for CPU fan</property>
                     <property name="label" translatable="yes">CPU fan:</property>
                   </object>
@@ -493,6 +604,7 @@
                 <child>
                   <object class="GtkComboBox" id="cpufanInitialStatusCombobox">
                     <property name="visible">True</property>
+                    <property name="can_focus">False</property>
                     <property name="tooltip_text" translatable="yes">The initial status at boot for CPU fan</property>
                     <property name="model">cpufanInitialStatusListstore</property>
                     <property name="active">0</property>
@@ -511,6 +623,7 @@
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
                     <property name="tooltip_text" translatable="yes">Click here to set the default value</property>
+                    <property name="use_action_appearance">False</property>
                     <property name="image_position">top</property>
                   </object>
                   <packing>
@@ -530,6 +643,7 @@
             <child type="tab">
               <object class="GtkLabel" id="systemLabel">
                 <property name="visible">True</property>
+                <property name="can_focus">False</property>
                 <property name="label" translatable="yes">System service</property>
               </object>
               <packing>
@@ -540,17 +654,19 @@
             <child>
               <object class="GtkTable" id="advancedPowerManagementTable">
                 <property name="visible">True</property>
+                <property name="can_focus">False</property>
                 <property name="border_width">5</property>
-                <property name="n_rows">2</property>
+                <property name="n_rows">3</property>
                 <property name="column_spacing">5</property>
                 <property name="row_spacing">5</property>
                 <child>
                   <object class="GtkButton" id="sysCtlButton">
-                    <property name="label" translatable="yes">Configure kernel parameters</property>
+                    <property name="label" translatable="yes">Kernel parameters...</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
                     <property name="tooltip_text" translatable="yes">Configure kernel parameters</property>
+                    <property name="use_action_appearance">False</property>
                   </object>
                   <packing>
                     <property name="y_options">GTK_EXPAND</property>
@@ -558,10 +674,26 @@
                 </child>
                 <child>
                   <object class="GtkButton" id="phcButton">
-                    <property name="label" translatable="yes">CPU undervolting</property>
+                    <property name="label" translatable="yes">CPU undervolting...</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
                     <property name="tooltip_text" translatable="yes">Undervolt the CPU in order to save energy</property>
+                    <property name="use_action_appearance">False</property>
+                  </object>
+                  <packing>
+                    <property name="top_attach">2</property>
+                    <property name="bottom_attach">3</property>
+                    <property name="y_options">GTK_EXPAND</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkButton" id="powerManagementButton">
+                    <property name="label" translatable="yes">Power management...</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <property name="has_tooltip">True</property>
+                    <property name="tooltip_text" translatable="yes">Configure power management</property>
+                    <property name="use_action_appearance">False</property>
                   </object>
                   <packing>
                     <property name="top_attach">1</property>
@@ -577,6 +709,7 @@
             <child type="tab">
               <object class="GtkLabel" id="advancedPowerManagementLabel">
                 <property name="visible">True</property>
+                <property name="can_focus">False</property>
                 <property name="label" translatable="yes">Advanced power management</property>
               </object>
               <packing>
@@ -586,46 +719,9 @@
             </child>
           </object>
           <packing>
-            <property name="position">1</property>
-          </packing>
-        </child>
-        <child internal-child="action_area">
-          <object class="GtkHButtonBox" id="dialog-action_area1">
-            <property name="visible">True</property>
-            <property name="layout_style">edge</property>
-            <child>
-              <object class="GtkButton" id="aboutButton">
-                <property name="label">gtk-about</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">True</property>
-                <property name="use_stock">True</property>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">False</property>
-                <property name="position">0</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkButton" id="closeButton">
-                <property name="label">gtk-close</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">True</property>
-                <property name="use_stock">True</property>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">False</property>
-                <property name="position">1</property>
-              </packing>
-            </child>
-          </object>
-          <packing>
             <property name="expand">False</property>
-            <property name="pack_type">end</property>
-            <property name="position">0</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
           </packing>
         </child>
       </object>
@@ -634,42 +730,5 @@
       <action-widget response="0">aboutButton</action-widget>
       <action-widget response="0">closeButton</action-widget>
     </action-widgets>
-  </object>
-  <object class="GtkListStore" id="initialStatusListstore">
-    <columns>
-      <!-- column-name State -->
-      <column type="gchararray"/>
-    </columns>
-    <data>
-      <row>
-        <col id="0" translatable="yes">Last status</col>
-      </row>
-      <row>
-        <col id="0" translatable="yes">Enabled</col>
-      </row>
-      <row>
-        <col id="0" translatable="yes">Disabled</col>
-      </row>
-    </data>
-  </object>
-  <object class="GtkListStore" id="cpufanInitialStatusListstore">
-    <columns>
-      <!-- column-name Status -->
-      <column type="gchararray"/>
-    </columns>
-    <data>
-      <row>
-        <col id="0" translatable="yes">Normal</col>
-      </row>
-      <row>
-        <col id="0" translatable="yes">Silent</col>
-      </row>
-      <row>
-        <col id="0" translatable="yes">Speed</col>
-      </row>
-      <row>
-        <col id="0" translatable="yes">Last status</col>
-      </row>
-    </data>
   </object>
 </interface>

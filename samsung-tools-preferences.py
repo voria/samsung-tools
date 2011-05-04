@@ -189,6 +189,40 @@ class KernelParametersDialog():
 		conn.ApplySettings()
 		self.mainDialog.destroy()
 
+class PowerManagementDialog():
+	def __init__(self, parent):
+		# Setup GUI
+		self.builder = gtk.Builder()
+		self.builder.set_translation_domain("samsung-tools")
+		self.builder.add_from_file(os.path.join(WORK_DIRECTORY, "gui/glade/samsung-tools-preferences-power-management.glade"))
+		
+		self.mainDialog = self.builder.get_object("mainDialog")
+		self.mainDialog.set_icon_from_file(SAMSUNG_TOOLS_ICON)
+		self.mainDialog.set_transient_for(parent)
+		self.mainDialog.connect("delete-event", self.quit)
+		
+		self.closeButton = self.builder.get_object("closeButton")
+		self.closeButton.connect("clicked", self.quit)
+		
+		#TODO: Set all options widgets
+		
+		self.mainDialog.run()
+	
+	def __connect(self):
+		retry = 3
+		while retry > 0:
+			try:
+				bus = dbus.SystemBus()
+				proxy = bus.get_object(SYSTEM_INTERFACE_NAME, SYSTEM_OBJECT_PATH_SYSCTL)
+				return dbus.Interface(proxy, SYSTEM_INTERFACE_NAME)
+			except:
+				retry = retry - 1
+		print unicode(_("Unable to connect to system service!"), "utf-8")
+		sys.exit(1)
+
+	def quit(self, widget = None, event = None):
+		self.mainDialog.destroy()
+
 class PhcDialog():
 	def __init__(self, parent):
 		# Setup GUI
@@ -529,7 +563,7 @@ class Main():
 		###
 		### Advanced power management configuration
 		###
-		# kernel parameters
+		# Kernel parameters
 		self.sysCtlButton = self.builder.get_object("sysCtlButton")
 		conn = self.__connect_system_sysctl()
 		if not conn.IsAvailable():
@@ -537,6 +571,10 @@ class Main():
 		else:
 			self.sysCtlButton.set_sensitive(True)
 			self.sysCtlButton.connect("clicked", self.on_sysCtlButton_clicked)
+		# Power management
+		self.powerManagementButton = self.builder.get_object("powerManagementButton")
+		self.powerManagementButton.set_sensitive(True)
+		self.powerManagementButton.connect("clicked", self.on_powerManagementButton_clicked)
 		# PHC
 		self.phcButton = self.builder.get_object("phcButton")
 		conn = self.__connect_system_cpu()
@@ -897,6 +935,9 @@ class Main():
 	def on_sysCtlButton_clicked(self, button):
 		KernelParametersDialog(self.mainWindow)
 	
+	def on_powerManagementButton_clicked(self, button):
+		PowerManagementDialog(self.mainWindow)
+		
 	def on_phcButton_clicked(self, button):
 		title = unicode(_("Caution!"), "utf-8")
 		message = unicode(_("CPU undervolting can lead to significant gains in terms of power energy saving, \
