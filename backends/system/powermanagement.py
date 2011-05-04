@@ -163,8 +163,7 @@ class PowerManagement(dbus.service.Object):
 		""" Return "True" if it's set, "False" otherwise. """
 		if not self.Exists(script):
 			return False
-		mode = os.stat(script)[ST_MODE]
-		if S_IXUSR(mode):
+		if os.access(script, X_OK):
 			return True
 		else:
 			return False
