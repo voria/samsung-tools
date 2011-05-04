@@ -35,6 +35,7 @@ from backends.system.fan import Fan
 from backends.system.webcam import Webcam
 from backends.system.wireless import Wireless
 from backends.system.powermanagement import SysCtl
+from backends.system.powermanagement import PowerManagement
 
 mainloop = None
 
