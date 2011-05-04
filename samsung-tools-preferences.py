@@ -204,11 +204,24 @@ class PowerManagementDialog():
 		self.closeButton = self.builder.get_object("closeButton")
 		self.closeButton.connect("clicked", self.quit)
 		
-		self.devicePowerManagement = self.builder.get_object("devicePowerManagement")
+		conn = self.__connect()
+		
+		# Devices Power Management
+		self.devicesPowerManagement = self.builder.get_object("devicesPowerManagement")
+		
+		# Ethernet Throttle Speed
 		self.ethernetThrottleSpeed = self.builder.get_object("ethernetThrottleSpeed")
+		
+		# Intel Audio Powersave
 		self.intelAudioPowersave = self.builder.get_object("intelAudioPowersave")
+		
+		# NMI Watchdog
 		self.nmiWatchdog = self.builder.get_object("nmiWatchdog")
+		
+		# USB Autosuspend
 		self.usbAutosuspend = self.builder.get_object("usbAutosuspend")
+		
+		# VM Writeback Time
 		self.vmWritebackTime = self.builder.get_object("vmWritebackTime")
 		
 	def __connect(self):
