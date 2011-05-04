@@ -51,7 +51,7 @@
             <property name="column_spacing">5</property>
             <property name="row_spacing">5</property>
             <child>
-              <object class="GtkCheckButton" id="devicesPowerManagementCheckbutton">
+              <object class="GtkCheckButton" id="devicesPowerManagement">
                 <property name="label" translatable="yes">Devices Power Management</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
@@ -62,7 +62,7 @@
               </object>
             </child>
             <child>
-              <object class="GtkCheckButton" id="ethernetThrottleSpeedCheckbutton">
+              <object class="GtkCheckButton" id="ethernetThrottleSpeed">
                 <property name="label" translatable="yes">Ethernet Throttle Speed</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
@@ -77,7 +77,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkCheckButton" id="intelAudioPowersaveCheckbutton">
+              <object class="GtkCheckButton" id="intelAudioPowersave">
                 <property name="label" translatable="yes">Intel Audio Powersave</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
@@ -92,7 +92,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkCheckButton" id="nmiWatchdogCheckbutton">
+              <object class="GtkCheckButton" id="nmiWatchdog">
                 <property name="label" translatable="yes">NMI Watchdog</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
@@ -107,7 +107,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkCheckButton" id="usbAutosuspendCheckbutton">
+              <object class="GtkCheckButton" id="usbAutosuspend">
                 <property name="label" translatable="yes">USB Autosuspend</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
@@ -122,7 +122,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkCheckButton" id="vmWritebackTimeCheckbutton">
+              <object class="GtkCheckButton" id="vmWritebackTime">
                 <property name="label" translatable="yes">VM Writeback Time</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>

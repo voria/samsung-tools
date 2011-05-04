@@ -204,11 +204,13 @@ class PowerManagementDialog():
 		self.closeButton = self.builder.get_object("closeButton")
 		self.closeButton.connect("clicked", self.quit)
 		
-		#TODO: Set all options widgets
+		self.devicePowerManagement = self.builder.get_object("devicePowerManagement")
+		self.ethernetThrottleSpeed = self.builder.get_object("ethernetThrottleSpeed")
+		self.intelAudioPowersave = self.builder.get_object("intelAudioPowersave")
+		self.nmiWatchdog = self.builder.get_object("nmiWatchdog")
+		self.usbAutosuspend = self.builder.get_object("usbAutosuspend")
+		self.vmWritebackTime = self.builder.get_object("vmWritebackTime")
 		
-		self.mainDialog.run()
-	
-	def __connect(self):
 		retry = 3
 		while retry > 0:
 			try:
