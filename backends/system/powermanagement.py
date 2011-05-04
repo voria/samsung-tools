@@ -21,7 +21,6 @@
 
 import os, shutil
 import dbus.service
-from stat import *
 
 from backends.globals import *
 
@@ -163,7 +162,7 @@ class PowerManagement(dbus.service.Object):
 		""" Return "True" if it's set, "False" otherwise. """
 		if not self.Exists(script):
 			return False
-		if os.access(script, X_OK):
+		if os.access(script, os.X_OK):
 			return True
 		else:
 			return False
