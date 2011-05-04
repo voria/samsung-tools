@@ -21,6 +21,7 @@
 
 import os, shutil
 import dbus.service
+from stat import *
 
 from backends.globals import *
 
@@ -147,16 +148,34 @@ class PowerManagement(dbus.service.Object):
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
+	def Exists(self, script, sender = None, conn = None):
+		""" Check if the script exists. """
+		""" Return "True" if it exists, "False" otherwise. """
+		if os.path.exists(script):
+			return True
+		else:
+			return False
+		
+	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
+						sender_keyword = 'sender', connection_keyword = 'conn')
 	def IsEnabled(self, script, sender = None, conn = None):
 		""" Check if the script has the executable bit set. """
 		""" Return "True" if it's set, "False" otherwise. """
-		return True
+		if not self.Exists(script):
+			return False
+		mode = os.stat(script)[ST_MODE]
+		if S_IXUSR(mode):
+			return True
+		else:
+			return False
 
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Enable(self, script, sender = None, conn = None):
 		""" Set the executable bit on script. """
 		""" Return 'True' on success, 'False' otherwise. """
+		if not self.Exists(script):
+			return False
 		return True
 
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
@@ -164,6 +183,8 @@ class PowerManagement(dbus.service.Object):
 	def Disable(self, script, sender = None, conn = None):
 		""" Unset the executable bit on script. """
 		""" Return 'True' on success, 'False' otherwise. """
+		if not self.Exists(script):
+			return False
 		return True
 
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
