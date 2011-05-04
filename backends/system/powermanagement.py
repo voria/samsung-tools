@@ -24,9 +24,6 @@ import dbus.service
 
 from backends.globals import *
 
-# sysctl configuration file
-SYSCTL_CONFIG_FILE = "/etc/sysctl.conf"
-
 class SysCtl(dbus.service.Object):
 	""" Manage sysctl options """
 	def __init__(self, conn = None, object_path = None, bus_name = None):
@@ -147,3 +144,34 @@ class PowerManagement(dbus.service.Object):
 	""" Manage power save options """
 	def __init__(self, conn = None, object_path = None, bus_name = None):
 		dbus.service.Object.__init__(self, conn, object_path, bus_name)
+	
+	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
+						sender_keyword = 'sender', connection_keyword = 'conn')
+	def IsEnabled(self, script, sender = None, conn = None):
+		""" Check if the script has the executable bit set. """
+		""" Return "True" if it's set, "False" otherwise. """
+		return True
+
+	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
+						sender_keyword = 'sender', connection_keyword = 'conn')
+	def Enable(self, script, sender = None, conn = None):
+		""" Set the executable bit on script. """
+		""" Return 'True' on success, 'False' otherwise. """
+		return True
+
+	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
+						sender_keyword = 'sender', connection_keyword = 'conn')
+	def Disable(self, script, sender = None, conn = None):
+		""" Unset the executable bit on script. """
+		""" Return 'True' on success, 'False' otherwise. """
+		return True
+
+	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
+						sender_keyword = 'sender', connection_keyword = 'conn')
+	def Toggle(self, script, sender = None, conn = None):
+		""" Toggle the executable bit on script. """
+		""" Return 'True' on success, 'False' otherwise. """
+		if self.IsEnabled():
+			return self.Disable()
+		else:
+			return self.Enable()

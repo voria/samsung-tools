@@ -48,6 +48,15 @@ SYSTEM_OBJECT_PATH_FAN = "/Device/Fan"
 SYSTEM_OBJECT_PATH_WEBCAM = "/Device/Webcam"
 SYSTEM_OBJECT_PATH_WIRELESS = "/Device/Wireless"
 
+# Power management scripts locations
+PM_DEVICES_POWER_MANAGEMENT = "/etc/pm/power.d/samsung-tools_devices-power-management"
+PM_ETHERNET_THROTTLE_SPEED = "/etc/pm/power.d/samsung-tools_ethernet-throttle-speed"
+PM_HAL_CD_POLLING = "/etc/pm/power.d/samsung-tools_hal-cd-polling"
+PM_INTEL_AUDIO_POWERSAVE = "/etc/pm/power.d/samsung-tools_intel-audio-powersave"
+PM_NMI_WATCHDOG = "/etc/pm/power.d/samsung-tools_nmi-watchdog"
+PM_USB_AUTOSUSPEND = "/etc/pm/power.d/samsung-tools_usb-autosuspend"
+PM_WRITEBACK_TIME = "/etc/pm/power.d/samsung-tools_vm-writeback-time"
+
 import sys, os.path
 ###
 ### Stuff for session service only
@@ -100,3 +109,5 @@ if os.path.basename(sys.argv[0]) == "system-service.py":
 	ESDM_PATH_WIRELESS = "/proc/easy_wifi_kill"
 	# Temperature
 	CPU_TEMPERATURE_PATH = "/sys/class/thermal/thermal_zone0/temp"
+	# sysctl configuration file
+	SYSCTL_CONFIG_FILE = "/etc/sysctl.conf"
