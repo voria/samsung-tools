@@ -19,7 +19,7 @@
 # See the GNU General Public License for more details.
 # <http://www.gnu.org/licenses/gpl.txt>
 
-import os, shutil
+import os, shutil, stat
 import dbus.service
 
 from backends.globals import *
@@ -147,43 +147,53 @@ class PowerManagement(dbus.service.Object):
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
-	def Exists(self, script, sender = None, conn = None):
-		""" Check if the script exists. """
-		""" Return "True" if it exists, "False" otherwise. """
-		if os.path.exists(script):
-			return True
-		else:
-			return False
+	def IsValid(self, script, sender = None, conn = None):
+		""" Check if the script exists and if it's one of the scripts we can manage. """
+		""" Return "True" if it exists and we can work on it, "False" otherwise. """
+		# Check if the script is one of the scripts of Samsung Tools,
+		# in order to avoid security issues.
+		if script == PM_DEVICES_POWER_MANAGEMENT or \
+		script == PM_ETHERNET_THROTTLE_SPEED or \
+		script == PM_HAL_CD_POLLING	or \
+		script == PM_INTEL_AUDIO_POWERSAVE or \
+		script == PM_NMI_WATCHDOG or \
+		script == PM_USB_AUTOSUSPEND or \
+		script == PM_WRITEBACK_TIME:
+			return os.access(script, os.F_OK)
+		return False
 		
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def IsEnabled(self, script, sender = None, conn = None):
 		""" Check if the script has the executable bit set. """
 		""" Return "True" if it's set, "False" otherwise. """
-		if not self.Exists(script):
+		if not self.IsValid(script):
 			return False
-		if os.access(script, os.X_OK):
-			return True
-		else:
-			return False
+		return os.access(script, os.X_OK)
 
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Enable(self, script, sender = None, conn = None):
 		""" Set the executable bit on script. """
 		""" Return 'True' on success, 'False' otherwise. """
-		if not self.Exists(script):
+		if not self.IsValid(script):
 			return False
-		return True
+		# Make script 755
+		os.chmod(script, stat.S_IRWXU | stat.S_IRGRP | stat.S_IXGRP | stat.S_IROTH | stat.S_IXOTH)
+		# Check if everything is ok and return the result
+		return os.access(script, os.X_OK)
 
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Disable(self, script, sender = None, conn = None):
 		""" Unset the executable bit on script. """
 		""" Return 'True' on success, 'False' otherwise. """
-		if not self.Exists(script):
+		if not self.IsValid(script):
 			return False
-		return True
+		# Make script 644
+		os.chmod(script, stat.S_IRUSR | stat.S_IWUSR | stat.S_IRGRP | stat.S_IROTH)
+		# Check if everything is ok and return the result
+		return not os.access(script, os.X_OK)
 
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
