@@ -211,6 +211,7 @@ class PowerManagementDialog():
 		self.usbAutosuspend = self.builder.get_object("usbAutosuspend")
 		self.vmWritebackTime = self.builder.get_object("vmWritebackTime")
 		
+	def __connect(self):
 		retry = 3
 		while retry > 0:
 			try:
