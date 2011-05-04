@@ -171,7 +171,7 @@ class PowerManagement(dbus.service.Object):
 	def Toggle(self, script, sender = None, conn = None):
 		""" Toggle the executable bit on script. """
 		""" Return 'True' on success, 'False' otherwise. """
-		if self.IsEnabled():
-			return self.Disable()
+		if self.IsEnabled(script):
+			return self.Disable(script)
 		else:
-			return self.Enable()
+			return self.Enable(script)
