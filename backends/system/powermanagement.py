@@ -154,7 +154,6 @@ class PowerManagement(dbus.service.Object):
 		# in order to avoid security issues.
 		if script == PM_DEVICES_POWER_MANAGEMENT or \
 		script == PM_ETHERNET_THROTTLE_SPEED or \
-		script == PM_HAL_CD_POLLING	or \
 		script == PM_INTEL_AUDIO_POWERSAVE or \
 		script == PM_NMI_WATCHDOG or \
 		script == PM_USB_AUTOSUSPEND or \
