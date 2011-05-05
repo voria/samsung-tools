@@ -20,10 +20,10 @@ nmi_watchdog_powersave() {
     [ "$NMI_WATCHDOG_POWERSAVE" = "true" ] || exit $NA
     printf "Setting NMI watchdog to %d..." "$1"
     if [ -w "/proc/sys/kernel/nmi_watchdog" ]; then
-    	echo $1 > "/proc/sys/kernel/nmi_watchdog" && echo Done. || echo Failed.
+        echo $1 > "/proc/sys/kernel/nmi_watchdog" && echo Done. || echo Failed.
     else
-    	echo Failed.
-	fi
+        echo Failed.
+    fi
 }
 
 case $1 in
