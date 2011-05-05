@@ -165,8 +165,6 @@ class KernelParametersDialog():
 		self.swappinessSpinbutton.set_value(self.swappinessSpinbuttonValue)
 		self.swappinessSpinbutton.connect("value-changed", self.on_swappinessSpinbutton_valuechanged)
 		
-		self.mainDialog.run()
-	
 	def __connect(self):
 		retry = 3
 		while retry > 0:
