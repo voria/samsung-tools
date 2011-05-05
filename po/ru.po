@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-05-05 14:44+0200\n"
+"POT-Creation-Date: 2011-05-05 14:57+0200\n"
 "PO-Revision-Date: 2010-09-05 17:48+0000\n"
 "Last-Translator: Michael Likholet <mlih@mail.ru>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -608,28 +608,28 @@ msgstr "Установить новые VID автоматически при з
 
 #: po/samsung-tools-preferences-power-management.glade.h:2
 #, fuzzy
-msgid "Devices Power Management"
+msgid "Devices power management"
 msgstr "Расширенное управление питанием"
 
 #: po/samsung-tools-preferences-power-management.glade.h:3
-msgid "Ethernet Throttle Speed"
+msgid "Ethernet throttle speed"
 msgstr ""
 
 #: po/samsung-tools-preferences-power-management.glade.h:4
-msgid "Intel Audio Powersave"
+msgid "Intel audio powersave"
 msgstr ""
 
 #: po/samsung-tools-preferences-power-management.glade.h:5
-msgid "NMI Watchdog"
+msgid "NMI watchdog"
 msgstr ""
 
 #: po/samsung-tools-preferences-power-management.glade.h:6
 #, fuzzy
-msgid "USB Autosuspend"
+msgid "USB autosuspend"
 msgstr "Включить автоматическую приостановку USB устройств"
 
 #: po/samsung-tools-preferences-power-management.glade.h:7
-msgid "VM Writeback Time"
+msgid "VM writeback time"
 msgstr ""
 
 #: po/samsung-tools-preferences-power-management.glade.h:8
@@ -654,7 +654,7 @@ msgstr ""
 
 #: po/samsung-tools-preferences-power-management.glade.h:11
 msgid ""
-"When enabled, the kernel VM Writeback Time will be increased, resulting in "
+"When enabled, the kernel VM writeback time will be increased, resulting in "
 "less HD access and more energy saving."
 msgstr ""
 

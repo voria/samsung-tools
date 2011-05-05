@@ -52,7 +52,7 @@
             <property name="row_spacing">5</property>
             <child>
               <object class="GtkCheckButton" id="devicesPowerManagement">
-                <property name="label" translatable="yes">Devices Power Management</property>
+                <property name="label" translatable="yes">Devices power management</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">False</property>
@@ -64,7 +64,7 @@
             </child>
             <child>
               <object class="GtkCheckButton" id="ethernetThrottleSpeed">
-                <property name="label" translatable="yes">Ethernet Throttle Speed</property>
+                <property name="label" translatable="yes">Ethernet throttle speed</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">False</property>
@@ -80,7 +80,7 @@
             </child>
             <child>
               <object class="GtkCheckButton" id="intelAudioPowersave">
-                <property name="label" translatable="yes">Intel Audio Powersave</property>
+                <property name="label" translatable="yes">Intel audio powersave</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">False</property>
@@ -96,7 +96,7 @@
             </child>
             <child>
               <object class="GtkCheckButton" id="nmiWatchdog">
-                <property name="label" translatable="yes">NMI Watchdog</property>
+                <property name="label" translatable="yes">NMI watchdog</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">False</property>
@@ -112,7 +112,7 @@
             </child>
             <child>
               <object class="GtkCheckButton" id="usbAutosuspend">
-                <property name="label" translatable="yes">USB Autosuspend</property>
+                <property name="label" translatable="yes">USB autosuspend</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">False</property>
@@ -128,11 +128,11 @@
             </child>
             <child>
               <object class="GtkCheckButton" id="vmWritebackTime">
-                <property name="label" translatable="yes">VM Writeback Time</property>
+                <property name="label" translatable="yes">VM writeback time</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">False</property>
-                <property name="tooltip_text" translatable="yes">When enabled, the kernel VM Writeback Time will be increased, resulting in less HD access and more energy saving.</property>
+                <property name="tooltip_text" translatable="yes">When enabled, the kernel VM writeback time will be increased, resulting in less HD access and more energy saving.</property>
                 <property name="use_action_appearance">False</property>
                 <property name="xalign">0</property>
                 <property name="draw_indicator">True</property>

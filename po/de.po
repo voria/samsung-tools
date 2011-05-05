@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-05-05 14:44+0200\n"
+"POT-Creation-Date: 2011-05-05 14:57+0200\n"
 "PO-Revision-Date: 2010-06-17 17:25+0000\n"
 "Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -612,28 +612,28 @@ msgstr "Setze die neuen VIDs automatisch während des Starts"
 
 #: po/samsung-tools-preferences-power-management.glade.h:2
 #, fuzzy
-msgid "Devices Power Management"
+msgid "Devices power management"
 msgstr "Erweitertes Energie-Management"
 
 #: po/samsung-tools-preferences-power-management.glade.h:3
-msgid "Ethernet Throttle Speed"
+msgid "Ethernet throttle speed"
 msgstr ""
 
 #: po/samsung-tools-preferences-power-management.glade.h:4
-msgid "Intel Audio Powersave"
+msgid "Intel audio powersave"
 msgstr ""
 
 #: po/samsung-tools-preferences-power-management.glade.h:5
-msgid "NMI Watchdog"
+msgid "NMI watchdog"
 msgstr ""
 
 #: po/samsung-tools-preferences-power-management.glade.h:6
 #, fuzzy
-msgid "USB Autosuspend"
+msgid "USB autosuspend"
 msgstr "Automatisches Ausschalten ungenutzter USB-Ports einschalten"
 
 #: po/samsung-tools-preferences-power-management.glade.h:7
-msgid "VM Writeback Time"
+msgid "VM writeback time"
 msgstr ""
 
 #: po/samsung-tools-preferences-power-management.glade.h:8
@@ -658,7 +658,7 @@ msgstr ""
 
 #: po/samsung-tools-preferences-power-management.glade.h:11
 msgid ""
-"When enabled, the kernel VM Writeback Time will be increased, resulting in "
+"When enabled, the kernel VM writeback time will be increased, resulting in "
 "less HD access and more energy saving."
 msgstr ""
 
