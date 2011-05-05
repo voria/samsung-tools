@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-05-05 13:53+0200\n"
+"POT-Creation-Date: 2011-05-05 14:44+0200\n"
 "PO-Revision-Date: 2010-05-16 10:37+0000\n"
 "Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
@@ -624,6 +624,44 @@ msgstr "Aktivera USB autoavstängning"
 msgid "VM Writeback Time"
 msgstr ""
 
+#: po/samsung-tools-preferences-power-management.glade.h:8
+#, fuzzy
+msgid ""
+"When enabled, all the devices will automatically enter power save mode when "
+"needed."
+msgstr ""
+"Om du aktiverar detta alternativ kommer 'laptop mode tools' automatiskt "
+"ställa in strömsparhanteringen på Intel HDA ljudchip."
+
+#: po/samsung-tools-preferences-power-management.glade.h:9
+msgid ""
+"When enabled, the NMI watchdog will be turned off in order to save energy."
+msgstr ""
+
+#: po/samsung-tools-preferences-power-management.glade.h:10
+msgid ""
+"When enabled, the autosuspend feature for all the USB devices will be "
+"enabled."
+msgstr ""
+
+#: po/samsung-tools-preferences-power-management.glade.h:11
+msgid ""
+"When enabled, the kernel VM Writeback Time will be increased, resulting in "
+"less HD access and more energy saving."
+msgstr ""
+
+#: po/samsung-tools-preferences-power-management.glade.h:12
+msgid ""
+"When enabled, the onboard Intel audio chipset will enter the power save mode "
+"when no program is using the audio device."
+msgstr ""
+
+#: po/samsung-tools-preferences-power-management.glade.h:13
+msgid ""
+"When enabled, the speed of the gigabit ethernet will be throttled to 100Mbit "
+"in order to save energy."
+msgstr ""
+
 #: po/samsung-tools-session-service.desktop.in.h:1
 msgid "Start the session service"
 msgstr "Starta sessionstjänsten"
@@ -675,13 +713,6 @@ msgstr "Starta sessionstjänsten"
 #~ msgstr ""
 #~ "En aktiverad VGA-anslutning drar energi även om ingen skärm är ansluten i "
 #~ "den. Det här tvingar porten att stänga av vid energisparläge."
-
-#~ msgid ""
-#~ "If you enable this option, 'laptop mode tools' will automatically set the "
-#~ "powersave mode of Intel HDA audio chipsets."
-#~ msgstr ""
-#~ "Om du aktiverar detta alternativ kommer 'laptop mode tools' automatiskt "
-#~ "ställa in strömsparhanteringen på Intel HDA ljudchip."
 
 #~ msgid ""
 #~ "If you enable this option, 'laptop mode tools' will automatically enable "
