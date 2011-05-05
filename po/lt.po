@@ -1,17 +1,17 @@
-# Turkish translation for samsung-tools
-# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
+# Lithuanian translation for samsung-tools
+# Copyright (c) 2011 Rosetta Contributors and Canonical Ltd 2011
 # This file is distributed under the same license as the samsung-tools package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-05-05 13:53+0200\n"
-"PO-Revision-Date: 2010-12-10 14:57+0000\n"
-"Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
-"Language-Team: Turkish <tr@li.org>\n"
-"Language: tr\n"
+"PO-Revision-Date: 2011-02-16 08:35+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Lithuanian <lt@li.org>\n"
+"Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -53,27 +53,27 @@ msgstr ""
 #: backends/session/util/locales.py:34 samsung-tools-preferences.py:461
 #: po/samsung-tools-applet.glade.h:1
 msgid "Bluetooth"
-msgstr "Bluetooth"
+msgstr ""
 
 #: backends/session/util/locales.py:35
 msgid "Bluetooth is enabled"
-msgstr "Bluetooth etkinleştirildi"
+msgstr ""
 
 #: backends/session/util/locales.py:36
 msgid "Bluetooth is disabled"
-msgstr "Bluetooth etkin değil"
+msgstr ""
 
 #: backends/session/util/locales.py:37
 msgid "Bluetooth enabled"
-msgstr "Bluetooth etkinleştirildi"
+msgstr ""
 
 #: backends/session/util/locales.py:38
 msgid "Bluetooth disabled"
-msgstr "Bluetooth devre dışı"
+msgstr ""
 
 #: backends/session/util/locales.py:39
 msgid "Bluetooth cannot be enabled"
-msgstr "Bluetooth etkinleştirilemedi"
+msgstr ""
 
 #: backends/session/util/locales.py:40
 msgid "Bluetooth cannot be disabled"
@@ -81,7 +81,7 @@ msgstr ""
 
 #: backends/session/util/locales.py:41
 msgid "Bluetooth cannot be toggled"
-msgstr "Bluetooth aygıtıyla bağlantı kurulamadı"
+msgstr ""
 
 #: backends/session/util/locales.py:42
 msgid "Bluetooth control is not available"
@@ -89,31 +89,31 @@ msgstr ""
 
 #: backends/session/util/locales.py:44 samsung-tools-preferences.py:470
 msgid "CPU fan"
-msgstr "İşlemci fanı"
+msgstr ""
 
 #: backends/session/util/locales.py:45
 msgid "CPU Temperature:"
-msgstr "İşlemci Sıcaklığı"
+msgstr ""
 
 #: backends/session/util/locales.py:46
 msgid "Fan mode cannot be changed"
-msgstr "Fan modu değiştirilemedi"
+msgstr ""
 
 #: backends/session/util/locales.py:47
 msgid "Fan mode: Normal"
-msgstr "Fan modu: Normal"
+msgstr ""
 
 #: backends/session/util/locales.py:48
 msgid "Fan mode: Silent"
-msgstr "Fan modu: Sessiz"
+msgstr ""
 
 #: backends/session/util/locales.py:49
 msgid "Fan mode: Speed"
-msgstr "Fan modu: Hız"
+msgstr ""
 
 #: backends/session/util/locales.py:50
 msgid "Cannot get fan mode"
-msgstr "Fan modu değeri okunamadı"
+msgstr ""
 
 #: backends/session/util/locales.py:51
 msgid "CPU fan control is not available"
@@ -122,31 +122,31 @@ msgstr ""
 #: backends/session/util/locales.py:53 samsung-tools-preferences.py:479
 #: po/samsung-tools-applet.glade.h:7
 msgid "Webcam"
-msgstr "Web kamerası"
+msgstr ""
 
 #: backends/session/util/locales.py:54
 msgid "Webcam is enabled"
-msgstr "Web kamerası aktifleştirildi"
+msgstr ""
 
 #: backends/session/util/locales.py:55
 msgid "Webcam is disabled"
-msgstr "Web kamerası inaktif edildi"
+msgstr ""
 
 #: backends/session/util/locales.py:56
 msgid "Webcam enabled"
-msgstr "Web kamerası aktif"
+msgstr ""
 
 #: backends/session/util/locales.py:57
 msgid "Webcam disabled"
-msgstr "Web kamerası aktif değil"
+msgstr ""
 
 #: backends/session/util/locales.py:58
 msgid "Webcam cannot be enabled"
-msgstr "Web kamerası aktifleştirilemedi"
+msgstr ""
 
 #: backends/session/util/locales.py:59
 msgid "Webcam cannot be disabled"
-msgstr "Web kamerası inaktif moda geçirilemedi"
+msgstr ""
 
 #: backends/session/util/locales.py:60
 msgid "Webcam cannot be toggled"
@@ -159,31 +159,31 @@ msgstr ""
 #: backends/session/util/locales.py:63 samsung-tools-preferences.py:488
 #: po/samsung-tools-applet.glade.h:8
 msgid "Wireless"
-msgstr "Kablosuz ağ"
+msgstr ""
 
 #: backends/session/util/locales.py:64
 msgid "Wireless is enabled"
-msgstr "Kablosuz ağ aktifleştirildi"
+msgstr ""
 
 #: backends/session/util/locales.py:65
 msgid "Wireless is disabled"
-msgstr "Kablosuz ağ devre dışı"
+msgstr ""
 
 #: backends/session/util/locales.py:66
 msgid "Wireless enabled"
-msgstr "Kablosuz ağ etkin"
+msgstr ""
 
 #: backends/session/util/locales.py:67
 msgid "Wireless disabled"
-msgstr "Kablosuz ağ kapatıldı"
+msgstr ""
 
 #: backends/session/util/locales.py:68
 msgid "Wireless cannot be enabled"
-msgstr "Kablosuz ağ etkinleştirilemedi"
+msgstr ""
 
 #: backends/session/util/locales.py:69
 msgid "Wireless cannot be disabled"
-msgstr "Kablosuz ağ devre dışı bırakılamadı"
+msgstr ""
 
 #: backends/session/util/locales.py:70
 msgid "Wireless cannot be toggled"
@@ -229,40 +229,40 @@ msgstr ""
 #: samsung-tools.py:590 samsung-tools.py:593 samsung-tools.py:596
 #: samsung-tools.py:599 samsung-tools.py:602
 msgid "Interface"
-msgstr "Arayüz"
+msgstr ""
 
 #: samsung-tools.py:591 samsung-tools.py:594 samsung-tools.py:597
 #: samsung-tools.py:600 samsung-tools.py:603
 msgid "Options"
-msgstr "Seçenekler"
+msgstr ""
 
 #: samsung-tools.py:592 po/samsung-tools-preferences.glade.h:5
 msgid "Bluetooth:"
-msgstr "Bluetooth:"
+msgstr ""
 
 #: samsung-tools.py:595 po/samsung-tools-preferences.glade.h:6
 msgid "CPU fan:"
-msgstr "İşlemci fanı:"
+msgstr ""
 
 #: samsung-tools.py:598 po/samsung-tools-preferences.glade.h:36
 msgid "Webcam:"
-msgstr "Webcam:"
+msgstr ""
 
 #: samsung-tools.py:601 po/samsung-tools-preferences.glade.h:37
 msgid "Wireless:"
-msgstr "Kablosuz ağ:"
+msgstr ""
 
 #: samsung-tools.py:605
 msgid "Other options:"
-msgstr "Diğer seçenekler:"
+msgstr ""
 
 #: samsung-tools.py:606
 msgid "Show status for all devices."
-msgstr "Tüm aygıtların durumlarını göster."
+msgstr ""
 
 #: samsung-tools.py:607
 msgid "Show graphical notifications."
-msgstr "Uyarıları göster."
+msgstr ""
 
 #: samsung-tools.py:608
 msgid "Do not print messages on standard output."
@@ -278,7 +278,7 @@ msgstr ""
 
 #: samsung-tools.py:612
 msgid "Examples of use:"
-msgstr "Kullanımı:"
+msgstr ""
 
 #: samsung-tools.py:613
 msgid " - Toggle backlight:"
@@ -298,7 +298,7 @@ msgstr ""
 
 #: samsung-tools.py:627 samsung-tools-preferences.py:1079
 msgid "Released under GPLv3 license"
-msgstr "GPLv3 lisanslıdır"
+msgstr ""
 
 #: samsung-tools.py:632
 msgid "No action(s) specified."
@@ -306,7 +306,7 @@ msgstr ""
 
 #: samsung-tools.py:633 samsung-tools.py:700
 msgid "Use --help for instructions."
-msgstr "yardım için --help parametresini kullanın"
+msgstr ""
 
 #: samsung-tools.py:695
 msgid "This program is intended to be used only by non-privileged users."
@@ -314,7 +314,7 @@ msgstr ""
 
 #: samsung-tools.py:699
 msgid "Wrong argument(s)."
-msgstr "Yanlış argüman(lar)"
+msgstr ""
 
 #: samsung-tools.py:716
 msgid "Session service stopped"
@@ -334,11 +334,11 @@ msgstr ""
 
 #: samsung-tools-preferences.py:80
 msgid "Please press the new hotkey"
-msgstr "Lütfen yeni kısayolu giriniz:"
+msgstr ""
 
 #: samsung-tools-preferences.py:122
 msgid "None"
-msgstr "Hiçbiri"
+msgstr ""
 
 #: samsung-tools-preferences.py:177 samsung-tools-preferences.py:276
 #: samsung-tools-preferences.py:383 samsung-tools-preferences.py:395
@@ -349,7 +349,7 @@ msgstr ""
 
 #: samsung-tools-preferences.py:407
 msgid "Confirm"
-msgstr "Onayla"
+msgstr ""
 
 #: samsung-tools-preferences.py:408
 msgid "Apply the new VIDs?"
@@ -379,48 +379,48 @@ msgstr ""
 
 #: po/samsung-tools-applet.glade.h:2
 msgid "CPU Fan"
-msgstr "İşlemci fanı"
+msgstr ""
 
 #: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:24
 msgid "Normal"
-msgstr "Normal"
+msgstr ""
 
 #: po/samsung-tools-applet.glade.h:4
 msgid "Preferences..."
-msgstr "Tercihler..."
+msgstr ""
 
 #: po/samsung-tools-applet.glade.h:5 po/samsung-tools-preferences.glade.h:28
 msgid "Silent"
-msgstr "Sessiz"
+msgstr ""
 
 #: po/samsung-tools-applet.glade.h:6 po/samsung-tools-preferences.glade.h:29
 msgid "Speed"
-msgstr "Hız"
+msgstr ""
 
 #: po/samsung-tools-applet.server.in.h:1
 msgid "Manage devices on Samsung netbooks"
-msgstr "Samsung netbook'larda aygıtları yönet"
+msgstr ""
 
 #: po/samsung-tools-preferences.desktop.in.h:1
 #: po/samsung-tools-preferences.glade.h:26
 msgid "Samsung Tools Preferences"
-msgstr "Samsung Tools Tercihleri"
+msgstr ""
 
 #: po/samsung-tools-preferences.desktop.in.h:2
 msgid "Show and modify Samsung Tools preferences"
-msgstr "Samsung Tools tercihlerini göster ve düzenle"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:1
 msgid "<b>Hotkeys</b>"
-msgstr "<b>Kısayollar</b>"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:2
 msgid "<b>Initial status for devices</b>"
-msgstr "<b>Aygıtların başlangıç durumları</b>"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:3
 msgid "Advanced power management"
-msgstr "Gelişmiş güç yönetimi"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:7
 msgid "CPU undervolting..."
@@ -428,46 +428,45 @@ msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:8
 msgid "Click here to disable the hotkey"
-msgstr "Kısayolu devre dışı bırakmak için tıklayın"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:9
 msgid "Click here to set the default hotkey"
-msgstr "Kısayolları varsayılan değerlere döndürmek için tıklayın"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:10
 msgid "Click here to set the default value"
-msgstr "Varsayılan değere dönmek için tıklayın"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:11
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:1
 #: po/samsung-tools-preferences-power-management.glade.h:1
 msgid "Configure kernel parameters"
-msgstr "Kernel parametrelerini düzenle"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:12
-#, fuzzy
 msgid "Configure power management"
-msgstr "Gelişmiş güç yönetimi"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:13
 msgid "Disabled"
-msgstr "Devre dışı bırakıldı"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:14
 msgid "Enable hotkeys"
-msgstr "Kısayolları aktifleştir"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:15
 msgid "Enable this option to use hotkeys"
-msgstr "Kısayolları kullanabilmek için bu ayarı aktifleştirin"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:16
 msgid "Enabled"
-msgstr "Etkinleştirildi"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:17
 msgid "Hotkey used for CPU fan control"
-msgstr "Kısayol daha önce işlemci fan kontrolü için kullanıldı"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:18
 msgid "Hotkey used for backlight control"
@@ -475,29 +474,27 @@ msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:19
 msgid "Hotkey used for bluetooth control"
-msgstr "Kısayol daha önce bluetooth için kullanıldı"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:20
 msgid "Hotkey used for webcam control"
-msgstr "Kısayol daha önce web kamerası için kullanıldı"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:21
 msgid "Hotkey used for wireless control"
-msgstr "Kısayol daha önce kablosuz ağ için kullanıldı"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:22
-#, fuzzy
 msgid "Kernel parameters..."
-msgstr "Kernel parametrelerini düzenle"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:23
 msgid "Last status"
-msgstr "Son durum"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:25
-#, fuzzy
 msgid "Power management..."
-msgstr "Gelişmiş güç yönetimi"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:27
 msgid "Session service"
@@ -555,7 +552,7 @@ msgstr ""
 
 #: po/samsung-tools-preferences-phc.glade.h:2
 msgid "<b>Frequencies</b>"
-msgstr "<b>Frekans</b>"
+msgstr ""
 
 #: po/samsung-tools-preferences-phc.glade.h:3
 msgid "<b>New VIDs</b>"
@@ -580,9 +577,8 @@ msgid "Set the new VIDs automatically at boot"
 msgstr ""
 
 #: po/samsung-tools-preferences-power-management.glade.h:2
-#, fuzzy
 msgid "Devices Power Management"
-msgstr "Gelişmiş güç yönetimi"
+msgstr ""
 
 #: po/samsung-tools-preferences-power-management.glade.h:3
 msgid "Ethernet Throttle Speed"
