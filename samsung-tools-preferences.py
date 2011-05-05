@@ -218,18 +218,53 @@ class PowerManagementDialog():
 		
 		# Ethernet Throttle Speed
 		self.ethernetThrottleSpeed = self.builder.get_object("ethernetThrottleSpeed")
+		self.ethernetThrottleSpeed.set_sensitive(False)
+		self.ethernetThrottleSpeed.set_active(False)
+		if conn.IsValid(PM_ETHERNET_THROTTLE_SPEED):
+			self.ethernetThrottleSpeed.set_sensitive(True)
+			if conn.IsEnabled(PM_ETHERNET_THROTTLE_SPEED):
+				self.ethernetThrottleSpeed.set_active(True)
+		self.ethernetThrottleSpeed.connect("toggled", self.on_ethernetThrottleSpeed_toggled)
 		
 		# Intel Audio Powersave
 		self.intelAudioPowersave = self.builder.get_object("intelAudioPowersave")
+		self.intelAudioPowersave.set_sensitive(False)
+		self.intelAudioPowersave.set_active(False)
+		if conn.IsValid(PM_INTEL_AUDIO_POWERSAVE):
+			self.intelAudioPowersave.set_sensitive(True)
+			if conn.IsEnabled(PM_INTEL_AUDIO_POWERSAVE):
+				self.intelAudioPowersave.set_active(True)
+		self.intelAudioPowersave.connect("toggled", self.on_intelAudioPowersave_toggled)
 		
 		# NMI Watchdog
 		self.nmiWatchdog = self.builder.get_object("nmiWatchdog")
+		self.nmiWatchdog.set_sensitive(False)
+		self.nmiWatchdog.set_active(False)
+		if conn.IsValid(PM_NMI_WATCHDOG):
+			self.nmiWatchdog.set_sensitive(True)
+			if conn.IsEnabled(PM_NMI_WATCHDOG):
+				self.nmiWatchdog.set_active(True)
+		self.nmiWatchdog.connect("toggled", self.on_nmiWatchdog_toggled)
 		
 		# USB Autosuspend
 		self.usbAutosuspend = self.builder.get_object("usbAutosuspend")
+		self.usbAutosuspend.set_sensitive(False)
+		self.usbAutosuspend.set_active(False)
+		if conn.IsValid(PM_USB_AUTOSUSPEND):
+			self.usbAutosuspend.set_sensitive(True)
+			if conn.IsEnabled(PM_USB_AUTOSUSPEND):
+				self.usbAutosuspend.set_active(True)
+		self.usbAutosuspend.connect("toggled", self.on_usbAutosuspend_toggled)
 		
 		# VM Writeback Time
 		self.vmWritebackTime = self.builder.get_object("vmWritebackTime")
+		self.vmWritebackTime.set_sensitive(False)
+		self.vmWritebackTime.set_active(False)
+		if conn.IsValid(PM_VM_WRITEBACK_TIME):
+			self.vmWritebackTime.set_sensitive(True)
+			if conn.IsEnabled(PM_VM_WRITEBACK_TIME):
+				self.vmWritebackTime.set_active(True)
+		self.vmWritebackTime.connect("toggled", self.on_vmWritebackTime_toggled)
 		
 	def __connect(self):
 		retry = 3
@@ -246,6 +281,26 @@ class PowerManagementDialog():
 	def on_devicesPowerManagement_toggled(self, button = None):
 		conn = self.__connect()
 		conn.Toggle(PM_DEVICES_POWER_MANAGEMENT)
+	
+	def on_ethernetThrottleSpeed_toggled(self, button = None):
+		conn = self.__connect()
+		conn.Toggle(PM_ETHERNET_THROTTLE_SPEED)
+		
+	def on_intelAudioPowersave_toggled(self, button = None):
+		conn = self.__connect()
+		conn.Toggle(PM_INTEL_AUDIO_POWERSAVE)
+	
+	def on_nmiWatchdog_toggled(self, button = None):
+		conn = self.__connect()
+		conn.Toggle(PM_NMI_WATCHDOG)
+	
+	def on_usbAutosuspend_toggled(self, button = None):
+		conn = self.__connect()
+		conn.Toggle(PM_USB_AUTOSUSPEND)
+
+	def on_vmWritebackTime_toggled(self, button = None):
+		conn = self.__connect()
+		conn.Toggle(PM_VM_WRITEBACK_TIME)
 
 	def quit(self, widget = None, event = None):
 		self.mainDialog.destroy()

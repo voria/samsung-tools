@@ -157,7 +157,7 @@ class PowerManagement(dbus.service.Object):
 		script == PM_INTEL_AUDIO_POWERSAVE or \
 		script == PM_NMI_WATCHDOG or \
 		script == PM_USB_AUTOSUSPEND or \
-		script == PM_WRITEBACK_TIME:
+		script == PM_VM_WRITEBACK_TIME:
 			return os.access(script, os.F_OK)
 		return False
 		

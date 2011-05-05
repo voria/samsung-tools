@@ -54,7 +54,7 @@ PM_ETHERNET_THROTTLE_SPEED = "/etc/pm/power.d/samsung-tools_ethernet-throttle-sp
 PM_INTEL_AUDIO_POWERSAVE = "/etc/pm/power.d/samsung-tools_intel-audio-powersave"
 PM_NMI_WATCHDOG = "/etc/pm/power.d/samsung-tools_nmi-watchdog"
 PM_USB_AUTOSUSPEND = "/etc/pm/power.d/samsung-tools_usb-autosuspend"
-PM_WRITEBACK_TIME = "/etc/pm/power.d/samsung-tools_vm-writeback-time"
+PM_VM_WRITEBACK_TIME = "/etc/pm/power.d/samsung-tools_vm-writeback-time"
 
 import sys, os.path
 ###
