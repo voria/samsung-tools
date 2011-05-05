@@ -1,3 +1,17 @@
+samsung-tools (1.4~ppa1~loms~natty) natty; urgency=low
+
+  * Add a new configuration dialog in the 'Advanced Power Management' page
+    of samsung-tools-preferences, used to manage the pm-utils hooks installed
+    by Samsung Tools.
+  * Add a new pm hook to manage VM Writeback Time.
+  * Add a new pm hook to toggle NMI watchdog.
+  * Drop pm hook 'samsung-tools_hal-cd-polling'.
+  * Make sure PHC values are set back when resuming from suspend/hibernate.
+  * Fix vboxes orientation in glade files.
+  * Update translations to latest version from Launchpad.
+
+ -- Fortunato Ventre (voRia) <vorione@gmail.com>  Fri, 05 May 2011 17:31:52 +0100
+
 samsung-tools (1.3.2~ppa1~loms~maverick) maverick; urgency=low
 
   * samsung-tools:
