@@ -208,6 +208,13 @@ class PowerManagementDialog():
 		
 		# Devices Power Management
 		self.devicesPowerManagement = self.builder.get_object("devicesPowerManagement")
+		self.devicesPowerManagement.set_sensitive(False)
+		self.devicesPowerManagement.set_active(False)
+		if conn.IsValid(PM_DEVICES_POWER_MANAGEMENT):
+			self.devicesPowerManagement.set_sensitive(True)
+			if conn.IsEnabled(PM_DEVICES_POWER_MANAGEMENT):
+				self.devicesPowerManagement.set_active(True)
+		self.devicesPowerManagement.connect("toggled", self.on_devicesPowerManagement_toggled)
 		
 		# Ethernet Throttle Speed
 		self.ethernetThrottleSpeed = self.builder.get_object("ethernetThrottleSpeed")
@@ -235,6 +242,10 @@ class PowerManagementDialog():
 				retry = retry - 1
 		print unicode(_("Unable to connect to system service!"), "utf-8")
 		sys.exit(1)
+
+	def on_devicesPowerManagement_toggled(self, button = None):
+		conn = self.__connect()
+		conn.Toggle(PM_DEVICES_POWER_MANAGEMENT)
 
 	def quit(self, widget = None, event = None):
 		self.mainDialog.destroy()
