@@ -4,3 +4,9 @@
 /etc/samsung-tools/scripts/bluetooth-off
 /etc/samsung-tools/scripts/wireless-on
 /etc/samsung-tools/scripts/wireless-off
+/etc/pm/power.d/samsung-tools_devices-power-management
+/etc/pm/power.d/samsung-tools_ethernet-throttle-speed
+/etc/pm/power.d/samsung-tools_intel-audio-powersave
+/etc/pm/power.d/samsung-tools_nmi-watchdog
+/etc/pm/power.d/samsung-tools_usb-autosuspend
+/etc/pm/power.d/samsung-tools_vm-writeback-time
