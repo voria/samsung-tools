@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-05-05 14:57+0200\n"
+"POT-Creation-Date: 2011-05-13 15:07+0200\n"
 "PO-Revision-Date: 2011-02-16 08:35+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Lithuanian <lt@li.org>\n"
@@ -15,8 +15,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-05-05 11:48+0000\n"
-"X-Generator: Launchpad (build 12959)\n"
+"X-Launchpad-Export-Date: 2011-05-13 13:04+0000\n"
+"X-Generator: Launchpad (build 13037)\n"
 
 #: backends/session/util/locales.py:25 samsung-tools-preferences.py:452
 msgid "Backlight"
@@ -296,7 +296,7 @@ msgstr ""
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr ""
 
-#: samsung-tools.py:627 samsung-tools-preferences.py:1079
+#: samsung-tools.py:627 samsung-tools-preferences.py:1083
 msgid "Released under GPLv3 license"
 msgstr ""
 
@@ -440,11 +440,11 @@ msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:11
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:1
-#: po/samsung-tools-preferences-power-management.glade.h:1
 msgid "Configure kernel parameters"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:12
+#: po/samsung-tools-preferences-power-management.glade.h:1
 msgid "Configure power management"
 msgstr ""
 

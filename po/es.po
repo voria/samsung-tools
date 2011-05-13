@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-05-05 14:57+0200\n"
+"POT-Creation-Date: 2011-05-13 15:07+0200\n"
 "PO-Revision-Date: 2010-10-10 14:43+0000\n"
 "Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -15,8 +15,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-05-05 11:48+0000\n"
-"X-Generator: Launchpad (build 12959)\n"
+"X-Launchpad-Export-Date: 2011-05-13 13:04+0000\n"
+"X-Generator: Launchpad (build 13037)\n"
 
 #: backends/session/util/locales.py:25 samsung-tools-preferences.py:452
 msgid "Backlight"
@@ -303,7 +303,7 @@ msgstr " - Deshabilita bluetooth, la cámara web y las redes inalámbricas:"
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Para mas información visita el foro \"Linux On My Samsung\":"
 
-#: samsung-tools.py:627 samsung-tools-preferences.py:1079
+#: samsung-tools.py:627 samsung-tools-preferences.py:1083
 msgid "Released under GPLv3 license"
 msgstr "Liberado bajo licencia GPLv3"
 
@@ -438,9 +438,8 @@ msgid "Advanced power management"
 msgstr "Administración avanzada de la potencia"
 
 #: po/samsung-tools-preferences.glade.h:7
-#, fuzzy
 msgid "CPU undervolting..."
-msgstr "Disminución en el voltaje de la CPU"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:8
 msgid "Click here to disable the hotkey"
@@ -456,14 +455,13 @@ msgstr "Haga click aquí para seleccionar el valor por defecto"
 
 #: po/samsung-tools-preferences.glade.h:11
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:1
-#: po/samsung-tools-preferences-power-management.glade.h:1
 msgid "Configure kernel parameters"
 msgstr "Configura los parámetros del núcleo (kernel)"
 
 #: po/samsung-tools-preferences.glade.h:12
-#, fuzzy
+#: po/samsung-tools-preferences-power-management.glade.h:1
 msgid "Configure power management"
-msgstr "Administración avanzada de la potencia"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:13
 msgid "Disabled"
@@ -502,18 +500,16 @@ msgid "Hotkey used for wireless control"
 msgstr "Tecla caliente para el control de las redes inalámbricas"
 
 #: po/samsung-tools-preferences.glade.h:22
-#, fuzzy
 msgid "Kernel parameters..."
-msgstr "Configura los parámetros del núcleo (kernel)"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:23
 msgid "Last status"
 msgstr "Último estado"
 
 #: po/samsung-tools-preferences.glade.h:25
-#, fuzzy
 msgid "Power management..."
-msgstr "Administración avanzada de la potencia"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:27
 msgid "Session service"
@@ -611,9 +607,8 @@ msgid "Set the new VIDs automatically at boot"
 msgstr "Ajusta los automaticamente los nuevos VIDs al inicio"
 
 #: po/samsung-tools-preferences-power-management.glade.h:2
-#, fuzzy
 msgid "Devices power management"
-msgstr "Administración avanzada de la potencia"
+msgstr ""
 
 #: po/samsung-tools-preferences-power-management.glade.h:3
 msgid "Ethernet throttle speed"
@@ -628,22 +623,18 @@ msgid "NMI watchdog"
 msgstr ""
 
 #: po/samsung-tools-preferences-power-management.glade.h:6
-#, fuzzy
 msgid "USB autosuspend"
-msgstr "Habilita la autosuspensión del USB"
+msgstr ""
 
 #: po/samsung-tools-preferences-power-management.glade.h:7
 msgid "VM writeback time"
 msgstr ""
 
 #: po/samsung-tools-preferences-power-management.glade.h:8
-#, fuzzy
 msgid ""
 "When enabled, all the devices will automatically enter power save mode when "
 "needed."
 msgstr ""
-"Si habilitas esta opción 'laptop mode tools' seleccionará automáticamente el "
-"modo de ahorro de potencia del chipset de audio Intel HDA."
 
 #: po/samsung-tools-preferences-power-management.glade.h:9
 msgid ""
@@ -768,6 +759,9 @@ msgstr "Inicia el servicio de sesión"
 #~ msgid "Control video output settings"
 #~ msgstr "Controla los ajustes del vídeo de salida"
 
+#~ msgid "Enable USB autosuspend"
+#~ msgstr "Habilita la autosuspensión del USB"
+
 #~ msgid "Control Ethernet settings"
 #~ msgstr "Controla los ajustes de Ethernet"
 
@@ -782,6 +776,13 @@ msgstr "Inicia el servicio de sesión"
 
 #~ msgid "Control HAL polling"
 #~ msgstr "Controla del sondeo HAL"
+
+#~ msgid ""
+#~ "If you enable this option, 'laptop mode tools' will automatically set the "
+#~ "powersave mode of Intel HDA audio chipsets."
+#~ msgstr ""
+#~ "Si habilitas esta opción 'laptop mode tools' seleccionará automáticamente "
+#~ "el modo de ahorro de potencia del chipset de audio Intel HDA."
 
 #~ msgid ""
 #~ "If you enable this option, 'laptop mode tools' will automatically enable "

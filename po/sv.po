@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-05-05 14:57+0200\n"
+"POT-Creation-Date: 2011-05-13 15:07+0200\n"
 "PO-Revision-Date: 2010-05-16 10:37+0000\n"
 "Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
@@ -15,8 +15,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-05-05 11:48+0000\n"
-"X-Generator: Launchpad (build 12959)\n"
+"X-Launchpad-Export-Date: 2011-05-13 13:04+0000\n"
+"X-Generator: Launchpad (build 13037)\n"
 
 #: backends/session/util/locales.py:25 samsung-tools-preferences.py:452
 msgid "Backlight"
@@ -296,7 +296,7 @@ msgstr " - Inaktivera bluetooth, webbkamera och det trådlösa nätverket:"
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "För mer information, gå till 'Linux On My Samsung'-forumet:"
 
-#: samsung-tools.py:627 samsung-tools-preferences.py:1079
+#: samsung-tools.py:627 samsung-tools-preferences.py:1083
 msgid "Released under GPLv3 license"
 msgstr "Publicerat under GPLv3-licensen"
 
@@ -428,9 +428,8 @@ msgid "Advanced power management"
 msgstr "Avancerad energisparhantering"
 
 #: po/samsung-tools-preferences.glade.h:7
-#, fuzzy
 msgid "CPU undervolting..."
-msgstr "CPU-undervoltning"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:8
 msgid "Click here to disable the hotkey"
@@ -446,14 +445,13 @@ msgstr "Klicka här för att använda standardinställningarna"
 
 #: po/samsung-tools-preferences.glade.h:11
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:1
-#: po/samsung-tools-preferences-power-management.glade.h:1
 msgid "Configure kernel parameters"
 msgstr "Ställ in kernelparametrar"
 
 #: po/samsung-tools-preferences.glade.h:12
-#, fuzzy
+#: po/samsung-tools-preferences-power-management.glade.h:1
 msgid "Configure power management"
-msgstr "Avancerad energisparhantering"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:13
 msgid "Disabled"
@@ -492,18 +490,16 @@ msgid "Hotkey used for wireless control"
 msgstr "Genväg för trådlöst nätverk"
 
 #: po/samsung-tools-preferences.glade.h:22
-#, fuzzy
 msgid "Kernel parameters..."
-msgstr "Ställ in kernelparametrar"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:23
 msgid "Last status"
 msgstr "Senaste status"
 
 #: po/samsung-tools-preferences.glade.h:25
-#, fuzzy
 msgid "Power management..."
-msgstr "Avancerad energisparhantering"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:27
 msgid "Session service"
@@ -599,9 +595,8 @@ msgid "Set the new VIDs automatically at boot"
 msgstr "Ställ in de nya VIDsen automatiskt vid start."
 
 #: po/samsung-tools-preferences-power-management.glade.h:2
-#, fuzzy
 msgid "Devices power management"
-msgstr "Avancerad energisparhantering"
+msgstr ""
 
 #: po/samsung-tools-preferences-power-management.glade.h:3
 msgid "Ethernet throttle speed"
@@ -616,22 +611,18 @@ msgid "NMI watchdog"
 msgstr ""
 
 #: po/samsung-tools-preferences-power-management.glade.h:6
-#, fuzzy
 msgid "USB autosuspend"
-msgstr "Aktivera USB autoavstängning"
+msgstr ""
 
 #: po/samsung-tools-preferences-power-management.glade.h:7
 msgid "VM writeback time"
 msgstr ""
 
 #: po/samsung-tools-preferences-power-management.glade.h:8
-#, fuzzy
 msgid ""
 "When enabled, all the devices will automatically enter power save mode when "
 "needed."
 msgstr ""
-"Om du aktiverar detta alternativ kommer 'laptop mode tools' automatiskt "
-"ställa in strömsparhanteringen på Intel HDA ljudchip."
 
 #: po/samsung-tools-preferences-power-management.glade.h:9
 msgid ""
@@ -715,6 +706,13 @@ msgstr "Starta sessionstjänsten"
 #~ "den. Det här tvingar porten att stänga av vid energisparläge."
 
 #~ msgid ""
+#~ "If you enable this option, 'laptop mode tools' will automatically set the "
+#~ "powersave mode of Intel HDA audio chipsets."
+#~ msgstr ""
+#~ "Om du aktiverar detta alternativ kommer 'laptop mode tools' automatiskt "
+#~ "ställa in strömsparhanteringen på Intel HDA ljudchip."
+
+#~ msgid ""
 #~ "If you enable this option, 'laptop mode tools' will automatically enable "
 #~ "the link power management mode of Intel AHCI compliant SATA chipsets."
 #~ msgstr ""
@@ -748,6 +746,9 @@ msgstr "Starta sessionstjänsten"
 
 #~ msgid "Control video output settings"
 #~ msgstr "Kontrollera videoanslutningsalternativ"
+
+#~ msgid "Enable USB autosuspend"
+#~ msgstr "Aktivera USB autoavstängning"
 
 #~ msgid "Control Linux scheduler"
 #~ msgstr "Kontrollera Linux schemaläggare"
