@@ -1069,7 +1069,9 @@ Are you sure you want to continue?"), "utf-8")
 					"Adriano Steffler",
 					"taha",
 					"Piotr Sokół",
-					"Мирослав Николић"
+					"Мирослав Николић",
+					"Giordano Bruno Barbosa",
+					"Benedict Etzel"
 					]
 		
 		translators.sort(cmp = lambda x, y: cmp(x.lower(), y.lower()))
