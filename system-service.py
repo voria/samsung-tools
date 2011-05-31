@@ -61,7 +61,7 @@ class General(dbus.service.Object):
 		webcam.RestoreLastStatus()
 		wireless.RestoreLastStatus()
 		fan.RestoreLastStatus()
-		# Restore also PHC values, just in case they have been resetted
+		# Restore also PHC values, just in case they have been reset
 		status = systemconfig.getPHCVids()
 		if status != "":
 			cpu.SetCurrentVids(status)
