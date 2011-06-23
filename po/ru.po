@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-05-13 15:07+0200\n"
-"PO-Revision-Date: 2010-09-05 17:48+0000\n"
-"Last-Translator: Michael Likholet <mlih@mail.ru>\n"
+"POT-Creation-Date: 2011-06-23 19:10+0200\n"
+"PO-Revision-Date: 2011-06-19 11:43+0000\n"
+"Last-Translator: D3NMOH <Unknown>\n"
 "Language-Team: Russian <ru@li.org>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-05-13 13:04+0000\n"
-"X-Generator: Launchpad (build 13037)\n"
+"X-Launchpad-Export-Date: 2011-06-23 17:04+0000\n"
+"X-Generator: Launchpad (build 13265)\n"
 
 #: backends/session/util/locales.py:25 samsung-tools-preferences.py:452
 msgid "Backlight"
@@ -300,7 +300,7 @@ msgstr " - Отключить Bluetooth, Веб-камеру и Беспрово
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Для большей информации, посетите 'Linux On My Samsung' форум:"
 
-#: samsung-tools.py:627 samsung-tools-preferences.py:1083
+#: samsung-tools.py:627 samsung-tools-preferences.py:1086
 msgid "Released under GPLv3 license"
 msgstr "Выпущен под GPLv3 лицензией"
 
@@ -436,7 +436,7 @@ msgstr "Расширенное управление питанием"
 
 #: po/samsung-tools-preferences.glade.h:7
 msgid "CPU undervolting..."
-msgstr ""
+msgstr "Напряжение процессора..."
 
 #: po/samsung-tools-preferences.glade.h:8
 msgid "Click here to disable the hotkey"
@@ -458,7 +458,7 @@ msgstr "Настройка параметров ядра"
 #: po/samsung-tools-preferences.glade.h:12
 #: po/samsung-tools-preferences-power-management.glade.h:1
 msgid "Configure power management"
-msgstr ""
+msgstr "Настройка электропитания"
 
 #: po/samsung-tools-preferences.glade.h:13
 msgid "Disabled"
@@ -498,7 +498,7 @@ msgstr "Сочетание клавиш для управления беспро
 
 #: po/samsung-tools-preferences.glade.h:22
 msgid "Kernel parameters..."
-msgstr ""
+msgstr "Параметры ядра"
 
 #: po/samsung-tools-preferences.glade.h:23
 msgid "Last status"
@@ -506,7 +506,7 @@ msgstr "Последнее значение"
 
 #: po/samsung-tools-preferences.glade.h:25
 msgid "Power management..."
-msgstr ""
+msgstr "Управление питанием"
 
 #: po/samsung-tools-preferences.glade.h:27
 msgid "Session service"
@@ -604,7 +604,7 @@ msgstr "Установить новые VID автоматически при з
 
 #: po/samsung-tools-preferences-power-management.glade.h:2
 msgid "Devices power management"
-msgstr ""
+msgstr "Управление питанием устройств"
 
 #: po/samsung-tools-preferences-power-management.glade.h:3
 msgid "Ethernet throttle speed"
@@ -612,7 +612,7 @@ msgstr ""
 
 #: po/samsung-tools-preferences-power-management.glade.h:4
 msgid "Intel audio powersave"
-msgstr ""
+msgstr "Энергосбережение Intel audio"
 
 #: po/samsung-tools-preferences-power-management.glade.h:5
 msgid "NMI watchdog"
@@ -620,7 +620,7 @@ msgstr ""
 
 #: po/samsung-tools-preferences-power-management.glade.h:6
 msgid "USB autosuspend"
-msgstr ""
+msgstr "Автоотключение USB"
 
 #: po/samsung-tools-preferences-power-management.glade.h:7
 msgid "VM writeback time"
@@ -631,6 +631,8 @@ msgid ""
 "When enabled, all the devices will automatically enter power save mode when "
 "needed."
 msgstr ""
+"Если включено, все устройства войдут в режим энергосбережения, когда это "
+"необходимо."
 
 #: po/samsung-tools-preferences-power-management.glade.h:9
 msgid ""
@@ -642,6 +644,8 @@ msgid ""
 "When enabled, the autosuspend feature for all the USB devices will be "
 "enabled."
 msgstr ""
+"Если включено, функция автоотключения для всех устройств USB будет "
+"активирована."
 
 #: po/samsung-tools-preferences-power-management.glade.h:11
 msgid ""
