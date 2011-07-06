@@ -7,16 +7,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools 1.3.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-23 19:10+0200\n"
-"PO-Revision-Date: 2011-06-15 06:13+0000\n"
+"POT-Creation-Date: 2011-07-06 13:02+0200\n"
+"PO-Revision-Date: 2011-07-04 10:12+0000\n"
 "Last-Translator: Piotr Sokół <Unknown>\n"
 "Language-Team: Polish <>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-06-23 17:04+0000\n"
-"X-Generator: Launchpad (build 13265)\n"
+"X-Launchpad-Export-Date: 2011-07-06 11:00+0000\n"
+"X-Generator: Launchpad (build 13376)\n"
 
 #: backends/session/util/locales.py:25 samsung-tools-preferences.py:452
 msgid "Backlight"
@@ -603,15 +603,15 @@ msgstr "Ustaw nowe VIDy automatycznie w czasie startu"
 
 #: po/samsung-tools-preferences-power-management.glade.h:2
 msgid "Devices power management"
-msgstr ""
+msgstr "Zarządzanie zasilaniem urządzeń"
 
 #: po/samsung-tools-preferences-power-management.glade.h:3
 msgid "Ethernet throttle speed"
-msgstr ""
+msgstr "Ograniczenie przepustowości sieci Ethernet"
 
 #: po/samsung-tools-preferences-power-management.glade.h:4
 msgid "Intel audio powersave"
-msgstr ""
+msgstr "Włączenie trybu oszczędzania energii układów dźwiękowych Intel"
 
 #: po/samsung-tools-preferences-power-management.glade.h:5
 msgid "NMI watchdog"
@@ -629,7 +629,7 @@ msgstr ""
 msgid ""
 "When enabled, all the devices will automatically enter power save mode when "
 "needed."
-msgstr ""
+msgstr "W razie potrzeby, przełącza urządzenia w tryb oszczędzania energii"
 
 #: po/samsung-tools-preferences-power-management.glade.h:9
 msgid ""
@@ -653,6 +653,8 @@ msgid ""
 "When enabled, the onboard Intel audio chipset will enter the power save mode "
 "when no program is using the audio device."
 msgstr ""
+"Przełącza układ dźwiękowy firmy Intel w tryb oszczędzania energii, kiedy "
+"żaden program nie odtwarza lub nie nagrywa dźwięku"
 
 #: po/samsung-tools-preferences-power-management.glade.h:13
 msgid ""
