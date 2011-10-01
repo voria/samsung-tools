@@ -213,37 +213,7 @@ class PowerManagementDialog():
 			if conn.IsEnabled(PM_DEVICES_POWER_MANAGEMENT):
 				self.devicesPowerManagement.set_active(True)
 		self.devicesPowerManagement.connect("toggled", self.on_devicesPowerManagement_toggled)
-		
-		# Ethernet Throttle Speed
-		self.ethernetThrottleSpeed = self.builder.get_object("ethernetThrottleSpeed")
-		self.ethernetThrottleSpeed.set_sensitive(False)
-		self.ethernetThrottleSpeed.set_active(False)
-		if conn.IsValid(PM_ETHERNET_THROTTLE_SPEED):
-			self.ethernetThrottleSpeed.set_sensitive(True)
-			if conn.IsEnabled(PM_ETHERNET_THROTTLE_SPEED):
-				self.ethernetThrottleSpeed.set_active(True)
-		self.ethernetThrottleSpeed.connect("toggled", self.on_ethernetThrottleSpeed_toggled)
-		
-		# Intel Audio Powersave
-		self.intelAudioPowersave = self.builder.get_object("intelAudioPowersave")
-		self.intelAudioPowersave.set_sensitive(False)
-		self.intelAudioPowersave.set_active(False)
-		if conn.IsValid(PM_INTEL_AUDIO_POWERSAVE):
-			self.intelAudioPowersave.set_sensitive(True)
-			if conn.IsEnabled(PM_INTEL_AUDIO_POWERSAVE):
-				self.intelAudioPowersave.set_active(True)
-		self.intelAudioPowersave.connect("toggled", self.on_intelAudioPowersave_toggled)
-		
-		# NMI Watchdog
-		self.nmiWatchdog = self.builder.get_object("nmiWatchdog")
-		self.nmiWatchdog.set_sensitive(False)
-		self.nmiWatchdog.set_active(False)
-		if conn.IsValid(PM_NMI_WATCHDOG):
-			self.nmiWatchdog.set_sensitive(True)
-			if conn.IsEnabled(PM_NMI_WATCHDOG):
-				self.nmiWatchdog.set_active(True)
-		self.nmiWatchdog.connect("toggled", self.on_nmiWatchdog_toggled)
-		
+				
 		# USB Autosuspend
 		self.usbAutosuspend = self.builder.get_object("usbAutosuspend")
 		self.usbAutosuspend.set_sensitive(False)
@@ -279,19 +249,7 @@ class PowerManagementDialog():
 	def on_devicesPowerManagement_toggled(self, button = None):
 		conn = self.__connect()
 		conn.Toggle(PM_DEVICES_POWER_MANAGEMENT)
-	
-	def on_ethernetThrottleSpeed_toggled(self, button = None):
-		conn = self.__connect()
-		conn.Toggle(PM_ETHERNET_THROTTLE_SPEED)
 		
-	def on_intelAudioPowersave_toggled(self, button = None):
-		conn = self.__connect()
-		conn.Toggle(PM_INTEL_AUDIO_POWERSAVE)
-	
-	def on_nmiWatchdog_toggled(self, button = None):
-		conn = self.__connect()
-		conn.Toggle(PM_NMI_WATCHDOG)
-	
 	def on_usbAutosuspend_toggled(self, button = None):
 		conn = self.__connect()
 		conn.Toggle(PM_USB_AUTOSUSPEND)

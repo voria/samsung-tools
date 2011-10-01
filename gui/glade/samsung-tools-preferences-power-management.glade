@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
   <requires lib="gtk+" version="2.16"/>
+  <!-- interface-naming-policy toplevel-contextual -->
   <object class="GtkDialog" id="mainDialog">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
@@ -11,13 +12,12 @@
     <property name="window_position">mouse</property>
     <property name="type_hint">normal</property>
     <child internal-child="vbox">
-      <object class="GtkBox" id="dialog-vbox2">
+      <object class="GtkVBox" id="dialog-vbox2">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="orientation">vertical</property>
         <property name="spacing">2</property>
         <child internal-child="action_area">
-          <object class="GtkButtonBox" id="dialog-action_area2">
+          <object class="GtkHButtonBox" id="dialog-action_area2">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="layout_style">end</property>
@@ -48,7 +48,7 @@
           <object class="GtkTable" id="PowerManagementTable">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="n_rows">6</property>
+            <property name="n_rows">3</property>
             <property name="column_spacing">5</property>
             <property name="row_spacing">5</property>
             <child>
@@ -64,54 +64,6 @@
               </object>
             </child>
             <child>
-              <object class="GtkCheckButton" id="ethernetThrottleSpeed">
-                <property name="label" translatable="yes">Ethernet throttle speed</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">False</property>
-                <property name="tooltip_text" translatable="yes">When enabled, the speed of the gigabit ethernet will be throttled to 100Mbit in order to save energy.</property>
-                <property name="use_action_appearance">False</property>
-                <property name="xalign">0</property>
-                <property name="draw_indicator">True</property>
-              </object>
-              <packing>
-                <property name="top_attach">1</property>
-                <property name="bottom_attach">2</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkCheckButton" id="intelAudioPowersave">
-                <property name="label" translatable="yes">Intel audio powersave</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">False</property>
-                <property name="tooltip_text" translatable="yes">When enabled, the onboard Intel audio chipset will enter the power save mode when no program is using the audio device.</property>
-                <property name="use_action_appearance">False</property>
-                <property name="xalign">0</property>
-                <property name="draw_indicator">True</property>
-              </object>
-              <packing>
-                <property name="top_attach">2</property>
-                <property name="bottom_attach">3</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkCheckButton" id="nmiWatchdog">
-                <property name="label" translatable="yes">NMI watchdog</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">False</property>
-                <property name="tooltip_text" translatable="yes">When enabled, the NMI watchdog will be turned off in order to save energy.</property>
-                <property name="use_action_appearance">False</property>
-                <property name="xalign">0</property>
-                <property name="draw_indicator">True</property>
-              </object>
-              <packing>
-                <property name="top_attach">3</property>
-                <property name="bottom_attach">4</property>
-              </packing>
-            </child>
-            <child>
               <object class="GtkCheckButton" id="usbAutosuspend">
                 <property name="label" translatable="yes">USB autosuspend</property>
                 <property name="visible">True</property>
@@ -123,8 +75,8 @@
                 <property name="draw_indicator">True</property>
               </object>
               <packing>
-                <property name="top_attach">4</property>
-                <property name="bottom_attach">5</property>
+                <property name="top_attach">1</property>
+                <property name="bottom_attach">2</property>
               </packing>
             </child>
             <child>
@@ -139,8 +91,8 @@
                 <property name="draw_indicator">True</property>
               </object>
               <packing>
-                <property name="top_attach">5</property>
-                <property name="bottom_attach">6</property>
+                <property name="top_attach">2</property>
+                <property name="bottom_attach">3</property>
               </packing>
             </child>
           </object>
