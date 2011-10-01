@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-01 09:52+0200\n"
+"POT-Creation-Date: 2011-10-01 11:33+0200\n"
 "PO-Revision-Date: 2010-10-10 14:43+0000\n"
 "Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -322,19 +322,23 @@ msgstr "Ce programme doit être exécuté par un utilisateur sans privilèges."
 msgid "Wrong argument(s)."
 msgstr "Mauvais argument(s)"
 
-#: samsung-tools.py:716
+#: samsung-tools.py:712
+msgid "Unable to start a DBus daemon!"
+msgstr ""
+
+#: samsung-tools.py:728
 msgid "Session service stopped"
 msgstr "Service de session arrêté"
 
-#: samsung-tools.py:719
+#: samsung-tools.py:731
 msgid "Cannot stop session service"
 msgstr "Impossible d'arrêter le service de session"
 
-#: samsung-tools.py:729
+#: samsung-tools.py:741
 msgid "System service stopped"
 msgstr "Service système arrêté"
 
-#: samsung-tools.py:732
+#: samsung-tools.py:744
 msgid "Cannot stop system service"
 msgstr "Impossible d'arrêter le service système"
 

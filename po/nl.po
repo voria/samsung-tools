@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-01 09:52+0200\n"
+"POT-Creation-Date: 2011-10-01 11:33+0200\n"
 "PO-Revision-Date: 2011-06-22 18:10+0000\n"
 "Last-Translator: Dirk Roos <Unknown>\n"
 "Language-Team: Dutch <nl@li.org>\n"
@@ -314,19 +314,23 @@ msgstr "Dit programma is enkel voor niet-gepriviligieerde gebruikers bedoeld."
 msgid "Wrong argument(s)."
 msgstr "Verkeerd(e) argument(en)."
 
-#: samsung-tools.py:716
+#: samsung-tools.py:712
+msgid "Unable to start a DBus daemon!"
+msgstr ""
+
+#: samsung-tools.py:728
 msgid "Session service stopped"
 msgstr "Sessiedienst gestopt."
 
-#: samsung-tools.py:719
+#: samsung-tools.py:731
 msgid "Cannot stop session service"
 msgstr "Kan de sessiedienst niet stoppen"
 
-#: samsung-tools.py:729
+#: samsung-tools.py:741
 msgid "System service stopped"
 msgstr "Systeemdienst gestopt"
 
-#: samsung-tools.py:732
+#: samsung-tools.py:744
 msgid "Cannot stop system service"
 msgstr "Kan de systeemdienst niet stoppen"
 

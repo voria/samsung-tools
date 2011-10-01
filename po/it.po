@@ -6,16 +6,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-01 09:52+0200\n"
-"PO-Revision-Date: 2011-05-05 23:41+0000\n"
-"Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
+"POT-Creation-Date: 2011-10-01 11:33+0200\n"
+"PO-Revision-Date: 2011-10-01 11:34+0200\n"
+"Last-Translator: Fortunato Ventre (voRia) <vorione@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Launchpad-Export-Date: 2011-06-23 17:04+0000\n"
-"X-Generator: Launchpad (build 13265)\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: backends/session/util/locales.py:25 samsung-tools-preferences.py:452
 msgid "Backlight"
@@ -319,19 +320,23 @@ msgstr ""
 msgid "Wrong argument(s)."
 msgstr "Argomenti errati."
 
-#: samsung-tools.py:716
+#: samsung-tools.py:712
+msgid "Unable to start a DBus daemon!"
+msgstr "Impossibile avviare un demone DBus!"
+
+#: samsung-tools.py:728
 msgid "Session service stopped"
 msgstr "Servizio di sessione fermato"
 
-#: samsung-tools.py:719
+#: samsung-tools.py:731
 msgid "Cannot stop session service"
 msgstr "Impossibile fermare il servizio di sessione"
 
-#: samsung-tools.py:729
+#: samsung-tools.py:741
 msgid "System service stopped"
 msgstr "Servizio di sistema fermato"
 
-#: samsung-tools.py:732
+#: samsung-tools.py:744
 msgid "Cannot stop system service"
 msgstr "Impossibile fermare il servizio di sistema"
 
