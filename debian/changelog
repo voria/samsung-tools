@@ -1,6 +1,6 @@
-samsung-tools (1.5~ppa1~loms~oneiric~test1) UNRELEASED; urgency=low
+samsung-tools (1.5~ppa1~loms~oneiric) oneiric; urgency=low
 
-  * Drop gnome applet.
+  * Drop gnome (bonobo) applet.
   * Allow 'samsung-tools' to run without X11.
     Fixes bug #832164 (thanks Eric Floehr).
   * Drop useless pm hooks.
