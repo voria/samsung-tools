@@ -700,6 +700,18 @@ def main():
 		print unicode(_("Use --help for instructions."), "utf-8")
 		sys.exit(1)
 	
+	# Check if the dbus daemon is running. If not, start it.
+	if "DBUS_SESSION_BUS_ADDRESS" not in os.environ:
+		try:
+			import subprocess
+			p = subprocess.Popen('dbus-launch --exit-with-session', shell = True, stdout = subprocess.PIPE, stderr = subprocess.STDOUT)
+			for var in p.stdout:
+				sp = var.split('=', 1)
+				os.environ[sp[0]] = sp[1][:-1]
+		except:
+			print unicode(_("Unable to start a DBus daemon!"), "utf-8")
+			sys.exit(1)
+	
 	Backlight(options.backlight).apply()
 	Bluetooth(options.bluetooth, options.show_notify).apply()
 	Cpu(options.cpu, options.show_notify).apply()
