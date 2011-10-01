@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools 1.3.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-01 11:33+0200\n"
+"POT-Creation-Date: 2011-10-01 11:57+0200\n"
 "PO-Revision-Date: 2011-07-04 10:12+0000\n"
 "Last-Translator: Piotr Sokół <Unknown>\n"
 "Language-Team: Polish <>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2011-07-06 11:00+0000\n"
 "X-Generator: Launchpad (build 13376)\n"
 
-#: backends/session/util/locales.py:25 samsung-tools-preferences.py:452
+#: backends/session/util/locales.py:25 samsung-tools-preferences.py:410
 msgid "Backlight"
 msgstr "Podświetlenie ekranu"
 
@@ -50,7 +50,7 @@ msgstr "Nie można wyłączyć podświetlenia ekranu"
 msgid "Backlight cannot be toggled"
 msgstr "Nie można zmienić stanu podświetlenia ekranu"
 
-#: backends/session/util/locales.py:34 samsung-tools-preferences.py:461
+#: backends/session/util/locales.py:34 samsung-tools-preferences.py:419
 msgid "Bluetooth"
 msgstr "Moduł Bluetooth"
 
@@ -86,7 +86,7 @@ msgstr "Nie można zmienić stanu modułu Bluetooth"
 msgid "Bluetooth control is not available"
 msgstr "Zarządzanie modułem Bluetooth jest niedostępne"
 
-#: backends/session/util/locales.py:44 samsung-tools-preferences.py:470
+#: backends/session/util/locales.py:44 samsung-tools-preferences.py:428
 msgid "CPU fan"
 msgstr "Wentylator CPU"
 
@@ -118,7 +118,7 @@ msgstr "Nie można sprawdzić trybu wentylatora"
 msgid "CPU fan control is not available"
 msgstr "Zarządzanie wentylatorem CPU jest niedostępne"
 
-#: backends/session/util/locales.py:53 samsung-tools-preferences.py:479
+#: backends/session/util/locales.py:53 samsung-tools-preferences.py:437
 msgid "Webcam"
 msgstr "Kamera internetowa"
 
@@ -154,7 +154,7 @@ msgstr "Nie można zmienić stanu kamery internetowej"
 msgid "Webcam control is not available"
 msgstr "Zarządzanie kamerą internetową jest niedostępne"
 
-#: backends/session/util/locales.py:63 samsung-tools-preferences.py:488
+#: backends/session/util/locales.py:63 samsung-tools-preferences.py:446
 msgid "Wireless"
 msgstr "Moduł sieci bezprzewodowej"
 
@@ -299,7 +299,7 @@ msgstr ""
 "Proszę odwiedzić forum 'Linux On My Samsung', w celu uzyskania większej "
 "ilości informacji:"
 
-#: samsung-tools.py:627 samsung-tools-preferences.py:1086
+#: samsung-tools.py:627 samsung-tools-preferences.py:1044
 msgid "Released under GPLv3 license"
 msgstr "Wydany na licencji GPLv3"
 
@@ -349,34 +349,34 @@ msgstr "Proszę wcisnąć kombinację skrótu klawiszowego"
 msgid "None"
 msgstr "Brak"
 
-#: samsung-tools-preferences.py:177 samsung-tools-preferences.py:276
-#: samsung-tools-preferences.py:383 samsung-tools-preferences.py:395
-#: samsung-tools-preferences.py:742 samsung-tools-preferences.py:754
-#: samsung-tools-preferences.py:766
+#: samsung-tools-preferences.py:177 samsung-tools-preferences.py:246
+#: samsung-tools-preferences.py:341 samsung-tools-preferences.py:353
+#: samsung-tools-preferences.py:700 samsung-tools-preferences.py:712
+#: samsung-tools-preferences.py:724
 msgid "Unable to connect to system service!"
 msgstr "Nie można połączyć z usługą systemową!"
 
-#: samsung-tools-preferences.py:407
+#: samsung-tools-preferences.py:365
 msgid "Confirm"
 msgstr "Zatwierdź"
 
-#: samsung-tools-preferences.py:408
+#: samsung-tools-preferences.py:366
 msgid "Apply the new VIDs?"
 msgstr "Zastosować nowe VIDy?"
 
-#: samsung-tools-preferences.py:664
+#: samsung-tools-preferences.py:622
 msgid "You need a PHC enabled kernel to use this feature"
 msgstr "Aby użyć tej funkcjonalności, wymagane jest jądro z obsługą PHC."
 
-#: samsung-tools-preferences.py:682
+#: samsung-tools-preferences.py:640
 msgid "Unable to connect to session service!"
 msgstr "Nie można połączyć z usługą sesji!"
 
-#: samsung-tools-preferences.py:1021
+#: samsung-tools-preferences.py:979
 msgid "Caution!"
 msgstr "Uwaga!"
 
-#: samsung-tools-preferences.py:1022
+#: samsung-tools-preferences.py:980
 msgid ""
 "CPU undervolting can lead to significant gains in terms of power energy "
 "saving, however <b>IT IS A RISKY PRACTICE</b> that might result in "
@@ -595,65 +595,47 @@ msgid "Devices power management"
 msgstr "Zarządzanie zasilaniem urządzeń"
 
 #: po/samsung-tools-preferences-power-management.glade.h:3
-msgid "Ethernet throttle speed"
-msgstr "Ograniczenie przepustowości sieci Ethernet"
-
-#: po/samsung-tools-preferences-power-management.glade.h:4
-msgid "Intel audio powersave"
-msgstr "Włączenie trybu oszczędzania energii układów dźwiękowych Intel"
-
-#: po/samsung-tools-preferences-power-management.glade.h:5
-msgid "NMI watchdog"
-msgstr ""
-
-#: po/samsung-tools-preferences-power-management.glade.h:6
 msgid "USB autosuspend"
 msgstr ""
 
-#: po/samsung-tools-preferences-power-management.glade.h:7
+#: po/samsung-tools-preferences-power-management.glade.h:4
 msgid "VM writeback time"
 msgstr ""
 
-#: po/samsung-tools-preferences-power-management.glade.h:8
+#: po/samsung-tools-preferences-power-management.glade.h:5
 msgid ""
 "When enabled, all the devices will automatically enter power save mode when "
 "needed."
 msgstr "W razie potrzeby, przełącza urządzenia w tryb oszczędzania energii"
 
-#: po/samsung-tools-preferences-power-management.glade.h:9
-msgid ""
-"When enabled, the NMI watchdog will be turned off in order to save energy."
-msgstr ""
-
-#: po/samsung-tools-preferences-power-management.glade.h:10
+#: po/samsung-tools-preferences-power-management.glade.h:6
 msgid ""
 "When enabled, the autosuspend feature for all the USB devices will be "
 "enabled."
 msgstr ""
 
-#: po/samsung-tools-preferences-power-management.glade.h:11
+#: po/samsung-tools-preferences-power-management.glade.h:7
 msgid ""
 "When enabled, the kernel VM writeback time will be increased, resulting in "
 "less HD access and more energy saving."
 msgstr ""
 
-#: po/samsung-tools-preferences-power-management.glade.h:12
-msgid ""
-"When enabled, the onboard Intel audio chipset will enter the power save mode "
-"when no program is using the audio device."
-msgstr ""
-"Przełącza układ dźwiękowy firmy Intel w tryb oszczędzania energii, kiedy "
-"żaden program nie odtwarza lub nie nagrywa dźwięku"
-
-#: po/samsung-tools-preferences-power-management.glade.h:13
-msgid ""
-"When enabled, the speed of the gigabit ethernet will be throttled to 100Mbit "
-"in order to save energy."
-msgstr ""
-
 #: po/samsung-tools-session-service.desktop.in.h:1
 msgid "Start the session service"
 msgstr "Uruchamia usługę sesji narzędzi Samsung"
+
+#~ msgid "Ethernet throttle speed"
+#~ msgstr "Ograniczenie przepustowości sieci Ethernet"
+
+#~ msgid "Intel audio powersave"
+#~ msgstr "Włączenie trybu oszczędzania energii układów dźwiękowych Intel"
+
+#~ msgid ""
+#~ "When enabled, the onboard Intel audio chipset will enter the power save "
+#~ "mode when no program is using the audio device."
+#~ msgstr ""
+#~ "Przełącza układ dźwiękowy firmy Intel w tryb oszczędzania energii, kiedy "
+#~ "żaden program nie odtwarza lub nie nagrywa dźwięku"
 
 #~ msgid "CPU Fan"
 #~ msgstr "Tryb wentylatora CPU"

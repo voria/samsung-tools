@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-01 11:33+0200\n"
+"POT-Creation-Date: 2011-10-01 11:57+0200\n"
 "PO-Revision-Date: 2011-06-22 18:10+0000\n"
 "Last-Translator: Dirk Roos <Unknown>\n"
 "Language-Team: Dutch <nl@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2011-06-23 17:04+0000\n"
 "X-Generator: Launchpad (build 13265)\n"
 
-#: backends/session/util/locales.py:25 samsung-tools-preferences.py:452
+#: backends/session/util/locales.py:25 samsung-tools-preferences.py:410
 msgid "Backlight"
 msgstr "Achtergrondverlichting"
 
@@ -50,7 +50,7 @@ msgstr "Achtergrondverlichting kan niet uitgeschakeld worden"
 msgid "Backlight cannot be toggled"
 msgstr "Achtergrondverlichting status kan niet gewisseld worden"
 
-#: backends/session/util/locales.py:34 samsung-tools-preferences.py:461
+#: backends/session/util/locales.py:34 samsung-tools-preferences.py:419
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
@@ -86,7 +86,7 @@ msgstr "Bluetooth status kan niet gewisseld worden"
 msgid "Bluetooth control is not available"
 msgstr "Bluetooth control is niet beschikbaar"
 
-#: backends/session/util/locales.py:44 samsung-tools-preferences.py:470
+#: backends/session/util/locales.py:44 samsung-tools-preferences.py:428
 msgid "CPU fan"
 msgstr "CPU ventilator"
 
@@ -118,7 +118,7 @@ msgstr "Kan de ventilator mode niet verkrijgen"
 msgid "CPU fan control is not available"
 msgstr "CPU-fanbeheer is niet beschikbaar"
 
-#: backends/session/util/locales.py:53 samsung-tools-preferences.py:479
+#: backends/session/util/locales.py:53 samsung-tools-preferences.py:437
 msgid "Webcam"
 msgstr "Webcam"
 
@@ -154,7 +154,7 @@ msgstr "Webcam status kan niet gewisseld worden"
 msgid "Webcam control is not available"
 msgstr "Webcam instelling is niet beschikbaar"
 
-#: backends/session/util/locales.py:63 samsung-tools-preferences.py:488
+#: backends/session/util/locales.py:63 samsung-tools-preferences.py:446
 msgid "Wireless"
 msgstr "Draadloos netwerk"
 
@@ -294,7 +294,7 @@ msgstr " - Schakel bluetooth, webcam ean draadloos netwerk uit:"
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Voor meer informatie, bezoek het 'Linux On My Samsung' forum:"
 
-#: samsung-tools.py:627 samsung-tools-preferences.py:1086
+#: samsung-tools.py:627 samsung-tools-preferences.py:1044
 msgid "Released under GPLv3 license"
 msgstr "Vrijgegeven onder de GPLv3 licentie"
 
@@ -342,34 +342,34 @@ msgstr "Druk de nieuwe sneltoets in"
 msgid "None"
 msgstr "Geen"
 
-#: samsung-tools-preferences.py:177 samsung-tools-preferences.py:276
-#: samsung-tools-preferences.py:383 samsung-tools-preferences.py:395
-#: samsung-tools-preferences.py:742 samsung-tools-preferences.py:754
-#: samsung-tools-preferences.py:766
+#: samsung-tools-preferences.py:177 samsung-tools-preferences.py:246
+#: samsung-tools-preferences.py:341 samsung-tools-preferences.py:353
+#: samsung-tools-preferences.py:700 samsung-tools-preferences.py:712
+#: samsung-tools-preferences.py:724
 msgid "Unable to connect to system service!"
 msgstr "Kan niet met de systeemdienst verbinden!"
 
-#: samsung-tools-preferences.py:407
+#: samsung-tools-preferences.py:365
 msgid "Confirm"
 msgstr "Bevestigen"
 
-#: samsung-tools-preferences.py:408
+#: samsung-tools-preferences.py:366
 msgid "Apply the new VIDs?"
 msgstr "De nieuwe VIDs toepassen?"
 
-#: samsung-tools-preferences.py:664
+#: samsung-tools-preferences.py:622
 msgid "You need a PHC enabled kernel to use this feature"
 msgstr "Je moet een kernel met PHC hebben om deze mogelijkheid te gebruiken"
 
-#: samsung-tools-preferences.py:682
+#: samsung-tools-preferences.py:640
 msgid "Unable to connect to session service!"
 msgstr "Kan niet met de sessiedienst verbinden!"
 
-#: samsung-tools-preferences.py:1021
+#: samsung-tools-preferences.py:979
 msgid "Caution!"
 msgstr "Opgelet!"
 
-#: samsung-tools-preferences.py:1022
+#: samsung-tools-preferences.py:980
 msgid ""
 "CPU undervolting can lead to significant gains in terms of power energy "
 "saving, however <b>IT IS A RISKY PRACTICE</b> that might result in "
@@ -589,26 +589,14 @@ msgid "Devices power management"
 msgstr "Energiebeheer apparaten"
 
 #: po/samsung-tools-preferences-power-management.glade.h:3
-msgid "Ethernet throttle speed"
-msgstr "Snelheid Ethernet schakelen"
-
-#: po/samsung-tools-preferences-power-management.glade.h:4
-msgid "Intel audio powersave"
-msgstr "Intel audio spaarstand"
-
-#: po/samsung-tools-preferences-power-management.glade.h:5
-msgid "NMI watchdog"
-msgstr "NMI watchdog"
-
-#: po/samsung-tools-preferences-power-management.glade.h:6
 msgid "USB autosuspend"
 msgstr "USB autopausestand"
 
-#: po/samsung-tools-preferences-power-management.glade.h:7
+#: po/samsung-tools-preferences-power-management.glade.h:4
 msgid "VM writeback time"
 msgstr "VM writeback tijd"
 
-#: po/samsung-tools-preferences-power-management.glade.h:8
+#: po/samsung-tools-preferences-power-management.glade.h:5
 msgid ""
 "When enabled, all the devices will automatically enter power save mode when "
 "needed."
@@ -616,14 +604,7 @@ msgstr ""
 "Wanneer ingeschakeld zullen alle apparaten naar energiespaarstand indien "
 "nodig"
 
-#: po/samsung-tools-preferences-power-management.glade.h:9
-msgid ""
-"When enabled, the NMI watchdog will be turned off in order to save energy."
-msgstr ""
-"Wanneer ingeschakeld zal de NMI watchdog uitgeschakeld worden om energie te "
-"bespaken"
-
-#: po/samsung-tools-preferences-power-management.glade.h:10
+#: po/samsung-tools-preferences-power-management.glade.h:6
 msgid ""
 "When enabled, the autosuspend feature for all the USB devices will be "
 "enabled."
@@ -631,7 +612,7 @@ msgstr ""
 "Wanneer ingeschakeld zal de pausestand voor alle USB apparaten ingeschakeld "
 "worden"
 
-#: po/samsung-tools-preferences-power-management.glade.h:11
+#: po/samsung-tools-preferences-power-management.glade.h:7
 msgid ""
 "When enabled, the kernel VM writeback time will be increased, resulting in "
 "less HD access and more energy saving."
@@ -639,26 +620,39 @@ msgstr ""
 "Wanneer ingeschakeld zan de kernel VM writeback tijd toenemen, resulterend "
 "in minder schijfactiviteit en meer energiebesparing."
 
-#: po/samsung-tools-preferences-power-management.glade.h:12
-msgid ""
-"When enabled, the onboard Intel audio chipset will enter the power save mode "
-"when no program is using the audio device."
-msgstr ""
-"Wanneer ingeschakeld zal de ingebouwde Intel audio chipset in "
-"energiespaarstand gezet worden wanneer geen toepassingen het apparaat "
-"gebruiken."
-
-#: po/samsung-tools-preferences-power-management.glade.h:13
-msgid ""
-"When enabled, the speed of the gigabit ethernet will be throttled to 100Mbit "
-"in order to save energy."
-msgstr ""
-"Wanneer ingeschakeld zal de snelheid van het gigabit ethernet naar 100Mbit "
-"geschakeld worden om enerie te sparen."
-
 #: po/samsung-tools-session-service.desktop.in.h:1
 msgid "Start the session service"
 msgstr "Start de sessiedienst"
+
+#~ msgid "Ethernet throttle speed"
+#~ msgstr "Snelheid Ethernet schakelen"
+
+#~ msgid "Intel audio powersave"
+#~ msgstr "Intel audio spaarstand"
+
+#~ msgid "NMI watchdog"
+#~ msgstr "NMI watchdog"
+
+#~ msgid ""
+#~ "When enabled, the NMI watchdog will be turned off in order to save energy."
+#~ msgstr ""
+#~ "Wanneer ingeschakeld zal de NMI watchdog uitgeschakeld worden om energie "
+#~ "te bespaken"
+
+#~ msgid ""
+#~ "When enabled, the onboard Intel audio chipset will enter the power save "
+#~ "mode when no program is using the audio device."
+#~ msgstr ""
+#~ "Wanneer ingeschakeld zal de ingebouwde Intel audio chipset in "
+#~ "energiespaarstand gezet worden wanneer geen toepassingen het apparaat "
+#~ "gebruiken."
+
+#~ msgid ""
+#~ "When enabled, the speed of the gigabit ethernet will be throttled to "
+#~ "100Mbit in order to save energy."
+#~ msgstr ""
+#~ "Wanneer ingeschakeld zal de snelheid van het gigabit ethernet naar "
+#~ "100Mbit geschakeld worden om enerie te sparen."
 
 #~ msgid "CPU Fan"
 #~ msgstr "CPU ventilator"

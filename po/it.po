@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-01 11:33+0200\n"
+"POT-Creation-Date: 2011-10-01 11:57+0200\n"
 "PO-Revision-Date: 2011-10-01 11:34+0200\n"
 "Last-Translator: Fortunato Ventre (voRia) <vorione@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Generator: Lokalize 1.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: backends/session/util/locales.py:25 samsung-tools-preferences.py:452
+#: backends/session/util/locales.py:25 samsung-tools-preferences.py:410
 msgid "Backlight"
 msgstr "Retroilluminazione"
 
@@ -50,7 +50,7 @@ msgstr "La retroilluminazione non può essere disattivata"
 msgid "Backlight cannot be toggled"
 msgstr "La retroilluminazione non può essere commutata"
 
-#: backends/session/util/locales.py:34 samsung-tools-preferences.py:461
+#: backends/session/util/locales.py:34 samsung-tools-preferences.py:419
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
@@ -86,7 +86,7 @@ msgstr "Il Bluetooth non può essere commutato"
 msgid "Bluetooth control is not available"
 msgstr "Il controllo Bluetooth non è disponibile"
 
-#: backends/session/util/locales.py:44 samsung-tools-preferences.py:470
+#: backends/session/util/locales.py:44 samsung-tools-preferences.py:428
 msgid "CPU fan"
 msgstr "Ventola CPU"
 
@@ -118,7 +118,7 @@ msgstr "Impossibile recuperare la modalità della ventola"
 msgid "CPU fan control is not available"
 msgstr "Il controllo della ventola della CPU non è disponibile"
 
-#: backends/session/util/locales.py:53 samsung-tools-preferences.py:479
+#: backends/session/util/locales.py:53 samsung-tools-preferences.py:437
 msgid "Webcam"
 msgstr "Webcam"
 
@@ -154,7 +154,7 @@ msgstr "La webcam non può essere commutata"
 msgid "Webcam control is not available"
 msgstr "Il controllo webcam non è disponibile"
 
-#: backends/session/util/locales.py:63 samsung-tools-preferences.py:488
+#: backends/session/util/locales.py:63 samsung-tools-preferences.py:446
 msgid "Wireless"
 msgstr "Rete senza fili"
 
@@ -299,7 +299,7 @@ msgstr " - Disattiva il Bluetooth, la webcam e la rete senza fili:"
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Per maggiori informazioni, visita il forum 'Linux On My Samsung':"
 
-#: samsung-tools.py:627 samsung-tools-preferences.py:1086
+#: samsung-tools.py:627 samsung-tools-preferences.py:1044
 msgid "Released under GPLv3 license"
 msgstr "Rilasciato con licenza GPLv3"
 
@@ -348,35 +348,35 @@ msgstr "Premere la nuova combinazione di tasti"
 msgid "None"
 msgstr "Nessuno"
 
-#: samsung-tools-preferences.py:177 samsung-tools-preferences.py:276
-#: samsung-tools-preferences.py:383 samsung-tools-preferences.py:395
-#: samsung-tools-preferences.py:742 samsung-tools-preferences.py:754
-#: samsung-tools-preferences.py:766
+#: samsung-tools-preferences.py:177 samsung-tools-preferences.py:246
+#: samsung-tools-preferences.py:341 samsung-tools-preferences.py:353
+#: samsung-tools-preferences.py:700 samsung-tools-preferences.py:712
+#: samsung-tools-preferences.py:724
 msgid "Unable to connect to system service!"
 msgstr "Impossibile connettersi al servizio di sistema!"
 
-#: samsung-tools-preferences.py:407
+#: samsung-tools-preferences.py:365
 msgid "Confirm"
 msgstr "Conferma"
 
-#: samsung-tools-preferences.py:408
+#: samsung-tools-preferences.py:366
 msgid "Apply the new VIDs?"
 msgstr "Applicare i nuovi VID?"
 
-#: samsung-tools-preferences.py:664
+#: samsung-tools-preferences.py:622
 msgid "You need a PHC enabled kernel to use this feature"
 msgstr ""
 "Per utilizzare questa caratteristica è necessario un kernel abilitato PHC"
 
-#: samsung-tools-preferences.py:682
+#: samsung-tools-preferences.py:640
 msgid "Unable to connect to session service!"
 msgstr "Impossibile connettersi al servizio di sessione!"
 
-#: samsung-tools-preferences.py:1021
+#: samsung-tools-preferences.py:979
 msgid "Caution!"
 msgstr "Cautela!"
 
-#: samsung-tools-preferences.py:1022
+#: samsung-tools-preferences.py:980
 msgid ""
 "CPU undervolting can lead to significant gains in terms of power energy "
 "saving, however <b>IT IS A RISKY PRACTICE</b> that might result in "
@@ -599,26 +599,14 @@ msgid "Devices power management"
 msgstr "Gestione energetica dei dispositivi"
 
 #: po/samsung-tools-preferences-power-management.glade.h:3
-msgid "Ethernet throttle speed"
-msgstr "Limitazione della velocità ethernet"
-
-#: po/samsung-tools-preferences-power-management.glade.h:4
-msgid "Intel audio powersave"
-msgstr "Risparmio energetico Intel audio"
-
-#: po/samsung-tools-preferences-power-management.glade.h:5
-msgid "NMI watchdog"
-msgstr "NMI watchdog"
-
-#: po/samsung-tools-preferences-power-management.glade.h:6
 msgid "USB autosuspend"
 msgstr "Autosospensione USB"
 
-#: po/samsung-tools-preferences-power-management.glade.h:7
+#: po/samsung-tools-preferences-power-management.glade.h:4
 msgid "VM writeback time"
 msgstr "Tempo di scrittura VM"
 
-#: po/samsung-tools-preferences-power-management.glade.h:8
+#: po/samsung-tools-preferences-power-management.glade.h:5
 msgid ""
 "When enabled, all the devices will automatically enter power save mode when "
 "needed."
@@ -626,12 +614,7 @@ msgstr ""
 "Se abilitato, tutti i dispositivi entreranno automaticamente in modalità "
 "gestione energetica quando necessario."
 
-#: po/samsung-tools-preferences-power-management.glade.h:9
-msgid ""
-"When enabled, the NMI watchdog will be turned off in order to save energy."
-msgstr "Se abilitato, NMI watchdog sarà spento per risparmiare energia."
-
-#: po/samsung-tools-preferences-power-management.glade.h:10
+#: po/samsung-tools-preferences-power-management.glade.h:6
 msgid ""
 "When enabled, the autosuspend feature for all the USB devices will be "
 "enabled."
@@ -639,7 +622,7 @@ msgstr ""
 "Se abilitato, la funzionalità di autosospensione di tutti i dispositivi USB "
 "sarà abilitata."
 
-#: po/samsung-tools-preferences-power-management.glade.h:11
+#: po/samsung-tools-preferences-power-management.glade.h:7
 msgid ""
 "When enabled, the kernel VM writeback time will be increased, resulting in "
 "less HD access and more energy saving."
@@ -647,25 +630,36 @@ msgstr ""
 "Se abilitato, il tempo di scrittura VM del kernel sarà incrementato, "
 "risultando in minore accesso al disco e maggiore risparmio energetico."
 
-#: po/samsung-tools-preferences-power-management.glade.h:12
-msgid ""
-"When enabled, the onboard Intel audio chipset will enter the power save mode "
-"when no program is using the audio device."
-msgstr ""
-"Se abilitato, il chipset integrato Intel entrerà in modalità risparmio "
-"energetico quando nessun programma sta usando il dispositivo audio."
-
-#: po/samsung-tools-preferences-power-management.glade.h:13
-msgid ""
-"When enabled, the speed of the gigabit ethernet will be throttled to 100Mbit "
-"in order to save energy."
-msgstr ""
-"Se abilitato, la velocità della scheda di rete gibabit ethernet sarà "
-"limitata a 100Mbit per risparmiare energia."
-
 #: po/samsung-tools-session-service.desktop.in.h:1
 msgid "Start the session service"
 msgstr "Avvia il servizio di sessione"
+
+#~ msgid "Ethernet throttle speed"
+#~ msgstr "Limitazione della velocità ethernet"
+
+#~ msgid "Intel audio powersave"
+#~ msgstr "Risparmio energetico Intel audio"
+
+#~ msgid "NMI watchdog"
+#~ msgstr "NMI watchdog"
+
+#~ msgid ""
+#~ "When enabled, the NMI watchdog will be turned off in order to save energy."
+#~ msgstr "Se abilitato, NMI watchdog sarà spento per risparmiare energia."
+
+#~ msgid ""
+#~ "When enabled, the onboard Intel audio chipset will enter the power save "
+#~ "mode when no program is using the audio device."
+#~ msgstr ""
+#~ "Se abilitato, il chipset integrato Intel entrerà in modalità risparmio "
+#~ "energetico quando nessun programma sta usando il dispositivo audio."
+
+#~ msgid ""
+#~ "When enabled, the speed of the gigabit ethernet will be throttled to "
+#~ "100Mbit in order to save energy."
+#~ msgstr ""
+#~ "Se abilitato, la velocità della scheda di rete gibabit ethernet sarà "
+#~ "limitata a 100Mbit per risparmiare energia."
 
 #~ msgid "CPU Fan"
 #~ msgstr "Ventola CPU"
