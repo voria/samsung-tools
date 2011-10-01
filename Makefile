@@ -40,9 +40,6 @@ install:
 	$(install_file) gui/glade/samsung-tools-preferences-phc.glade $(DESTDIR)/usr/lib/samsung-tools/gui/glade/
 	$(install_dir) $(DESTDIR)/usr/bin/
 	$(install_script) samsung-tools-preferences.py $(DESTDIR)/usr/bin/samsung-tools-preferences
-	# Applet
-	$(install_file) gui/glade/samsung-tools-applet.glade $(DESTDIR)/usr/lib/samsung-tools/gui/glade/
-	$(install_script) samsung-tools-applet.py $(DESTDIR)/usr/lib/samsung-tools/
 	# Icons
 	$(install_dir) $(DESTDIR)/usr/lib/samsung-tools/gui/icons/
 	$(install_file) gui/icons/samsung-tools.png $(DESTDIR)/usr/lib/samsung-tools/gui/icons/
@@ -57,11 +54,6 @@ install:
 	$(install_dir) $(DESTDIR)/usr/share/applications/
 	$(install_file) desktop/samsung-tools-preferences.desktop $(DESTDIR)/usr/share/applications/
 	rm -rf desktop/samsung-tools-preferences.desktop
-	# .server files
-	$(shell bonobo/prepare.sh bonobo/samsung-tools-applet.server.in)
-	$(install_dir) $(DESTDIR)/usr/lib/bonobo/servers
-	$(install_file) bonobo/samsung-tools-applet.server $(DESTDIR)/usr/lib/bonobo/servers
-	rm -rf bonobo/samsung-tools-applet.server
 
 uninstall:
 	$(shell po/uninstall.sh ${DESTDIR})
@@ -76,4 +68,4 @@ uninstall:
 	rm -rf $(DESTDIR)/etc/pm/power.d/samsung-tools_*
 	rm -rf $(DESTDIR)/usr/share/applications/samsung-tools-preferences.desktop
 	rm -rf $(DESTDIR)/etc/xdg/autostart/samsung-tools-session-service.desktop
-	rm -rf $(DESTDIR)/usr/lib/bonobo/servers/samsung-tools-applet.server
+	
