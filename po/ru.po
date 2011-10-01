@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-23 19:10+0200\n"
+"POT-Creation-Date: 2011-10-01 09:52+0200\n"
 "PO-Revision-Date: 2011-06-19 11:43+0000\n"
 "Last-Translator: D3NMOH <Unknown>\n"
 "Language-Team: Russian <ru@li.org>\n"
@@ -51,7 +51,6 @@ msgid "Backlight cannot be toggled"
 msgstr "Невозможно переключить подсветку"
 
 #: backends/session/util/locales.py:34 samsung-tools-preferences.py:461
-#: po/samsung-tools-applet.glade.h:1
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
@@ -120,7 +119,6 @@ msgid "CPU fan control is not available"
 msgstr "Управление режимом охлаждения не доступно"
 
 #: backends/session/util/locales.py:53 samsung-tools-preferences.py:479
-#: po/samsung-tools-applet.glade.h:7
 msgid "Webcam"
 msgstr "Веб-камера"
 
@@ -157,7 +155,6 @@ msgid "Webcam control is not available"
 msgstr "Управление Веб-камерой не доступно"
 
 #: backends/session/util/locales.py:63 samsung-tools-preferences.py:488
-#: po/samsung-tools-applet.glade.h:8
 msgid "Wireless"
 msgstr "Беспроводная сеть"
 
@@ -389,30 +386,6 @@ msgstr ""
 "\n"
 "Вы уверены, что хотите продолжить?"
 
-#: po/samsung-tools-applet.glade.h:2
-msgid "CPU Fan"
-msgstr "Охлаждение просессора (CPU)"
-
-#: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:24
-msgid "Normal"
-msgstr "Номальное"
-
-#: po/samsung-tools-applet.glade.h:4
-msgid "Preferences..."
-msgstr "Настройки..."
-
-#: po/samsung-tools-applet.glade.h:5 po/samsung-tools-preferences.glade.h:28
-msgid "Silent"
-msgstr "Бесшумный"
-
-#: po/samsung-tools-applet.glade.h:6 po/samsung-tools-preferences.glade.h:29
-msgid "Speed"
-msgstr "Разгон"
-
-#: po/samsung-tools-applet.server.in.h:1
-msgid "Manage devices on Samsung netbooks"
-msgstr "Управление устройствами ноутбуков(нетбуков) Samsung"
-
 #: po/samsung-tools-preferences.desktop.in.h:1
 #: po/samsung-tools-preferences.glade.h:26
 msgid "Samsung Tools Preferences"
@@ -504,6 +477,10 @@ msgstr "Параметры ядра"
 msgid "Last status"
 msgstr "Последнее значение"
 
+#: po/samsung-tools-preferences.glade.h:24
+msgid "Normal"
+msgstr "Номальное"
+
 #: po/samsung-tools-preferences.glade.h:25
 msgid "Power management..."
 msgstr "Управление питанием"
@@ -511,6 +488,14 @@ msgstr "Управление питанием"
 #: po/samsung-tools-preferences.glade.h:27
 msgid "Session service"
 msgstr "Служба сессии"
+
+#: po/samsung-tools-preferences.glade.h:28
+msgid "Silent"
+msgstr "Бесшумный"
+
+#: po/samsung-tools-preferences.glade.h:29
+msgid "Speed"
+msgstr "Разгон"
 
 #: po/samsung-tools-preferences.glade.h:30
 msgid "System service"
@@ -668,6 +653,15 @@ msgstr ""
 #: po/samsung-tools-session-service.desktop.in.h:1
 msgid "Start the session service"
 msgstr "Запустить службу сессий"
+
+#~ msgid "CPU Fan"
+#~ msgstr "Охлаждение просессора (CPU)"
+
+#~ msgid "Preferences..."
+#~ msgstr "Настройки..."
+
+#~ msgid "Manage devices on Samsung netbooks"
+#~ msgstr "Управление устройствами ноутбуков(нетбуков) Samsung"
 
 #~ msgid "Install the 'laptop mode tools' package to configure these options"
 #~ msgstr "Устновите пакет 'laptop mode tools' для настройки этих опций"

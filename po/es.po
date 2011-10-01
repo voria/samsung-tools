@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-23 19:10+0200\n"
+"POT-Creation-Date: 2011-10-01 09:52+0200\n"
 "PO-Revision-Date: 2011-06-11 20:02+0000\n"
 "Last-Translator: simon <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -51,7 +51,6 @@ msgid "Backlight cannot be toggled"
 msgstr "La luz de fondo no puede ser conmutada"
 
 #: backends/session/util/locales.py:34 samsung-tools-preferences.py:461
-#: po/samsung-tools-applet.glade.h:1
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
@@ -120,7 +119,6 @@ msgid "CPU fan control is not available"
 msgstr "El control del ventilador de la CPU no está disponible"
 
 #: backends/session/util/locales.py:53 samsung-tools-preferences.py:479
-#: po/samsung-tools-applet.glade.h:7
 msgid "Webcam"
 msgstr "Cámara web"
 
@@ -157,7 +155,6 @@ msgid "Webcam control is not available"
 msgstr "El control de la cámara web no está disponible"
 
 #: backends/session/util/locales.py:63 samsung-tools-preferences.py:488
-#: po/samsung-tools-applet.glade.h:8
 msgid "Wireless"
 msgstr "Redes inalámbricas"
 
@@ -392,30 +389,6 @@ msgstr ""
 "\n"
 "¿Está seguro de que desea continuar?"
 
-#: po/samsung-tools-applet.glade.h:2
-msgid "CPU Fan"
-msgstr "Ventilador de la CPU"
-
-#: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:24
-msgid "Normal"
-msgstr "Normal"
-
-#: po/samsung-tools-applet.glade.h:4
-msgid "Preferences..."
-msgstr "Preferencias…"
-
-#: po/samsung-tools-applet.glade.h:5 po/samsung-tools-preferences.glade.h:28
-msgid "Silent"
-msgstr "Silencio"
-
-#: po/samsung-tools-applet.glade.h:6 po/samsung-tools-preferences.glade.h:29
-msgid "Speed"
-msgstr "Velocidad"
-
-#: po/samsung-tools-applet.server.in.h:1
-msgid "Manage devices on Samsung netbooks"
-msgstr "Gestiona los dispositivos de portátiles Samsung"
-
 #: po/samsung-tools-preferences.desktop.in.h:1
 #: po/samsung-tools-preferences.glade.h:26
 msgid "Samsung Tools Preferences"
@@ -507,6 +480,10 @@ msgstr "Parámetros del Kernel..."
 msgid "Last status"
 msgstr "Último estado"
 
+#: po/samsung-tools-preferences.glade.h:24
+msgid "Normal"
+msgstr "Normal"
+
 #: po/samsung-tools-preferences.glade.h:25
 msgid "Power management..."
 msgstr "Gestión de energia..."
@@ -514,6 +491,14 @@ msgstr "Gestión de energia..."
 #: po/samsung-tools-preferences.glade.h:27
 msgid "Session service"
 msgstr "Servicio de sesión"
+
+#: po/samsung-tools-preferences.glade.h:28
+msgid "Silent"
+msgstr "Silencio"
+
+#: po/samsung-tools-preferences.glade.h:29
+msgid "Speed"
+msgstr "Velocidad"
 
 #: po/samsung-tools-preferences.glade.h:30
 msgid "System service"
@@ -670,6 +655,15 @@ msgstr ""
 #: po/samsung-tools-session-service.desktop.in.h:1
 msgid "Start the session service"
 msgstr "Inicia el servicio de sesión"
+
+#~ msgid "CPU Fan"
+#~ msgstr "Ventilador de la CPU"
+
+#~ msgid "Preferences..."
+#~ msgstr "Preferencias…"
+
+#~ msgid "Manage devices on Samsung netbooks"
+#~ msgstr "Gestiona los dispositivos de portátiles Samsung"
 
 #~ msgid "CPU/Fan"
 #~ msgstr "CPU/Ventilador"

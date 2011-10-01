@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-23 19:10+0200\n"
+"POT-Creation-Date: 2011-10-01 09:52+0200\n"
 "PO-Revision-Date: 2010-03-29 16:36+0000\n"
 "Last-Translator: subiraj <subiraj@gmail.com>\n"
 "Language-Team: Hindi <hi@li.org>\n"
@@ -51,7 +51,6 @@ msgid "Backlight cannot be toggled"
 msgstr ""
 
 #: backends/session/util/locales.py:34 samsung-tools-preferences.py:461
-#: po/samsung-tools-applet.glade.h:1
 msgid "Bluetooth"
 msgstr ""
 
@@ -120,7 +119,6 @@ msgid "CPU fan control is not available"
 msgstr ""
 
 #: backends/session/util/locales.py:53 samsung-tools-preferences.py:479
-#: po/samsung-tools-applet.glade.h:7
 msgid "Webcam"
 msgstr "वेबकैम"
 
@@ -157,7 +155,6 @@ msgid "Webcam control is not available"
 msgstr ""
 
 #: backends/session/util/locales.py:63 samsung-tools-preferences.py:488
-#: po/samsung-tools-applet.glade.h:8
 msgid "Wireless"
 msgstr "वायरलेस"
 
@@ -377,30 +374,6 @@ msgid ""
 "Are you sure you want to continue?"
 msgstr ""
 
-#: po/samsung-tools-applet.glade.h:2
-msgid "CPU Fan"
-msgstr ""
-
-#: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:24
-msgid "Normal"
-msgstr ""
-
-#: po/samsung-tools-applet.glade.h:4
-msgid "Preferences..."
-msgstr ""
-
-#: po/samsung-tools-applet.glade.h:5 po/samsung-tools-preferences.glade.h:28
-msgid "Silent"
-msgstr ""
-
-#: po/samsung-tools-applet.glade.h:6 po/samsung-tools-preferences.glade.h:29
-msgid "Speed"
-msgstr ""
-
-#: po/samsung-tools-applet.server.in.h:1
-msgid "Manage devices on Samsung netbooks"
-msgstr ""
-
 #: po/samsung-tools-preferences.desktop.in.h:1
 #: po/samsung-tools-preferences.glade.h:26
 msgid "Samsung Tools Preferences"
@@ -492,12 +465,24 @@ msgstr ""
 msgid "Last status"
 msgstr ""
 
+#: po/samsung-tools-preferences.glade.h:24
+msgid "Normal"
+msgstr ""
+
 #: po/samsung-tools-preferences.glade.h:25
 msgid "Power management..."
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:27
 msgid "Session service"
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:28
+msgid "Silent"
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:29
+msgid "Speed"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:30

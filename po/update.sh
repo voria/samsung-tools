@@ -13,12 +13,6 @@ for file in desktop/*.desktop.in; do
 done
 mv desktop/*.desktop.in.h po/
 
-echo "*** Extracting strings from *.server files..." # A bit hacking, but it works
-for file in bonobo/*.server.in; do
-	intltool-extract --type=gettext/xml "$file"
-done
-mv bonobo/*.server.in.h po/
-
 echo
 echo "*** Creating samsung-tools.pot..."
 xgettext -k_ -kN_ -o po/messages.pot `cat po/FILES` po/*.h 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-06-23 19:10+0200\n"
+"POT-Creation-Date: 2011-10-01 09:52+0200\n"
 "PO-Revision-Date: 2010-05-16 10:37+0000\n"
 "Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: Swedish <sv@li.org>\n"
@@ -51,7 +51,6 @@ msgid "Backlight cannot be toggled"
 msgstr "Skärmljus kan inte ändras"
 
 #: backends/session/util/locales.py:34 samsung-tools-preferences.py:461
-#: po/samsung-tools-applet.glade.h:1
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
@@ -120,7 +119,6 @@ msgid "CPU fan control is not available"
 msgstr "CPU-fläktkontroll är inte tillgänglig"
 
 #: backends/session/util/locales.py:53 samsung-tools-preferences.py:479
-#: po/samsung-tools-applet.glade.h:7
 msgid "Webcam"
 msgstr "Webbkamera"
 
@@ -157,7 +155,6 @@ msgid "Webcam control is not available"
 msgstr "Webbkamerakontroll inte tillgänglig"
 
 #: backends/session/util/locales.py:63 samsung-tools-preferences.py:488
-#: po/samsung-tools-applet.glade.h:8
 msgid "Wireless"
 msgstr "Trådlöst nätverk"
 
@@ -382,30 +379,6 @@ msgstr ""
 "\n"
 "Är du säker på att du vill fortsätta?"
 
-#: po/samsung-tools-applet.glade.h:2
-msgid "CPU Fan"
-msgstr "CPU-fläkt"
-
-#: po/samsung-tools-applet.glade.h:3 po/samsung-tools-preferences.glade.h:24
-msgid "Normal"
-msgstr "Normalt"
-
-#: po/samsung-tools-applet.glade.h:4
-msgid "Preferences..."
-msgstr "Inställningar..."
-
-#: po/samsung-tools-applet.glade.h:5 po/samsung-tools-preferences.glade.h:28
-msgid "Silent"
-msgstr "Tyst"
-
-#: po/samsung-tools-applet.glade.h:6 po/samsung-tools-preferences.glade.h:29
-msgid "Speed"
-msgstr "Hastighet"
-
-#: po/samsung-tools-applet.server.in.h:1
-msgid "Manage devices on Samsung netbooks"
-msgstr "Hantera enheter på Samsung netbooks"
-
 #: po/samsung-tools-preferences.desktop.in.h:1
 #: po/samsung-tools-preferences.glade.h:26
 msgid "Samsung Tools Preferences"
@@ -497,6 +470,10 @@ msgstr ""
 msgid "Last status"
 msgstr "Senaste status"
 
+#: po/samsung-tools-preferences.glade.h:24
+msgid "Normal"
+msgstr "Normalt"
+
 #: po/samsung-tools-preferences.glade.h:25
 msgid "Power management..."
 msgstr ""
@@ -504,6 +481,14 @@ msgstr ""
 #: po/samsung-tools-preferences.glade.h:27
 msgid "Session service"
 msgstr "Sessionstjänst"
+
+#: po/samsung-tools-preferences.glade.h:28
+msgid "Silent"
+msgstr "Tyst"
+
+#: po/samsung-tools-preferences.glade.h:29
+msgid "Speed"
+msgstr "Hastighet"
 
 #: po/samsung-tools-preferences.glade.h:30
 msgid "System service"
@@ -656,6 +641,15 @@ msgstr ""
 #: po/samsung-tools-session-service.desktop.in.h:1
 msgid "Start the session service"
 msgstr "Starta sessionstjänsten"
+
+#~ msgid "CPU Fan"
+#~ msgstr "CPU-fläkt"
+
+#~ msgid "Preferences..."
+#~ msgstr "Inställningar..."
+
+#~ msgid "Manage devices on Samsung netbooks"
+#~ msgstr "Hantera enheter på Samsung netbooks"
 
 #~ msgid "Install the 'laptop mode tools' package to configure these options"
 #~ msgstr ""
