@@ -1,3 +1,9 @@
+samsung-tools (1.5~ppa1~loms~oneiric~test1) UNRELEASED; urgency=low
+
+  * Drop gnome applet.
+
+ -- Fortunato Ventre (voRia) <vorione@gmail.com>  Sat, 01 Oct 2011 09:35:08 +0200
+
 samsung-tools (1.4~ppa1~loms~natty) natty; urgency=low
 
   * Add a new configuration dialog in the 'Advanced Power Management' page
