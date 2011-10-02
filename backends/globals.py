@@ -50,9 +50,6 @@ SYSTEM_OBJECT_PATH_WIRELESS = "/Device/Wireless"
 
 # Power management scripts locations
 PM_DEVICES_POWER_MANAGEMENT = "/etc/pm/power.d/samsung-tools_devices-power-management"
-PM_ETHERNET_THROTTLE_SPEED = "/etc/pm/power.d/samsung-tools_ethernet-throttle-speed"
-PM_INTEL_AUDIO_POWERSAVE = "/etc/pm/power.d/samsung-tools_intel-audio-powersave"
-PM_NMI_WATCHDOG = "/etc/pm/power.d/samsung-tools_nmi-watchdog"
 PM_USB_AUTOSUSPEND = "/etc/pm/power.d/samsung-tools_usb-autosuspend"
 PM_VM_WRITEBACK_TIME = "/etc/pm/power.d/samsung-tools_vm-writeback-time"
 
