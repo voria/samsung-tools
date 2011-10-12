@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
   <requires lib="gtk+" version="2.16"/>
+  <!-- interface-naming-policy toplevel-contextual -->
   <object class="GtkListStore" id="cpufanInitialStatusListstore">
     <columns>
       <!-- column-name Status -->
@@ -14,7 +15,7 @@
         <col id="0" translatable="yes">Silent</col>
       </row>
       <row>
-        <col id="0" translatable="yes">Speed</col>
+        <col id="0" translatable="yes">Overclock</col>
       </row>
       <row>
         <col id="0" translatable="yes">Last status</col>
@@ -45,13 +46,12 @@
     <property name="default_width">400</property>
     <property name="type_hint">normal</property>
     <child internal-child="vbox">
-      <object class="GtkBox" id="dialog-vbox1">
+      <object class="GtkVBox" id="dialog-vbox1">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="orientation">vertical</property>
         <property name="spacing">2</property>
         <child internal-child="action_area">
-          <object class="GtkButtonBox" id="dialog-action_area1">
+          <object class="GtkHButtonBox" id="dialog-action_area1">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <child>

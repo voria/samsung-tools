@@ -553,7 +553,7 @@ class Main():
 			self.cpufanInitialStatusCombobox.set_active(0)
 		elif status == "silent":
 			self.cpufanInitialStatusCombobox.set_active(1)
-		elif status == "speed":
+		elif status == "overclock":
 			self.cpufanInitialStatusCombobox.set_active(2)
 		else: # status == "last"
 			self.cpufanInitialStatusCombobox.set_active(3)
@@ -949,7 +949,7 @@ class Main():
 		elif active == 1:
 			system.SetCpufanInitialStatus("silent")
 		elif active == 2:
-			system.SetCpufanInitialStatus("speed")
+			system.SetCpufanInitialStatus("overclock")
 		else:
 			system.SetCpufanInitialStatus("last")
 	

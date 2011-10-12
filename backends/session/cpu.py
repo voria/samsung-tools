@@ -106,7 +106,7 @@ class Cpu(dbus.service.Object):
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Status(self, show_notify = True, sender = None, conn = None):
 		""" Show current fan mode. """
-		"""Return 0 if 'normal', 1 if 'silent', 2 if 'speed'. """
+		"""Return 0 if 'normal', 1 if 'silent', 2 if 'overclock'. """
 		""" Return 3 if any error. """
 		if not self.IsFanAvailable():
 			self.__fan_not_available(show_notify)
@@ -124,8 +124,8 @@ class Cpu(dbus.service.Object):
 				message = FAN_STATUS_SILENT
 				icon = FAN_SILENT_ICON
 			elif status == 2:
-				message = FAN_STATUS_SPEED
-				icon = FAN_SPEED_ICON
+				message = FAN_STATUS_OVERCLOCK
+				icon = FAN_OVERCLOCK_ICON
 			else: # status == 3
 				self.__fan_not_available(show_notify)
 				return 3
@@ -170,18 +170,18 @@ class Cpu(dbus.service.Object):
 		
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 'b', out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
-	def SetFanSpeed(self, show_notify = True, sender = None, conn = None):
-		""" Set fan to 'speed' mode. """
+	def SetFanOverclock(self, show_notify = True, sender = None, conn = None):
+		""" Set fan to 'overclock' mode. """
 		""" Return 'True' on success, 'False' otherwise. """
 		if not self.IsFanAvailable():
 			return self.__fan_not_available(show_notify)
 		interface = self.__connect_fan()
 		if not interface:
 			return False
-		result = interface.SetSpeed()
+		result = interface.SetOverclock()
 		if show_notify:
 			if result == True:
-				self.__show_notify(CPU_TITLE, FAN_STATUS_SPEED, FAN_SPEED_ICON)
+				self.__show_notify(CPU_TITLE, FAN_STATUS_OVERCLOCK, FAN_OVERCLOCK_ICON)
 			else:
 				self.__show_notify(CPU_TITLE, FAN_SWITCHING_ERROR, ERROR_ICON)
 		return result
@@ -208,8 +208,8 @@ class Cpu(dbus.service.Object):
 					message = FAN_STATUS_SILENT
 					icon = FAN_SILENT_ICON
 				elif status == 2:
-					message = FAN_STATUS_SPEED
-					icon = FAN_SPEED_ICON
+					message = FAN_STATUS_OVERCLOCK
+					icon = FAN_OVERCLOCK_ICON
 				else: # status == 3
 					self.__fan_not_available(show_notify)
 					return False

@@ -23,7 +23,7 @@ SAMSUNG_TOOLS_ICON = "/usr/lib/samsung-tools/gui/icons/samsung-tools.png"
 
 FAN_NORMAL_ICON = "/usr/lib/samsung-tools/gui/icons/fan-normal.png"
 FAN_SILENT_ICON = "/usr/lib/samsung-tools/gui/icons/fan-silent.png"
-FAN_SPEED_ICON = "/usr/lib/samsung-tools/gui/icons/fan-speed.png"
+FAN_OVERCLOCK_ICON = "/usr/lib/samsung-tools/gui/icons/fan-overclock.png"
 WEBCAM_ICON = "camera-web"
 
 # If notify-osd icons are not available, use the default ones

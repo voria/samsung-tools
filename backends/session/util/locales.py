@@ -46,7 +46,7 @@ CPU_TEMPERATURE = unicode(_("CPU Temperature:"), "utf-8")
 FAN_SWITCHING_ERROR = unicode(_("Fan mode cannot be changed"), "utf-8")
 FAN_STATUS_NORMAL = unicode(_("Fan mode: Normal"), "utf-8")
 FAN_STATUS_SILENT = unicode(_("Fan mode: Silent"), "utf-8")
-FAN_STATUS_SPEED = unicode(_("Fan mode: Speed"), "utf-8")
+FAN_STATUS_OVERCLOCK = unicode(_("Fan mode: Overclock"), "utf-8")
 FAN_STATUS_ERROR = unicode(_("Cannot get fan mode"), "utf-8")
 FAN_NOT_AVAILABLE = unicode(_("CPU fan control is not available"), "utf-8")
 

@@ -101,8 +101,8 @@ class General(dbus.service.Object):
 			fan.SetNormal()
 		elif status == "silent":
 			fan.SetSilent()
-		elif status == "speed":
-			fan.SetSpeed()
+		elif status == "overclock":
+			fan.SetOverclock()
 		else: # status == "last"
 			fan.RestoreLastStatus()
 		# PHC

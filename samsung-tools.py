@@ -260,8 +260,8 @@ class Cpu():
 	def __silent(self):
 		return self.interface.SetFanSilent(self.use_notify)
 	
-	def __speed(self):
-		return self.interface.SetFanSpeed(self.use_notify)
+	def __overclock(self):
+		return self.interface.SetFanOverclock(self.use_notify)
 	
 	def __cycle(self):
 		return self.interface.Cycle(self.use_notify)
@@ -293,11 +293,11 @@ class Cpu():
 					print FAN_STATUS_SILENT
 				else:
 					print FAN_SWITCHING_ERROR
-		if self.option == "speed":
-			result = self.__speed()
+		if self.option == "overclock":
+			result = self.__overclock()
 			if not quiet:
 				if result == True:
-					print FAN_STATUS_SPEED
+					print FAN_STATUS_OVERCLOCK
 				else:
 					print FAN_SWITCHING_ERROR
 		if self.option == "cycle":
@@ -315,7 +315,7 @@ class Cpu():
 					if mode == 1:
 						print FAN_STATUS_SILENT
 					if mode == 2:
-						print FAN_STATUS_SPEED
+						print FAN_STATUS_OVERCLOCK
 					if mode == 3:
 						print FAN_STATUS_ERROR
 				else:
@@ -373,7 +373,7 @@ class Cpu():
 				if result == 1:
 					print FAN_STATUS_SILENT
 				if result == 2:
-					print FAN_STATUS_SPEED
+					print FAN_STATUS_OVERCLOCK
 				if result == 3:
 					print FAN_STATUS_ERROR
 				
@@ -594,7 +594,7 @@ def usage(option = None, opt = None, value = None, parser = None):
 	print "\t" + unicode(_("Options"), "utf-8") + ":\ton | off | toggle | hotkey | status"
 	print unicode(_("CPU fan:"), "utf-8")
 	print "\t" + unicode(_("Interface"), "utf-8") + ":\t-c | --cpu"
-	print "\t" + unicode(_("Options"), "utf-8") + ":\tnormal | silent | speed | cycle | hotkey | status"
+	print "\t" + unicode(_("Options"), "utf-8") + ":\tnormal | silent | overclock | cycle | hotkey | status"
 	print unicode(_("Webcam:"), "utf-8")
 	print "\t" + unicode(_("Interface"), "utf-8") + ":\t-w | --webcam"
 	print "\t" + unicode(_("Options"), "utf-8") + ":\ton | off | toggle | hotkey | status"
@@ -649,7 +649,7 @@ def main():
 	parser.add_option('-c', '--cpu',
 					dest = "cpu",
 					type = "choice",
-					choices = ['normal', 'silent', 'speed', 'cycle', 'hotkey', 'status'])
+					choices = ['normal', 'silent', 'overclock', 'cycle', 'hotkey', 'status'])
 	parser.add_option('-w', '--webcam',
 					dest = "webcam",
 					type = "choice",
