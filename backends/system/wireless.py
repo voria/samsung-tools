@@ -67,25 +67,20 @@ class Wireless(dbus.service.Object):
 	def IsAvailable(self, sender = None, conn = None):
 		""" Check if wireless control is available. """
 		""" Return 'True' if available, 'False' if disabled. """
-		if not os.path.exists(ESDM_PATH_WIRELESS):
-			# Check if the 'esdm' module is correctly loaded
-			command = COMMAND_MODPROBE + " " + ESDM_MODULE
-			try:
-				process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-				process.communicate()
-				if process.returncode != 0:
-					systemlog.write("ERROR: 'Wireless.IsAvailable()' - COMMAND: '" + command + "' FAILED.")
-					return False
-				else:
-					# Check again if the /proc entry exists now
-					if not os.path.exists(ESDM_PATH_WIRELESS):
-						systemlog.write("ERROR: 'Wireless.IsAvailable()' - '" + ESDM_PATH_WIRELESS + "' is missing.")
-						return False
-			except:
-				systemlog.write("ERROR: 'Wireless.IsAvailable()' - COMMAND: '" + command + "' - Exception thrown.")
+		command = COMMAND_RFKILL + " list wifi"
+		try:
+			process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+			output = process.communicate()[0]
+			if process.returncode != 0:
+				systemlog.write("ERROR: 'Wireless.IsAvailable()' - COMMAND: '" + command + "' FAILED.")
 				return False
-		# Everything's ok
-		return True
+			if "Wireless" in output:
+				return True
+			else:
+				return False
+		except:
+			systemlog.write("ERROR: 'Wireless.IsAvailable()' - COMMAND: '" + command + "' - Exception thrown.")
+			return False
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
@@ -94,19 +89,23 @@ class Wireless(dbus.service.Object):
 		""" Return 'True' if enabled, 'False' if disabled. """
 		if not self.IsAvailable():
 			return False
+		command = COMMAND_RFKILL + " list wifi"
 		try:
-			with open(ESDM_PATH_WIRELESS, 'r') as file:
-				result = int(file.read(1))
-				if result == 0:
-					status = False
-				else:
-					status = True
-				self.__save_last_status(status)	
-				return status
+			process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+			output = process.communicate()[0]
+			if process.returncode != 0:
+				systemlog.write("ERROR: 'Wireless.IsEnabled()' - COMMAND: '" + command + "' FAILED.")
+				return False
+			if "yes" in output: # Since this method is also used by Enable() and Disable(), we save here the last status
+				self.__save_last_status(False)
+				return False
+			else:
+				self.__save_last_status(True)
+				return True
 		except:
-			systemlog.write("ERROR: 'Wireless.IsEnabled()' - cannot read from '" + ESDM_PATH_WIRELESS + "'.")
+			systemlog.write("ERROR: 'Wireless.IsEnabled()' - COMMAND: '" + command + "' - Exception thrown.")
 			return False
-	
+		
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Enable(self, sender = None, conn = None):
@@ -114,32 +113,22 @@ class Wireless(dbus.service.Object):
 		""" Return 'True' on success, 'False' otherwise. """
 		if not self.IsAvailable():
 			return False
-		if self.IsEnabled():
-			return True
-		# Enable wireless through the 'easy slow down manager' interface
-		try:
-			with open(ESDM_PATH_WIRELESS, 'w') as file:
-				file.write('1')
-		except:
-			systemlog.write("ERROR: 'Wireless.Enable()' - cannot write to '" + ESDM_PATH_WIRELESS + "'.")
-			return False
-		# Try to enable wireless even through the 'rfkill' command line utility
 		try:
 			command = COMMAND_RFKILL + " unblock wifi"
 			process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+			if self.IsEnabled():
+				# Exec script
+				try:
+					command = SCRIPT_WIRELESS_ON
+					process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+				except:
+					systemlog.write("WARNING: 'Wireless.Enable()' - Error while executing '" + SCRIPT_WIRELESS_ON + "'.")
+					pass
+				return True
 		except:
-			pass
-		# Exec script
-		try:
-			command = SCRIPT_WIRELESS_ON
-			process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-		except:
-			systemlog.write("WARNING: 'Wireless.Enable()' - Error while executing '" + SCRIPT_WIRELESS_ON + "'.")
-			pass
-		# Save wireless status
-		self.__save_last_status(True)
-		return True
-	
+			systemlog.write("ERROR: 'Wireless.Enable()' - COMMAND: '" + command + "' - Exception thrown.")
+			return False
+		
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Disable(self, sender = None, conn = None):
@@ -147,33 +136,21 @@ class Wireless(dbus.service.Object):
 		""" Return 'True' on success, 'False' otherwise. """
 		if not self.IsAvailable():
 			return False
-		if not self.IsEnabled():
-			return True
-		# Try to disable wireless through the 'rfkill' command line utility
 		try:
 			command = COMMAND_RFKILL + " block wifi"
 			process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-			# Wait for the process to finish
-			process.wait()
+			if not self.IsEnabled():
+				# Exec script
+				try:
+					command = SCRIPT_WIRELESS_OFF
+					process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+				except:
+					systemlog.write("WARNING: 'Wireless.Disable()' - Error while executing '" + SCRIPT_WIRELESS_OFF + "'.")
+					pass
+				return True
 		except:
-			pass
-		# Disable wireless through the 'easy slow down manager' interface
-		try:
-			with open(ESDM_PATH_WIRELESS, 'w') as file:
-				file.write('0')
-		except:
-			systemlog.write("ERROR: 'Wireless.Disable()' - cannot write to '" + ESDM_PATH_WIRELESS + "'.")
+			systemlog.write("ERROR: 'Wireless.Disable()' - COMMAND: '" + command + "' - Exception thrown.")
 			return False
-		# Exec script
-		try:
-			command = SCRIPT_WIRELESS_OFF
-			process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-		except:
-			systemlog.write("WARNING: 'Wireless.Disable()' - Error while executing '" + SCRIPT_WIRELESS_OFF + "'.")
-			pass
-		# Save wireless status
-		self.__save_last_status(False)
-		return True
 			
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')

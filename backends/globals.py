@@ -98,11 +98,10 @@ if os.path.basename(sys.argv[0]) == "system-service.py":
 	SCRIPT_BLUETOOTH_OFF = "/etc/samsung-tools/scripts/bluetooth-off"
 	SCRIPT_WIRELESS_ON = "/etc/samsung-tools/scripts/wireless-on"
 	SCRIPT_WIRELESS_OFF = "/etc/samsung-tools/scripts/wireless-off"
-	# Easy slow down manager interface
-	ESDM_MODULE = "easy_slow_down_manager"
-	ESDM_PATH_BACKLIGHT = "/proc/easy_backlight"
-	ESDM_PATH_FAN = "/proc/easy_slow_down_manager"
-	ESDM_PATH_WIRELESS = "/proc/easy_wifi_kill"
+	# samsung-laptop interface
+	SL_MODULE = "samsung-laptop"
+	SL_PATH_BACKLIGHT = "/sys/devices/platform/samsung/backlight/samsung/bl_power"
+	SL_PATH_PERFORMANCE = "/sys/devices/platform/samsung/performance_level"
 	# Temperature
 	CPU_TEMPERATURE_PATH = "/sys/class/thermal/thermal_zone0/temp"
 	# sysctl configuration file

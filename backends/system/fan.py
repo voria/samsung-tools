@@ -28,7 +28,7 @@ import dbus.service
 from backends.globals import *
 
 class Fan(dbus.service.Object):
-	""" Control CPU Fan through easy-slow-down-manager interface """
+	""" Control CPU Fan through the samsung-laptop interface """
 	def __init__(self, conn = None, object_path = None, bus_name = None):
 		dbus.service.Object.__init__(self, conn, object_path, bus_name)
 	
@@ -50,9 +50,9 @@ class Fan(dbus.service.Object):
 	def IsAvailable(self, sender = None, conn = None):
 		""" Check if the fan control is available. """
 		""" Return 'True' if available, 'False' otherwise. """
-		if os.path.exists(ESDM_PATH_FAN):
+		if os.path.exists(SL_PATH_PERFORMANCE):
 			return True # already loaded
-		command = COMMAND_MODPROBE + " " + ESDM_MODULE
+		command = COMMAND_MODPROBE + " " + SL_MODULE
 		try:
 			process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 			process.communicate()
@@ -85,28 +85,28 @@ class Fan(dbus.service.Object):
 		elif laststatus == "silent":
 			self.SetSilent()
 		else:
-			self.SetSpeed()
+			self.SetOverclock()
 		
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'i',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Status(self, sender = None, conn = None):
 		""" Get current fan mode. """
-		"""Return 0 if 'normal', 1 if 'silent', 2 if 'speed'. """
+		"""Return 0 if 'normal', 1 if 'silent', 2 if 'overclock'. """
 		""" Return 3 if any error. """
 		if not self.IsAvailable():
 			return 3
 		try:
-			with open(ESDM_PATH_FAN, 'r') as file:
-				status = int(file.read(1))
-				if status == 0:
-					self.__save_last_status("normal")
-				elif status == 1:
-					self.__save_last_status("silent")
+			with open(SL_PATH_PERFORMANCE, 'r') as file:
+				status = file.read()[0:-1]
+				self.__save_last_status(status)
+				if status == "normal":
+					return 0
+				elif status == "silent":
+					return 1
 				else:
-					self.__save_last_status("speed")
-				return status
+					return 2
 		except:
-			systemlog.write("ERROR: 'Fan.Status()' - cannot read from '" + ESDM_PATH_FAN + "'.")
+			systemlog.write("ERROR: 'Fan.Status()' - cannot read from '" + SL_PATH_PERFORMANCE + "'.")
 			return 3
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
@@ -117,12 +117,12 @@ class Fan(dbus.service.Object):
 		if not self.IsAvailable():
 			return False
 		try:
-			with open(ESDM_PATH_FAN, 'w') as file:
-				file.write('0')
+			with open(SL_PATH_PERFORMANCE, 'w') as file:
+				file.write("normal")
 			self.__save_last_status("normal")
 			return True
 		except:
-			systemlog.write("ERROR: 'Fan.SetNormal()' - cannot write to '" + ESDM_PATH_FAN + "'.")
+			systemlog.write("ERROR: 'Fan.SetNormal()' - cannot write to '" + SL_PATH_PERFORMANCE + "'.")
 			return False
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
@@ -133,28 +133,28 @@ class Fan(dbus.service.Object):
 		if not self.IsAvailable():
 			return False
 		try:
-			with open(ESDM_PATH_FAN, 'w') as file:
-				file.write('1')
+			with open(SL_PATH_PERFORMANCE, 'w') as file:
+				file.write("silent")
 			self.__save_last_status("silent")
 			return True
 		except:
-			systemlog.write("ERROR: 'Fan.SetSilent()' - cannot write to '" + ESDM_PATH_FAN + "'.")
+			systemlog.write("ERROR: 'Fan.SetSilent()' - cannot write to '" + SL_PATH_PERFORMANCE + "'.")
 			return False
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
-	def SetSpeed(self, sender = None, conn = None):
-		""" Set fan to 'speed' mode. """
+	def SetOverclock(self, sender = None, conn = None):
+		""" Set fan to 'overclock' mode. """
 		""" Return 'True' on success, 'False' otherwise. """
 		if not self.IsAvailable():
 			return False
 		try:
-			with open(ESDM_PATH_FAN, 'w') as file:
-				file.write('2')
-			self.__save_last_status("speed")
+			with open(SL_PATH_PERFORMANCE, 'w') as file:
+				file.write("overclock")
+			self.__save_last_status("overclock")
 			return True
 		except:
-			systemlog.write("ERROR: 'Fan.SetSpeed()' - cannot write to '" + ESDM_PATH_FAN + "'.")
+			systemlog.write("ERROR: 'Fan.SetOverclock()' - cannot write to '" + SL_PATH_PERFORMANCE + "'.")
 			return False
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
@@ -168,7 +168,7 @@ class Fan(dbus.service.Object):
 		if current == 0:
 			return self.SetSilent()
 		if current == 1:
-			return self.SetSpeed()
+			return self.SetOverclock()
 		if current == 2:
 			return self.SetNormal()
 		return False
