@@ -1,6 +1,9 @@
-samsung-tools (2.0~bzr) UNRELEASED; urgency=low
+samsung-tools (2.0~ppa1~loms~oneiric~test1) oneiric; urgency=low
 
-  * 
+  * Use 'samsung-laptop' interface for the backlight and cpu fan
+    control. Drop support for 'easy-slow-down-manager'.
+  * Drop checks for old pm hooks.
+  * Update translations.
 
  -- Fortunato Ventre (voRia) <vorione@gmail.com>  Wed, 12 Oct 2011 16:12:16 +0200
 
