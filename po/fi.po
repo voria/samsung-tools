@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-01 11:57+0200\n"
+"POT-Creation-Date: 2011-10-12 17:23+0200\n"
 "PO-Revision-Date: 2010-03-15 17:36+0000\n"
 "Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: Finnish <fi@li.org>\n"
@@ -107,8 +107,9 @@ msgid "Fan mode: Silent"
 msgstr "Tuulettimen tila: Hiljainen"
 
 #: backends/session/util/locales.py:49
-msgid "Fan mode: Speed"
-msgstr "Tuulettimen tila: Nopeus"
+#, fuzzy
+msgid "Fan mode: Overclock"
+msgstr "Tuulettimen tila: Normaali"
 
 #: backends/session/util/locales.py:50
 msgid "Cannot get fan mode"
@@ -379,7 +380,7 @@ msgid ""
 msgstr ""
 
 #: po/samsung-tools-preferences.desktop.in.h:1
-#: po/samsung-tools-preferences.glade.h:26
+#: po/samsung-tools-preferences.glade.h:27
 msgid "Samsung Tools Preferences"
 msgstr ""
 
@@ -474,19 +475,19 @@ msgid "Normal"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:25
+msgid "Overclock"
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:26
 msgid "Power management..."
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:27
+#: po/samsung-tools-preferences.glade.h:28
 msgid "Session service"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:28
-msgid "Silent"
-msgstr ""
-
 #: po/samsung-tools-preferences.glade.h:29
-msgid "Speed"
+msgid "Silent"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:30
@@ -598,6 +599,9 @@ msgstr ""
 #: po/samsung-tools-session-service.desktop.in.h:1
 msgid "Start the session service"
 msgstr ""
+
+#~ msgid "Fan mode: Speed"
+#~ msgstr "Tuulettimen tila: Nopeus"
 
 #~ msgid "CPU/Fan"
 #~ msgstr "Suoritin/Tuuletin"

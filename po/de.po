@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-01 11:57+0200\n"
+"POT-Creation-Date: 2011-10-12 17:23+0200\n"
 "PO-Revision-Date: 2011-05-12 20:52+0000\n"
 "Last-Translator: Benedict Etzel <Unknown>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -107,8 +107,9 @@ msgid "Fan mode: Silent"
 msgstr "Lüftermodus: Leise"
 
 #: backends/session/util/locales.py:49
-msgid "Fan mode: Speed"
-msgstr "Lüftermodus: Schnell"
+#, fuzzy
+msgid "Fan mode: Overclock"
+msgstr "Lüftermodus: Normal"
 
 #: backends/session/util/locales.py:50
 msgid "Cannot get fan mode"
@@ -391,7 +392,7 @@ msgstr ""
 "Sind Sie sicher, dass Sie fortfahren wollen?"
 
 #: po/samsung-tools-preferences.desktop.in.h:1
-#: po/samsung-tools-preferences.glade.h:26
+#: po/samsung-tools-preferences.glade.h:27
 msgid "Samsung Tools Preferences"
 msgstr "Samsung Tools Einstellungen"
 
@@ -486,20 +487,20 @@ msgid "Normal"
 msgstr "Normal"
 
 #: po/samsung-tools-preferences.glade.h:25
+msgid "Overclock"
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:26
 msgid "Power management..."
 msgstr "Energieverwaltung..."
 
-#: po/samsung-tools-preferences.glade.h:27
+#: po/samsung-tools-preferences.glade.h:28
 msgid "Session service"
 msgstr "Sitzungsdienst"
 
-#: po/samsung-tools-preferences.glade.h:28
+#: po/samsung-tools-preferences.glade.h:29
 msgid "Silent"
 msgstr "Leise"
-
-#: po/samsung-tools-preferences.glade.h:29
-msgid "Speed"
-msgstr "Schnell"
 
 #: po/samsung-tools-preferences.glade.h:30
 msgid "System service"
@@ -628,6 +629,12 @@ msgstr ""
 #: po/samsung-tools-session-service.desktop.in.h:1
 msgid "Start the session service"
 msgstr "Sitzungsdienst starten"
+
+#~ msgid "Fan mode: Speed"
+#~ msgstr "Lüftermodus: Schnell"
+
+#~ msgid "Speed"
+#~ msgstr "Schnell"
 
 #~ msgid "CPU Fan"
 #~ msgstr "CPU-Lüfter"

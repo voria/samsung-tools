@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-01 11:57+0200\n"
-"PO-Revision-Date: 2011-10-01 11:34+0200\n"
+"POT-Creation-Date: 2011-10-12 17:23+0200\n"
+"PO-Revision-Date: 2011-10-12 17:24+0200\n"
 "Last-Translator: Fortunato Ventre (voRia) <vorione@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: \n"
@@ -107,8 +107,8 @@ msgid "Fan mode: Silent"
 msgstr "Modalità ventola: Silenziosa"
 
 #: backends/session/util/locales.py:49
-msgid "Fan mode: Speed"
-msgstr "Modalità ventola: Veloce"
+msgid "Fan mode: Overclock"
+msgstr "Modalità ventola: Overclock"
 
 #: backends/session/util/locales.py:50
 msgid "Cannot get fan mode"
@@ -393,7 +393,7 @@ msgstr ""
 "Sicuro di voler continuare?"
 
 #: po/samsung-tools-preferences.desktop.in.h:1
-#: po/samsung-tools-preferences.glade.h:26
+#: po/samsung-tools-preferences.glade.h:27
 msgid "Samsung Tools Preferences"
 msgstr "Preferenze di Samsung Tools"
 
@@ -488,20 +488,20 @@ msgid "Normal"
 msgstr "Normale"
 
 #: po/samsung-tools-preferences.glade.h:25
+msgid "Overclock"
+msgstr "Overclock"
+
+#: po/samsung-tools-preferences.glade.h:26
 msgid "Power management..."
 msgstr "Gestione energetica..."
 
-#: po/samsung-tools-preferences.glade.h:27
+#: po/samsung-tools-preferences.glade.h:28
 msgid "Session service"
 msgstr "Servizio di sessione"
 
-#: po/samsung-tools-preferences.glade.h:28
+#: po/samsung-tools-preferences.glade.h:29
 msgid "Silent"
 msgstr "Silenziosa"
-
-#: po/samsung-tools-preferences.glade.h:29
-msgid "Speed"
-msgstr "Veloce"
 
 #: po/samsung-tools-preferences.glade.h:30
 msgid "System service"
@@ -633,6 +633,12 @@ msgstr ""
 #: po/samsung-tools-session-service.desktop.in.h:1
 msgid "Start the session service"
 msgstr "Avvia il servizio di sessione"
+
+#~ msgid "Fan mode: Speed"
+#~ msgstr "Modalità ventola: Veloce"
+
+#~ msgid "Speed"
+#~ msgstr "Veloce"
 
 #~ msgid "Ethernet throttle speed"
 #~ msgstr "Limitazione della velocità ethernet"

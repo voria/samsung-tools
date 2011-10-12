@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-01 11:57+0200\n"
+"POT-Creation-Date: 2011-10-12 17:23+0200\n"
 "PO-Revision-Date: 2011-06-22 18:10+0000\n"
 "Last-Translator: Dirk Roos <Unknown>\n"
 "Language-Team: Dutch <nl@li.org>\n"
@@ -107,8 +107,9 @@ msgid "Fan mode: Silent"
 msgstr "Ventilator mode:  Stil"
 
 #: backends/session/util/locales.py:49
-msgid "Fan mode: Speed"
-msgstr "Ventilator mode: Snel"
+#, fuzzy
+msgid "Fan mode: Overclock"
+msgstr "Ventilator mode: Normaal"
 
 #: backends/session/util/locales.py:50
 msgid "Cannot get fan mode"
@@ -384,7 +385,7 @@ msgstr ""
 "opties te gebruiken."
 
 #: po/samsung-tools-preferences.desktop.in.h:1
-#: po/samsung-tools-preferences.glade.h:26
+#: po/samsung-tools-preferences.glade.h:27
 msgid "Samsung Tools Preferences"
 msgstr "Voorkeuren Samsung hulpprogramma's"
 
@@ -479,20 +480,20 @@ msgid "Normal"
 msgstr "Normaal"
 
 #: po/samsung-tools-preferences.glade.h:25
+msgid "Overclock"
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:26
 msgid "Power management..."
 msgstr "Energiebeheer"
 
-#: po/samsung-tools-preferences.glade.h:27
+#: po/samsung-tools-preferences.glade.h:28
 msgid "Session service"
 msgstr "Sessiedienst"
 
-#: po/samsung-tools-preferences.glade.h:28
+#: po/samsung-tools-preferences.glade.h:29
 msgid "Silent"
 msgstr "Stil"
-
-#: po/samsung-tools-preferences.glade.h:29
-msgid "Speed"
-msgstr "Snelheid"
 
 #: po/samsung-tools-preferences.glade.h:30
 msgid "System service"
@@ -623,6 +624,12 @@ msgstr ""
 #: po/samsung-tools-session-service.desktop.in.h:1
 msgid "Start the session service"
 msgstr "Start de sessiedienst"
+
+#~ msgid "Fan mode: Speed"
+#~ msgstr "Ventilator mode: Snel"
+
+#~ msgid "Speed"
+#~ msgstr "Snelheid"
 
 #~ msgid "Ethernet throttle speed"
 #~ msgstr "Snelheid Ethernet schakelen"

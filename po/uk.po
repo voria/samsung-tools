@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-01 11:57+0200\n"
+"POT-Creation-Date: 2011-10-12 17:23+0200\n"
 "PO-Revision-Date: 2010-06-17 17:25+0000\n"
 "Last-Translator: Sergiy Gavrylov <sergiovana@bigmir.net>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
@@ -107,8 +107,9 @@ msgid "Fan mode: Silent"
 msgstr "Режим охолодження: Безшумний"
 
 #: backends/session/util/locales.py:49
-msgid "Fan mode: Speed"
-msgstr "Режим охолодження: Швидкісний"
+#, fuzzy
+msgid "Fan mode: Overclock"
+msgstr "Режим охолодження: Нормальний"
 
 #: backends/session/util/locales.py:50
 msgid "Cannot get fan mode"
@@ -389,7 +390,7 @@ msgstr ""
 "Ви впевнені, що хочете продовжити?"
 
 #: po/samsung-tools-preferences.desktop.in.h:1
-#: po/samsung-tools-preferences.glade.h:26
+#: po/samsung-tools-preferences.glade.h:27
 msgid "Samsung Tools Preferences"
 msgstr "Інструменти налаштування Samsung"
 
@@ -484,20 +485,20 @@ msgid "Normal"
 msgstr "Звичайне"
 
 #: po/samsung-tools-preferences.glade.h:25
+msgid "Overclock"
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:26
 msgid "Power management..."
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:27
+#: po/samsung-tools-preferences.glade.h:28
 msgid "Session service"
 msgstr "Служба сеансу"
 
-#: po/samsung-tools-preferences.glade.h:28
+#: po/samsung-tools-preferences.glade.h:29
 msgid "Silent"
 msgstr "Безшумний"
-
-#: po/samsung-tools-preferences.glade.h:29
-msgid "Speed"
-msgstr "Швидкісний"
 
 #: po/samsung-tools-preferences.glade.h:30
 msgid "System service"
@@ -622,6 +623,12 @@ msgstr ""
 #: po/samsung-tools-session-service.desktop.in.h:1
 msgid "Start the session service"
 msgstr "Запустити службу сеансу"
+
+#~ msgid "Fan mode: Speed"
+#~ msgstr "Режим охолодження: Швидкісний"
+
+#~ msgid "Speed"
+#~ msgstr "Швидкісний"
 
 #~ msgid "CPU Fan"
 #~ msgstr "Охолодження ЦП"

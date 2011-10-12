@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-01 11:57+0200\n"
+"POT-Creation-Date: 2011-10-12 17:23+0200\n"
 "PO-Revision-Date: 2010-06-17 17:21+0000\n"
 "Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -107,8 +107,9 @@ msgid "Fan mode: Silent"
 msgstr "Hűtésmód: Csendes"
 
 #: backends/session/util/locales.py:49
-msgid "Fan mode: Speed"
-msgstr "Hűtésmód: Sebesség"
+#, fuzzy
+msgid "Fan mode: Overclock"
+msgstr "Hűtésmód: Normál"
 
 #: backends/session/util/locales.py:50
 msgid "Cannot get fan mode"
@@ -389,7 +390,7 @@ msgstr ""
 "Biztos, hogy akarja folytatni?"
 
 #: po/samsung-tools-preferences.desktop.in.h:1
-#: po/samsung-tools-preferences.glade.h:26
+#: po/samsung-tools-preferences.glade.h:27
 msgid "Samsung Tools Preferences"
 msgstr "Samsung Tools beállítások"
 
@@ -484,20 +485,20 @@ msgid "Normal"
 msgstr "Normál"
 
 #: po/samsung-tools-preferences.glade.h:25
+msgid "Overclock"
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:26
 msgid "Power management..."
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:27
+#: po/samsung-tools-preferences.glade.h:28
 msgid "Session service"
 msgstr "Session service"
 
-#: po/samsung-tools-preferences.glade.h:28
+#: po/samsung-tools-preferences.glade.h:29
 msgid "Silent"
 msgstr "Csendes"
-
-#: po/samsung-tools-preferences.glade.h:29
-msgid "Speed"
-msgstr "Sebesség"
 
 #: po/samsung-tools-preferences.glade.h:30
 msgid "System service"
@@ -625,6 +626,12 @@ msgstr ""
 #: po/samsung-tools-session-service.desktop.in.h:1
 msgid "Start the session service"
 msgstr "Session service indítása"
+
+#~ msgid "Fan mode: Speed"
+#~ msgstr "Hűtésmód: Sebesség"
+
+#~ msgid "Speed"
+#~ msgstr "Sebesség"
 
 #~ msgid "CPU Fan"
 #~ msgstr "CPU-hűtő"
