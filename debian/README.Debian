@@ -6,12 +6,11 @@ Fortunato Ventre (voRia) - vorione@gmail.com - http://www.voria.org/forum
 
 Dependencies:
 - pm-utils
-- easy-slow-down-manager
 - dbus-python
 - pygtk
 - python-notify
 - rfkill
 - xbindkeys
 
-Optional dependencies:
+Optional:
 - phc-intel
