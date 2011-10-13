@@ -1032,7 +1032,10 @@ Are you sure you want to continue?"), "utf-8")
 					"Benedict Etzel",
 					"Aiguanachein",
 					"simon",
-					"D3NMOH"
+					"D3NMOH",
+					"Felipe Amaral",
+					"Baptiste Fontaine",
+					"Daniel Manrique"
 					]
 		
 		translators.sort(cmp = lambda x, y: cmp(x.lower(), y.lower()))
