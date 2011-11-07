@@ -625,6 +625,12 @@ class Main():
 			self.phcButton.set_sensitive(True)
 		self.phcButton.connect("clicked", self.on_phcButton_clicked)
 		
+		# Enable click on website url in about dialog
+		def about_dialog_url_clicked(dialog, link, user_data):
+			import webbrowser
+			webbrowser.open(link)
+		gtk.about_dialog_set_url_hook(about_dialog_url_clicked, None)
+		
 		# All ready
 		self.mainWindow.show()
 	
