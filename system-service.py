@@ -50,7 +50,51 @@ class General(dbus.service.Object):
 		dbus.service.Object.__init__(self, conn, object_path, bus_name)
 		# Make sure the directory for last devices status exists
 		if not os.path.exists(LAST_DEVICES_STATUS_DIRECTORY):
-			os.mkdir(LAST_DEVICES_STATUS_DIRECTORY)	
+			os.mkdir(LAST_DEVICES_STATUS_DIRECTORY)
+		# Select the interface we are going to use
+		if self.__check_for_esdm_module():
+			CONTROL_INTERFACE = "esdm"
+		elif self.__check_for_sl_module():
+			CONTROL_INTERFACE = "sl"
+		else:
+			systemlog.write("WARNING: 'General.__init__()' - Can't find any usable interface! Many of the functionalities will not work.")
+			CONTROL_INTERFACE = None
+	
+	def __check_for_esdm_module(self):
+		""" Check for the 'easy-slow-down-manager' interface. """
+		""" Return 'True' if it can be used, 'False' otherwise. """
+		if os.path.exists(ESDM_PATH_PERFORMANCE):
+			# kernel module already loaded and ready to use
+			return True
+		try:
+			command = COMMAND_MODPROBE + " " + ESDM_MODULE
+			process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+			process.communicate()
+		except:
+			systemlog.write("WARNING: 'General.__check_for_esdm_module()' - COMMAND: '" + command + "' - Exception thrown.")
+			return False
+		if process.returncode != 0:
+			return False
+		else:
+			return True
+	
+	def __check_for_sl_module(self):
+		""" Check for the 'samsung-laptop' interface. """
+		""" Return 'True' if it can be used, 'False' otherwise. """
+		if os.path.exists(SL_PATH_PERFORMANCE):
+			# kernel module already loaded and ready to use
+			return True
+		try:
+			command = COMMAND_MODPROBE + " " + SL_MODULE
+			process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+			process.communicate()
+		except:
+			systemlog.write("WARNING: 'General.__check_for_sl_module()' - COMMAND: '" + command + "' - Exception thrown.")
+			return False
+		if process.returncode != 0:
+			return False
+		else:
+			return True
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = None,
 						sender_keyword = 'sender', connection_keyword = 'conn')

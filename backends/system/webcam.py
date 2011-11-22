@@ -34,7 +34,7 @@ class Webcam(dbus.service.Object):
 	def __is_available(self):
 		""" Check if a webcam is available. """
 		""" Return 'True' if available, 'False' otherwise. """
-		# FIXME: Find a better way to check if webcam is available
+		# TODO: Find a better way to check if webcam is available
 		try:
 			process = subprocess.Popen([COMMAND_DMESG], stdout = subprocess.PIPE, stderr = subprocess.PIPE)
 			output = process.communicate()[0].split('\n')

@@ -31,56 +31,11 @@ class Backlight(dbus.service.Object):
 	""" Control backlight """
 	def __init__(self, conn = None, object_path = None, bus_name = None):
 		dbus.service.Object.__init__(self, conn, object_path, bus_name)
-		if self.__load_esdm_module():
-			# Check if easy-slow-down-manager interface is available.
-			self.method = "esdm"
-		elif self.__load_sl_module():
-			# Check if samsung-laptop interface is available.
-			self.method = "sl"
-		else:
-			# Both 'esdm' and 'sl' are not available, fallback to vbetool.
-			self.method = "vbetool"
-	
-	def __load_esdm_module(self):
-		""" Load the easy-slow-down-manager kernel module. """
-		""" Return 'True' on success, 'False' otherwise. """
-		if os.path.exists(ESDM_PATH_BACKLIGHT):
-			return True # already loaded
-		command = COMMAND_MODPROBE + " " + ESDM_MODULE
-		try:
-			process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-			process.communicate()
-			if process.returncode != 0:
-				systemlog.write("WARNING: 'Backlight.__load_esdm_module()' - COMMAND: '" + command + "' FAILED.")
-				return False
-			else:
-				return True
-		except:
-			systemlog.write("WARNING: 'Backlight.__load_esdm_module()' - COMMAND: '" + command + "' - Exception thrown.")
-			return False
-	
-	def __load_sl_module(self):
-		""" Load the samsung-laptop kernel module. """
-		""" Return 'True' on success, 'False' otherwise. """
-		if os.path.exists(SL_PATH_BACKLIGHT):
-			return True # already loaded
-		command = COMMAND_MODPROBE + " " + SL_MODULE
-		try:
-			process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-			process.communicate()
-			if process.returncode != 0:
-				systemlog.write("WARNING: 'Backlight.__load_sl_module()' - COMMAND: '" + command + "' FAILED.")
-				return False
-			else:
-				return True
-		except:
-			systemlog.write("WARNING: 'Backlight.__load_sl_module()' - COMMAND: '" + command + "' - Exception thrown.")
-			return False
 	
 	def __save_status(self, status):
-		""" Save backlight status when self.method == "vbetool". """
-		""" If self.method != "vbetool", do nothing. """
-		if self.method != "vbetool":
+		""" Save backlight status when CONTROL_INTERFACE == None. """
+		""" If CONTROL_INTERFACE != None, do nothing. """
+		if CONTROL_INTERFACE != None:
 			return
 		try:
 			if status == False:
@@ -96,9 +51,7 @@ class Backlight(dbus.service.Object):
 	def IsEnabled(self, sender = None, conn = None):
 		""" Check if backlight is enabled. """
 		""" Return 'True' if enabled, 'False' if disabled. """
-		if self.method == "esdm":
-			# Make sure the 'esdm' module is loaded
-			self.__load_esdm_module()
+		if CONTROL_INTERFACE == "esdm":
 			try:
 				with open(ESDM_PATH_BACKLIGHT, 'r') as file:
 					status = int(file.read(1))
@@ -109,9 +62,7 @@ class Backlight(dbus.service.Object):
 			except:
 				systemlog.write("ERROR: 'Backlight.IsEnabled()' - cannot read from '" + ESDM_PATH_BACKLIGHT + "'.")
 				return True
-		elif self.method == "sl":
-			# Make sure the 'sl' module is loaded
-			self.__load_sl_module()
+		elif CONTROL_INTERFACE == "sl":
 			try:
 				with open(SL_PATH_BACKLIGHT, 'r') as file:
 					status = int(file.read(1))
@@ -122,7 +73,7 @@ class Backlight(dbus.service.Object):
 			except:
 				systemlog.write("ERROR: 'Backlight.IsEnabled()' - cannot read from '" + SL_PATH_BACKLIGHT + "'.")
 				return True
-		else: # self.method == "vbetool":
+		else: # CONTROL_INTERFACE == None:
 			if os.path.exists(LAST_DEVICE_STATUS_BACKLIGHT):
 				return False
 			else:
@@ -135,23 +86,23 @@ class Backlight(dbus.service.Object):
 		""" Return 'True' on success, 'False' otherwise. """
 		if self.IsEnabled():
 			return True
-		if self.method == "esdm":
+		if CONTROL_INTERFACE == "esdm":
 			try:
 				with open(ESDM_PATH_BACKLIGHT, 'w') as file:
 					file.write('1')
 				return True
 			except:
-				log_system.write("ERROR: 'Backlight.Enable()' - cannot write to '" + ESDM_PATH_BACKLIGHT + "'.")
+				systemlog.write("ERROR: 'Backlight.Enable()' - cannot write to '" + ESDM_PATH_BACKLIGHT + "'.")
 				return False
-		elif self.method == "sl":
+		elif CONTROL_INTERFACE == "sl":
 			try:
 				with open(SL_PATH_BACKLIGHT, 'w') as file:
 					file.write('0')
 				return True
 			except:
-				log_system.write("ERROR: 'Backlight.Enable()' - cannot write to '" + SL_PATH_BACKLIGHT + "'.")
+				systemlog.write("ERROR: 'Backlight.Enable()' - cannot write to '" + SL_PATH_BACKLIGHT + "'.")
 				return False
-		else: # self.method == "vbetool"
+		else: # CONTROL_INTERFACE == None
 			command = COMMAND_VBETOOL + " dpms on"
 			try:
 				process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
@@ -173,7 +124,7 @@ class Backlight(dbus.service.Object):
 		""" Return 'True' on success, 'False' otherwise. """
 		if not self.IsEnabled():
 			return True
-		if self.method == "esdm":
+		if CONTROL_INTERFACE == "esdm":
 			try:
 				with open(SL_PATH_BACKLIGHT, 'w') as file:
 					file.write('0')
@@ -181,7 +132,7 @@ class Backlight(dbus.service.Object):
 			except:
 				systemlog.write("ERROR: 'Backlight.Disable()' - cannot write to '" + ESDM_PATH_BACKLIGHT + "'.")
 				return False
-		elif self.method == "sl":
+		elif CONTROL_INTERFACE == "sl":
 			try:
 				with open(SL_PATH_BACKLIGHT, 'w') as file:
 					file.write('1')
@@ -189,7 +140,7 @@ class Backlight(dbus.service.Object):
 			except:
 				systemlog.write("ERROR: 'Backlight.Disable()' - cannot write to '" + SL_PATH_BACKLIGHT + "'.")
 				return False
-		else: # self.method == "vbetool":
+		else: # CONTROL_INTERFACE == None
 			command = COMMAND_VBETOOL + " dpms off"
 			try:
 				process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
