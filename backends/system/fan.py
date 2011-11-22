@@ -28,9 +28,54 @@ import dbus.service
 from backends.globals import *
 
 class Fan(dbus.service.Object):
-	""" Control CPU Fan through the samsung-laptop interface """
+	""" Control CPU Fan """
 	def __init__(self, conn = None, object_path = None, bus_name = None):
 		dbus.service.Object.__init__(self, conn, object_path, bus_name)
+		if self.__load_esdm_module():
+			# Check if easy-slow-down-manager interface is available.
+			self.method = "esdm"
+		elif self.__load_sl_module():
+			# Check if samsung-laptop interface is available.
+			self.method = "sl"
+		else:
+			# Both 'esdm' and 'sl' are not available.
+			self.method = None
+	
+	def __load_esdm_module(self):
+		""" Load the easy-slow-down-manager kernel module. """
+		""" Return 'True' on success, 'False' otherwise. """
+		if os.path.exists(ESDM_PATH_PERFORMANCE):
+			return True # already loaded
+		command = COMMAND_MODPROBE + " " + ESDM_MODULE
+		try:
+			process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+			process.communicate()
+			if process.returncode != 0:
+				systemlog.write("WARNING: 'Fan.__load_esdm_module()' - COMMAND: '" + command + "' FAILED.")
+				return False
+			else:
+				return True
+		except:
+			systemlog.write("WARNING: 'Fan.__load_esdm_module()' - COMMAND: '" + command + "' - Exception thrown.")
+			return False
+	
+	def __load_sl_module(self):
+		""" Load the samsung-laptop kernel module. """
+		""" Return 'True' on success, 'False' otherwise. """
+		if os.path.exists(SL_PATH_PERFORMANCE):
+			return True # already loaded
+		command = COMMAND_MODPROBE + " " + SL_MODULE
+		try:
+			process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
+			process.communicate()
+			if process.returncode != 0:
+				systemlog.write("WARNING: 'Fan.__load_sl_module()' - COMMAND: '" + command + "' FAILED.")
+				return False
+			else:
+				return True
+		except:
+			systemlog.write("WARNING: 'Fan.__load_sl_module()' - COMMAND: '" + command + "' - Exception thrown.")
+			return False
 	
 	def __save_last_status(self, status):
 		""" Save fan last status. """
@@ -48,27 +93,17 @@ class Fan(dbus.service.Object):
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def IsAvailable(self, sender = None, conn = None):
-		""" Check if the fan control is available. """
+		""" Check if the CPU fan control is available. """
 		""" Return 'True' if available, 'False' otherwise. """
-		if os.path.exists(SL_PATH_PERFORMANCE):
-			return True # already loaded
-		command = COMMAND_MODPROBE + " " + SL_MODULE
-		try:
-			process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-			process.communicate()
-			if process.returncode != 0:
-				systemlog.write("ERROR: 'Fan.IsAvailable()' - COMMAND: '" + command + "' FAILED.")
-				return False
-			else:
-				return True
-		except:
-			systemlog.write("ERROR: 'Fan.IsAvailable()' - COMMAND: '" + command + "' - Exception thrown.")
+		if self.method == None:
 			return False
+		else:
+			return True
 			
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')		
 	def LastStatus(self, sender = None, conn = None):
-		""" Return last status. """
+		""" Return last status for CPU fan. """
 		if not os.path.exists(LAST_DEVICE_STATUS_CPUFAN):
 			return "normal"
 		else:
@@ -95,19 +130,34 @@ class Fan(dbus.service.Object):
 		""" Return 3 if any error. """
 		if not self.IsAvailable():
 			return 3
-		try:
-			with open(SL_PATH_PERFORMANCE, 'r') as file:
-				status = file.read()[0:-1]
-				self.__save_last_status(status)
-				if status == "normal":
-					return 0
-				elif status == "silent":
-					return 1
-				else:
-					return 2
-		except:
-			systemlog.write("ERROR: 'Fan.Status()' - cannot read from '" + SL_PATH_PERFORMANCE + "'.")
-			return 3
+		if self.method == "esdm":
+			try:
+				with open(ESDM_PATH_PERFORMANCE, 'r') as file:
+					status = int(file.read(1))
+					if status == 0:
+						self.__save_last_status("normal")
+					elif status == 1:
+						self.__save_last_status("silent")
+					else: # status == 2
+						self.__save_last_status("overclock")
+			except:
+				systemlog.write("ERROR: 'Fan.Status()' - cannot read from '" + ESDM_PATH_PERFORMANCE + "'.")
+				status = 3
+		else: # self.method == "sl"
+			try:
+				with open(SL_PATH_PERFORMANCE, 'r') as file:
+					s = file.read()[0:-1]
+					self.__save_last_status(s)
+					if s == "normal":
+						status = 0
+					elif s == "silent":
+						status = 1
+					else: # s == "overclock"
+						status = 2
+			except:
+				systemlog.write("ERROR: 'Fan.Status()' - cannot read from '" + SL_PATH_PERFORMANCE + "'.")
+				status = 3
+		return status
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
@@ -116,14 +166,22 @@ class Fan(dbus.service.Object):
 		""" Return 'True' on success, 'False' otherwise. """
 		if not self.IsAvailable():
 			return False
-		try:
-			with open(SL_PATH_PERFORMANCE, 'w') as file:
-				file.write("normal")
-			self.__save_last_status("normal")
-			return True
-		except:
-			systemlog.write("ERROR: 'Fan.SetNormal()' - cannot write to '" + SL_PATH_PERFORMANCE + "'.")
-			return False
+		if self.method == "esdm":
+			try:
+				with open(ESDM_PATH_PERFORMANCE, 'w') as file:
+					file.write('0')
+			except:
+				systemlog.write("ERROR: 'Fan.SetNormal()' - cannot write to '" + ESDM_PATH_PERFORMANCE + "'.")
+				return False
+		else: # self.method == "sl"
+			try:
+				with open(SL_PATH_PERFORMANCE, 'w') as file:
+					file.write("normal")
+			except:
+				systemlog.write("ERROR: 'Fan.SetNormal()' - cannot write to '" + SL_PATH_PERFORMANCE + "'.")
+				return False
+		self.__save_last_status("normal")
+		return True
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
@@ -132,14 +190,22 @@ class Fan(dbus.service.Object):
 		""" Return 'True' on success, 'False' otherwise. """
 		if not self.IsAvailable():
 			return False
-		try:
-			with open(SL_PATH_PERFORMANCE, 'w') as file:
-				file.write("silent")
-			self.__save_last_status("silent")
-			return True
-		except:
-			systemlog.write("ERROR: 'Fan.SetSilent()' - cannot write to '" + SL_PATH_PERFORMANCE + "'.")
-			return False
+		if self.method == "esdm":
+			try:
+				with open(ESDM_PATH_PERFORMANCE, 'w') as file:
+					file.write('1')
+			except:
+				systemlog.write("ERROR: 'Fan.SetSilent()' - cannot write to '" + ESDM_PATH_PERFORMANCE + "'.")
+				return False
+		else: # self.method == "sl"
+			try:
+				with open(SL_PATH_PERFORMANCE, 'w') as file:
+					file.write("silent")
+			except:
+				systemlog.write("ERROR: 'Fan.SetSilent()' - cannot write to '" + SL_PATH_PERFORMANCE + "'.")
+				return False
+		self.__save_last_status("silent")
+		return True
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
@@ -148,14 +214,22 @@ class Fan(dbus.service.Object):
 		""" Return 'True' on success, 'False' otherwise. """
 		if not self.IsAvailable():
 			return False
-		try:
-			with open(SL_PATH_PERFORMANCE, 'w') as file:
-				file.write("overclock")
-			self.__save_last_status("overclock")
-			return True
-		except:
-			systemlog.write("ERROR: 'Fan.SetOverclock()' - cannot write to '" + SL_PATH_PERFORMANCE + "'.")
-			return False
+		if self.method == "esdm":
+			try:
+				with open(ESDM_PATH_PERFORMANCE, 'w') as file:
+					file.write('2')
+			except:
+				systemlog.write("ERROR: 'Fan.Setoverclock()' - cannot write to '" + ESDM_PATH_PERFORMANCE + "'.")
+				return False
+		else: # self.method == "sl"
+			try:
+				with open(SL_PATH_PERFORMANCE, 'w') as file:
+					file.write("overclock")
+			except:
+				systemlog.write("ERROR: 'Fan.SetOverclock()' - cannot write to '" + SL_PATH_PERFORMANCE + "'.")
+				return False
+		self.__save_last_status("overclock")
+		return True
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
