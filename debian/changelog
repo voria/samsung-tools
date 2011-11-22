@@ -1,7 +1,7 @@
 samsung-tools (2.0~ppa1~loms~oneiric~test2) oneiric; urgency=low
 
-  * Add support for the 'samsung-laptop' interface.
-    The 'esdm' interface is preferred when the 'easy-slow-down-manager'
+  * Add support for the 'samsung-laptop' interface. Anyway,
+    the 'esdm' interface is preferred when the 'easy-slow-down-manager'
     kernel module is available and can be used.
   * Drop checks for old pm hooks.
   * Update translations.
