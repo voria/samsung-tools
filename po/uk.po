@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-12 17:23+0200\n"
+"POT-Creation-Date: 2011-11-22 14:28+0100\n"
 "PO-Revision-Date: 2011-10-12 18:34+0200\n"
 "Last-Translator: Fortunato Ventre (voRia) <vorione@gmail.com>\n"
 "Language-Team: Ukrainian <kde-i18n-it@kde.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Generator: Lokalize 1.2\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: backends/session/util/locales.py:25 samsung-tools-preferences.py:410
+#: backends/session/util/locales.py:25 samsung-tools-preferences.py:409
 msgid "Backlight"
 msgstr "Підсвічування"
 
@@ -52,7 +52,7 @@ msgstr "Не вдалось вимкнути підсвічування"
 msgid "Backlight cannot be toggled"
 msgstr "Не вдалось перемикнути підсвічування"
 
-#: backends/session/util/locales.py:34 samsung-tools-preferences.py:419
+#: backends/session/util/locales.py:34 samsung-tools-preferences.py:418
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
@@ -88,7 +88,7 @@ msgstr "Не вдалось перемикнути Bluetooth"
 msgid "Bluetooth control is not available"
 msgstr "Керування Bluetooth не доступно"
 
-#: backends/session/util/locales.py:44 samsung-tools-preferences.py:428
+#: backends/session/util/locales.py:44 samsung-tools-preferences.py:427
 msgid "CPU fan"
 msgstr "Охолодження процесора"
 
@@ -109,8 +109,9 @@ msgid "Fan mode: Silent"
 msgstr "Режим охолодження: Безшумний"
 
 #: backends/session/util/locales.py:49
+#, fuzzy
 msgid "Fan mode: Overclock"
-msgstr ""
+msgstr "Режим охолодження: Нормальний"
 
 #: backends/session/util/locales.py:50
 msgid "Cannot get fan mode"
@@ -120,7 +121,7 @@ msgstr "Не вдалось визначити режим охолодження
 msgid "CPU fan control is not available"
 msgstr "Керування режимом охолодження ЦП не доступно"
 
-#: backends/session/util/locales.py:53 samsung-tools-preferences.py:437
+#: backends/session/util/locales.py:53 samsung-tools-preferences.py:436
 msgid "Webcam"
 msgstr "Веб-камера"
 
@@ -156,7 +157,7 @@ msgstr "Не вдалось перемикнути веб-камеру"
 msgid "Webcam control is not available"
 msgstr "Керування веб-камерою не доступно"
 
-#: backends/session/util/locales.py:63 samsung-tools-preferences.py:446
+#: backends/session/util/locales.py:63 samsung-tools-preferences.py:445
 msgid "Wireless"
 msgstr "Бездротовий зв’язок"
 
@@ -298,7 +299,7 @@ msgstr " - Вимкнути bluetooth, веб-камеру та бездрото
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Детальніша інформація на форумі «Linux On My Samsung»:"
 
-#: samsung-tools.py:627 samsung-tools-preferences.py:1044
+#: samsung-tools.py:627 samsung-tools-preferences.py:1055
 msgid "Released under GPLv3 license"
 msgstr "Випущено за умовами ліцензії GPLv3"
 
@@ -340,42 +341,42 @@ msgstr "Системна служба зупинена"
 msgid "Cannot stop system service"
 msgstr "Не вдалось зупинити системну службу"
 
-#: samsung-tools-preferences.py:80
+#: samsung-tools-preferences.py:79
 msgid "Please press the new hotkey"
 msgstr "Будь ласка, натисніть нову «гарячу» клавішу"
 
-#: samsung-tools-preferences.py:122
+#: samsung-tools-preferences.py:121
 msgid "None"
 msgstr "Немає"
 
-#: samsung-tools-preferences.py:177 samsung-tools-preferences.py:246
-#: samsung-tools-preferences.py:341 samsung-tools-preferences.py:353
-#: samsung-tools-preferences.py:700 samsung-tools-preferences.py:712
-#: samsung-tools-preferences.py:724
+#: samsung-tools-preferences.py:176 samsung-tools-preferences.py:245
+#: samsung-tools-preferences.py:340 samsung-tools-preferences.py:352
+#: samsung-tools-preferences.py:705 samsung-tools-preferences.py:717
+#: samsung-tools-preferences.py:729
 msgid "Unable to connect to system service!"
 msgstr "Не вдалось під’єднатись до системної служби!"
 
-#: samsung-tools-preferences.py:365
+#: samsung-tools-preferences.py:364
 msgid "Confirm"
 msgstr "Підтвердити"
 
-#: samsung-tools-preferences.py:366
+#: samsung-tools-preferences.py:365
 msgid "Apply the new VIDs?"
 msgstr "Застосувати нові VID?"
 
-#: samsung-tools-preferences.py:622
+#: samsung-tools-preferences.py:621
 msgid "You need a PHC enabled kernel to use this feature"
 msgstr "Потрібне увімкнене ядро PHC, щоб отримати цю можливість"
 
-#: samsung-tools-preferences.py:640
+#: samsung-tools-preferences.py:645
 msgid "Unable to connect to session service!"
 msgstr "Не вдалось під’єднатись до служби сеансу!"
 
-#: samsung-tools-preferences.py:979
+#: samsung-tools-preferences.py:984
 msgid "Caution!"
 msgstr "Увага!"
 
-#: samsung-tools-preferences.py:980
+#: samsung-tools-preferences.py:985
 msgid ""
 "CPU undervolting can lead to significant gains in terms of power energy "
 "saving, however <b>IT IS A RISKY PRACTICE</b> that might result in "
@@ -412,8 +413,9 @@ msgid "Advanced power management"
 msgstr "Додаткове керування живленням"
 
 #: po/samsung-tools-preferences.glade.h:7
+#, fuzzy
 msgid "CPU undervolting..."
-msgstr ""
+msgstr "Зниження напруги живлення ЦП"
 
 #: po/samsung-tools-preferences.glade.h:8
 msgid "Click here to disable the hotkey"
@@ -434,8 +436,9 @@ msgstr "Налаштування параметрів ядра"
 
 #: po/samsung-tools-preferences.glade.h:12
 #: po/samsung-tools-preferences-power-management.glade.h:1
+#, fuzzy
 msgid "Configure power management"
-msgstr ""
+msgstr "Додаткове керування живленням"
 
 #: po/samsung-tools-preferences.glade.h:13
 msgid "Disabled"
@@ -474,8 +477,9 @@ msgid "Hotkey used for wireless control"
 msgstr "Комбінація клавіш для керування бездротовим зв’язком"
 
 #: po/samsung-tools-preferences.glade.h:22
+#, fuzzy
 msgid "Kernel parameters..."
-msgstr ""
+msgstr "Налаштування параметрів ядра"
 
 #: po/samsung-tools-preferences.glade.h:23
 msgid "Last status"
@@ -490,8 +494,9 @@ msgid "Overclock"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:26
+#, fuzzy
 msgid "Power management..."
-msgstr ""
+msgstr "Додаткове керування живленням"
 
 #: po/samsung-tools-preferences.glade.h:28
 msgid "Session service"
@@ -592,12 +597,14 @@ msgid "Set the new VIDs automatically at boot"
 msgstr "Встановлювати нові VID автоматично під час завантаження"
 
 #: po/samsung-tools-preferences-power-management.glade.h:2
+#, fuzzy
 msgid "Devices power management"
-msgstr ""
+msgstr "Додаткове керування живленням"
 
 #: po/samsung-tools-preferences-power-management.glade.h:3
+#, fuzzy
 msgid "USB autosuspend"
-msgstr ""
+msgstr "Увімкнути авто-призупинку USB"
 
 #: po/samsung-tools-preferences-power-management.glade.h:4
 msgid "VM writeback time"
@@ -691,9 +698,6 @@ msgstr "Запустити службу сеансу"
 
 #~ msgid "Control video output settings"
 #~ msgstr "Керування параметрами відео-виходу"
-
-#~ msgid "Enable USB autosuspend"
-#~ msgstr "Увімкнути авто-призупинку USB"
 
 #~ msgid ""
 #~ "If you enable this option, 'laptop-mode' will automatically configure the "

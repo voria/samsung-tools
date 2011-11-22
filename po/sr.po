@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-12 17:23+0200\n"
+"POT-Creation-Date: 2011-11-22 14:28+0100\n"
 "PO-Revision-Date: 2011-03-24 05:14+0000\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <sr@li.org>\n"
@@ -18,13 +18,14 @@ msgstr ""
 "X-Launchpad-Export-Date: 2011-06-23 17:04+0000\n"
 "X-Generator: Launchpad (build 13265)\n"
 
-#: backends/session/util/locales.py:25 samsung-tools-preferences.py:410
+#: backends/session/util/locales.py:25 samsung-tools-preferences.py:409
 msgid "Backlight"
 msgstr ""
 
 #: backends/session/util/locales.py:26
+#, fuzzy
 msgid "Backlight is enabled"
-msgstr ""
+msgstr "Bluetooth је укључен"
 
 #: backends/session/util/locales.py:27
 msgid "Backlight is disabled"
@@ -50,7 +51,7 @@ msgstr ""
 msgid "Backlight cannot be toggled"
 msgstr ""
 
-#: backends/session/util/locales.py:34 samsung-tools-preferences.py:419
+#: backends/session/util/locales.py:34 samsung-tools-preferences.py:418
 msgid "Bluetooth"
 msgstr "Блутут"
 
@@ -59,34 +60,41 @@ msgid "Bluetooth is enabled"
 msgstr "Bluetooth је укључен"
 
 #: backends/session/util/locales.py:36
+#, fuzzy
 msgid "Bluetooth is disabled"
-msgstr ""
+msgstr "Bluetooth је укључен"
 
 #: backends/session/util/locales.py:37
+#, fuzzy
 msgid "Bluetooth enabled"
-msgstr ""
+msgstr "Bluetooth је укључен"
 
 #: backends/session/util/locales.py:38
+#, fuzzy
 msgid "Bluetooth disabled"
-msgstr ""
+msgstr "Bluetooth је укључен"
 
 #: backends/session/util/locales.py:39
+#, fuzzy
 msgid "Bluetooth cannot be enabled"
-msgstr ""
+msgstr "Bluetooth је укључен"
 
 #: backends/session/util/locales.py:40
+#, fuzzy
 msgid "Bluetooth cannot be disabled"
-msgstr ""
+msgstr "Bluetooth је укључен"
 
 #: backends/session/util/locales.py:41
+#, fuzzy
 msgid "Bluetooth cannot be toggled"
-msgstr ""
+msgstr "Bluetooth је укључен"
 
 #: backends/session/util/locales.py:42
+#, fuzzy
 msgid "Bluetooth control is not available"
-msgstr ""
+msgstr "Bluetooth је укључен"
 
-#: backends/session/util/locales.py:44 samsung-tools-preferences.py:428
+#: backends/session/util/locales.py:44 samsung-tools-preferences.py:427
 msgid "CPU fan"
 msgstr ""
 
@@ -118,13 +126,14 @@ msgstr ""
 msgid "CPU fan control is not available"
 msgstr ""
 
-#: backends/session/util/locales.py:53 samsung-tools-preferences.py:437
+#: backends/session/util/locales.py:53 samsung-tools-preferences.py:436
 msgid "Webcam"
 msgstr ""
 
 #: backends/session/util/locales.py:54
+#, fuzzy
 msgid "Webcam is enabled"
-msgstr ""
+msgstr "Bluetooth је укључен"
 
 #: backends/session/util/locales.py:55
 msgid "Webcam is disabled"
@@ -154,21 +163,23 @@ msgstr ""
 msgid "Webcam control is not available"
 msgstr ""
 
-#: backends/session/util/locales.py:63 samsung-tools-preferences.py:446
+#: backends/session/util/locales.py:63 samsung-tools-preferences.py:445
 msgid "Wireless"
 msgstr ""
 
 #: backends/session/util/locales.py:64
+#, fuzzy
 msgid "Wireless is enabled"
-msgstr ""
+msgstr "Bluetooth је укључен"
 
 #: backends/session/util/locales.py:65
 msgid "Wireless is disabled"
 msgstr ""
 
 #: backends/session/util/locales.py:66
+#, fuzzy
 msgid "Wireless enabled"
-msgstr ""
+msgstr "Bluetooth је укључен"
 
 #: backends/session/util/locales.py:67
 msgid "Wireless disabled"
@@ -234,8 +245,9 @@ msgid "Options"
 msgstr ""
 
 #: samsung-tools.py:592 po/samsung-tools-preferences.glade.h:5
+#, fuzzy
 msgid "Bluetooth:"
-msgstr ""
+msgstr "Блутут"
 
 #: samsung-tools.py:595 po/samsung-tools-preferences.glade.h:6
 msgid "CPU fan:"
@@ -293,7 +305,7 @@ msgstr ""
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr ""
 
-#: samsung-tools.py:627 samsung-tools-preferences.py:1044
+#: samsung-tools.py:627 samsung-tools-preferences.py:1055
 msgid "Released under GPLv3 license"
 msgstr ""
 
@@ -333,42 +345,42 @@ msgstr ""
 msgid "Cannot stop system service"
 msgstr ""
 
-#: samsung-tools-preferences.py:80
+#: samsung-tools-preferences.py:79
 msgid "Please press the new hotkey"
 msgstr ""
 
-#: samsung-tools-preferences.py:122
+#: samsung-tools-preferences.py:121
 msgid "None"
 msgstr ""
 
-#: samsung-tools-preferences.py:177 samsung-tools-preferences.py:246
-#: samsung-tools-preferences.py:341 samsung-tools-preferences.py:353
-#: samsung-tools-preferences.py:700 samsung-tools-preferences.py:712
-#: samsung-tools-preferences.py:724
+#: samsung-tools-preferences.py:176 samsung-tools-preferences.py:245
+#: samsung-tools-preferences.py:340 samsung-tools-preferences.py:352
+#: samsung-tools-preferences.py:705 samsung-tools-preferences.py:717
+#: samsung-tools-preferences.py:729
 msgid "Unable to connect to system service!"
 msgstr ""
 
-#: samsung-tools-preferences.py:365
+#: samsung-tools-preferences.py:364
 msgid "Confirm"
 msgstr ""
 
-#: samsung-tools-preferences.py:366
+#: samsung-tools-preferences.py:365
 msgid "Apply the new VIDs?"
 msgstr ""
 
-#: samsung-tools-preferences.py:622
+#: samsung-tools-preferences.py:621
 msgid "You need a PHC enabled kernel to use this feature"
 msgstr ""
 
-#: samsung-tools-preferences.py:640
+#: samsung-tools-preferences.py:645
 msgid "Unable to connect to session service!"
 msgstr ""
 
-#: samsung-tools-preferences.py:979
+#: samsung-tools-preferences.py:984
 msgid "Caution!"
 msgstr ""
 
-#: samsung-tools-preferences.py:980
+#: samsung-tools-preferences.py:985
 msgid ""
 "CPU undervolting can lead to significant gains in terms of power energy "
 "saving, however <b>IT IS A RISKY PRACTICE</b> that might result in "

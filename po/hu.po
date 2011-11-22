@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-12 17:23+0200\n"
+"POT-Creation-Date: 2011-11-22 14:28+0100\n"
 "PO-Revision-Date: 2011-10-12 18:32+0200\n"
 "Last-Translator: Fortunato Ventre (voRia) <vorione@gmail.com>\n"
 "Language-Team: Hungarian <kde-i18n-it@kde.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Generator: Lokalize 1.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: backends/session/util/locales.py:25 samsung-tools-preferences.py:410
+#: backends/session/util/locales.py:25 samsung-tools-preferences.py:409
 msgid "Backlight"
 msgstr "Háttérvilágítás"
 
@@ -52,7 +52,7 @@ msgstr "Háttérvilágítás nem kapcsolható ki"
 msgid "Backlight cannot be toggled"
 msgstr "Háttérvilágítás nem kapcsolható"
 
-#: backends/session/util/locales.py:34 samsung-tools-preferences.py:419
+#: backends/session/util/locales.py:34 samsung-tools-preferences.py:418
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
@@ -88,7 +88,7 @@ msgstr "Bluetooth nem kapcsolható"
 msgid "Bluetooth control is not available"
 msgstr "Bluetooth nem szabályozható"
 
-#: backends/session/util/locales.py:44 samsung-tools-preferences.py:428
+#: backends/session/util/locales.py:44 samsung-tools-preferences.py:427
 msgid "CPU fan"
 msgstr "CPU hűtő"
 
@@ -120,7 +120,7 @@ msgstr "Hűtésmód nem érzékelhető"
 msgid "CPU fan control is not available"
 msgstr "CPU hűtése nem szabályozható"
 
-#: backends/session/util/locales.py:53 samsung-tools-preferences.py:437
+#: backends/session/util/locales.py:53 samsung-tools-preferences.py:436
 msgid "Webcam"
 msgstr "Webkamera"
 
@@ -156,7 +156,7 @@ msgstr "Webkamera nem kapcsolható"
 msgid "Webcam control is not available"
 msgstr "Webkamera nem szabályozható"
 
-#: backends/session/util/locales.py:63 samsung-tools-preferences.py:446
+#: backends/session/util/locales.py:63 samsung-tools-preferences.py:445
 msgid "Wireless"
 msgstr "Vezeték néküli hálózat"
 
@@ -297,7 +297,7 @@ msgstr " - Bluetooth, webkamera és vezeték nélküli hálózat kikapcsolása:"
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "További információért látogasson a \"Linux on My Samsung\" fórumra:"
 
-#: samsung-tools.py:627 samsung-tools-preferences.py:1044
+#: samsung-tools.py:627 samsung-tools-preferences.py:1055
 msgid "Released under GPLv3 license"
 msgstr "Kibocsátva GPLv3 licenc alatt"
 
@@ -339,42 +339,42 @@ msgstr "System service leállítva"
 msgid "Cannot stop system service"
 msgstr "System service nem állítható le"
 
-#: samsung-tools-preferences.py:80
+#: samsung-tools-preferences.py:79
 msgid "Please press the new hotkey"
 msgstr "Nyomja meg az új billentyűkombinációt"
 
-#: samsung-tools-preferences.py:122
+#: samsung-tools-preferences.py:121
 msgid "None"
 msgstr "Semmi"
 
-#: samsung-tools-preferences.py:177 samsung-tools-preferences.py:246
-#: samsung-tools-preferences.py:341 samsung-tools-preferences.py:353
-#: samsung-tools-preferences.py:700 samsung-tools-preferences.py:712
-#: samsung-tools-preferences.py:724
+#: samsung-tools-preferences.py:176 samsung-tools-preferences.py:245
+#: samsung-tools-preferences.py:340 samsung-tools-preferences.py:352
+#: samsung-tools-preferences.py:705 samsung-tools-preferences.py:717
+#: samsung-tools-preferences.py:729
 msgid "Unable to connect to system service!"
 msgstr "System sevice nem érhető el!"
 
-#: samsung-tools-preferences.py:365
+#: samsung-tools-preferences.py:364
 msgid "Confirm"
 msgstr "Megerősít"
 
-#: samsung-tools-preferences.py:366
+#: samsung-tools-preferences.py:365
 msgid "Apply the new VIDs?"
 msgstr "Alkalmazza az új CPU-feszültségi értékeket (VID)?"
 
-#: samsung-tools-preferences.py:622
+#: samsung-tools-preferences.py:621
 msgid "You need a PHC enabled kernel to use this feature"
 msgstr "E tulajdonság használatához PHC-engedélyezett kernel-re van szüksége"
 
-#: samsung-tools-preferences.py:640
+#: samsung-tools-preferences.py:645
 msgid "Unable to connect to session service!"
 msgstr "Session service nem érhető el!"
 
-#: samsung-tools-preferences.py:979
+#: samsung-tools-preferences.py:984
 msgid "Caution!"
 msgstr "Figyelem!"
 
-#: samsung-tools-preferences.py:980
+#: samsung-tools-preferences.py:985
 msgid ""
 "CPU undervolting can lead to significant gains in terms of power energy "
 "saving, however <b>IT IS A RISKY PRACTICE</b> that might result in "
@@ -412,8 +412,9 @@ msgid "Advanced power management"
 msgstr "Összetett energiagazdálkodás"
 
 #: po/samsung-tools-preferences.glade.h:7
+#, fuzzy
 msgid "CPU undervolting..."
-msgstr ""
+msgstr "CPU-feszültség csökkentése"
 
 #: po/samsung-tools-preferences.glade.h:8
 msgid "Click here to disable the hotkey"
@@ -434,8 +435,9 @@ msgstr "Kernel-paraméterek beállítása"
 
 #: po/samsung-tools-preferences.glade.h:12
 #: po/samsung-tools-preferences-power-management.glade.h:1
+#, fuzzy
 msgid "Configure power management"
-msgstr ""
+msgstr "Összetett energiagazdálkodás"
 
 #: po/samsung-tools-preferences.glade.h:13
 msgid "Disabled"
@@ -474,8 +476,9 @@ msgid "Hotkey used for wireless control"
 msgstr "Billentyűkombináció vezeték nélküli hálózat szabályozásához"
 
 #: po/samsung-tools-preferences.glade.h:22
+#, fuzzy
 msgid "Kernel parameters..."
-msgstr ""
+msgstr "Kernel-paraméterek beállítása"
 
 #: po/samsung-tools-preferences.glade.h:23
 msgid "Last status"
@@ -486,12 +489,14 @@ msgid "Normal"
 msgstr "Normál"
 
 #: po/samsung-tools-preferences.glade.h:25
+#, fuzzy
 msgid "Overclock"
-msgstr ""
+msgstr "Hűtésmód: Overclock"
 
 #: po/samsung-tools-preferences.glade.h:26
+#, fuzzy
 msgid "Power management..."
-msgstr ""
+msgstr "Összetett energiagazdálkodás"
 
 #: po/samsung-tools-preferences.glade.h:28
 msgid "Session service"
@@ -595,22 +600,27 @@ msgstr ""
 "Az új CPU-feszültségi értékek automatikus beállítása rendszerbetöltéskor"
 
 #: po/samsung-tools-preferences-power-management.glade.h:2
+#, fuzzy
 msgid "Devices power management"
-msgstr ""
+msgstr "Összetett energiagazdálkodás"
 
 #: po/samsung-tools-preferences-power-management.glade.h:3
+#, fuzzy
 msgid "USB autosuspend"
-msgstr ""
+msgstr "USB automatikus felfüggesztésének engedélyezése"
 
 #: po/samsung-tools-preferences-power-management.glade.h:4
 msgid "VM writeback time"
 msgstr ""
 
 #: po/samsung-tools-preferences-power-management.glade.h:5
+#, fuzzy
 msgid ""
 "When enabled, all the devices will automatically enter power save mode when "
 "needed."
 msgstr ""
+"Ha engedélyezi ezt a beállítást, a 'laptop mode tools' automatikusan "
+"beállítja az energiamegtakarítási üzemmódot az Intel HDA audió chipset-eknél."
 
 #: po/samsung-tools-preferences-power-management.glade.h:6
 msgid ""
@@ -647,14 +657,6 @@ msgstr "Session service indítása"
 #~ msgstr "Ezen beállításokhoz telepítse a \"laptop mode tools\" csomagot"
 
 #~ msgid ""
-#~ "If you enable this option, 'laptop mode tools' will automatically set the "
-#~ "powersave mode of Intel HDA audio chipsets."
-#~ msgstr ""
-#~ "Ha engedélyezi ezt a beállítást, a 'laptop mode tools' automatikusan "
-#~ "beállítja az energiamegtakarítási üzemmódot az Intel HDA audió chipset-"
-#~ "eknél."
-
-#~ msgid ""
 #~ "If you enable this option, 'laptop mode tools' will automatically enable "
 #~ "the link power management mode of Intel AHCI compliant SATA chipsets."
 #~ msgstr ""
@@ -687,9 +689,6 @@ msgstr "Session service indítása"
 #~ "Ha engedélyezi ezt a beállítást, a 'laptop mode tools' kezeli a HAL "
 #~ "hozzáférését CD/DVD meghajtóhoz. A hozzáférés letiltása észrevehető "
 #~ "energiamegtakarítást eredményez."
-
-#~ msgid "Enable USB autosuspend"
-#~ msgstr "USB automatikus felfüggesztésének engedélyezése"
 
 #~ msgid "Control Linux scheduler"
 #~ msgstr "Linux időzítő (scheduler) beállítása"

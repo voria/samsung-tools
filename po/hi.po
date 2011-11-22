@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-12 17:23+0200\n"
+"POT-Creation-Date: 2011-11-22 14:28+0100\n"
 "PO-Revision-Date: 2010-03-29 16:36+0000\n"
 "Last-Translator: subiraj <subiraj@gmail.com>\n"
 "Language-Team: Hindi <hi@li.org>\n"
@@ -18,75 +18,91 @@ msgstr ""
 "X-Launchpad-Export-Date: 2011-06-23 17:04+0000\n"
 "X-Generator: Launchpad (build 13265)\n"
 
-#: backends/session/util/locales.py:25 samsung-tools-preferences.py:410
+#: backends/session/util/locales.py:25 samsung-tools-preferences.py:409
+#, fuzzy
 msgid "Backlight"
-msgstr ""
+msgstr "बेकलाईट:"
 
 #: backends/session/util/locales.py:26
+#, fuzzy
 msgid "Backlight is enabled"
-msgstr ""
+msgstr "वायरलेस संचार शुरू है"
 
 #: backends/session/util/locales.py:27
+#, fuzzy
 msgid "Backlight is disabled"
-msgstr ""
+msgstr "वायरलेस संचार बन्द है"
 
 #: backends/session/util/locales.py:28
+#, fuzzy
 msgid "Backlight enabled"
-msgstr ""
+msgstr "बेकलाईट:"
 
 #: backends/session/util/locales.py:29
+#, fuzzy
 msgid "Backlight disabled"
-msgstr ""
+msgstr "बेकलाईट:"
 
 #: backends/session/util/locales.py:30
+#, fuzzy
 msgid "Backlight cannot be enabled"
-msgstr ""
+msgstr "वायरलेस शुरू नही किया जा सकता"
 
 #: backends/session/util/locales.py:31
+#, fuzzy
 msgid "Backlight cannot be disabled"
-msgstr ""
+msgstr "वायरलेस बन्द नही किया जा सकता"
 
 #: backends/session/util/locales.py:32
 msgid "Backlight cannot be toggled"
 msgstr ""
 
-#: backends/session/util/locales.py:34 samsung-tools-preferences.py:419
+#: backends/session/util/locales.py:34 samsung-tools-preferences.py:418
+#, fuzzy
 msgid "Bluetooth"
-msgstr ""
+msgstr "बलूटुथ:"
 
 #: backends/session/util/locales.py:35
+#, fuzzy
 msgid "Bluetooth is enabled"
-msgstr ""
+msgstr "वायरलेस संचार शुरू है"
 
 #: backends/session/util/locales.py:36
+#, fuzzy
 msgid "Bluetooth is disabled"
-msgstr ""
+msgstr "वायरलेस संचार बन्द है"
 
 #: backends/session/util/locales.py:37
+#, fuzzy
 msgid "Bluetooth enabled"
-msgstr ""
+msgstr "बलूटुथ:"
 
 #: backends/session/util/locales.py:38
+#, fuzzy
 msgid "Bluetooth disabled"
-msgstr ""
+msgstr "बलूटुथ:"
 
 #: backends/session/util/locales.py:39
+#, fuzzy
 msgid "Bluetooth cannot be enabled"
-msgstr ""
+msgstr "वायरलेस शुरू नही किया जा सकता"
 
 #: backends/session/util/locales.py:40
+#, fuzzy
 msgid "Bluetooth cannot be disabled"
-msgstr ""
+msgstr "वायरलेस बन्द नही किया जा सकता"
 
 #: backends/session/util/locales.py:41
+#, fuzzy
 msgid "Bluetooth cannot be toggled"
-msgstr ""
+msgstr "वायरलेस शुरू नही किया जा सकता"
 
 #: backends/session/util/locales.py:42
+#, fuzzy
 msgid "Bluetooth control is not available"
-msgstr ""
+msgstr "वायरलेस नियंत्रित नही किया जा सकता"
 
-#: backends/session/util/locales.py:44 samsung-tools-preferences.py:428
+#: backends/session/util/locales.py:44 samsung-tools-preferences.py:427
 msgid "CPU fan"
 msgstr ""
 
@@ -115,46 +131,55 @@ msgid "Cannot get fan mode"
 msgstr ""
 
 #: backends/session/util/locales.py:51
+#, fuzzy
 msgid "CPU fan control is not available"
-msgstr ""
+msgstr "वायरलेस नियंत्रित नही किया जा सकता"
 
-#: backends/session/util/locales.py:53 samsung-tools-preferences.py:437
+#: backends/session/util/locales.py:53 samsung-tools-preferences.py:436
 msgid "Webcam"
 msgstr "वेबकैम"
 
 #: backends/session/util/locales.py:54
+#, fuzzy
 msgid "Webcam is enabled"
-msgstr ""
+msgstr "वायरलेस संचार शुरू है"
 
 #: backends/session/util/locales.py:55
+#, fuzzy
 msgid "Webcam is disabled"
-msgstr ""
+msgstr "वायरलेस संचार बन्द है"
 
 #: backends/session/util/locales.py:56
+#, fuzzy
 msgid "Webcam enabled"
-msgstr ""
+msgstr "वायरलेस संचार शुरू"
 
 #: backends/session/util/locales.py:57
+#, fuzzy
 msgid "Webcam disabled"
-msgstr ""
+msgstr "वायरलेस संचार बन्द"
 
 #: backends/session/util/locales.py:58
+#, fuzzy
 msgid "Webcam cannot be enabled"
-msgstr ""
+msgstr "वायरलेस शुरू नही किया जा सकता"
 
 #: backends/session/util/locales.py:59
+#, fuzzy
 msgid "Webcam cannot be disabled"
-msgstr ""
+msgstr "वायरलेस बन्द नही किया जा सकता"
 
 #: backends/session/util/locales.py:60
+#, fuzzy
 msgid "Webcam cannot be toggled"
-msgstr ""
+msgstr "वायरलेस शुरू नही किया जा सकता"
 
 #: backends/session/util/locales.py:61
+#, fuzzy
 msgid "Webcam control is not available"
-msgstr ""
+msgstr "वायरलेस नियंत्रित नही किया जा सकता"
 
-#: backends/session/util/locales.py:63 samsung-tools-preferences.py:446
+#: backends/session/util/locales.py:63 samsung-tools-preferences.py:445
 msgid "Wireless"
 msgstr "वायरलेस"
 
@@ -183,8 +208,9 @@ msgid "Wireless cannot be disabled"
 msgstr "वायरलेस बन्द नही किया जा सकता"
 
 #: backends/session/util/locales.py:70
+#, fuzzy
 msgid "Wireless cannot be toggled"
-msgstr ""
+msgstr "वायरलेस शुरू नही किया जा सकता"
 
 #: backends/session/util/locales.py:71
 msgid "Wireless control is not available"
@@ -199,16 +225,19 @@ msgid "Bluetooth control: unable to connect to session service!"
 msgstr "बलूटुथ नियंत्रण: सैशन सर्विस से संंपर्क नही!"
 
 #: samsung-tools.py:245
+#, fuzzy
 msgid "CPU fan control: unable to connect to session service!"
-msgstr ""
+msgstr "सी पी यू नियंत्रण: सैशन सर्विस से संंपर्क नही!"
 
 #: samsung-tools.py:395
+#, fuzzy
 msgid "Webcam control: unable to connect to session service!"
-msgstr ""
+msgstr "सी पी यू नियंत्रण: सैशन सर्विस से संंपर्क नही!"
 
 #: samsung-tools.py:497
+#, fuzzy
 msgid "Wireless control: unable to connect to session service!"
-msgstr ""
+msgstr "सी पी यू नियंत्रण: सैशन सर्विस से संंपर्क नही!"
 
 #: samsung-tools.py:585
 msgid "Samsung Tools - Command Line Utility"
@@ -242,16 +271,19 @@ msgid "CPU fan:"
 msgstr ""
 
 #: samsung-tools.py:598 po/samsung-tools-preferences.glade.h:36
+#, fuzzy
 msgid "Webcam:"
-msgstr ""
+msgstr "वेबकैम"
 
 #: samsung-tools.py:601 po/samsung-tools-preferences.glade.h:37
+#, fuzzy
 msgid "Wireless:"
-msgstr ""
+msgstr "वायरलेस"
 
 #: samsung-tools.py:605
+#, fuzzy
 msgid "Other options:"
-msgstr ""
+msgstr "विकल्प"
 
 #: samsung-tools.py:606
 msgid "Show status for all devices."
@@ -278,8 +310,9 @@ msgid "Examples of use:"
 msgstr ""
 
 #: samsung-tools.py:613
+#, fuzzy
 msgid " - Toggle backlight:"
-msgstr ""
+msgstr "बेकलाईट:"
 
 #: samsung-tools.py:616
 msgid " - Toggle wireless and set CPU fan mode to 'silent':"
@@ -293,7 +326,7 @@ msgstr ""
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr ""
 
-#: samsung-tools.py:627 samsung-tools-preferences.py:1044
+#: samsung-tools.py:627 samsung-tools-preferences.py:1055
 msgid "Released under GPLv3 license"
 msgstr ""
 
@@ -322,8 +355,9 @@ msgid "Session service stopped"
 msgstr ""
 
 #: samsung-tools.py:731
+#, fuzzy
 msgid "Cannot stop session service"
-msgstr ""
+msgstr "सी पी यू नियंत्रण: सैशन सर्विस से संंपर्क नही!"
 
 #: samsung-tools.py:741
 msgid "System service stopped"
@@ -333,42 +367,44 @@ msgstr ""
 msgid "Cannot stop system service"
 msgstr ""
 
-#: samsung-tools-preferences.py:80
+#: samsung-tools-preferences.py:79
 msgid "Please press the new hotkey"
 msgstr ""
 
-#: samsung-tools-preferences.py:122
+#: samsung-tools-preferences.py:121
 msgid "None"
 msgstr ""
 
-#: samsung-tools-preferences.py:177 samsung-tools-preferences.py:246
-#: samsung-tools-preferences.py:341 samsung-tools-preferences.py:353
-#: samsung-tools-preferences.py:700 samsung-tools-preferences.py:712
-#: samsung-tools-preferences.py:724
+#: samsung-tools-preferences.py:176 samsung-tools-preferences.py:245
+#: samsung-tools-preferences.py:340 samsung-tools-preferences.py:352
+#: samsung-tools-preferences.py:705 samsung-tools-preferences.py:717
+#: samsung-tools-preferences.py:729
+#, fuzzy
 msgid "Unable to connect to system service!"
-msgstr ""
+msgstr "सी पी यू नियंत्रण: सैशन सर्विस से संंपर्क नही!"
 
-#: samsung-tools-preferences.py:365
+#: samsung-tools-preferences.py:364
 msgid "Confirm"
 msgstr ""
 
-#: samsung-tools-preferences.py:366
+#: samsung-tools-preferences.py:365
 msgid "Apply the new VIDs?"
 msgstr ""
 
-#: samsung-tools-preferences.py:622
+#: samsung-tools-preferences.py:621
 msgid "You need a PHC enabled kernel to use this feature"
 msgstr ""
 
-#: samsung-tools-preferences.py:640
+#: samsung-tools-preferences.py:645
+#, fuzzy
 msgid "Unable to connect to session service!"
-msgstr ""
+msgstr "सी पी यू नियंत्रण: सैशन सर्विस से संंपर्क नही!"
 
-#: samsung-tools-preferences.py:979
+#: samsung-tools-preferences.py:984
 msgid "Caution!"
 msgstr ""
 
-#: samsung-tools-preferences.py:980
+#: samsung-tools-preferences.py:985
 msgid ""
 "CPU undervolting can lead to significant gains in terms of power energy "
 "saving, however <b>IT IS A RISKY PRACTICE</b> that might result in "
@@ -598,6 +634,3 @@ msgstr ""
 #: po/samsung-tools-session-service.desktop.in.h:1
 msgid "Start the session service"
 msgstr ""
-
-#~ msgid "CPU control: unable to connect to session service!"
-#~ msgstr "सी पी यू नियंत्रण: सैशन सर्विस से संंपर्क नही!"

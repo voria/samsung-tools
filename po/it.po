@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-12 17:23+0200\n"
+"POT-Creation-Date: 2011-11-22 14:28+0100\n"
 "PO-Revision-Date: 2011-10-12 17:24+0200\n"
 "Last-Translator: Fortunato Ventre (voRia) <vorione@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Generator: Lokalize 1.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: backends/session/util/locales.py:25 samsung-tools-preferences.py:410
+#: backends/session/util/locales.py:25 samsung-tools-preferences.py:409
 msgid "Backlight"
 msgstr "Retroilluminazione"
 
@@ -50,7 +50,7 @@ msgstr "La retroilluminazione non può essere disattivata"
 msgid "Backlight cannot be toggled"
 msgstr "La retroilluminazione non può essere commutata"
 
-#: backends/session/util/locales.py:34 samsung-tools-preferences.py:419
+#: backends/session/util/locales.py:34 samsung-tools-preferences.py:418
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
@@ -86,7 +86,7 @@ msgstr "Il Bluetooth non può essere commutato"
 msgid "Bluetooth control is not available"
 msgstr "Il controllo Bluetooth non è disponibile"
 
-#: backends/session/util/locales.py:44 samsung-tools-preferences.py:428
+#: backends/session/util/locales.py:44 samsung-tools-preferences.py:427
 msgid "CPU fan"
 msgstr "Ventola CPU"
 
@@ -118,7 +118,7 @@ msgstr "Impossibile recuperare la modalità della ventola"
 msgid "CPU fan control is not available"
 msgstr "Il controllo della ventola della CPU non è disponibile"
 
-#: backends/session/util/locales.py:53 samsung-tools-preferences.py:437
+#: backends/session/util/locales.py:53 samsung-tools-preferences.py:436
 msgid "Webcam"
 msgstr "Webcam"
 
@@ -154,7 +154,7 @@ msgstr "La webcam non può essere commutata"
 msgid "Webcam control is not available"
 msgstr "Il controllo webcam non è disponibile"
 
-#: backends/session/util/locales.py:63 samsung-tools-preferences.py:446
+#: backends/session/util/locales.py:63 samsung-tools-preferences.py:445
 msgid "Wireless"
 msgstr "Rete senza fili"
 
@@ -299,7 +299,7 @@ msgstr " - Disattiva il Bluetooth, la webcam e la rete senza fili:"
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Per maggiori informazioni, visita il forum 'Linux On My Samsung':"
 
-#: samsung-tools.py:627 samsung-tools-preferences.py:1044
+#: samsung-tools.py:627 samsung-tools-preferences.py:1055
 msgid "Released under GPLv3 license"
 msgstr "Rilasciato con licenza GPLv3"
 
@@ -340,43 +340,43 @@ msgstr "Servizio di sistema fermato"
 msgid "Cannot stop system service"
 msgstr "Impossibile fermare il servizio di sistema"
 
-#: samsung-tools-preferences.py:80
+#: samsung-tools-preferences.py:79
 msgid "Please press the new hotkey"
 msgstr "Premere la nuova combinazione di tasti"
 
-#: samsung-tools-preferences.py:122
+#: samsung-tools-preferences.py:121
 msgid "None"
 msgstr "Nessuno"
 
-#: samsung-tools-preferences.py:177 samsung-tools-preferences.py:246
-#: samsung-tools-preferences.py:341 samsung-tools-preferences.py:353
-#: samsung-tools-preferences.py:700 samsung-tools-preferences.py:712
-#: samsung-tools-preferences.py:724
+#: samsung-tools-preferences.py:176 samsung-tools-preferences.py:245
+#: samsung-tools-preferences.py:340 samsung-tools-preferences.py:352
+#: samsung-tools-preferences.py:705 samsung-tools-preferences.py:717
+#: samsung-tools-preferences.py:729
 msgid "Unable to connect to system service!"
 msgstr "Impossibile connettersi al servizio di sistema!"
 
-#: samsung-tools-preferences.py:365
+#: samsung-tools-preferences.py:364
 msgid "Confirm"
 msgstr "Conferma"
 
-#: samsung-tools-preferences.py:366
+#: samsung-tools-preferences.py:365
 msgid "Apply the new VIDs?"
 msgstr "Applicare i nuovi VID?"
 
-#: samsung-tools-preferences.py:622
+#: samsung-tools-preferences.py:621
 msgid "You need a PHC enabled kernel to use this feature"
 msgstr ""
 "Per utilizzare questa caratteristica è necessario un kernel abilitato PHC"
 
-#: samsung-tools-preferences.py:640
+#: samsung-tools-preferences.py:645
 msgid "Unable to connect to session service!"
 msgstr "Impossibile connettersi al servizio di sessione!"
 
-#: samsung-tools-preferences.py:979
+#: samsung-tools-preferences.py:984
 msgid "Caution!"
 msgstr "Cautela!"
 
-#: samsung-tools-preferences.py:980
+#: samsung-tools-preferences.py:985
 msgid ""
 "CPU undervolting can lead to significant gains in terms of power energy "
 "saving, however <b>IT IS A RISKY PRACTICE</b> that might result in "

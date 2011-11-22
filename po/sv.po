@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-12 17:23+0200\n"
+"POT-Creation-Date: 2011-11-22 14:28+0100\n"
 "PO-Revision-Date: 2011-10-12 18:30+0200\n"
 "Last-Translator: Fortunato Ventre (voRia) <vorione@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-it@kde.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Generator: Lokalize 1.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: backends/session/util/locales.py:25 samsung-tools-preferences.py:410
+#: backends/session/util/locales.py:25 samsung-tools-preferences.py:409
 msgid "Backlight"
 msgstr "Skärmljus"
 
@@ -52,7 +52,7 @@ msgstr "Skärmljus kan inte inaktiveras"
 msgid "Backlight cannot be toggled"
 msgstr "Skärmljus kan inte ändras"
 
-#: backends/session/util/locales.py:34 samsung-tools-preferences.py:419
+#: backends/session/util/locales.py:34 samsung-tools-preferences.py:418
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
@@ -88,7 +88,7 @@ msgstr "Bluetoothstatus kan inte ändras"
 msgid "Bluetooth control is not available"
 msgstr "Bluetooth-kontroll är inte tillgängligt"
 
-#: backends/session/util/locales.py:44 samsung-tools-preferences.py:428
+#: backends/session/util/locales.py:44 samsung-tools-preferences.py:427
 msgid "CPU fan"
 msgstr "CPU-fläkt"
 
@@ -120,7 +120,7 @@ msgstr "Kan inte läsa fläktläge"
 msgid "CPU fan control is not available"
 msgstr "CPU-fläktkontroll är inte tillgänglig"
 
-#: backends/session/util/locales.py:53 samsung-tools-preferences.py:437
+#: backends/session/util/locales.py:53 samsung-tools-preferences.py:436
 msgid "Webcam"
 msgstr "Webbkamera"
 
@@ -156,7 +156,7 @@ msgstr "Kan inte ändra läge på webbkameran"
 msgid "Webcam control is not available"
 msgstr "Webbkamerakontroll inte tillgänglig"
 
-#: backends/session/util/locales.py:63 samsung-tools-preferences.py:446
+#: backends/session/util/locales.py:63 samsung-tools-preferences.py:445
 msgid "Wireless"
 msgstr "Trådlöst nätverk"
 
@@ -295,7 +295,7 @@ msgstr " - Inaktivera bluetooth, webbkamera och det trådlösa nätverket:"
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "För mer information, gå till 'Linux On My Samsung'-forumet:"
 
-#: samsung-tools.py:627 samsung-tools-preferences.py:1044
+#: samsung-tools.py:627 samsung-tools-preferences.py:1055
 msgid "Released under GPLv3 license"
 msgstr "Publicerat under GPLv3-licensen"
 
@@ -335,42 +335,42 @@ msgstr "Systemservice stoppad"
 msgid "Cannot stop system service"
 msgstr "Kan inte stoppa systemservice"
 
-#: samsung-tools-preferences.py:80
+#: samsung-tools-preferences.py:79
 msgid "Please press the new hotkey"
 msgstr "Tryck in en ny knapp för kortkommandot"
 
-#: samsung-tools-preferences.py:122
+#: samsung-tools-preferences.py:121
 msgid "None"
 msgstr "Ingen"
 
-#: samsung-tools-preferences.py:177 samsung-tools-preferences.py:246
-#: samsung-tools-preferences.py:341 samsung-tools-preferences.py:353
-#: samsung-tools-preferences.py:700 samsung-tools-preferences.py:712
-#: samsung-tools-preferences.py:724
+#: samsung-tools-preferences.py:176 samsung-tools-preferences.py:245
+#: samsung-tools-preferences.py:340 samsung-tools-preferences.py:352
+#: samsung-tools-preferences.py:705 samsung-tools-preferences.py:717
+#: samsung-tools-preferences.py:729
 msgid "Unable to connect to system service!"
 msgstr "Kan inte ansluta till systemtjänsten!"
 
-#: samsung-tools-preferences.py:365
+#: samsung-tools-preferences.py:364
 msgid "Confirm"
 msgstr "Bekräfta"
 
-#: samsung-tools-preferences.py:366
+#: samsung-tools-preferences.py:365
 msgid "Apply the new VIDs?"
 msgstr "Använde de nya VID:erna?"
 
-#: samsung-tools-preferences.py:622
+#: samsung-tools-preferences.py:621
 msgid "You need a PHC enabled kernel to use this feature"
 msgstr "Du behöver en PHC-aktiverad kernel för att använda denna funktion"
 
-#: samsung-tools-preferences.py:640
+#: samsung-tools-preferences.py:645
 msgid "Unable to connect to session service!"
 msgstr "Kan inte ansluta till systemtjänsten!"
 
-#: samsung-tools-preferences.py:979
+#: samsung-tools-preferences.py:984
 msgid "Caution!"
 msgstr "Försiktigt!"
 
-#: samsung-tools-preferences.py:980
+#: samsung-tools-preferences.py:985
 msgid ""
 "CPU undervolting can lead to significant gains in terms of power energy "
 "saving, however <b>IT IS A RISKY PRACTICE</b> that might result in "
@@ -407,8 +407,9 @@ msgid "Advanced power management"
 msgstr "Avancerad energisparhantering"
 
 #: po/samsung-tools-preferences.glade.h:7
+#, fuzzy
 msgid "CPU undervolting..."
-msgstr ""
+msgstr "CPU-undervoltning"
 
 #: po/samsung-tools-preferences.glade.h:8
 msgid "Click here to disable the hotkey"
@@ -429,8 +430,9 @@ msgstr "Ställ in kernelparametrar"
 
 #: po/samsung-tools-preferences.glade.h:12
 #: po/samsung-tools-preferences-power-management.glade.h:1
+#, fuzzy
 msgid "Configure power management"
-msgstr ""
+msgstr "Avancerad energisparhantering"
 
 #: po/samsung-tools-preferences.glade.h:13
 msgid "Disabled"
@@ -469,8 +471,9 @@ msgid "Hotkey used for wireless control"
 msgstr "Genväg för trådlöst nätverk"
 
 #: po/samsung-tools-preferences.glade.h:22
+#, fuzzy
 msgid "Kernel parameters..."
-msgstr ""
+msgstr "Ställ in kernelparametrar"
 
 #: po/samsung-tools-preferences.glade.h:23
 msgid "Last status"
@@ -481,12 +484,14 @@ msgid "Normal"
 msgstr "Normalt"
 
 #: po/samsung-tools-preferences.glade.h:25
+#, fuzzy
 msgid "Overclock"
-msgstr ""
+msgstr "Fläktläge: overclock"
 
 #: po/samsung-tools-preferences.glade.h:26
+#, fuzzy
 msgid "Power management..."
-msgstr ""
+msgstr "Avancerad energisparhantering"
 
 #: po/samsung-tools-preferences.glade.h:28
 msgid "Session service"
@@ -586,22 +591,27 @@ msgid "Set the new VIDs automatically at boot"
 msgstr "Ställ in de nya VIDsen automatiskt vid start."
 
 #: po/samsung-tools-preferences-power-management.glade.h:2
+#, fuzzy
 msgid "Devices power management"
-msgstr ""
+msgstr "Avancerad energisparhantering"
 
 #: po/samsung-tools-preferences-power-management.glade.h:3
+#, fuzzy
 msgid "USB autosuspend"
-msgstr ""
+msgstr "Aktivera USB autoavstängning"
 
 #: po/samsung-tools-preferences-power-management.glade.h:4
 msgid "VM writeback time"
 msgstr ""
 
 #: po/samsung-tools-preferences-power-management.glade.h:5
+#, fuzzy
 msgid ""
 "When enabled, all the devices will automatically enter power save mode when "
 "needed."
 msgstr ""
+"Om du aktiverar detta alternativ kommer 'laptop mode tools' automatiskt "
+"ställa in strömsparhanteringen på Intel HDA ljudchip."
 
 #: po/samsung-tools-preferences-power-management.glade.h:6
 msgid ""
@@ -683,13 +693,6 @@ msgstr "Starta sessionstjänsten"
 #~ "den. Det här tvingar porten att stänga av vid energisparläge."
 
 #~ msgid ""
-#~ "If you enable this option, 'laptop mode tools' will automatically set the "
-#~ "powersave mode of Intel HDA audio chipsets."
-#~ msgstr ""
-#~ "Om du aktiverar detta alternativ kommer 'laptop mode tools' automatiskt "
-#~ "ställa in strömsparhanteringen på Intel HDA ljudchip."
-
-#~ msgid ""
 #~ "If you enable this option, 'laptop mode tools' will automatically enable "
 #~ "the link power management mode of Intel AHCI compliant SATA chipsets."
 #~ msgstr ""
@@ -723,9 +726,6 @@ msgstr "Starta sessionstjänsten"
 
 #~ msgid "Control video output settings"
 #~ msgstr "Kontrollera videoanslutningsalternativ"
-
-#~ msgid "Enable USB autosuspend"
-#~ msgstr "Aktivera USB autoavstängning"
 
 #~ msgid "Control Linux scheduler"
 #~ msgstr "Kontrollera Linux schemaläggare"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-10-12 17:23+0200\n"
+"POT-Creation-Date: 2011-11-22 14:28+0100\n"
 "PO-Revision-Date: 2011-10-12 18:31+0200\n"
 "Last-Translator: Fortunato Ventre (voRia) <vorione@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Generator: Lokalize 1.2\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: backends/session/util/locales.py:25 samsung-tools-preferences.py:410
+#: backends/session/util/locales.py:25 samsung-tools-preferences.py:409
 msgid "Backlight"
 msgstr "Hintergrundbeleuchtung"
 
@@ -50,7 +50,7 @@ msgstr "Hintergrundbeleuchtung kann nicht abgeschaltet werden"
 msgid "Backlight cannot be toggled"
 msgstr "Hintergrundbeleuchtung kann nicht ein-/augeschaltet werden"
 
-#: backends/session/util/locales.py:34 samsung-tools-preferences.py:419
+#: backends/session/util/locales.py:34 samsung-tools-preferences.py:418
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
@@ -86,7 +86,7 @@ msgstr "Bluetooth kann nicht ein-/ausgeschaltet werden"
 msgid "Bluetooth control is not available"
 msgstr "Bluetooth-Steuerung ist nicht verfügbar"
 
-#: backends/session/util/locales.py:44 samsung-tools-preferences.py:428
+#: backends/session/util/locales.py:44 samsung-tools-preferences.py:427
 msgid "CPU fan"
 msgstr "CPU-Lüfter"
 
@@ -118,7 +118,7 @@ msgstr "Lüftermodus kann nicht ermittelt werden"
 msgid "CPU fan control is not available"
 msgstr "CPU-Lüftersteuerung ist nicht verfügbar"
 
-#: backends/session/util/locales.py:53 samsung-tools-preferences.py:437
+#: backends/session/util/locales.py:53 samsung-tools-preferences.py:436
 msgid "Webcam"
 msgstr "Webcam"
 
@@ -154,7 +154,7 @@ msgstr "Webcam kann nicht ein-/ausgeschaltet werden"
 msgid "Webcam control is not available"
 msgstr "Webcam-Steuerung nicht verfügbar"
 
-#: backends/session/util/locales.py:63 samsung-tools-preferences.py:446
+#: backends/session/util/locales.py:63 samsung-tools-preferences.py:445
 msgid "Wireless"
 msgstr "WLAN-Karte"
 
@@ -298,7 +298,7 @@ msgstr ""
 "Für weitere Informationen, besuche doch das Internetforum \"Linux On My "
 "Samsung\"."
 
-#: samsung-tools.py:627 samsung-tools-preferences.py:1044
+#: samsung-tools.py:627 samsung-tools-preferences.py:1055
 msgid "Released under GPLv3 license"
 msgstr "Veröffentlicht unter der GPLv3-Lizenz"
 
@@ -339,43 +339,43 @@ msgstr "Systemdienst beendet"
 msgid "Cannot stop system service"
 msgstr "Kann Systemdienst nicht beenden"
 
-#: samsung-tools-preferences.py:80
+#: samsung-tools-preferences.py:79
 msgid "Please press the new hotkey"
 msgstr "Bitte drücke die neue Tastenkombination"
 
-#: samsung-tools-preferences.py:122
+#: samsung-tools-preferences.py:121
 msgid "None"
 msgstr "Keine"
 
-#: samsung-tools-preferences.py:177 samsung-tools-preferences.py:246
-#: samsung-tools-preferences.py:341 samsung-tools-preferences.py:353
-#: samsung-tools-preferences.py:700 samsung-tools-preferences.py:712
-#: samsung-tools-preferences.py:724
+#: samsung-tools-preferences.py:176 samsung-tools-preferences.py:245
+#: samsung-tools-preferences.py:340 samsung-tools-preferences.py:352
+#: samsung-tools-preferences.py:705 samsung-tools-preferences.py:717
+#: samsung-tools-preferences.py:729
 msgid "Unable to connect to system service!"
 msgstr "Kann nicht mit Systemdienst verbinden"
 
-#: samsung-tools-preferences.py:365
+#: samsung-tools-preferences.py:364
 msgid "Confirm"
 msgstr "Bestätige"
 
-#: samsung-tools-preferences.py:366
+#: samsung-tools-preferences.py:365
 msgid "Apply the new VIDs?"
 msgstr "Die neuen  VIDs annehmen?"
 
-#: samsung-tools-preferences.py:622
+#: samsung-tools-preferences.py:621
 msgid "You need a PHC enabled kernel to use this feature"
 msgstr ""
 "In Ihrem Kernel muss PHC aktiviert sein, um diese Funktion nutzen zu können."
 
-#: samsung-tools-preferences.py:640
+#: samsung-tools-preferences.py:645
 msgid "Unable to connect to session service!"
 msgstr "Kann nicht mit Sitzungsdienst verbinden"
 
-#: samsung-tools-preferences.py:979
+#: samsung-tools-preferences.py:984
 msgid "Caution!"
 msgstr "Achtung!"
 
-#: samsung-tools-preferences.py:980
+#: samsung-tools-preferences.py:985
 msgid ""
 "CPU undervolting can lead to significant gains in terms of power energy "
 "saving, however <b>IT IS A RISKY PRACTICE</b> that might result in "
@@ -412,8 +412,9 @@ msgid "Advanced power management"
 msgstr "Erweitertes Energie-Management"
 
 #: po/samsung-tools-preferences.glade.h:7
+#, fuzzy
 msgid "CPU undervolting..."
-msgstr ""
+msgstr "Absenken der CPU-Spannung (Undervolting)"
 
 #: po/samsung-tools-preferences.glade.h:8
 msgid "Click here to disable the hotkey"
@@ -486,8 +487,9 @@ msgid "Normal"
 msgstr "Normal"
 
 #: po/samsung-tools-preferences.glade.h:25
+#, fuzzy
 msgid "Overclock"
-msgstr ""
+msgstr "Lüftermodus: Overclock"
 
 #: po/samsung-tools-preferences.glade.h:26
 msgid "Power management..."
@@ -596,22 +598,27 @@ msgid "Set the new VIDs automatically at boot"
 msgstr "Setze die neuen VIDs automatisch während des Starts"
 
 #: po/samsung-tools-preferences-power-management.glade.h:2
+#, fuzzy
 msgid "Devices power management"
-msgstr ""
+msgstr "Erweitertes Energie-Management"
 
 #: po/samsung-tools-preferences-power-management.glade.h:3
+#, fuzzy
 msgid "USB autosuspend"
-msgstr ""
+msgstr "Automatisches Ausschalten ungenutzter USB-Ports einschalten"
 
 #: po/samsung-tools-preferences-power-management.glade.h:4
 msgid "VM writeback time"
 msgstr ""
 
 #: po/samsung-tools-preferences-power-management.glade.h:5
+#, fuzzy
 msgid ""
 "When enabled, all the devices will automatically enter power save mode when "
 "needed."
 msgstr ""
+"Wenn Sie diese Option aktivieren, wird \"laptop mode tools\" automatisch den "
+"Energiesparmodus für die Soundkarte Intel HDA Audio anwenden."
 
 #: po/samsung-tools-preferences-power-management.glade.h:6
 msgid ""
@@ -794,13 +801,6 @@ msgstr "Sitzungsdienst starten"
 #~ "Verhindern solcher Zugriffe spart Unmengen an Energie ein."
 
 #~ msgid ""
-#~ "If you enable this option, 'laptop mode tools' will automatically set the "
-#~ "powersave mode of Intel HDA audio chipsets."
-#~ msgstr ""
-#~ "Wenn Sie diese Option aktivieren, wird \"laptop mode tools\" automatisch "
-#~ "den Energiesparmodus für die Soundkarte Intel HDA Audio anwenden."
-
-#~ msgid ""
 #~ "If you enable this option, 'laptop mode tools' will automatically enable "
 #~ "the link power management mode of Intel AHCI compliant SATA chipsets."
 #~ msgstr ""
@@ -816,9 +816,6 @@ msgstr "Sitzungsdienst starten"
 
 #~ msgid "Control video output settings"
 #~ msgstr "Kontrolliere Einstellungen des Video-Ausgangs"
-
-#~ msgid "Enable USB autosuspend"
-#~ msgstr "Automatisches Ausschalten ungenutzter USB-Ports einschalten"
 
 #~ msgid "Control Linux scheduler"
 #~ msgstr "Kontrolliere Linux-Aufgabenplaner"
