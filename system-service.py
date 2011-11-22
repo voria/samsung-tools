@@ -64,8 +64,8 @@ class General(dbus.service.Object):
 	def __set_control_interface(self, interface):
 		try:
 		    file = open(CONTROL_INTERFACE, 'w')
-			file.write(interface)
-			file.close()
+		    file.write(interface)
+		    file.close()
 		except:
 			systemlog.write("ERROR: Can't write to file '" + CONTROL_INTERFACE + "'!")
 			self.Exit()
