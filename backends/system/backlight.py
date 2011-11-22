@@ -89,8 +89,6 @@ class Backlight(dbus.service.Object):
 	def Enable(self, sender = None, conn = None):
 		""" Enable backlight. """
 		""" Return 'True' on success, 'False' otherwise. """
-		if self.IsEnabled():
-			return True
 		if self.method == "esdm":
 			try:
 				with open(ESDM_PATH_BACKLIGHT, 'w') as file:
@@ -127,11 +125,9 @@ class Backlight(dbus.service.Object):
 	def Disable(self, sender = None, conn = None):
 		""" Disable backlight. """
 		""" Return 'True' on success, 'False' otherwise. """
-		if not self.IsEnabled():
-			return True
 		if self.method == "esdm":
 			try:
-				with open(SL_PATH_BACKLIGHT, 'w') as file:
+				with open(ESDM_PATH_BACKLIGHT, 'w') as file:
 					file.write('0')
 				return True
 			except:
