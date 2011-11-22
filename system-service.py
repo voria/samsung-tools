@@ -21,6 +21,7 @@
 
 import os
 import gobject
+import subprocess
 
 import dbus
 import dbus.service

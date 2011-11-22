@@ -23,7 +23,6 @@ import os
 import time
 import gtk
 import gobject
-import subprocess
 import dbus
 
 WORK_DIRECTORY = "/usr/lib/samsung-tools/"

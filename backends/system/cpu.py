@@ -20,7 +20,6 @@
 # <http://www.gnu.org/licenses/gpl.txt>
 
 import os
-import subprocess
 import dbus.service
 
 from backends.globals import *

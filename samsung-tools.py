@@ -703,8 +703,8 @@ def main():
 	# Check if the dbus daemon is running. If not, start it.
 	if "DBUS_SESSION_BUS_ADDRESS" not in os.environ:
 		try:
-			import subprocess
-			p = subprocess.Popen('dbus-launch --exit-with-session', shell = True, stdout = subprocess.PIPE, stderr = subprocess.STDOUT)
+			from subprocess import Popen, PIPE
+			p = Popen('dbus-launch --exit-with-session', shell = True, stdout = PIPE, stderr = STDOUT)
 			for var in p.stdout:
 				sp = var.split('=', 1)
 				os.environ[sp[0]] = sp[1][:-1]

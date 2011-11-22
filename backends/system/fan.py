@@ -22,7 +22,6 @@
 from __future__ import with_statement
 
 import os
-import subprocess
 import dbus.service
 
 from backends.globals import *
