@@ -31,11 +31,16 @@ class Backlight(dbus.service.Object):
 	""" Control backlight """
 	def __init__(self, conn = None, object_path = None, bus_name = None):
 		dbus.service.Object.__init__(self, conn, object_path, bus_name)
+		try:
+			with open(CONTROL_INTERFACE, "r") as file:
+				self.method = file.readline()
+		except:
+			self.method = "none"
 	
 	def __save_status(self, status):
-		""" Save backlight status when CONTROL_INTERFACE == None. """
-		""" If CONTROL_INTERFACE != None, do nothing. """
-		if CONTROL_INTERFACE != None:
+		""" Save backlight status when self.method == 'none'. """
+		""" If self.method != 'none', do nothing. """
+		if self.method != "none":
 			return
 		try:
 			if status == False:
@@ -51,7 +56,7 @@ class Backlight(dbus.service.Object):
 	def IsEnabled(self, sender = None, conn = None):
 		""" Check if backlight is enabled. """
 		""" Return 'True' if enabled, 'False' if disabled. """
-		if CONTROL_INTERFACE == "esdm":
+		if self.method == "esdm":
 			try:
 				with open(ESDM_PATH_BACKLIGHT, 'r') as file:
 					status = int(file.read(1))
@@ -62,7 +67,7 @@ class Backlight(dbus.service.Object):
 			except:
 				systemlog.write("ERROR: 'Backlight.IsEnabled()' - cannot read from '" + ESDM_PATH_BACKLIGHT + "'.")
 				return True
-		elif CONTROL_INTERFACE == "sl":
+		elif self.method == "sl":
 			try:
 				with open(SL_PATH_BACKLIGHT, 'r') as file:
 					status = int(file.read(1))
@@ -73,7 +78,7 @@ class Backlight(dbus.service.Object):
 			except:
 				systemlog.write("ERROR: 'Backlight.IsEnabled()' - cannot read from '" + SL_PATH_BACKLIGHT + "'.")
 				return True
-		else: # CONTROL_INTERFACE == None:
+		else: # self.method == "none":
 			if os.path.exists(LAST_DEVICE_STATUS_BACKLIGHT):
 				return False
 			else:
@@ -86,7 +91,7 @@ class Backlight(dbus.service.Object):
 		""" Return 'True' on success, 'False' otherwise. """
 		if self.IsEnabled():
 			return True
-		if CONTROL_INTERFACE == "esdm":
+		if self.method == "esdm":
 			try:
 				with open(ESDM_PATH_BACKLIGHT, 'w') as file:
 					file.write('1')
@@ -94,7 +99,7 @@ class Backlight(dbus.service.Object):
 			except:
 				systemlog.write("ERROR: 'Backlight.Enable()' - cannot write to '" + ESDM_PATH_BACKLIGHT + "'.")
 				return False
-		elif CONTROL_INTERFACE == "sl":
+		elif self.method == "sl":
 			try:
 				with open(SL_PATH_BACKLIGHT, 'w') as file:
 					file.write('0')
@@ -102,7 +107,7 @@ class Backlight(dbus.service.Object):
 			except:
 				systemlog.write("ERROR: 'Backlight.Enable()' - cannot write to '" + SL_PATH_BACKLIGHT + "'.")
 				return False
-		else: # CONTROL_INTERFACE == None
+		else: # self.method == "none"
 			command = COMMAND_VBETOOL + " dpms on"
 			try:
 				process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
@@ -124,7 +129,7 @@ class Backlight(dbus.service.Object):
 		""" Return 'True' on success, 'False' otherwise. """
 		if not self.IsEnabled():
 			return True
-		if CONTROL_INTERFACE == "esdm":
+		if self.method == "esdm":
 			try:
 				with open(SL_PATH_BACKLIGHT, 'w') as file:
 					file.write('0')
@@ -132,7 +137,7 @@ class Backlight(dbus.service.Object):
 			except:
 				systemlog.write("ERROR: 'Backlight.Disable()' - cannot write to '" + ESDM_PATH_BACKLIGHT + "'.")
 				return False
-		elif CONTROL_INTERFACE == "sl":
+		elif self.method == "sl":
 			try:
 				with open(SL_PATH_BACKLIGHT, 'w') as file:
 					file.write('1')
@@ -140,7 +145,7 @@ class Backlight(dbus.service.Object):
 			except:
 				systemlog.write("ERROR: 'Backlight.Disable()' - cannot write to '" + SL_PATH_BACKLIGHT + "'.")
 				return False
-		else: # CONTROL_INTERFACE == None
+		else: # self.method == "none"
 			command = COMMAND_VBETOOL + " dpms off"
 			try:
 				process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)

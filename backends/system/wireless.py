@@ -33,6 +33,11 @@ class Wireless(dbus.service.Object):
 	""" Control wireless """
 	def __init__(self, conn = None, object_path = None, bus_name = None):
 		dbus.service.Object.__init__(self, conn, object_path, bus_name)
+		try:
+			with open(CONTROL_INTERFACE, "r") as file:
+				self.method = file.readline()
+		except:
+			self.method = "none"
 	
 	def __save_last_status(self, status):
 		""" Save wireless last status. """
@@ -91,7 +96,7 @@ class Wireless(dbus.service.Object):
 		""" Return 'True' if enabled, 'False' if disabled. """
 		if not self.IsAvailable():
 			return False
-		if CONTROL_INTERFACE == "esdm":
+		if self.method == "esdm":
 			try:
 				with open(ESDM_PATH_WIRELESS, 'r') as file:
 					status = int(file.read(1))
@@ -128,7 +133,7 @@ class Wireless(dbus.service.Object):
 		""" Return 'True' on success, 'False' otherwise. """
 		if not self.IsAvailable():
 			return False
-		if CONTROL_INTERFACE == "esdm":
+		if self.method == "esdm":
 			# When 'esdm' interface is enabled, enable wireless through it as the first step
 			try:
 				with open(ESDM_PATH_WIRELESS, 'w') as file:
@@ -170,7 +175,7 @@ class Wireless(dbus.service.Object):
 		except:
 			systemlog.write("ERROR: 'Wireless.Disable()' - COMMAND: '" + command + "' - Exception thrown.")
 			return False
-		if CONTROL_INTERFACE == "esdm":
+		if self.method == "esdm":
 			# If 'esdm' interface is used, disable wireless through it too
 			try:
 				with open(ESDM_PATH_WIRELESS, 'w') as file:

@@ -54,12 +54,21 @@ class General(dbus.service.Object):
 			os.mkdir(LAST_DEVICES_STATUS_DIRECTORY)
 		# Select the interface we are going to use
 		if self.__check_for_esdm_module():
-			CONTROL_INTERFACE = "esdm"
+			self.__set_control_interface("esdm")
 		elif self.__check_for_sl_module():
-			CONTROL_INTERFACE = "sl"
+			self.__set_control_interface("sl")
 		else:
 			systemlog.write("WARNING: 'General.__init__()' - Can't find any usable interface! Many of the functionalities will not work.")
-			CONTROL_INTERFACE = None
+			self.__set_control_interface("none")
+	
+	def __set_control_interface(self, interface):
+		try:
+		    file = open(CONTROL_INTERFACE, 'w')
+			file.write(interface)
+			file.close()
+		except:
+			systemlog.write("ERROR: Can't write to file '" + CONTROL_INTERFACE + "'!")
+			self.Exit()
 	
 	def __check_for_esdm_module(self):
 		""" Check for the 'easy-slow-down-manager' interface. """
