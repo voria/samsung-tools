@@ -1,7 +1,8 @@
-samsung-tools (2.0~ppa1~loms~oneiric~test1) oneiric; urgency=low
+samsung-tools (2.0~ppa1~loms~oneiric~test2) oneiric; urgency=low
 
-  * Use 'samsung-laptop' interface for the backlight and cpu fan
-    control. Drop support for 'easy-slow-down-manager'.
+  * Add support for the 'samsung-laptop' interface.
+    The 'esdm' interface is preferred when the 'easy-slow-down-manager'
+    kernel module is available and can be used.
   * Drop checks for old pm hooks.
   * Update translations.
 
