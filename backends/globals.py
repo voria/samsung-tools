@@ -78,7 +78,7 @@ if os.path.basename(sys.argv[0]) == "system-service.py":
 	from backends.system.util.config import SystemConfig
 	systemconfig = SystemConfig(SYSTEM_CONFIG_FILE)
 	# Control interface
-	CONTROL_INTERFACE = "/etc/samsung-tools/control_interface"
+	CONTROL_INTERFACE = os.path.join(WORK_DIRECTORY, "control_interface")
 	# Last devices' status files
 	LAST_DEVICES_STATUS_DIRECTORY = os.path.join(WORK_DIRECTORY, "devices-status")
 	LAST_DEVICE_STATUS_BACKLIGHT = os.path.join(LAST_DEVICES_STATUS_DIRECTORY, "backlight")
