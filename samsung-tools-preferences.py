@@ -140,6 +140,7 @@ class KeyGrabber(gtk.Button):
 				label = "Fn-F9"
 			if label == "XF86TouchpadToggle":
 				label = "Fn-F10"
+			label = label.replace("Primary", "Control")
 		gtk.Button.set_label(self, label)
 
 class KernelParametersDialog():
