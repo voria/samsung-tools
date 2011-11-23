@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-23 11:26+0100\n"
+"POT-Creation-Date: 2011-11-23 11:43+0100\n"
 "PO-Revision-Date: 2011-11-10 20:12+0000\n"
 "Last-Translator: Stanislas Michalak <stanislas.michalak@live.fr>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -216,124 +216,125 @@ msgstr ""
 "Contrôle du réseau sans fil: impossible de se connecter au service de "
 "session!"
 
-#: samsung-tools.py:585
-msgid "Samsung Tools - Command Line Utility"
+#: samsung-tools.py:586
+#, fuzzy
+msgid "Command Line Utility"
 msgstr "\"Samsung Tools\" - Utilitaire de ligne de commande"
 
-#: samsung-tools.py:587 samsung-tools.py:637
+#: samsung-tools.py:588 samsung-tools.py:638
 #, python-format
 msgid "Usage: %s <interface> <option> ..."
 msgstr "Emploi: %s<interface> <option> ..."
 
-#: samsung-tools.py:589 po/samsung-tools-preferences.glade.h:4
+#: samsung-tools.py:590 po/samsung-tools-preferences.glade.h:4
 msgid "Backlight:"
 msgstr "Rétroéclairage:"
 
-#: samsung-tools.py:590 samsung-tools.py:593 samsung-tools.py:596
-#: samsung-tools.py:599 samsung-tools.py:602
+#: samsung-tools.py:591 samsung-tools.py:594 samsung-tools.py:597
+#: samsung-tools.py:600 samsung-tools.py:603
 msgid "Interface"
 msgstr "Interface"
 
-#: samsung-tools.py:591 samsung-tools.py:594 samsung-tools.py:597
-#: samsung-tools.py:600 samsung-tools.py:603
+#: samsung-tools.py:592 samsung-tools.py:595 samsung-tools.py:598
+#: samsung-tools.py:601 samsung-tools.py:604
 msgid "Options"
 msgstr "Options"
 
-#: samsung-tools.py:592 po/samsung-tools-preferences.glade.h:5
+#: samsung-tools.py:593 po/samsung-tools-preferences.glade.h:5
 msgid "Bluetooth:"
 msgstr "Bluetooth:"
 
-#: samsung-tools.py:595 po/samsung-tools-preferences.glade.h:6
+#: samsung-tools.py:596 po/samsung-tools-preferences.glade.h:6
 msgid "CPU fan:"
 msgstr "Ventilateur processeur"
 
-#: samsung-tools.py:598 po/samsung-tools-preferences.glade.h:38
+#: samsung-tools.py:599 po/samsung-tools-preferences.glade.h:38
 msgid "Webcam:"
 msgstr "Webcam:"
 
-#: samsung-tools.py:601 po/samsung-tools-preferences.glade.h:39
+#: samsung-tools.py:602 po/samsung-tools-preferences.glade.h:39
 msgid "Wireless:"
 msgstr "Réseau sans fil:"
 
-#: samsung-tools.py:605
+#: samsung-tools.py:606
 msgid "Other options:"
 msgstr "Autres options :"
 
-#: samsung-tools.py:606
+#: samsung-tools.py:607
 msgid "Show status for all devices."
 msgstr "Montrer l'état de tous les périphériques"
 
-#: samsung-tools.py:607
+#: samsung-tools.py:608
 msgid "Show graphical notifications."
 msgstr "Afficher les notifications graphiques."
 
-#: samsung-tools.py:608
+#: samsung-tools.py:609
 msgid "Do not print messages on standard output."
 msgstr "Ne pas afficher les messages sur la sortie standard"
 
-#: samsung-tools.py:609
+#: samsung-tools.py:610
 msgid "Show the control interface currently in use."
 msgstr ""
 
-#: samsung-tools.py:610
+#: samsung-tools.py:611
 msgid "Stop the session service."
 msgstr "Arrêter le service de session."
 
-#: samsung-tools.py:611
+#: samsung-tools.py:612
 msgid "Stop the system service."
 msgstr "Arrêter le service système."
 
-#: samsung-tools.py:613
+#: samsung-tools.py:614
 msgid "Examples of use:"
 msgstr "Exemples d'emploi:"
 
-#: samsung-tools.py:614
+#: samsung-tools.py:615
 msgid " - Toggle backlight:"
 msgstr " - Changer l'état du rétroéclairage:"
 
-#: samsung-tools.py:617
+#: samsung-tools.py:618
 msgid " - Toggle wireless and set CPU fan mode to 'silent':"
 msgstr ""
 " - Changer l'état du réseau sans fil et mettre le ventilateur en mode "
 "\"silencieux\""
 
-#: samsung-tools.py:620
+#: samsung-tools.py:621
 msgid " - Disable bluetooth, webcam and wireless:"
 msgstr " - Désactiver le Bluetooth, la webcam et le réseau sans fil:"
 
-#: samsung-tools.py:623
+#: samsung-tools.py:624
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Pour plus d'informations, visitez le forum \"Linux On My Samsung\":"
 
-#: samsung-tools.py:628 samsung-tools-preferences.py:1064
+#: samsung-tools.py:629 samsung-tools-preferences.py:1064
 msgid "Released under GPLv3 license"
 msgstr "Publié sous licence GPLv3"
 
-#: samsung-tools.py:633
+#: samsung-tools.py:634
 msgid "No action(s) specified."
 msgstr "Pas d'action(s) spécifiée(s)"
 
-#: samsung-tools.py:634 samsung-tools.py:705
+#: samsung-tools.py:635 samsung-tools.py:706
 msgid "Use --help for instructions."
 msgstr "Utiliser --help pour obtenir de l'aide"
 
-#: samsung-tools.py:700
+#: samsung-tools.py:701
 msgid "This program is intended to be used only by non-privileged users."
 msgstr "Ce programme doit être exécuté par un utilisateur sans privilèges."
 
-#: samsung-tools.py:704
+#: samsung-tools.py:705
 msgid "Wrong argument(s)."
 msgstr "Mauvais argument(s)"
 
-#: samsung-tools.py:717
+#: samsung-tools.py:718
 msgid "Unable to start a DBus daemon!"
 msgstr "Impossible de démarrer le démon DBus !"
 
-#: samsung-tools.py:732 po/samsung-tools-preferences.glade.h:13
+#: samsung-tools.py:733 po/samsung-tools-preferences.glade.h:13
 msgid "Control interface:"
 msgstr ""
 
-#: samsung-tools.py:738 samsung-tools-preferences.py:121
+#: samsung-tools.py:739 samsung-tools-preferences.py:121
 #: samsung-tools-preferences.py:607 po/samsung-tools-preferences.glade.h:25
 msgid "None"
 msgstr "Aucun"
