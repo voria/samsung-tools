@@ -582,7 +582,8 @@ class Wireless():
 					print WIRELESS_STATUS_DISABLED
 
 def usage(option = None, opt = None, value = None, parser = None):
-	print unicode(_("Samsung Tools - Command Line Utility"), "utf-8")
+	print "Samsung Tools", APP_VERSION, "-",
+	print unicode(_("Command Line Utility"), "utf-8")
 	print
 	print unicode(_("Usage: %s <interface> <option> ...") % os.path.basename(sys.argv[0]), "utf-8")
 	print
