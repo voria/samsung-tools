@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-23 11:43+0100\n"
+"POT-Creation-Date: 2011-11-23 12:50+0100\n"
 "PO-Revision-Date: 2011-10-12 18:30+0200\n"
 "Last-Translator: Fortunato Ventre (voRia) <vorione@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-it@kde.org>\n"
@@ -244,11 +244,11 @@ msgstr "Bluetooth:"
 msgid "CPU fan:"
 msgstr "CPU-fläkt:"
 
-#: samsung-tools.py:599 po/samsung-tools-preferences.glade.h:38
+#: samsung-tools.py:599 po/samsung-tools-preferences.glade.h:37
 msgid "Webcam:"
 msgstr "Webbkamera"
 
-#: samsung-tools.py:602 po/samsung-tools-preferences.glade.h:39
+#: samsung-tools.py:602 po/samsung-tools-preferences.glade.h:38
 msgid "Wireless:"
 msgstr "Trådlöst nätverk:"
 
@@ -300,7 +300,7 @@ msgstr " - Inaktivera bluetooth, webbkamera och det trådlösa nätverket:"
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "För mer information, gå till 'Linux On My Samsung'-forumet:"
 
-#: samsung-tools.py:629 samsung-tools-preferences.py:1064
+#: samsung-tools.py:629 samsung-tools-preferences.py:1066
 msgid "Released under GPLv3 license"
 msgstr "Publicerat under GPLv3-licensen"
 
@@ -328,11 +328,6 @@ msgstr ""
 msgid "Control interface:"
 msgstr ""
 
-#: samsung-tools.py:739 samsung-tools-preferences.py:121
-#: samsung-tools-preferences.py:607 po/samsung-tools-preferences.glade.h:25
-msgid "None"
-msgstr "Ingen"
-
 #: samsung-tools.py:741
 #, fuzzy
 msgid "Control interface: unable to connect to system service!"
@@ -358,6 +353,10 @@ msgstr "Kan inte stoppa systemservice"
 msgid "Please press the new hotkey"
 msgstr "Tryck in en ny knapp för kortkommandot"
 
+#: samsung-tools-preferences.py:121 samsung-tools-preferences.py:607
+msgid "None"
+msgstr "Ingen"
+
 #: samsung-tools-preferences.py:176 samsung-tools-preferences.py:245
 #: samsung-tools-preferences.py:340 samsung-tools-preferences.py:352
 #: samsung-tools-preferences.py:714 samsung-tools-preferences.py:726
@@ -381,11 +380,11 @@ msgstr "Du behöver en PHC-aktiverad kernel för att använda denna funktion"
 msgid "Unable to connect to session service!"
 msgstr "Kan inte ansluta till systemtjänsten!"
 
-#: samsung-tools-preferences.py:993
+#: samsung-tools-preferences.py:995
 msgid "Caution!"
 msgstr "Försiktigt!"
 
-#: samsung-tools-preferences.py:994
+#: samsung-tools-preferences.py:996
 msgid ""
 "CPU undervolting can lead to significant gains in terms of power energy "
 "saving, however <b>IT IS A RISKY PRACTICE</b> that might result in "
@@ -401,7 +400,7 @@ msgstr ""
 "Är du säker på att du vill fortsätta?"
 
 #: po/samsung-tools-preferences.desktop.in.h:1
-#: po/samsung-tools-preferences.glade.h:29
+#: po/samsung-tools-preferences.glade.h:28
 msgid "Samsung Tools Preferences"
 msgstr "Samsung Tools-inställningar"
 
@@ -494,49 +493,49 @@ msgstr "Ställ in kernelparametrar"
 msgid "Last status"
 msgstr "Senaste status"
 
-#: po/samsung-tools-preferences.glade.h:26
+#: po/samsung-tools-preferences.glade.h:25
 msgid "Normal"
 msgstr "Normalt"
 
-#: po/samsung-tools-preferences.glade.h:27
+#: po/samsung-tools-preferences.glade.h:26
 #, fuzzy
 msgid "Overclock"
 msgstr "Fläktläge: overclock"
 
-#: po/samsung-tools-preferences.glade.h:28
+#: po/samsung-tools-preferences.glade.h:27
 #, fuzzy
 msgid "Power management..."
 msgstr "Avancerad energisparhantering"
 
-#: po/samsung-tools-preferences.glade.h:30
+#: po/samsung-tools-preferences.glade.h:29
 msgid "Session service"
 msgstr "Sessionstjänst"
 
-#: po/samsung-tools-preferences.glade.h:31
+#: po/samsung-tools-preferences.glade.h:30
 msgid "Silent"
 msgstr "Tyst"
 
-#: po/samsung-tools-preferences.glade.h:32
+#: po/samsung-tools-preferences.glade.h:31
 msgid "System service"
 msgstr "Systemtjänst"
 
-#: po/samsung-tools-preferences.glade.h:33
+#: po/samsung-tools-preferences.glade.h:32
 msgid "The initial status at boot for Bluetooth"
 msgstr "Status vid start för bluetooth"
 
-#: po/samsung-tools-preferences.glade.h:34
+#: po/samsung-tools-preferences.glade.h:33
 msgid "The initial status at boot for CPU fan"
 msgstr "Status vid start för CPU-fläkt"
 
-#: po/samsung-tools-preferences.glade.h:35
+#: po/samsung-tools-preferences.glade.h:34
 msgid "The initial status at boot for webcam"
 msgstr "Status vid start för webbkamera"
 
-#: po/samsung-tools-preferences.glade.h:36
+#: po/samsung-tools-preferences.glade.h:35
 msgid "The initial status at boot for wireless"
 msgstr "Status för det trådlösa nätverket vid start"
 
-#: po/samsung-tools-preferences.glade.h:37
+#: po/samsung-tools-preferences.glade.h:36
 msgid "Undervolt the CPU in order to save energy"
 msgstr "Undervolta processorn för att spara energi"
 

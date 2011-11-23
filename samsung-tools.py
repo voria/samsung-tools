@@ -736,7 +736,7 @@ def main():
 			elif ci == "sl":
 				print "samsung-laptop"
 			else:
-				print unicode(_("None"), "utf-8")
+				print "-"
 		except:
 			print unicode(_("Control interface: unable to connect to system service!"), "utf-8")
 			pass

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-23 11:43+0100\n"
+"POT-Creation-Date: 2011-11-23 12:50+0100\n"
 "PO-Revision-Date: 2011-10-30 14:03+0000\n"
 "Last-Translator: Виталий <Unknown>\n"
 "Language-Team: Russian <kde-i18n-it@kde.org>\n"
@@ -245,11 +245,11 @@ msgstr "Bluetooth:"
 msgid "CPU fan:"
 msgstr "Охлаждение процессора (CPU):"
 
-#: samsung-tools.py:599 po/samsung-tools-preferences.glade.h:38
+#: samsung-tools.py:599 po/samsung-tools-preferences.glade.h:37
 msgid "Webcam:"
 msgstr "Веб-камера"
 
-#: samsung-tools.py:602 po/samsung-tools-preferences.glade.h:39
+#: samsung-tools.py:602 po/samsung-tools-preferences.glade.h:38
 msgid "Wireless:"
 msgstr "Беспроводная сеть:"
 
@@ -303,7 +303,7 @@ msgstr " - Отключить Bluetooth, Веб-камеру и Беспрово
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Для большей информации, посетите 'Linux On My Samsung' форум:"
 
-#: samsung-tools.py:629 samsung-tools-preferences.py:1064
+#: samsung-tools.py:629 samsung-tools-preferences.py:1066
 msgid "Released under GPLv3 license"
 msgstr "Выпущен под GPLv3 лицензией"
 
@@ -333,11 +333,6 @@ msgstr "Не удается запустить DBus модуль!"
 msgid "Control interface:"
 msgstr ""
 
-#: samsung-tools.py:739 samsung-tools-preferences.py:121
-#: samsung-tools-preferences.py:607 po/samsung-tools-preferences.glade.h:25
-msgid "None"
-msgstr "Нет"
-
 #: samsung-tools.py:741
 #, fuzzy
 msgid "Control interface: unable to connect to system service!"
@@ -363,6 +358,10 @@ msgstr "Невозможно остановить системную служб�
 msgid "Please press the new hotkey"
 msgstr "Пожалуйста нажмите новое сочетание клавиш"
 
+#: samsung-tools-preferences.py:121 samsung-tools-preferences.py:607
+msgid "None"
+msgstr "Нет"
+
 #: samsung-tools-preferences.py:176 samsung-tools-preferences.py:245
 #: samsung-tools-preferences.py:340 samsung-tools-preferences.py:352
 #: samsung-tools-preferences.py:714 samsung-tools-preferences.py:726
@@ -386,11 +385,11 @@ msgstr "Вам нужно ядро с включенным PHC, для испо�
 msgid "Unable to connect to session service!"
 msgstr "Не удается подключиться к службе сессии!"
 
-#: samsung-tools-preferences.py:993
+#: samsung-tools-preferences.py:995
 msgid "Caution!"
 msgstr "Внимание!"
 
-#: samsung-tools-preferences.py:994
+#: samsung-tools-preferences.py:996
 msgid ""
 "CPU undervolting can lead to significant gains in terms of power energy "
 "saving, however <b>IT IS A RISKY PRACTICE</b> that might result in "
@@ -407,7 +406,7 @@ msgstr ""
 "Вы уверены, что хотите продолжить?"
 
 #: po/samsung-tools-preferences.desktop.in.h:1
-#: po/samsung-tools-preferences.glade.h:29
+#: po/samsung-tools-preferences.glade.h:28
 msgid "Samsung Tools Preferences"
 msgstr "Настройки Samsung Tools"
 
@@ -497,47 +496,47 @@ msgstr "Параметры ядра"
 msgid "Last status"
 msgstr "Последнее значение"
 
-#: po/samsung-tools-preferences.glade.h:26
+#: po/samsung-tools-preferences.glade.h:25
 msgid "Normal"
 msgstr "Номальное"
 
-#: po/samsung-tools-preferences.glade.h:27
+#: po/samsung-tools-preferences.glade.h:26
 msgid "Overclock"
 msgstr "Разгон"
 
-#: po/samsung-tools-preferences.glade.h:28
+#: po/samsung-tools-preferences.glade.h:27
 msgid "Power management..."
 msgstr "Управление питанием"
 
-#: po/samsung-tools-preferences.glade.h:30
+#: po/samsung-tools-preferences.glade.h:29
 msgid "Session service"
 msgstr "Служба сессии"
 
-#: po/samsung-tools-preferences.glade.h:31
+#: po/samsung-tools-preferences.glade.h:30
 msgid "Silent"
 msgstr "Бесшумный"
 
-#: po/samsung-tools-preferences.glade.h:32
+#: po/samsung-tools-preferences.glade.h:31
 msgid "System service"
 msgstr "Системная служба"
 
-#: po/samsung-tools-preferences.glade.h:33
+#: po/samsung-tools-preferences.glade.h:32
 msgid "The initial status at boot for Bluetooth"
 msgstr "Исходное состояние Bluetooth при загрузке"
 
-#: po/samsung-tools-preferences.glade.h:34
+#: po/samsung-tools-preferences.glade.h:33
 msgid "The initial status at boot for CPU fan"
 msgstr "Исходное состояние охлаждения CPU при загрузке"
 
-#: po/samsung-tools-preferences.glade.h:35
+#: po/samsung-tools-preferences.glade.h:34
 msgid "The initial status at boot for webcam"
 msgstr "Исходное состояние Веб-камеры при загрузке"
 
-#: po/samsung-tools-preferences.glade.h:36
+#: po/samsung-tools-preferences.glade.h:35
 msgid "The initial status at boot for wireless"
 msgstr "Исходное состояние беспроводной сети при загрузке"
 
-#: po/samsung-tools-preferences.glade.h:37
+#: po/samsung-tools-preferences.glade.h:36
 msgid "Undervolt the CPU in order to save energy"
 msgstr "Понижение напряжения процессора (CPU) для лучшего энергосбережения"
 
