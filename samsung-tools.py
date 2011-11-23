@@ -606,6 +606,7 @@ def usage(option = None, opt = None, value = None, parser = None):
 	print " -a | --status\t\t" + unicode(_("Show status for all devices."), "utf-8")
 	print " -n | --show-notify\t" + unicode(_("Show graphical notifications."), "utf-8")
 	print " -q | --quiet\t\t" + unicode(_("Do not print messages on standard output."), "utf-8")
+	print " -i | --interface\t" + unicode(_("Show the control interface currently in use."), "utf-8")
 	print " -s | --stop-session\t" + unicode(_("Stop the session service."), "utf-8")
 	print " -S | --stop-system\t" + unicode(_("Stop the system service."), "utf-8")
 	print
@@ -666,6 +667,10 @@ def main():
 					action = "store_true",
 					dest = "quiet",
 					default = False)
+	parser.add_option('-i', '--interface',
+					action = "store_true",
+					dest = "interface",
+					default = False)
 	parser.add_option('-s', '--stop-session',
 					action = "store_true",
 					dest = "stopsession",
@@ -690,7 +695,7 @@ def main():
 		options.cpu = "status"
 		options.webcam = "status"
 		options.wireless = "status"
-		
+			
 	if os.getuid() == 0:
 		print unicode(_("This program is intended to be used only by non-privileged users."), "utf-8")
 		sys.exit(1)
@@ -717,6 +722,24 @@ def main():
 	Cpu(options.cpu, options.show_notify).apply()
 	Webcam(options.webcam, options.show_notify).apply()
 	Wireless(options.wireless, options.show_notify).apply()
+	
+	if options.interface == True:
+		try:
+			bus = dbus.SystemBus()
+			proxy = bus.get_object(SYSTEM_INTERFACE_NAME, SYSTEM_OBJECT_PATH_OPTIONS)
+			opts = dbus.Interface(proxy, SYSTEM_INTERFACE_NAME)
+			ci = opts.GetControlInterface()
+			print unicode(_("Control interface:"), "utf-8"),
+			if ci == "esdm":
+				print "easy-slow-down-manager"
+			elif ci == "sl":
+				print "samsung-laptop"
+			else:
+				print unicode(_("None"), "utf-8")
+		except:
+			if not quiet:
+				print unicode(_("Control interface: unable to connect to system service!"), "utf-8")
+			pass
 	
 	if options.stopsession == True:
 		try:

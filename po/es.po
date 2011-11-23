@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-23 10:53+0100\n"
+"POT-Creation-Date: 2011-11-23 11:26+0100\n"
 "PO-Revision-Date: 2011-10-12 18:31+0200\n"
 "Last-Translator: Fortunato Ventre (voRia) <vorione@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -219,7 +219,7 @@ msgstr ""
 msgid "Samsung Tools - Command Line Utility"
 msgstr "Herramientas Samsung - Utilidad por línea de comandos"
 
-#: samsung-tools.py:587 samsung-tools.py:636
+#: samsung-tools.py:587 samsung-tools.py:637
 #, python-format
 msgid "Usage: %s <interface> <option> ..."
 msgstr "Uso: %s <interfaz> <opción>"
@@ -271,84 +271,97 @@ msgid "Do not print messages on standard output."
 msgstr "No mostrar mensajes  por la salida estándar."
 
 #: samsung-tools.py:609
+msgid "Show the control interface currently in use."
+msgstr ""
+
+#: samsung-tools.py:610
 msgid "Stop the session service."
 msgstr "Detener el servicio de sesión."
 
-#: samsung-tools.py:610
+#: samsung-tools.py:611
 msgid "Stop the system service."
 msgstr "Detener el servicio del sistema."
 
-#: samsung-tools.py:612
+#: samsung-tools.py:613
 msgid "Examples of use:"
 msgstr "Ejemplos de uso:"
 
-#: samsung-tools.py:613
+#: samsung-tools.py:614
 msgid " - Toggle backlight:"
 msgstr " - Conmuta la luz de fondo:"
 
-#: samsung-tools.py:616
+#: samsung-tools.py:617
 msgid " - Toggle wireless and set CPU fan mode to 'silent':"
 msgstr ""
 " - Conmuta las redes inalámbricas y activa el modo 'silencioso' para la CPU "
 "y el ventilador:"
 
-#: samsung-tools.py:619
+#: samsung-tools.py:620
 msgid " - Disable bluetooth, webcam and wireless:"
 msgstr " - Deshabilita bluetooth, la cámara web y las redes inalámbricas:"
 
-#: samsung-tools.py:622
+#: samsung-tools.py:623
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Para mas información visita el foro \"Linux On My Samsung\":"
 
-#: samsung-tools.py:627 samsung-tools-preferences.py:1064
+#: samsung-tools.py:628 samsung-tools-preferences.py:1064
 msgid "Released under GPLv3 license"
 msgstr "Liberado bajo licencia GPLv3"
 
-#: samsung-tools.py:632
+#: samsung-tools.py:633
 msgid "No action(s) specified."
 msgstr "Ninguna acción escificada."
 
-#: samsung-tools.py:633 samsung-tools.py:700
+#: samsung-tools.py:634 samsung-tools.py:705
 msgid "Use --help for instructions."
 msgstr "Use --help para instrucciones."
 
-#: samsung-tools.py:695
+#: samsung-tools.py:700
 msgid "This program is intended to be used only by non-privileged users."
 msgstr ""
 "Este programa está destinado a ser usado sólo por usuarios sin privilegios."
 
-#: samsung-tools.py:699
+#: samsung-tools.py:704
 msgid "Wrong argument(s)."
 msgstr "Argumento u argumentos inválidos"
 
-#: samsung-tools.py:712
+#: samsung-tools.py:717
 msgid "Unable to start a DBus daemon!"
 msgstr ""
 
-#: samsung-tools.py:728
+#: samsung-tools.py:732 po/samsung-tools-preferences.glade.h:13
+msgid "Control interface:"
+msgstr ""
+
+#: samsung-tools.py:738 samsung-tools-preferences.py:121
+#: samsung-tools-preferences.py:607 po/samsung-tools-preferences.glade.h:25
+msgid "None"
+msgstr "Ninguno"
+
+#: samsung-tools.py:741
+#, fuzzy
+msgid "Control interface: unable to connect to system service!"
+msgstr "Control de CPU : ¡Incapaz de conectar al servicio de sesión!"
+
+#: samsung-tools.py:751
 msgid "Session service stopped"
 msgstr "Servicio de sesión detenido"
 
-#: samsung-tools.py:731
+#: samsung-tools.py:754
 msgid "Cannot stop session service"
 msgstr "No se puede detener el servicio de sesión"
 
-#: samsung-tools.py:741
+#: samsung-tools.py:764
 msgid "System service stopped"
 msgstr "Servicio de sistema detenido"
 
-#: samsung-tools.py:744
+#: samsung-tools.py:767
 msgid "Cannot stop system service"
 msgstr "No se puede detener el servicio de sistema"
 
 #: samsung-tools-preferences.py:79
 msgid "Please press the new hotkey"
 msgstr "Por favor, presione una nueva \"tecla caliente\""
-
-#: samsung-tools-preferences.py:121 samsung-tools-preferences.py:607
-#: po/samsung-tools-preferences.glade.h:25
-msgid "None"
-msgstr "Ninguno"
 
 #: samsung-tools-preferences.py:176 samsung-tools-preferences.py:245
 #: samsung-tools-preferences.py:340 samsung-tools-preferences.py:352
@@ -441,10 +454,6 @@ msgstr "Configura los parámetros del núcleo (kernel)"
 #, fuzzy
 msgid "Configure power management"
 msgstr "Dispositivos de administración de energía"
-
-#: po/samsung-tools-preferences.glade.h:13
-msgid "Control interface:"
-msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:14
 msgid "Disabled"
@@ -662,9 +671,6 @@ msgstr "Inicia el servicio de sesión"
 
 #~ msgid "Fan control is not available"
 #~ msgstr "El control del ventilador no está disponible"
-
-#~ msgid "CPU control: unable to connect to session service!"
-#~ msgstr "Control de CPU : ¡Incapaz de conectar al servicio de sesión!"
 
 #~ msgid "CPU/Fan:"
 #~ msgstr "CPU/Ventilador:"

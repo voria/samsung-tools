@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-23 10:53+0100\n"
+"POT-Creation-Date: 2011-11-23 11:26+0100\n"
 "PO-Revision-Date: 2011-10-30 14:03+0000\n"
 "Last-Translator: Виталий <Unknown>\n"
 "Language-Team: Russian <kde-i18n-it@kde.org>\n"
@@ -217,7 +217,7 @@ msgstr "Управление Беспроводной сети: не удает�
 msgid "Samsung Tools - Command Line Utility"
 msgstr "Samsung Tools - Утилита командной строки"
 
-#: samsung-tools.py:587 samsung-tools.py:636
+#: samsung-tools.py:587 samsung-tools.py:637
 #, python-format
 msgid "Usage: %s <interface> <option> ..."
 msgstr "Применение: %s <interface> <option> ..."
@@ -269,85 +269,98 @@ msgid "Do not print messages on standard output."
 msgstr "Не печатать сообщения в стандартный вывод."
 
 #: samsung-tools.py:609
+msgid "Show the control interface currently in use."
+msgstr ""
+
+#: samsung-tools.py:610
 msgid "Stop the session service."
 msgstr "Отключить службу сессии."
 
-#: samsung-tools.py:610
+#: samsung-tools.py:611
 msgid "Stop the system service."
 msgstr "Отключить системную службу."
 
-#: samsung-tools.py:612
+#: samsung-tools.py:613
 msgid "Examples of use:"
 msgstr "Примеры использования:"
 
-#: samsung-tools.py:613
+#: samsung-tools.py:614
 msgid " - Toggle backlight:"
 msgstr " - Переключить подсветку:"
 
-#: samsung-tools.py:616
+#: samsung-tools.py:617
 msgid " - Toggle wireless and set CPU fan mode to 'silent':"
 msgstr ""
 " - Переключить Беспроводную сеть и установить режим охлаждения процессора в "
 "'Бесшумный':"
 
-#: samsung-tools.py:619
+#: samsung-tools.py:620
 msgid " - Disable bluetooth, webcam and wireless:"
 msgstr " - Отключить Bluetooth, Веб-камеру и Беспроводную сеть:"
 
-#: samsung-tools.py:622
+#: samsung-tools.py:623
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Для большей информации, посетите 'Linux On My Samsung' форум:"
 
-#: samsung-tools.py:627 samsung-tools-preferences.py:1064
+#: samsung-tools.py:628 samsung-tools-preferences.py:1064
 msgid "Released under GPLv3 license"
 msgstr "Выпущен под GPLv3 лицензией"
 
-#: samsung-tools.py:632
+#: samsung-tools.py:633
 msgid "No action(s) specified."
 msgstr "Действие(я) не указано(ы)."
 
-#: samsung-tools.py:633 samsung-tools.py:700
+#: samsung-tools.py:634 samsung-tools.py:705
 msgid "Use --help for instructions."
 msgstr "Используйте --help для получения инструкций."
 
-#: samsung-tools.py:695
+#: samsung-tools.py:700
 msgid "This program is intended to be used only by non-privileged users."
 msgstr ""
 "Предполагается, что данная программа будет использваться только не "
 "привилегированными пользователями."
 
-#: samsung-tools.py:699
+#: samsung-tools.py:704
 msgid "Wrong argument(s)."
 msgstr "Неправильный(ые) аргумент(ы)"
 
-#: samsung-tools.py:712
+#: samsung-tools.py:717
 msgid "Unable to start a DBus daemon!"
 msgstr "Не удается запустить DBus модуль!"
 
-#: samsung-tools.py:728
+#: samsung-tools.py:732 po/samsung-tools-preferences.glade.h:13
+msgid "Control interface:"
+msgstr ""
+
+#: samsung-tools.py:738 samsung-tools-preferences.py:121
+#: samsung-tools-preferences.py:607 po/samsung-tools-preferences.glade.h:25
+msgid "None"
+msgstr "Нет"
+
+#: samsung-tools.py:741
+#, fuzzy
+msgid "Control interface: unable to connect to system service!"
+msgstr "Не удается подключиться к системной службе!"
+
+#: samsung-tools.py:751
 msgid "Session service stopped"
 msgstr "Служба сессии остановлена"
 
-#: samsung-tools.py:731
+#: samsung-tools.py:754
 msgid "Cannot stop session service"
 msgstr "Невозможно остановить службу сессии"
 
-#: samsung-tools.py:741
+#: samsung-tools.py:764
 msgid "System service stopped"
 msgstr "Системная служба остановлена"
 
-#: samsung-tools.py:744
+#: samsung-tools.py:767
 msgid "Cannot stop system service"
 msgstr "Невозможно остановить системную службу"
 
 #: samsung-tools-preferences.py:79
 msgid "Please press the new hotkey"
 msgstr "Пожалуйста нажмите новое сочетание клавиш"
-
-#: samsung-tools-preferences.py:121 samsung-tools-preferences.py:607
-#: po/samsung-tools-preferences.glade.h:25
-msgid "None"
-msgstr "Нет"
 
 #: samsung-tools-preferences.py:176 samsung-tools-preferences.py:245
 #: samsung-tools-preferences.py:340 samsung-tools-preferences.py:352
@@ -438,10 +451,6 @@ msgstr "Настройка параметров ядра"
 #: po/samsung-tools-preferences-power-management.glade.h:1
 msgid "Configure power management"
 msgstr "Настройка электропитания"
-
-#: po/samsung-tools-preferences.glade.h:13
-msgid "Control interface:"
-msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:14
 msgid "Disabled"
