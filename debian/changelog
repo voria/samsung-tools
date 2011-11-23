@@ -1,10 +1,10 @@
-samsung-tools (2.0~ppa1~loms~oneiric~test2) oneiric; urgency=low
+samsung-tools (2.0~ppa1~loms~oneiric~test3) oneiric; urgency=low
 
-  * Add support for the 'samsung-laptop' interface. Anyway,
+  * Add support for the 'samsung-laptop' interface. However,
     the 'esdm' interface is preferred when the 'easy-slow-down-manager'
     kernel module is available and can be used.
   * Drop checks for old pm hooks.
-  * Update translations.
+  * Update translations to latest version from Launchpad.
 
  -- Fortunato Ventre (voRia) <vorione@gmail.com>  Wed, 12 Oct 2011 16:12:16 +0200
 
