@@ -744,6 +744,8 @@ class Main():
 		for key in keys:
 			if key == "Super":
 				key = "Mod4"
+			if key == "Primary":
+				key = "Control"
 			result += key + "+"
 		result = result[0:len(result) - 1] # Remove the '+' at the end
 		return result
