@@ -596,6 +596,15 @@ class Main():
 			self.cpufanInitialStatusLabel.set_sensitive(False)
 			self.cpufanInitialStatusCombobox.set_sensitive(False)
 			self.cpufanInitialStatusCleanButton.set_sensitive(False)
+		# Set control interface
+		self.controlInterfaceValueLabel = self.builder.get_object("controlInterfaceValueLabel")
+		ci = system.GetControlInterface()
+		if ci == "esdm":
+			self.controlInterfaceValueLabel.set_label("easy-slow-down-manager")
+		elif ci == "sl":
+			self.controlInterfaceValueLabel.set_label("samsung-laptop")
+		else:
+			self.controlInterfaceValueLabel.set_label(unicode(_("None"), "utf-8"))
 		
 		###
 		### Advanced power management configuration

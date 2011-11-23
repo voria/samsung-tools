@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-22 14:28+0100\n"
+"POT-Creation-Date: 2011-11-23 10:53+0100\n"
 "PO-Revision-Date: 2011-10-12 18:31+0200\n"
 "Last-Translator: Fortunato Ventre (voRia) <vorione@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -242,11 +242,11 @@ msgstr "Bluetooth:"
 msgid "CPU fan:"
 msgstr "CPU-Lüfter"
 
-#: samsung-tools.py:598 po/samsung-tools-preferences.glade.h:36
+#: samsung-tools.py:598 po/samsung-tools-preferences.glade.h:38
 msgid "Webcam:"
 msgstr "Webcam:"
 
-#: samsung-tools.py:601 po/samsung-tools-preferences.glade.h:37
+#: samsung-tools.py:601 po/samsung-tools-preferences.glade.h:39
 msgid "Wireless:"
 msgstr "WLAN-Karte"
 
@@ -298,7 +298,7 @@ msgstr ""
 "Für weitere Informationen, besuche doch das Internetforum \"Linux On My "
 "Samsung\"."
 
-#: samsung-tools.py:627 samsung-tools-preferences.py:1055
+#: samsung-tools.py:627 samsung-tools-preferences.py:1064
 msgid "Released under GPLv3 license"
 msgstr "Veröffentlicht unter der GPLv3-Lizenz"
 
@@ -343,14 +343,15 @@ msgstr "Kann Systemdienst nicht beenden"
 msgid "Please press the new hotkey"
 msgstr "Bitte drücke die neue Tastenkombination"
 
-#: samsung-tools-preferences.py:121
+#: samsung-tools-preferences.py:121 samsung-tools-preferences.py:607
+#: po/samsung-tools-preferences.glade.h:25
 msgid "None"
 msgstr "Keine"
 
 #: samsung-tools-preferences.py:176 samsung-tools-preferences.py:245
 #: samsung-tools-preferences.py:340 samsung-tools-preferences.py:352
-#: samsung-tools-preferences.py:705 samsung-tools-preferences.py:717
-#: samsung-tools-preferences.py:729
+#: samsung-tools-preferences.py:714 samsung-tools-preferences.py:726
+#: samsung-tools-preferences.py:738
 msgid "Unable to connect to system service!"
 msgstr "Kann nicht mit Systemdienst verbinden"
 
@@ -362,20 +363,20 @@ msgstr "Bestätige"
 msgid "Apply the new VIDs?"
 msgstr "Die neuen  VIDs annehmen?"
 
-#: samsung-tools-preferences.py:621
+#: samsung-tools-preferences.py:630
 msgid "You need a PHC enabled kernel to use this feature"
 msgstr ""
 "In Ihrem Kernel muss PHC aktiviert sein, um diese Funktion nutzen zu können."
 
-#: samsung-tools-preferences.py:645
+#: samsung-tools-preferences.py:654
 msgid "Unable to connect to session service!"
 msgstr "Kann nicht mit Sitzungsdienst verbinden"
 
-#: samsung-tools-preferences.py:984
+#: samsung-tools-preferences.py:993
 msgid "Caution!"
 msgstr "Achtung!"
 
-#: samsung-tools-preferences.py:985
+#: samsung-tools-preferences.py:994
 msgid ""
 "CPU undervolting can lead to significant gains in terms of power energy "
 "saving, however <b>IT IS A RISKY PRACTICE</b> that might result in "
@@ -391,7 +392,7 @@ msgstr ""
 "Sind Sie sicher, dass Sie fortfahren wollen?"
 
 #: po/samsung-tools-preferences.desktop.in.h:1
-#: po/samsung-tools-preferences.glade.h:27
+#: po/samsung-tools-preferences.glade.h:29
 msgid "Samsung Tools Preferences"
 msgstr "Samsung Tools Einstellungen"
 
@@ -439,91 +440,95 @@ msgid "Configure power management"
 msgstr "Energieverwaltung konfigurieren"
 
 #: po/samsung-tools-preferences.glade.h:13
+msgid "Control interface:"
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:14
 msgid "Disabled"
 msgstr "Ausgeschaltet"
 
-#: po/samsung-tools-preferences.glade.h:14
+#: po/samsung-tools-preferences.glade.h:15
 msgid "Enable hotkeys"
 msgstr "Tastenkombinationen einschalten"
 
-#: po/samsung-tools-preferences.glade.h:15
+#: po/samsung-tools-preferences.glade.h:16
 msgid "Enable this option to use hotkeys"
 msgstr "Aktiviere diese Option, um die Tastenkombinationen zu verwenden"
 
-#: po/samsung-tools-preferences.glade.h:16
+#: po/samsung-tools-preferences.glade.h:17
 msgid "Enabled"
 msgstr "Eingeschaltet"
 
-#: po/samsung-tools-preferences.glade.h:17
+#: po/samsung-tools-preferences.glade.h:18
 msgid "Hotkey used for CPU fan control"
 msgstr "Tastenkombination für CPU-Lüftersteuerung"
 
-#: po/samsung-tools-preferences.glade.h:18
+#: po/samsung-tools-preferences.glade.h:19
 msgid "Hotkey used for backlight control"
 msgstr "Tastenkombination für Hintergrundbeleuchtung"
 
-#: po/samsung-tools-preferences.glade.h:19
+#: po/samsung-tools-preferences.glade.h:20
 msgid "Hotkey used for bluetooth control"
 msgstr "Tastenkombination für Bluetooth-Steuerung"
 
-#: po/samsung-tools-preferences.glade.h:20
+#: po/samsung-tools-preferences.glade.h:21
 msgid "Hotkey used for webcam control"
 msgstr "Tastenkombination für Webcam-Steuerung"
 
-#: po/samsung-tools-preferences.glade.h:21
+#: po/samsung-tools-preferences.glade.h:22
 msgid "Hotkey used for wireless control"
 msgstr "Tastenkombination für die WLAN-Karten-Steuerung"
 
-#: po/samsung-tools-preferences.glade.h:22
+#: po/samsung-tools-preferences.glade.h:23
 msgid "Kernel parameters..."
 msgstr "Kernelparameter..."
 
-#: po/samsung-tools-preferences.glade.h:23
+#: po/samsung-tools-preferences.glade.h:24
 msgid "Last status"
 msgstr "Letzter Status"
 
-#: po/samsung-tools-preferences.glade.h:24
+#: po/samsung-tools-preferences.glade.h:26
 msgid "Normal"
 msgstr "Normal"
 
-#: po/samsung-tools-preferences.glade.h:25
+#: po/samsung-tools-preferences.glade.h:27
 #, fuzzy
 msgid "Overclock"
 msgstr "Lüftermodus: Overclock"
 
-#: po/samsung-tools-preferences.glade.h:26
+#: po/samsung-tools-preferences.glade.h:28
 msgid "Power management..."
 msgstr "Energieverwaltung..."
 
-#: po/samsung-tools-preferences.glade.h:28
+#: po/samsung-tools-preferences.glade.h:30
 msgid "Session service"
 msgstr "Sitzungsdienst"
 
-#: po/samsung-tools-preferences.glade.h:29
+#: po/samsung-tools-preferences.glade.h:31
 msgid "Silent"
 msgstr "Leise"
 
-#: po/samsung-tools-preferences.glade.h:30
+#: po/samsung-tools-preferences.glade.h:32
 msgid "System service"
 msgstr "Systemdienst"
 
-#: po/samsung-tools-preferences.glade.h:31
+#: po/samsung-tools-preferences.glade.h:33
 msgid "The initial status at boot for Bluetooth"
 msgstr "Letzter Status von Bluetooth beim Booten"
 
-#: po/samsung-tools-preferences.glade.h:32
+#: po/samsung-tools-preferences.glade.h:34
 msgid "The initial status at boot for CPU fan"
 msgstr "Der Anfangsstatus des CPU-Lüfters beim Start des Computers"
 
-#: po/samsung-tools-preferences.glade.h:33
+#: po/samsung-tools-preferences.glade.h:35
 msgid "The initial status at boot for webcam"
 msgstr "Letzter Status der Webcam beim Booten"
 
-#: po/samsung-tools-preferences.glade.h:34
+#: po/samsung-tools-preferences.glade.h:36
 msgid "The initial status at boot for wireless"
 msgstr "Letzter Status der WLAN-Karte beim Booten"
 
-#: po/samsung-tools-preferences.glade.h:35
+#: po/samsung-tools-preferences.glade.h:37
 msgid "Undervolt the CPU in order to save energy"
 msgstr "Absenken der CPU-Spannung, um Energie zu sparen"
 

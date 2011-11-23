@@ -50,6 +50,16 @@ class Options(dbus.service.Object):
 	
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 's',
 						sender_keyword = 'sender', connection_keyword = 'conn')
+	def GetControlInterface(self, sender = None, conn = None):
+		try:
+			with open(CONTROL_INTERFACE, "r") as file:
+				ci = file.readline()
+		except:
+			ci = "none"
+		return ci
+	
+	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 's',
+						sender_keyword = 'sender', connection_keyword = 'conn')
 	def GetPHCVids(self, sender = None, conn = None):
 		return systemconfig.getPHCVids()
 	

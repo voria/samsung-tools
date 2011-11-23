@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-22 14:28+0100\n"
+"POT-Creation-Date: 2011-11-23 10:53+0100\n"
 "PO-Revision-Date: 2011-10-12 18:32+0200\n"
 "Last-Translator: Fortunato Ventre (voRia) <vorione@gmail.com>\n"
 "Language-Team: Hungarian <kde-i18n-it@kde.org>\n"
@@ -243,11 +243,11 @@ msgstr "Bluetooth:"
 msgid "CPU fan:"
 msgstr "CPU-hűtő:"
 
-#: samsung-tools.py:598 po/samsung-tools-preferences.glade.h:36
+#: samsung-tools.py:598 po/samsung-tools-preferences.glade.h:38
 msgid "Webcam:"
 msgstr "Webkamera:"
 
-#: samsung-tools.py:601 po/samsung-tools-preferences.glade.h:37
+#: samsung-tools.py:601 po/samsung-tools-preferences.glade.h:39
 msgid "Wireless:"
 msgstr "Vezeték nélküli hálózat:"
 
@@ -297,7 +297,7 @@ msgstr " - Bluetooth, webkamera és vezeték nélküli hálózat kikapcsolása:"
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "További információért látogasson a \"Linux on My Samsung\" fórumra:"
 
-#: samsung-tools.py:627 samsung-tools-preferences.py:1055
+#: samsung-tools.py:627 samsung-tools-preferences.py:1064
 msgid "Released under GPLv3 license"
 msgstr "Kibocsátva GPLv3 licenc alatt"
 
@@ -343,14 +343,15 @@ msgstr "System service nem állítható le"
 msgid "Please press the new hotkey"
 msgstr "Nyomja meg az új billentyűkombinációt"
 
-#: samsung-tools-preferences.py:121
+#: samsung-tools-preferences.py:121 samsung-tools-preferences.py:607
+#: po/samsung-tools-preferences.glade.h:25
 msgid "None"
 msgstr "Semmi"
 
 #: samsung-tools-preferences.py:176 samsung-tools-preferences.py:245
 #: samsung-tools-preferences.py:340 samsung-tools-preferences.py:352
-#: samsung-tools-preferences.py:705 samsung-tools-preferences.py:717
-#: samsung-tools-preferences.py:729
+#: samsung-tools-preferences.py:714 samsung-tools-preferences.py:726
+#: samsung-tools-preferences.py:738
 msgid "Unable to connect to system service!"
 msgstr "System sevice nem érhető el!"
 
@@ -362,19 +363,19 @@ msgstr "Megerősít"
 msgid "Apply the new VIDs?"
 msgstr "Alkalmazza az új CPU-feszültségi értékeket (VID)?"
 
-#: samsung-tools-preferences.py:621
+#: samsung-tools-preferences.py:630
 msgid "You need a PHC enabled kernel to use this feature"
 msgstr "E tulajdonság használatához PHC-engedélyezett kernel-re van szüksége"
 
-#: samsung-tools-preferences.py:645
+#: samsung-tools-preferences.py:654
 msgid "Unable to connect to session service!"
 msgstr "Session service nem érhető el!"
 
-#: samsung-tools-preferences.py:984
+#: samsung-tools-preferences.py:993
 msgid "Caution!"
 msgstr "Figyelem!"
 
-#: samsung-tools-preferences.py:985
+#: samsung-tools-preferences.py:994
 msgid ""
 "CPU undervolting can lead to significant gains in terms of power energy "
 "saving, however <b>IT IS A RISKY PRACTICE</b> that might result in "
@@ -391,7 +392,7 @@ msgstr ""
 "Biztos, hogy akarja folytatni?"
 
 #: po/samsung-tools-preferences.desktop.in.h:1
-#: po/samsung-tools-preferences.glade.h:27
+#: po/samsung-tools-preferences.glade.h:29
 msgid "Samsung Tools Preferences"
 msgstr "Samsung Tools beállítások"
 
@@ -440,93 +441,97 @@ msgid "Configure power management"
 msgstr "Összetett energiagazdálkodás"
 
 #: po/samsung-tools-preferences.glade.h:13
+msgid "Control interface:"
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:14
 msgid "Disabled"
 msgstr "Letiltva"
 
-#: po/samsung-tools-preferences.glade.h:14
+#: po/samsung-tools-preferences.glade.h:15
 msgid "Enable hotkeys"
 msgstr "Billentyűkombinációk engedélyezése"
 
-#: po/samsung-tools-preferences.glade.h:15
+#: po/samsung-tools-preferences.glade.h:16
 msgid "Enable this option to use hotkeys"
 msgstr "Engedélyezze ezt a beállítást billentyűkombinációk használatához"
 
-#: po/samsung-tools-preferences.glade.h:16
+#: po/samsung-tools-preferences.glade.h:17
 msgid "Enabled"
 msgstr "Engedélyezve"
 
-#: po/samsung-tools-preferences.glade.h:17
+#: po/samsung-tools-preferences.glade.h:18
 msgid "Hotkey used for CPU fan control"
 msgstr "Billentyűkombináció CPU-hűtés szabályozásához"
 
-#: po/samsung-tools-preferences.glade.h:18
+#: po/samsung-tools-preferences.glade.h:19
 msgid "Hotkey used for backlight control"
 msgstr "Billentyűkombináció háttérvilágítás szabályozásához"
 
-#: po/samsung-tools-preferences.glade.h:19
+#: po/samsung-tools-preferences.glade.h:20
 msgid "Hotkey used for bluetooth control"
 msgstr "Billentyűkombináció Bluetooth szabályozásához"
 
-#: po/samsung-tools-preferences.glade.h:20
+#: po/samsung-tools-preferences.glade.h:21
 msgid "Hotkey used for webcam control"
 msgstr "Billentyűkombináció webkamera szabályozásához"
 
-#: po/samsung-tools-preferences.glade.h:21
+#: po/samsung-tools-preferences.glade.h:22
 msgid "Hotkey used for wireless control"
 msgstr "Billentyűkombináció vezeték nélküli hálózat szabályozásához"
 
-#: po/samsung-tools-preferences.glade.h:22
+#: po/samsung-tools-preferences.glade.h:23
 #, fuzzy
 msgid "Kernel parameters..."
 msgstr "Kernel-paraméterek beállítása"
 
-#: po/samsung-tools-preferences.glade.h:23
+#: po/samsung-tools-preferences.glade.h:24
 msgid "Last status"
 msgstr "Előző állapot"
 
-#: po/samsung-tools-preferences.glade.h:24
+#: po/samsung-tools-preferences.glade.h:26
 msgid "Normal"
 msgstr "Normál"
 
-#: po/samsung-tools-preferences.glade.h:25
+#: po/samsung-tools-preferences.glade.h:27
 #, fuzzy
 msgid "Overclock"
 msgstr "Hűtésmód: Overclock"
 
-#: po/samsung-tools-preferences.glade.h:26
+#: po/samsung-tools-preferences.glade.h:28
 #, fuzzy
 msgid "Power management..."
 msgstr "Összetett energiagazdálkodás"
 
-#: po/samsung-tools-preferences.glade.h:28
+#: po/samsung-tools-preferences.glade.h:30
 msgid "Session service"
 msgstr "Session service"
 
-#: po/samsung-tools-preferences.glade.h:29
+#: po/samsung-tools-preferences.glade.h:31
 msgid "Silent"
 msgstr "Csendes"
 
-#: po/samsung-tools-preferences.glade.h:30
+#: po/samsung-tools-preferences.glade.h:32
 msgid "System service"
 msgstr "System service"
 
-#: po/samsung-tools-preferences.glade.h:31
+#: po/samsung-tools-preferences.glade.h:33
 msgid "The initial status at boot for Bluetooth"
 msgstr "Bluetooth rendszerindításkori állapota"
 
-#: po/samsung-tools-preferences.glade.h:32
+#: po/samsung-tools-preferences.glade.h:34
 msgid "The initial status at boot for CPU fan"
 msgstr "CPU-hűtés rendszerindításkori állapota"
 
-#: po/samsung-tools-preferences.glade.h:33
+#: po/samsung-tools-preferences.glade.h:35
 msgid "The initial status at boot for webcam"
 msgstr "Webkamera rendszerindításkori állapota"
 
-#: po/samsung-tools-preferences.glade.h:34
+#: po/samsung-tools-preferences.glade.h:36
 msgid "The initial status at boot for wireless"
 msgstr "Vezeték nélküli hálózat rendszerindításkori állapota"
 
-#: po/samsung-tools-preferences.glade.h:35
+#: po/samsung-tools-preferences.glade.h:37
 msgid "Undervolt the CPU in order to save energy"
 msgstr "CPU-feszültség csökkentése energiamegtakarításhoz"
 
