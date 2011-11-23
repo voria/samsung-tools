@@ -604,7 +604,7 @@ class Main():
 		elif ci == "sl":
 			self.controlInterfaceValueLabel.set_label("samsung-laptop")
 		else:
-			self.controlInterfaceValueLabel.set_label(unicode(_("None"), "utf-8"))
+			self.controlInterfaceValueLabel.set_label("-")
 		
 		###
 		### Advanced power management configuration
