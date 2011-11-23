@@ -723,7 +723,7 @@ def main():
 	Webcam(options.webcam, options.show_notify).apply()
 	Wireless(options.wireless, options.show_notify).apply()
 	
-	if options.interface == True:
+	if options.interface == True and not quiet:
 		try:
 			bus = dbus.SystemBus()
 			proxy = bus.get_object(SYSTEM_INTERFACE_NAME, SYSTEM_OBJECT_PATH_OPTIONS)
@@ -737,8 +737,7 @@ def main():
 			else:
 				print unicode(_("None"), "utf-8")
 		except:
-			if not quiet:
-				print unicode(_("Control interface: unable to connect to system service!"), "utf-8")
+			print unicode(_("Control interface: unable to connect to system service!"), "utf-8")
 			pass
 	
 	if options.stopsession == True:
