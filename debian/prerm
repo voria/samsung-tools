@@ -7,5 +7,7 @@ case "$1" in
 		rm -f `find "$DIR" -name *.pyc`
 		# Remove devices-status directory
 		rm -rf "$DIR/devices-status"
+		# Remove control_interface file
+		rm -f "$DIR/control_interface"
 		;;
 esac
