@@ -58,7 +58,7 @@ class General(dbus.service.Object):
 		elif self.__check_for_sl_module():
 			self.__set_control_interface("sl")
 		else:
-			systemlog.write("WARNING: 'General.__init__()' - Can't find any usable interface! Many of the functionalities will not work.")
+			systemlog.write("WARNING: 'General.__init__()' - Cannot find any usable interface! Many of the functionalities will not work.")
 			self.__set_control_interface("none")
 	
 	def __set_control_interface(self, interface):
@@ -67,7 +67,7 @@ class General(dbus.service.Object):
 			file.write(interface)
 			file.close()
 		except:
-			systemlog.write("ERROR: Can't write to file '" + CONTROL_INTERFACE + "'!")
+			systemlog.write("ERROR: Cannot write to file '" + CONTROL_INTERFACE + "'!")
 			self.Exit()
 	
 	def __check_for_esdm_module(self):
