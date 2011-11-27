@@ -7,6 +7,7 @@ samsung-tools (2.0~ppa1~loms~oneiric~test7) oneiric; urgency=low
     configuration dialog and 'samsung-tools' command line utility ('-i' switch).
   * Drop checks for old pm hooks.
   * Update translations to latest version from Launchpad.
+  * Add support for lightdm in upstart service.
 
  -- Fortunato Ventre (voRia) <vorione@gmail.com>  Wed, 12 Oct 2011 16:12:16 +0200
 
