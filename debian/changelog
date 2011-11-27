@@ -1,4 +1,4 @@
-samsung-tools (2.0~ppa1~loms~oneiric~test6) oneiric; urgency=low
+samsung-tools (2.0~ppa1~loms~oneiric~test7) oneiric; urgency=low
 
   * Add support for the 'samsung-laptop' interface. However,
     the 'esdm' interface is preferred when the 'easy-slow-down-manager'
