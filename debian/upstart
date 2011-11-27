@@ -5,7 +5,7 @@
 description     "Tools for Samsung netbooks"
 author          "Fortunato Ventre (voRia) - <vorione@gmail.com>"
  
-start on (stopped rc and (started gdm or started kdm))
+start on (stopped rc and (started lightdm or started gdm or started kdm))
  
 task
 
