@@ -36,6 +36,10 @@ class Backlight(dbus.service.Object):
 				self.method = file.readline()
 		except:
 			self.method = "none"
+		# samsung-laptop interface may not provide the backlight control on some models.
+		# If so, fallback to vbetool to handle screen backlight.
+		if self.method == "sl" and not os.path.exists(SL_PATH_BACKLIGHT):
+			self.method = "none"
 	
 	def __save_status(self, status):
 		""" Save backlight status when self.method == 'none'. """
