@@ -30,7 +30,7 @@ class Bluetooth(dbus.service.Object):
 	def __init__(self, notify = None, conn = None, object_path = None, bus_name = None):
 		dbus.service.Object.__init__(self, conn, object_path, bus_name)
 		self.notify = notify
-	
+
 	def __connect(self):
 		""" Enable connection to system backend """
 		retry = 3
@@ -43,7 +43,7 @@ class Bluetooth(dbus.service.Object):
 				retry = retry - 1
 		sessionlog.write("ERROR: 'Bluetooth.__connect()' - 3 attempts to connect to system bus failed.")
 		return None
-	
+
 	def __not_available(self, show_notify = True):
 		""" If show_notify == True, inform the user that bluetooth is not available. """
 		""" Return always 'False'. """
@@ -54,7 +54,7 @@ class Bluetooth(dbus.service.Object):
 			self.notify.setUrgency("critical")
 			self.notify.show()
 		return False
-		
+
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def IsAvailable(self, sender = None, conn = None):
@@ -64,7 +64,7 @@ class Bluetooth(dbus.service.Object):
 		if not interface:
 			return False
 		return interface.IsAvailable()
-			
+
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 'b', out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def IsEnabled(self, show_notify = True, sender = None, conn = None):
@@ -86,7 +86,7 @@ class Bluetooth(dbus.service.Object):
 				self.notify.setMessage(BLUETOOTH_STATUS_DISABLED)
 			self.notify.show()
 		return enabled
-	
+
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 'b', out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Enable(self, show_notify = True, sender = None, conn = None):
@@ -109,7 +109,7 @@ class Bluetooth(dbus.service.Object):
 				self.notify.setMessage(BLUETOOTH_ENABLING_ERROR)
 			self.notify.show()
 		return result
-	
+
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 'b', out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Disable(self, show_notify = True, sender = None, conn = None):

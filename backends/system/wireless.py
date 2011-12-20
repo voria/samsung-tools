@@ -38,7 +38,7 @@ class Wireless(dbus.service.Object):
 				self.method = file.readline()
 		except:
 			self.method = "none"
-	
+
 	def __save_last_status(self, status):
 		""" Save wireless last status. """
 		try:
@@ -50,16 +50,16 @@ class Wireless(dbus.service.Object):
 				file.close()
 		except:
 			systemlog.write("WARNING: 'Wireless.__save_last_status()' - Cannot save last status.")
-	
+
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
-						sender_keyword = 'sender', connection_keyword = 'conn')	
+						sender_keyword = 'sender', connection_keyword = 'conn')
 	def LastStatus(self, sender = None, conn = None):
 		""" Return 'True' if last status is on, 'False' if off. """
 		if not os.path.exists(LAST_DEVICE_STATUS_WIRELESS):
 			return True
 		else:
 			return False
-	
+
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = None,
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def RestoreLastStatus(self, sender = None, conn = None):
@@ -68,9 +68,9 @@ class Wireless(dbus.service.Object):
 			self.Enable()
 		else:
 			self.Disable()
-	
+
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
-						sender_keyword = 'sender', connection_keyword = 'conn')	
+						sender_keyword = 'sender', connection_keyword = 'conn')
 	def IsAvailable(self, sender = None, conn = None):
 		""" Check if wireless control is available. """
 		""" Return 'True' if available, 'False' if it's not. """
@@ -88,7 +88,7 @@ class Wireless(dbus.service.Object):
 		except:
 			systemlog.write("ERROR: 'Wireless.IsAvailable()' - COMMAND: '" + command + "' - Exception thrown.")
 			return False
-	
+
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def IsEnabled(self, sender = None, conn = None):
@@ -116,7 +116,7 @@ class Wireless(dbus.service.Object):
 					systemlog.write("ERROR: 'Wireless.IsEnabled()' - COMMAND: '" + command + "' FAILED.")
 					return False
 				if "yes" in output:
-					result = False	
+					result = False
 				else:
 					result = True
 			except:
@@ -125,7 +125,7 @@ class Wireless(dbus.service.Object):
 		# Since this method is also used by Enable() and Disable(), we save here the last status
 		self.__save_last_status(result)
 		return result
-		
+
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Enable(self, sender = None, conn = None):
@@ -159,8 +159,8 @@ class Wireless(dbus.service.Object):
 			systemlog.write("WARNING: 'Wireless.Enable()' - Error while executing '" + SCRIPT_WIRELESS_ON + "'.")
 			pass
 		return True
-		
-		
+
+
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Disable(self, sender = None, conn = None):
@@ -194,7 +194,7 @@ class Wireless(dbus.service.Object):
 			systemlog.write("WARNING: 'Wireless.Disable()' - Error while executing '" + SCRIPT_WIRELESS_OFF + "'.")
 			pass
 		return True
-			
+
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Toggle(self, sender = None, conn = None):

@@ -27,7 +27,7 @@ class Backlight(dbus.service.Object):
 	""" Control backlight """
 	def __init__(self, conn = None, object_path = None, bus_name = None):
 		dbus.service.Object.__init__(self, conn, object_path, bus_name)
-	
+
 	def __connect(self):
 		""" Enable connection to system backend """
 		retry = 3
@@ -40,7 +40,7 @@ class Backlight(dbus.service.Object):
 				retry = retry - 1
 		sessionlog.write("ERROR: 'Backlight.__connect()' - 3 attempts to connect to system bus failed.")
 		return None
-	
+
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def IsEnabled(self, sender = None, conn = None):
@@ -50,7 +50,7 @@ class Backlight(dbus.service.Object):
 		if not interface:
 			return False
 		return interface.IsEnabled()
-	
+
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Enable(self, sender = None, conn = None):
@@ -60,7 +60,7 @@ class Backlight(dbus.service.Object):
 		if not interface:
 			return False
 		return interface.Enable()
-	
+
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Disable(self, sender = None, conn = None):

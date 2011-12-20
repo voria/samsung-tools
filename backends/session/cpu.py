@@ -30,7 +30,7 @@ class Cpu(dbus.service.Object):
 	def __init__(self, notify = None, conn = None, object_path = None, bus_name = None):
 		dbus.service.Object.__init__(self, conn, object_path, bus_name)
 		self.notify = notify
-	
+
 	def __connect_cpu(self):
 		""" Enable connection to system backend for 'Cpu' object """
 		retry = 3
@@ -43,7 +43,7 @@ class Cpu(dbus.service.Object):
 				retry = retry - 1
 		sessionlog.write("ERROR: 'Cpu.__connect_cpu()' - 3 attempts to connect to system bus failed.")
 		return None
-	
+
 	def __connect_fan(self):
 		""" Enable connection to system backend for 'Fan' object """
 		retry = 3
@@ -56,7 +56,7 @@ class Cpu(dbus.service.Object):
 				retry = retry - 1
 		sessionlog.write("ERROR: 'Cpu.__connect_fan()' - 3 attempts to connect to system bus failed.")
 		return None
-	
+
 	def __show_notify(self, title, message, icon, urgency = "critical"):
 		""" Show user notifications. """
 		if self.notify != None:
@@ -68,12 +68,12 @@ class Cpu(dbus.service.Object):
 			self.notify.setIcon(icon)
 			self.notify.setUrgency(urgency)
 			self.notify.show()
-			
+
 	def __fan_not_available(self, show_notify = True):
 		""" If show_notify == True, inform the user that the fan control is not available. """
 		if show_notify:
-			self.__show_notify(CPU_TITLE, FAN_NOT_AVAILABLE, STOP_ICON)		
-	
+			self.__show_notify(CPU_TITLE, FAN_NOT_AVAILABLE, STOP_ICON)
+
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def IsFanAvailable(self, sender = None, conn = None):
@@ -93,7 +93,7 @@ class Cpu(dbus.service.Object):
 		if not interface:
 			return False
 		return interface.IsTemperatureAvailable()
-	
+
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = None, out_signature = 's',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def GetTemperature(self, sender = None, conn = None):
@@ -101,7 +101,7 @@ class Cpu(dbus.service.Object):
 		""" Return 'none' if temperature reading is not available. """
 		interface = self.__connect_cpu()
 		return interface.GetTemperature()
-	
+
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 'b', out_signature = 'i',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Status(self, show_notify = True, sender = None, conn = None):
@@ -131,7 +131,7 @@ class Cpu(dbus.service.Object):
 				return 3
 			self.__show_notify(title, message, icon)
 		return status
-			
+
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 'b', out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def SetFanNormal(self, show_notify = True, sender = None, conn = None):
@@ -149,7 +149,7 @@ class Cpu(dbus.service.Object):
 			else:
 				self.__show_notify(CPU_TITLE, FAN_SWITCHING_ERROR, ERROR_ICON)
 		return result
-		
+
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 'b', out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def SetFanSilent(self, show_notify = True, sender = None, conn = None):
@@ -167,7 +167,7 @@ class Cpu(dbus.service.Object):
 			else:
 				self.__show_notify(CPU_TITLE, FAN_SWITCHING_ERROR, ERROR_ICON)
 		return result
-		
+
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 'b', out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def SetFanOverclock(self, show_notify = True, sender = None, conn = None):
@@ -185,7 +185,7 @@ class Cpu(dbus.service.Object):
 			else:
 				self.__show_notify(CPU_TITLE, FAN_SWITCHING_ERROR, ERROR_ICON)
 		return result
-	
+
 	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 'b', out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Cycle(self, show_notify = True, sender = None, conn = None):
@@ -200,7 +200,7 @@ class Cpu(dbus.service.Object):
 		if show_notify:
 			title = CPU_TITLE
 			if result == True:
-				status = interface.Status()				
+				status = interface.Status()
 				if status == 0:
 					message = FAN_STATUS_NORMAL
 					icon = FAN_NORMAL_ICON

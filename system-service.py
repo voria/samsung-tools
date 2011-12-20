@@ -60,7 +60,7 @@ class General(dbus.service.Object):
 		else:
 			systemlog.write("WARNING: 'General.__init__()' - Cannot find any usable interface! Many of the functionalities will not work.")
 			self.__set_control_interface("none")
-	
+
 	def __set_control_interface(self, interface):
 		try:
 			file = open(CONTROL_INTERFACE, 'w')
@@ -69,7 +69,7 @@ class General(dbus.service.Object):
 		except:
 			systemlog.write("ERROR: Cannot write to file '" + CONTROL_INTERFACE + "'!")
 			self.Exit()
-	
+
 	def __check_for_esdm_module(self):
 		""" Check for the 'easy-slow-down-manager' interface. """
 		""" Return 'True' if it can be used, 'False' otherwise. """
@@ -87,7 +87,7 @@ class General(dbus.service.Object):
 			return False
 		else:
 			return True
-	
+
 	def __check_for_sl_module(self):
 		""" Check for the 'samsung-laptop' interface. """
 		""" Return 'True' if it can be used, 'False' otherwise. """
@@ -105,7 +105,7 @@ class General(dbus.service.Object):
 			return False
 		else:
 			return True
-	
+
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = None,
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def RestoreDevicesLastStatus(self, sender = None, conn = None):
@@ -119,7 +119,7 @@ class General(dbus.service.Object):
 		status = systemconfig.getPHCVids()
 		if status != "":
 			cpu.SetCurrentVids(status)
-		
+
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = None,
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def SetInitialDevicesStatus(self, sender = None, conn = None):
@@ -135,7 +135,7 @@ class General(dbus.service.Object):
 			bluetooth.RestoreLastStatus()
 		# Webcam
 		status = systemconfig.getWebcamInitialStatus()
-		if status == "on":	
+		if status == "on":
 			webcam.Enable()
 		elif status == "off":
 			webcam.Disable()
@@ -174,7 +174,7 @@ if __name__ == '__main__':
 
 	bus = dbus.SystemBus()
 	name = dbus.service.BusName(SYSTEM_INTERFACE_NAME, bus)
-    
+
 	General(bus, SYSTEM_OBJECT_PATH_GENERAL)
 	Options(bus, SYSTEM_OBJECT_PATH_OPTIONS)
 	Backlight(bus, SYSTEM_OBJECT_PATH_BACKLIGHT)
@@ -186,7 +186,7 @@ if __name__ == '__main__':
 	fan = Fan(bus, SYSTEM_OBJECT_PATH_FAN)
 	webcam = Webcam(bus, SYSTEM_OBJECT_PATH_WEBCAM)
 	wireless = Wireless(bus, SYSTEM_OBJECT_PATH_WIRELESS)
-	
+
 	mainloop = gobject.MainLoop()
 	mainloop.run()
-	
+

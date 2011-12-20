@@ -40,7 +40,7 @@ class Backlight(dbus.service.Object):
 		# If so, fallback to vbetool to handle screen backlight.
 		if self.method == "sl" and not os.path.exists(SL_PATH_BACKLIGHT):
 			self.method = "none"
-	
+
 	def __save_status(self, status):
 		""" Save backlight status when self.method == 'none'. """
 		""" If self.method != 'none', do nothing. """
@@ -51,10 +51,10 @@ class Backlight(dbus.service.Object):
 				file = open(LAST_DEVICE_STATUS_BACKLIGHT, "w")
 				file.close()
 			else:
-				os.remove(LAST_DEVICE_STATUS_BACKLIGHT)				
+				os.remove(LAST_DEVICE_STATUS_BACKLIGHT)
 		except:
 			systemlog.write("WARNING: 'Backlight.__save_status()' - Cannot save new status.")
-	
+
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def IsEnabled(self, sender = None, conn = None):
@@ -87,7 +87,7 @@ class Backlight(dbus.service.Object):
 				return False
 			else:
 				return True
-	
+
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Enable(self, sender = None, conn = None):
@@ -123,7 +123,7 @@ class Backlight(dbus.service.Object):
 			except:
 				systemlog.write("ERROR: 'Backlight.Enable()' - COMMAND: '" + command + "' - Exception thrown.")
 				return False
-	
+
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Disable(self, sender = None, conn = None):

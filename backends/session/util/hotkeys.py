@@ -55,13 +55,13 @@ class Hotkeys():
 			self.setCpuHotkey("disable")
 			self.setWebcamHotkey("disable")
 			self.setWirelessHotkey("disable")
-	
+
 	def __touch_config_file(self):
 		""" Make sure the XBINDKEYS_CONFIG_FILE exists. """
 		if not os.path.exists(XBINDKEYS_CONFIG_FILE):
 			file = open(XBINDKEYS_CONFIG_FILE, 'w')
 			file.close()
-	
+
 	def __update_hotkey(self, command, hotkey):
 		""" Update the hotkey for 'command' to 'hotkey'. """
 		""" If 'command' is not found, add it with the new 'hotkey'. """
@@ -95,7 +95,7 @@ class Hotkeys():
 			return False
 		shutil.move(XBINDKEYS_CONFIG_FILE + ".new", XBINDKEYS_CONFIG_FILE)
 		return True
-	
+
 	def __remove_hotkey(self, command):
 		""" Remove the hotkey for 'command' (and 'command' too, of course). """
 		""" Return 'True' on success, 'False' otherwise. """
@@ -126,7 +126,7 @@ class Hotkeys():
 		else:
 			os.remove(XBINDKEYS_CONFIG_FILE + ".new")
 		return True
-	
+
 	def __stop_daemon(self):
 		""" Stop all running xbindkeys instances. """
 		# stop all xbindkeys running instances
@@ -162,17 +162,17 @@ class Hotkeys():
 			process.communicate()
 		except:
 			sessionlog.write("ERROR: 'Hotkeys.__restart_daemon()' - COMMAND: '" + command + "' - Exception thrown.")
-	
+
 	def setBacklightHotkey(self, hotkey):
 		""" Set the new hotkey. """
 		""" Return 'True' on success, 'False' otherwise. """
 		if hotkey == "disable":
 			result = self.__remove_hotkey(BACKLIGHT_HOTKEY_COMMAND)
 		else:
-			result = self.__update_hotkey(BACKLIGHT_HOTKEY_COMMAND, hotkey) 
+			result = self.__update_hotkey(BACKLIGHT_HOTKEY_COMMAND, hotkey)
 		self.__restart_daemon()
 		return result
-	
+
 	def setBluetoothHotkey(self, hotkey):
 		""" Set the new hotkey. """
 		""" Return 'True' on success, 'False' otherwise. """
@@ -182,7 +182,7 @@ class Hotkeys():
 			result = self.__update_hotkey(BLUETOOTH_HOTKEY_COMMAND, hotkey)
 		self.__restart_daemon()
 		return result
-	
+
 	def setCpuHotkey(self, hotkey):
 		""" Set the new hotkey. """
 		""" Return 'True' on success, 'False' otherwise. """
@@ -192,7 +192,7 @@ class Hotkeys():
 			result = self.__update_hotkey(CPU_HOTKEY_COMMAND, hotkey)
 		self.__restart_daemon()
 		return result
-		
+
 	def setWebcamHotkey(self, hotkey):
 		""" Set the new hotkey. """
 		""" Return 'True' on success, 'False' otherwise. """
@@ -202,7 +202,7 @@ class Hotkeys():
 			result = self.__update_hotkey(WEBCAM_HOTKEY_COMMAND, hotkey)
 		self.__restart_daemon()
 		return result
-		
+
 	def setWirelessHotkey(self, hotkey):
 		""" Set the new hotkey. """
 		""" Return 'True' on success, 'False' otherwise. """

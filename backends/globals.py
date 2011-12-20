@@ -82,7 +82,7 @@ if os.path.basename(sys.argv[0]) == "system-service.py":
 	# Last devices' status files
 	LAST_DEVICES_STATUS_DIRECTORY = os.path.join(WORK_DIRECTORY, "devices-status")
 	LAST_DEVICE_STATUS_BACKLIGHT = os.path.join(LAST_DEVICES_STATUS_DIRECTORY, "backlight")
-	LAST_DEVICE_STATUS_BLUETOOTH = os.path.join(LAST_DEVICES_STATUS_DIRECTORY, "bluetooth") 
+	LAST_DEVICE_STATUS_BLUETOOTH = os.path.join(LAST_DEVICES_STATUS_DIRECTORY, "bluetooth")
 	LAST_DEVICE_STATUS_WEBCAM = os.path.join(LAST_DEVICES_STATUS_DIRECTORY, "webcam")
 	LAST_DEVICE_STATUS_WIRELESS = os.path.join(LAST_DEVICES_STATUS_DIRECTORY, "wireless")
 	LAST_DEVICE_STATUS_CPUFAN = os.path.join(LAST_DEVICES_STATUS_DIRECTORY, "cpufan")

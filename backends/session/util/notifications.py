@@ -65,8 +65,8 @@ class Notification():
 			if self.__connect() != None:
 				self.initialized = True
 			else:
-				method = None	
-	
+				method = None
+
 	def __connect(self):
 		""" Enable connection to session backend (used when method == 'dbus'). """
 		retry = 3
@@ -78,9 +78,9 @@ class Notification():
 			except:
 				retry = retry - 1
 		return None
-	
+
 	def setTitle(self, title):
-		""" Set notification's title. """ 
+		""" Set notification's title. """
 		self.title = title
 
 	def setMessage(self, message):
@@ -93,7 +93,7 @@ class Notification():
 
 	def setUrgency(self, urgency):
 		""" Set notification's urgency. """
-		if method != "pynotify": 
+		if method != "pynotify":
 			return # urgency's used only with pynotify method
 		if urgency == "low":
 			self.urgency = pynotify.URGENCY_LOW
@@ -103,7 +103,7 @@ class Notification():
 			self.urgency = pynotify.URGENCY_CRITICAL
 		else:
 			self.urgency = None
-	
+
 	def show(self):
 		if not self.initialized or method == None or self.title == None or self.message == None:
 			return

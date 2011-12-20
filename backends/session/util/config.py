@@ -82,10 +82,10 @@ class SessionConfig():
 		# Options sanity check
 		if self.config.get("Main", "USE_HOTKEYS") not in USE_HOTKEYS_ACCEPTED_VALUES:
 			# Option is invalid, set default value
-			sessionlog.write("WARNING: 'SessionConfig' - 'USE_HOTKEYS' option specified in '" + configfile + 
+			sessionlog.write("WARNING: 'SessionConfig' - 'USE_HOTKEYS' option specified in '" + configfile +
 					"' is invalid. Using default value ('" + USE_HOTKEYS_DEFAULT + "').")
 			self.config.set("Main", "USE_HOTKEYS", USE_HOTKEYS_DEFAULT)
-		
+
 	def __write(self, option):
 		""" Write the new 'option' in the config file. """
 		""" If 'option' does not exists in file, add it. """
@@ -131,7 +131,7 @@ class SessionConfig():
 					newfile.write(line)
 				else:
 					optionfound = True
-					try:					
+					try:
 						newfile.write(option + "=" + value + "\n")
 					except:
 						sessionlog.write("ERROR: 'SessionConfig.__write()' - cannot write the new value for '" + option + "' in the new config file.")
@@ -153,31 +153,31 @@ class SessionConfig():
 			return False
 		shutil.move(self.configfile + ".new", self.configfile)
 		return True
-		
+
 	def getUseHotkeys(self):
 		""" Return the USE_HOTKEYS option. """
 		return self.config.get("Main", "USE_HOTKEYS")
-	
+
 	def getBacklightHotkey(self):
 		""" Return the BACKLIGHT_HOTKEY option. """
 		return self.config.get("Main", "BACKLIGHT_HOTKEY")
-	
+
 	def getBluetoothHotkey(self):
 		""" Return the BLUETOOTH_HOTKEY option. """
 		return self.config.get("Main", "BLUETOOTH_HOTKEY")
-	
+
 	def getCpuHotkey(self):
 		""" Return the CPU_HOTKEY option. """
 		return self.config.get("Main", "CPU_HOTKEY")
-	
+
 	def getWebcamHotkey(self):
 		""" Return the WEBCAM_HOTKEY option. """
 		return self.config.get("Main", "WEBCAM_HOTKEY")
-	
+
 	def getWirelessHotkey(self):
 		""" Return the WIRELESS_HOTKEY option. """
 		return self.config.get("Main", "WIRELESS_HOTKEY")
-	
+
 	def setUseHotkeys(self, value):
 		""" Set the USE_HOTKEYS option. """
 		""" Return 'True' on success, 'False' otherwise. """
@@ -203,7 +203,7 @@ class SessionConfig():
 			value = BLUETOOTH_HOTKEY_DEFAULT
 		self.config.set("Main", "BLUETOOTH_HOTKEY", value)
 		return self.__write("BLUETOOTH_HOTKEY")
-	
+
 	def setCpuHotkey(self, value):
 		""" Set the CPU_HOTKEY option. """
 		""" Return 'True' on success, 'False' otherwise. """
@@ -211,7 +211,7 @@ class SessionConfig():
 			value = CPU_HOTKEY_DEFAULT
 		self.config.set("Main", "CPU_HOTKEY", value)
 		return self.__write("CPU_HOTKEY")
-	
+
 	def setWebcamHotkey(self, value):
 		""" Set the WEBCAM_HOTKEY option. """
 		""" Return 'True' on success, 'False' otherwise. """
@@ -219,7 +219,7 @@ class SessionConfig():
 			value = WEBCAM_HOTKEY_DEFAULT
 		self.config.set("Main", "WEBCAM_HOTKEY", value)
 		return self.__write("WEBCAM_HOTKEY")
-	
+
 	def setWirelessHotkey(self, value):
 		""" Set the WIRELESS_HOTKEY option. """
 		""" Return 'True' on success, 'False' otherwise. """

@@ -29,7 +29,7 @@ class Bluetooth(dbus.service.Object):
 	""" Control bluetooth """
 	def __init__(self, conn = None, object_path = None, bus_name = None):
 		dbus.service.Object.__init__(self, conn, object_path, bus_name)
-		
+
 	def __save_last_status(self, status):
 		""" Save bluetooth last status. """
 		try:
@@ -41,16 +41,16 @@ class Bluetooth(dbus.service.Object):
 				file.close()
 		except:
 			systemlog.write("WARNING: 'Bluetooth.__save_last_status()' - Cannot save last status.")
-	
+
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
-						sender_keyword = 'sender', connection_keyword = 'conn')	
+						sender_keyword = 'sender', connection_keyword = 'conn')
 	def LastStatus(self, sender = None, conn = None):
 		""" Return 'True' if last status is on, 'False' if off. """
 		if os.path.exists(LAST_DEVICE_STATUS_BLUETOOTH):
 			return False
 		else:
 			return True
-	
+
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = None,
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def RestoreLastStatus(self, sender = None, conn = None):
@@ -59,9 +59,9 @@ class Bluetooth(dbus.service.Object):
 			self.Enable()
 		else:
 			self.Disable()
-	
+
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
-						sender_keyword = 'sender', connection_keyword = 'conn')	
+						sender_keyword = 'sender', connection_keyword = 'conn')
 	def IsAvailable(self, sender = None, conn = None):
 		""" Check if bluetooth is available. """
 		""" Return 'True' if available, 'False' if disabled. """
@@ -79,7 +79,7 @@ class Bluetooth(dbus.service.Object):
 		except:
 			systemlog.write("ERROR: 'Bluetooth.IsAvailable()' - COMMAND: '" + command + "' - Exception thrown.")
 			return False
-	
+
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def IsEnabled(self, sender = None, conn = None):
@@ -103,7 +103,7 @@ class Bluetooth(dbus.service.Object):
 		except:
 			systemlog.write("ERROR: 'Bluetooth.IsEnabled()' - COMMAND: '" + command + "' - Exception thrown.")
 			return False
-	
+
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Enable(self, sender = None, conn = None):
@@ -134,7 +134,7 @@ class Bluetooth(dbus.service.Object):
 		# Save bluetooth status
 		self.__save_last_status(True)
 		return True
-	
+
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Disable(self, sender = None, conn = None):
@@ -165,7 +165,7 @@ class Bluetooth(dbus.service.Object):
 		# Save bluetooth status
 		self.__save_last_status(False)
 		return True
-	
+
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Toggle(self, sender = None, conn = None):

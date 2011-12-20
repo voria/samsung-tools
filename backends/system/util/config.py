@@ -79,25 +79,25 @@ class SystemConfig():
 		# Options sanity check
 		if self.config.get("Main", "BLUETOOTH_INITIAL_STATUS") not in BLUETOOTH_INITIAL_STATUS_ACCEPTED_VALUES:
 			# Option is invalid, set default value
-			systemlog.write("WARNING: 'SystemConfig' - 'BLUETOOTH_INITIAL_STATUS' option specified in '" + configfile + 
+			systemlog.write("WARNING: 'SystemConfig' - 'BLUETOOTH_INITIAL_STATUS' option specified in '" + configfile +
 					"' is invalid. Using default value ('" + BLUETOOTH_INITIAL_STATUS_DEFAULT + "').")
 			self.config.set("Main", "BLUETOOTH_INITIAL_STATUS", BLUETOOTH_INITIAL_STATUS_DEFAULT)
 		if self.config.get("Main", "WEBCAM_INITIAL_STATUS") not in WEBCAM_INITIAL_STATUS_ACCEPTED_VALUES:
 			# Option is invalid, set default value
-			systemlog.write("WARNING: 'SystemConfig' - 'WEBCAM_INITIAL_STATUS' option specified in '" + configfile + 
+			systemlog.write("WARNING: 'SystemConfig' - 'WEBCAM_INITIAL_STATUS' option specified in '" + configfile +
 					"' is invalid. Using default value ('" + WEBCAM_INITIAL_STATUS_DEFAULT + "').")
 			self.config.set("Main", "WIRELESS_INITIAL_STATUS", WIRELESS_INITIAL_STATUS_DEFAULT)
 		if self.config.get("Main", "WIRELESS_INITIAL_STATUS") not in WIRELESS_INITIAL_STATUS_ACCEPTED_VALUES:
 			# Option is invalid, set default value
-			systemlog.write("WARNING: 'SystemConfig' - 'WIRELESS_INITIAL_STATUS' option specified in '" + configfile + 
+			systemlog.write("WARNING: 'SystemConfig' - 'WIRELESS_INITIAL_STATUS' option specified in '" + configfile +
 					"' is invalid. Using default value ('" + WIRELESS_INITIAL_STATUS_DEFAULT + "').")
 			self.config.set("Main", "WIRELESS_INITIAL_STATUS", WIRELESS_INITIAL_STATUS_DEFAULT)
 		if self.config.get("Main", "CPUFAN_INITIAL_STATUS") not in CPUFAN_INITIAL_STATUS_ACCEPTED_VALUES:
 			# Option is invalid, set default value
-			systemlog.write("WARNING: 'SystemConfig' - 'CPUFAN_INITIAL_STATUS' option specified in '" + configfile + 
+			systemlog.write("WARNING: 'SystemConfig' - 'CPUFAN_INITIAL_STATUS' option specified in '" + configfile +
 					"' is invalid. Using default value ('" + CPUFAN_INITIAL_STATUS_DEFAULT + "').")
 			self.config.set("Main", "CPUFAN_INITIAL_STATUS", CPUFAN_INITIAL_STATUS_DEFAULT)
-	
+
 	def __write(self, option):
 		""" Write the new 'option' in the config file. """
 		""" If 'option' does not exists in file, add it. """
@@ -135,7 +135,7 @@ class SystemConfig():
 					newfile.write(line)
 				else:
 					optionfound = True
-					try:					
+					try:
 						newfile.write(option + "=" + value + "\n")
 					except:
 						systemlog.write("ERROR: 'SystemConfig.__write()' - cannot write the new value for '" + option + "' in the new config file.")
@@ -157,27 +157,27 @@ class SystemConfig():
 			return False
 		shutil.move(self.configfile + ".new", self.configfile)
 		return True
-	
+
 	def getBluetoothInitialStatus(self):
 		""" Return the BLUETOOTH_INITIAL_STATUS option. """
 		return self.config.get("Main", "BLUETOOTH_INITIAL_STATUS")
-	
+
 	def getWebcamInitialStatus(self):
 		""" Return the WEBCAM_INITIAL_STATUS option. """
 		return self.config.get("Main", "WEBCAM_INITIAL_STATUS")
-	
+
 	def getWirelessInitialStatus(self):
 		""" Return the WIRELESS_INITIAL_STATUS option. """
 		return self.config.get("Main", "WIRELESS_INITIAL_STATUS")
-	
+
 	def getCpufanInitialStatus(self):
 		""" Return the CPUFAN_INITIAL_STATUS option. """
 		return self.config.get("Main", "CPUFAN_INITIAL_STATUS")
-	
+
 	def getPHCVids(self):
 		""" Return the PHC_VIDS option. """
 		return self.config.get("Main", "PHC_VIDS").strip("\"")
-	
+
 	def setBluetoothInitialStatus(self, value):
 		""" Set the BLUETOOTH_INITIAL_STATUS option. """
 		""" Return 'True' on success, 'False' otherwise. """
@@ -187,7 +187,7 @@ class SystemConfig():
 			return False
 		self.config.set("Main", "BLUETOOTH_INITIAL_STATUS", value)
 		return self.__write("BLUETOOTH_INITIAL_STATUS")
-	
+
 	def setWebcamInitialStatus(self, value):
 		""" Set the WEBCAM_INITIAL_STATUS option. """
 		""" Return 'True' on success, 'False' otherwise. """
@@ -197,7 +197,7 @@ class SystemConfig():
 			return False
 		self.config.set("Main", "WEBCAM_INITIAL_STATUS", value)
 		return self.__write("WEBCAM_INITIAL_STATUS")
-	
+
 	def setWirelessInitialStatus(self, value):
 		""" Set the WIRELESS_INITIAL_STATUS option. """
 		""" Return 'True' on success, 'False' otherwise. """
@@ -207,7 +207,7 @@ class SystemConfig():
 			return False
 		self.config.set("Main", "WIRELESS_INITIAL_STATUS", value)
 		return self.__write("WIRELESS_INITIAL_STATUS")
-	
+
 	def setCpufanInitialStatus(self, value):
 		""" Set the CPUFAN_INITIAL_STATUS option. """
 		""" Return 'True' on success, 'False' otherwise. """

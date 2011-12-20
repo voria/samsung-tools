@@ -53,19 +53,19 @@ class Backlight():
 		if retry == 0:
 			print unicode(_("Backlight control: unable to connect to session service!"), "utf-8")
 			sys.exit(1)
-		
+
 	def __on(self):
 		return self.interface.Enable()
-	
+
 	def __off(self):
 		return self.interface.Disable()
-	
+
 	def __status(self):
 		return self.interface.IsEnabled()
-	
+
 	def __toggle(self):
 		return self.interface.Toggle()
-	
+
 	def apply(self):
 		if self.option == None:
 			return
@@ -124,7 +124,7 @@ class Backlight():
 					print BACKLIGHT_STATUS_ENABLED
 				else:
 					print BACKLIGHT_STATUS_DISABLED
-	
+
 class Bluetooth():
 	def __init__(self, option, use_notify = False):
 		self.option = option
@@ -142,22 +142,22 @@ class Bluetooth():
 		if retry == 0:
 			print unicode(_("Bluetooth control: unable to connect to session service!"), "utf-8")
 			sys.exit(1)
-			
+
 	def __is_available(self):
 		return self.interface.IsAvailable()
-	
+
 	def __on(self):
 		return self.interface.Enable(self.use_notify)
-	
+
 	def __off(self):
 		return self.interface.Disable(self.use_notify)
-	
+
 	def __toggle(self):
 		return self.interface.Toggle(self.use_notify)
-		
+
 	def __status(self):
 		return self.interface.IsEnabled(self.use_notify)
-	
+
 	def apply(self):
 		if self.option == None:
 			return
@@ -226,7 +226,7 @@ class Bluetooth():
 					print BLUETOOTH_STATUS_ENABLED
 				else:
 					print BLUETOOTH_STATUS_DISABLED
-		
+
 class Cpu():
 	def __init__(self, option, use_notify = False):
 		self.option = option
@@ -244,31 +244,31 @@ class Cpu():
 		if retry == 0:
 			print unicode(_("CPU fan control: unable to connect to session service!"), "utf-8")
 			sys.exit(1)
-	
+
 	def __is_temperature_available(self):
 		return self.interface.IsTemperatureAvailable()
-	
+
 	def __is_fan_available(self):
 		return self.interface.IsFanAvailable()
-	
+
 	def __temp(self):
 		return self.interface.GetTemperature()
-	
+
 	def __normal(self):
 		return self.interface.SetFanNormal(self.use_notify)
-	
+
 	def __silent(self):
 		return self.interface.SetFanSilent(self.use_notify)
-	
+
 	def __overclock(self):
 		return self.interface.SetFanOverclock(self.use_notify)
-	
+
 	def __cycle(self):
 		return self.interface.Cycle(self.use_notify)
-	
+
 	def __status(self):
 		return self.interface.Status(self.use_notify)
-	
+
 	def apply(self):
 		if self.option == None:
 			return
@@ -376,7 +376,7 @@ class Cpu():
 					print FAN_STATUS_OVERCLOCK
 				if result == 3:
 					print FAN_STATUS_ERROR
-				
+
 class Webcam():
 	def __init__(self, option, use_notify = False):
 		self.option = option
@@ -394,22 +394,22 @@ class Webcam():
 		if retry == 0:
 			print unicode(_("Webcam control: unable to connect to session service!"), "utf-8")
 			sys.exit(1)
-	
+
 	def __is_available(self):
 		return self.interface.IsAvailable()
-	
+
 	def __on(self):
 		return self.interface.Enable(self.use_notify)
-	
+
 	def __off(self):
 		return self.interface.Disable(self.use_notify)
-	
+
 	def __toggle(self):
 		return self.interface.Toggle(self.use_notify)
-		
+
 	def __status(self):
 		return self.interface.IsEnabled(self.use_notify)
-	
+
 	def apply(self):
 		if self.option == None:
 			return
@@ -482,7 +482,7 @@ class Webcam():
 class Wireless():
 	def __init__(self, option, use_notify = False):
 		self.option = option
-		self.use_notify = use_notify 
+		self.use_notify = use_notify
 		success = False
 		retry = 3
 		while retry > 0 and success == False:
@@ -496,19 +496,19 @@ class Wireless():
 		if retry == 0:
 			print unicode(_("Wireless control: unable to connect to session service!"), "utf-8")
 			sys.exit(1)
-	
+
 	def __is_available(self):
 		return self.interface.IsAvailable()
-	
+
 	def __on(self):
 		return self.interface.Enable(self.use_notify)
-	
+
 	def __off(self):
 		return self.interface.Disable(self.use_notify)
-	
+
 	def __toggle(self):
 		return self.interface.Toggle(self.use_notify)
-		
+
 	def __status(self):
 		return self.interface.IsEnabled(self.use_notify)
 
@@ -634,7 +634,7 @@ def main():
 		print unicode(_("No action(s) specified."), "utf-8")
 		print unicode(_("Use --help for instructions."), "utf-8")
 		sys.exit(1)
-	
+
 	usage_string = unicode(_("Usage: %s <interface> <option> ...") % os.path.basename(sys.argv[0]), "utf-8")
 	parser = OptionParser(usage_string, add_help_option = False)
 	parser.add_option('-h', '--help',
@@ -684,28 +684,28 @@ def main():
 					action = "store_true",
 					dest = "status",
 					default = False)
-	
+
 	(options, args) = parser.parse_args()
-	
+
 	global quiet
 	quiet = options.quiet
-	
+
 	if options.status == True:
 		options.backlight = "status"
 		options.bluetooth = "status"
 		options.cpu = "status"
 		options.webcam = "status"
 		options.wireless = "status"
-			
+
 	if os.getuid() == 0:
 		print unicode(_("This program is intended to be used only by non-privileged users."), "utf-8")
 		sys.exit(1)
-		
+
 	if len(args) != 0:
 		print unicode(_("Wrong argument(s)."), "utf-8")
 		print unicode(_("Use --help for instructions."), "utf-8")
 		sys.exit(1)
-	
+
 	# Check if the dbus daemon is running. If not, start it.
 	if "DBUS_SESSION_BUS_ADDRESS" not in os.environ:
 		try:
@@ -717,13 +717,13 @@ def main():
 		except:
 			print unicode(_("Unable to start a DBus daemon!"), "utf-8")
 			sys.exit(1)
-	
+
 	Backlight(options.backlight).apply()
 	Bluetooth(options.bluetooth, options.show_notify).apply()
 	Cpu(options.cpu, options.show_notify).apply()
 	Webcam(options.webcam, options.show_notify).apply()
 	Wireless(options.wireless, options.show_notify).apply()
-	
+
 	if options.interface == True and not quiet:
 		try:
 			bus = dbus.SystemBus()
@@ -740,7 +740,7 @@ def main():
 		except:
 			print unicode(_("Control interface: unable to connect to system service!"), "utf-8")
 			pass
-	
+
 	if options.stopsession == True:
 		try:
 			bus = dbus.SessionBus()
@@ -753,7 +753,7 @@ def main():
 			if not quiet:
 				print unicode(_("Cannot stop session service"), "utf-8")
 			pass
-	
+
 	if options.stopsystem == True:
 		try:
 			bus = dbus.SystemBus()

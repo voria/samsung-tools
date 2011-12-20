@@ -35,7 +35,7 @@ class Fan(dbus.service.Object):
 				self.method = file.readline()
 		except:
 			self.method = "none"
-	
+
 	def __save_last_status(self, status):
 		""" Save fan last status. """
 		try:
@@ -48,7 +48,7 @@ class Fan(dbus.service.Object):
 				file.close()
 		except:
 			systemlog.write("WARNING: 'Fan.__save_last_status()' - Cannot save last status.")
-	
+
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def IsAvailable(self, sender = None, conn = None):
@@ -58,9 +58,9 @@ class Fan(dbus.service.Object):
 			return False
 		else:
 			return True
-			
+
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
-						sender_keyword = 'sender', connection_keyword = 'conn')		
+						sender_keyword = 'sender', connection_keyword = 'conn')
 	def LastStatus(self, sender = None, conn = None):
 		""" Return last status for CPU fan. """
 		if not os.path.exists(LAST_DEVICE_STATUS_CPUFAN):
@@ -68,7 +68,7 @@ class Fan(dbus.service.Object):
 		else:
 			with open(LAST_DEVICE_STATUS_CPUFAN, "r") as file:
 				return file.readline()
-	
+
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = None,
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def RestoreLastStatus(self, sender = None, conn = None):
@@ -80,7 +80,7 @@ class Fan(dbus.service.Object):
 			self.SetSilent()
 		else:
 			self.SetOverclock()
-		
+
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'i',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Status(self, sender = None, conn = None):
@@ -117,7 +117,7 @@ class Fan(dbus.service.Object):
 				systemlog.write("ERROR: 'Fan.Status()' - cannot read from '" + SL_PATH_PERFORMANCE + "'.")
 				status = 3
 		return status
-	
+
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def SetNormal(self, sender = None, conn = None):
@@ -141,7 +141,7 @@ class Fan(dbus.service.Object):
 				return False
 		self.__save_last_status("normal")
 		return True
-	
+
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def SetSilent(self, sender = None, conn = None):
@@ -165,7 +165,7 @@ class Fan(dbus.service.Object):
 				return False
 		self.__save_last_status("silent")
 		return True
-	
+
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def SetOverclock(self, sender = None, conn = None):
@@ -189,7 +189,7 @@ class Fan(dbus.service.Object):
 				return False
 		self.__save_last_status("overclock")
 		return True
-	
+
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Cycle(self, sender = None, conn = None):

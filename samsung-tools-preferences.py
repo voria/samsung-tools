@@ -36,7 +36,7 @@ gettext.bindtextdomain("samsung-tools")
 gettext.textdomain("samsung-tools")
 
 from backends.globals import *
-from backends.session.util.icons import * 
+from backends.session.util.icons import *
 
 # Popup (based on code from compizconfig-settings-manager)
 class Popup (gtk.Window):
@@ -149,22 +149,22 @@ class KernelParametersDialog():
 		self.builder = gtk.Builder()
 		self.builder.set_translation_domain("samsung-tools")
 		self.builder.add_from_file(os.path.join(WORK_DIRECTORY, "gui/glade/samsung-tools-preferences-kernel-parameters.glade"))
-		
+
 		self.mainDialog = self.builder.get_object("mainDialog")
 		self.mainDialog.set_icon_from_file(SAMSUNG_TOOLS_ICON)
 		self.mainDialog.set_transient_for(parent)
 		self.mainDialog.connect("delete-event", self.quit)
-		
+
 		self.closeButton = self.builder.get_object("closeButton")
 		self.closeButton.connect("clicked", self.quit)
-		
+
 		# Swappiness
 		conn = self.__connect()
 		self.swappinessSpinbutton = self.builder.get_object("swappinessSpinbutton")
 		self.swappinessSpinbuttonValue = conn.GetSwappiness()
 		self.swappinessSpinbutton.set_value(self.swappinessSpinbuttonValue)
 		self.swappinessSpinbutton.connect("value-changed", self.on_swappinessSpinbutton_valuechanged)
-		
+
 	def __connect(self):
 		retry = 3
 		while retry > 0:
@@ -180,7 +180,7 @@ class KernelParametersDialog():
 	def on_swappinessSpinbutton_valuechanged(self, button, event = None):
 		self.swappinessSpinbuttonValue = button.get_value_as_int()
 		# Value will be actually saved at the time the dialog is quitted
-	
+
 	def quit(self, widget = None, event = None):
 		conn = self.__connect()
 		conn.SetSwappiness(self.swappinessSpinbuttonValue)
@@ -193,17 +193,17 @@ class PowerManagementDialog():
 		self.builder = gtk.Builder()
 		self.builder.set_translation_domain("samsung-tools")
 		self.builder.add_from_file(os.path.join(WORK_DIRECTORY, "gui/glade/samsung-tools-preferences-power-management.glade"))
-		
+
 		self.mainDialog = self.builder.get_object("mainDialog")
 		self.mainDialog.set_icon_from_file(SAMSUNG_TOOLS_ICON)
 		self.mainDialog.set_transient_for(parent)
 		self.mainDialog.connect("delete-event", self.quit)
-		
+
 		self.closeButton = self.builder.get_object("closeButton")
 		self.closeButton.connect("clicked", self.quit)
-		
+
 		conn = self.__connect()
-		
+
 		# Devices Power Management
 		self.devicesPowerManagement = self.builder.get_object("devicesPowerManagement")
 		self.devicesPowerManagement.set_sensitive(False)
@@ -213,7 +213,7 @@ class PowerManagementDialog():
 			if conn.IsEnabled(PM_DEVICES_POWER_MANAGEMENT):
 				self.devicesPowerManagement.set_active(True)
 		self.devicesPowerManagement.connect("toggled", self.on_devicesPowerManagement_toggled)
-				
+
 		# USB Autosuspend
 		self.usbAutosuspend = self.builder.get_object("usbAutosuspend")
 		self.usbAutosuspend.set_sensitive(False)
@@ -223,7 +223,7 @@ class PowerManagementDialog():
 			if conn.IsEnabled(PM_USB_AUTOSUSPEND):
 				self.usbAutosuspend.set_active(True)
 		self.usbAutosuspend.connect("toggled", self.on_usbAutosuspend_toggled)
-		
+
 		# VM Writeback Time
 		self.vmWritebackTime = self.builder.get_object("vmWritebackTime")
 		self.vmWritebackTime.set_sensitive(False)
@@ -233,7 +233,7 @@ class PowerManagementDialog():
 			if conn.IsEnabled(PM_VM_WRITEBACK_TIME):
 				self.vmWritebackTime.set_active(True)
 		self.vmWritebackTime.connect("toggled", self.on_vmWritebackTime_toggled)
-		
+
 	def __connect(self):
 		retry = 3
 		while retry > 0:
@@ -249,7 +249,7 @@ class PowerManagementDialog():
 	def on_devicesPowerManagement_toggled(self, button = None):
 		conn = self.__connect()
 		conn.Toggle(PM_DEVICES_POWER_MANAGEMENT)
-		
+
 	def on_usbAutosuspend_toggled(self, button = None):
 		conn = self.__connect()
 		conn.Toggle(PM_USB_AUTOSUSPEND)
@@ -267,20 +267,20 @@ class PhcDialog():
 		self.builder = gtk.Builder()
 		self.builder.set_translation_domain("samsung-tools")
 		self.builder.add_from_file(os.path.join(WORK_DIRECTORY, "gui/glade/samsung-tools-preferences-phc.glade"))
-		
+
 		self.mainDialog = self.builder.get_object("mainDialog")
 		self.mainDialog.set_icon_from_file(SAMSUNG_TOOLS_ICON)
 		self.mainDialog.set_transient_for(parent)
 		self.mainDialog.connect("delete-event", self.quit)
-		
+
 		self.closeButton = self.builder.get_object("closeButton")
 		self.closeButton.connect("clicked", self.quit)
-		
+
 		self.applyAtBootCheckbutton = self.builder.get_object("applyAtBootCheckbutton")
 		conn = self.__connect_options()
 		if conn.GetPHCVids() != "":
 			self.applyAtBootCheckbutton.set_active(True)
-		
+
 		# Get all remaining widgets
 		self.freqLabels = [
 						self.builder.get_object("freq1Label"),
@@ -310,7 +310,7 @@ class PhcDialog():
 							self.builder.get_object("vid4Adjustment"),
 							self.builder.get_object("vid5Adjustment")
 							]
-		
+
 		conn = self.__connect_cpu()
 		frequencies = conn.GetFrequencies().split()
 		defaultvids = conn.GetDefaultVids().split()
@@ -328,7 +328,7 @@ class PhcDialog():
 			self.vidSpinbuttons[i].set_value(int(currentvids[i]))
 			self.vidSpinbuttons[i].show()
 			i += 1
-		
+
 	def __connect_cpu(self):
 		retry = 3
 		while retry > 0:
@@ -340,7 +340,7 @@ class PhcDialog():
 				retry = retry - 1
 		print unicode(_("Unable to connect to system service!"), "utf-8")
 		sys.exit(1)
-	
+
 	def __connect_options(self):
 		retry = 3
 		while retry > 0:
@@ -352,7 +352,7 @@ class PhcDialog():
 				retry = retry - 1
 		print unicode(_("Unable to connect to system service!"), "utf-8")
 		sys.exit(1)
-	
+
 	def quit(self, widget = None, event = None):
 		i = 0
 		newvids = ""
@@ -377,7 +377,7 @@ class PhcDialog():
 			conn.SetPHCVids(newvids)
 		else:
 			conn.SetPHCVids("default")
-			
+
 		self.mainDialog.destroy()
 
 class Main():
@@ -390,7 +390,7 @@ class Main():
 		self.builder = gtk.Builder()
 		self.builder.set_translation_domain("samsung-tools")
 		self.builder.add_from_file(os.path.join(WORK_DIRECTORY, "gui/glade/samsung-tools-preferences.glade"))
-		
+
 		###
 		### Main widgets
 		###
@@ -401,7 +401,7 @@ class Main():
 		self.closeButton.connect("clicked", self.quit)
 		self.aboutButton = self.builder.get_object("aboutButton")
 		self.aboutButton.connect("clicked", self.about)
-	
+
 		###
 		### Session service configuration
 		###
@@ -496,7 +496,7 @@ class Main():
 			self.useHotkeysCheckbutton.set_active(False)
 		self.useHotkeysCheckbutton.connect("toggled", self.on_useHotkeysCheckbutton_toggled)
 		self.on_useHotkeysCheckbutton_toggled(self.useHotkeysCheckbutton, True)
-		
+
 		###
 		### System service configuration
 		###
@@ -506,7 +506,7 @@ class Main():
 		self.bluetoothInitialStatusComboboxCR = gtk.CellRendererText()
 		self.bluetoothInitialStatusCombobox.pack_start(self.bluetoothInitialStatusComboboxCR)
 		self.bluetoothInitialStatusCombobox.add_attribute(self.bluetoothInitialStatusComboboxCR, 'text', 0)
-		status = system.GetBluetoothInitialStatus() 
+		status = system.GetBluetoothInitialStatus()
 		if status == "last":
 			self.bluetoothInitialStatusCombobox.set_active(0)
 		elif status == "on":
@@ -606,7 +606,7 @@ class Main():
 			self.controlInterfaceValueLabel.set_label("samsung-laptop")
 		else:
 			self.controlInterfaceValueLabel.set_label("-")
-		
+
 		###
 		### Advanced power management configuration
 		###
@@ -633,16 +633,16 @@ class Main():
 		else:
 			self.phcButton.set_sensitive(True)
 		self.phcButton.connect("clicked", self.on_phcButton_clicked)
-		
+
 		# Enable click on website url in about dialog
 		def about_dialog_url_clicked(dialog, link, user_data):
 			import webbrowser
 			webbrowser.open(link)
 		gtk.about_dialog_set_url_hook(about_dialog_url_clicked, None)
-		
+
 		# All ready
 		self.mainWindow.show()
-	
+
 	def __connect_session_options(self):
 		retry = 3
 		while retry > 0:
@@ -654,7 +654,7 @@ class Main():
 				retry = retry - 1
 		print unicode(_("Unable to connect to session service!"), "utf-8")
 		sys.exit(1)
-	
+
 	def __connect_session_bluetooth(self):
 		""" Connect to session service for bluetooth control """
 		retry = 3
@@ -666,7 +666,7 @@ class Main():
 			except:
 				retry = retry - 1
 		sys.exit(1)
-	
+
 	def __connect_session_webcam(self):
 		""" Connect to session service for webcam control """
 		retry = 3
@@ -678,7 +678,7 @@ class Main():
 			except:
 				retry = retry - 1
 		sys.exit(1)
-	
+
 	def __connect_session_wireless(self):
 		""" Connect to session service for wireless control """
 		retry = 3
@@ -690,7 +690,7 @@ class Main():
 			except:
 				retry = retry - 1
 		sys.exit(1)
-		
+
 	def __connect_session_cpu(self):
 		""" Connect to session service for cpu fan control """
 		retry = 3
@@ -702,7 +702,7 @@ class Main():
 			except:
 				retry = retry - 1
 		sys.exit(1)
-		
+
 	def __connect_system_options(self):
 		retry = 3
 		while retry > 0:
@@ -714,7 +714,7 @@ class Main():
 				retry = retry - 1
 		print unicode(_("Unable to connect to system service!"), "utf-8")
 		sys.exit(1)
-	
+
 	def __connect_system_sysctl(self):
 		retry = 3
 		while retry > 0:
@@ -738,7 +738,7 @@ class Main():
 				retry = retry - 1
 		print unicode(_("Unable to connect to system service!"), "utf-8")
 		sys.exit(1)
-	
+
 	def __convert_gtk_to_xbindkeys(self, hotkey):
 		keys = hotkey.replace('<', "").split('>')
 		result = ""
@@ -750,7 +750,7 @@ class Main():
 			result += key + "+"
 		result = result[0:len(result) - 1] # Remove the '+' at the end
 		return result
-	
+
 	def __convert_xbindkeys_to_gtk(self, hotkey):
 		keys = hotkey.split('+')
 		result = ""
@@ -764,13 +764,13 @@ class Main():
 			if key == "Control" or key == "Shift" or key == "Alt" or key == "Super":
 				result += ">"
 		return result
-	
+
 	def __set_backlight_hotkey_sensitiveness(self, active):
 		self.backlightHotkeyLabel.set_sensitive(active)
 		self.backlightHotkeyButton.set_sensitive(active)
 		self.backlightHotkeyCleanButton.set_sensitive(active)
 		self.backlightHotkeyDefaultButton.set_sensitive(active)
-	
+
 	def __set_bluetooth_hotkey_sensitiveness(self, active):
 		# Check if bluetooth is actually available
 		conn = self.__connect_session_bluetooth()
@@ -783,7 +783,7 @@ class Main():
 		self.bluetoothHotkeyButton.set_sensitive(active)
 		self.bluetoothHotkeyCleanButton.set_sensitive(active)
 		self.bluetoothHotkeyDefaultButton.set_sensitive(active)
-	
+
 	def __set_cpu_hotkey_sensitiveness(self, active):
 		# Check if cpu fan control is actually available
 		conn = self.__connect_session_cpu()
@@ -796,7 +796,7 @@ class Main():
 		self.cpuHotkeyButton.set_sensitive(active)
 		self.cpuHotkeyCleanButton.set_sensitive(active)
 		self.cpuHotkeyDefaultButton.set_sensitive(active)
-	
+
 	def __set_webcam_hotkey_sensitiveness(self, active):
 		# Check if webcam is actually available
 		conn = self.__connect_session_webcam()
@@ -809,7 +809,7 @@ class Main():
 		self.webcamHotkeyButton.set_sensitive(active)
 		self.webcamHotkeyCleanButton.set_sensitive(active)
 		self.webcamHotkeyDefaultButton.set_sensitive(active)
-	
+
 	def __set_wireless_hotkey_sensitiveness(self, active):
 		# Check if wireless is actually available
 		conn = self.__connect_session_wireless()
@@ -822,21 +822,21 @@ class Main():
 		self.wirelessHotkeyButton.set_sensitive(active)
 		self.wirelessHotkeyCleanButton.set_sensitive(active)
 		self.wirelessHotkeyDefaultButton.set_sensitive(active)
-	
+
 	def on_useHotkeysCheckbutton_toggled(self, checkbutton = None, toggle_widgets_only = False):
 		self.__set_backlight_hotkey_sensitiveness(checkbutton.get_active())
 		self.__set_bluetooth_hotkey_sensitiveness(checkbutton.get_active())
 		self.__set_cpu_hotkey_sensitiveness(checkbutton.get_active())
 		self.__set_webcam_hotkey_sensitiveness(checkbutton.get_active())
 		self.__set_wireless_hotkey_sensitiveness(checkbutton.get_active())
-		
+
 		if toggle_widgets_only == False:
 			session = self.__connect_session_options()
 			if checkbutton.get_active() == True:
 				session.SetUseHotkeys("true")
 			else:
 				session.SetUseHotkeys("false")
-	
+
 	def on_backlightHotkeyButton_changed(self, button = None, key = None, mods = None):
 		if key == 0 and mods == 0:
 			new = "disable"
@@ -844,90 +844,90 @@ class Main():
 			new = gtk.accelerator_name(key, mods)
 		session = self.__connect_session_options()
 		session.SetBacklightHotkey(self.__convert_gtk_to_xbindkeys(new))
-		
-	
+
+
 	def on_bluetoothHotkeyButton_changed(self, button = None, key = None, mods = None):
 		if key == 0 and mods == 0:
 			new = "disable"
 		else:
-			new = gtk.accelerator_name(key, mods) 
+			new = gtk.accelerator_name(key, mods)
 		session = self.__connect_session_options()
 		session.SetBluetoothHotkey(self.__convert_gtk_to_xbindkeys(new))
-		
+
 	def on_cpuHotkeyButton_changed(self, button = None, key = None, mods = None):
 		if key == 0 and mods == 0:
 			new = "disable"
 		else:
-			new = gtk.accelerator_name(key, mods) 
+			new = gtk.accelerator_name(key, mods)
 		session = self.__connect_session_options()
 		session.SetCpuHotkey(self.__convert_gtk_to_xbindkeys(new))
-		
+
 	def on_webcamHotkeyButton_changed(self, button = None, key = None, mods = None):
 		if key == 0 and mods == 0:
 			new = "disable"
 		else:
-			new = gtk.accelerator_name(key, mods) 
+			new = gtk.accelerator_name(key, mods)
 		session = self.__connect_session_options()
 		session.SetWebcamHotkey(self.__convert_gtk_to_xbindkeys(new))
-		
+
 	def on_wirelessHotkeyButton_changed(self, button = None, key = None, mods = None):
 		if key == 0 and mods == 0:
 			new = "disable"
 		else:
-			new = gtk.accelerator_name(key, mods) 
+			new = gtk.accelerator_name(key, mods)
 		session = self.__connect_session_options()
 		session.SetWirelessHotkey(self.__convert_gtk_to_xbindkeys(new))
-	
+
 	def on_backlightHotkeyCleanButton_clicked(self, button = None):
 		self.backlightHotkeyButton.set_label(0, 0, True)
-	
+
 	def on_bluetoothHotkeyCleanButton_clicked(self, button = None):
 		self.bluetoothHotkeyButton.set_label(0, 0, True)
-	
+
 	def on_cpuHotkeyCleanButton_clicked(self, button = None):
 		self.cpuHotkeyButton.set_label(0, 0, True)
-	
+
 	def on_webcamHotkeyCleanButton_clicked(self, button = None):
 		self.webcamHotkeyButton.set_label(0, 0, True)
-	
+
 	def on_wirelessHotkeyCleanButton_clicked(self, button = None):
 		self.wirelessHotkeyButton.set_label(0, 0, True)
-	
+
 	def on_backlightHotkeyDefaultButton_clicked(self, button = None):
 		session = self.__connect_session_options()
 		session.SetBacklightHotkey("default")
 		hotkey = session.GetBacklightHotkey()
 		(key, mods) = gtk.accelerator_parse(self.__convert_xbindkeys_to_gtk(hotkey))
 		self.backlightHotkeyButton.set_label(key, mods, True)
-	
+
 	def on_bluetoothHotkeyDefaultButton_clicked(self, button = None):
 		session = self.__connect_session_options()
 		session.SetBluetoothHotkey("default")
 		hotkey = session.GetBluetoothHotkey()
 		(key, mods) = gtk.accelerator_parse(self.__convert_xbindkeys_to_gtk(hotkey))
 		self.bluetoothHotkeyButton.set_label(key, mods, True)
-	
+
 	def on_cpuHotkeyDefaultButton_clicked(self, button = None):
 		session = self.__connect_session_options()
 		session.SetCpuHotkey("default")
 		hotkey = session.GetCpuHotkey()
 		(key, mods) = gtk.accelerator_parse(self.__convert_xbindkeys_to_gtk(hotkey))
 		self.cpuHotkeyButton.set_label(key, mods, True)
-	
+
 	def on_webcamHotkeyDefaultButton_clicked(self, button = None):
 		session = self.__connect_session_options()
 		session.SetWebcamHotkey("default")
 		hotkey = session.GetWebcamHotkey()
 		(key, mods) = gtk.accelerator_parse(self.__convert_xbindkeys_to_gtk(hotkey))
 		self.webcamHotkeyButton.set_label(key, mods, True)
-	
+
 	def on_wirelessHotkeyDefaultButton_clicked(self, button = None):
 		session = self.__connect_session_options()
 		session.SetWirelessHotkey("default")
 		hotkey = session.GetWirelessHotkey()
 		(key, mods) = gtk.accelerator_parse(self.__convert_xbindkeys_to_gtk(hotkey))
 		self.wirelessHotkeyButton.set_label(key, mods, True)
-	
+
 	def on_bluetoothInitialStatusCombobox_changed(self, combobox = None):
 		system = self.__connect_system_options()
 		active = combobox.get_active()
@@ -937,7 +937,7 @@ class Main():
 			system.SetBluetoothInitialStatus("on")
 		else:
 			system.SetBluetoothInitialStatus("off")
-			
+
 	def on_webcamInitialStatusCombobox_changed(self, combobox = None):
 		system = self.__connect_system_options()
 		active = combobox.get_active()
@@ -947,7 +947,7 @@ class Main():
 			system.SetWebcamInitialStatus("on")
 		else:
 			system.SetWebcamInitialStatus("off")
-	
+
 	def on_wirelessInitialStatusCombobox_changed(self, combobox = None):
 		system = self.__connect_system_options()
 		active = combobox.get_active()
@@ -957,7 +957,7 @@ class Main():
 			system.SetWirelessInitialStatus("on")
 		else:
 			system.SetWirelessInitialStatus("off")
-			
+
 	def on_cpufanInitialStatusCombobox_changed(self, combobox = None):
 		system = self.__connect_system_options()
 		active = combobox.get_active()
@@ -969,29 +969,29 @@ class Main():
 			system.SetCpufanInitialStatus("overclock")
 		else:
 			system.SetCpufanInitialStatus("last")
-	
+
 	def on_bluetoothInitialStatusCleanButton_clicked(self, button = None):
 		if self.bluetoothInitialStatusCombobox.get_active() != 0:
 			self.bluetoothInitialStatusCombobox.set_active(0)
-	
+
 	def on_webcamInitialStatusCleanButton_clicked(self, button = None):
 		if self.webcamInitialStatusCombobox.get_active() != 0:
 			self.webcamInitialStatusCombobox.set_active(0)
-	
+
 	def on_wirelessInitialStatusCleanButton_clicked(self, button = None):
 		if self.wirelessInitialStatusCombobox.get_active() != 0:
 			self.wirelessInitialStatusCombobox.set_active(0)
-	
+
 	def on_cpufanInitialStatusCleanButton_clicked(self, button = None):
 		if self.cpufanInitialStatusCombobox.get_active() != 0:
 			self.cpufanInitialStatusCombobox.set_active(0)
-	
+
 	def on_sysCtlButton_clicked(self, button):
 		KernelParametersDialog(self.mainWindow)
-	
+
 	def on_powerManagementButton_clicked(self, button):
 		PowerManagementDialog(self.mainWindow)
-		
+
 	def on_phcButton_clicked(self, button):
 		title = unicode(_("Caution!"), "utf-8")
 		message = unicode(_("CPU undervolting can lead to significant gains in terms of power energy saving, \
@@ -1007,7 +1007,7 @@ Are you sure you want to continue?"), "utf-8")
 		dialog.destroy()
 		if response == gtk.RESPONSE_YES:
 			PhcDialog(self.mainWindow)
-	
+
 	def about(self, button = None):
 		authors = [ "Fortunato Ventre" ]
 		artists = [ "http://icons.mysitemyway.com" ]
@@ -1057,9 +1057,9 @@ Are you sure you want to continue?"), "utf-8")
 					"Виталий",
 					"SweX"
 					]
-		
+
 		translators.sort(cmp = lambda x, y: cmp(x.lower(), y.lower()))
-		
+
 		dialog = gtk.AboutDialog()
 		dialog.set_icon_from_file(SAMSUNG_TOOLS_ICON)
 		dialog.set_name(APP_NAME)
@@ -1076,10 +1076,10 @@ Are you sure you want to continue?"), "utf-8")
 		dialog.set_translator_credits(temp)
 		dialog.run()
 		dialog.destroy()
-	
+
 	def quit(self, widget = None, event = None):
 		gtk.main_quit()
-	
+
 if __name__ == "__main__":
 	Main()
 	gtk.main()

@@ -25,23 +25,23 @@ class Log():
 	def __init__(self, logfile):
 		self.logfile = logfile
 		self.log = None
-	
+
 	def __open(self):
 		""" Open log file for writing. """
 		try:
 			self.log = open(self.logfile, "a+")
 		except:
 			self.log = None
-	
+
 	def __close(self):
 		""" Close log file. """
 		if self.log != None:
 			self.log.close()
-	
+
 	def __get_time(self):
 		""" Return current time string. """
 		return strftime("%a %d %H:%M:%S : ")
-	
+
 	def write(self, message):
 		self.__open()
 		if self.log == None:

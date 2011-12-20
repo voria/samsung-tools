@@ -29,14 +29,14 @@ class SysCtl(dbus.service.Object):
 	def __init__(self, conn = None, object_path = None, bus_name = None):
 		dbus.service.Object.__init__(self, conn, object_path, bus_name)
 		self.available = self.IsAvailable()
-	
+
 	def __write(self, file, option, value):
 		""" Write the 'option = value' in the 'file' configfile. """
 		""" If 'option' is not found in the config file, add it. """
 		""" Return "True" on success, "False" otherwise. """
 		if not self.available:
 			return False
-		
+
 		optionfound = False
 		try:
 			oldfile = open(file, "r")
@@ -58,7 +58,7 @@ class SysCtl(dbus.service.Object):
 					newfile.write(line)
 				else:
 					optionfound = True
-					try:					
+					try:
 						newfile.write(option + " = " + value + "\n")
 					except:
 						systemlog.write("ERROR: 'SysCtl.__write()' - cannot write the new value for '" + option + "' in the new config file.")
@@ -78,7 +78,7 @@ class SysCtl(dbus.service.Object):
 			return False
 		shutil.move(file + ".new", file)
 		return True
-	
+
 	def __read(self, file, option):
 		""" Read the 'option' value in the 'file' configfile. """
 		""" Return the read value, or 'None' if any error. """
@@ -98,7 +98,7 @@ class SysCtl(dbus.service.Object):
 		# Option not found
 		f.close()
 		return None
-	
+
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def IsAvailable(self, sender = None, conn = None):
@@ -106,7 +106,7 @@ class SysCtl(dbus.service.Object):
 			return True
 		else:
 			return False
-	
+
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'i',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def GetSwappiness(self, sender = None, conn = None):
@@ -121,7 +121,7 @@ class SysCtl(dbus.service.Object):
 		if value < 0 or value > 100:
 			return False
 		return self.__write(SYSCTL_CONFIG_FILE, "vm.swappiness", str(value))
-	
+
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def ApplySettings(self, sender = None, conn = None):
@@ -144,7 +144,7 @@ class PowerManagement(dbus.service.Object):
 	""" Manage power save options """
 	def __init__(self, conn = None, object_path = None, bus_name = None):
 		dbus.service.Object.__init__(self, conn, object_path, bus_name)
-	
+
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def IsValid(self, script, sender = None, conn = None):
@@ -157,7 +157,7 @@ class PowerManagement(dbus.service.Object):
 		script == PM_VM_WRITEBACK_TIME:
 			return os.access(script, os.F_OK)
 		return False
-		
+
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def IsEnabled(self, script, sender = None, conn = None):
