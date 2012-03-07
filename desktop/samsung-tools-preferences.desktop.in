@@ -6,5 +6,5 @@ Exec=samsung-tools-preferences
 Terminal=false
 Type=Application
 Categories=Settings;X-GNOME-SystemSettings;
-OnlyShowIn=GNOME;XFCE;KDE;
+OnlyShowIn=GNOME;XFCE;KDE;Unity;
 StartupNotify=true

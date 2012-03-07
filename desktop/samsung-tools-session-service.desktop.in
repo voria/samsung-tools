@@ -5,4 +5,4 @@ Icon=/usr/lib/samsung-tools/gui/icons/samsung-tools.png
 Exec=/usr/lib/samsung-tools/session-service.py
 Terminal=false
 Type=Application
-OnlyShowIn=GNOME;XFCE;KDE;
+OnlyShowIn=GNOME;XFCE;KDE;Unity;
