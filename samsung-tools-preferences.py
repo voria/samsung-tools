@@ -1055,7 +1055,15 @@ Are you sure you want to continue?"), "utf-8")
 					"Daniel Manrique",
 					"Stanislas Michalak",
 					"Виталий",
-					"SweX"
+					"SweX",
+					"František Zatloukal",
+					"abuyop",
+					"Hubert \"Schlussarz\" Ślósarski",
+					"Rafael Neri",
+					"André Drumond",
+					"Antoine Tonio",
+					"naitong",
+					"Dennis Baudys"
 					]
 
 		translators.sort(cmp = lambda x, y: cmp(x.lower(), y.lower()))

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-23 12:50+0100\n"
+"POT-Creation-Date: 2012-03-07 10:46+0100\n"
 "PO-Revision-Date: 2011-10-30 14:03+0000\n"
 "Last-Translator: Виталий <Unknown>\n"
 "Language-Team: Russian <kde-i18n-it@kde.org>\n"
@@ -16,10 +16,10 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-11-22 13:24+0000\n"
-"X-Generator: Launchpad (build 14336)\n"
+"X-Launchpad-Export-Date: 2012-03-07 09:40+0000\n"
+"X-Generator: Launchpad (build 14907)\n"
 
-#: backends/session/util/locales.py:25 samsung-tools-preferences.py:409
+#: backends/session/util/locales.py:25 samsung-tools-preferences.py:410
 msgid "Backlight"
 msgstr "Подсветка"
 
@@ -51,7 +51,7 @@ msgstr "Невозможно выключить подсветку"
 msgid "Backlight cannot be toggled"
 msgstr "Невозможно переключить подсветку"
 
-#: backends/session/util/locales.py:34 samsung-tools-preferences.py:418
+#: backends/session/util/locales.py:34 samsung-tools-preferences.py:419
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
@@ -87,7 +87,7 @@ msgstr "Невозможно вкл/выкл Bluetooth"
 msgid "Bluetooth control is not available"
 msgstr "Управление Bluetooth не доступно"
 
-#: backends/session/util/locales.py:44 samsung-tools-preferences.py:427
+#: backends/session/util/locales.py:44 samsung-tools-preferences.py:428
 msgid "CPU fan"
 msgstr "Режим охлаждения процессора (CPU)"
 
@@ -119,7 +119,7 @@ msgstr "Невозможно узнать режим охлаждения"
 msgid "CPU fan control is not available"
 msgstr "Управление режимом охлаждения не доступно"
 
-#: backends/session/util/locales.py:53 samsung-tools-preferences.py:436
+#: backends/session/util/locales.py:53 samsung-tools-preferences.py:437
 msgid "Webcam"
 msgstr "Веб-камера"
 
@@ -155,7 +155,7 @@ msgstr "Невозможно вкл/выкл Веб-камеру"
 msgid "Webcam control is not available"
 msgstr "Управление Веб-камерой не доступно"
 
-#: backends/session/util/locales.py:63 samsung-tools-preferences.py:445
+#: backends/session/util/locales.py:63 samsung-tools-preferences.py:446
 msgid "Wireless"
 msgstr "Беспроводная сеть"
 
@@ -214,9 +214,8 @@ msgid "Wireless control: unable to connect to session service!"
 msgstr "Управление Беспроводной сети: не удается подключиться к службе сессии!"
 
 #: samsung-tools.py:586
-#, fuzzy
 msgid "Command Line Utility"
-msgstr "Samsung Tools - Утилита командной строки"
+msgstr ""
 
 #: samsung-tools.py:588 samsung-tools.py:638
 #, python-format
@@ -303,7 +302,7 @@ msgstr " - Отключить Bluetooth, Веб-камеру и Беспрово
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Для большей информации, посетите 'Linux On My Samsung' форум:"
 
-#: samsung-tools.py:629 samsung-tools-preferences.py:1066
+#: samsung-tools.py:629 samsung-tools-preferences.py:1067
 msgid "Released under GPLv3 license"
 msgstr "Выпущен под GPLv3 лицензией"
 
@@ -334,9 +333,8 @@ msgid "Control interface:"
 msgstr ""
 
 #: samsung-tools.py:741
-#, fuzzy
 msgid "Control interface: unable to connect to system service!"
-msgstr "Не удается подключиться к системной службе!"
+msgstr ""
 
 #: samsung-tools.py:751
 msgid "Session service stopped"
@@ -358,38 +356,38 @@ msgstr "Невозможно остановить системную служб�
 msgid "Please press the new hotkey"
 msgstr "Пожалуйста нажмите новое сочетание клавиш"
 
-#: samsung-tools-preferences.py:121 samsung-tools-preferences.py:607
+#: samsung-tools-preferences.py:121
 msgid "None"
 msgstr "Нет"
 
-#: samsung-tools-preferences.py:176 samsung-tools-preferences.py:245
-#: samsung-tools-preferences.py:340 samsung-tools-preferences.py:352
-#: samsung-tools-preferences.py:714 samsung-tools-preferences.py:726
-#: samsung-tools-preferences.py:738
+#: samsung-tools-preferences.py:177 samsung-tools-preferences.py:246
+#: samsung-tools-preferences.py:341 samsung-tools-preferences.py:353
+#: samsung-tools-preferences.py:715 samsung-tools-preferences.py:727
+#: samsung-tools-preferences.py:739
 msgid "Unable to connect to system service!"
 msgstr "Не удается подключиться к системной службе!"
 
-#: samsung-tools-preferences.py:364
+#: samsung-tools-preferences.py:365
 msgid "Confirm"
 msgstr "Подтвердить"
 
-#: samsung-tools-preferences.py:365
+#: samsung-tools-preferences.py:366
 msgid "Apply the new VIDs?"
 msgstr "Применить новые VIDы?"
 
-#: samsung-tools-preferences.py:630
+#: samsung-tools-preferences.py:631
 msgid "You need a PHC enabled kernel to use this feature"
 msgstr "Вам нужно ядро с включенным PHC, для использования этой опции"
 
-#: samsung-tools-preferences.py:654
+#: samsung-tools-preferences.py:655
 msgid "Unable to connect to session service!"
 msgstr "Не удается подключиться к службе сессии!"
 
-#: samsung-tools-preferences.py:995
+#: samsung-tools-preferences.py:996
 msgid "Caution!"
 msgstr "Внимание!"
 
-#: samsung-tools-preferences.py:996
+#: samsung-tools-preferences.py:997
 msgid ""
 "CPU undervolting can lead to significant gains in terms of power energy "
 "saving, however <b>IT IS A RISKY PRACTICE</b> that might result in "

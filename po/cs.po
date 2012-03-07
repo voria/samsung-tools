@@ -1,18 +1,17 @@
-# Ukrainian translation for samsung-tools
-# Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010
+# Czech translation for samsung-tools
+# Copyright (c) 2011 Rosetta Contributors and Canonical Ltd 2011
 # This file is distributed under the same license as the samsung-tools package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
 #
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
-# Fortunato Ventre (voRia) <vorione@gmail.com>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-03-07 10:46+0100\n"
-"PO-Revision-Date: 2011-11-23 12:27+0000\n"
-"Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
-"Language-Team: Ukrainian <kde-i18n-it@kde.org>\n"
-"Language: uk\n"
+"PO-Revision-Date: 2011-12-02 15:34+0000\n"
+"Last-Translator: František Zatloukal <Unknown>\n"
+"Language-Team: Czech <cs@li.org>\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,35 +20,35 @@ msgstr ""
 
 #: backends/session/util/locales.py:25 samsung-tools-preferences.py:410
 msgid "Backlight"
-msgstr "Підсвічування"
+msgstr "Podsvícení"
 
 #: backends/session/util/locales.py:26
 msgid "Backlight is enabled"
-msgstr "Підсвічування увімкнено"
+msgstr "Podsvícení je zapnuto"
 
 #: backends/session/util/locales.py:27
 msgid "Backlight is disabled"
-msgstr "Підсвічування вимкнено"
+msgstr "Podsvícení je vypnuto"
 
 #: backends/session/util/locales.py:28
 msgid "Backlight enabled"
-msgstr "Увімкнене підсвічування"
+msgstr "Podsvícení zapnuto"
 
 #: backends/session/util/locales.py:29
 msgid "Backlight disabled"
-msgstr "Вимкнене підсвічування"
+msgstr "Podsvícení vypnuto"
 
 #: backends/session/util/locales.py:30
 msgid "Backlight cannot be enabled"
-msgstr "Не вдалось увімкнути підсвічування"
+msgstr "Podsvícení nemůže být povoleno"
 
 #: backends/session/util/locales.py:31
 msgid "Backlight cannot be disabled"
-msgstr "Не вдалось вимкнути підсвічування"
+msgstr "Podsvícení nemůže být vypnuto"
 
 #: backends/session/util/locales.py:32
 msgid "Backlight cannot be toggled"
-msgstr "Не вдалось перемикнути підсвічування"
+msgstr "Podsvícení nemůže být přepnuto"
 
 #: backends/session/util/locales.py:34 samsung-tools-preferences.py:419
 msgid "Bluetooth"
@@ -57,183 +56,182 @@ msgstr "Bluetooth"
 
 #: backends/session/util/locales.py:35
 msgid "Bluetooth is enabled"
-msgstr "Bluetooth увімкнено"
+msgstr "Bluetooth zapnut"
 
 #: backends/session/util/locales.py:36
 msgid "Bluetooth is disabled"
-msgstr "Bluetooth вимкнено"
+msgstr "Bluetooth je vypnut"
 
 #: backends/session/util/locales.py:37
 msgid "Bluetooth enabled"
-msgstr "Bluetooth увімкнено"
+msgstr "Bluetooth zapnut"
 
 #: backends/session/util/locales.py:38
 msgid "Bluetooth disabled"
-msgstr "Bluetooth вимкнено"
+msgstr "Bluetooth vypnut"
 
 #: backends/session/util/locales.py:39
 msgid "Bluetooth cannot be enabled"
-msgstr "Не вдалось увімкнути Bluetooth"
+msgstr "Bluetooth nemůže být zapnut"
 
 #: backends/session/util/locales.py:40
 msgid "Bluetooth cannot be disabled"
-msgstr "Не вдалось вимкнути Bluetooth"
+msgstr "Bluetooth nemůže být vypnut"
 
 #: backends/session/util/locales.py:41
 msgid "Bluetooth cannot be toggled"
-msgstr "Не вдалось перемикнути Bluetooth"
+msgstr "Bluetooth nemůže být přepnut"
 
 #: backends/session/util/locales.py:42
 msgid "Bluetooth control is not available"
-msgstr "Керування Bluetooth не доступно"
+msgstr "Ovládání Bluetooth není k dispozici"
 
 #: backends/session/util/locales.py:44 samsung-tools-preferences.py:428
 msgid "CPU fan"
-msgstr "Охолодження процесора"
+msgstr "Větráček CPU"
 
 #: backends/session/util/locales.py:45
 msgid "CPU Temperature:"
-msgstr "Температура процесора:"
+msgstr "Teplota CPU"
 
 #: backends/session/util/locales.py:46
 msgid "Fan mode cannot be changed"
-msgstr "Не вдалось змінити режим охолодження"
+msgstr "Režim větráčku nemůže být přepnut"
 
 #: backends/session/util/locales.py:47
 msgid "Fan mode: Normal"
-msgstr "Режим охолодження: Нормальний"
+msgstr "Režim větráčku: Normální"
 
 #: backends/session/util/locales.py:48
 msgid "Fan mode: Silent"
-msgstr "Режим охолодження: Безшумний"
+msgstr "Režim větráčku: Tichý"
 
 #: backends/session/util/locales.py:49
 msgid "Fan mode: Overclock"
-msgstr ""
+msgstr "Režim větráčku: Rychlý"
 
 #: backends/session/util/locales.py:50
 msgid "Cannot get fan mode"
-msgstr "Не вдалось визначити режим охолодження"
+msgstr "Nemůžu zjistit režim větráčku"
 
 #: backends/session/util/locales.py:51
 msgid "CPU fan control is not available"
-msgstr "Керування режимом охолодження ЦП не доступно"
+msgstr "Ovládání větráčku CPU není k dispozici"
 
 #: backends/session/util/locales.py:53 samsung-tools-preferences.py:437
 msgid "Webcam"
-msgstr "Веб-камера"
+msgstr "Webkamera"
 
 #: backends/session/util/locales.py:54
 msgid "Webcam is enabled"
-msgstr "Веб-камеру увімнено"
+msgstr "Webkamera je zapnuta"
 
 #: backends/session/util/locales.py:55
 msgid "Webcam is disabled"
-msgstr "Веб-камера вимкнена"
+msgstr "Webkamera je vypnuta"
 
 #: backends/session/util/locales.py:56
 msgid "Webcam enabled"
-msgstr "Веб-камера увімкнена"
+msgstr "Webkamera zapnuta"
 
 #: backends/session/util/locales.py:57
 msgid "Webcam disabled"
-msgstr "Веб-камера вимкнена"
+msgstr "Webkamera vypnuta"
 
 #: backends/session/util/locales.py:58
 msgid "Webcam cannot be enabled"
-msgstr "Не вдалось увімкнути веб-камеру"
+msgstr "Webkamera nemůže být zapnuta"
 
 #: backends/session/util/locales.py:59
 msgid "Webcam cannot be disabled"
-msgstr "Не вдалось вимкнути веб-камеру"
+msgstr "Webkamera nemůže být vypnuta"
 
 #: backends/session/util/locales.py:60
 msgid "Webcam cannot be toggled"
-msgstr "Не вдалось перемикнути веб-камеру"
+msgstr "Webkamera nemůže být přepnuta"
 
 #: backends/session/util/locales.py:61
 msgid "Webcam control is not available"
-msgstr "Керування веб-камерою не доступно"
+msgstr "Ovládání webkamery není k dispozici"
 
 #: backends/session/util/locales.py:63 samsung-tools-preferences.py:446
 msgid "Wireless"
-msgstr "Бездротовий зв’язок"
+msgstr "Bezdrátová síť"
 
 #: backends/session/util/locales.py:64
 msgid "Wireless is enabled"
-msgstr "Бездротовий зв’язок увімкнено"
+msgstr "Bezdrátová síť je zapnuta"
 
 #: backends/session/util/locales.py:65
 msgid "Wireless is disabled"
-msgstr "Бездротовий зв’язок вимкнено"
+msgstr "Bezdrátová síť je vypnuta"
 
 #: backends/session/util/locales.py:66
 msgid "Wireless enabled"
-msgstr "Бездротовий зв’язок увімкнено"
+msgstr "Bezdrátová síť zapnuta"
 
 #: backends/session/util/locales.py:67
 msgid "Wireless disabled"
-msgstr "Бездротовий зв'язок вимкнений"
+msgstr "Bezdrátová síť vypnuta"
 
 #: backends/session/util/locales.py:68
 msgid "Wireless cannot be enabled"
-msgstr "Не вдалось увімкнути бездротовий зв’язок"
+msgstr "Bezdrátová síť nemůže být zapnuta"
 
 #: backends/session/util/locales.py:69
 msgid "Wireless cannot be disabled"
-msgstr "Не вдалось вимкнути бездротовий зв’язок"
+msgstr "Bezdrátová síť nemůže být vypnuta"
 
 #: backends/session/util/locales.py:70
 msgid "Wireless cannot be toggled"
-msgstr "Не вдалось перемикнути бездротовий зв’язок"
+msgstr "Bezdrátová síť nemůže být přepnuta"
 
 #: backends/session/util/locales.py:71
 msgid "Wireless control is not available"
-msgstr "Керування бездротовим зв’язком не доступно"
+msgstr "Ovládání bezdrátové sítě není k dispozici"
 
 #: samsung-tools.py:54
 msgid "Backlight control: unable to connect to session service!"
-msgstr "Керування підсвічуванням: не вдалось під’єднатись до служби сеансу!"
+msgstr "Ovládání podsvícení: nemůžu se připojit ke službě sezení!"
 
 #: samsung-tools.py:143
 msgid "Bluetooth control: unable to connect to session service!"
-msgstr "Керування Bluetooth: не вдалось під’єднатись до служби сеансу!"
+msgstr "Ovládání bluetooth: nemůžu se připojit ke službě sezení!"
 
 #: samsung-tools.py:245
 msgid "CPU fan control: unable to connect to session service!"
-msgstr "Керування охолодженням ЦП: не вдалось під’єднатись до служби сеансу!"
+msgstr "Ovládání větráčku CPU: nemůžu se připojit ke službě sezení!"
 
 #: samsung-tools.py:395
 msgid "Webcam control: unable to connect to session service!"
-msgstr "Керування веб-камерою: не вдалось під’єднатись до служби сеансу!"
+msgstr "Ovládání webkamery: nemůžu se připojit ke službě sezení!"
 
 #: samsung-tools.py:497
 msgid "Wireless control: unable to connect to session service!"
-msgstr ""
-"Керування бездротовим зв’язком: не вдалось під’єднатись до служби сеансу!"
+msgstr "Ovládání bezdrátové sítě: nemůžu se připojit ke službě sezení!"
 
 #: samsung-tools.py:586
 msgid "Command Line Utility"
-msgstr ""
+msgstr "Nástroj příkazové řádky"
 
 #: samsung-tools.py:588 samsung-tools.py:638
 #, python-format
 msgid "Usage: %s <interface> <option> ..."
-msgstr "Використання: %s <interface> <option> ..."
+msgstr "Použití: %s <rozhraní> <volby>"
 
 #: samsung-tools.py:590 po/samsung-tools-preferences.glade.h:4
 msgid "Backlight:"
-msgstr "Підсвічування:"
+msgstr "Podsvícení:"
 
 #: samsung-tools.py:591 samsung-tools.py:594 samsung-tools.py:597
 #: samsung-tools.py:600 samsung-tools.py:603
 msgid "Interface"
-msgstr "Інтерфейс"
+msgstr "Rozhraní"
 
 #: samsung-tools.py:592 samsung-tools.py:595 samsung-tools.py:598
 #: samsung-tools.py:601 samsung-tools.py:604
 msgid "Options"
-msgstr "Параметри"
+msgstr "Možnosti"
 
 #: samsung-tools.py:593 po/samsung-tools-preferences.glade.h:5
 msgid "Bluetooth:"
@@ -241,150 +239,146 @@ msgstr "Bluetooth:"
 
 #: samsung-tools.py:596 po/samsung-tools-preferences.glade.h:6
 msgid "CPU fan:"
-msgstr "Охолодження ЦП:"
+msgstr "Větráček CPU:"
 
 #: samsung-tools.py:599 po/samsung-tools-preferences.glade.h:37
 msgid "Webcam:"
-msgstr "Веб-камера:"
+msgstr "Webkamera:"
 
 #: samsung-tools.py:602 po/samsung-tools-preferences.glade.h:38
 msgid "Wireless:"
-msgstr "Бездротовий зв’язок:"
+msgstr "Bezdrátová síť:"
 
 #: samsung-tools.py:606
 msgid "Other options:"
-msgstr "Інші параметри:"
+msgstr "Další možnosti:"
 
 #: samsung-tools.py:607
 msgid "Show status for all devices."
-msgstr "Показати стан усіх пристроїв."
+msgstr "Zobrazení stavu pro všechna zařízení."
 
 #: samsung-tools.py:608
 msgid "Show graphical notifications."
-msgstr "Показувати графічні повідомлення."
+msgstr "Zobrazení grafických úprav."
 
 #: samsung-tools.py:609
 msgid "Do not print messages on standard output."
-msgstr "Не виводити повідомлення на стандартний вивід."
+msgstr "Nezobrazovat zprávy ve standartním výstupu."
 
 #: samsung-tools.py:610
 msgid "Show the control interface currently in use."
-msgstr ""
+msgstr "Zobrazit rozhraní ovládání, které je aktuálně používáno."
 
 #: samsung-tools.py:611
 msgid "Stop the session service."
-msgstr "Зупинити службу сеансу."
+msgstr "Zastavit službu sezení."
 
 #: samsung-tools.py:612
 msgid "Stop the system service."
-msgstr "Зупинити системну службу."
+msgstr "Zastavit systémovou sliužbu."
 
 #: samsung-tools.py:614
 msgid "Examples of use:"
-msgstr "Приклади використання:"
+msgstr "Příklady použití:"
 
 #: samsung-tools.py:615
 msgid " - Toggle backlight:"
-msgstr " - Перемикнути підсвічування:"
+msgstr " Přepnout podsvícení:"
 
 #: samsung-tools.py:618
 msgid " - Toggle wireless and set CPU fan mode to 'silent':"
-msgstr ""
-" - Перемикнути бездротовий зв’язок та встановити «безшумний» режим "
-"охолодження ЦП:"
+msgstr " Přepnout bezdrátovou síť a nastavit režim větráčku CPU na 'tichý':"
 
 #: samsung-tools.py:621
 msgid " - Disable bluetooth, webcam and wireless:"
-msgstr " - Вимкнути bluetooth, веб-камеру та бездротовий зв’язок:"
+msgstr " Vypnout bluetooth, webkameru a bezdrátovou síť:"
 
 #: samsung-tools.py:624
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
-msgstr "Детальніша інформація на форумі «Linux On My Samsung»:"
+msgstr "Pro více informací navštiv fórum'Linux On My Samsung':"
 
 #: samsung-tools.py:629 samsung-tools-preferences.py:1067
 msgid "Released under GPLv3 license"
-msgstr "Випущено за умовами ліцензії GPLv3"
+msgstr "Vydáno pod licencí GPLv3"
 
 #: samsung-tools.py:634
 msgid "No action(s) specified."
-msgstr "Жодних(ої) дій(ї) не вказано."
+msgstr "Nebyla specifikována žádná akce."
 
 #: samsung-tools.py:635 samsung-tools.py:706
 msgid "Use --help for instructions."
-msgstr "Використовуйте --help для довідки."
+msgstr "Použij --help pro instrukce."
 
 #: samsung-tools.py:701
 msgid "This program is intended to be used only by non-privileged users."
-msgstr ""
-"Ця програма призначена для використання лише не привілейованими "
-"користувачами."
+msgstr "Tento program je určen pro použití pouze neprivilegovanými uživateli."
 
 #: samsung-tools.py:705
 msgid "Wrong argument(s)."
-msgstr "Неправильний(і) аргумент(и)"
+msgstr "Špatné argumenty."
 
 #: samsung-tools.py:718
 msgid "Unable to start a DBus daemon!"
-msgstr ""
+msgstr "Nelze spustit DBus démona!"
 
 #: samsung-tools.py:733 po/samsung-tools-preferences.glade.h:13
 msgid "Control interface:"
-msgstr ""
+msgstr "Ovládací rozhraní:"
 
 #: samsung-tools.py:741
 msgid "Control interface: unable to connect to system service!"
-msgstr ""
+msgstr "Ovládací rozhraní: nelze se připojit k systémové službě!"
 
 #: samsung-tools.py:751
 msgid "Session service stopped"
-msgstr "Служба сеансу зупинена"
+msgstr "Služba sezení vypnuta"
 
 #: samsung-tools.py:754
 msgid "Cannot stop session service"
-msgstr "Не вдалось зупинити службу сеансу"
+msgstr "Nelze vypnout službu sezení"
 
 #: samsung-tools.py:764
 msgid "System service stopped"
-msgstr "Системна служба зупинена"
+msgstr "Systémová služba vypnuta"
 
 #: samsung-tools.py:767
 msgid "Cannot stop system service"
-msgstr "Не вдалось зупинити системну службу"
+msgstr "Nelze vypnout systémovou službu"
 
 #: samsung-tools-preferences.py:79
 msgid "Please press the new hotkey"
-msgstr "Будь ласка, натисніть нову «гарячу» клавішу"
+msgstr "Prosím, zmáčkni novou zkratku"
 
 #: samsung-tools-preferences.py:121
 msgid "None"
-msgstr "Немає"
+msgstr "Nic"
 
 #: samsung-tools-preferences.py:177 samsung-tools-preferences.py:246
 #: samsung-tools-preferences.py:341 samsung-tools-preferences.py:353
 #: samsung-tools-preferences.py:715 samsung-tools-preferences.py:727
 #: samsung-tools-preferences.py:739
 msgid "Unable to connect to system service!"
-msgstr "Не вдалось під’єднатись до системної служби!"
+msgstr "Nelze se připojit k systémové službě!"
 
 #: samsung-tools-preferences.py:365
 msgid "Confirm"
-msgstr "Підтвердити"
+msgstr "Potvrzení"
 
 #: samsung-tools-preferences.py:366
 msgid "Apply the new VIDs?"
-msgstr "Застосувати нові VID?"
+msgstr "Použít nová nastavení VID?"
 
 #: samsung-tools-preferences.py:631
 msgid "You need a PHC enabled kernel to use this feature"
-msgstr "Потрібне увімкнене ядро PHC, щоб отримати цю можливість"
+msgstr "Potřebuješ povolené jádro s PHC pro použití této funkce"
 
 #: samsung-tools-preferences.py:655
 msgid "Unable to connect to session service!"
-msgstr "Не вдалось під’єднатись до служби сеансу!"
+msgstr "Nelze se připojit k službě sezení!"
 
 #: samsung-tools-preferences.py:996
 msgid "Caution!"
-msgstr "Увага!"
+msgstr "Výstraha!"
 
 #: samsung-tools-preferences.py:997
 msgid ""
@@ -395,150 +389,149 @@ msgid ""
 "\n"
 "Are you sure you want to continue?"
 msgstr ""
-"Зниження напруги живлення ЦП може призвести до значного збереження енергії, "
-"проте <b>ЦЕ РИЗИКОВАНА ДІЯ</b>, що може спричинити збої та втрату даних. "
-"Перед використанням цих параметрів, переконайтесь, що ви знаєте, що робите.\n"
-"\n"
-"Ви впевнені, що хочете продовжити?"
+"Snižování napětí CPU může vést ke snížení spotřeby energie, ale <b>JE TO "
+"NEBEZPEČNÁ PRAKTIKA</b>, která může způsobit potíže a ztrátu dat. Prosím, "
+"uvědom si, co děláš, než použiješ tyhle nastavení.\n"
+"Opravdu chceš pokračovat?"
 
 #: po/samsung-tools-preferences.desktop.in.h:1
 #: po/samsung-tools-preferences.glade.h:28
 msgid "Samsung Tools Preferences"
-msgstr "Інструменти налаштування Samsung"
+msgstr "Nastavení Samsung Tools"
 
 #: po/samsung-tools-preferences.desktop.in.h:2
 msgid "Show and modify Samsung Tools preferences"
-msgstr "Показати та змінити інструменти налаштування Samsung"
+msgstr "Zobrazit a změnit nastavení Samsung Tools"
 
 #: po/samsung-tools-preferences.glade.h:1
 msgid "<b>Hotkeys</b>"
-msgstr "<b>Комбінації клавіш</b>"
+msgstr "<b>Klávesové zkratky</b>"
 
 #: po/samsung-tools-preferences.glade.h:2
 msgid "<b>Initial status for devices</b>"
-msgstr "<b>Початковий стан пристроїв</b>"
+msgstr "<b>Základní stav pro zařízení</b>"
 
 #: po/samsung-tools-preferences.glade.h:3
 msgid "Advanced power management"
-msgstr "Додаткове керування живленням"
+msgstr "Pokročilá správa napájení"
 
 #: po/samsung-tools-preferences.glade.h:7
 msgid "CPU undervolting..."
-msgstr ""
+msgstr "Snižování napětí CPU..."
 
 #: po/samsung-tools-preferences.glade.h:8
 msgid "Click here to disable the hotkey"
-msgstr "Натисніть тут, щоб вимкнути цю комбінацію клавіш"
+msgstr "Klikni zde pro vypnutí klávesové zkratky"
 
 #: po/samsung-tools-preferences.glade.h:9
 msgid "Click here to set the default hotkey"
-msgstr "Натисніть тут, щоб встановити типову комбінацію клавіш"
+msgstr "Klikni zde pro nastavení klávesové zkratky"
 
 #: po/samsung-tools-preferences.glade.h:10
 msgid "Click here to set the default value"
-msgstr "Натисніть тут, щоб встановити типове значення"
+msgstr "Klikni zde pro nastavení základní hodnoty"
 
 #: po/samsung-tools-preferences.glade.h:11
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:1
 msgid "Configure kernel parameters"
-msgstr "Налаштування параметрів ядра"
+msgstr "Nastavení parametrů jádra"
 
 #: po/samsung-tools-preferences.glade.h:12
 #: po/samsung-tools-preferences-power-management.glade.h:1
 msgid "Configure power management"
-msgstr ""
+msgstr "Nastavení správy napájení"
 
 #: po/samsung-tools-preferences.glade.h:14
 msgid "Disabled"
-msgstr "Вимкнено"
+msgstr "Vypnuto"
 
 #: po/samsung-tools-preferences.glade.h:15
 msgid "Enable hotkeys"
-msgstr "Увімкнути комбінації клавіш"
+msgstr "Zapnout klávesové zkratky"
 
 #: po/samsung-tools-preferences.glade.h:16
 msgid "Enable this option to use hotkeys"
-msgstr "Увімкнути цей параметр, щоб використовувати комбінації клавіш"
+msgstr "Povol tuto možnost"
 
 #: po/samsung-tools-preferences.glade.h:17
 msgid "Enabled"
-msgstr "Увімкнено"
+msgstr "Zapnuto"
 
 #: po/samsung-tools-preferences.glade.h:18
 msgid "Hotkey used for CPU fan control"
-msgstr "Комбінація клавіш, що використовується для керування охолодженням ЦП"
+msgstr "Klávesové zkratky používané pro ovládání větráčku CPU"
 
 #: po/samsung-tools-preferences.glade.h:19
 msgid "Hotkey used for backlight control"
-msgstr "Комбінація клавіш для керування підсвічуванням"
+msgstr "Klávesové zkratky používané pro ovládání podsvícení"
 
 #: po/samsung-tools-preferences.glade.h:20
 msgid "Hotkey used for bluetooth control"
-msgstr "Комбінація клавіш для керування Bluetooth"
+msgstr "Klávesové zkratky používané pro ovládání bluetooth"
 
 #: po/samsung-tools-preferences.glade.h:21
 msgid "Hotkey used for webcam control"
-msgstr "Комбінація клавіш для керування веб-камерою"
+msgstr "Klávesové zkratky používané pro ovládání webkamery"
 
 #: po/samsung-tools-preferences.glade.h:22
 msgid "Hotkey used for wireless control"
-msgstr "Комбінація клавіш для керування бездротовим зв’язком"
+msgstr "Klávesové zkratky používané pro ovládání bezdrátové sítě"
 
 #: po/samsung-tools-preferences.glade.h:23
 msgid "Kernel parameters..."
-msgstr ""
+msgstr "Parametry jádra..."
 
 #: po/samsung-tools-preferences.glade.h:24
 msgid "Last status"
-msgstr "Останній стан"
+msgstr "Poslední stav"
 
 #: po/samsung-tools-preferences.glade.h:25
 msgid "Normal"
-msgstr "Звичайне"
+msgstr "Normální"
 
 #: po/samsung-tools-preferences.glade.h:26
 msgid "Overclock"
-msgstr ""
+msgstr "Rychlý"
 
 #: po/samsung-tools-preferences.glade.h:27
 msgid "Power management..."
-msgstr ""
+msgstr "Správa napájení"
 
 #: po/samsung-tools-preferences.glade.h:29
 msgid "Session service"
-msgstr "Служба сеансу"
+msgstr "Služba sezení"
 
 #: po/samsung-tools-preferences.glade.h:30
 msgid "Silent"
-msgstr "Безшумний"
+msgstr "Tichý"
 
 #: po/samsung-tools-preferences.glade.h:31
 msgid "System service"
-msgstr "Системна служба"
+msgstr "Systémová služba"
 
 #: po/samsung-tools-preferences.glade.h:32
 msgid "The initial status at boot for Bluetooth"
-msgstr "Початковий стан Bluetooth під час завантаження"
+msgstr "Základní stav bluetooth po nabootování"
 
 #: po/samsung-tools-preferences.glade.h:33
 msgid "The initial status at boot for CPU fan"
-msgstr "Початковий стан охолодження ЦП під час завантаження"
+msgstr "Základní stav větráčku CPU po nabootování"
 
 #: po/samsung-tools-preferences.glade.h:34
 msgid "The initial status at boot for webcam"
-msgstr "Початковий стан веб-камери під час завантаження"
+msgstr "Základní stav webkamery po nabootování"
 
 #: po/samsung-tools-preferences.glade.h:35
 msgid "The initial status at boot for wireless"
-msgstr "Початковий стан бездротового зв’язку під час завантаження"
+msgstr "Základní stav bezdrátové sítě po nabootování"
 
 #: po/samsung-tools-preferences.glade.h:36
 msgid "Undervolt the CPU in order to save energy"
-msgstr "Зниження напруги живлення ЦП для збереження енергії"
+msgstr "Snížit napětí CPU pro šetření energie"
 
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:2
 msgid "Swap control:"
-msgstr "Керування Swap:"
+msgstr "Ovládání odkládacího prostoru(swapu)"
 
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:3
 msgid ""
@@ -548,12 +541,11 @@ msgid ""
 "bad results on power consumption and disk performance. Set a low value if "
 "you usually have plenty of unused RAM. The default value is 60."
 msgstr ""
-"«Swappiness» визначає, наскільки агресивно ядро використовує swap. Вище "
-"значення збільшує агресивність, менше — зменшує. Іншими словами, чим вище "
-"значення, тим більше система використовуватиме swap, збільшуючи "
-"енергоспоживання та погіршуючи продуктивність твердого диска. Встановлюйте "
-"низьке значення, якщо ви маєте велику кількість невикористаної пам’яті. "
-"Типове значення дорівнює 60."
+"Nastavení \"swappiness\" ovládá, jak agresivně jádro odkládá stránky paměti "
+"na pevný disk. Vyšší hodnoty zvyšují agresivitu, nižší ji zase snižují. "
+"Jinak řečeno, vyšší hodnota určuje, že systém bude odkládat více, se špatným "
+"vlivem na spotřebu a výkon disku. Nastav nižší hodnotu, pokud máš většinou "
+"hodně nepoužívané RAM. Základní hodnota je 60."
 
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:4
 msgid ""
@@ -563,75 +555,80 @@ msgid ""
 "bad results on power consumption and disk performance. Set a low value if "
 "you usually have plenty of unused RAM. The default value is 60."
 msgstr ""
-"Цей параметр керує тим, наскільки агресивно ядро використовує swap. Вище "
-"значення збільшує агресивність, менше — зменшує. Іншими словами, чим вище "
-"значення, тим більше система використовуватиме swap, збільшуючи "
-"енергоспоживання та погіршуючи продуктивність твердого диска. Встановлюйте "
-"низьке значення, якщо ви маєте велику кількість невикористаної пам’яті. "
-"Типове значення дорівнює 60."
+"Toto nastavení ovládá, jak agresivně jádro odkládá stránky paměti na pevný "
+"disk. Vyšší hodnoty zvyšují agresivitu, nižší ji zase snižují. Jinak řečeno, "
+"vyšší hodnota určuje, že systém bude odkládat více, se špatným vlivem na "
+"spotřebu a výkon disku. Nastav nižší hodnotu, pokud máš většinou hodně "
+"nepoužívané RAM. Základní hodnota je 60."
 
 #: po/samsung-tools-preferences-phc.glade.h:1
 msgid "<b>Default VIDs</b>"
-msgstr "<b>Типові VID</b>"
+msgstr "<b>Základní nastavení VID</b>"
 
 #: po/samsung-tools-preferences-phc.glade.h:2
 msgid "<b>Frequencies</b>"
-msgstr "<b>Частоти</b>"
+msgstr "Frekvence"
 
 #: po/samsung-tools-preferences-phc.glade.h:3
 msgid "<b>New VIDs</b>"
-msgstr "<b>Нові VID</b>"
+msgstr "<b>Nové nastavení VID</b>"
 
 #: po/samsung-tools-preferences-phc.glade.h:4
 msgid "CPU undervolting"
-msgstr "Зниження напруги живлення ЦП"
+msgstr "Snižování napětí CPU"
 
 #: po/samsung-tools-preferences-phc.glade.h:5
 msgid ""
 "Enable this option only if the new VIDs are tested and safe, otherwise the "
 "machine might be no more bootable!"
 msgstr ""
-"Вмикайте цей параметр лише, якщо нові Vid протестовані та безпечні, в іншому "
-"випадку комп’ютер може більше не завантажуватися!"
+"Povol tuto možnost jen v případě, že máš nové nastavení VID otestované a je "
+"bezpečné, jinak se může stát, že tvůj stroj nebude moci nabootvat!"
 
 #: po/samsung-tools-preferences-phc.glade.h:6
 msgid "Note: the new VIDs will be applied when this window will be closed."
-msgstr "Заувага: нові Vid будуть застосовані, коли це вікно закриється."
+msgstr "Poznámka: nové nastavení VID bude aplikováno po zavření tohoto okna."
 
 #: po/samsung-tools-preferences-phc.glade.h:7
 msgid "Set the new VIDs automatically at boot"
-msgstr "Встановлювати нові VID автоматично під час завантаження"
+msgstr "Aplikovat automaticky nové nastavení VID po nabootování"
 
 #: po/samsung-tools-preferences-power-management.glade.h:2
 msgid "Devices power management"
-msgstr ""
+msgstr "Správa napájení zařízení"
 
 #: po/samsung-tools-preferences-power-management.glade.h:3
 msgid "USB autosuspend"
-msgstr ""
+msgstr "Automatické suspendování USB"
 
 #: po/samsung-tools-preferences-power-management.glade.h:4
 msgid "VM writeback time"
-msgstr ""
+msgstr "Čas zpětného zápisu VM"
 
 #: po/samsung-tools-preferences-power-management.glade.h:5
 msgid ""
 "When enabled, all the devices will automatically enter power save mode when "
 "needed."
 msgstr ""
+"Když je to povoleno, všechna zařízení automaticky vstoupí do režimu šetření "
+"energie, když to bude potřeba."
 
 #: po/samsung-tools-preferences-power-management.glade.h:6
 msgid ""
 "When enabled, the autosuspend feature for all the USB devices will be "
 "enabled."
 msgstr ""
+"Když je to povoleno, automatické suspendování USB bude povoleno pro všechna "
+"zařízení USB."
 
 #: po/samsung-tools-preferences-power-management.glade.h:7
 msgid ""
 "When enabled, the kernel VM writeback time will be increased, resulting in "
 "less HD access and more energy saving."
 msgstr ""
+"Když je to povoleno, dojde ke zvýšení času zpětného zápisu, což vyústí v "
+"menší počet přístupů na pevný disk a větší úsporu energie."
 
 #: po/samsung-tools-session-service.desktop.in.h:1
 msgid "Start the session service"
-msgstr "Запустити службу сеансу"
+msgstr "Spustit službu sezení"

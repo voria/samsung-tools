@@ -8,19 +8,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-23 12:50+0100\n"
-"PO-Revision-Date: 2011-10-12 18:33+0200\n"
-"Last-Translator: Fortunato Ventre (voRia) <vorione@gmail.com>\n"
+"POT-Creation-Date: 2012-03-07 10:46+0100\n"
+"PO-Revision-Date: 2012-02-17 12:09+0000\n"
+"Last-Translator: Rafael Neri <Unknown>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-it@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-06-23 17:04+0000\n"
-"X-Generator: Lokalize 1.2\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Launchpad-Export-Date: 2012-03-07 09:40+0000\n"
+"X-Generator: Launchpad (build 14907)\n"
 
-#: backends/session/util/locales.py:25 samsung-tools-preferences.py:409
+#: backends/session/util/locales.py:25 samsung-tools-preferences.py:410
 msgid "Backlight"
 msgstr "Luz de fundo"
 
@@ -52,7 +51,7 @@ msgstr "A luz de fundo não pode ser desativada"
 msgid "Backlight cannot be toggled"
 msgstr "A luz de fundo não pode ser alternada"
 
-#: backends/session/util/locales.py:34 samsung-tools-preferences.py:418
+#: backends/session/util/locales.py:34 samsung-tools-preferences.py:419
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
@@ -88,7 +87,7 @@ msgstr "O Bluetooth não pode ser alternado"
 msgid "Bluetooth control is not available"
 msgstr "O controle de Bluetooth não está disponível"
 
-#: backends/session/util/locales.py:44 samsung-tools-preferences.py:427
+#: backends/session/util/locales.py:44 samsung-tools-preferences.py:428
 msgid "CPU fan"
 msgstr "Ventoinha da CPU"
 
@@ -120,7 +119,7 @@ msgstr "Não é possível obter o modo da ventoinha"
 msgid "CPU fan control is not available"
 msgstr "O controle da ventoinha do CPU não está disponível"
 
-#: backends/session/util/locales.py:53 samsung-tools-preferences.py:436
+#: backends/session/util/locales.py:53 samsung-tools-preferences.py:437
 msgid "Webcam"
 msgstr "Webcam"
 
@@ -156,7 +155,7 @@ msgstr "A webcam não pode ser alternada"
 msgid "Webcam control is not available"
 msgstr "O controle da Webcam não está disponível"
 
-#: backends/session/util/locales.py:63 samsung-tools-preferences.py:445
+#: backends/session/util/locales.py:63 samsung-tools-preferences.py:446
 msgid "Wireless"
 msgstr "Rede sem fio"
 
@@ -214,9 +213,8 @@ msgid "Wireless control: unable to connect to session service!"
 msgstr "Controle da rede sem fio: não é possível conectar à sessão do serviço!"
 
 #: samsung-tools.py:586
-#, fuzzy
 msgid "Command Line Utility"
-msgstr "Ferramentas Samsung - Utilitário da linha de comando"
+msgstr "Ferramenta de linha de comando"
 
 #: samsung-tools.py:588 samsung-tools.py:638
 #, python-format
@@ -271,7 +269,7 @@ msgstr "Não imprimir mensagens na saída padrão."
 
 #: samsung-tools.py:610
 msgid "Show the control interface currently in use."
-msgstr ""
+msgstr "Mostrar o controle de interface em uso no momento."
 
 #: samsung-tools.py:611
 msgid "Stop the session service."
@@ -303,7 +301,7 @@ msgstr " - Desativar bluetooth, webcam e rede sem fio:"
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Para mais informações, visite o fórum 'Linux On My Samsung':"
 
-#: samsung-tools.py:629 samsung-tools-preferences.py:1066
+#: samsung-tools.py:629 samsung-tools-preferences.py:1067
 msgid "Released under GPLv3 license"
 msgstr "Distribuído sob a licença GPLv3"
 
@@ -325,16 +323,15 @@ msgstr "Argumento(s) errado(s)"
 
 #: samsung-tools.py:718
 msgid "Unable to start a DBus daemon!"
-msgstr ""
+msgstr "Impossível iniciar um processo daemon DBus."
 
 #: samsung-tools.py:733 po/samsung-tools-preferences.glade.h:13
 msgid "Control interface:"
-msgstr ""
+msgstr "Controlar interface:"
 
 #: samsung-tools.py:741
-#, fuzzy
 msgid "Control interface: unable to connect to system service!"
-msgstr "Impossível conectar ao serviço de sistema!"
+msgstr "Interface de controle: impossível conectar-se ao serviço de sistema!"
 
 #: samsung-tools.py:751
 msgid "Session service stopped"
@@ -356,39 +353,39 @@ msgstr "Não é possível parar o serviço de sistema"
 msgid "Please press the new hotkey"
 msgstr "Por favor, pressione a nova tecla de acesso rápido"
 
-#: samsung-tools-preferences.py:121 samsung-tools-preferences.py:607
+#: samsung-tools-preferences.py:121
 msgid "None"
 msgstr "Nenhum"
 
-#: samsung-tools-preferences.py:176 samsung-tools-preferences.py:245
-#: samsung-tools-preferences.py:340 samsung-tools-preferences.py:352
-#: samsung-tools-preferences.py:714 samsung-tools-preferences.py:726
-#: samsung-tools-preferences.py:738
+#: samsung-tools-preferences.py:177 samsung-tools-preferences.py:246
+#: samsung-tools-preferences.py:341 samsung-tools-preferences.py:353
+#: samsung-tools-preferences.py:715 samsung-tools-preferences.py:727
+#: samsung-tools-preferences.py:739
 msgid "Unable to connect to system service!"
 msgstr "Impossível conectar ao serviço de sistema!"
 
-#: samsung-tools-preferences.py:364
+#: samsung-tools-preferences.py:365
 msgid "Confirm"
 msgstr "Confirmar"
 
-#: samsung-tools-preferences.py:365
+#: samsung-tools-preferences.py:366
 msgid "Apply the new VIDs?"
 msgstr "Aplicar os novos VIDs?"
 
-#: samsung-tools-preferences.py:630
+#: samsung-tools-preferences.py:631
 msgid "You need a PHC enabled kernel to use this feature"
 msgstr ""
 "Você precisa de um kernel com PHC habilitado para utilizar este recurso"
 
-#: samsung-tools-preferences.py:654
+#: samsung-tools-preferences.py:655
 msgid "Unable to connect to session service!"
 msgstr "Impossível conectar ao serviço de sessão!"
 
-#: samsung-tools-preferences.py:995
+#: samsung-tools-preferences.py:996
 msgid "Caution!"
 msgstr "Cuidado!"
 
-#: samsung-tools-preferences.py:996
+#: samsung-tools-preferences.py:997
 msgid ""
 "CPU undervolting can lead to significant gains in terms of power energy "
 "saving, however <b>IT IS A RISKY PRACTICE</b> that might result in "
@@ -501,9 +498,8 @@ msgid "Normal"
 msgstr "Normal"
 
 #: po/samsung-tools-preferences.glade.h:26
-#, fuzzy
 msgid "Overclock"
-msgstr "Modo da ventoinha: Overclock"
+msgstr "Overclock"
 
 #: po/samsung-tools-preferences.glade.h:27
 msgid "Power management..."
@@ -615,11 +611,11 @@ msgstr "Dispositivos de gerenciamento de energia"
 
 #: po/samsung-tools-preferences-power-management.glade.h:3
 msgid "USB autosuspend"
-msgstr ""
+msgstr "Auto-suspender USB"
 
 #: po/samsung-tools-preferences-power-management.glade.h:4
 msgid "VM writeback time"
-msgstr ""
+msgstr "Tempo de re-escrita de VM"
 
 #: po/samsung-tools-preferences-power-management.glade.h:5
 msgid ""
@@ -642,22 +638,9 @@ msgid ""
 "When enabled, the kernel VM writeback time will be increased, resulting in "
 "less HD access and more energy saving."
 msgstr ""
+"Quando habilitado, o tempo da kernel VM Writeback será aumentado, resultando "
+"em menos acessos no HD e maior economia de energia."
 
 #: po/samsung-tools-session-service.desktop.in.h:1
 msgid "Start the session service"
 msgstr "Iniciar a sessão de serviço"
-
-#~ msgid "Fan mode: Speed"
-#~ msgstr "Modo da ventoinha: Velocidade"
-
-#~ msgid "Speed"
-#~ msgstr "Velocidade"
-
-#~ msgid "CPU Fan"
-#~ msgstr "Ventoinha da CPU"
-
-#~ msgid "Preferences..."
-#~ msgstr "Preferências..."
-
-#~ msgid "Manage devices on Samsung netbooks"
-#~ msgstr "Gerenciar dispositivos em netbooks Samsung"

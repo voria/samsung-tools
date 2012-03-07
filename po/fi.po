@@ -8,19 +8,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-23 12:50+0100\n"
-"PO-Revision-Date: 2011-10-12 18:32+0200\n"
-"Last-Translator: Fortunato Ventre (voRia) <vorione@gmail.com>\n"
+"POT-Creation-Date: 2012-03-07 10:46+0100\n"
+"PO-Revision-Date: 2011-11-23 13:04+0000\n"
+"Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: Finnish <kde-i18n-it@kde.org>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-06-23 17:04+0000\n"
-"X-Generator: Lokalize 1.2\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Launchpad-Export-Date: 2012-03-07 09:40+0000\n"
+"X-Generator: Launchpad (build 14907)\n"
 
-#: backends/session/util/locales.py:25 samsung-tools-preferences.py:409
+#: backends/session/util/locales.py:25 samsung-tools-preferences.py:410
 msgid "Backlight"
 msgstr "Taustavalo"
 
@@ -52,7 +51,7 @@ msgstr "Taustavaloa ei voida ottaa pois päältä"
 msgid "Backlight cannot be toggled"
 msgstr "Taustavaloa ei voitu muuttaa"
 
-#: backends/session/util/locales.py:34 samsung-tools-preferences.py:418
+#: backends/session/util/locales.py:34 samsung-tools-preferences.py:419
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
@@ -88,7 +87,7 @@ msgstr "Bluetoothia ei saada muutettua"
 msgid "Bluetooth control is not available"
 msgstr "Bluetoothia ei voida konrolloida"
 
-#: backends/session/util/locales.py:44 samsung-tools-preferences.py:427
+#: backends/session/util/locales.py:44 samsung-tools-preferences.py:428
 msgid "CPU fan"
 msgstr ""
 
@@ -117,11 +116,10 @@ msgid "Cannot get fan mode"
 msgstr "Tuulettimen tilaa ei saatu"
 
 #: backends/session/util/locales.py:51
-#, fuzzy
 msgid "CPU fan control is not available"
-msgstr "Tuulettimen tilaa ei voida hallita"
+msgstr ""
 
-#: backends/session/util/locales.py:53 samsung-tools-preferences.py:436
+#: backends/session/util/locales.py:53 samsung-tools-preferences.py:437
 msgid "Webcam"
 msgstr "Web-kamera"
 
@@ -142,67 +140,56 @@ msgid "Webcam disabled"
 msgstr "Web-kamera pois käytöstä"
 
 #: backends/session/util/locales.py:58
-#, fuzzy
 msgid "Webcam cannot be enabled"
-msgstr "Taustavaloa ei voida ottaa päälle"
+msgstr ""
 
 #: backends/session/util/locales.py:59
-#, fuzzy
 msgid "Webcam cannot be disabled"
-msgstr "Taustavaloa ei voida ottaa pois päältä"
+msgstr ""
 
 #: backends/session/util/locales.py:60
-#, fuzzy
 msgid "Webcam cannot be toggled"
-msgstr "Taustavaloa ei voitu muuttaa"
+msgstr ""
 
 #: backends/session/util/locales.py:61
-#, fuzzy
 msgid "Webcam control is not available"
-msgstr "Tuulettimen tilaa ei voida hallita"
+msgstr ""
 
-#: backends/session/util/locales.py:63 samsung-tools-preferences.py:445
+#: backends/session/util/locales.py:63 samsung-tools-preferences.py:446
 msgid "Wireless"
 msgstr "Langaton"
 
 #: backends/session/util/locales.py:64
-#, fuzzy
 msgid "Wireless is enabled"
-msgstr "Langaton pois käytöstä"
+msgstr ""
 
 #: backends/session/util/locales.py:65
-#, fuzzy
 msgid "Wireless is disabled"
-msgstr "Langaton pois käytöstä"
+msgstr ""
 
 #: backends/session/util/locales.py:66
-#, fuzzy
 msgid "Wireless enabled"
-msgstr "Langaton pois käytöstä"
+msgstr ""
 
 #: backends/session/util/locales.py:67
 msgid "Wireless disabled"
 msgstr "Langaton pois käytöstä"
 
 #: backends/session/util/locales.py:68
-#, fuzzy
 msgid "Wireless cannot be enabled"
-msgstr "Bluetoothia ei saada päälle"
+msgstr ""
 
 #: backends/session/util/locales.py:69
-#, fuzzy
 msgid "Wireless cannot be disabled"
-msgstr "Langaton pois käytöstä"
+msgstr ""
 
 #: backends/session/util/locales.py:70
-#, fuzzy
 msgid "Wireless cannot be toggled"
-msgstr "Bluetoothia ei saada muutettua"
+msgstr ""
 
 #: backends/session/util/locales.py:71
-#, fuzzy
 msgid "Wireless control is not available"
-msgstr "Tuulettimen tilaa ei voida hallita"
+msgstr ""
 
 #: samsung-tools.py:54
 msgid "Backlight control: unable to connect to session service!"
@@ -234,9 +221,8 @@ msgid "Usage: %s <interface> <option> ..."
 msgstr ""
 
 #: samsung-tools.py:590 po/samsung-tools-preferences.glade.h:4
-#, fuzzy
 msgid "Backlight:"
-msgstr "Taustavalo"
+msgstr ""
 
 #: samsung-tools.py:591 samsung-tools.py:594 samsung-tools.py:597
 #: samsung-tools.py:600 samsung-tools.py:603
@@ -249,23 +235,20 @@ msgid "Options"
 msgstr ""
 
 #: samsung-tools.py:593 po/samsung-tools-preferences.glade.h:5
-#, fuzzy
 msgid "Bluetooth:"
-msgstr "Bluetooth"
+msgstr ""
 
 #: samsung-tools.py:596 po/samsung-tools-preferences.glade.h:6
 msgid "CPU fan:"
 msgstr ""
 
 #: samsung-tools.py:599 po/samsung-tools-preferences.glade.h:37
-#, fuzzy
 msgid "Webcam:"
-msgstr "Web-kamera"
+msgstr ""
 
 #: samsung-tools.py:602 po/samsung-tools-preferences.glade.h:38
-#, fuzzy
 msgid "Wireless:"
-msgstr "Langaton"
+msgstr ""
 
 #: samsung-tools.py:606
 msgid "Other options:"
@@ -315,7 +298,7 @@ msgstr ""
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr ""
 
-#: samsung-tools.py:629 samsung-tools-preferences.py:1066
+#: samsung-tools.py:629 samsung-tools-preferences.py:1067
 msgid "Released under GPLv3 license"
 msgstr ""
 
@@ -367,38 +350,38 @@ msgstr ""
 msgid "Please press the new hotkey"
 msgstr ""
 
-#: samsung-tools-preferences.py:121 samsung-tools-preferences.py:607
+#: samsung-tools-preferences.py:121
 msgid "None"
 msgstr ""
 
-#: samsung-tools-preferences.py:176 samsung-tools-preferences.py:245
-#: samsung-tools-preferences.py:340 samsung-tools-preferences.py:352
-#: samsung-tools-preferences.py:714 samsung-tools-preferences.py:726
-#: samsung-tools-preferences.py:738
+#: samsung-tools-preferences.py:177 samsung-tools-preferences.py:246
+#: samsung-tools-preferences.py:341 samsung-tools-preferences.py:353
+#: samsung-tools-preferences.py:715 samsung-tools-preferences.py:727
+#: samsung-tools-preferences.py:739
 msgid "Unable to connect to system service!"
 msgstr ""
 
-#: samsung-tools-preferences.py:364
+#: samsung-tools-preferences.py:365
 msgid "Confirm"
 msgstr ""
 
-#: samsung-tools-preferences.py:365
+#: samsung-tools-preferences.py:366
 msgid "Apply the new VIDs?"
 msgstr ""
 
-#: samsung-tools-preferences.py:630
+#: samsung-tools-preferences.py:631
 msgid "You need a PHC enabled kernel to use this feature"
 msgstr ""
 
-#: samsung-tools-preferences.py:654
+#: samsung-tools-preferences.py:655
 msgid "Unable to connect to session service!"
 msgstr ""
 
-#: samsung-tools-preferences.py:995
+#: samsung-tools-preferences.py:996
 msgid "Caution!"
 msgstr ""
 
-#: samsung-tools-preferences.py:996
+#: samsung-tools-preferences.py:997
 msgid ""
 "CPU undervolting can lead to significant gains in terms of power energy "
 "saving, however <b>IT IS A RISKY PRACTICE</b> that might result in "
@@ -456,9 +439,8 @@ msgid "Configure power management"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:14
-#, fuzzy
 msgid "Disabled"
-msgstr "Web-kamera pois käytöstä"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:15
 msgid "Enable hotkeys"
@@ -505,9 +487,8 @@ msgid "Normal"
 msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:26
-#, fuzzy
 msgid "Overclock"
-msgstr "Tuulettimen tila: Overclock"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:27
 msgid "Power management..."
@@ -630,9 +611,3 @@ msgstr ""
 #: po/samsung-tools-session-service.desktop.in.h:1
 msgid "Start the session service"
 msgstr ""
-
-#~ msgid "Fan mode: Speed"
-#~ msgstr "Tuulettimen tila: Nopeus"
-
-#~ msgid "CPU/Fan"
-#~ msgstr "Suoritin/Tuuletin"

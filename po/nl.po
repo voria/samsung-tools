@@ -8,19 +8,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-23 12:50+0100\n"
-"PO-Revision-Date: 2011-10-12 18:33+0200\n"
-"Last-Translator: Fortunato Ventre (voRia) <vorione@gmail.com>\n"
+"POT-Creation-Date: 2012-03-07 10:46+0100\n"
+"PO-Revision-Date: 2011-11-23 12:04+0000\n"
+"Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-it@kde.org>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2011-06-23 17:04+0000\n"
-"X-Generator: Lokalize 1.2\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Launchpad-Export-Date: 2012-03-07 09:40+0000\n"
+"X-Generator: Launchpad (build 14907)\n"
 
-#: backends/session/util/locales.py:25 samsung-tools-preferences.py:409
+#: backends/session/util/locales.py:25 samsung-tools-preferences.py:410
 msgid "Backlight"
 msgstr "Achtergrondverlichting"
 
@@ -52,7 +51,7 @@ msgstr "Achtergrondverlichting kan niet uitgeschakeld worden"
 msgid "Backlight cannot be toggled"
 msgstr "Achtergrondverlichting status kan niet gewisseld worden"
 
-#: backends/session/util/locales.py:34 samsung-tools-preferences.py:418
+#: backends/session/util/locales.py:34 samsung-tools-preferences.py:419
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
@@ -88,7 +87,7 @@ msgstr "Bluetooth status kan niet gewisseld worden"
 msgid "Bluetooth control is not available"
 msgstr "Bluetooth control is niet beschikbaar"
 
-#: backends/session/util/locales.py:44 samsung-tools-preferences.py:427
+#: backends/session/util/locales.py:44 samsung-tools-preferences.py:428
 msgid "CPU fan"
 msgstr "CPU ventilator"
 
@@ -120,7 +119,7 @@ msgstr "Kan de ventilator mode niet verkrijgen"
 msgid "CPU fan control is not available"
 msgstr "CPU-fanbeheer is niet beschikbaar"
 
-#: backends/session/util/locales.py:53 samsung-tools-preferences.py:436
+#: backends/session/util/locales.py:53 samsung-tools-preferences.py:437
 msgid "Webcam"
 msgstr "Webcam"
 
@@ -156,7 +155,7 @@ msgstr "Webcam status kan niet gewisseld worden"
 msgid "Webcam control is not available"
 msgstr "Webcam instelling is niet beschikbaar"
 
-#: backends/session/util/locales.py:63 samsung-tools-preferences.py:445
+#: backends/session/util/locales.py:63 samsung-tools-preferences.py:446
 msgid "Wireless"
 msgstr "Draadloos netwerk"
 
@@ -214,9 +213,8 @@ msgid "Wireless control: unable to connect to session service!"
 msgstr "Draadloos netwerk instellingen: kan niet verbinden met sessiedienst!"
 
 #: samsung-tools.py:586
-#, fuzzy
 msgid "Command Line Utility"
-msgstr "Samsung Gereedschap - Opdrachtregel hulpprogramma"
+msgstr ""
 
 #: samsung-tools.py:588 samsung-tools.py:638
 #, python-format
@@ -301,7 +299,7 @@ msgstr " - Schakel bluetooth, webcam ean draadloos netwerk uit:"
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Voor meer informatie, bezoek het 'Linux On My Samsung' forum:"
 
-#: samsung-tools.py:629 samsung-tools-preferences.py:1066
+#: samsung-tools.py:629 samsung-tools-preferences.py:1067
 msgid "Released under GPLv3 license"
 msgstr "Vrijgegeven onder de GPLv3 licentie"
 
@@ -330,9 +328,8 @@ msgid "Control interface:"
 msgstr ""
 
 #: samsung-tools.py:741
-#, fuzzy
 msgid "Control interface: unable to connect to system service!"
-msgstr "Kan niet met de systeemdienst verbinden!"
+msgstr ""
 
 #: samsung-tools.py:751
 msgid "Session service stopped"
@@ -354,38 +351,38 @@ msgstr "Kan de systeemdienst niet stoppen"
 msgid "Please press the new hotkey"
 msgstr "Druk de nieuwe sneltoets in"
 
-#: samsung-tools-preferences.py:121 samsung-tools-preferences.py:607
+#: samsung-tools-preferences.py:121
 msgid "None"
 msgstr "Geen"
 
-#: samsung-tools-preferences.py:176 samsung-tools-preferences.py:245
-#: samsung-tools-preferences.py:340 samsung-tools-preferences.py:352
-#: samsung-tools-preferences.py:714 samsung-tools-preferences.py:726
-#: samsung-tools-preferences.py:738
+#: samsung-tools-preferences.py:177 samsung-tools-preferences.py:246
+#: samsung-tools-preferences.py:341 samsung-tools-preferences.py:353
+#: samsung-tools-preferences.py:715 samsung-tools-preferences.py:727
+#: samsung-tools-preferences.py:739
 msgid "Unable to connect to system service!"
 msgstr "Kan niet met de systeemdienst verbinden!"
 
-#: samsung-tools-preferences.py:364
+#: samsung-tools-preferences.py:365
 msgid "Confirm"
 msgstr "Bevestigen"
 
-#: samsung-tools-preferences.py:365
+#: samsung-tools-preferences.py:366
 msgid "Apply the new VIDs?"
 msgstr "De nieuwe VIDs toepassen?"
 
-#: samsung-tools-preferences.py:630
+#: samsung-tools-preferences.py:631
 msgid "You need a PHC enabled kernel to use this feature"
 msgstr "Je moet een kernel met PHC hebben om deze mogelijkheid te gebruiken"
 
-#: samsung-tools-preferences.py:654
+#: samsung-tools-preferences.py:655
 msgid "Unable to connect to session service!"
 msgstr "Kan niet met de sessiedienst verbinden!"
 
-#: samsung-tools-preferences.py:995
+#: samsung-tools-preferences.py:996
 msgid "Caution!"
 msgstr "Opgelet!"
 
-#: samsung-tools-preferences.py:996
+#: samsung-tools-preferences.py:997
 msgid ""
 "CPU undervolting can lead to significant gains in terms of power energy "
 "saving, however <b>IT IS A RISKY PRACTICE</b> that might result in "
@@ -495,9 +492,8 @@ msgid "Normal"
 msgstr "Normaal"
 
 #: po/samsung-tools-preferences.glade.h:26
-#, fuzzy
 msgid "Overclock"
-msgstr "Ventilator mode: Overclock"
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:27
 msgid "Power management..."
@@ -640,193 +636,3 @@ msgstr ""
 #: po/samsung-tools-session-service.desktop.in.h:1
 msgid "Start the session service"
 msgstr "Start de sessiedienst"
-
-#~ msgid "Fan mode: Speed"
-#~ msgstr "Ventilator mode: Snel"
-
-#~ msgid "Speed"
-#~ msgstr "Snelheid"
-
-#~ msgid "Ethernet throttle speed"
-#~ msgstr "Snelheid Ethernet schakelen"
-
-#~ msgid "Intel audio powersave"
-#~ msgstr "Intel audio spaarstand"
-
-#~ msgid "NMI watchdog"
-#~ msgstr "NMI watchdog"
-
-#~ msgid ""
-#~ "When enabled, the NMI watchdog will be turned off in order to save energy."
-#~ msgstr ""
-#~ "Wanneer ingeschakeld zal de NMI watchdog uitgeschakeld worden om energie "
-#~ "te bespaken"
-
-#~ msgid ""
-#~ "When enabled, the onboard Intel audio chipset will enter the power save "
-#~ "mode when no program is using the audio device."
-#~ msgstr ""
-#~ "Wanneer ingeschakeld zal de ingebouwde Intel audio chipset in "
-#~ "energiespaarstand gezet worden wanneer geen toepassingen het apparaat "
-#~ "gebruiken."
-
-#~ msgid ""
-#~ "When enabled, the speed of the gigabit ethernet will be throttled to "
-#~ "100Mbit in order to save energy."
-#~ msgstr ""
-#~ "Wanneer ingeschakeld zal de snelheid van het gigabit ethernet naar "
-#~ "100Mbit geschakeld worden om enerie te sparen."
-
-#~ msgid "CPU Fan"
-#~ msgstr "CPU ventilator"
-
-#~ msgid "Preferences..."
-#~ msgstr "Voorkeuren..."
-
-#~ msgid "Manage devices on Samsung netbooks"
-#~ msgstr "Beheer apparaten op Samsung netbooks"
-
-#~ msgid "CPU/Fan"
-#~ msgstr "CPU/Fan"
-
-#~ msgid "Fan control is not available"
-#~ msgstr "Ventilator control is niet beschikbaar"
-
-#~ msgid "Install 'laptop-mode' to enable and configure these options"
-#~ msgstr ""
-#~ "Installeer 'laptop-mode' om toegang te kijgen tot deze opties en hun "
-#~ "instellingen"
-
-#~ msgid "Configure 'laptop-mode' for a better power management"
-#~ msgstr "Stel 'laptop-modus' in voor betere energieprestaties"
-
-#~ msgid "Configure 'laptop-mode'"
-#~ msgstr "Instellen 'laptop-modus'"
-
-#~ msgid "Control Intel HDA audio chipset power"
-#~ msgstr "Aanpassen vermogen van Intel HDA audio chipset"
-
-#~ msgid "Control Linux scheduler"
-#~ msgstr "Aanpassen Linux scheduler"
-
-#~ msgid "Control Ethernet settings"
-#~ msgstr "Aanpassen Ethernet instellingen"
-
-#~ msgid "Control Intel SATA chipset power"
-#~ msgstr "Aanpassen vermogen van Intel SATA chipset"
-
-#~ msgid "Control HAL polling"
-#~ msgstr "Aanpassen HAL polling"
-
-#~ msgid "Control video output settings"
-#~ msgstr "Aanpassen video output instellingen"
-
-#~ msgid "Enable USB autosuspend"
-#~ msgstr "USB autosuspend inschakelen"
-
-#~ msgid "Control configuration files"
-#~ msgstr "Aanpassen configuratiebestanden"
-
-#~ msgid ""
-#~ "If you enable this option, 'laptop-mode' will automatically enable the "
-#~ "link power management mode of Intel AHCI compliant SATA chipsets."
-#~ msgstr ""
-#~ "Met deze optie ingeschakeld zal 'laptop-mode' automatisch de link power "
-#~ "management van Intel AHCI compliant SATA chipsets inschakelen."
-
-#~ msgid ""
-#~ "If you enable this option, 'laptop-mode' will automatically enable the "
-#~ "USB autosuspend feature for all devices."
-#~ msgstr ""
-#~ "Met deze optie ingeschakeld zal 'laptop-mode' automatisch USB autosuspend "
-#~ "inschakelen voor alle apparaten."
-
-#~ msgid ""
-#~ "If you enable this option, the speed of the Ethernet connection is "
-#~ "limited to 100 Mbit. The difference in power usage between 1 Gbit and 100 "
-#~ "Mbit Ethernet is quite large, so tuning can yield savings if you don't "
-#~ "need the full speed (for instance if you only use Ethernet as to connect "
-#~ "to a much slower ADSL modem)."
-#~ msgstr ""
-#~ "Met deze optie ingeschakeld is de snelheid van de ethernetverbinding "
-#~ "gelimiteerd tot 100Mbit. Het verschil in energieverbruik tussen 1Gbit en "
-#~ "100Mbet ethernet is aanzienlijk, het instellen kan besparing opleveren "
-#~ "wanneer je niet de volle snelheid behoeft (bijvoorbeeld wanneer je "
-#~ "Ethernet enkel gebruikt voor verbinding met een veel tragere ADSL modem)."
-
-#~ msgid ""
-#~ "'laptop-mode' can automatically swap out configuration files depending on "
-#~ "the power state of your system.\n"
-#~ " \n"
-#~ "The primary use for this feature is for controlling the configuration "
-#~ "files of syslog daemons. Syslog daemons have a tendency to sync their log "
-#~ "files when entries are written to them. This causes disks to spin up, "
-#~ "which is not very nice when you're trying to save power."
-#~ msgstr ""
-#~ "'laptop-mode' kan automatisch configuratiebestanden swappen afhankelijk "
-#~ "van de energiestatus van uw systeem.\n"
-#~ " \n"
-#~ "Het voornaamste gebruik van deze mogelijkheid is het beheren van de "
-#~ "configuratiebestanden van syslog deamons. Syslog daemons hebben de "
-#~ "neiging om hun logbestanden te synchroniseren telkens regels worden "
-#~ "weggeschreven. Dit veroorzaakt schijfactiviteit wat niet goed is wanneer "
-#~ "energie moet bespaard worden."
-
-#~ msgid ""
-#~ "An enabled video output port draws power, even if no display is "
-#~ "connected. This option forces the display output off depending on the "
-#~ "power mode."
-#~ msgstr ""
-#~ "Een ingeschakelde video uitvoer gebruikt energie, zelfs als er geen "
-#~ "beeldscherm verbonden is. Deze optie schakelt de uitvoer uit afhankelijk "
-#~ "van het energieschema."
-
-#~ msgid ""
-#~ "If you enable this option, 'laptop-mode' will control the polling of your "
-#~ "CD/DVD drives by HAL. Disabling polling saves a considerable amount of "
-#~ "power."
-#~ msgstr ""
-#~ "Met deze optie ingeschakeld zal 'laptop-mode' het pollen van de CD/DVD "
-#~ "drives by HAL controleren. Polling uitschakelen spaart een aanzienlijke "
-#~ "hoeveelheid energie."
-
-#~ msgid ""
-#~ "If you enable this option, 'laptop-mode' will automatically set the "
-#~ "powersave mode of Intel HDA audio chipsets."
-#~ msgstr ""
-#~ "Met deze optie ingeschakeld zal 'laptop-mode' automatisch de "
-#~ "energiespaarstand van Intel HDA audio chipsets instellen."
-
-#~ msgid ""
-#~ "If you enable this option, 'laptop-mode' will automatically configure the "
-#~ "Linux scheduler to save power on multi-core processors while running on "
-#~ "battery mode."
-#~ msgstr ""
-#~ "Met deze optie ingeschakeld zal 'laptop-mode' automatisch de Linux "
-#~ "scheduler instellen om energie te sparen bij multi-core processoren bij "
-#~ "werken op batterij."
-
-#~ msgid ""
-#~ "This option sets the disk power management when on battery, it can be a "
-#~ "value between 1 and 255. A low value results in a better energy saving "
-#~ "but less disk performance, an high value results in disk performance but "
-#~ "less energy saving."
-#~ msgstr ""
-#~ "Deze optie beheert de energieprestaties van de hardeschijf wanneer op "
-#~ "batterij gewerkt wordt, de waarde kan tussen 1 en 255 liggen. Een lage "
-#~ "waarde resulteert in een betere energieprestatie maar een lagere "
-#~ "schijfperformantie, een hoge waarde resulteert in betere "
-#~ "schijfperformantie maar een lagere energieprestatie."
-
-#~ msgid ""
-#~ "If you enable this option, 'laptop-mode' will take control of the hard "
-#~ "disk power management."
-#~ msgstr ""
-#~ "Met deze optie ingeschakeld zal 'laptop-mode' de energieprestaties van de "
-#~ "harde schijf overnemen."
-
-#~ msgid "Control hard disk power management"
-#~ msgstr "Aanpassen energieprestaties harde schijf"
-
-#~ msgid "Hard disk power management:"
-#~ msgstr "Energieprestaties harde schijf:"
