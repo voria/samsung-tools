@@ -1,17 +1,13 @@
-samsung-tools (2.1~ppa1~loms~oneiric~dev2) oneiric; urgency=low
-
-  * Fix bug LP:#943972.
-  * Update translations to latest versions from Launchpad.
-  * Update translators credits list.
-
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Wed, 07 Mar 2012 10:58:23 +0100
-
-samsung-tools (2.1~ppa1~loms~oneiric~dev1) oneiric; urgency=low
+samsung-tools (2.1~ppa1~loms~oneiric) oneiric; urgency=low
 
   * samsung-laptop interface may not provide the backlight control
     on some models. If so, fallback to vbetool to handle screen backlight.
+  * Add dependency to vbetool.
+  * Fix bug LP:#943972: samsung tools doesn't show up in Dash search.
+  * Update translations to latest versions from Launchpad.
+  * Update translators credits list.
 
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Mon, 05 Dec 2011 16:27:18 +0100
+ -- Fortunato Ventre (voRia) <vorione@gmail.com>  Mon, 12 Mar 2012 15:48:49 +0100
 
 samsung-tools (2.0~ppa1~loms~oneiric) oneiric; urgency=low
 

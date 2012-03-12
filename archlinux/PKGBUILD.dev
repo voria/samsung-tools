@@ -1,7 +1,7 @@
 # Contributor: Fortunato Ventre (voRia) <vorione@gmail.com>
 
 pkgname=samsung-tools-bzr
-pkgver=525
+pkgver=530
 pkgrel=1
 pkgdesc="Tools for Samsung netbooks - Development version"
 arch=('any')
