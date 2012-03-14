@@ -1,3 +1,9 @@
+samsung-tools (2.1~ppa1~loms~precise) precise; urgency=low
+
+  * First upload for Precise Pangolin.
+
+ -- Fortunato Ventre (voRia) <vorione@gmail.com>  Wed, 14 Mar 2012 10:14:35 +0100
+
 samsung-tools (2.1~ppa1~loms~oneiric) oneiric; urgency=low
 
   * samsung-laptop interface may not provide the backlight control
