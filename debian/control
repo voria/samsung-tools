@@ -10,9 +10,11 @@ Package: samsung-tools
 Architecture: all
 Suggests: phc-intel
 Depends: pm-utils, python-gtk2, xbindkeys, rfkill, vbetool
-Description: Tools for Samsung netbooks.
- 'Samsung Tools' is the successor of 'Samsung Scripts' provided by the 'Linux On My Samsung' project.
+Description: Tools for Samsung laptops.
+ 'Samsung Tools' is the successor of 'Samsung Scripts' provided by the
+ 'Linux On My Samsung' project.
  .
- It allows the complete configuration and the control in a friendly way of the devices found on Samsung
- netbooks (bluetooth, wireless, webcam, backlight, CPU fan, special keys) and the control of various
- aspects related to power management, like the undervolting of the CPU (when a PHC-enabled kernel is available).
+ It enables control in a friendly way of the devices found on Samsung laptops
+ (bluetooth, wireless, webcam, backlight, CPU fan, special keys) and the control
+ of various aspects related to power management, like the CPU undervolting (when a
+ PHC-enabled kernel is available).
