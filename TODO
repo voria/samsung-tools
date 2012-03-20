@@ -1,2 +1,2 @@
-- Add ability to disable desktop notifications when devices are toggled.
+- Add ability to disable desktop notifications when devices are toggled through hotkeys.
 - Make pm hooks status (enabled/disabled) survive when package is updated (distro packaging issue).
