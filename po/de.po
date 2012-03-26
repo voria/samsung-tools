@@ -6,16 +6,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-07 10:46+0100\n"
-"PO-Revision-Date: 2012-02-29 21:11+0000\n"
-"Last-Translator: Dennis Baudys <Unknown>\n"
+"POT-Creation-Date: 2012-03-26 16:09+0200\n"
+"PO-Revision-Date: 2012-03-20 12:31+0000\n"
+"Last-Translator: Sascha Biermanns <Unknown>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-03-07 09:40+0000\n"
-"X-Generator: Launchpad (build 14907)\n"
+"X-Launchpad-Export-Date: 2012-03-26 14:08+0000\n"
+"X-Generator: Launchpad (build 15008)\n"
 
 #: backends/session/util/locales.py:25 samsung-tools-preferences.py:410
 msgid "Backlight"
@@ -219,7 +219,7 @@ msgstr "Befehlszeilenwerkzeug"
 msgid "Usage: %s <interface> <option> ..."
 msgstr "Verwendung: %s <Schnittstelle> <Option>"
 
-#: samsung-tools.py:590 po/samsung-tools-preferences.glade.h:4
+#: samsung-tools.py:590 po/samsung-tools-preferences.glade.h:15
 msgid "Backlight:"
 msgstr "Hintergrundbeleuchtung:"
 
@@ -233,19 +233,19 @@ msgstr "Schnittstelle"
 msgid "Options"
 msgstr "Einstellungen"
 
-#: samsung-tools.py:593 po/samsung-tools-preferences.glade.h:5
+#: samsung-tools.py:593 po/samsung-tools-preferences.glade.h:13
 msgid "Bluetooth:"
 msgstr "Bluetooth:"
 
-#: samsung-tools.py:596 po/samsung-tools-preferences.glade.h:6
+#: samsung-tools.py:596 po/samsung-tools-preferences.glade.h:11
 msgid "CPU fan:"
 msgstr "CPU-Lüfter"
 
-#: samsung-tools.py:599 po/samsung-tools-preferences.glade.h:37
+#: samsung-tools.py:599 po/samsung-tools-preferences.glade.h:9
 msgid "Webcam:"
 msgstr "Webcam:"
 
-#: samsung-tools.py:602 po/samsung-tools-preferences.glade.h:38
+#: samsung-tools.py:602 po/samsung-tools-preferences.glade.h:19
 msgid "Wireless:"
 msgstr "WLAN-Karte"
 
@@ -301,7 +301,7 @@ msgstr ""
 "Für weitere Informationen, besuche doch das Internetforum \"Linux On My "
 "Samsung\"."
 
-#: samsung-tools.py:629 samsung-tools-preferences.py:1067
+#: samsung-tools.py:629 samsung-tools-preferences.py:1076
 msgid "Released under GPLv3 license"
 msgstr "Veröffentlicht unter der GPLv3-Lizenz"
 
@@ -326,7 +326,7 @@ msgstr "Falsche(r) Parameter."
 msgid "Unable to start a DBus daemon!"
 msgstr "D-Bus-Dienst konnte nicht gestartet werden!"
 
-#: samsung-tools.py:733 po/samsung-tools-preferences.glade.h:13
+#: samsung-tools.py:733 po/samsung-tools-preferences.glade.h:30
 msgid "Control interface:"
 msgstr "Schnittstelle zur Steuerung:"
 
@@ -402,7 +402,7 @@ msgstr ""
 "Sind Sie sicher, dass Sie fortfahren wollen?"
 
 #: po/samsung-tools-preferences.desktop.in.h:1
-#: po/samsung-tools-preferences.glade.h:28
+#: po/samsung-tools-preferences.glade.h:7
 msgid "Samsung Tools Preferences"
 msgstr "Samsung Tools Einstellungen"
 
@@ -411,152 +411,132 @@ msgid "Show and modify Samsung Tools preferences"
 msgstr "Anzeigen und ändern der Samsung Tools Einstellungen"
 
 #: po/samsung-tools-preferences.glade.h:1
-msgid "<b>Hotkeys</b>"
-msgstr "<b>Tastenkombinationen</b>"
-
-#: po/samsung-tools-preferences.glade.h:2
-msgid "<b>Initial status for devices</b>"
-msgstr "<b>Anfangsstatus der Komponenten</b>"
-
-#: po/samsung-tools-preferences.glade.h:3
-msgid "Advanced power management"
-msgstr "Erweitertes Energie-Management"
-
-#: po/samsung-tools-preferences.glade.h:7
-msgid "CPU undervolting..."
-msgstr "CPU-Spannungsabsenkung …"
-
-#: po/samsung-tools-preferences.glade.h:8
-msgid "Click here to disable the hotkey"
-msgstr "Klicke hier, um die Tastenkombination zu deaktivieren"
-
-#: po/samsung-tools-preferences.glade.h:9
-msgid "Click here to set the default hotkey"
-msgstr "Klick hier um die Standard-Tastenkombination zu verwenden"
-
-#: po/samsung-tools-preferences.glade.h:10
-msgid "Click here to set the default value"
-msgstr "Klick hier um den Standard-Wert zu verwenden"
-
-#: po/samsung-tools-preferences.glade.h:11
-#: po/samsung-tools-preferences-kernel-parameters.glade.h:1
-msgid "Configure kernel parameters"
-msgstr "Konfiguriere Kernel-Parameter"
-
-#: po/samsung-tools-preferences.glade.h:12
-#: po/samsung-tools-preferences-power-management.glade.h:1
-msgid "Configure power management"
-msgstr "Energieverwaltung konfigurieren"
-
-#: po/samsung-tools-preferences.glade.h:14
-msgid "Disabled"
-msgstr "Ausgeschaltet"
-
-#: po/samsung-tools-preferences.glade.h:15
-msgid "Enable hotkeys"
-msgstr "Tastenkombinationen einschalten"
-
-#: po/samsung-tools-preferences.glade.h:16
-msgid "Enable this option to use hotkeys"
-msgstr "Aktiviere diese Option, um die Tastenkombinationen zu verwenden"
-
-#: po/samsung-tools-preferences.glade.h:17
-msgid "Enabled"
-msgstr "Eingeschaltet"
-
-#: po/samsung-tools-preferences.glade.h:18
-msgid "Hotkey used for CPU fan control"
-msgstr "Tastenkombination für CPU-Lüftersteuerung"
-
-#: po/samsung-tools-preferences.glade.h:19
-msgid "Hotkey used for backlight control"
-msgstr "Tastenkombination für Hintergrundbeleuchtung"
-
-#: po/samsung-tools-preferences.glade.h:20
-msgid "Hotkey used for bluetooth control"
-msgstr "Tastenkombination für Bluetooth-Steuerung"
-
-#: po/samsung-tools-preferences.glade.h:21
-msgid "Hotkey used for webcam control"
-msgstr "Tastenkombination für Webcam-Steuerung"
-
-#: po/samsung-tools-preferences.glade.h:22
-msgid "Hotkey used for wireless control"
-msgstr "Tastenkombination für die WLAN-Karten-Steuerung"
-
-#: po/samsung-tools-preferences.glade.h:23
-msgid "Kernel parameters..."
-msgstr "Kernelparameter..."
-
-#: po/samsung-tools-preferences.glade.h:24
-msgid "Last status"
-msgstr "Letzter Status"
-
-#: po/samsung-tools-preferences.glade.h:25
 msgid "Normal"
 msgstr "Normal"
 
-#: po/samsung-tools-preferences.glade.h:26
+#: po/samsung-tools-preferences.glade.h:2
+msgid "Silent"
+msgstr "Leise"
+
+#: po/samsung-tools-preferences.glade.h:3
 msgid "Overclock"
 msgstr "Übertakten"
 
-#: po/samsung-tools-preferences.glade.h:27
-msgid "Power management..."
-msgstr "Energieverwaltung..."
+#: po/samsung-tools-preferences.glade.h:4
+msgid "Last status"
+msgstr "Letzter Status"
 
-#: po/samsung-tools-preferences.glade.h:29
+#: po/samsung-tools-preferences.glade.h:5
+msgid "Enabled"
+msgstr "Eingeschaltet"
+
+#: po/samsung-tools-preferences.glade.h:6
+msgid "Disabled"
+msgstr "Ausgeschaltet"
+
+#: po/samsung-tools-preferences.glade.h:8
+msgid "Hotkey used for webcam control"
+msgstr "Tastenkombination für Webcam-Steuerung"
+
+#: po/samsung-tools-preferences.glade.h:10
+msgid "Hotkey used for CPU fan control"
+msgstr "Tastenkombination für CPU-Lüftersteuerung"
+
+#: po/samsung-tools-preferences.glade.h:12
+msgid "Hotkey used for bluetooth control"
+msgstr "Tastenkombination für Bluetooth-Steuerung"
+
+#: po/samsung-tools-preferences.glade.h:14
+msgid "Hotkey used for backlight control"
+msgstr "Tastenkombination für Hintergrundbeleuchtung"
+
+#: po/samsung-tools-preferences.glade.h:16
+msgid "Click here to disable the hotkey"
+msgstr "Klicke hier, um die Tastenkombination zu deaktivieren"
+
+#: po/samsung-tools-preferences.glade.h:17
+msgid "<b>Hotkeys</b>"
+msgstr "<b>Tastenkombinationen</b>"
+
+#: po/samsung-tools-preferences.glade.h:18
+msgid "Hotkey used for wireless control"
+msgstr "Tastenkombination für die WLAN-Karten-Steuerung"
+
+#: po/samsung-tools-preferences.glade.h:20
+msgid "Click here to set the default hotkey"
+msgstr "Klick hier um die Standard-Tastenkombination zu verwenden"
+
+#: po/samsung-tools-preferences.glade.h:21
+msgid "Enable hotkeys"
+msgstr "Tastenkombinationen einschalten"
+
+#: po/samsung-tools-preferences.glade.h:22
+msgid "Enable this option to use hotkeys"
+msgstr "Aktiviere diese Option, um die Tastenkombinationen zu verwenden"
+
+#: po/samsung-tools-preferences.glade.h:23
 msgid "Session service"
 msgstr "Sitzungsdienst"
 
-#: po/samsung-tools-preferences.glade.h:30
-msgid "Silent"
-msgstr "Leise"
+#: po/samsung-tools-preferences.glade.h:24
+msgid "<b>Initial status for devices</b>"
+msgstr "<b>Anfangsstatus der Komponenten</b>"
+
+#: po/samsung-tools-preferences.glade.h:25
+msgid "The initial status at boot for Bluetooth"
+msgstr "Letzter Status von Bluetooth beim Booten"
+
+#: po/samsung-tools-preferences.glade.h:26
+msgid "Click here to set the default value"
+msgstr "Klick hier um den Standard-Wert zu verwenden"
+
+#: po/samsung-tools-preferences.glade.h:27
+msgid "The initial status at boot for webcam"
+msgstr "Letzter Status der Webcam beim Booten"
+
+#: po/samsung-tools-preferences.glade.h:28
+msgid "The initial status at boot for wireless"
+msgstr "Letzter Status der WLAN-Karte beim Booten"
+
+#: po/samsung-tools-preferences.glade.h:29
+msgid "The initial status at boot for CPU fan"
+msgstr "Der Anfangsstatus des CPU-Lüfters beim Start des Computers"
 
 #: po/samsung-tools-preferences.glade.h:31
 msgid "System service"
 msgstr "Systemdienst"
 
 #: po/samsung-tools-preferences.glade.h:32
-msgid "The initial status at boot for Bluetooth"
-msgstr "Letzter Status von Bluetooth beim Booten"
+msgid "Kernel parameters..."
+msgstr "Kernelparameter..."
 
 #: po/samsung-tools-preferences.glade.h:33
-msgid "The initial status at boot for CPU fan"
-msgstr "Der Anfangsstatus des CPU-Lüfters beim Start des Computers"
+#: po/samsung-tools-preferences-kernel-parameters.glade.h:1
+msgid "Configure kernel parameters"
+msgstr "Konfiguriere Kernel-Parameter"
 
 #: po/samsung-tools-preferences.glade.h:34
-msgid "The initial status at boot for webcam"
-msgstr "Letzter Status der Webcam beim Booten"
+msgid "CPU undervolting..."
+msgstr "CPU-Spannungsabsenkung …"
 
 #: po/samsung-tools-preferences.glade.h:35
-msgid "The initial status at boot for wireless"
-msgstr "Letzter Status der WLAN-Karte beim Booten"
-
-#: po/samsung-tools-preferences.glade.h:36
 msgid "Undervolt the CPU in order to save energy"
 msgstr "Absenken der CPU-Spannung, um Energie zu sparen"
 
+#: po/samsung-tools-preferences.glade.h:36
+msgid "Power management..."
+msgstr "Energieverwaltung..."
+
+#: po/samsung-tools-preferences.glade.h:37
+#: po/samsung-tools-preferences-power-management.glade.h:1
+msgid "Configure power management"
+msgstr "Energieverwaltung konfigurieren"
+
+#: po/samsung-tools-preferences.glade.h:38
+msgid "Advanced power management"
+msgstr "Erweitertes Energie-Management"
+
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:2
-msgid "Swap control:"
-msgstr "Swap-Steuerung"
-
-#: po/samsung-tools-preferences-kernel-parameters.glade.h:3
-msgid ""
-"Swappiness controls how aggressively the kernel swaps memory pages. Higher "
-"values increase agressiveness, lower values descrease aggressiveness. In "
-"other words, the higher is the value, the more the system will swap, with "
-"bad results on power consumption and disk performance. Set a low value if "
-"you usually have plenty of unused RAM. The default value is 60."
-msgstr ""
-"Swappiness legt fest, wie aggressiv Ihr Computer Dateien aus dem "
-"Arbeitsspeicher in die Auslagerungspartition-/datei schreiben wird. Höhere "
-"Werte bedeuten, dass mehr ausgelagert wird, niedrigere Werte bedeuten, dass "
-"weniger ausgelagert wird. Je mehr ausgelagert wird, desto mehr Energie wird "
-"verbraucht, da höhere Zugriffe auf die Festplatte erfolgen. Setzen Sie den "
-"Wert so gering wie möglich, wenn Sie genug Arbeitsspeicher zur Verfügung "
-"haben. Der Standardwert ist 60."
-
-#: po/samsung-tools-preferences-kernel-parameters.glade.h:4
 msgid ""
 "This option controls how aggressively the kernel swaps memory pages. Higher "
 "values increase agressiveness, lower values descrease aggressiveness. In "
@@ -572,23 +552,53 @@ msgstr ""
 "Wert so gering wie möglich, wenn Sie genug Arbeitsspeicher zur Verfügung "
 "haben. Der Standardwert ist 60."
 
+#: po/samsung-tools-preferences-kernel-parameters.glade.h:3
+msgid "Swap control:"
+msgstr "Swap-Steuerung"
+
+#: po/samsung-tools-preferences-kernel-parameters.glade.h:4
+msgid ""
+"Swappiness controls how aggressively the kernel swaps memory pages. Higher "
+"values increase agressiveness, lower values descrease aggressiveness. In "
+"other words, the higher is the value, the more the system will swap, with "
+"bad results on power consumption and disk performance. Set a low value if "
+"you usually have plenty of unused RAM. The default value is 60."
+msgstr ""
+"Swappiness legt fest, wie aggressiv Ihr Computer Dateien aus dem "
+"Arbeitsspeicher in die Auslagerungspartition-/datei schreiben wird. Höhere "
+"Werte bedeuten, dass mehr ausgelagert wird, niedrigere Werte bedeuten, dass "
+"weniger ausgelagert wird. Je mehr ausgelagert wird, desto mehr Energie wird "
+"verbraucht, da höhere Zugriffe auf die Festplatte erfolgen. Setzen Sie den "
+"Wert so gering wie möglich, wenn Sie genug Arbeitsspeicher zur Verfügung "
+"haben. Der Standardwert ist 60."
+
 #: po/samsung-tools-preferences-phc.glade.h:1
-msgid "<b>Default VIDs</b>"
-msgstr "<b>Standard VIDs</b>"
+msgid "CPU undervolting"
+msgstr "Absenken der CPU-Spannung (Undervolting)"
 
 #: po/samsung-tools-preferences-phc.glade.h:2
 msgid "<b>Frequencies</b>"
 msgstr "<b>Frequenzen</b>"
 
 #: po/samsung-tools-preferences-phc.glade.h:3
+msgid "<b>Default VIDs</b>"
+msgstr "<b>Standard VIDs</b>"
+
+#: po/samsung-tools-preferences-phc.glade.h:4
 msgid "<b>New VIDs</b>"
 msgstr "<b>Neue VIDs</b>"
 
-#: po/samsung-tools-preferences-phc.glade.h:4
-msgid "CPU undervolting"
-msgstr "Absenken der CPU-Spannung (Undervolting)"
-
 #: po/samsung-tools-preferences-phc.glade.h:5
+msgid "Note: the new VIDs will be applied when this window will be closed."
+msgstr ""
+"Beachten Sie: die neuen VIDs werden übernommen, wenn dieses Fesnter "
+"geschlossen wird."
+
+#: po/samsung-tools-preferences-phc.glade.h:6
+msgid "Set the new VIDs automatically at boot"
+msgstr "Setze die neuen VIDs automatisch während des Starts"
+
+#: po/samsung-tools-preferences-phc.glade.h:7
 msgid ""
 "Enable this option only if the new VIDs are tested and safe, otherwise the "
 "machine might be no more bootable!"
@@ -596,29 +606,11 @@ msgstr ""
 "Aktivieren Sie diese Option nur, wenn die neuen VIDs getestet und sicher "
 "sind, ansosnten könnte Ihr Computer nicht mehr starten."
 
-#: po/samsung-tools-preferences-phc.glade.h:6
-msgid "Note: the new VIDs will be applied when this window will be closed."
-msgstr ""
-"Beachten Sie: die neuen VIDs werden übernommen, wenn dieses Fesnter "
-"geschlossen wird."
-
-#: po/samsung-tools-preferences-phc.glade.h:7
-msgid "Set the new VIDs automatically at boot"
-msgstr "Setze die neuen VIDs automatisch während des Starts"
-
 #: po/samsung-tools-preferences-power-management.glade.h:2
 msgid "Devices power management"
 msgstr "Geräte-Energieverwaltung"
 
 #: po/samsung-tools-preferences-power-management.glade.h:3
-msgid "USB autosuspend"
-msgstr ""
-
-#: po/samsung-tools-preferences-power-management.glade.h:4
-msgid "VM writeback time"
-msgstr ""
-
-#: po/samsung-tools-preferences-power-management.glade.h:5
 msgid ""
 "When enabled, all the devices will automatically enter power save mode when "
 "needed."
@@ -626,17 +618,29 @@ msgstr ""
 "Wenn aktiviert, werden alle diese Geräte bei Bedarf automatisch in den "
 "Stromsparmodus gehen."
 
-#: po/samsung-tools-preferences-power-management.glade.h:6
+#: po/samsung-tools-preferences-power-management.glade.h:4
+msgid "USB autosuspend"
+msgstr "Automatisches USB-Stromsparen"
+
+#: po/samsung-tools-preferences-power-management.glade.h:5
 msgid ""
 "When enabled, the autosuspend feature for all the USB devices will be "
 "enabled."
 msgstr ""
+"Wenn eingeschaltet, wird das automatische USB-Stromsparen bei allen USB-"
+"Geräten eingeschaltet."
+
+#: po/samsung-tools-preferences-power-management.glade.h:6
+msgid "VM writeback time"
+msgstr "VM Rückschreibzeit"
 
 #: po/samsung-tools-preferences-power-management.glade.h:7
 msgid ""
 "When enabled, the kernel VM writeback time will be increased, resulting in "
 "less HD access and more energy saving."
 msgstr ""
+"Wenn eingeschaltet, wird die Kernel VM-Rückschreibzeit erhöht, was zu "
+"niedrigen Festplattenzugriffen und zusätzlicher Energieersparnis führt."
 
 #: po/samsung-tools-session-service.desktop.in.h:1
 msgid "Start the session service"

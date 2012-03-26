@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-07 10:46+0100\n"
+"POT-Creation-Date: 2012-03-26 16:09+0200\n"
 "PO-Revision-Date: 2012-02-25 15:32+0000\n"
 "Last-Translator: naitong <atone@126.com>\n"
 "Language-Team: Chinese (Simplified) <zh_CN@li.org>\n"
@@ -219,7 +219,7 @@ msgstr "命令行实用程序"
 msgid "Usage: %s <interface> <option> ..."
 msgstr "用法: %s <接口> <选项> ..."
 
-#: samsung-tools.py:590 po/samsung-tools-preferences.glade.h:4
+#: samsung-tools.py:590 po/samsung-tools-preferences.glade.h:15
 msgid "Backlight:"
 msgstr "背光:"
 
@@ -233,19 +233,19 @@ msgstr "界面"
 msgid "Options"
 msgstr "选项"
 
-#: samsung-tools.py:593 po/samsung-tools-preferences.glade.h:5
+#: samsung-tools.py:593 po/samsung-tools-preferences.glade.h:13
 msgid "Bluetooth:"
 msgstr "蓝牙:"
 
-#: samsung-tools.py:596 po/samsung-tools-preferences.glade.h:6
+#: samsung-tools.py:596 po/samsung-tools-preferences.glade.h:11
 msgid "CPU fan:"
 msgstr "CPU风扇:"
 
-#: samsung-tools.py:599 po/samsung-tools-preferences.glade.h:37
+#: samsung-tools.py:599 po/samsung-tools-preferences.glade.h:9
 msgid "Webcam:"
 msgstr "网络摄像头:"
 
-#: samsung-tools.py:602 po/samsung-tools-preferences.glade.h:38
+#: samsung-tools.py:602 po/samsung-tools-preferences.glade.h:19
 msgid "Wireless:"
 msgstr "无线网络:"
 
@@ -297,7 +297,7 @@ msgstr " - 禁用蓝牙, 网络摄像头和无线网络:"
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "要获取更多信息, 请访问'Linux On My Samsung'论坛:"
 
-#: samsung-tools.py:629 samsung-tools-preferences.py:1067
+#: samsung-tools.py:629 samsung-tools-preferences.py:1076
 msgid "Released under GPLv3 license"
 msgstr "以GPLv3许可证发布"
 
@@ -321,7 +321,7 @@ msgstr "错误参数."
 msgid "Unable to start a DBus daemon!"
 msgstr "无法启动DBus守护进程!"
 
-#: samsung-tools.py:733 po/samsung-tools-preferences.glade.h:13
+#: samsung-tools.py:733 po/samsung-tools-preferences.glade.h:30
 msgid "Control interface:"
 msgstr "控制界面:"
 
@@ -395,7 +395,7 @@ msgstr ""
 "你确定要继续吗?"
 
 #: po/samsung-tools-preferences.desktop.in.h:1
-#: po/samsung-tools-preferences.glade.h:28
+#: po/samsung-tools-preferences.glade.h:7
 msgid "Samsung Tools Preferences"
 msgstr "三星工具偏好设置"
 
@@ -404,148 +404,132 @@ msgid "Show and modify Samsung Tools preferences"
 msgstr "显示和修改三星工具偏好设置"
 
 #: po/samsung-tools-preferences.glade.h:1
-msgid "<b>Hotkeys</b>"
-msgstr "<b>热键</b>"
-
-#: po/samsung-tools-preferences.glade.h:2
-msgid "<b>Initial status for devices</b>"
-msgstr "<b>设备初始状态</b>"
-
-#: po/samsung-tools-preferences.glade.h:3
-msgid "Advanced power management"
-msgstr "高级电源管理"
-
-#: po/samsung-tools-preferences.glade.h:7
-msgid "CPU undervolting..."
-msgstr "CPU降压..."
-
-#: po/samsung-tools-preferences.glade.h:8
-msgid "Click here to disable the hotkey"
-msgstr "单击此处禁用热键"
-
-#: po/samsung-tools-preferences.glade.h:9
-msgid "Click here to set the default hotkey"
-msgstr "单击此处设置默认热键"
-
-#: po/samsung-tools-preferences.glade.h:10
-msgid "Click here to set the default value"
-msgstr "单击此处设置默认值"
-
-#: po/samsung-tools-preferences.glade.h:11
-#: po/samsung-tools-preferences-kernel-parameters.glade.h:1
-msgid "Configure kernel parameters"
-msgstr "配置内核参数"
-
-#: po/samsung-tools-preferences.glade.h:12
-#: po/samsung-tools-preferences-power-management.glade.h:1
-msgid "Configure power management"
-msgstr "配置电源管理"
-
-#: po/samsung-tools-preferences.glade.h:14
-msgid "Disabled"
-msgstr "已禁用"
-
-#: po/samsung-tools-preferences.glade.h:15
-msgid "Enable hotkeys"
-msgstr "启用热键"
-
-#: po/samsung-tools-preferences.glade.h:16
-msgid "Enable this option to use hotkeys"
-msgstr "启用该选项来使用热键"
-
-#: po/samsung-tools-preferences.glade.h:17
-msgid "Enabled"
-msgstr "已启用"
-
-#: po/samsung-tools-preferences.glade.h:18
-msgid "Hotkey used for CPU fan control"
-msgstr "用于CPU风扇控制的热键"
-
-#: po/samsung-tools-preferences.glade.h:19
-msgid "Hotkey used for backlight control"
-msgstr "用于背光控制的热键"
-
-#: po/samsung-tools-preferences.glade.h:20
-msgid "Hotkey used for bluetooth control"
-msgstr "用于蓝牙控制的热键"
-
-#: po/samsung-tools-preferences.glade.h:21
-msgid "Hotkey used for webcam control"
-msgstr "用于网络摄像头控制的热键"
-
-#: po/samsung-tools-preferences.glade.h:22
-msgid "Hotkey used for wireless control"
-msgstr "用于无线网络控制的热键"
-
-#: po/samsung-tools-preferences.glade.h:23
-msgid "Kernel parameters..."
-msgstr "内核参数..."
-
-#: po/samsung-tools-preferences.glade.h:24
-msgid "Last status"
-msgstr "上次的状态"
-
-#: po/samsung-tools-preferences.glade.h:25
 msgid "Normal"
 msgstr "正常"
 
-#: po/samsung-tools-preferences.glade.h:26
+#: po/samsung-tools-preferences.glade.h:2
+msgid "Silent"
+msgstr "静音"
+
+#: po/samsung-tools-preferences.glade.h:3
 msgid "Overclock"
 msgstr "超频"
 
-#: po/samsung-tools-preferences.glade.h:27
-msgid "Power management..."
-msgstr "电源管理..."
+#: po/samsung-tools-preferences.glade.h:4
+msgid "Last status"
+msgstr "上次的状态"
 
-#: po/samsung-tools-preferences.glade.h:29
+#: po/samsung-tools-preferences.glade.h:5
+msgid "Enabled"
+msgstr "已启用"
+
+#: po/samsung-tools-preferences.glade.h:6
+msgid "Disabled"
+msgstr "已禁用"
+
+#: po/samsung-tools-preferences.glade.h:8
+msgid "Hotkey used for webcam control"
+msgstr "用于网络摄像头控制的热键"
+
+#: po/samsung-tools-preferences.glade.h:10
+msgid "Hotkey used for CPU fan control"
+msgstr "用于CPU风扇控制的热键"
+
+#: po/samsung-tools-preferences.glade.h:12
+msgid "Hotkey used for bluetooth control"
+msgstr "用于蓝牙控制的热键"
+
+#: po/samsung-tools-preferences.glade.h:14
+msgid "Hotkey used for backlight control"
+msgstr "用于背光控制的热键"
+
+#: po/samsung-tools-preferences.glade.h:16
+msgid "Click here to disable the hotkey"
+msgstr "单击此处禁用热键"
+
+#: po/samsung-tools-preferences.glade.h:17
+msgid "<b>Hotkeys</b>"
+msgstr "<b>热键</b>"
+
+#: po/samsung-tools-preferences.glade.h:18
+msgid "Hotkey used for wireless control"
+msgstr "用于无线网络控制的热键"
+
+#: po/samsung-tools-preferences.glade.h:20
+msgid "Click here to set the default hotkey"
+msgstr "单击此处设置默认热键"
+
+#: po/samsung-tools-preferences.glade.h:21
+msgid "Enable hotkeys"
+msgstr "启用热键"
+
+#: po/samsung-tools-preferences.glade.h:22
+msgid "Enable this option to use hotkeys"
+msgstr "启用该选项来使用热键"
+
+#: po/samsung-tools-preferences.glade.h:23
 msgid "Session service"
 msgstr "会话服务"
 
-#: po/samsung-tools-preferences.glade.h:30
-msgid "Silent"
-msgstr "静音"
+#: po/samsung-tools-preferences.glade.h:24
+msgid "<b>Initial status for devices</b>"
+msgstr "<b>设备初始状态</b>"
+
+#: po/samsung-tools-preferences.glade.h:25
+msgid "The initial status at boot for Bluetooth"
+msgstr "启动时蓝牙初始状态"
+
+#: po/samsung-tools-preferences.glade.h:26
+msgid "Click here to set the default value"
+msgstr "单击此处设置默认值"
+
+#: po/samsung-tools-preferences.glade.h:27
+msgid "The initial status at boot for webcam"
+msgstr "启动时网络摄像头初始状态"
+
+#: po/samsung-tools-preferences.glade.h:28
+msgid "The initial status at boot for wireless"
+msgstr "启动时无线网络初始状态"
+
+#: po/samsung-tools-preferences.glade.h:29
+msgid "The initial status at boot for CPU fan"
+msgstr "启动时CPU风扇初始状态"
 
 #: po/samsung-tools-preferences.glade.h:31
 msgid "System service"
 msgstr "系统服务"
 
 #: po/samsung-tools-preferences.glade.h:32
-msgid "The initial status at boot for Bluetooth"
-msgstr "启动时蓝牙初始状态"
+msgid "Kernel parameters..."
+msgstr "内核参数..."
 
 #: po/samsung-tools-preferences.glade.h:33
-msgid "The initial status at boot for CPU fan"
-msgstr "启动时CPU风扇初始状态"
+#: po/samsung-tools-preferences-kernel-parameters.glade.h:1
+msgid "Configure kernel parameters"
+msgstr "配置内核参数"
 
 #: po/samsung-tools-preferences.glade.h:34
-msgid "The initial status at boot for webcam"
-msgstr "启动时网络摄像头初始状态"
+msgid "CPU undervolting..."
+msgstr "CPU降压..."
 
 #: po/samsung-tools-preferences.glade.h:35
-msgid "The initial status at boot for wireless"
-msgstr "启动时无线网络初始状态"
-
-#: po/samsung-tools-preferences.glade.h:36
 msgid "Undervolt the CPU in order to save energy"
 msgstr "给CPU降压以节省能量"
 
+#: po/samsung-tools-preferences.glade.h:36
+msgid "Power management..."
+msgstr "电源管理..."
+
+#: po/samsung-tools-preferences.glade.h:37
+#: po/samsung-tools-preferences-power-management.glade.h:1
+msgid "Configure power management"
+msgstr "配置电源管理"
+
+#: po/samsung-tools-preferences.glade.h:38
+msgid "Advanced power management"
+msgstr "高级电源管理"
+
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:2
-msgid "Swap control:"
-msgstr "交换控制:"
-
-#: po/samsung-tools-preferences-kernel-parameters.glade.h:3
-msgid ""
-"Swappiness controls how aggressively the kernel swaps memory pages. Higher "
-"values increase agressiveness, lower values descrease aggressiveness. In "
-"other words, the higher is the value, the more the system will swap, with "
-"bad results on power consumption and disk performance. Set a low value if "
-"you usually have plenty of unused RAM. The default value is 60."
-msgstr ""
-"Swappiness控制内核交换内存页到交换分区的积极程度. 值增大积极程度变高, 值减小"
-"积极程度变低. 换句话说, 值越大, 系统使用交换分区越多, 导致了电量消耗增大和磁"
-"盘性能变差. 如果你有充足的未使用内存, 请设置一个低的值. 默认值是60."
-
-#: po/samsung-tools-preferences-kernel-parameters.glade.h:4
 msgid ""
 "This option controls how aggressively the kernel swaps memory pages. Higher "
 "values increase agressiveness, lower values descrease aggressiveness. In "
@@ -557,59 +541,75 @@ msgstr ""
 "程度变低. 换句话说, 值越大, 系统使用交换分区越多, 导致了电量消耗增大和磁盘性"
 "能变差. 如果你有充足的未使用内存, 请设置一个低的值. 默认值是60."
 
+#: po/samsung-tools-preferences-kernel-parameters.glade.h:3
+msgid "Swap control:"
+msgstr "交换控制:"
+
+#: po/samsung-tools-preferences-kernel-parameters.glade.h:4
+msgid ""
+"Swappiness controls how aggressively the kernel swaps memory pages. Higher "
+"values increase agressiveness, lower values descrease aggressiveness. In "
+"other words, the higher is the value, the more the system will swap, with "
+"bad results on power consumption and disk performance. Set a low value if "
+"you usually have plenty of unused RAM. The default value is 60."
+msgstr ""
+"Swappiness控制内核交换内存页到交换分区的积极程度. 值增大积极程度变高, 值减小"
+"积极程度变低. 换句话说, 值越大, 系统使用交换分区越多, 导致了电量消耗增大和磁"
+"盘性能变差. 如果你有充足的未使用内存, 请设置一个低的值. 默认值是60."
+
 #: po/samsung-tools-preferences-phc.glade.h:1
-msgid "<b>Default VIDs</b>"
-msgstr "<b>默认VID</b>"
+msgid "CPU undervolting"
+msgstr "CPU降压"
 
 #: po/samsung-tools-preferences-phc.glade.h:2
 msgid "<b>Frequencies</b>"
 msgstr "<b>频率</b>"
 
 #: po/samsung-tools-preferences-phc.glade.h:3
+msgid "<b>Default VIDs</b>"
+msgstr "<b>默认VID</b>"
+
+#: po/samsung-tools-preferences-phc.glade.h:4
 msgid "<b>New VIDs</b>"
 msgstr "<b>新VID</b>"
 
-#: po/samsung-tools-preferences-phc.glade.h:4
-msgid "CPU undervolting"
-msgstr "CPU降压"
-
 #: po/samsung-tools-preferences-phc.glade.h:5
+msgid "Note: the new VIDs will be applied when this window will be closed."
+msgstr "注意: 新VID会在窗口关闭时应用."
+
+#: po/samsung-tools-preferences-phc.glade.h:6
+msgid "Set the new VIDs automatically at boot"
+msgstr "在启动时自动设置新VID"
+
+#: po/samsung-tools-preferences-phc.glade.h:7
 msgid ""
 "Enable this option only if the new VIDs are tested and safe, otherwise the "
 "machine might be no more bootable!"
 msgstr "仅当新VID经过测试并且安全时启用该选项, 否则系统可能无法启动!"
-
-#: po/samsung-tools-preferences-phc.glade.h:6
-msgid "Note: the new VIDs will be applied when this window will be closed."
-msgstr "注意: 新VID会在窗口关闭时应用."
-
-#: po/samsung-tools-preferences-phc.glade.h:7
-msgid "Set the new VIDs automatically at boot"
-msgstr "在启动时自动设置新VID"
 
 #: po/samsung-tools-preferences-power-management.glade.h:2
 msgid "Devices power management"
 msgstr "设备电源管理"
 
 #: po/samsung-tools-preferences-power-management.glade.h:3
-msgid "USB autosuspend"
-msgstr "USB自动挂起"
-
-#: po/samsung-tools-preferences-power-management.glade.h:4
-msgid "VM writeback time"
-msgstr "虚拟内存写回时间"
-
-#: po/samsung-tools-preferences-power-management.glade.h:5
 msgid ""
 "When enabled, all the devices will automatically enter power save mode when "
 "needed."
 msgstr "启用时, 所有设备会在需要时自动进入节电模式."
 
-#: po/samsung-tools-preferences-power-management.glade.h:6
+#: po/samsung-tools-preferences-power-management.glade.h:4
+msgid "USB autosuspend"
+msgstr "USB自动挂起"
+
+#: po/samsung-tools-preferences-power-management.glade.h:5
 msgid ""
 "When enabled, the autosuspend feature for all the USB devices will be "
 "enabled."
 msgstr "启用时, USB设备的自动挂起特性将启用."
+
+#: po/samsung-tools-preferences-power-management.glade.h:6
+msgid "VM writeback time"
+msgstr "虚拟内存写回时间"
 
 #: po/samsung-tools-preferences-power-management.glade.h:7
 msgid ""

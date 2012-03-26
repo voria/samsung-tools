@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-07 10:46+0100\n"
+"POT-Creation-Date: 2012-03-26 16:09+0200\n"
 "PO-Revision-Date: 2011-12-05 05:04+0000\n"
 "Last-Translator: abuyop <Unknown>\n"
 "Language-Team: Malay <ms@li.org>\n"
@@ -219,7 +219,7 @@ msgstr "Utiliti Baris Perintah"
 msgid "Usage: %s <interface> <option> ..."
 msgstr "Penggunaan: %s <interface> <option> ..."
 
-#: samsung-tools.py:590 po/samsung-tools-preferences.glade.h:4
+#: samsung-tools.py:590 po/samsung-tools-preferences.glade.h:15
 msgid "Backlight:"
 msgstr "Cahaya latar:"
 
@@ -233,19 +233,19 @@ msgstr "Antaramuka"
 msgid "Options"
 msgstr "Pilihan"
 
-#: samsung-tools.py:593 po/samsung-tools-preferences.glade.h:5
+#: samsung-tools.py:593 po/samsung-tools-preferences.glade.h:13
 msgid "Bluetooth:"
 msgstr "Bluetooth:"
 
-#: samsung-tools.py:596 po/samsung-tools-preferences.glade.h:6
+#: samsung-tools.py:596 po/samsung-tools-preferences.glade.h:11
 msgid "CPU fan:"
 msgstr "Kipas CPU:"
 
-#: samsung-tools.py:599 po/samsung-tools-preferences.glade.h:37
+#: samsung-tools.py:599 po/samsung-tools-preferences.glade.h:9
 msgid "Webcam:"
 msgstr "Kamera sesawang:"
 
-#: samsung-tools.py:602 po/samsung-tools-preferences.glade.h:38
+#: samsung-tools.py:602 po/samsung-tools-preferences.glade.h:19
 msgid "Wireless:"
 msgstr "Tanpa wayar:"
 
@@ -297,7 +297,7 @@ msgstr " - Lumpuhkan bluetooth, kamera sesawang dan tanpa wayar:"
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Untuk maklumat lanjut, lawati forum 'Linux On My Samsung':"
 
-#: samsung-tools.py:629 samsung-tools-preferences.py:1067
+#: samsung-tools.py:629 samsung-tools-preferences.py:1076
 msgid "Released under GPLv3 license"
 msgstr "Dikeluarkan dibawah lesen GPLv3"
 
@@ -321,7 +321,7 @@ msgstr "Argumen salah."
 msgid "Unable to start a DBus daemon!"
 msgstr "Tidak boleh mulakan daemon DBus!"
 
-#: samsung-tools.py:733 po/samsung-tools-preferences.glade.h:13
+#: samsung-tools.py:733 po/samsung-tools-preferences.glade.h:30
 msgid "Control interface:"
 msgstr "Antaramuka kawalan:"
 
@@ -397,7 +397,7 @@ msgstr ""
 "Anda pasti hendak teruskan?"
 
 #: po/samsung-tools-preferences.desktop.in.h:1
-#: po/samsung-tools-preferences.glade.h:28
+#: po/samsung-tools-preferences.glade.h:7
 msgid "Samsung Tools Preferences"
 msgstr "Keutamaan Alatan Samsung"
 
@@ -406,136 +406,150 @@ msgid "Show and modify Samsung Tools preferences"
 msgstr "Papar dan ubahsuai keutamaan alatan Samsung"
 
 #: po/samsung-tools-preferences.glade.h:1
-msgid "<b>Hotkeys</b>"
-msgstr "<b>Kekunci Panas</b>"
-
-#: po/samsung-tools-preferences.glade.h:2
-msgid "<b>Initial status for devices</b>"
-msgstr "<b>Status awal peranti</b>"
-
-#: po/samsung-tools-preferences.glade.h:3
-msgid "Advanced power management"
-msgstr "Pengurusan kuasa lanjutan"
-
-#: po/samsung-tools-preferences.glade.h:7
-msgid "CPU undervolting..."
-msgstr "CPU kekurangan voltan..."
-
-#: po/samsung-tools-preferences.glade.h:8
-msgid "Click here to disable the hotkey"
-msgstr "Klik disini untuk lumpuhkan kekunci panas"
-
-#: po/samsung-tools-preferences.glade.h:9
-msgid "Click here to set the default hotkey"
-msgstr "Klik disini untuk tetapkan kekunci panas lalai"
-
-#: po/samsung-tools-preferences.glade.h:10
-msgid "Click here to set the default value"
-msgstr "Klik disini untuk tetapkan nilai lalai"
-
-#: po/samsung-tools-preferences.glade.h:11
-#: po/samsung-tools-preferences-kernel-parameters.glade.h:1
-msgid "Configure kernel parameters"
-msgstr "Konfigur parameter kernel"
-
-#: po/samsung-tools-preferences.glade.h:12
-#: po/samsung-tools-preferences-power-management.glade.h:1
-msgid "Configure power management"
-msgstr "Konfigur pengurusan kuasa"
-
-#: po/samsung-tools-preferences.glade.h:14
-msgid "Disabled"
-msgstr "Dilumpuhkan"
-
-#: po/samsung-tools-preferences.glade.h:15
-msgid "Enable hotkeys"
-msgstr "Benarkan kekunci panas"
-
-#: po/samsung-tools-preferences.glade.h:16
-msgid "Enable this option to use hotkeys"
-msgstr "Benarkan pilihan ini untuk kekunci panas"
-
-#: po/samsung-tools-preferences.glade.h:17
-msgid "Enabled"
-msgstr "Dibenarkan"
-
-#: po/samsung-tools-preferences.glade.h:18
-msgid "Hotkey used for CPU fan control"
-msgstr "Kekunci panas digunakan untuk kawalan kipas CPU"
-
-#: po/samsung-tools-preferences.glade.h:19
-msgid "Hotkey used for backlight control"
-msgstr "Kekunci panas digunakan untuk kawalan cahaya latar"
-
-#: po/samsung-tools-preferences.glade.h:20
-msgid "Hotkey used for bluetooth control"
-msgstr "Kekunci panas digunakan untuk kawalan bluetooth"
-
-#: po/samsung-tools-preferences.glade.h:21
-msgid "Hotkey used for webcam control"
-msgstr "Kekunci panas digunakan untuk kawalan kamera sesawang"
-
-#: po/samsung-tools-preferences.glade.h:22
-msgid "Hotkey used for wireless control"
-msgstr "Kekunci panas digunakan untuk kawalan tanpa wayar"
-
-#: po/samsung-tools-preferences.glade.h:23
-msgid "Kernel parameters..."
-msgstr "Parameter kernel..."
-
-#: po/samsung-tools-preferences.glade.h:24
-msgid "Last status"
-msgstr "Status akhir"
-
-#: po/samsung-tools-preferences.glade.h:25
 msgid "Normal"
 msgstr "Biasa"
 
-#: po/samsung-tools-preferences.glade.h:26
+#: po/samsung-tools-preferences.glade.h:2
+msgid "Silent"
+msgstr "Senyap"
+
+#: po/samsung-tools-preferences.glade.h:3
 msgid "Overclock"
 msgstr "Overclock"
 
-#: po/samsung-tools-preferences.glade.h:27
-msgid "Power management..."
-msgstr "Pengurusan kuasa..."
+#: po/samsung-tools-preferences.glade.h:4
+msgid "Last status"
+msgstr "Status akhir"
 
-#: po/samsung-tools-preferences.glade.h:29
+#: po/samsung-tools-preferences.glade.h:5
+msgid "Enabled"
+msgstr "Dibenarkan"
+
+#: po/samsung-tools-preferences.glade.h:6
+msgid "Disabled"
+msgstr "Dilumpuhkan"
+
+#: po/samsung-tools-preferences.glade.h:8
+msgid "Hotkey used for webcam control"
+msgstr "Kekunci panas digunakan untuk kawalan kamera sesawang"
+
+#: po/samsung-tools-preferences.glade.h:10
+msgid "Hotkey used for CPU fan control"
+msgstr "Kekunci panas digunakan untuk kawalan kipas CPU"
+
+#: po/samsung-tools-preferences.glade.h:12
+msgid "Hotkey used for bluetooth control"
+msgstr "Kekunci panas digunakan untuk kawalan bluetooth"
+
+#: po/samsung-tools-preferences.glade.h:14
+msgid "Hotkey used for backlight control"
+msgstr "Kekunci panas digunakan untuk kawalan cahaya latar"
+
+#: po/samsung-tools-preferences.glade.h:16
+msgid "Click here to disable the hotkey"
+msgstr "Klik disini untuk lumpuhkan kekunci panas"
+
+#: po/samsung-tools-preferences.glade.h:17
+msgid "<b>Hotkeys</b>"
+msgstr "<b>Kekunci Panas</b>"
+
+#: po/samsung-tools-preferences.glade.h:18
+msgid "Hotkey used for wireless control"
+msgstr "Kekunci panas digunakan untuk kawalan tanpa wayar"
+
+#: po/samsung-tools-preferences.glade.h:20
+msgid "Click here to set the default hotkey"
+msgstr "Klik disini untuk tetapkan kekunci panas lalai"
+
+#: po/samsung-tools-preferences.glade.h:21
+msgid "Enable hotkeys"
+msgstr "Benarkan kekunci panas"
+
+#: po/samsung-tools-preferences.glade.h:22
+msgid "Enable this option to use hotkeys"
+msgstr "Benarkan pilihan ini untuk kekunci panas"
+
+#: po/samsung-tools-preferences.glade.h:23
 msgid "Session service"
 msgstr "Perkhidmatan sesi"
 
-#: po/samsung-tools-preferences.glade.h:30
-msgid "Silent"
-msgstr "Senyap"
+#: po/samsung-tools-preferences.glade.h:24
+msgid "<b>Initial status for devices</b>"
+msgstr "<b>Status awal peranti</b>"
+
+#: po/samsung-tools-preferences.glade.h:25
+msgid "The initial status at boot for Bluetooth"
+msgstr "Status awal semasa but untuk Bluetooth"
+
+#: po/samsung-tools-preferences.glade.h:26
+msgid "Click here to set the default value"
+msgstr "Klik disini untuk tetapkan nilai lalai"
+
+#: po/samsung-tools-preferences.glade.h:27
+msgid "The initial status at boot for webcam"
+msgstr "Status awal semasa but untuk kamera sesawang"
+
+#: po/samsung-tools-preferences.glade.h:28
+msgid "The initial status at boot for wireless"
+msgstr "Status awal semasa but untuk tanpa wayar"
+
+#: po/samsung-tools-preferences.glade.h:29
+msgid "The initial status at boot for CPU fan"
+msgstr "Status awal semasa but untuk kipas CPU"
 
 #: po/samsung-tools-preferences.glade.h:31
 msgid "System service"
 msgstr "Perkhidmatan sistem"
 
 #: po/samsung-tools-preferences.glade.h:32
-msgid "The initial status at boot for Bluetooth"
-msgstr "Status awal semasa but untuk Bluetooth"
+msgid "Kernel parameters..."
+msgstr "Parameter kernel..."
 
 #: po/samsung-tools-preferences.glade.h:33
-msgid "The initial status at boot for CPU fan"
-msgstr "Status awal semasa but untuk kipas CPU"
+#: po/samsung-tools-preferences-kernel-parameters.glade.h:1
+msgid "Configure kernel parameters"
+msgstr "Konfigur parameter kernel"
 
 #: po/samsung-tools-preferences.glade.h:34
-msgid "The initial status at boot for webcam"
-msgstr "Status awal semasa but untuk kamera sesawang"
+msgid "CPU undervolting..."
+msgstr "CPU kekurangan voltan..."
 
 #: po/samsung-tools-preferences.glade.h:35
-msgid "The initial status at boot for wireless"
-msgstr "Status awal semasa but untuk tanpa wayar"
-
-#: po/samsung-tools-preferences.glade.h:36
 msgid "Undervolt the CPU in order to save energy"
 msgstr "Kurangkan voltan CPU untuk menjimatkan tenaga"
 
+#: po/samsung-tools-preferences.glade.h:36
+msgid "Power management..."
+msgstr "Pengurusan kuasa..."
+
+#: po/samsung-tools-preferences.glade.h:37
+#: po/samsung-tools-preferences-power-management.glade.h:1
+msgid "Configure power management"
+msgstr "Konfigur pengurusan kuasa"
+
+#: po/samsung-tools-preferences.glade.h:38
+msgid "Advanced power management"
+msgstr "Pengurusan kuasa lanjutan"
+
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:2
+msgid ""
+"This option controls how aggressively the kernel swaps memory pages. Higher "
+"values increase agressiveness, lower values descrease aggressiveness. In "
+"other words, the higher is the value, the more the system will swap, with "
+"bad results on power consumption and disk performance. Set a low value if "
+"you usually have plenty of unused RAM. The default value is 60."
+msgstr ""
+"Pilihan ini mengawal keagresifan halaman ingatan silih kernel. Nilai yang "
+"lebih tinggi meningkatkan keagresifan, dan sebaliknya. Pendek kata, semakin "
+"tinggi nilai, lebih banyak sistem akan disilihkan, berserta keputusan tidak "
+"elok pada penggunaan tenaga dan prestasi cakera. Tetapkan pada nilai rendah "
+"jika anda mempunyai banyak RAM yang tidak digunakan, Nilai lalai adalah 60."
+
+#: po/samsung-tools-preferences-kernel-parameters.glade.h:3
 msgid "Swap control:"
 msgstr "Kawalan silih:"
 
-#: po/samsung-tools-preferences-kernel-parameters.glade.h:3
+#: po/samsung-tools-preferences-kernel-parameters.glade.h:4
 msgid ""
 "Swappiness controls how aggressively the kernel swaps memory pages. Higher "
 "values increase agressiveness, lower values descrease aggressiveness. In "
@@ -550,37 +564,31 @@ msgstr ""
 "pada nilai rendah jika anda mempunyai banyak RAM yang tidak digunakan, Nilai "
 "lalai adalah 60."
 
-#: po/samsung-tools-preferences-kernel-parameters.glade.h:4
-msgid ""
-"This option controls how aggressively the kernel swaps memory pages. Higher "
-"values increase agressiveness, lower values descrease aggressiveness. In "
-"other words, the higher is the value, the more the system will swap, with "
-"bad results on power consumption and disk performance. Set a low value if "
-"you usually have plenty of unused RAM. The default value is 60."
-msgstr ""
-"Pilihan ini mengawal keagresifan halaman ingatan silih kernel. Nilai yang "
-"lebih tinggi meningkatkan keagresifan, dan sebaliknya. Pendek kata, semakin "
-"tinggi nilai, lebih banyak sistem akan disilihkan, berserta keputusan tidak "
-"elok pada penggunaan tenaga dan prestasi cakera. Tetapkan pada nilai rendah "
-"jika anda mempunyai banyak RAM yang tidak digunakan, Nilai lalai adalah 60."
-
 #: po/samsung-tools-preferences-phc.glade.h:1
-msgid "<b>Default VIDs</b>"
-msgstr "<b>VID Lalai</b>"
+msgid "CPU undervolting"
+msgstr "CPU kekurangan voltan"
 
 #: po/samsung-tools-preferences-phc.glade.h:2
 msgid "<b>Frequencies</b>"
 msgstr "<b>Frekuensi</b>"
 
 #: po/samsung-tools-preferences-phc.glade.h:3
+msgid "<b>Default VIDs</b>"
+msgstr "<b>VID Lalai</b>"
+
+#: po/samsung-tools-preferences-phc.glade.h:4
 msgid "<b>New VIDs</b>"
 msgstr "<b>VID Baru</b>"
 
-#: po/samsung-tools-preferences-phc.glade.h:4
-msgid "CPU undervolting"
-msgstr "CPU kekurangan voltan"
-
 #: po/samsung-tools-preferences-phc.glade.h:5
+msgid "Note: the new VIDs will be applied when this window will be closed."
+msgstr "Perhatian: VID baru akan dilaksanakan bila tetingkap ini ditutup."
+
+#: po/samsung-tools-preferences-phc.glade.h:6
+msgid "Set the new VIDs automatically at boot"
+msgstr "Tetapkan VID baru secara automatik bila but"
+
+#: po/samsung-tools-preferences-phc.glade.h:7
 msgid ""
 "Enable this option only if the new VIDs are tested and safe, otherwise the "
 "machine might be no more bootable!"
@@ -588,27 +596,11 @@ msgstr ""
 "Benarkan pilihan ini jika VID baru diuji dan selamat, jika tidak mesin "
 "mungkin tidak boleh dibut!"
 
-#: po/samsung-tools-preferences-phc.glade.h:6
-msgid "Note: the new VIDs will be applied when this window will be closed."
-msgstr "Perhatian: VID baru akan dilaksanakan bila tetingkap ini ditutup."
-
-#: po/samsung-tools-preferences-phc.glade.h:7
-msgid "Set the new VIDs automatically at boot"
-msgstr "Tetapkan VID baru secara automatik bila but"
-
 #: po/samsung-tools-preferences-power-management.glade.h:2
 msgid "Devices power management"
 msgstr "Pengurusan kuasa peranti"
 
 #: po/samsung-tools-preferences-power-management.glade.h:3
-msgid "USB autosuspend"
-msgstr "Tangguh-sendiri USB"
-
-#: po/samsung-tools-preferences-power-management.glade.h:4
-msgid "VM writeback time"
-msgstr "Masa tulis-balik VM"
-
-#: po/samsung-tools-preferences-power-management.glade.h:5
 msgid ""
 "When enabled, all the devices will automatically enter power save mode when "
 "needed."
@@ -616,13 +608,21 @@ msgstr ""
 "Bila dibenarkan, semua peranti akan berada dalam mod jimat kuasa secara "
 "automatik bila diperlukan."
 
-#: po/samsung-tools-preferences-power-management.glade.h:6
+#: po/samsung-tools-preferences-power-management.glade.h:4
+msgid "USB autosuspend"
+msgstr "Tangguh-sendiri USB"
+
+#: po/samsung-tools-preferences-power-management.glade.h:5
 msgid ""
 "When enabled, the autosuspend feature for all the USB devices will be "
 "enabled."
 msgstr ""
 "Bila dibenarkan, fitur tangguh-sendiri untuk semua peranti USB akan "
 "dibenarkan."
+
+#: po/samsung-tools-preferences-power-management.glade.h:6
+msgid "VM writeback time"
+msgstr "Masa tulis-balik VM"
 
 #: po/samsung-tools-preferences-power-management.glade.h:7
 msgid ""

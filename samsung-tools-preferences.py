@@ -1063,7 +1063,8 @@ Are you sure you want to continue?"), "utf-8")
 					"André Drumond",
 					"Antoine Tonio",
 					"naitong",
-					"Dennis Baudys"
+					"Dennis Baudys",
+					"Sascha Biermanns"
 					]
 
 		translators.sort(cmp = lambda x, y: cmp(x.lower(), y.lower()))

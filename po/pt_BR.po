@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-07 10:46+0100\n"
+"POT-Creation-Date: 2012-03-26 16:09+0200\n"
 "PO-Revision-Date: 2012-02-17 12:09+0000\n"
 "Last-Translator: Rafael Neri <Unknown>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-it@kde.org>\n"
@@ -221,7 +221,7 @@ msgstr "Ferramenta de linha de comando"
 msgid "Usage: %s <interface> <option> ..."
 msgstr "Uso: %s <interface> <opção> ..."
 
-#: samsung-tools.py:590 po/samsung-tools-preferences.glade.h:4
+#: samsung-tools.py:590 po/samsung-tools-preferences.glade.h:15
 msgid "Backlight:"
 msgstr "Luz de fundo:"
 
@@ -235,19 +235,19 @@ msgstr "Interface"
 msgid "Options"
 msgstr "Opções"
 
-#: samsung-tools.py:593 po/samsung-tools-preferences.glade.h:5
+#: samsung-tools.py:593 po/samsung-tools-preferences.glade.h:13
 msgid "Bluetooth:"
 msgstr "Bluetooth"
 
-#: samsung-tools.py:596 po/samsung-tools-preferences.glade.h:6
+#: samsung-tools.py:596 po/samsung-tools-preferences.glade.h:11
 msgid "CPU fan:"
 msgstr "Ventoinha da CPU"
 
-#: samsung-tools.py:599 po/samsung-tools-preferences.glade.h:37
+#: samsung-tools.py:599 po/samsung-tools-preferences.glade.h:9
 msgid "Webcam:"
 msgstr "Webcam:"
 
-#: samsung-tools.py:602 po/samsung-tools-preferences.glade.h:38
+#: samsung-tools.py:602 po/samsung-tools-preferences.glade.h:19
 msgid "Wireless:"
 msgstr "Rede sem fio:"
 
@@ -301,7 +301,7 @@ msgstr " - Desativar bluetooth, webcam e rede sem fio:"
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Para mais informações, visite o fórum 'Linux On My Samsung':"
 
-#: samsung-tools.py:629 samsung-tools-preferences.py:1067
+#: samsung-tools.py:629 samsung-tools-preferences.py:1076
 msgid "Released under GPLv3 license"
 msgstr "Distribuído sob a licença GPLv3"
 
@@ -325,7 +325,7 @@ msgstr "Argumento(s) errado(s)"
 msgid "Unable to start a DBus daemon!"
 msgstr "Impossível iniciar um processo daemon DBus."
 
-#: samsung-tools.py:733 po/samsung-tools-preferences.glade.h:13
+#: samsung-tools.py:733 po/samsung-tools-preferences.glade.h:30
 msgid "Control interface:"
 msgstr "Controlar interface:"
 
@@ -402,7 +402,7 @@ msgstr ""
 "Você tem certeza que quer continuar?"
 
 #: po/samsung-tools-preferences.desktop.in.h:1
-#: po/samsung-tools-preferences.glade.h:28
+#: po/samsung-tools-preferences.glade.h:7
 msgid "Samsung Tools Preferences"
 msgstr "Preferências de Ferramentas Samsung"
 
@@ -411,153 +411,134 @@ msgid "Show and modify Samsung Tools preferences"
 msgstr "Exibir e modificar as preferências de Ferramentas Samsung"
 
 #: po/samsung-tools-preferences.glade.h:1
-msgid "<b>Hotkeys</b>"
-msgstr "<b>Teclas de acesso rápido</b>"
+msgid "Normal"
+msgstr "Normal"
 
 #: po/samsung-tools-preferences.glade.h:2
-msgid "<b>Initial status for devices</b>"
-msgstr "b>Estado inicial para dispositivos</b>"
+msgid "Silent"
+msgstr "Silencioso"
 
 #: po/samsung-tools-preferences.glade.h:3
-msgid "Advanced power management"
-msgstr "Gerenciamento avançado de energia"
+msgid "Overclock"
+msgstr "Overclock"
 
-#: po/samsung-tools-preferences.glade.h:7
-msgid "CPU undervolting..."
-msgstr "CPU com voltagem reduzida..."
+#: po/samsung-tools-preferences.glade.h:4
+msgid "Last status"
+msgstr "Último estado"
 
-#: po/samsung-tools-preferences.glade.h:8
-msgid "Click here to disable the hotkey"
-msgstr "Clique aqui para desativar a tecla de acesso rápido"
-
-#: po/samsung-tools-preferences.glade.h:9
-msgid "Click here to set the default hotkey"
-msgstr "Clique aqui para definir a tecla de acesso rápido padrão"
-
-#: po/samsung-tools-preferences.glade.h:10
-msgid "Click here to set the default value"
-msgstr "Clique aqui para definir o valor padrão"
-
-#: po/samsung-tools-preferences.glade.h:11
-#: po/samsung-tools-preferences-kernel-parameters.glade.h:1
-msgid "Configure kernel parameters"
-msgstr "Configurar os parâmetros do kernel"
-
-#: po/samsung-tools-preferences.glade.h:12
-#: po/samsung-tools-preferences-power-management.glade.h:1
-msgid "Configure power management"
-msgstr "Configurar o gerenciamento de energia"
-
-#: po/samsung-tools-preferences.glade.h:14
-msgid "Disabled"
-msgstr "Desativado"
-
-#: po/samsung-tools-preferences.glade.h:15
-msgid "Enable hotkeys"
-msgstr "Ativar teclas de acesso rápido"
-
-#: po/samsung-tools-preferences.glade.h:16
-msgid "Enable this option to use hotkeys"
-msgstr "Ative esta opção para utilizar teclas de acesso rápido"
-
-#: po/samsung-tools-preferences.glade.h:17
+#: po/samsung-tools-preferences.glade.h:5
 msgid "Enabled"
 msgstr "Ativado"
 
-#: po/samsung-tools-preferences.glade.h:18
-msgid "Hotkey used for CPU fan control"
-msgstr "Tecla de acesso rápido usada para controlar a ventoinha da CPU"
+#: po/samsung-tools-preferences.glade.h:6
+msgid "Disabled"
+msgstr "Desativado"
 
-#: po/samsung-tools-preferences.glade.h:19
-msgid "Hotkey used for backlight control"
-msgstr "Tecla de acesso rápido usada para controlar a luz de fundo"
-
-#: po/samsung-tools-preferences.glade.h:20
-msgid "Hotkey used for bluetooth control"
-msgstr "Tecla de acesso rápido usada para controlar o Bluetooth"
-
-#: po/samsung-tools-preferences.glade.h:21
+#: po/samsung-tools-preferences.glade.h:8
 msgid "Hotkey used for webcam control"
 msgstr "Tecla de acesso rápido usada para controlar a webcam"
 
-#: po/samsung-tools-preferences.glade.h:22
+#: po/samsung-tools-preferences.glade.h:10
+msgid "Hotkey used for CPU fan control"
+msgstr "Tecla de acesso rápido usada para controlar a ventoinha da CPU"
+
+#: po/samsung-tools-preferences.glade.h:12
+msgid "Hotkey used for bluetooth control"
+msgstr "Tecla de acesso rápido usada para controlar o Bluetooth"
+
+#: po/samsung-tools-preferences.glade.h:14
+msgid "Hotkey used for backlight control"
+msgstr "Tecla de acesso rápido usada para controlar a luz de fundo"
+
+#: po/samsung-tools-preferences.glade.h:16
+msgid "Click here to disable the hotkey"
+msgstr "Clique aqui para desativar a tecla de acesso rápido"
+
+#: po/samsung-tools-preferences.glade.h:17
+msgid "<b>Hotkeys</b>"
+msgstr "<b>Teclas de acesso rápido</b>"
+
+#: po/samsung-tools-preferences.glade.h:18
 msgid "Hotkey used for wireless control"
 msgstr ""
 "Tecla de acesso rápido usada para controlar o adaptador da rede sem fio"
 
+#: po/samsung-tools-preferences.glade.h:20
+msgid "Click here to set the default hotkey"
+msgstr "Clique aqui para definir a tecla de acesso rápido padrão"
+
+#: po/samsung-tools-preferences.glade.h:21
+msgid "Enable hotkeys"
+msgstr "Ativar teclas de acesso rápido"
+
+#: po/samsung-tools-preferences.glade.h:22
+msgid "Enable this option to use hotkeys"
+msgstr "Ative esta opção para utilizar teclas de acesso rápido"
+
 #: po/samsung-tools-preferences.glade.h:23
-msgid "Kernel parameters..."
-msgstr "Parâmetros do Kernel..."
-
-#: po/samsung-tools-preferences.glade.h:24
-msgid "Last status"
-msgstr "Último estado"
-
-#: po/samsung-tools-preferences.glade.h:25
-msgid "Normal"
-msgstr "Normal"
-
-#: po/samsung-tools-preferences.glade.h:26
-msgid "Overclock"
-msgstr "Overclock"
-
-#: po/samsung-tools-preferences.glade.h:27
-msgid "Power management..."
-msgstr "Gerenciamento de Energia"
-
-#: po/samsung-tools-preferences.glade.h:29
 msgid "Session service"
 msgstr "Serviço de sessão"
 
-#: po/samsung-tools-preferences.glade.h:30
-msgid "Silent"
-msgstr "Silencioso"
+#: po/samsung-tools-preferences.glade.h:24
+msgid "<b>Initial status for devices</b>"
+msgstr "b>Estado inicial para dispositivos</b>"
+
+#: po/samsung-tools-preferences.glade.h:25
+msgid "The initial status at boot for Bluetooth"
+msgstr "O estado inicial do Bluetooth no momento da inicialização"
+
+#: po/samsung-tools-preferences.glade.h:26
+msgid "Click here to set the default value"
+msgstr "Clique aqui para definir o valor padrão"
+
+#: po/samsung-tools-preferences.glade.h:27
+msgid "The initial status at boot for webcam"
+msgstr "O estado inicial da webcam no momento da inicialização"
+
+#: po/samsung-tools-preferences.glade.h:28
+msgid "The initial status at boot for wireless"
+msgstr ""
+"O estado inicial do adaptador da rede sem fio no momento da inicialização"
+
+#: po/samsung-tools-preferences.glade.h:29
+msgid "The initial status at boot for CPU fan"
+msgstr "O estado inicial da ventoinha da CPU no momento da inicialização"
 
 #: po/samsung-tools-preferences.glade.h:31
 msgid "System service"
 msgstr "Serviço de sistema"
 
 #: po/samsung-tools-preferences.glade.h:32
-msgid "The initial status at boot for Bluetooth"
-msgstr "O estado inicial do Bluetooth no momento da inicialização"
+msgid "Kernel parameters..."
+msgstr "Parâmetros do Kernel..."
 
 #: po/samsung-tools-preferences.glade.h:33
-msgid "The initial status at boot for CPU fan"
-msgstr "O estado inicial da ventoinha da CPU no momento da inicialização"
+#: po/samsung-tools-preferences-kernel-parameters.glade.h:1
+msgid "Configure kernel parameters"
+msgstr "Configurar os parâmetros do kernel"
 
 #: po/samsung-tools-preferences.glade.h:34
-msgid "The initial status at boot for webcam"
-msgstr "O estado inicial da webcam no momento da inicialização"
+msgid "CPU undervolting..."
+msgstr "CPU com voltagem reduzida..."
 
 #: po/samsung-tools-preferences.glade.h:35
-msgid "The initial status at boot for wireless"
-msgstr ""
-"O estado inicial do adaptador da rede sem fio no momento da inicialização"
-
-#: po/samsung-tools-preferences.glade.h:36
 msgid "Undervolt the CPU in order to save energy"
 msgstr "Diminuir a voltagem da CPU para economizar energia"
 
+#: po/samsung-tools-preferences.glade.h:36
+msgid "Power management..."
+msgstr "Gerenciamento de Energia"
+
+#: po/samsung-tools-preferences.glade.h:37
+#: po/samsung-tools-preferences-power-management.glade.h:1
+msgid "Configure power management"
+msgstr "Configurar o gerenciamento de energia"
+
+#: po/samsung-tools-preferences.glade.h:38
+msgid "Advanced power management"
+msgstr "Gerenciamento avançado de energia"
+
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:2
-msgid "Swap control:"
-msgstr "Controle de swap:"
-
-#: po/samsung-tools-preferences-kernel-parameters.glade.h:3
-msgid ""
-"Swappiness controls how aggressively the kernel swaps memory pages. Higher "
-"values increase agressiveness, lower values descrease aggressiveness. In "
-"other words, the higher is the value, the more the system will swap, with "
-"bad results on power consumption and disk performance. Set a low value if "
-"you usually have plenty of unused RAM. The default value is 60."
-msgstr ""
-"A paginação controla o quão agressivamente o kernel permuta páginas de "
-"memória. Valores maiores aumentam a agressividade, valores menores diminuem "
-"a agressividade. Em outras palavras: quanto maior o valor, mais o sistema "
-"permutará memória, oferecendo resultados ruins no que se refere ao consumo "
-"de energia e à performance do disco. Defina um valor baixo se você "
-"geralmente tem muita memória RAM não utilizada. O valor padrão é 60."
-
-#: po/samsung-tools-preferences-kernel-parameters.glade.h:4
 msgid ""
 "This option controls how aggressively the kernel swaps memory pages. Higher "
 "values increase agressiveness, lower values descrease aggressiveness. In "
@@ -572,23 +553,51 @@ msgstr ""
 "de energia e à performance do disco. Defina um valor baixo se você "
 "geralmente tem muita memória RAM não utilizada. O valor padrão é 60."
 
+#: po/samsung-tools-preferences-kernel-parameters.glade.h:3
+msgid "Swap control:"
+msgstr "Controle de swap:"
+
+#: po/samsung-tools-preferences-kernel-parameters.glade.h:4
+msgid ""
+"Swappiness controls how aggressively the kernel swaps memory pages. Higher "
+"values increase agressiveness, lower values descrease aggressiveness. In "
+"other words, the higher is the value, the more the system will swap, with "
+"bad results on power consumption and disk performance. Set a low value if "
+"you usually have plenty of unused RAM. The default value is 60."
+msgstr ""
+"A paginação controla o quão agressivamente o kernel permuta páginas de "
+"memória. Valores maiores aumentam a agressividade, valores menores diminuem "
+"a agressividade. Em outras palavras: quanto maior o valor, mais o sistema "
+"permutará memória, oferecendo resultados ruins no que se refere ao consumo "
+"de energia e à performance do disco. Defina um valor baixo se você "
+"geralmente tem muita memória RAM não utilizada. O valor padrão é 60."
+
 #: po/samsung-tools-preferences-phc.glade.h:1
-msgid "<b>Default VIDs</b>"
-msgstr "<b>VIDs parão</b>"
+msgid "CPU undervolting"
+msgstr "Redução da voltagem da CPU"
 
 #: po/samsung-tools-preferences-phc.glade.h:2
 msgid "<b>Frequencies</b>"
 msgstr "<b>Frequências</b>"
 
 #: po/samsung-tools-preferences-phc.glade.h:3
+msgid "<b>Default VIDs</b>"
+msgstr "<b>VIDs parão</b>"
+
+#: po/samsung-tools-preferences-phc.glade.h:4
 msgid "<b>New VIDs</b>"
 msgstr "<b>VIDs novos</b>"
 
-#: po/samsung-tools-preferences-phc.glade.h:4
-msgid "CPU undervolting"
-msgstr "Redução da voltagem da CPU"
-
 #: po/samsung-tools-preferences-phc.glade.h:5
+msgid "Note: the new VIDs will be applied when this window will be closed."
+msgstr ""
+"Observação: os novos VIDs serão aplicados quando esta janela for fechada."
+
+#: po/samsung-tools-preferences-phc.glade.h:6
+msgid "Set the new VIDs automatically at boot"
+msgstr "Definir automaticametne os novos VIDs no momento da inicialização"
+
+#: po/samsung-tools-preferences-phc.glade.h:7
 msgid ""
 "Enable this option only if the new VIDs are tested and safe, otherwise the "
 "machine might be no more bootable!"
@@ -596,28 +605,11 @@ msgstr ""
 "Ative esta opção apenas se os novos VIDs estão testados e seguros, do "
 "contrário, a máquina pode não mais inicializar!"
 
-#: po/samsung-tools-preferences-phc.glade.h:6
-msgid "Note: the new VIDs will be applied when this window will be closed."
-msgstr ""
-"Observação: os novos VIDs serão aplicados quando esta janela for fechada."
-
-#: po/samsung-tools-preferences-phc.glade.h:7
-msgid "Set the new VIDs automatically at boot"
-msgstr "Definir automaticametne os novos VIDs no momento da inicialização"
-
 #: po/samsung-tools-preferences-power-management.glade.h:2
 msgid "Devices power management"
 msgstr "Dispositivos de gerenciamento de energia"
 
 #: po/samsung-tools-preferences-power-management.glade.h:3
-msgid "USB autosuspend"
-msgstr "Auto-suspender USB"
-
-#: po/samsung-tools-preferences-power-management.glade.h:4
-msgid "VM writeback time"
-msgstr "Tempo de re-escrita de VM"
-
-#: po/samsung-tools-preferences-power-management.glade.h:5
 msgid ""
 "When enabled, all the devices will automatically enter power save mode when "
 "needed."
@@ -625,13 +617,21 @@ msgstr ""
 "Quando ativado, todos os dispositivos entrarão automaticamente em modo de "
 "economia de energia quando necessário."
 
-#: po/samsung-tools-preferences-power-management.glade.h:6
+#: po/samsung-tools-preferences-power-management.glade.h:4
+msgid "USB autosuspend"
+msgstr "Auto-suspender USB"
+
+#: po/samsung-tools-preferences-power-management.glade.h:5
 msgid ""
 "When enabled, the autosuspend feature for all the USB devices will be "
 "enabled."
 msgstr ""
 "Quando ativado, a característica de autosuspender para todos os dispositivos "
 "USB serpa ativada."
+
+#: po/samsung-tools-preferences-power-management.glade.h:6
+msgid "VM writeback time"
+msgstr "Tempo de re-escrita de VM"
 
 #: po/samsung-tools-preferences-power-management.glade.h:7
 msgid ""

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-07 10:46+0100\n"
+"POT-Creation-Date: 2012-03-26 16:09+0200\n"
 "PO-Revision-Date: 2011-12-02 15:34+0000\n"
 "Last-Translator: František Zatloukal <Unknown>\n"
 "Language-Team: Czech <cs@li.org>\n"
@@ -219,7 +219,7 @@ msgstr "Nástroj příkazové řádky"
 msgid "Usage: %s <interface> <option> ..."
 msgstr "Použití: %s <rozhraní> <volby>"
 
-#: samsung-tools.py:590 po/samsung-tools-preferences.glade.h:4
+#: samsung-tools.py:590 po/samsung-tools-preferences.glade.h:15
 msgid "Backlight:"
 msgstr "Podsvícení:"
 
@@ -233,19 +233,19 @@ msgstr "Rozhraní"
 msgid "Options"
 msgstr "Možnosti"
 
-#: samsung-tools.py:593 po/samsung-tools-preferences.glade.h:5
+#: samsung-tools.py:593 po/samsung-tools-preferences.glade.h:13
 msgid "Bluetooth:"
 msgstr "Bluetooth:"
 
-#: samsung-tools.py:596 po/samsung-tools-preferences.glade.h:6
+#: samsung-tools.py:596 po/samsung-tools-preferences.glade.h:11
 msgid "CPU fan:"
 msgstr "Větráček CPU:"
 
-#: samsung-tools.py:599 po/samsung-tools-preferences.glade.h:37
+#: samsung-tools.py:599 po/samsung-tools-preferences.glade.h:9
 msgid "Webcam:"
 msgstr "Webkamera:"
 
-#: samsung-tools.py:602 po/samsung-tools-preferences.glade.h:38
+#: samsung-tools.py:602 po/samsung-tools-preferences.glade.h:19
 msgid "Wireless:"
 msgstr "Bezdrátová síť:"
 
@@ -297,7 +297,7 @@ msgstr " Vypnout bluetooth, webkameru a bezdrátovou síť:"
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Pro více informací navštiv fórum'Linux On My Samsung':"
 
-#: samsung-tools.py:629 samsung-tools-preferences.py:1067
+#: samsung-tools.py:629 samsung-tools-preferences.py:1076
 msgid "Released under GPLv3 license"
 msgstr "Vydáno pod licencí GPLv3"
 
@@ -321,7 +321,7 @@ msgstr "Špatné argumenty."
 msgid "Unable to start a DBus daemon!"
 msgstr "Nelze spustit DBus démona!"
 
-#: samsung-tools.py:733 po/samsung-tools-preferences.glade.h:13
+#: samsung-tools.py:733 po/samsung-tools-preferences.glade.h:30
 msgid "Control interface:"
 msgstr "Ovládací rozhraní:"
 
@@ -395,7 +395,7 @@ msgstr ""
 "Opravdu chceš pokračovat?"
 
 #: po/samsung-tools-preferences.desktop.in.h:1
-#: po/samsung-tools-preferences.glade.h:28
+#: po/samsung-tools-preferences.glade.h:7
 msgid "Samsung Tools Preferences"
 msgstr "Nastavení Samsung Tools"
 
@@ -404,150 +404,132 @@ msgid "Show and modify Samsung Tools preferences"
 msgstr "Zobrazit a změnit nastavení Samsung Tools"
 
 #: po/samsung-tools-preferences.glade.h:1
-msgid "<b>Hotkeys</b>"
-msgstr "<b>Klávesové zkratky</b>"
-
-#: po/samsung-tools-preferences.glade.h:2
-msgid "<b>Initial status for devices</b>"
-msgstr "<b>Základní stav pro zařízení</b>"
-
-#: po/samsung-tools-preferences.glade.h:3
-msgid "Advanced power management"
-msgstr "Pokročilá správa napájení"
-
-#: po/samsung-tools-preferences.glade.h:7
-msgid "CPU undervolting..."
-msgstr "Snižování napětí CPU..."
-
-#: po/samsung-tools-preferences.glade.h:8
-msgid "Click here to disable the hotkey"
-msgstr "Klikni zde pro vypnutí klávesové zkratky"
-
-#: po/samsung-tools-preferences.glade.h:9
-msgid "Click here to set the default hotkey"
-msgstr "Klikni zde pro nastavení klávesové zkratky"
-
-#: po/samsung-tools-preferences.glade.h:10
-msgid "Click here to set the default value"
-msgstr "Klikni zde pro nastavení základní hodnoty"
-
-#: po/samsung-tools-preferences.glade.h:11
-#: po/samsung-tools-preferences-kernel-parameters.glade.h:1
-msgid "Configure kernel parameters"
-msgstr "Nastavení parametrů jádra"
-
-#: po/samsung-tools-preferences.glade.h:12
-#: po/samsung-tools-preferences-power-management.glade.h:1
-msgid "Configure power management"
-msgstr "Nastavení správy napájení"
-
-#: po/samsung-tools-preferences.glade.h:14
-msgid "Disabled"
-msgstr "Vypnuto"
-
-#: po/samsung-tools-preferences.glade.h:15
-msgid "Enable hotkeys"
-msgstr "Zapnout klávesové zkratky"
-
-#: po/samsung-tools-preferences.glade.h:16
-msgid "Enable this option to use hotkeys"
-msgstr "Povol tuto možnost"
-
-#: po/samsung-tools-preferences.glade.h:17
-msgid "Enabled"
-msgstr "Zapnuto"
-
-#: po/samsung-tools-preferences.glade.h:18
-msgid "Hotkey used for CPU fan control"
-msgstr "Klávesové zkratky používané pro ovládání větráčku CPU"
-
-#: po/samsung-tools-preferences.glade.h:19
-msgid "Hotkey used for backlight control"
-msgstr "Klávesové zkratky používané pro ovládání podsvícení"
-
-#: po/samsung-tools-preferences.glade.h:20
-msgid "Hotkey used for bluetooth control"
-msgstr "Klávesové zkratky používané pro ovládání bluetooth"
-
-#: po/samsung-tools-preferences.glade.h:21
-msgid "Hotkey used for webcam control"
-msgstr "Klávesové zkratky používané pro ovládání webkamery"
-
-#: po/samsung-tools-preferences.glade.h:22
-msgid "Hotkey used for wireless control"
-msgstr "Klávesové zkratky používané pro ovládání bezdrátové sítě"
-
-#: po/samsung-tools-preferences.glade.h:23
-msgid "Kernel parameters..."
-msgstr "Parametry jádra..."
-
-#: po/samsung-tools-preferences.glade.h:24
-msgid "Last status"
-msgstr "Poslední stav"
-
-#: po/samsung-tools-preferences.glade.h:25
 msgid "Normal"
 msgstr "Normální"
 
-#: po/samsung-tools-preferences.glade.h:26
+#: po/samsung-tools-preferences.glade.h:2
+msgid "Silent"
+msgstr "Tichý"
+
+#: po/samsung-tools-preferences.glade.h:3
 msgid "Overclock"
 msgstr "Rychlý"
 
-#: po/samsung-tools-preferences.glade.h:27
-msgid "Power management..."
-msgstr "Správa napájení"
+#: po/samsung-tools-preferences.glade.h:4
+msgid "Last status"
+msgstr "Poslední stav"
 
-#: po/samsung-tools-preferences.glade.h:29
+#: po/samsung-tools-preferences.glade.h:5
+msgid "Enabled"
+msgstr "Zapnuto"
+
+#: po/samsung-tools-preferences.glade.h:6
+msgid "Disabled"
+msgstr "Vypnuto"
+
+#: po/samsung-tools-preferences.glade.h:8
+msgid "Hotkey used for webcam control"
+msgstr "Klávesové zkratky používané pro ovládání webkamery"
+
+#: po/samsung-tools-preferences.glade.h:10
+msgid "Hotkey used for CPU fan control"
+msgstr "Klávesové zkratky používané pro ovládání větráčku CPU"
+
+#: po/samsung-tools-preferences.glade.h:12
+msgid "Hotkey used for bluetooth control"
+msgstr "Klávesové zkratky používané pro ovládání bluetooth"
+
+#: po/samsung-tools-preferences.glade.h:14
+msgid "Hotkey used for backlight control"
+msgstr "Klávesové zkratky používané pro ovládání podsvícení"
+
+#: po/samsung-tools-preferences.glade.h:16
+msgid "Click here to disable the hotkey"
+msgstr "Klikni zde pro vypnutí klávesové zkratky"
+
+#: po/samsung-tools-preferences.glade.h:17
+msgid "<b>Hotkeys</b>"
+msgstr "<b>Klávesové zkratky</b>"
+
+#: po/samsung-tools-preferences.glade.h:18
+msgid "Hotkey used for wireless control"
+msgstr "Klávesové zkratky používané pro ovládání bezdrátové sítě"
+
+#: po/samsung-tools-preferences.glade.h:20
+msgid "Click here to set the default hotkey"
+msgstr "Klikni zde pro nastavení klávesové zkratky"
+
+#: po/samsung-tools-preferences.glade.h:21
+msgid "Enable hotkeys"
+msgstr "Zapnout klávesové zkratky"
+
+#: po/samsung-tools-preferences.glade.h:22
+msgid "Enable this option to use hotkeys"
+msgstr "Povol tuto možnost"
+
+#: po/samsung-tools-preferences.glade.h:23
 msgid "Session service"
 msgstr "Služba sezení"
 
-#: po/samsung-tools-preferences.glade.h:30
-msgid "Silent"
-msgstr "Tichý"
+#: po/samsung-tools-preferences.glade.h:24
+msgid "<b>Initial status for devices</b>"
+msgstr "<b>Základní stav pro zařízení</b>"
+
+#: po/samsung-tools-preferences.glade.h:25
+msgid "The initial status at boot for Bluetooth"
+msgstr "Základní stav bluetooth po nabootování"
+
+#: po/samsung-tools-preferences.glade.h:26
+msgid "Click here to set the default value"
+msgstr "Klikni zde pro nastavení základní hodnoty"
+
+#: po/samsung-tools-preferences.glade.h:27
+msgid "The initial status at boot for webcam"
+msgstr "Základní stav webkamery po nabootování"
+
+#: po/samsung-tools-preferences.glade.h:28
+msgid "The initial status at boot for wireless"
+msgstr "Základní stav bezdrátové sítě po nabootování"
+
+#: po/samsung-tools-preferences.glade.h:29
+msgid "The initial status at boot for CPU fan"
+msgstr "Základní stav větráčku CPU po nabootování"
 
 #: po/samsung-tools-preferences.glade.h:31
 msgid "System service"
 msgstr "Systémová služba"
 
 #: po/samsung-tools-preferences.glade.h:32
-msgid "The initial status at boot for Bluetooth"
-msgstr "Základní stav bluetooth po nabootování"
+msgid "Kernel parameters..."
+msgstr "Parametry jádra..."
 
 #: po/samsung-tools-preferences.glade.h:33
-msgid "The initial status at boot for CPU fan"
-msgstr "Základní stav větráčku CPU po nabootování"
+#: po/samsung-tools-preferences-kernel-parameters.glade.h:1
+msgid "Configure kernel parameters"
+msgstr "Nastavení parametrů jádra"
 
 #: po/samsung-tools-preferences.glade.h:34
-msgid "The initial status at boot for webcam"
-msgstr "Základní stav webkamery po nabootování"
+msgid "CPU undervolting..."
+msgstr "Snižování napětí CPU..."
 
 #: po/samsung-tools-preferences.glade.h:35
-msgid "The initial status at boot for wireless"
-msgstr "Základní stav bezdrátové sítě po nabootování"
-
-#: po/samsung-tools-preferences.glade.h:36
 msgid "Undervolt the CPU in order to save energy"
 msgstr "Snížit napětí CPU pro šetření energie"
 
+#: po/samsung-tools-preferences.glade.h:36
+msgid "Power management..."
+msgstr "Správa napájení"
+
+#: po/samsung-tools-preferences.glade.h:37
+#: po/samsung-tools-preferences-power-management.glade.h:1
+msgid "Configure power management"
+msgstr "Nastavení správy napájení"
+
+#: po/samsung-tools-preferences.glade.h:38
+msgid "Advanced power management"
+msgstr "Pokročilá správa napájení"
+
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:2
-msgid "Swap control:"
-msgstr "Ovládání odkládacího prostoru(swapu)"
-
-#: po/samsung-tools-preferences-kernel-parameters.glade.h:3
-msgid ""
-"Swappiness controls how aggressively the kernel swaps memory pages. Higher "
-"values increase agressiveness, lower values descrease aggressiveness. In "
-"other words, the higher is the value, the more the system will swap, with "
-"bad results on power consumption and disk performance. Set a low value if "
-"you usually have plenty of unused RAM. The default value is 60."
-msgstr ""
-"Nastavení \"swappiness\" ovládá, jak agresivně jádro odkládá stránky paměti "
-"na pevný disk. Vyšší hodnoty zvyšují agresivitu, nižší ji zase snižují. "
-"Jinak řečeno, vyšší hodnota určuje, že systém bude odkládat více, se špatným "
-"vlivem na spotřebu a výkon disku. Nastav nižší hodnotu, pokud máš většinou "
-"hodně nepoužívané RAM. Základní hodnota je 60."
-
-#: po/samsung-tools-preferences-kernel-parameters.glade.h:4
 msgid ""
 "This option controls how aggressively the kernel swaps memory pages. Higher "
 "values increase agressiveness, lower values descrease aggressiveness. In "
@@ -561,23 +543,49 @@ msgstr ""
 "spotřebu a výkon disku. Nastav nižší hodnotu, pokud máš většinou hodně "
 "nepoužívané RAM. Základní hodnota je 60."
 
+#: po/samsung-tools-preferences-kernel-parameters.glade.h:3
+msgid "Swap control:"
+msgstr "Ovládání odkládacího prostoru(swapu)"
+
+#: po/samsung-tools-preferences-kernel-parameters.glade.h:4
+msgid ""
+"Swappiness controls how aggressively the kernel swaps memory pages. Higher "
+"values increase agressiveness, lower values descrease aggressiveness. In "
+"other words, the higher is the value, the more the system will swap, with "
+"bad results on power consumption and disk performance. Set a low value if "
+"you usually have plenty of unused RAM. The default value is 60."
+msgstr ""
+"Nastavení \"swappiness\" ovládá, jak agresivně jádro odkládá stránky paměti "
+"na pevný disk. Vyšší hodnoty zvyšují agresivitu, nižší ji zase snižují. "
+"Jinak řečeno, vyšší hodnota určuje, že systém bude odkládat více, se špatným "
+"vlivem na spotřebu a výkon disku. Nastav nižší hodnotu, pokud máš většinou "
+"hodně nepoužívané RAM. Základní hodnota je 60."
+
 #: po/samsung-tools-preferences-phc.glade.h:1
-msgid "<b>Default VIDs</b>"
-msgstr "<b>Základní nastavení VID</b>"
+msgid "CPU undervolting"
+msgstr "Snižování napětí CPU"
 
 #: po/samsung-tools-preferences-phc.glade.h:2
 msgid "<b>Frequencies</b>"
 msgstr "Frekvence"
 
 #: po/samsung-tools-preferences-phc.glade.h:3
+msgid "<b>Default VIDs</b>"
+msgstr "<b>Základní nastavení VID</b>"
+
+#: po/samsung-tools-preferences-phc.glade.h:4
 msgid "<b>New VIDs</b>"
 msgstr "<b>Nové nastavení VID</b>"
 
-#: po/samsung-tools-preferences-phc.glade.h:4
-msgid "CPU undervolting"
-msgstr "Snižování napětí CPU"
-
 #: po/samsung-tools-preferences-phc.glade.h:5
+msgid "Note: the new VIDs will be applied when this window will be closed."
+msgstr "Poznámka: nové nastavení VID bude aplikováno po zavření tohoto okna."
+
+#: po/samsung-tools-preferences-phc.glade.h:6
+msgid "Set the new VIDs automatically at boot"
+msgstr "Aplikovat automaticky nové nastavení VID po nabootování"
+
+#: po/samsung-tools-preferences-phc.glade.h:7
 msgid ""
 "Enable this option only if the new VIDs are tested and safe, otherwise the "
 "machine might be no more bootable!"
@@ -585,27 +593,11 @@ msgstr ""
 "Povol tuto možnost jen v případě, že máš nové nastavení VID otestované a je "
 "bezpečné, jinak se může stát, že tvůj stroj nebude moci nabootvat!"
 
-#: po/samsung-tools-preferences-phc.glade.h:6
-msgid "Note: the new VIDs will be applied when this window will be closed."
-msgstr "Poznámka: nové nastavení VID bude aplikováno po zavření tohoto okna."
-
-#: po/samsung-tools-preferences-phc.glade.h:7
-msgid "Set the new VIDs automatically at boot"
-msgstr "Aplikovat automaticky nové nastavení VID po nabootování"
-
 #: po/samsung-tools-preferences-power-management.glade.h:2
 msgid "Devices power management"
 msgstr "Správa napájení zařízení"
 
 #: po/samsung-tools-preferences-power-management.glade.h:3
-msgid "USB autosuspend"
-msgstr "Automatické suspendování USB"
-
-#: po/samsung-tools-preferences-power-management.glade.h:4
-msgid "VM writeback time"
-msgstr "Čas zpětného zápisu VM"
-
-#: po/samsung-tools-preferences-power-management.glade.h:5
 msgid ""
 "When enabled, all the devices will automatically enter power save mode when "
 "needed."
@@ -613,13 +605,21 @@ msgstr ""
 "Když je to povoleno, všechna zařízení automaticky vstoupí do režimu šetření "
 "energie, když to bude potřeba."
 
-#: po/samsung-tools-preferences-power-management.glade.h:6
+#: po/samsung-tools-preferences-power-management.glade.h:4
+msgid "USB autosuspend"
+msgstr "Automatické suspendování USB"
+
+#: po/samsung-tools-preferences-power-management.glade.h:5
 msgid ""
 "When enabled, the autosuspend feature for all the USB devices will be "
 "enabled."
 msgstr ""
 "Když je to povoleno, automatické suspendování USB bude povoleno pro všechna "
 "zařízení USB."
+
+#: po/samsung-tools-preferences-power-management.glade.h:6
+msgid "VM writeback time"
+msgstr "Čas zpětného zápisu VM"
 
 #: po/samsung-tools-preferences-power-management.glade.h:7
 msgid ""

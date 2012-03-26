@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-07 10:46+0100\n"
+"POT-Creation-Date: 2012-03-26 16:09+0200\n"
 "PO-Revision-Date: 2011-11-23 12:27+0000\n"
 "Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: Ukrainian <kde-i18n-it@kde.org>\n"
@@ -221,7 +221,7 @@ msgstr ""
 msgid "Usage: %s <interface> <option> ..."
 msgstr "Використання: %s <interface> <option> ..."
 
-#: samsung-tools.py:590 po/samsung-tools-preferences.glade.h:4
+#: samsung-tools.py:590 po/samsung-tools-preferences.glade.h:15
 msgid "Backlight:"
 msgstr "Підсвічування:"
 
@@ -235,19 +235,19 @@ msgstr "Інтерфейс"
 msgid "Options"
 msgstr "Параметри"
 
-#: samsung-tools.py:593 po/samsung-tools-preferences.glade.h:5
+#: samsung-tools.py:593 po/samsung-tools-preferences.glade.h:13
 msgid "Bluetooth:"
 msgstr "Bluetooth:"
 
-#: samsung-tools.py:596 po/samsung-tools-preferences.glade.h:6
+#: samsung-tools.py:596 po/samsung-tools-preferences.glade.h:11
 msgid "CPU fan:"
 msgstr "Охолодження ЦП:"
 
-#: samsung-tools.py:599 po/samsung-tools-preferences.glade.h:37
+#: samsung-tools.py:599 po/samsung-tools-preferences.glade.h:9
 msgid "Webcam:"
 msgstr "Веб-камера:"
 
-#: samsung-tools.py:602 po/samsung-tools-preferences.glade.h:38
+#: samsung-tools.py:602 po/samsung-tools-preferences.glade.h:19
 msgid "Wireless:"
 msgstr "Бездротовий зв’язок:"
 
@@ -301,7 +301,7 @@ msgstr " - Вимкнути bluetooth, веб-камеру та бездрото
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Детальніша інформація на форумі «Linux On My Samsung»:"
 
-#: samsung-tools.py:629 samsung-tools-preferences.py:1067
+#: samsung-tools.py:629 samsung-tools-preferences.py:1076
 msgid "Released under GPLv3 license"
 msgstr "Випущено за умовами ліцензії GPLv3"
 
@@ -327,7 +327,7 @@ msgstr "Неправильний(і) аргумент(и)"
 msgid "Unable to start a DBus daemon!"
 msgstr ""
 
-#: samsung-tools.py:733 po/samsung-tools-preferences.glade.h:13
+#: samsung-tools.py:733 po/samsung-tools-preferences.glade.h:30
 msgid "Control interface:"
 msgstr ""
 
@@ -402,7 +402,7 @@ msgstr ""
 "Ви впевнені, що хочете продовжити?"
 
 #: po/samsung-tools-preferences.desktop.in.h:1
-#: po/samsung-tools-preferences.glade.h:28
+#: po/samsung-tools-preferences.glade.h:7
 msgid "Samsung Tools Preferences"
 msgstr "Інструменти налаштування Samsung"
 
@@ -411,151 +411,132 @@ msgid "Show and modify Samsung Tools preferences"
 msgstr "Показати та змінити інструменти налаштування Samsung"
 
 #: po/samsung-tools-preferences.glade.h:1
-msgid "<b>Hotkeys</b>"
-msgstr "<b>Комбінації клавіш</b>"
-
-#: po/samsung-tools-preferences.glade.h:2
-msgid "<b>Initial status for devices</b>"
-msgstr "<b>Початковий стан пристроїв</b>"
-
-#: po/samsung-tools-preferences.glade.h:3
-msgid "Advanced power management"
-msgstr "Додаткове керування живленням"
-
-#: po/samsung-tools-preferences.glade.h:7
-msgid "CPU undervolting..."
-msgstr ""
-
-#: po/samsung-tools-preferences.glade.h:8
-msgid "Click here to disable the hotkey"
-msgstr "Натисніть тут, щоб вимкнути цю комбінацію клавіш"
-
-#: po/samsung-tools-preferences.glade.h:9
-msgid "Click here to set the default hotkey"
-msgstr "Натисніть тут, щоб встановити типову комбінацію клавіш"
-
-#: po/samsung-tools-preferences.glade.h:10
-msgid "Click here to set the default value"
-msgstr "Натисніть тут, щоб встановити типове значення"
-
-#: po/samsung-tools-preferences.glade.h:11
-#: po/samsung-tools-preferences-kernel-parameters.glade.h:1
-msgid "Configure kernel parameters"
-msgstr "Налаштування параметрів ядра"
-
-#: po/samsung-tools-preferences.glade.h:12
-#: po/samsung-tools-preferences-power-management.glade.h:1
-msgid "Configure power management"
-msgstr ""
-
-#: po/samsung-tools-preferences.glade.h:14
-msgid "Disabled"
-msgstr "Вимкнено"
-
-#: po/samsung-tools-preferences.glade.h:15
-msgid "Enable hotkeys"
-msgstr "Увімкнути комбінації клавіш"
-
-#: po/samsung-tools-preferences.glade.h:16
-msgid "Enable this option to use hotkeys"
-msgstr "Увімкнути цей параметр, щоб використовувати комбінації клавіш"
-
-#: po/samsung-tools-preferences.glade.h:17
-msgid "Enabled"
-msgstr "Увімкнено"
-
-#: po/samsung-tools-preferences.glade.h:18
-msgid "Hotkey used for CPU fan control"
-msgstr "Комбінація клавіш, що використовується для керування охолодженням ЦП"
-
-#: po/samsung-tools-preferences.glade.h:19
-msgid "Hotkey used for backlight control"
-msgstr "Комбінація клавіш для керування підсвічуванням"
-
-#: po/samsung-tools-preferences.glade.h:20
-msgid "Hotkey used for bluetooth control"
-msgstr "Комбінація клавіш для керування Bluetooth"
-
-#: po/samsung-tools-preferences.glade.h:21
-msgid "Hotkey used for webcam control"
-msgstr "Комбінація клавіш для керування веб-камерою"
-
-#: po/samsung-tools-preferences.glade.h:22
-msgid "Hotkey used for wireless control"
-msgstr "Комбінація клавіш для керування бездротовим зв’язком"
-
-#: po/samsung-tools-preferences.glade.h:23
-msgid "Kernel parameters..."
-msgstr ""
-
-#: po/samsung-tools-preferences.glade.h:24
-msgid "Last status"
-msgstr "Останній стан"
-
-#: po/samsung-tools-preferences.glade.h:25
 msgid "Normal"
 msgstr "Звичайне"
 
-#: po/samsung-tools-preferences.glade.h:26
+#: po/samsung-tools-preferences.glade.h:2
+msgid "Silent"
+msgstr "Безшумний"
+
+#: po/samsung-tools-preferences.glade.h:3
 msgid "Overclock"
 msgstr ""
 
-#: po/samsung-tools-preferences.glade.h:27
-msgid "Power management..."
-msgstr ""
+#: po/samsung-tools-preferences.glade.h:4
+msgid "Last status"
+msgstr "Останній стан"
 
-#: po/samsung-tools-preferences.glade.h:29
+#: po/samsung-tools-preferences.glade.h:5
+msgid "Enabled"
+msgstr "Увімкнено"
+
+#: po/samsung-tools-preferences.glade.h:6
+msgid "Disabled"
+msgstr "Вимкнено"
+
+#: po/samsung-tools-preferences.glade.h:8
+msgid "Hotkey used for webcam control"
+msgstr "Комбінація клавіш для керування веб-камерою"
+
+#: po/samsung-tools-preferences.glade.h:10
+msgid "Hotkey used for CPU fan control"
+msgstr "Комбінація клавіш, що використовується для керування охолодженням ЦП"
+
+#: po/samsung-tools-preferences.glade.h:12
+msgid "Hotkey used for bluetooth control"
+msgstr "Комбінація клавіш для керування Bluetooth"
+
+#: po/samsung-tools-preferences.glade.h:14
+msgid "Hotkey used for backlight control"
+msgstr "Комбінація клавіш для керування підсвічуванням"
+
+#: po/samsung-tools-preferences.glade.h:16
+msgid "Click here to disable the hotkey"
+msgstr "Натисніть тут, щоб вимкнути цю комбінацію клавіш"
+
+#: po/samsung-tools-preferences.glade.h:17
+msgid "<b>Hotkeys</b>"
+msgstr "<b>Комбінації клавіш</b>"
+
+#: po/samsung-tools-preferences.glade.h:18
+msgid "Hotkey used for wireless control"
+msgstr "Комбінація клавіш для керування бездротовим зв’язком"
+
+#: po/samsung-tools-preferences.glade.h:20
+msgid "Click here to set the default hotkey"
+msgstr "Натисніть тут, щоб встановити типову комбінацію клавіш"
+
+#: po/samsung-tools-preferences.glade.h:21
+msgid "Enable hotkeys"
+msgstr "Увімкнути комбінації клавіш"
+
+#: po/samsung-tools-preferences.glade.h:22
+msgid "Enable this option to use hotkeys"
+msgstr "Увімкнути цей параметр, щоб використовувати комбінації клавіш"
+
+#: po/samsung-tools-preferences.glade.h:23
 msgid "Session service"
 msgstr "Служба сеансу"
 
-#: po/samsung-tools-preferences.glade.h:30
-msgid "Silent"
-msgstr "Безшумний"
+#: po/samsung-tools-preferences.glade.h:24
+msgid "<b>Initial status for devices</b>"
+msgstr "<b>Початковий стан пристроїв</b>"
+
+#: po/samsung-tools-preferences.glade.h:25
+msgid "The initial status at boot for Bluetooth"
+msgstr "Початковий стан Bluetooth під час завантаження"
+
+#: po/samsung-tools-preferences.glade.h:26
+msgid "Click here to set the default value"
+msgstr "Натисніть тут, щоб встановити типове значення"
+
+#: po/samsung-tools-preferences.glade.h:27
+msgid "The initial status at boot for webcam"
+msgstr "Початковий стан веб-камери під час завантаження"
+
+#: po/samsung-tools-preferences.glade.h:28
+msgid "The initial status at boot for wireless"
+msgstr "Початковий стан бездротового зв’язку під час завантаження"
+
+#: po/samsung-tools-preferences.glade.h:29
+msgid "The initial status at boot for CPU fan"
+msgstr "Початковий стан охолодження ЦП під час завантаження"
 
 #: po/samsung-tools-preferences.glade.h:31
 msgid "System service"
 msgstr "Системна служба"
 
 #: po/samsung-tools-preferences.glade.h:32
-msgid "The initial status at boot for Bluetooth"
-msgstr "Початковий стан Bluetooth під час завантаження"
+msgid "Kernel parameters..."
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:33
-msgid "The initial status at boot for CPU fan"
-msgstr "Початковий стан охолодження ЦП під час завантаження"
+#: po/samsung-tools-preferences-kernel-parameters.glade.h:1
+msgid "Configure kernel parameters"
+msgstr "Налаштування параметрів ядра"
 
 #: po/samsung-tools-preferences.glade.h:34
-msgid "The initial status at boot for webcam"
-msgstr "Початковий стан веб-камери під час завантаження"
+msgid "CPU undervolting..."
+msgstr ""
 
 #: po/samsung-tools-preferences.glade.h:35
-msgid "The initial status at boot for wireless"
-msgstr "Початковий стан бездротового зв’язку під час завантаження"
-
-#: po/samsung-tools-preferences.glade.h:36
 msgid "Undervolt the CPU in order to save energy"
 msgstr "Зниження напруги живлення ЦП для збереження енергії"
 
-#: po/samsung-tools-preferences-kernel-parameters.glade.h:2
-msgid "Swap control:"
-msgstr "Керування Swap:"
-
-#: po/samsung-tools-preferences-kernel-parameters.glade.h:3
-msgid ""
-"Swappiness controls how aggressively the kernel swaps memory pages. Higher "
-"values increase agressiveness, lower values descrease aggressiveness. In "
-"other words, the higher is the value, the more the system will swap, with "
-"bad results on power consumption and disk performance. Set a low value if "
-"you usually have plenty of unused RAM. The default value is 60."
+#: po/samsung-tools-preferences.glade.h:36
+msgid "Power management..."
 msgstr ""
-"«Swappiness» визначає, наскільки агресивно ядро використовує swap. Вище "
-"значення збільшує агресивність, менше — зменшує. Іншими словами, чим вище "
-"значення, тим більше система використовуватиме swap, збільшуючи "
-"енергоспоживання та погіршуючи продуктивність твердого диска. Встановлюйте "
-"низьке значення, якщо ви маєте велику кількість невикористаної пам’яті. "
-"Типове значення дорівнює 60."
 
-#: po/samsung-tools-preferences-kernel-parameters.glade.h:4
+#: po/samsung-tools-preferences.glade.h:37
+#: po/samsung-tools-preferences-power-management.glade.h:1
+msgid "Configure power management"
+msgstr ""
+
+#: po/samsung-tools-preferences.glade.h:38
+msgid "Advanced power management"
+msgstr "Додаткове керування живленням"
+
+#: po/samsung-tools-preferences-kernel-parameters.glade.h:2
 msgid ""
 "This option controls how aggressively the kernel swaps memory pages. Higher "
 "values increase agressiveness, lower values descrease aggressiveness. In "
@@ -570,23 +551,50 @@ msgstr ""
 "низьке значення, якщо ви маєте велику кількість невикористаної пам’яті. "
 "Типове значення дорівнює 60."
 
+#: po/samsung-tools-preferences-kernel-parameters.glade.h:3
+msgid "Swap control:"
+msgstr "Керування Swap:"
+
+#: po/samsung-tools-preferences-kernel-parameters.glade.h:4
+msgid ""
+"Swappiness controls how aggressively the kernel swaps memory pages. Higher "
+"values increase agressiveness, lower values descrease aggressiveness. In "
+"other words, the higher is the value, the more the system will swap, with "
+"bad results on power consumption and disk performance. Set a low value if "
+"you usually have plenty of unused RAM. The default value is 60."
+msgstr ""
+"«Swappiness» визначає, наскільки агресивно ядро використовує swap. Вище "
+"значення збільшує агресивність, менше — зменшує. Іншими словами, чим вище "
+"значення, тим більше система використовуватиме swap, збільшуючи "
+"енергоспоживання та погіршуючи продуктивність твердого диска. Встановлюйте "
+"низьке значення, якщо ви маєте велику кількість невикористаної пам’яті. "
+"Типове значення дорівнює 60."
+
 #: po/samsung-tools-preferences-phc.glade.h:1
-msgid "<b>Default VIDs</b>"
-msgstr "<b>Типові VID</b>"
+msgid "CPU undervolting"
+msgstr "Зниження напруги живлення ЦП"
 
 #: po/samsung-tools-preferences-phc.glade.h:2
 msgid "<b>Frequencies</b>"
 msgstr "<b>Частоти</b>"
 
 #: po/samsung-tools-preferences-phc.glade.h:3
+msgid "<b>Default VIDs</b>"
+msgstr "<b>Типові VID</b>"
+
+#: po/samsung-tools-preferences-phc.glade.h:4
 msgid "<b>New VIDs</b>"
 msgstr "<b>Нові VID</b>"
 
-#: po/samsung-tools-preferences-phc.glade.h:4
-msgid "CPU undervolting"
-msgstr "Зниження напруги живлення ЦП"
-
 #: po/samsung-tools-preferences-phc.glade.h:5
+msgid "Note: the new VIDs will be applied when this window will be closed."
+msgstr "Заувага: нові Vid будуть застосовані, коли це вікно закриється."
+
+#: po/samsung-tools-preferences-phc.glade.h:6
+msgid "Set the new VIDs automatically at boot"
+msgstr "Встановлювати нові VID автоматично під час завантаження"
+
+#: po/samsung-tools-preferences-phc.glade.h:7
 msgid ""
 "Enable this option only if the new VIDs are tested and safe, otherwise the "
 "machine might be no more bootable!"
@@ -594,36 +602,28 @@ msgstr ""
 "Вмикайте цей параметр лише, якщо нові Vid протестовані та безпечні, в іншому "
 "випадку комп’ютер може більше не завантажуватися!"
 
-#: po/samsung-tools-preferences-phc.glade.h:6
-msgid "Note: the new VIDs will be applied when this window will be closed."
-msgstr "Заувага: нові Vid будуть застосовані, коли це вікно закриється."
-
-#: po/samsung-tools-preferences-phc.glade.h:7
-msgid "Set the new VIDs automatically at boot"
-msgstr "Встановлювати нові VID автоматично під час завантаження"
-
 #: po/samsung-tools-preferences-power-management.glade.h:2
 msgid "Devices power management"
 msgstr ""
 
 #: po/samsung-tools-preferences-power-management.glade.h:3
-msgid "USB autosuspend"
-msgstr ""
-
-#: po/samsung-tools-preferences-power-management.glade.h:4
-msgid "VM writeback time"
-msgstr ""
-
-#: po/samsung-tools-preferences-power-management.glade.h:5
 msgid ""
 "When enabled, all the devices will automatically enter power save mode when "
 "needed."
 msgstr ""
 
-#: po/samsung-tools-preferences-power-management.glade.h:6
+#: po/samsung-tools-preferences-power-management.glade.h:4
+msgid "USB autosuspend"
+msgstr ""
+
+#: po/samsung-tools-preferences-power-management.glade.h:5
 msgid ""
 "When enabled, the autosuspend feature for all the USB devices will be "
 "enabled."
+msgstr ""
+
+#: po/samsung-tools-preferences-power-management.glade.h:6
+msgid "VM writeback time"
 msgstr ""
 
 #: po/samsung-tools-preferences-power-management.glade.h:7
