@@ -545,9 +545,9 @@ class Wireless():
 					self.use_notify = n
 					# Notification re-enabled
 					if status == True:
-						print WIRELESS_STATUS_ENABLED
+						print WIRELESS_ENABLED
 					else:
-						print WIRELESS_STATUS_DISABLED
+						print WIRELESS_DISABLED
 				else:
 					print WIRELESS_TOGGLING_ERROR
 		if self.option == "hotkey":
