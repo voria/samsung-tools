@@ -1,2 +1,6 @@
-- Add ability to disable desktop notifications when devices are toggled through hotkeys.
-- Make pm hooks status (enabled/disabled) survive when package is updated (distro packaging issue).
+- Add support for "battery life extender" functionality.
+- Add support for "usb charge" functionality.
+- Add ability to disable desktop notifications when devices
+  are toggled through hotkeys.
+- Make pm hooks status (enabled/disabled) survive when package
+  is updated (distro packaging issue).
