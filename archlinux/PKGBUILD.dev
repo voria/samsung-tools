@@ -1,7 +1,7 @@
 # Maintainer: Fortunato Ventre (voRia) <vorione AT gmail DOT com>
 
 pkgname=samsung-tools-bzr
-pkgver=535
+pkgver=548
 pkgrel=1
 pkgdesc="Tools for Samsung laptops - Development version"
 arch=('any')
