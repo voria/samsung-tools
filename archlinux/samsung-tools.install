@@ -11,14 +11,6 @@ Samsung Tools 2.0 has support for both 'easy-slow-down-manager'
 and 'samsung-laptop' kernel modules. If both control interfaces
 are available, 'easy-slow-down-manager' will be used.
 
--------------------------------------------------------------------
-
-Samsung Tools has support for custom commands to be automatically
-executed when devices are toggled.
-This is done with scripts found in /etc/samsung-tools/scripts/.
-For instance, if you need to run a command when wireless is
-turned on, add it to /etc/samsung-tools/scripts/wireless-on. 
-
 ===================================================================
 EOT
 }
