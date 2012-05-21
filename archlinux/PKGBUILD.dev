@@ -1,7 +1,7 @@
 # Maintainer: Fortunato Ventre (voRia) <vorione AT gmail DOT com>
 
 pkgname=samsung-tools-bzr
-pkgver=534
+pkgver=535
 pkgrel=1
 pkgdesc="Tools for Samsung laptops - Development version"
 arch=('any')
@@ -27,7 +27,6 @@ _bzrtrunk=lp:samsung-tools
 _bzrmod=samsung-tools
 
 package() {
-
   cd "$srcdir"
 
   msg "Connecting to the server...."
@@ -42,7 +41,9 @@ package() {
 
   cd "$srcdir/$_bzrmod"
 
-  msg "Starting make..."
+  # Append bzr checkout version to version string
+  sed -i "s:\(APP_VERSION = \".*\)\":\1~bzr$pkgver\":" backends/globals.py
+
   make DESTDIR="$pkgdir/" install || return 1
 
   # Install /etc/rc.d/ script from bzr sources

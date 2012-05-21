@@ -21,7 +21,7 @@ source=(http://launchpad.net/samsung-tools/trunk/$pkgver/+download/$pkgname-$pkg
 md5sums=('594be701b1dfc3d07b241ea3b4c53f95'
          'f13fe6219c58420ddcea6917faf1e1b7')
          
-build() {
+package() {
   cd "$srcdir/$pkgname-$pkgver"
 
   make DESTDIR="$pkgdir/" install || return 1
