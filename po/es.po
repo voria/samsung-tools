@@ -6,16 +6,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-26 16:09+0200\n"
-"PO-Revision-Date: 2011-11-23 12:50+0000\n"
-"Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
+"POT-Creation-Date: 2012-05-21 19:47+0200\n"
+"PO-Revision-Date: 2012-04-29 23:41+0000\n"
+"Last-Translator: Juan Pablo <Unknown>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-03-07 09:40+0000\n"
-"X-Generator: Launchpad (build 14907)\n"
+"X-Launchpad-Export-Date: 2012-05-21 17:40+0000\n"
+"X-Generator: Launchpad (build 15275)\n"
 
 #: backends/session/util/locales.py:25 samsung-tools-preferences.py:410
 msgid "Backlight"
@@ -123,31 +123,31 @@ msgstr "Cámara web"
 
 #: backends/session/util/locales.py:54
 msgid "Webcam is enabled"
-msgstr "La cámara web está habilitada"
+msgstr "La cámara web está activada"
 
 #: backends/session/util/locales.py:55
 msgid "Webcam is disabled"
-msgstr "La cámara web está deshabilitada"
+msgstr "La cámara web está desactivada"
 
 #: backends/session/util/locales.py:56
 msgid "Webcam enabled"
-msgstr "Cámara web habilitada"
+msgstr "Cámara web activada"
 
 #: backends/session/util/locales.py:57
 msgid "Webcam disabled"
-msgstr "Cámara web deshabilitada"
+msgstr "Cámara web desactivada"
 
 #: backends/session/util/locales.py:58
 msgid "Webcam cannot be enabled"
-msgstr "La cámara web no puede ser habilitada"
+msgstr "No se puede activar la cámara web"
 
 #: backends/session/util/locales.py:59
 msgid "Webcam cannot be disabled"
-msgstr "La cámara web no puede ser deshabilitada"
+msgstr "No se puede desactivar la cámara web"
 
 #: backends/session/util/locales.py:60
 msgid "Webcam cannot be toggled"
-msgstr "La cámara web no puede ser conmutada"
+msgstr "No se puede conmutar la cámara web"
 
 #: backends/session/util/locales.py:61
 msgid "Webcam control is not available"
@@ -216,7 +216,7 @@ msgstr ""
 
 #: samsung-tools.py:586
 msgid "Command Line Utility"
-msgstr ""
+msgstr "Utilidad de línea de comandos"
 
 #: samsung-tools.py:588 samsung-tools.py:638
 #, python-format
@@ -271,7 +271,7 @@ msgstr "No mostrar mensajes  por la salida estándar."
 
 #: samsung-tools.py:610
 msgid "Show the control interface currently in use."
-msgstr ""
+msgstr "Mostrar la interfaz de control actualmente en uso."
 
 #: samsung-tools.py:611
 msgid "Stop the session service."
@@ -303,7 +303,7 @@ msgstr " - Deshabilita bluetooth, la cámara web y las redes inalámbricas:"
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Para mas información visita el foro \"Linux On My Samsung\":"
 
-#: samsung-tools.py:629 samsung-tools-preferences.py:1076
+#: samsung-tools.py:629 samsung-tools-preferences.py:1079
 msgid "Released under GPLv3 license"
 msgstr "Liberado bajo licencia GPLv3"
 
@@ -330,11 +330,11 @@ msgstr "¡Imposible iniciar el demonio DBus!"
 
 #: samsung-tools.py:733 po/samsung-tools-preferences.glade.h:30
 msgid "Control interface:"
-msgstr ""
+msgstr "Interfaz de control:"
 
 #: samsung-tools.py:741
 msgid "Control interface: unable to connect to system service!"
-msgstr ""
+msgstr "Interfaz de control: ¡imposible conectar al servicio del sistema!"
 
 #: samsung-tools.py:751
 msgid "Session service stopped"
@@ -632,7 +632,7 @@ msgstr ""
 
 #: po/samsung-tools-preferences-power-management.glade.h:6
 msgid "VM writeback time"
-msgstr ""
+msgstr "Tiempo de reescritura de la memoria virtual"
 
 #: po/samsung-tools-preferences-power-management.glade.h:7
 msgid ""

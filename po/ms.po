@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-26 16:09+0200\n"
+"POT-Creation-Date: 2012-05-21 19:47+0200\n"
 "PO-Revision-Date: 2011-12-05 05:04+0000\n"
 "Last-Translator: abuyop <Unknown>\n"
 "Language-Team: Malay <ms@li.org>\n"
@@ -15,8 +15,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-03-07 09:40+0000\n"
-"X-Generator: Launchpad (build 14907)\n"
+"X-Launchpad-Export-Date: 2012-05-21 17:40+0000\n"
+"X-Generator: Launchpad (build 15275)\n"
 
 #: backends/session/util/locales.py:25 samsung-tools-preferences.py:410
 msgid "Backlight"
@@ -297,7 +297,7 @@ msgstr " - Lumpuhkan bluetooth, kamera sesawang dan tanpa wayar:"
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Untuk maklumat lanjut, lawati forum 'Linux On My Samsung':"
 
-#: samsung-tools.py:629 samsung-tools-preferences.py:1076
+#: samsung-tools.py:629 samsung-tools-preferences.py:1079
 msgid "Released under GPLv3 license"
 msgstr "Dikeluarkan dibawah lesen GPLv3"
 

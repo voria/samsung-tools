@@ -8,16 +8,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-26 16:09+0200\n"
-"PO-Revision-Date: 2011-11-23 12:04+0000\n"
-"Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
+"POT-Creation-Date: 2012-05-21 19:47+0200\n"
+"PO-Revision-Date: 2012-05-21 12:48+0000\n"
+"Last-Translator: Dirk Roos <Unknown>\n"
 "Language-Team: Dutch <kde-i18n-it@kde.org>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-03-07 09:40+0000\n"
-"X-Generator: Launchpad (build 14907)\n"
+"X-Launchpad-Export-Date: 2012-05-21 17:40+0000\n"
+"X-Generator: Launchpad (build 15275)\n"
 
 #: backends/session/util/locales.py:25 samsung-tools-preferences.py:410
 msgid "Backlight"
@@ -214,7 +214,7 @@ msgstr "Draadloos netwerk instellingen: kan niet verbinden met sessiedienst!"
 
 #: samsung-tools.py:586
 msgid "Command Line Utility"
-msgstr ""
+msgstr "Opdrachtregelinstructie"
 
 #: samsung-tools.py:588 samsung-tools.py:638
 #, python-format
@@ -269,7 +269,7 @@ msgstr "Geef geen boodschappen op standaard uitvoer weer."
 
 #: samsung-tools.py:610
 msgid "Show the control interface currently in use."
-msgstr ""
+msgstr "Toon de in gebruik zijnde controle-interface."
 
 #: samsung-tools.py:611
 msgid "Stop the session service."
@@ -299,7 +299,7 @@ msgstr " - Schakel bluetooth, webcam ean draadloos netwerk uit:"
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Voor meer informatie, bezoek het 'Linux On My Samsung' forum:"
 
-#: samsung-tools.py:629 samsung-tools-preferences.py:1076
+#: samsung-tools.py:629 samsung-tools-preferences.py:1079
 msgid "Released under GPLv3 license"
 msgstr "Vrijgegeven onder de GPLv3 licentie"
 
@@ -321,15 +321,15 @@ msgstr "Verkeerd(e) argument(en)."
 
 #: samsung-tools.py:718
 msgid "Unable to start a DBus daemon!"
-msgstr ""
+msgstr "Kan de DBUS daemon niet starten!"
 
 #: samsung-tools.py:733 po/samsung-tools-preferences.glade.h:30
 msgid "Control interface:"
-msgstr ""
+msgstr "Controle-interface:"
 
 #: samsung-tools.py:741
 msgid "Control interface: unable to connect to system service!"
-msgstr ""
+msgstr "Controle-interface: kan niet verbinden met de systeemservice!"
 
 #: samsung-tools.py:751
 msgid "Session service stopped"
@@ -415,7 +415,7 @@ msgstr "Stil"
 
 #: po/samsung-tools-preferences.glade.h:3
 msgid "Overclock"
-msgstr ""
+msgstr "Overklokken"
 
 #: po/samsung-tools-preferences.glade.h:4
 msgid "Last status"
