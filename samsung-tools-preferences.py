@@ -1009,68 +1009,7 @@ Are you sure you want to continue?"), "utf-8")
 			PhcDialog(self.mainWindow)
 
 	def about(self, button = None):
-		authors = [ "Fortunato Ventre" ]
-		artists = [ "http://icons.mysitemyway.com" ]
-		translators = [
-					"Fortunato Ventre",
-					"Lionel BASTET",
-					"miplou",
-					"sk",
-					"Jonathan Cragg",
-					"nanker",
-					"mysza-j",
-					"papukaija",
-					"ironfisher",
-					"joel morren",
-					"subiraj",
-					"Jonay",
-					"zeugma",
-					"Joshua Schroijen",
-					"Sukochev Roman (Leolik)",
-					"Andrey Kulakov",
-					"Dr. Alex Arutyunjan",
-					"Cezary Jackiewicz",
-					"Lars Karlsson",
-					"Krasznecz Zoltán",
-					"Sergiy Gavrylov",
-					"Dirk Roos",
-					"Michael Likholet",
-					"Kristian Gomes",
-					"Bruno Veilleux",
-					"zzz",
-					"Inox",
-					"Thibault Févry",
-					"Fitoschido",
-					"Adriano Steffler",
-					"taha",
-					"Piotr Sokół",
-					"Мирослав Николић",
-					"Giordano Bruno Barbosa",
-					"Benedict Etzel",
-					"Aiguanachein",
-					"simon",
-					"D3NMOH",
-					"Felipe Amaral",
-					"Baptiste Fontaine",
-					"Daniel Manrique",
-					"Stanislas Michalak",
-					"Виталий",
-					"SweX",
-					"František Zatloukal",
-					"abuyop",
-					"Hubert \"Schlussarz\" Ślósarski",
-					"Rafael Neri",
-					"André Drumond",
-					"Antoine Tonio",
-					"naitong",
-					"Dennis Baudys",
-					"Sascha Biermanns",
-					"Novikov Andrey",
-					"Juan Pablo",
-					"Praveen Illa"
-					]
-
-		translators.sort(cmp = lambda x, y: cmp(x.lower(), y.lower()))
+		TRANSLATORS_LIST.sort(cmp = lambda x, y: cmp(x.lower(), y.lower()))
 
 		dialog = gtk.AboutDialog()
 		dialog.set_icon_from_file(SAMSUNG_TOOLS_ICON)
@@ -1080,12 +1019,12 @@ Are you sure you want to continue?"), "utf-8")
 		dialog.set_copyright(copyright)
 		dialog.set_website("http://www.voria.org/forum")
 		dialog.set_website_label("Linux On My Samsung")
-		dialog.set_authors(authors)
-		dialog.set_artists(artists)
-		temp = ""
-		for name in translators:
-			temp += name + "\n"
-		dialog.set_translator_credits(temp)
+		dialog.set_authors(AUTHORS_LIST)
+		dialog.set_artists(ARTISTS_LIST)
+		translators = ""
+		for name in TRANSLATORS_LIST:
+			translators += name + "\n"
+		dialog.set_translator_credits(translators)
 		dialog.run()
 		dialog.destroy()
 

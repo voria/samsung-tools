@@ -25,6 +25,67 @@ APP_NAME = "Samsung Tools"
 APP_VERSION = "2.1"
 WORK_DIRECTORY = "/usr/lib/samsung-tools/"
 
+AUTHORS_LIST = [ "Fortunato Ventre" ]
+ARTISTS_LIST = [ "http://icons.mysitemyway.com" ]
+TRANSLATORS_LIST = [
+					"Fortunato Ventre",
+					"Lionel BASTET",
+					"miplou",
+					"sk",
+					"Jonathan Cragg",
+					"nanker",
+					"mysza-j",
+					"papukaija",
+					"ironfisher",
+					"joel morren",
+					"subiraj",
+					"Jonay",
+					"zeugma",
+					"Joshua Schroijen",
+					"Sukochev Roman (Leolik)",
+					"Andrey Kulakov",
+					"Dr. Alex Arutyunjan",
+					"Cezary Jackiewicz",
+					"Lars Karlsson",
+					"Krasznecz Zoltán",
+					"Sergiy Gavrylov",
+					"Dirk Roos",
+					"Michael Likholet",
+					"Kristian Gomes",
+					"Bruno Veilleux",
+					"zzz",
+					"Inox",
+					"Thibault Févry",
+					"Fitoschido",
+					"Adriano Steffler",
+					"taha",
+					"Piotr Sokół",
+					"Мирослав Николић",
+					"Giordano Bruno Barbosa",
+					"Benedict Etzel",
+					"Aiguanachein",
+					"simon",
+					"D3NMOH",
+					"Felipe Amaral",
+					"Baptiste Fontaine",
+					"Daniel Manrique",
+					"Stanislas Michalak",
+					"Виталий",
+					"SweX",
+					"František Zatloukal",
+					"abuyop",
+					"Hubert \"Schlussarz\" Ślósarski",
+					"Rafael Neri",
+					"André Drumond",
+					"Antoine Tonio",
+					"naitong",
+					"Dennis Baudys",
+					"Sascha Biermanns",
+					"Novikov Andrey",
+					"Juan Pablo",
+					"Praveen Illa"
+					]
+
 # Interface/Objects for session service
 SESSION_INTERFACE_NAME = "org.voria.SamsungTools.Session"
 SESSION_OBJECT_PATH_GENERAL = "/"
