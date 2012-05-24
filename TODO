@@ -1,3 +1,4 @@
+- Code refactoring.
 - Add support for "battery life extender" functionality.
 - Add support for "usb charge" functionality.
 - Add ability to disable desktop notifications when devices
