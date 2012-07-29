@@ -27,6 +27,8 @@ install:
 	$(install_script) pm/sleep.d/20_samsung-tools $(DESTDIR)/etc/pm/sleep.d/
 	$(install_dir) $(DESTDIR)/etc/pm/power.d/
 	$(install_script) pm/power.d/* $(DESTDIR)/etc/pm/power.d/
+	$(install_dir) $(DESTDIR)/usr/lib/systemd/system/
+	$(install_file) systemd/samsung-tools.service $(DESTDIR)/usr/lib/systemd/system/
 	# Locales
 	$(shell po/install.sh ${DESTDIR})
 	# CLI
@@ -60,6 +62,7 @@ uninstall:
 	rm -rf $(DESTDIR)/usr/bin/samsung-tools
 	rm -rf $(DESTDIR)/usr/bin/samsung-tools-preferences
 	rm -rf $(DESTDIR)/usr/lib/samsung-tools/
+	rm -rf $(DESTDIR)/usr/lib/systemd/system/samsung-tools.service
 	rm -rf $(DESTDIR)/etc/dbus-1/system.d/org.voria.SamsungTools.System.conf
 	rm -rf $(DESTDIR)/usr/share/dbus-1/system-services/org.voria.SamsungTools.System.service
 	rm -rf $(DESTDIR)/usr/share/dbus-1/services/org.voria.SamsungTools.Session.service
