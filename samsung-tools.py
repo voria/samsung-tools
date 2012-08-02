@@ -37,6 +37,10 @@ from backends.session.util.locales import *
 
 quiet = False
 
+# Fix encoding for piping
+import codecs
+sys.stdout = codecs.getwriter('utf-8')(sys.stdout)
+
 class Backlight():
 	def __init__(self, option):
 		self.option = option
