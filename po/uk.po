@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-21 19:47+0200\n"
+"POT-Creation-Date: 2012-08-03 10:34+0200\n"
 "PO-Revision-Date: 2011-11-23 12:27+0000\n"
 "Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: Ukrainian <kde-i18n-it@kde.org>\n"
@@ -19,335 +19,335 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-05-21 17:40+0000\n"
 "X-Generator: Launchpad (build 15275)\n"
 
-#: backends/session/util/locales.py:25 samsung-tools-preferences.py:410
+#: backends/session/util/locales.py:24 samsung-tools-preferences.py:410
 msgid "Backlight"
 msgstr "Підсвічування"
 
-#: backends/session/util/locales.py:26
+#: backends/session/util/locales.py:25
 msgid "Backlight is enabled"
 msgstr "Підсвічування увімкнено"
 
-#: backends/session/util/locales.py:27
+#: backends/session/util/locales.py:26
 msgid "Backlight is disabled"
 msgstr "Підсвічування вимкнено"
 
-#: backends/session/util/locales.py:28
+#: backends/session/util/locales.py:27
 msgid "Backlight enabled"
 msgstr "Увімкнене підсвічування"
 
-#: backends/session/util/locales.py:29
+#: backends/session/util/locales.py:28
 msgid "Backlight disabled"
 msgstr "Вимкнене підсвічування"
 
-#: backends/session/util/locales.py:30
+#: backends/session/util/locales.py:29
 msgid "Backlight cannot be enabled"
 msgstr "Не вдалось увімкнути підсвічування"
 
-#: backends/session/util/locales.py:31
+#: backends/session/util/locales.py:30
 msgid "Backlight cannot be disabled"
 msgstr "Не вдалось вимкнути підсвічування"
 
-#: backends/session/util/locales.py:32
+#: backends/session/util/locales.py:31
 msgid "Backlight cannot be toggled"
 msgstr "Не вдалось перемикнути підсвічування"
 
-#: backends/session/util/locales.py:34 samsung-tools-preferences.py:419
+#: backends/session/util/locales.py:33 samsung-tools-preferences.py:419
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
-#: backends/session/util/locales.py:35
+#: backends/session/util/locales.py:34
 msgid "Bluetooth is enabled"
 msgstr "Bluetooth увімкнено"
 
-#: backends/session/util/locales.py:36
+#: backends/session/util/locales.py:35
 msgid "Bluetooth is disabled"
 msgstr "Bluetooth вимкнено"
 
-#: backends/session/util/locales.py:37
+#: backends/session/util/locales.py:36
 msgid "Bluetooth enabled"
 msgstr "Bluetooth увімкнено"
 
-#: backends/session/util/locales.py:38
+#: backends/session/util/locales.py:37
 msgid "Bluetooth disabled"
 msgstr "Bluetooth вимкнено"
 
-#: backends/session/util/locales.py:39
+#: backends/session/util/locales.py:38
 msgid "Bluetooth cannot be enabled"
 msgstr "Не вдалось увімкнути Bluetooth"
 
-#: backends/session/util/locales.py:40
+#: backends/session/util/locales.py:39
 msgid "Bluetooth cannot be disabled"
 msgstr "Не вдалось вимкнути Bluetooth"
 
-#: backends/session/util/locales.py:41
+#: backends/session/util/locales.py:40
 msgid "Bluetooth cannot be toggled"
 msgstr "Не вдалось перемикнути Bluetooth"
 
-#: backends/session/util/locales.py:42
+#: backends/session/util/locales.py:41
 msgid "Bluetooth control is not available"
 msgstr "Керування Bluetooth не доступно"
 
-#: backends/session/util/locales.py:44 samsung-tools-preferences.py:428
+#: backends/session/util/locales.py:43 samsung-tools-preferences.py:428
 msgid "CPU fan"
 msgstr "Охолодження процесора"
 
-#: backends/session/util/locales.py:45
+#: backends/session/util/locales.py:44
 msgid "CPU Temperature:"
 msgstr "Температура процесора:"
 
-#: backends/session/util/locales.py:46
+#: backends/session/util/locales.py:45
 msgid "Fan mode cannot be changed"
 msgstr "Не вдалось змінити режим охолодження"
 
-#: backends/session/util/locales.py:47
+#: backends/session/util/locales.py:46
 msgid "Fan mode: Normal"
 msgstr "Режим охолодження: Нормальний"
 
-#: backends/session/util/locales.py:48
+#: backends/session/util/locales.py:47
 msgid "Fan mode: Silent"
 msgstr "Режим охолодження: Безшумний"
 
-#: backends/session/util/locales.py:49
+#: backends/session/util/locales.py:48
 msgid "Fan mode: Overclock"
 msgstr ""
 
-#: backends/session/util/locales.py:50
+#: backends/session/util/locales.py:49
 msgid "Cannot get fan mode"
 msgstr "Не вдалось визначити режим охолодження"
 
-#: backends/session/util/locales.py:51
+#: backends/session/util/locales.py:50
 msgid "CPU fan control is not available"
 msgstr "Керування режимом охолодження ЦП не доступно"
 
-#: backends/session/util/locales.py:53 samsung-tools-preferences.py:437
+#: backends/session/util/locales.py:52 samsung-tools-preferences.py:437
 msgid "Webcam"
 msgstr "Веб-камера"
 
-#: backends/session/util/locales.py:54
+#: backends/session/util/locales.py:53
 msgid "Webcam is enabled"
 msgstr "Веб-камеру увімнено"
 
-#: backends/session/util/locales.py:55
+#: backends/session/util/locales.py:54
 msgid "Webcam is disabled"
 msgstr "Веб-камера вимкнена"
 
-#: backends/session/util/locales.py:56
+#: backends/session/util/locales.py:55
 msgid "Webcam enabled"
 msgstr "Веб-камера увімкнена"
 
-#: backends/session/util/locales.py:57
+#: backends/session/util/locales.py:56
 msgid "Webcam disabled"
 msgstr "Веб-камера вимкнена"
 
-#: backends/session/util/locales.py:58
+#: backends/session/util/locales.py:57
 msgid "Webcam cannot be enabled"
 msgstr "Не вдалось увімкнути веб-камеру"
 
-#: backends/session/util/locales.py:59
+#: backends/session/util/locales.py:58
 msgid "Webcam cannot be disabled"
 msgstr "Не вдалось вимкнути веб-камеру"
 
-#: backends/session/util/locales.py:60
+#: backends/session/util/locales.py:59
 msgid "Webcam cannot be toggled"
 msgstr "Не вдалось перемикнути веб-камеру"
 
-#: backends/session/util/locales.py:61
+#: backends/session/util/locales.py:60
 msgid "Webcam control is not available"
 msgstr "Керування веб-камерою не доступно"
 
-#: backends/session/util/locales.py:63 samsung-tools-preferences.py:446
+#: backends/session/util/locales.py:62 samsung-tools-preferences.py:446
 msgid "Wireless"
 msgstr "Бездротовий зв’язок"
 
-#: backends/session/util/locales.py:64
+#: backends/session/util/locales.py:63
 msgid "Wireless is enabled"
 msgstr "Бездротовий зв’язок увімкнено"
 
-#: backends/session/util/locales.py:65
+#: backends/session/util/locales.py:64
 msgid "Wireless is disabled"
 msgstr "Бездротовий зв’язок вимкнено"
 
-#: backends/session/util/locales.py:66
+#: backends/session/util/locales.py:65
 msgid "Wireless enabled"
 msgstr "Бездротовий зв’язок увімкнено"
 
-#: backends/session/util/locales.py:67
+#: backends/session/util/locales.py:66
 msgid "Wireless disabled"
 msgstr "Бездротовий зв'язок вимкнений"
 
-#: backends/session/util/locales.py:68
+#: backends/session/util/locales.py:67
 msgid "Wireless cannot be enabled"
 msgstr "Не вдалось увімкнути бездротовий зв’язок"
 
-#: backends/session/util/locales.py:69
+#: backends/session/util/locales.py:68
 msgid "Wireless cannot be disabled"
 msgstr "Не вдалось вимкнути бездротовий зв’язок"
 
-#: backends/session/util/locales.py:70
+#: backends/session/util/locales.py:69
 msgid "Wireless cannot be toggled"
 msgstr "Не вдалось перемикнути бездротовий зв’язок"
 
-#: backends/session/util/locales.py:71
+#: backends/session/util/locales.py:70
 msgid "Wireless control is not available"
 msgstr "Керування бездротовим зв’язком не доступно"
 
-#: samsung-tools.py:54
+#: samsung-tools.py:58
 msgid "Backlight control: unable to connect to session service!"
 msgstr "Керування підсвічуванням: не вдалось під’єднатись до служби сеансу!"
 
-#: samsung-tools.py:143
+#: samsung-tools.py:147
 msgid "Bluetooth control: unable to connect to session service!"
 msgstr "Керування Bluetooth: не вдалось під’єднатись до служби сеансу!"
 
-#: samsung-tools.py:245
+#: samsung-tools.py:249
 msgid "CPU fan control: unable to connect to session service!"
 msgstr "Керування охолодженням ЦП: не вдалось під’єднатись до служби сеансу!"
 
-#: samsung-tools.py:395
+#: samsung-tools.py:399
 msgid "Webcam control: unable to connect to session service!"
 msgstr "Керування веб-камерою: не вдалось під’єднатись до служби сеансу!"
 
-#: samsung-tools.py:497
+#: samsung-tools.py:501
 msgid "Wireless control: unable to connect to session service!"
 msgstr ""
 "Керування бездротовим зв’язком: не вдалось під’єднатись до служби сеансу!"
 
-#: samsung-tools.py:586
+#: samsung-tools.py:590
 msgid "Command Line Utility"
 msgstr ""
 
-#: samsung-tools.py:588 samsung-tools.py:638
+#: samsung-tools.py:592 samsung-tools.py:642
 #, python-format
 msgid "Usage: %s <interface> <option> ..."
 msgstr "Використання: %s <interface> <option> ..."
 
-#: samsung-tools.py:590 po/samsung-tools-preferences.glade.h:15
+#: samsung-tools.py:594 po/samsung-tools-preferences.glade.h:15
 msgid "Backlight:"
 msgstr "Підсвічування:"
 
-#: samsung-tools.py:591 samsung-tools.py:594 samsung-tools.py:597
-#: samsung-tools.py:600 samsung-tools.py:603
+#: samsung-tools.py:595 samsung-tools.py:598 samsung-tools.py:601
+#: samsung-tools.py:604 samsung-tools.py:607
 msgid "Interface"
 msgstr "Інтерфейс"
 
-#: samsung-tools.py:592 samsung-tools.py:595 samsung-tools.py:598
-#: samsung-tools.py:601 samsung-tools.py:604
+#: samsung-tools.py:596 samsung-tools.py:599 samsung-tools.py:602
+#: samsung-tools.py:605 samsung-tools.py:608
 msgid "Options"
 msgstr "Параметри"
 
-#: samsung-tools.py:593 po/samsung-tools-preferences.glade.h:13
+#: samsung-tools.py:597 po/samsung-tools-preferences.glade.h:13
 msgid "Bluetooth:"
 msgstr "Bluetooth:"
 
-#: samsung-tools.py:596 po/samsung-tools-preferences.glade.h:11
+#: samsung-tools.py:600 po/samsung-tools-preferences.glade.h:11
 msgid "CPU fan:"
 msgstr "Охолодження ЦП:"
 
-#: samsung-tools.py:599 po/samsung-tools-preferences.glade.h:9
+#: samsung-tools.py:603 po/samsung-tools-preferences.glade.h:9
 msgid "Webcam:"
 msgstr "Веб-камера:"
 
-#: samsung-tools.py:602 po/samsung-tools-preferences.glade.h:19
+#: samsung-tools.py:606 po/samsung-tools-preferences.glade.h:19
 msgid "Wireless:"
 msgstr "Бездротовий зв’язок:"
 
-#: samsung-tools.py:606
+#: samsung-tools.py:610
 msgid "Other options:"
 msgstr "Інші параметри:"
 
-#: samsung-tools.py:607
+#: samsung-tools.py:611
 msgid "Show status for all devices."
 msgstr "Показати стан усіх пристроїв."
 
-#: samsung-tools.py:608
+#: samsung-tools.py:612
 msgid "Show graphical notifications."
 msgstr "Показувати графічні повідомлення."
 
-#: samsung-tools.py:609
+#: samsung-tools.py:613
 msgid "Do not print messages on standard output."
 msgstr "Не виводити повідомлення на стандартний вивід."
 
-#: samsung-tools.py:610
+#: samsung-tools.py:614
 msgid "Show the control interface currently in use."
 msgstr ""
 
-#: samsung-tools.py:611
+#: samsung-tools.py:615
 msgid "Stop the session service."
 msgstr "Зупинити службу сеансу."
 
-#: samsung-tools.py:612
+#: samsung-tools.py:616
 msgid "Stop the system service."
 msgstr "Зупинити системну службу."
 
-#: samsung-tools.py:614
+#: samsung-tools.py:618
 msgid "Examples of use:"
 msgstr "Приклади використання:"
 
-#: samsung-tools.py:615
+#: samsung-tools.py:619
 msgid " - Toggle backlight:"
 msgstr " - Перемикнути підсвічування:"
 
-#: samsung-tools.py:618
+#: samsung-tools.py:622
 msgid " - Toggle wireless and set CPU fan mode to 'silent':"
 msgstr ""
 " - Перемикнути бездротовий зв’язок та встановити «безшумний» режим "
 "охолодження ЦП:"
 
-#: samsung-tools.py:621
+#: samsung-tools.py:625
 msgid " - Disable bluetooth, webcam and wireless:"
 msgstr " - Вимкнути bluetooth, веб-камеру та бездротовий зв’язок:"
 
-#: samsung-tools.py:624
+#: samsung-tools.py:628
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Детальніша інформація на форумі «Linux On My Samsung»:"
 
-#: samsung-tools.py:629 samsung-tools-preferences.py:1079
+#: samsung-tools.py:633 samsung-tools-preferences.py:1018
 msgid "Released under GPLv3 license"
 msgstr "Випущено за умовами ліцензії GPLv3"
 
-#: samsung-tools.py:634
+#: samsung-tools.py:638
 msgid "No action(s) specified."
 msgstr "Жодних(ої) дій(ї) не вказано."
 
-#: samsung-tools.py:635 samsung-tools.py:706
+#: samsung-tools.py:639 samsung-tools.py:710
 msgid "Use --help for instructions."
 msgstr "Використовуйте --help для довідки."
 
-#: samsung-tools.py:701
+#: samsung-tools.py:705
 msgid "This program is intended to be used only by non-privileged users."
 msgstr ""
 "Ця програма призначена для використання лише не привілейованими "
 "користувачами."
 
-#: samsung-tools.py:705
+#: samsung-tools.py:709
 msgid "Wrong argument(s)."
 msgstr "Неправильний(і) аргумент(и)"
 
-#: samsung-tools.py:718
+#: samsung-tools.py:722
 msgid "Unable to start a DBus daemon!"
 msgstr ""
 
-#: samsung-tools.py:733 po/samsung-tools-preferences.glade.h:30
+#: samsung-tools.py:737 po/samsung-tools-preferences.glade.h:30
 msgid "Control interface:"
 msgstr ""
 
-#: samsung-tools.py:741
+#: samsung-tools.py:745
 msgid "Control interface: unable to connect to system service!"
 msgstr ""
 
-#: samsung-tools.py:751
+#: samsung-tools.py:755
 msgid "Session service stopped"
 msgstr "Служба сеансу зупинена"
 
-#: samsung-tools.py:754
+#: samsung-tools.py:758
 msgid "Cannot stop session service"
 msgstr "Не вдалось зупинити службу сеансу"
 
-#: samsung-tools.py:764
+#: samsung-tools.py:768
 msgid "System service stopped"
 msgstr "Системна служба зупинена"
 
-#: samsung-tools.py:767
+#: samsung-tools.py:771
 msgid "Cannot stop system service"
 msgstr "Не вдалось зупинити системну службу"
 

@@ -82,7 +82,8 @@ TRANSLATORS_LIST = [
 					"Sascha Biermanns",
 					"Novikov Andrey",
 					"Juan Pablo",
-					"Praveen Illa"
+					"Praveen Illa",
+					"Adolfo Jayme Barrientos"
 					]
 
 # Interface/Objects for session service

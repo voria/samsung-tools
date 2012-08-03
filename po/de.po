@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-21 19:47+0200\n"
+"POT-Creation-Date: 2012-08-03 10:34+0200\n"
 "PO-Revision-Date: 2012-03-20 12:31+0000\n"
 "Last-Translator: Sascha Biermanns <Unknown>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -17,336 +17,336 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-05-21 17:40+0000\n"
 "X-Generator: Launchpad (build 15275)\n"
 
-#: backends/session/util/locales.py:25 samsung-tools-preferences.py:410
+#: backends/session/util/locales.py:24 samsung-tools-preferences.py:410
 msgid "Backlight"
 msgstr "Hintergrundbeleuchtung"
 
-#: backends/session/util/locales.py:26
+#: backends/session/util/locales.py:25
 msgid "Backlight is enabled"
 msgstr "Hintergrundbeleuchtung ist eingeschaltet"
 
-#: backends/session/util/locales.py:27
+#: backends/session/util/locales.py:26
 msgid "Backlight is disabled"
 msgstr "Hintergrundbeleuchtung ist abgeschaltet"
 
-#: backends/session/util/locales.py:28
+#: backends/session/util/locales.py:27
 msgid "Backlight enabled"
 msgstr "Hintergrundbeleuchtung eingeschaltet"
 
-#: backends/session/util/locales.py:29
+#: backends/session/util/locales.py:28
 msgid "Backlight disabled"
 msgstr "Hintergrundbeleuchtung abgeschaltet"
 
-#: backends/session/util/locales.py:30
+#: backends/session/util/locales.py:29
 msgid "Backlight cannot be enabled"
 msgstr "Hintergrundbeleuchtung kann nicht eingeschaltet werden"
 
-#: backends/session/util/locales.py:31
+#: backends/session/util/locales.py:30
 msgid "Backlight cannot be disabled"
 msgstr "Hintergrundbeleuchtung kann nicht abgeschaltet werden"
 
-#: backends/session/util/locales.py:32
+#: backends/session/util/locales.py:31
 msgid "Backlight cannot be toggled"
 msgstr "Hintergrundbeleuchtung kann nicht ein-/augeschaltet werden"
 
-#: backends/session/util/locales.py:34 samsung-tools-preferences.py:419
+#: backends/session/util/locales.py:33 samsung-tools-preferences.py:419
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
-#: backends/session/util/locales.py:35
+#: backends/session/util/locales.py:34
 msgid "Bluetooth is enabled"
 msgstr "Bluetooth ist eingeschaltet"
 
-#: backends/session/util/locales.py:36
+#: backends/session/util/locales.py:35
 msgid "Bluetooth is disabled"
 msgstr "Bluetooth ist ausgeschaltet"
 
-#: backends/session/util/locales.py:37
+#: backends/session/util/locales.py:36
 msgid "Bluetooth enabled"
 msgstr "Bluetooth eingeschaltet"
 
-#: backends/session/util/locales.py:38
+#: backends/session/util/locales.py:37
 msgid "Bluetooth disabled"
 msgstr "Bluetooth ausgeschaltet"
 
-#: backends/session/util/locales.py:39
+#: backends/session/util/locales.py:38
 msgid "Bluetooth cannot be enabled"
 msgstr "Bluetooth kann nicht eingeschaltet werden"
 
-#: backends/session/util/locales.py:40
+#: backends/session/util/locales.py:39
 msgid "Bluetooth cannot be disabled"
 msgstr "Bluetooth kann nicht ausgeschaltet werden"
 
-#: backends/session/util/locales.py:41
+#: backends/session/util/locales.py:40
 msgid "Bluetooth cannot be toggled"
 msgstr "Bluetooth kann nicht ein-/ausgeschaltet werden"
 
-#: backends/session/util/locales.py:42
+#: backends/session/util/locales.py:41
 msgid "Bluetooth control is not available"
 msgstr "Bluetooth-Steuerung ist nicht verfügbar"
 
-#: backends/session/util/locales.py:44 samsung-tools-preferences.py:428
+#: backends/session/util/locales.py:43 samsung-tools-preferences.py:428
 msgid "CPU fan"
 msgstr "CPU-Lüfter"
 
-#: backends/session/util/locales.py:45
+#: backends/session/util/locales.py:44
 msgid "CPU Temperature:"
 msgstr "CPU-Temperatur:"
 
-#: backends/session/util/locales.py:46
+#: backends/session/util/locales.py:45
 msgid "Fan mode cannot be changed"
 msgstr "Lüftermodus kann nicht geändert werden"
 
-#: backends/session/util/locales.py:47
+#: backends/session/util/locales.py:46
 msgid "Fan mode: Normal"
 msgstr "Lüftermodus: Normal"
 
-#: backends/session/util/locales.py:48
+#: backends/session/util/locales.py:47
 msgid "Fan mode: Silent"
 msgstr "Lüftermodus: Leise"
 
-#: backends/session/util/locales.py:49
+#: backends/session/util/locales.py:48
 msgid "Fan mode: Overclock"
 msgstr "Lüftermodus: Overclock"
 
-#: backends/session/util/locales.py:50
+#: backends/session/util/locales.py:49
 msgid "Cannot get fan mode"
 msgstr "Lüftermodus kann nicht ermittelt werden"
 
-#: backends/session/util/locales.py:51
+#: backends/session/util/locales.py:50
 msgid "CPU fan control is not available"
 msgstr "CPU-Lüftersteuerung ist nicht verfügbar"
 
-#: backends/session/util/locales.py:53 samsung-tools-preferences.py:437
+#: backends/session/util/locales.py:52 samsung-tools-preferences.py:437
 msgid "Webcam"
 msgstr "Webcam"
 
-#: backends/session/util/locales.py:54
+#: backends/session/util/locales.py:53
 msgid "Webcam is enabled"
 msgstr "Webcam ist eingeschaltet"
 
-#: backends/session/util/locales.py:55
+#: backends/session/util/locales.py:54
 msgid "Webcam is disabled"
 msgstr "Webcam ist ausgeschaltet"
 
-#: backends/session/util/locales.py:56
+#: backends/session/util/locales.py:55
 msgid "Webcam enabled"
 msgstr "Webcam eingeschaltet"
 
-#: backends/session/util/locales.py:57
+#: backends/session/util/locales.py:56
 msgid "Webcam disabled"
 msgstr "Webcam ausgeschaltet"
 
-#: backends/session/util/locales.py:58
+#: backends/session/util/locales.py:57
 msgid "Webcam cannot be enabled"
 msgstr "Webcam kann nicht eingeschaltet werden"
 
-#: backends/session/util/locales.py:59
+#: backends/session/util/locales.py:58
 msgid "Webcam cannot be disabled"
 msgstr "Webcam kann nicht ausgeschaltet werden"
 
-#: backends/session/util/locales.py:60
+#: backends/session/util/locales.py:59
 msgid "Webcam cannot be toggled"
 msgstr "Webcam kann nicht ein-/ausgeschaltet werden"
 
-#: backends/session/util/locales.py:61
+#: backends/session/util/locales.py:60
 msgid "Webcam control is not available"
 msgstr "Webcam-Steuerung nicht verfügbar"
 
-#: backends/session/util/locales.py:63 samsung-tools-preferences.py:446
+#: backends/session/util/locales.py:62 samsung-tools-preferences.py:446
 msgid "Wireless"
 msgstr "WLAN-Karte"
 
-#: backends/session/util/locales.py:64
+#: backends/session/util/locales.py:63
 msgid "Wireless is enabled"
 msgstr "WLAN-Karte ist eingeschaltet"
 
-#: backends/session/util/locales.py:65
+#: backends/session/util/locales.py:64
 msgid "Wireless is disabled"
 msgstr "WLAN-Karte ist ausgeschaltet"
 
-#: backends/session/util/locales.py:66
+#: backends/session/util/locales.py:65
 msgid "Wireless enabled"
 msgstr "WLAN-Karte eingeschaltet"
 
-#: backends/session/util/locales.py:67
+#: backends/session/util/locales.py:66
 msgid "Wireless disabled"
 msgstr "WLAN-Karte ausgeschaltet"
 
-#: backends/session/util/locales.py:68
+#: backends/session/util/locales.py:67
 msgid "Wireless cannot be enabled"
 msgstr "WLAN-Karte kann nicht eingeschaltet werden"
 
-#: backends/session/util/locales.py:69
+#: backends/session/util/locales.py:68
 msgid "Wireless cannot be disabled"
 msgstr "WLAN-Karte kann nicht ausgeschaltet werden"
 
-#: backends/session/util/locales.py:70
+#: backends/session/util/locales.py:69
 msgid "Wireless cannot be toggled"
 msgstr "WLAN-Karte kann nicht ein-/ausgeschaltet werden"
 
-#: backends/session/util/locales.py:71
+#: backends/session/util/locales.py:70
 msgid "Wireless control is not available"
 msgstr "WLAN-Karte ist nicht verfügbar"
 
-#: samsung-tools.py:54
+#: samsung-tools.py:58
 msgid "Backlight control: unable to connect to session service!"
 msgstr ""
 "Hintergrundbeleuchtungssteuerung: Kann nicht mit SItzungsdienst verbinden"
 
-#: samsung-tools.py:143
+#: samsung-tools.py:147
 msgid "Bluetooth control: unable to connect to session service!"
 msgstr "Bluetooth-Steuerung: Kann nicht mit Sitzungsdienst verbinden!"
 
-#: samsung-tools.py:245
+#: samsung-tools.py:249
 msgid "CPU fan control: unable to connect to session service!"
 msgstr "CPU-Lüftersteuerung: Kann nicht mit Sitzungsdienst verbinden!"
 
-#: samsung-tools.py:395
+#: samsung-tools.py:399
 msgid "Webcam control: unable to connect to session service!"
 msgstr "Webcam-Steuerung: Kann nicht mit Sitzungsdienst verbinden"
 
-#: samsung-tools.py:497
+#: samsung-tools.py:501
 msgid "Wireless control: unable to connect to session service!"
 msgstr "WLAN-Karten-Steuerung: Kann nicht mit Sitzungsdienst verbinden"
 
-#: samsung-tools.py:586
+#: samsung-tools.py:590
 msgid "Command Line Utility"
 msgstr "Befehlszeilenwerkzeug"
 
-#: samsung-tools.py:588 samsung-tools.py:638
+#: samsung-tools.py:592 samsung-tools.py:642
 #, python-format
 msgid "Usage: %s <interface> <option> ..."
 msgstr "Verwendung: %s <Schnittstelle> <Option>"
 
-#: samsung-tools.py:590 po/samsung-tools-preferences.glade.h:15
+#: samsung-tools.py:594 po/samsung-tools-preferences.glade.h:15
 msgid "Backlight:"
 msgstr "Hintergrundbeleuchtung:"
 
-#: samsung-tools.py:591 samsung-tools.py:594 samsung-tools.py:597
-#: samsung-tools.py:600 samsung-tools.py:603
+#: samsung-tools.py:595 samsung-tools.py:598 samsung-tools.py:601
+#: samsung-tools.py:604 samsung-tools.py:607
 msgid "Interface"
 msgstr "Schnittstelle"
 
-#: samsung-tools.py:592 samsung-tools.py:595 samsung-tools.py:598
-#: samsung-tools.py:601 samsung-tools.py:604
+#: samsung-tools.py:596 samsung-tools.py:599 samsung-tools.py:602
+#: samsung-tools.py:605 samsung-tools.py:608
 msgid "Options"
 msgstr "Einstellungen"
 
-#: samsung-tools.py:593 po/samsung-tools-preferences.glade.h:13
+#: samsung-tools.py:597 po/samsung-tools-preferences.glade.h:13
 msgid "Bluetooth:"
 msgstr "Bluetooth:"
 
-#: samsung-tools.py:596 po/samsung-tools-preferences.glade.h:11
+#: samsung-tools.py:600 po/samsung-tools-preferences.glade.h:11
 msgid "CPU fan:"
 msgstr "CPU-Lüfter"
 
-#: samsung-tools.py:599 po/samsung-tools-preferences.glade.h:9
+#: samsung-tools.py:603 po/samsung-tools-preferences.glade.h:9
 msgid "Webcam:"
 msgstr "Webcam:"
 
-#: samsung-tools.py:602 po/samsung-tools-preferences.glade.h:19
+#: samsung-tools.py:606 po/samsung-tools-preferences.glade.h:19
 msgid "Wireless:"
 msgstr "WLAN-Karte"
 
-#: samsung-tools.py:606
+#: samsung-tools.py:610
 msgid "Other options:"
 msgstr "Weitere Einstellungen:"
 
-#: samsung-tools.py:607
+#: samsung-tools.py:611
 msgid "Show status for all devices."
 msgstr "Status für alle Geräte anzeigen"
 
-#: samsung-tools.py:608
+#: samsung-tools.py:612
 msgid "Show graphical notifications."
 msgstr "Zeige graphische Benachrichtigungen."
 
-#: samsung-tools.py:609
+#: samsung-tools.py:613
 msgid "Do not print messages on standard output."
 msgstr "Nachrichten nicht auf der Standardausgabe ausgeben."
 
-#: samsung-tools.py:610
+#: samsung-tools.py:614
 msgid "Show the control interface currently in use."
 msgstr "Die Schnittstelle zur Steuerung, die gerade benutzt wird, anzeigen."
 
-#: samsung-tools.py:611
+#: samsung-tools.py:615
 msgid "Stop the session service."
 msgstr "Sitzungsdienst beenden."
 
-#: samsung-tools.py:612
+#: samsung-tools.py:616
 msgid "Stop the system service."
 msgstr "Systemdient beenden."
 
-#: samsung-tools.py:614
+#: samsung-tools.py:618
 msgid "Examples of use:"
 msgstr "Beispiele:"
 
-#: samsung-tools.py:615
+#: samsung-tools.py:619
 msgid " - Toggle backlight:"
 msgstr " - Hintergrundbeleuchtung ein-/ausschalten"
 
-#: samsung-tools.py:618
+#: samsung-tools.py:622
 msgid " - Toggle wireless and set CPU fan mode to 'silent':"
 msgstr ""
 " - WLAN-Karte ein-/ausschalten und CPU-Lüfter in den Modus \"leise\"  "
 "versetzen:"
 
-#: samsung-tools.py:621
+#: samsung-tools.py:625
 msgid " - Disable bluetooth, webcam and wireless:"
 msgstr " - Bluetooth, Webcam und WLAN-Karte ausschalten"
 
-#: samsung-tools.py:624
+#: samsung-tools.py:628
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr ""
 "Für weitere Informationen, besuche doch das Internetforum \"Linux On My "
 "Samsung\"."
 
-#: samsung-tools.py:629 samsung-tools-preferences.py:1079
+#: samsung-tools.py:633 samsung-tools-preferences.py:1018
 msgid "Released under GPLv3 license"
 msgstr "Veröffentlicht unter der GPLv3-Lizenz"
 
-#: samsung-tools.py:634
+#: samsung-tools.py:638
 msgid "No action(s) specified."
 msgstr "Keine Aktion angegeben"
 
-#: samsung-tools.py:635 samsung-tools.py:706
+#: samsung-tools.py:639 samsung-tools.py:710
 msgid "Use --help for instructions."
 msgstr "Verwende --help um Hilfe zu erhalten."
 
-#: samsung-tools.py:701
+#: samsung-tools.py:705
 msgid "This program is intended to be used only by non-privileged users."
 msgstr ""
 "Dieses Programm sollte nur von Benutzern ohne Rootrechten benutzt werden."
 
-#: samsung-tools.py:705
+#: samsung-tools.py:709
 msgid "Wrong argument(s)."
 msgstr "Falsche(r) Parameter."
 
-#: samsung-tools.py:718
+#: samsung-tools.py:722
 msgid "Unable to start a DBus daemon!"
 msgstr "D-Bus-Dienst konnte nicht gestartet werden!"
 
-#: samsung-tools.py:733 po/samsung-tools-preferences.glade.h:30
+#: samsung-tools.py:737 po/samsung-tools-preferences.glade.h:30
 msgid "Control interface:"
 msgstr "Schnittstelle zur Steuerung:"
 
-#: samsung-tools.py:741
+#: samsung-tools.py:745
 msgid "Control interface: unable to connect to system service!"
 msgstr "Schnittstelle zur Steuerung: Keine Verbindung zum Systemgerät möglich!"
 
-#: samsung-tools.py:751
+#: samsung-tools.py:755
 msgid "Session service stopped"
 msgstr "Sitzungsdienst beendet"
 
-#: samsung-tools.py:754
+#: samsung-tools.py:758
 msgid "Cannot stop session service"
 msgstr "Kann Sitzungsdienst nicht beenden"
 
-#: samsung-tools.py:764
+#: samsung-tools.py:768
 msgid "System service stopped"
 msgstr "Systemdienst beendet"
 
-#: samsung-tools.py:767
+#: samsung-tools.py:771
 msgid "Cannot stop system service"
 msgstr "Kann Systemdienst nicht beenden"
 

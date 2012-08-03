@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-21 19:47+0200\n"
+"POT-Creation-Date: 2012-08-03 10:34+0200\n"
 "PO-Revision-Date: 2012-02-25 15:32+0000\n"
 "Last-Translator: naitong <atone@126.com>\n"
 "Language-Team: Chinese (Simplified) <zh_CN@li.org>\n"
@@ -18,330 +18,330 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-05-21 17:40+0000\n"
 "X-Generator: Launchpad (build 15275)\n"
 
-#: backends/session/util/locales.py:25 samsung-tools-preferences.py:410
+#: backends/session/util/locales.py:24 samsung-tools-preferences.py:410
 msgid "Backlight"
 msgstr "背光"
 
-#: backends/session/util/locales.py:26
+#: backends/session/util/locales.py:25
 msgid "Backlight is enabled"
 msgstr "背光已启用"
 
-#: backends/session/util/locales.py:27
+#: backends/session/util/locales.py:26
 msgid "Backlight is disabled"
 msgstr "背光已禁用"
 
-#: backends/session/util/locales.py:28
+#: backends/session/util/locales.py:27
 msgid "Backlight enabled"
 msgstr "背光启用"
 
-#: backends/session/util/locales.py:29
+#: backends/session/util/locales.py:28
 msgid "Backlight disabled"
 msgstr "背光禁用"
 
-#: backends/session/util/locales.py:30
+#: backends/session/util/locales.py:29
 msgid "Backlight cannot be enabled"
 msgstr "无法启用背光"
 
-#: backends/session/util/locales.py:31
+#: backends/session/util/locales.py:30
 msgid "Backlight cannot be disabled"
 msgstr "无法禁用背光"
 
-#: backends/session/util/locales.py:32
+#: backends/session/util/locales.py:31
 msgid "Backlight cannot be toggled"
 msgstr "无法切换背光"
 
-#: backends/session/util/locales.py:34 samsung-tools-preferences.py:419
+#: backends/session/util/locales.py:33 samsung-tools-preferences.py:419
 msgid "Bluetooth"
 msgstr "蓝牙"
 
-#: backends/session/util/locales.py:35
+#: backends/session/util/locales.py:34
 msgid "Bluetooth is enabled"
 msgstr "蓝牙已启用"
 
-#: backends/session/util/locales.py:36
+#: backends/session/util/locales.py:35
 msgid "Bluetooth is disabled"
 msgstr "蓝牙已禁用"
 
-#: backends/session/util/locales.py:37
+#: backends/session/util/locales.py:36
 msgid "Bluetooth enabled"
 msgstr "蓝牙启用"
 
-#: backends/session/util/locales.py:38
+#: backends/session/util/locales.py:37
 msgid "Bluetooth disabled"
 msgstr "蓝牙禁用"
 
-#: backends/session/util/locales.py:39
+#: backends/session/util/locales.py:38
 msgid "Bluetooth cannot be enabled"
 msgstr "无法启用蓝牙"
 
-#: backends/session/util/locales.py:40
+#: backends/session/util/locales.py:39
 msgid "Bluetooth cannot be disabled"
 msgstr "无法禁用蓝牙"
 
-#: backends/session/util/locales.py:41
+#: backends/session/util/locales.py:40
 msgid "Bluetooth cannot be toggled"
 msgstr "无法切换蓝牙"
 
-#: backends/session/util/locales.py:42
+#: backends/session/util/locales.py:41
 msgid "Bluetooth control is not available"
 msgstr "蓝牙控制无法使用"
 
-#: backends/session/util/locales.py:44 samsung-tools-preferences.py:428
+#: backends/session/util/locales.py:43 samsung-tools-preferences.py:428
 msgid "CPU fan"
 msgstr "CPU风扇"
 
-#: backends/session/util/locales.py:45
+#: backends/session/util/locales.py:44
 msgid "CPU Temperature:"
 msgstr "CPU温度"
 
-#: backends/session/util/locales.py:46
+#: backends/session/util/locales.py:45
 msgid "Fan mode cannot be changed"
 msgstr "风扇模式无法改变"
 
-#: backends/session/util/locales.py:47
+#: backends/session/util/locales.py:46
 msgid "Fan mode: Normal"
 msgstr "风扇模式: 正常"
 
-#: backends/session/util/locales.py:48
+#: backends/session/util/locales.py:47
 msgid "Fan mode: Silent"
 msgstr "风扇模式: 安静"
 
-#: backends/session/util/locales.py:49
+#: backends/session/util/locales.py:48
 msgid "Fan mode: Overclock"
 msgstr "风扇模式: 超频"
 
-#: backends/session/util/locales.py:50
+#: backends/session/util/locales.py:49
 msgid "Cannot get fan mode"
 msgstr "无法获得风扇模式"
 
-#: backends/session/util/locales.py:51
+#: backends/session/util/locales.py:50
 msgid "CPU fan control is not available"
 msgstr "CPU风扇控制不可用"
 
-#: backends/session/util/locales.py:53 samsung-tools-preferences.py:437
+#: backends/session/util/locales.py:52 samsung-tools-preferences.py:437
 msgid "Webcam"
 msgstr "网络摄像头"
 
-#: backends/session/util/locales.py:54
+#: backends/session/util/locales.py:53
 msgid "Webcam is enabled"
 msgstr "网络摄像头已启用"
 
-#: backends/session/util/locales.py:55
+#: backends/session/util/locales.py:54
 msgid "Webcam is disabled"
 msgstr "网络摄像头已禁用"
 
-#: backends/session/util/locales.py:56
+#: backends/session/util/locales.py:55
 msgid "Webcam enabled"
 msgstr "网络摄像头启用"
 
-#: backends/session/util/locales.py:57
+#: backends/session/util/locales.py:56
 msgid "Webcam disabled"
 msgstr "网络摄像头禁用"
 
-#: backends/session/util/locales.py:58
+#: backends/session/util/locales.py:57
 msgid "Webcam cannot be enabled"
 msgstr "无法启用网络摄像头"
 
-#: backends/session/util/locales.py:59
+#: backends/session/util/locales.py:58
 msgid "Webcam cannot be disabled"
 msgstr "无法禁用网络摄像头"
 
-#: backends/session/util/locales.py:60
+#: backends/session/util/locales.py:59
 msgid "Webcam cannot be toggled"
 msgstr "无法切换网络摄像头"
 
-#: backends/session/util/locales.py:61
+#: backends/session/util/locales.py:60
 msgid "Webcam control is not available"
 msgstr "网络摄像头控制不可用"
 
-#: backends/session/util/locales.py:63 samsung-tools-preferences.py:446
+#: backends/session/util/locales.py:62 samsung-tools-preferences.py:446
 msgid "Wireless"
 msgstr "无线网络"
 
-#: backends/session/util/locales.py:64
+#: backends/session/util/locales.py:63
 msgid "Wireless is enabled"
 msgstr "无线网络已启用"
 
-#: backends/session/util/locales.py:65
+#: backends/session/util/locales.py:64
 msgid "Wireless is disabled"
 msgstr "无线网络已禁用"
 
-#: backends/session/util/locales.py:66
+#: backends/session/util/locales.py:65
 msgid "Wireless enabled"
 msgstr "无线网络启用"
 
-#: backends/session/util/locales.py:67
+#: backends/session/util/locales.py:66
 msgid "Wireless disabled"
 msgstr "无线网络禁用"
 
-#: backends/session/util/locales.py:68
+#: backends/session/util/locales.py:67
 msgid "Wireless cannot be enabled"
 msgstr "无线网络无法启用"
 
-#: backends/session/util/locales.py:69
+#: backends/session/util/locales.py:68
 msgid "Wireless cannot be disabled"
 msgstr "无线网络无法禁用"
 
-#: backends/session/util/locales.py:70
+#: backends/session/util/locales.py:69
 msgid "Wireless cannot be toggled"
 msgstr "无线网络无法切换"
 
-#: backends/session/util/locales.py:71
+#: backends/session/util/locales.py:70
 msgid "Wireless control is not available"
 msgstr "无线网络控制不可用"
 
-#: samsung-tools.py:54
+#: samsung-tools.py:58
 msgid "Backlight control: unable to connect to session service!"
 msgstr "背光控制: 无法连接到会话服务!"
 
-#: samsung-tools.py:143
+#: samsung-tools.py:147
 msgid "Bluetooth control: unable to connect to session service!"
 msgstr "蓝牙控制: 无法连接到会话服务!"
 
-#: samsung-tools.py:245
+#: samsung-tools.py:249
 msgid "CPU fan control: unable to connect to session service!"
 msgstr "CPU风扇控制: 无法连接到会话服务!"
 
-#: samsung-tools.py:395
+#: samsung-tools.py:399
 msgid "Webcam control: unable to connect to session service!"
 msgstr "网络摄像头控制: 无法连接到会话服务!"
 
-#: samsung-tools.py:497
+#: samsung-tools.py:501
 msgid "Wireless control: unable to connect to session service!"
 msgstr "无线网络控制: 无法连接到会话服务!"
 
-#: samsung-tools.py:586
+#: samsung-tools.py:590
 msgid "Command Line Utility"
 msgstr "命令行实用程序"
 
-#: samsung-tools.py:588 samsung-tools.py:638
+#: samsung-tools.py:592 samsung-tools.py:642
 #, python-format
 msgid "Usage: %s <interface> <option> ..."
 msgstr "用法: %s <接口> <选项> ..."
 
-#: samsung-tools.py:590 po/samsung-tools-preferences.glade.h:15
+#: samsung-tools.py:594 po/samsung-tools-preferences.glade.h:15
 msgid "Backlight:"
 msgstr "背光:"
 
-#: samsung-tools.py:591 samsung-tools.py:594 samsung-tools.py:597
-#: samsung-tools.py:600 samsung-tools.py:603
+#: samsung-tools.py:595 samsung-tools.py:598 samsung-tools.py:601
+#: samsung-tools.py:604 samsung-tools.py:607
 msgid "Interface"
 msgstr "界面"
 
-#: samsung-tools.py:592 samsung-tools.py:595 samsung-tools.py:598
-#: samsung-tools.py:601 samsung-tools.py:604
+#: samsung-tools.py:596 samsung-tools.py:599 samsung-tools.py:602
+#: samsung-tools.py:605 samsung-tools.py:608
 msgid "Options"
 msgstr "选项"
 
-#: samsung-tools.py:593 po/samsung-tools-preferences.glade.h:13
+#: samsung-tools.py:597 po/samsung-tools-preferences.glade.h:13
 msgid "Bluetooth:"
 msgstr "蓝牙:"
 
-#: samsung-tools.py:596 po/samsung-tools-preferences.glade.h:11
+#: samsung-tools.py:600 po/samsung-tools-preferences.glade.h:11
 msgid "CPU fan:"
 msgstr "CPU风扇:"
 
-#: samsung-tools.py:599 po/samsung-tools-preferences.glade.h:9
+#: samsung-tools.py:603 po/samsung-tools-preferences.glade.h:9
 msgid "Webcam:"
 msgstr "网络摄像头:"
 
-#: samsung-tools.py:602 po/samsung-tools-preferences.glade.h:19
+#: samsung-tools.py:606 po/samsung-tools-preferences.glade.h:19
 msgid "Wireless:"
 msgstr "无线网络:"
 
-#: samsung-tools.py:606
+#: samsung-tools.py:610
 msgid "Other options:"
 msgstr "其它选项:"
 
-#: samsung-tools.py:607
+#: samsung-tools.py:611
 msgid "Show status for all devices."
 msgstr "为所有设备显示状态."
 
-#: samsung-tools.py:608
+#: samsung-tools.py:612
 msgid "Show graphical notifications."
 msgstr "显示图形通知."
 
-#: samsung-tools.py:609
+#: samsung-tools.py:613
 msgid "Do not print messages on standard output."
 msgstr "不要在标准输出上显示消息."
 
-#: samsung-tools.py:610
+#: samsung-tools.py:614
 msgid "Show the control interface currently in use."
 msgstr "显示当前使用的控制接口."
 
-#: samsung-tools.py:611
+#: samsung-tools.py:615
 msgid "Stop the session service."
 msgstr "停止会话服务."
 
-#: samsung-tools.py:612
+#: samsung-tools.py:616
 msgid "Stop the system service."
 msgstr "停止系统服务."
 
-#: samsung-tools.py:614
+#: samsung-tools.py:618
 msgid "Examples of use:"
 msgstr "使用样例:"
 
-#: samsung-tools.py:615
+#: samsung-tools.py:619
 msgid " - Toggle backlight:"
 msgstr " - 切换背光:"
 
-#: samsung-tools.py:618
+#: samsung-tools.py:622
 msgid " - Toggle wireless and set CPU fan mode to 'silent':"
 msgstr " - 切换无线网络并设置CPU风扇模式为'安静':"
 
-#: samsung-tools.py:621
+#: samsung-tools.py:625
 msgid " - Disable bluetooth, webcam and wireless:"
 msgstr " - 禁用蓝牙, 网络摄像头和无线网络:"
 
-#: samsung-tools.py:624
+#: samsung-tools.py:628
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "要获取更多信息, 请访问'Linux On My Samsung'论坛:"
 
-#: samsung-tools.py:629 samsung-tools-preferences.py:1079
+#: samsung-tools.py:633 samsung-tools-preferences.py:1018
 msgid "Released under GPLv3 license"
 msgstr "以GPLv3许可证发布"
 
-#: samsung-tools.py:634
+#: samsung-tools.py:638
 msgid "No action(s) specified."
 msgstr "未指定行为."
 
-#: samsung-tools.py:635 samsung-tools.py:706
+#: samsung-tools.py:639 samsung-tools.py:710
 msgid "Use --help for instructions."
 msgstr "使用 --help获得帮助."
 
-#: samsung-tools.py:701
+#: samsung-tools.py:705
 msgid "This program is intended to be used only by non-privileged users."
 msgstr "该程序仅限于非特权用户使用."
 
-#: samsung-tools.py:705
+#: samsung-tools.py:709
 msgid "Wrong argument(s)."
 msgstr "错误参数."
 
-#: samsung-tools.py:718
+#: samsung-tools.py:722
 msgid "Unable to start a DBus daemon!"
 msgstr "无法启动DBus守护进程!"
 
-#: samsung-tools.py:733 po/samsung-tools-preferences.glade.h:30
+#: samsung-tools.py:737 po/samsung-tools-preferences.glade.h:30
 msgid "Control interface:"
 msgstr "控制界面:"
 
-#: samsung-tools.py:741
+#: samsung-tools.py:745
 msgid "Control interface: unable to connect to system service!"
 msgstr "控制界面: 无法连接到系统服务!"
 
-#: samsung-tools.py:751
+#: samsung-tools.py:755
 msgid "Session service stopped"
 msgstr "会话服务停止"
 
-#: samsung-tools.py:754
+#: samsung-tools.py:758
 msgid "Cannot stop session service"
 msgstr "无法停止会话服务"
 
-#: samsung-tools.py:764
+#: samsung-tools.py:768
 msgid "System service stopped"
 msgstr "系统服务停止"
 
-#: samsung-tools.py:767
+#: samsung-tools.py:771
 msgid "Cannot stop system service"
 msgstr "无法停止系统服务"
 
