@@ -22,7 +22,7 @@ from backends.log import Log
 
 APP_NAME = "Samsung Tools"
 APP_VERSION = "2.1"
-WORK_DIRECTORY = "/usr/lib/samsung-tools/"
+WORK_DIRECTORY = "/usr/share/samsung-tools/"
 
 AUTHORS_LIST = [ "Fortunato Ventre" ]
 ARTISTS_LIST = [ "http://icons.mysitemyway.com" ]
@@ -109,9 +109,9 @@ SYSTEM_OBJECT_PATH_WEBCAM = "/Device/Webcam"
 SYSTEM_OBJECT_PATH_WIRELESS = "/Device/Wireless"
 
 # Power management scripts locations
-PM_DEVICES_POWER_MANAGEMENT = "/etc/pm/power.d/samsung-tools_devices-power-management"
-PM_USB_AUTOSUSPEND = "/etc/pm/power.d/samsung-tools_usb-autosuspend"
-PM_VM_WRITEBACK_TIME = "/etc/pm/power.d/samsung-tools_vm-writeback-time"
+PM_DEVICES_POWER_MANAGEMENT = "/usr/lib/pm-utils/power.d/samsung-tools_devices-power-management"
+PM_USB_AUTOSUSPEND = "/usr/lib/pm-utils/power.d/samsung-tools_usb-autosuspend"
+PM_VM_WRITEBACK_TIME = "/usr/lib/pm-utils/power.d/samsung-tools_vm-writeback-time"
 
 import sys, os.path
 ###

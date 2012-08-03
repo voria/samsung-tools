@@ -1,8 +1,8 @@
 [Desktop Entry]
 Name=Samsung Tools
 _Comment=Start the session service
-Icon=/usr/lib/samsung-tools/gui/icons/samsung-tools.png
-Exec=/usr/lib/samsung-tools/session-service.py
+Icon=/usr/share/samsung-tools/gui/icons/samsung-tools.png
+Exec=/usr/share/samsung-tools/session-service.py
 Terminal=false
 Type=Application
 OnlyShowIn=GNOME;XFCE;KDE;Unity;

@@ -21,7 +21,7 @@
 
 import os
 import sys
-WORK_DIRECTORY = "/usr/lib/samsung-tools"
+WORK_DIRECTORY = "/usr/share/samsung-tools"
 sys.path.append(WORK_DIRECTORY)
 
 from optparse import OptionParser

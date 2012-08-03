@@ -1,4 +1,4 @@
 [D-BUS Service]
 Name=org.voria.SamsungTools.System
-Exec=/usr/lib/samsung-tools/system-service.py
+Exec=/usr/share/samsung-tools/system-service.py
 User=root

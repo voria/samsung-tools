@@ -1,0 +1,8 @@
+#!/bin/sh
+
+case "$1" in
+	install|upgrade)
+		# Remove old installation files, if any
+		rm -rf /usr/lib/samsung-tools/
+		;;
+esac
