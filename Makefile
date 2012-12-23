@@ -27,8 +27,8 @@ install:
 	$(install_script) pm/sleep.d/20_samsung-tools $(DESTDIR)/usr/lib/pm-utils/sleep.d/
 	$(install_dir) $(DESTDIR)/usr/lib/pm-utils/power.d/
 	$(install_script) pm/power.d/* $(DESTDIR)/usr/lib/pm-utils/power.d/
-	$(install_dir) $(DESTDIR)/usr/share/systemd/system/
-	$(install_file) systemd/samsung-tools.service $(DESTDIR)/usr/share/systemd/system/
+	$(install_dir) $(DESTDIR)/usr/lib/systemd/system/
+	$(install_file) systemd/samsung-tools.service $(DESTDIR)/usr/lib/systemd/system/
 	# Locales
 	$(shell po/install.sh ${DESTDIR})
 	# CLI
