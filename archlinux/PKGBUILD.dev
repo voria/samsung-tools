@@ -1,13 +1,13 @@
 # Maintainer: Fortunato Ventre (voRia) <vorione AT gmail DOT com>
 
 pkgname=samsung-tools-bzr
-pkgver=556
+pkgver=561
 pkgrel=1
 pkgdesc="Tools for Samsung laptops - Development version"
 arch=('any')
 url="https://launchpad.net/samsung-tools"
 license=('GPL3')
-depends=('pm-utils' 'xbindkeys' 'rfkill' 'dbus-python' 'python-notify' 'vbetool')
+depends=('pm-utils' 'xbindkeys' 'rfkill' 'python2-dbus' 'python2-notify' 'vbetool')
 makedepends=('bzr')
 conflicts=('samsung-tools')
 provides=('samsung-tools')
@@ -46,9 +46,6 @@ package() {
 
   make DESTDIR="$pkgdir/" install || return 1
 
-  # Install /etc/rc.d/ script from bzr sources
-  install -D -m755 "archlinux/samsung-tools.rcd" "$pkgdir/etc/rc.d/samsung-tools" || return 1
-  
   # Use samsung-tools.install from bzr sources
   cat archlinux/samsung-tools.install > "$startdir/samsung-tools.install"
 }
