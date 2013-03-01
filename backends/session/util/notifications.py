@@ -25,7 +25,6 @@ from backends.globals import *
 # "pynotify" - Use pynotify module (notify-osd / gnome)
 # "dbus" - Use "org.freedesktop.Notifications" interface through dbus (kde)
 # None - Do not use notification system
-
 try:
 	method = None
 	command = "ps x"
@@ -38,9 +37,10 @@ try:
 		raise
 except:
 	method = "dbus"
-	import dbus
-	DBUS_METHOD_INTERFACE = "org.freedesktop.Notifications"
-	DBUS_METHOD_OBJECT = "/org/freedesktop/Notifications"
+
+import dbus
+DBUS_METHOD_INTERFACE = "org.freedesktop.Notifications"
+DBUS_METHOD_OBJECT = "/org/freedesktop/Notifications"
 
 class Notification():
 	""" Show user's notifications. """
@@ -65,6 +65,8 @@ class Notification():
 				self.initialized = True
 			else:
 				method = None
+		# Set a default timeout
+		self.timeout = 5000
 
 	def __connect(self):
 		""" Enable connection to session backend (used when method == 'dbus'). """
@@ -103,6 +105,10 @@ class Notification():
 		else:
 			self.urgency = None
 
+	def setTimeout(self, timeout):
+		""" Set notification's timeout. """
+		self.timeout = timeout
+
 	def show(self):
 		if not self.initialized or method == None or self.title == None or self.message == None:
 			return
@@ -110,8 +116,9 @@ class Notification():
 			self.notify.update(self.title, self.message, self.icon)
 			if self.urgency != None:
 				self.notify.set_urgency(self.urgency)
+			self.notify.set_timeout(self.timeout)
 			self.notify.show()
 		if method == "dbus":
 			interface = self.__connect()
 			if interface != None:
-				interface.Notify(APP_NAME, 0, self.icon, self.title, self.message, "", "", 3000)
+				interface.Notify(APP_NAME, 0, self.icon, self.title, self.message, "", "", self.timeout)
