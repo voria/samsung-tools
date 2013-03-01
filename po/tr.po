@@ -8,48 +8,48 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-03 10:34+0200\n"
-"PO-Revision-Date: 2011-11-23 12:29+0000\n"
-"Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
+"POT-Creation-Date: 2013-03-01 14:09+0100\n"
+"PO-Revision-Date: 2013-02-19 18:52+0000\n"
+"Last-Translator: Volkan Gezer <Unknown>\n"
 "Language-Team: Turkish <kde-i18n-it@kde.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-05-21 17:40+0000\n"
-"X-Generator: Launchpad (build 15275)\n"
+"X-Launchpad-Export-Date: 2013-03-01 13:04+0000\n"
+"X-Generator: Launchpad (build 16514)\n"
 
 #: backends/session/util/locales.py:24 samsung-tools-preferences.py:410
 msgid "Backlight"
-msgstr ""
+msgstr "Arka ışık"
 
 #: backends/session/util/locales.py:25
 msgid "Backlight is enabled"
-msgstr ""
+msgstr "Arka ışık etkinleştirildi"
 
 #: backends/session/util/locales.py:26
 msgid "Backlight is disabled"
-msgstr ""
+msgstr "Arka ışık devre dışı bırakıldı"
 
 #: backends/session/util/locales.py:27
 msgid "Backlight enabled"
-msgstr ""
+msgstr "Arka ışık etkin"
 
 #: backends/session/util/locales.py:28
 msgid "Backlight disabled"
-msgstr ""
+msgstr "Arka ışık devre dışı"
 
 #: backends/session/util/locales.py:29
 msgid "Backlight cannot be enabled"
-msgstr ""
+msgstr "Arka ışık etkinleştirilemedi"
 
 #: backends/session/util/locales.py:30
 msgid "Backlight cannot be disabled"
-msgstr ""
+msgstr "Arka ışık devre dışı bırakılamadı"
 
 #: backends/session/util/locales.py:31
 msgid "Backlight cannot be toggled"
-msgstr ""
+msgstr "Arka ışık ayarı değiştirilemedi"
 
 #: backends/session/util/locales.py:33 samsung-tools-preferences.py:419
 msgid "Bluetooth"
@@ -77,7 +77,7 @@ msgstr "Bluetooth etkinleştirilemedi"
 
 #: backends/session/util/locales.py:39
 msgid "Bluetooth cannot be disabled"
-msgstr ""
+msgstr "Bluetooth etkisizleştirilemedi"
 
 #: backends/session/util/locales.py:40
 msgid "Bluetooth cannot be toggled"
@@ -85,7 +85,7 @@ msgstr "Bluetooth aygıtıyla bağlantı kurulamadı"
 
 #: backends/session/util/locales.py:41
 msgid "Bluetooth control is not available"
-msgstr ""
+msgstr "Bluetooth denetimi kullanılamıyor"
 
 #: backends/session/util/locales.py:43 samsung-tools-preferences.py:428
 msgid "CPU fan"
@@ -109,15 +109,15 @@ msgstr "Fan modu: Sessiz"
 
 #: backends/session/util/locales.py:48
 msgid "Fan mode: Overclock"
-msgstr "Fan modu: Overclock"
+msgstr "Fan kipi: Hız aşırımı"
 
 #: backends/session/util/locales.py:49
 msgid "Cannot get fan mode"
-msgstr "Fan modu değeri okunamadı"
+msgstr "Fan kipi değeri okunamadı"
 
 #: backends/session/util/locales.py:50
 msgid "CPU fan control is not available"
-msgstr ""
+msgstr "İşlemci fanı kontrolü ele alınamadı"
 
 #: backends/session/util/locales.py:52 samsung-tools-preferences.py:437
 msgid "Webcam"
@@ -149,11 +149,11 @@ msgstr "Web kamerası inaktif moda geçirilemedi"
 
 #: backends/session/util/locales.py:59
 msgid "Webcam cannot be toggled"
-msgstr ""
+msgstr "Web kamerası ayarı değiştirilemedi"
 
 #: backends/session/util/locales.py:60
 msgid "Webcam control is not available"
-msgstr ""
+msgstr "Web kamerası denetimi kullanılamıyor"
 
 #: backends/session/util/locales.py:62 samsung-tools-preferences.py:446
 msgid "Wireless"
@@ -185,44 +185,44 @@ msgstr "Kablosuz ağ devre dışı bırakılamadı"
 
 #: backends/session/util/locales.py:69
 msgid "Wireless cannot be toggled"
-msgstr ""
+msgstr "Kablosuz ayarı değiştirilemedi"
 
 #: backends/session/util/locales.py:70
 msgid "Wireless control is not available"
-msgstr ""
+msgstr "Kablosuz denetimi kullanılamıyor"
 
 #: samsung-tools.py:58
 msgid "Backlight control: unable to connect to session service!"
-msgstr ""
+msgstr "Arka ışık denetimi: oturum hizmetine bağlanılamadı!"
 
 #: samsung-tools.py:147
 msgid "Bluetooth control: unable to connect to session service!"
-msgstr ""
+msgstr "Bluetooth"
 
 #: samsung-tools.py:249
 msgid "CPU fan control: unable to connect to session service!"
-msgstr ""
+msgstr "İşlemci fan denetimi: oturum hizmetine bağlanılamadı!"
 
 #: samsung-tools.py:399
 msgid "Webcam control: unable to connect to session service!"
-msgstr ""
+msgstr "Web kamerası denetimi: oturum hizmetine bağlanılamadı!"
 
 #: samsung-tools.py:501
 msgid "Wireless control: unable to connect to session service!"
-msgstr ""
+msgstr "Kablosuz denetimi: oturum hizmetine bağlanılamadı!"
 
 #: samsung-tools.py:590
 msgid "Command Line Utility"
-msgstr ""
+msgstr "Komut Satırı Aracı"
 
 #: samsung-tools.py:592 samsung-tools.py:642
 #, python-format
 msgid "Usage: %s <interface> <option> ..."
-msgstr ""
+msgstr "Kullanım: %s <arayüz> <seçenek> ..."
 
 #: samsung-tools.py:594 po/samsung-tools-preferences.glade.h:15
 msgid "Backlight:"
-msgstr ""
+msgstr "Arka ışık:"
 
 #: samsung-tools.py:595 samsung-tools.py:598 samsung-tools.py:601
 #: samsung-tools.py:604 samsung-tools.py:607
@@ -264,19 +264,19 @@ msgstr "Uyarıları göster."
 
 #: samsung-tools.py:613
 msgid "Do not print messages on standard output."
-msgstr ""
+msgstr "Standart çıktıda mesajları gösterme."
 
 #: samsung-tools.py:614
 msgid "Show the control interface currently in use."
-msgstr ""
+msgstr "Kullanımda olan denetim arayüzünü göster"
 
 #: samsung-tools.py:615
 msgid "Stop the session service."
-msgstr ""
+msgstr "Oturum hizmetini durdur."
 
 #: samsung-tools.py:616
 msgid "Stop the system service."
-msgstr ""
+msgstr "Sistem hizmetini durdur."
 
 #: samsung-tools.py:618
 msgid "Examples of use:"
@@ -284,19 +284,20 @@ msgstr "Kullanımı:"
 
 #: samsung-tools.py:619
 msgid " - Toggle backlight:"
-msgstr ""
+msgstr " - Arka ışık ayarını değiştir:"
 
 #: samsung-tools.py:622
 msgid " - Toggle wireless and set CPU fan mode to 'silent':"
 msgstr ""
+" - Kablosuz ayarını değiştir ve CPU fan kipi 'sessiz' ayarını değiştir:"
 
 #: samsung-tools.py:625
 msgid " - Disable bluetooth, webcam and wireless:"
-msgstr ""
+msgstr " - Bluetooth, web kamerası ve kablosuzu devre dışı bırak:"
 
 #: samsung-tools.py:628
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
-msgstr ""
+msgstr "Daha fazla bilgi için, 'Linux On My Samsung' forumunu ziyaret edin:"
 
 #: samsung-tools.py:633 samsung-tools-preferences.py:1018
 msgid "Released under GPLv3 license"
@@ -304,7 +305,7 @@ msgstr "GPLv3 lisanslıdır"
 
 #: samsung-tools.py:638
 msgid "No action(s) specified."
-msgstr ""
+msgstr "Hiçbir işlem belirtilmedi."
 
 #: samsung-tools.py:639 samsung-tools.py:710
 msgid "Use --help for instructions."
@@ -313,6 +314,8 @@ msgstr "yardım için --help parametresini kullanın"
 #: samsung-tools.py:705
 msgid "This program is intended to be used only by non-privileged users."
 msgstr ""
+"Bu programın sadece deneyimli olmayan kullanıcılar tarafından kullanılması "
+"amaçlanmıştır."
 
 #: samsung-tools.py:709
 msgid "Wrong argument(s)."
@@ -320,31 +323,31 @@ msgstr "Yanlış argüman(lar)"
 
 #: samsung-tools.py:722
 msgid "Unable to start a DBus daemon!"
-msgstr ""
+msgstr "DBus yardımcısı başlatılamadı!"
 
 #: samsung-tools.py:737 po/samsung-tools-preferences.glade.h:30
 msgid "Control interface:"
-msgstr ""
+msgstr "Denetim arayüzü:"
 
 #: samsung-tools.py:745
 msgid "Control interface: unable to connect to system service!"
-msgstr ""
+msgstr "Denetim arayüzü: sistem hizmetine bağlanılamadı!"
 
 #: samsung-tools.py:755
 msgid "Session service stopped"
-msgstr ""
+msgstr "Oturum hizmeti durduruldu"
 
 #: samsung-tools.py:758
 msgid "Cannot stop session service"
-msgstr ""
+msgstr "Oturum hizmeti durdurulamıyor"
 
 #: samsung-tools.py:768
 msgid "System service stopped"
-msgstr ""
+msgstr "Sistem hizmeti durduruldu"
 
 #: samsung-tools.py:771
 msgid "Cannot stop system service"
-msgstr ""
+msgstr "Sistem hizmeti durdurulamıyor"
 
 #: samsung-tools-preferences.py:79
 msgid "Please press the new hotkey"
@@ -359,7 +362,7 @@ msgstr "Hiçbiri"
 #: samsung-tools-preferences.py:715 samsung-tools-preferences.py:727
 #: samsung-tools-preferences.py:739
 msgid "Unable to connect to system service!"
-msgstr ""
+msgstr "Sistem hizmetine bağlanılamıyor!"
 
 #: samsung-tools-preferences.py:365
 msgid "Confirm"
@@ -367,19 +370,21 @@ msgstr "Onayla"
 
 #: samsung-tools-preferences.py:366
 msgid "Apply the new VIDs?"
-msgstr ""
+msgstr "Yeni VID'ler uygulansın mı?"
 
 #: samsung-tools-preferences.py:631
 msgid "You need a PHC enabled kernel to use this feature"
 msgstr ""
+"Bu özelliği kullanabilmeniz için PHC etkinleştirilmiş çekirdeğe ihtiyacınız "
+"var."
 
 #: samsung-tools-preferences.py:655
 msgid "Unable to connect to session service!"
-msgstr ""
+msgstr "Oturum hizmetine bağlanılamıyor!"
 
 #: samsung-tools-preferences.py:996
 msgid "Caution!"
-msgstr ""
+msgstr "Dikkat!"
 
 #: samsung-tools-preferences.py:997
 msgid ""
@@ -390,6 +395,12 @@ msgid ""
 "\n"
 "Are you sure you want to continue?"
 msgstr ""
+"CPU düşük volt kullanımı, güç ve enerji kazancında büyük kazanç sağlayabilir "
+"ancak <b>BU RİSKLİ BİR DENEYİMDİR</b>. İşlevsellikte sorunlar ve veri "
+"kaybına yol açabilir. Bu seçenekleri kullanmadan önce lütfen ne "
+"yaptığınızdan haberdar olun.\n"
+"\n"
+"Devam etmek istiyor musunuz?"
 
 #: po/samsung-tools-preferences.desktop.in.h:1
 #: po/samsung-tools-preferences.glade.h:7
@@ -410,7 +421,7 @@ msgstr "Sessiz"
 
 #: po/samsung-tools-preferences.glade.h:3
 msgid "Overclock"
-msgstr ""
+msgstr "Hız aşırtma"
 
 #: po/samsung-tools-preferences.glade.h:4
 msgid "Last status"
@@ -438,7 +449,7 @@ msgstr "Kısayol daha önce bluetooth için kullanıldı"
 
 #: po/samsung-tools-preferences.glade.h:14
 msgid "Hotkey used for backlight control"
-msgstr ""
+msgstr "Arka ışık denetimi için kullanılacak kısayol"
 
 #: po/samsung-tools-preferences.glade.h:16
 msgid "Click here to disable the hotkey"
@@ -466,7 +477,7 @@ msgstr "Kısayolları kullanabilmek için bu ayarı aktifleştirin"
 
 #: po/samsung-tools-preferences.glade.h:23
 msgid "Session service"
-msgstr ""
+msgstr "Oturum hizmeti"
 
 #: po/samsung-tools-preferences.glade.h:24
 msgid "<b>Initial status for devices</b>"
@@ -474,7 +485,7 @@ msgstr "<b>Aygıtların başlangıç durumları</b>"
 
 #: po/samsung-tools-preferences.glade.h:25
 msgid "The initial status at boot for Bluetooth"
-msgstr ""
+msgstr "Bilgisayar başlatıldığında Bluetooth durumu"
 
 #: po/samsung-tools-preferences.glade.h:26
 msgid "Click here to set the default value"
@@ -482,23 +493,23 @@ msgstr "Varsayılan değere dönmek için tıklayın"
 
 #: po/samsung-tools-preferences.glade.h:27
 msgid "The initial status at boot for webcam"
-msgstr ""
+msgstr "Bilgisayar başlatıldığındaki web kamerası durumu"
 
 #: po/samsung-tools-preferences.glade.h:28
 msgid "The initial status at boot for wireless"
-msgstr ""
+msgstr "Bilgisayar başlatıldığındaki kablosuz durumu"
 
 #: po/samsung-tools-preferences.glade.h:29
 msgid "The initial status at boot for CPU fan"
-msgstr ""
+msgstr "Bilgisayar başlatıldığındaki işlemci fanı durumu"
 
 #: po/samsung-tools-preferences.glade.h:31
 msgid "System service"
-msgstr ""
+msgstr "Sistem hizmeti"
 
 #: po/samsung-tools-preferences.glade.h:32
 msgid "Kernel parameters..."
-msgstr ""
+msgstr "Çekirdek parametreleri..."
 
 #: po/samsung-tools-preferences.glade.h:33
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:1
@@ -507,20 +518,20 @@ msgstr "Kernel parametrelerini düzenle"
 
 #: po/samsung-tools-preferences.glade.h:34
 msgid "CPU undervolting..."
-msgstr ""
+msgstr "Düşük gerilimde işlemci..."
 
 #: po/samsung-tools-preferences.glade.h:35
 msgid "Undervolt the CPU in order to save energy"
-msgstr ""
+msgstr "Enerji kazancı için işlemcinin gerilimini düşür"
 
 #: po/samsung-tools-preferences.glade.h:36
 msgid "Power management..."
-msgstr ""
+msgstr "Güç yönetimi..."
 
 #: po/samsung-tools-preferences.glade.h:37
 #: po/samsung-tools-preferences-power-management.glade.h:1
 msgid "Configure power management"
-msgstr ""
+msgstr "Güç yönetimini yapılandır"
 
 #: po/samsung-tools-preferences.glade.h:38
 msgid "Advanced power management"
@@ -534,10 +545,16 @@ msgid ""
 "bad results on power consumption and disk performance. Set a low value if "
 "you usually have plenty of unused RAM. The default value is 60."
 msgstr ""
+"Bu seçenek çekirdeğin bellek sayfalarını nasıl kadar şiddetle takas "
+"edeceğini kontrol eder. Daha yüksek değerler şiddeti arttırırken, düşük "
+"değerler azaltır. Diğer bir deyişle, değer ne kadar yüksekse sistemdeki "
+"takas sayısı o kadar fazla olacak ve güç tüketimi ile disk başarımında kötü "
+"sonuçlara yol açacaktır. Eğer kullanılmayan RAM miktarınız fazla ise, değeri "
+"düşürün. Varsayılan değer 60'tır."
 
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:3
 msgid "Swap control:"
-msgstr ""
+msgstr "Takas denetimi:"
 
 #: po/samsung-tools-preferences-kernel-parameters.glade.h:4
 msgid ""
@@ -547,10 +564,16 @@ msgid ""
 "bad results on power consumption and disk performance. Set a low value if "
 "you usually have plenty of unused RAM. The default value is 60."
 msgstr ""
+"Takas denetimi çekirdeğin bellek sayfalarını nasıl kadar şiddetle takas "
+"edeceğini kontrol eder. Daha yüksek değerler şiddeti arttırırken, düşük "
+"değerler azaltır. Diğer bir deyişle, değer ne kadar yüksekse sistemdeki "
+"takas sayısı o kadar fazla olacak ve güç tüketimi ile disk başarımında kötü "
+"sonuçlara yol açacaktır. Eğer kullanılmayan RAM miktarınız fazla ise, değeri "
+"düşürün. Varsayılan değer 60'tır."
 
 #: po/samsung-tools-preferences-phc.glade.h:1
 msgid "CPU undervolting"
-msgstr ""
+msgstr "İşlemci düşük gerilim uygulaması"
 
 #: po/samsung-tools-preferences-phc.glade.h:2
 msgid "<b>Frequencies</b>"
@@ -558,56 +581,64 @@ msgstr "<b>Frekans</b>"
 
 #: po/samsung-tools-preferences-phc.glade.h:3
 msgid "<b>Default VIDs</b>"
-msgstr ""
+msgstr "<b>Varsayılan VID'ler</b>"
 
 #: po/samsung-tools-preferences-phc.glade.h:4
 msgid "<b>New VIDs</b>"
-msgstr ""
+msgstr "<b>Yeni VID'ler</b>"
 
 #: po/samsung-tools-preferences-phc.glade.h:5
 msgid "Note: the new VIDs will be applied when this window will be closed."
-msgstr ""
+msgstr "Not: Yeni VID'ler bu pencere kapatıldıktan sonra uygulanacaktır."
 
 #: po/samsung-tools-preferences-phc.glade.h:6
 msgid "Set the new VIDs automatically at boot"
-msgstr ""
+msgstr "Yeni VID'leri bilgisayar başlarken otomatik ayarla"
 
 #: po/samsung-tools-preferences-phc.glade.h:7
 msgid ""
 "Enable this option only if the new VIDs are tested and safe, otherwise the "
 "machine might be no more bootable!"
 msgstr ""
+"Bu seçeneği sadece yeni VID'ler test edildi ve güvenli ise etkinleştirin. "
+"Aksi takdirde makineniz açılamaz olabilir!"
 
 #: po/samsung-tools-preferences-power-management.glade.h:2
 msgid "Devices power management"
-msgstr ""
+msgstr "Güç yönetimi aygıtları"
 
 #: po/samsung-tools-preferences-power-management.glade.h:3
 msgid ""
 "When enabled, all the devices will automatically enter power save mode when "
 "needed."
 msgstr ""
+"Etkinleştirildiğinde, gerekli olduğu anda tüm aygıtlar otomatik olarak güç "
+"tasarrufu kipine girecektir."
 
 #: po/samsung-tools-preferences-power-management.glade.h:4
 msgid "USB autosuspend"
-msgstr ""
+msgstr "USB otomatik durdur"
 
 #: po/samsung-tools-preferences-power-management.glade.h:5
 msgid ""
 "When enabled, the autosuspend feature for all the USB devices will be "
 "enabled."
 msgstr ""
+"Etkinleştirildiğinde, tüm USB aygıtları için otomatik durdur özelliği "
+"etkinleştirilecektir."
 
 #: po/samsung-tools-preferences-power-management.glade.h:6
 msgid "VM writeback time"
-msgstr ""
+msgstr "VM geri yazım zamanı"
 
 #: po/samsung-tools-preferences-power-management.glade.h:7
 msgid ""
 "When enabled, the kernel VM writeback time will be increased, resulting in "
 "less HD access and more energy saving."
 msgstr ""
+"Etkinleştirildiğinde, çekirdek VM geri yazma zamanı arttırılacak ve daha az "
+"Sabit Disk erişimi kullanılarak, enerji tasarrufu sağlanacak."
 
 #: po/samsung-tools-session-service.desktop.in.h:1
 msgid "Start the session service"
-msgstr ""
+msgstr "Oturum hizmetini başlat"

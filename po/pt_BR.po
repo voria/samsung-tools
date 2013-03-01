@@ -8,16 +8,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-03 10:34+0200\n"
-"PO-Revision-Date: 2012-02-17 12:09+0000\n"
-"Last-Translator: Rafael Neri <Unknown>\n"
+"POT-Creation-Date: 2013-03-01 14:09+0100\n"
+"PO-Revision-Date: 2013-02-25 17:29+0000\n"
+"Last-Translator: Maurício Meneghini Fauth <Unknown>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-it@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-05-21 17:40+0000\n"
-"X-Generator: Launchpad (build 15275)\n"
+"X-Launchpad-Export-Date: 2013-03-01 13:04+0000\n"
+"X-Generator: Launchpad (build 16514)\n"
 
 #: backends/session/util/locales.py:24 samsung-tools-preferences.py:410
 msgid "Backlight"
@@ -237,11 +237,11 @@ msgstr "Opções"
 
 #: samsung-tools.py:597 po/samsung-tools-preferences.glade.h:13
 msgid "Bluetooth:"
-msgstr "Bluetooth"
+msgstr "Bluetooth:"
 
 #: samsung-tools.py:600 po/samsung-tools-preferences.glade.h:11
 msgid "CPU fan:"
-msgstr "Ventoinha da CPU"
+msgstr "Ventoinha da CPU:"
 
 #: samsung-tools.py:603 po/samsung-tools-preferences.glade.h:9
 msgid "Webcam:"
@@ -481,7 +481,7 @@ msgstr "Serviço de sessão"
 
 #: po/samsung-tools-preferences.glade.h:24
 msgid "<b>Initial status for devices</b>"
-msgstr "b>Estado inicial para dispositivos</b>"
+msgstr "<b>Estado inicial para dispositivos</b>"
 
 #: po/samsung-tools-preferences.glade.h:25
 msgid "The initial status at boot for Bluetooth"
