@@ -1,3 +1,33 @@
+samsung-tools (2.2~ppa1~loms~raring) raring; urgency=low
+
+  * Install pm hooks as enabled by default.
+  * Fix printed messages when toggling wireless.
+  * Update shebangs to use direct path to python2. This seems to fix
+    the services autolaunch problem with newer dbus version.
+  * Fix encoding for piping.
+  * Move installation to /usr/share/.
+  * Move pm scripts in /usr/lib/pm-utils/.
+  * Add support for timeout in the notification system. (LP bug #1124566)
+  * Avoid to convert config options names to lowercase,
+    this fixes Turkish locale.
+  * Update translations to latest version from Launchpad.
+  * Update translators credits list.
+  * Minor code fixes.
+
+ -- Fortunato Ventre (voRia) <vorione@gmail.com>  Thu, 18 Jul 2013 19:04:05 +0100
+
+samsung-tools (2.1~ppa1~loms~raring) raring; urgency=low
+
+  * First upload for Raring Ringtail.
+
+ -- Fortunato Ventre (voRia) <vorione@gmail.com>  Sun, 28 Apr 2013 15:54:16 +0200
+
+samsung-tools (2.1~ppa1~loms~quantal) quantal; urgency=low
+
+  * First upload for Quantal Quetzal.
+
+ -- Fortunato Ventre (voRia) <vorione@gmail.com>  Tue, 23 Oct 2012 11:24:17 +0200
+
 samsung-tools (2.1~ppa1~loms~precise) precise; urgency=low
 
   * First upload for Precise Pangolin.
