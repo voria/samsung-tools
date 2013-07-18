@@ -36,6 +36,7 @@ class SessionConfig():
 	""" Manage session service configuration file """
 	def __init__(self, configfile):
 		self.config = ConfigParser.SafeConfigParser()
+		self.config.optionxform = str # Avoid to lowercase options names, this fixes Turkish locale
 		self.configfile = configfile
 		try:
 			self.config.readfp(open(configfile, "r"))
