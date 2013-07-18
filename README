@@ -1,1 +1,17 @@
-Look at debian/README.Debian
+Samsung Tools
+Released under GPLv3 terms - See 'LICENSE' for more details
+
+Copyleft by
+Fortunato Ventre (voRia) - vorione@gmail.com - http://www.voria.org/forum
+
+Dependencies:
+- pm-utils
+- dbus-python
+- pygtk
+- python-notify
+- rfkill
+- xbindkeys
+- vbetool
+
+Optional:
+- phc-intel
