@@ -2,7 +2,7 @@
 # coding=UTF-8
 #
 # Samsung-Tools
-# 
+#
 # Part of the 'Linux On My Samsung' project - <http://www.voria.org/forum>
 #
 # Copyleft (C) 2010 by
