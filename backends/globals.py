@@ -21,7 +21,7 @@
 from backends.log import Log
 
 APP_NAME = "Samsung Tools"
-APP_VERSION = "2.1"
+APP_VERSION = "2.2"
 WORK_DIRECTORY = "/usr/share/samsung-tools/"
 
 AUTHORS_LIST = [ "Fortunato Ventre" ]
