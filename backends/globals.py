@@ -87,7 +87,8 @@ TRANSLATORS_LIST = [
 					"Kim Boram",
 					"Volkan Gezer",
 					"Maurício Meneghini Fauth",
-					"Thambaru Wijesekara"
+					"Thambaru Wijesekara",
+					"පසිඳු කාවින්ද"
 					]
 
 # Interface/Objects for session service
