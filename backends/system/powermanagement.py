@@ -101,10 +101,7 @@ class SysCtl(dbus.service.Object):
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def IsAvailable(self, sender = None, conn = None):
-		if os.path.exists(SYSCTL_CONFIG_FILE):
-			return True
-		else:
-			return False
+		return os.path.exists(SYSCTL_CONFIG_FILE)
 
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'i',
 						sender_keyword = 'sender', connection_keyword = 'conn')

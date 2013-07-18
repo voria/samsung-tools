@@ -37,10 +37,7 @@ class Cpu(dbus.service.Object):
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def IsPHCAvailable(self, sender = None, conn = None):
-		if os.path.exists(PHC_VIDS_CPU0):
-			return True
-		else:
-			return False
+		return os.path.exists(PHC_VIDS_CPU0)
 
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 's',
 						sender_keyword = 'sender', connection_keyword = 'conn')
@@ -109,10 +106,7 @@ class Cpu(dbus.service.Object):
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def IsTemperatureAvailable(self, sender = None, conn = None):
 		""" Return 'True' if temperature reading is available, 'False' otherwise. """
-		if os.path.exists(CPU_TEMPERATURE_PATH):
-			return True
-		else:
-			return False
+		return os.path.exists(CPU_TEMPERATURE_PATH)
 
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 's',
 						sender_keyword = 'sender', connection_keyword = 'conn')
