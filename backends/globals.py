@@ -1,7 +1,7 @@
 # coding=UTF-8
 #
 # Samsung-Tools
-# 
+#
 # Part of the 'Linux On My Samsung' project - <http://www.voria.org/forum>
 #
 # Copyleft (C) 2010 by
@@ -86,7 +86,8 @@ TRANSLATORS_LIST = [
 					"Adolfo Jayme Barrientos",
 					"Kim Boram",
 					"Volkan Gezer",
-					"Maurício Meneghini Fauth"
+					"Maurício Meneghini Fauth",
+					"Thambaru Wijesekara"
 					]
 
 # Interface/Objects for session service

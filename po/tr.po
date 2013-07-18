@@ -9,15 +9,15 @@ msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-03-01 14:09+0100\n"
-"PO-Revision-Date: 2013-02-19 18:52+0000\n"
+"PO-Revision-Date: 2013-04-22 00:51+0000\n"
 "Last-Translator: Volkan Gezer <Unknown>\n"
 "Language-Team: Turkish <kde-i18n-it@kde.org>\n"
-"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-03-01 13:04+0000\n"
-"X-Generator: Launchpad (build 16514)\n"
+"X-Launchpad-Export-Date: 2013-07-18 09:36+0000\n"
+"X-Generator: Launchpad (build 16696)\n"
+"Language: tr\n"
 
 #: backends/session/util/locales.py:24 samsung-tools-preferences.py:410
 msgid "Backlight"
@@ -125,7 +125,7 @@ msgstr "Web kamerası"
 
 #: backends/session/util/locales.py:53
 msgid "Webcam is enabled"
-msgstr "Web kamerası aktifleştirildi"
+msgstr "Web kamerası etkinleştirildi"
 
 #: backends/session/util/locales.py:54
 msgid "Webcam is disabled"
@@ -141,7 +141,7 @@ msgstr "Web kamerası aktif değil"
 
 #: backends/session/util/locales.py:57
 msgid "Webcam cannot be enabled"
-msgstr "Web kamerası aktifleştirilemedi"
+msgstr "Web kamerası etkinleştirilemedi"
 
 #: backends/session/util/locales.py:58
 msgid "Webcam cannot be disabled"
@@ -161,7 +161,7 @@ msgstr "Kablosuz ağ"
 
 #: backends/session/util/locales.py:63
 msgid "Wireless is enabled"
-msgstr "Kablosuz ağ aktifleştirildi"
+msgstr "Kablosuz ağ etkinleştirildi"
 
 #: backends/session/util/locales.py:64
 msgid "Wireless is disabled"
@@ -469,11 +469,11 @@ msgstr "Kısayolları varsayılan değerlere döndürmek için tıklayın"
 
 #: po/samsung-tools-preferences.glade.h:21
 msgid "Enable hotkeys"
-msgstr "Kısayolları aktifleştir"
+msgstr "Kısayolları etkinleştir"
 
 #: po/samsung-tools-preferences.glade.h:22
 msgid "Enable this option to use hotkeys"
-msgstr "Kısayolları kullanabilmek için bu ayarı aktifleştirin"
+msgstr "Kısayolları kullanabilmek için bu ayarı etkinleştirin"
 
 #: po/samsung-tools-preferences.glade.h:23
 msgid "Session service"
