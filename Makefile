@@ -71,4 +71,4 @@ uninstall:
 	rm -rf $(DESTDIR)/usr/lib/pm-utils/power.d/samsung-tools_*
 	rm -rf $(DESTDIR)/usr/share/applications/samsung-tools-preferences.desktop
 	rm -rf $(DESTDIR)/etc/xdg/autostart/samsung-tools-session-service.desktop
-	
+	rm -rf $(DESTDIR)/usr/lib/systemd/system/samsung-tools.service
