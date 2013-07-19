@@ -25,7 +25,7 @@ APP_VERSION = "2.2"
 WORK_DIRECTORY = "/usr/share/samsung-tools/"
 
 AUTHORS_LIST = [ "Fortunato Ventre" ]
-ARTISTS_LIST = [ "http://icons.mysitemyway.com" ]
+ARTISTS_LIST = [ "Angelo Giovanni Giudice" ]
 TRANSLATORS_LIST = [
 					"Fortunato Ventre",
 					"Lionel BASTET",
