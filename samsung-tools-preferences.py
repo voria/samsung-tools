@@ -1021,10 +1021,7 @@ Are you sure you want to continue?"), "utf-8")
 		dialog.set_website("http://www.voria.org/forum")
 		dialog.set_website_label("Linux On My Samsung")
 		dialog.set_authors(AUTHORS_LIST)
-		artists = ""
-		for name in ARTISTS_LIST:
-			artists += name + "\n"
-		dialog.set_artists(artists)
+		dialog.set_artists(ARTISTS_LIST)
 		translators = ""
 		for name in TRANSLATORS_LIST:
 			translators += name + "\n"
