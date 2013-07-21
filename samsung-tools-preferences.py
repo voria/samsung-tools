@@ -1009,6 +1009,7 @@ Are you sure you want to continue?"), "utf-8")
 			PhcDialog(self.mainWindow)
 
 	def about(self, button = None):
+		ARTISTS_LIST.sort(cmp = lambda x, y: cmp(x.lower(), y.lower()))
 		TRANSLATORS_LIST.sort(cmp = lambda x, y: cmp(x.lower(), y.lower()))
 
 		dialog = gtk.AboutDialog()
@@ -1020,7 +1021,10 @@ Are you sure you want to continue?"), "utf-8")
 		dialog.set_website("http://www.voria.org/forum")
 		dialog.set_website_label("Linux On My Samsung")
 		dialog.set_authors(AUTHORS_LIST)
-		dialog.set_artists(ARTISTS_LIST)
+		artists = ""
+		for name in ARTISTS_LIST:
+			artists += name + "\n"
+		dialog.set_artists(artists)
 		translators = ""
 		for name in TRANSLATORS_LIST:
 			translators += name + "\n"
