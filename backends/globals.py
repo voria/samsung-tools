@@ -121,6 +121,7 @@ SYSTEM_OBJECT_PATH_WIRELESS = "/Device/Wireless"
 PM_DEVICES_POWER_MANAGEMENT = "/usr/lib/pm-utils/power.d/samsung-tools_devices-power-management"
 PM_USB_AUTOSUSPEND = "/usr/lib/pm-utils/power.d/samsung-tools_usb-autosuspend"
 PM_VM_WRITEBACK_TIME = "/usr/lib/pm-utils/power.d/samsung-tools_vm-writeback-time"
+PM_SCRIPTS = ( PM_DEVICES_POWER_MANAGEMENT, PM_USB_AUTOSUSPEND, PM_VM_WRITEBACK_TIME )
 
 import sys, os.path
 ###

@@ -156,9 +156,7 @@ class PowerManagement(dbus.service.Object):
 		""" Return "True" if it exists and we can work on it, "False" otherwise. """
 		# Check if the script is one of the scripts of Samsung Tools,
 		# in order to avoid security issues.
-		if script == PM_DEVICES_POWER_MANAGEMENT or \
-		script == PM_USB_AUTOSUSPEND or \
-		script == PM_VM_WRITEBACK_TIME:
+		if script in PM_SCRIPTS:
 			return os.access(script, os.F_OK)
 		return False
 
