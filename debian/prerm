@@ -9,5 +9,7 @@ case "$1" in
 		rm -rf "$DIR/devices-status"
 		# Remove control_interface file
 		rm -f "$DIR/control_interface"
+		# Remove sysctl config file
+		rm -f "/etc/sysctl.d/30-samsung-tools.conf"
 		;;
 esac
