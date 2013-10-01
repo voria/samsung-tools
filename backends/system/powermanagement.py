@@ -101,7 +101,13 @@ class SysCtl(dbus.service.Object):
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def IsAvailable(self, sender = None, conn = None):
-		return os.path.exists(SYSCTL_CONFIG_FILE)
+		if not os.path.exists(SYSCTL_CONFIG_FILE):
+			try:
+				open(SYSCTL_CONFIG_FILE, "w").close()
+			except:
+				systemlog.write("ERROR: 'SysCtl.IsAvailable()' - cannot write the config file.")
+				return False
+		return True
 
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'i',
 						sender_keyword = 'sender', connection_keyword = 'conn')
@@ -124,8 +130,10 @@ class SysCtl(dbus.service.Object):
 		from subprocess import Popen, PIPE
 		try:
 			value = self.__read(SYSCTL_CONFIG_FILE, "vm.swappiness")
-			if value != None:
-				command = COMMAND_SYSCTL + " vm.swappiness=" + value
+			if value == None:
+				return False
+
+			command = COMMAND_SYSCTL + " vm.swappiness=" + value
 			process = Popen(command.split(), stdout = PIPE, stderr = PIPE)
 			process.communicate()
 			if process.returncode != 0:

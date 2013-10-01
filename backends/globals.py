@@ -181,4 +181,4 @@ if os.path.basename(sys.argv[0]) == "system-service.py":
 	# Temperature
 	CPU_TEMPERATURE_PATH = "/sys/class/thermal/thermal_zone0/temp"
 	# sysctl configuration file
-	SYSCTL_CONFIG_FILE = "/etc/sysctl.conf"
+	SYSCTL_CONFIG_FILE = "/etc/sysctl.d/30-samsung-tools.conf"
