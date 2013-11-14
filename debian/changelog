@@ -1,3 +1,14 @@
+samsung-tools (2.3~ppa1~loms~saucy) saucy; urgency=low
+
+  * Use own sysctl config file instead of the global one
+  * Remove all Samsung Tools files on package removal on Debian based systems
+  * Add mdm to list of login managers in upstart job (LP #1235097)
+  * Add a new icon (thanks to Angelo Giovanni Giudice!)
+  * Update artists list
+  * Minor fixes
+
+ -- Fortunato Ventre (voRia) <vorione@gmail.com>  Thu, 14 Nov 2013 14:21:26 +0100
+
 samsung-tools (2.2~ppa1~loms~raring) raring; urgency=low
 
   * Install pm hooks as enabled by default.

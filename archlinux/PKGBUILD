@@ -1,8 +1,8 @@
 # Maintainer: Fortunato Ventre (voRia) <vorione AT gmail DOT com>
 
 pkgname=samsung-tools
-pkgver=2.2
-pkgrel=2
+pkgver=2.3
+pkgrel=1
 pkgdesc="Tools for Samsung laptops"
 arch=('any')
 url="https://launchpad.net/samsung-tools"
