@@ -11,7 +11,7 @@ install:
 	$(install_file) backends/*.py $(DESTDIR)$(PREFIX)/share/samsung-tools/backends/
 	$(install_dir) $(DESTDIR)$(PREFIX)/share/samsung-tools/backends/system/util/
 	$(install_file) backends/system/util/*.py $(DESTDIR)$(PREFIX)/share/samsung-tools/backends/system/util/
-	$(install_file) backends/system/*.py $(DESTDIR)/usr/share/samsung-tools/backends/system/
+	$(install_file) backends/system/*.py $(DESTDIR)$(PREFIX)/share/samsung-tools/backends/system/
 	$(install_dir) $(DESTDIR)$(PREFIX)/share/samsung-tools/backends/session/util/
 	$(install_file) backends/session/util/*.py $(DESTDIR)$(PREFIX)/share/samsung-tools/backends/session/util/
 	$(install_file) backends/session/*.py $(DESTDIR)$(PREFIX)/share/samsung-tools/backends/session/
