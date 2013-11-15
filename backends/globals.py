@@ -23,7 +23,6 @@ from backends.log import Log
 APP_NAME = "Samsung Tools"
 APP_VERSION = "2.3"
 WORK_DIRECTORY = "/usr/share/samsung-tools"
-LOCALE_DIRECTORY = "/usr/share/locale"
 
 AUTHORS_LIST = [ "Fortunato Ventre" ]
 ARTISTS_LIST = [

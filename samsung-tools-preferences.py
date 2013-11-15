@@ -30,18 +30,12 @@ WORK_DIRECTORY = "/usr/share/samsung-tools"
 import sys
 sys.path.append(WORK_DIRECTORY)
 
-from backends.globals import *
-
 import gettext
 _ = gettext.gettext
-gettext.bindtextdomain("samsung-tools", LOCALE_DIRECTORY)
+gettext.bindtextdomain("samsung-tools")
 gettext.textdomain("samsung-tools")
 
-# Needed in order to use the correct locale in UI when
-# locale directory is non-standard
-import locale
-locale.bindtextdomain("samsung-tools", LOCALE_DIRECTORY)
-
+from backends.globals import *
 from backends.session.util.icons import *
 
 # Popup (based on code from compizconfig-settings-manager)

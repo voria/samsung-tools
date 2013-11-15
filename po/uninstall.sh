@@ -1,8 +1,8 @@
 #!/bin/bash
 # This script is intended to be called from Makefile, it uninstalls locales
 
-PREFIX=$1
+DESTDIR=$1
 
 for locale in `cat po/LINGUAS`; do
-	rm -f $PREFIX/share/locale/$locale/LC_MESSAGES/samsung-tools.mo
+	rm -f $DESTDIR/usr/share/locale/$locale/LC_MESSAGES/samsung-tools.mo
 done

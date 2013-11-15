@@ -26,13 +26,12 @@ import dbus
 import dbus.service
 import dbus.mainloop.glib
 
-from backends.globals import *
-
 import gettext
 _ = gettext.gettext
-gettext.bindtextdomain("samsung-tools", LOCALE_DIRECTORY)
+gettext.bindtextdomain("samsung-tools")
 gettext.textdomain("samsung-tools")
 
+from backends.globals import *
 from backends.session.options import Options
 from backends.session.backlight import Backlight
 from backends.session.bluetooth import Bluetooth
