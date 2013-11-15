@@ -5,7 +5,7 @@ install_script=install -pm 755
 
 install:
 	# Set work directory
-	$(shell ./set_work_directory.sh $(PREFIX)/share/samsung-tools/)
+	$(shell ./set_work_directory.sh $(PREFIX)/share/samsung-tools)
 	# Services
 	$(install_dir) $(DESTDIR)$(PREFIX)/share/samsung-tools/backends/
 	$(install_file) backends/*.py $(DESTDIR)$(PREFIX)/share/samsung-tools/backends/

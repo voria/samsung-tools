@@ -18,17 +18,17 @@
 # See the GNU General Public License for more details.
 # <http://www.gnu.org/licenses/gpl.txt>
 
+from os.path import join, exists
 from backends.globals import WORK_DIRECTORY
 
-SAMSUNG_TOOLS_ICON = WORK_DIRECTORY + "gui/icons/samsung-tools.png"
+SAMSUNG_TOOLS_ICON = join(WORK_DIRECTORY, "gui/icons/samsung-tools.png")
 
-FAN_NORMAL_ICON = WORK_DIRECTORY + "gui/icons/fan-normal.png"
-FAN_SILENT_ICON = WORK_DIRECTORY + "gui/icons/fan-silent.png"
-FAN_OVERCLOCK_ICON = WORK_DIRECTORY + "gui/icons/fan-overclock.png"
+FAN_NORMAL_ICON = join(WORK_DIRECTORY, "gui/icons/fan-normal.png")
+FAN_SILENT_ICON = join(WORK_DIRECTORY, "gui/icons/fan-silent.png")
+FAN_OVERCLOCK_ICON = join(WORK_DIRECTORY, "gui/icons/fan-overclock.png")
 WEBCAM_ICON = "camera-web"
 
 # If notify-osd icons are not available, use the default ones
-from os.path import exists
 if exists("/usr/share/notify-osd/icons/"):
 	BLUETOOTH_ICON = "bluetooth"
 	WIRELESS_ENABLED_ICON = "notification-network-wireless-none"
@@ -36,7 +36,7 @@ if exists("/usr/share/notify-osd/icons/"):
 	ERROR_ICON = "error"
 	STOP_ICON = "stop"
 else:
-	BLUETOOTH_ICON = WORK_DIRECTORY + "gui/icons/bluetooth.png"
+	BLUETOOTH_ICON = join(WORK_DIRECTORY, "gui/icons/bluetooth.png")
 	WIRELESS_ENABLED_ICON = "network-wireless"
 	WIRELESS_DISABLED_ICON = "network-wireless"
 	ERROR_ICON = "dialog-error"

@@ -25,7 +25,7 @@ import gtk
 import gobject
 import dbus
 
-WORK_DIRECTORY = "/usr/share/samsung-tools/"
+WORK_DIRECTORY = "/usr/share/samsung-tools"
 
 import sys
 sys.path.append(WORK_DIRECTORY)
