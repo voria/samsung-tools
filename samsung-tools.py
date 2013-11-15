@@ -27,12 +27,13 @@ sys.path.append(WORK_DIRECTORY)
 from optparse import OptionParser
 import dbus
 
+from backends.globals import *
+
 import gettext
 _ = gettext.gettext
-gettext.bindtextdomain("samsung-tools")
+gettext.bindtextdomain("samsung-tools", LOCALE_DIRECTORY)
 gettext.textdomain("samsung-tools")
 
-from backends.globals import *
 from backends.session.util.locales import *
 
 quiet = False

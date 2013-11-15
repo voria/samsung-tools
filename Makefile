@@ -33,7 +33,7 @@ install:
 	$(install_dir) $(DESTDIR)/usr/lib/systemd/system/
 	$(install_file) systemd/samsung-tools.service $(DESTDIR)/usr/lib/systemd/system/
 	# Locales
-	$(shell po/install.sh $(DESTDIR))
+	$(shell po/install.sh $(DESTDIR)$(PREFIX))
 	# CLI
 	$(install_dir) $(DESTDIR)$(PREFIX)/bin/
 	$(install_script) samsung-tools.py $(DESTDIR)$(PREFIX)/bin/samsung-tools
@@ -61,7 +61,7 @@ install:
 	rm -f desktop/samsung-tools-preferences.desktop
 
 uninstall:
-	$(shell po/uninstall.sh $(DESTDIR))
+	$(shell po/uninstall.sh $(DESTDIR)$(PREFIX))
 	rm -rf $(DESTDIR)$(PREFIX)/bin/samsung-tools
 	rm -rf $(DESTDIR)$(PREFIX)/bin/samsung-tools-preferences
 	rm -rf $(DESTDIR)$(PREFIX)/share/samsung-tools/

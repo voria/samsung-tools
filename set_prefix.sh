@@ -4,10 +4,10 @@
 PREFIX=$1
 
 # Update main files
-FILES=("backends/globals.py" "samsung-tools-preferences.py" "samsung-tools.py")
-for file in ${FILES[*]}; do
-	sed -i "s|WORK_DIRECTORY = .*|WORK_DIRECTORY = \"$PREFIX/share/samsung-tools\"|" $file
-done
+sed -i "s|LOCALE_DIRECTORY = .*|LOCALE_DIRECTORY = \"$PREFIX/share/locale\"|" backends/globals.py
+sed -i "s|WORK_DIRECTORY = .*|WORK_DIRECTORY = \"$PREFIX/share/samsung-tools\"|" backends/globals.py
+sed -i "s|WORK_DIRECTORY = .*|WORK_DIRECTORY = \"$PREFIX/share/samsung-tools\"|" samsung-tools-preferences.py
+sed -i "s|WORK_DIRECTORY = .*|WORK_DIRECTORY = \"$PREFIX/share/samsung-tools\"|" samsung-tools.py
 
 # Update dbus services files
 sed -i "s|Exec=.*|Exec=$PREFIX/share/samsung-tools/session-service.py|" bus/services/org.voria.SamsungTools.Session.service
