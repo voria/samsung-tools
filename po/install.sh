@@ -10,5 +10,6 @@ done
 # Install
 for locale in `cat po/LINGUAS`; do
 	install -d -m 755 $DESTDIR/usr/share/locale/$locale/LC_MESSAGES/
-	mv po/$locale.mo $DESTDIR/usr/share/locale/$locale/LC_MESSAGES/samsung-tools.mo
+	install -pm 644 po/$locale.mo $DESTDIR/usr/share/locale/$locale/LC_MESSAGES/samsung-tools.mo
+	rm -f po/$locale.mo
 done
