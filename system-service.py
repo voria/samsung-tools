@@ -190,4 +190,3 @@ if __name__ == '__main__':
 
 	mainloop = gobject.MainLoop()
 	mainloop.run()
-
