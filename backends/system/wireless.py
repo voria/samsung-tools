@@ -160,7 +160,6 @@ class Wireless(dbus.service.Object):
 			pass
 		return True
 
-
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def Disable(self, sender = None, conn = None):

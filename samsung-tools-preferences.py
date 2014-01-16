@@ -852,7 +852,6 @@ class Main():
 		session = self.__connect_session_options()
 		session.SetBacklightHotkey(self.__convert_gtk_to_xbindkeys(new))
 
-
 	def on_bluetoothHotkeyButton_changed(self, button = None, key = None, mods = None):
 		if key == 0 and mods == 0:
 			new = "disable"
