@@ -62,6 +62,7 @@ class KeyGrabber(gtk.Button):
 								gobject.TYPE_NONE,
 								[gobject.TYPE_INT, gobject.TYPE_INT]),
 					}
+
 	def __init__(self, label = None, popup_title = None):
 		"""Prepare widget"""
 		super(KeyGrabber, self).__init__()
