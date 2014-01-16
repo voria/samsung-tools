@@ -634,7 +634,7 @@ def usage(option = None, opt = None, value = None, parser = None):
 	sys.exit(0)
 
 def main():
-	if  len(sys.argv) == 1:
+	if len(sys.argv) == 1:
 		print unicode(_("No action(s) specified."), "utf-8")
 		print unicode(_("Use --help for instructions."), "utf-8")
 		sys.exit(1)
