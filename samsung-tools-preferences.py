@@ -58,7 +58,7 @@ class Popup (gtk.Window):
 
 # Key Grabber (based on code from compizconfig-settings-manager)
 class KeyGrabber(gtk.Button):
-	__gsignals__ = {"changed" : (gobject.SIGNAL_RUN_FIRST,
+	__gsignals__ = {"changed": (gobject.SIGNAL_RUN_FIRST,
 								gobject.TYPE_NONE,
 								[gobject.TYPE_INT, gobject.TYPE_INT]),
 					}
