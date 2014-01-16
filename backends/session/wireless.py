@@ -24,6 +24,7 @@ from backends.globals import *
 from backends.session.util.locales import *
 from backends.session.util.icons import *
 
+
 class Wireless(dbus.service.Object):
 	""" Control wireless """
 	def __init__(self, notify = None, conn = None, object_path = None, bus_name = None):

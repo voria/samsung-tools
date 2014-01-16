@@ -24,6 +24,7 @@ from backends.globals import *
 from backends.session.util.locales import *
 from backends.session.util.icons import *
 
+
 class Bluetooth(dbus.service.Object):
 	""" Control bluetooth """
 	def __init__(self, notify = None, conn = None, object_path = None, bus_name = None):

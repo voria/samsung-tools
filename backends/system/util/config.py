@@ -34,6 +34,7 @@ WEBCAM_INITIAL_STATUS_ACCEPTED_VALUES = ['on', 'off', 'last']
 WIRELESS_INITIAL_STATUS_ACCEPTED_VALUES = ['on', 'off', 'last']
 CPUFAN_INITIAL_STATUS_ACCEPTED_VALUES = ['normal', 'silent', 'overclock', 'last']
 
+
 class SystemConfig():
 	""" Manage system service configuration file """
 	def __init__(self, configfile):

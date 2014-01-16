@@ -24,6 +24,7 @@ from backends.globals import *
 from backends.session.util.locales import *
 from backends.session.util.icons import *
 
+
 class Cpu(dbus.service.Object):
 	""" Control CPU and Fan """
 	def __init__(self, notify = None, conn = None, object_path = None, bus_name = None):

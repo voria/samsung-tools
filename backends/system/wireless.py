@@ -28,6 +28,7 @@ from backends.globals import *
 
 # TODO: On systems with more wireless adapters, control them individually?
 
+
 class Wireless(dbus.service.Object):
 	""" Control wireless """
 	def __init__(self, conn = None, object_path = None, bus_name = None):

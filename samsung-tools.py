@@ -41,6 +41,7 @@ quiet = False
 import codecs
 sys.stdout = codecs.getwriter('utf-8')(sys.stdout)
 
+
 class Backlight():
 	def __init__(self, option):
 		self.option = option
@@ -128,6 +129,7 @@ class Backlight():
 					print BACKLIGHT_STATUS_ENABLED
 				else:
 					print BACKLIGHT_STATUS_DISABLED
+
 
 class Bluetooth():
 	def __init__(self, option, use_notify = False):
@@ -230,6 +232,7 @@ class Bluetooth():
 					print BLUETOOTH_STATUS_ENABLED
 				else:
 					print BLUETOOTH_STATUS_DISABLED
+
 
 class Cpu():
 	def __init__(self, option, use_notify = False):
@@ -381,6 +384,7 @@ class Cpu():
 				if result == 3:
 					print FAN_STATUS_ERROR
 
+
 class Webcam():
 	def __init__(self, option, use_notify = False):
 		self.option = option
@@ -482,6 +486,7 @@ class Webcam():
 					print WEBCAM_STATUS_ENABLED
 				else:
 					print WEBCAM_STATUS_DISABLED
+
 
 class Wireless():
 	def __init__(self, option, use_notify = False):
@@ -585,6 +590,7 @@ class Wireless():
 				else:
 					print WIRELESS_STATUS_DISABLED
 
+
 def usage(option = None, opt = None, value = None, parser = None):
 	print "Samsung Tools", APP_VERSION, "-",
 	print unicode(_("Command Line Utility"), "utf-8")
@@ -632,6 +638,7 @@ def usage(option = None, opt = None, value = None, parser = None):
 	print "Copyleft by: Fortunato Ventre (voRia) - vorione@gmail.com"
 	print unicode(_("Released under GPLv3 license"), "utf-8") + "."
 	sys.exit(0)
+
 
 def main():
 	if len(sys.argv) == 1:

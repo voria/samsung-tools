@@ -22,6 +22,7 @@ import dbus.service
 
 from backends.globals import *
 
+
 class Options(dbus.service.Object):
 	""" Manage system service options """
 	def __init__(self, conn = None, object_path = None, bus_name = None):

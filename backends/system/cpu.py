@@ -29,6 +29,7 @@ PHC_DEFAULT_VIDS = "/sys/devices/system/cpu/cpu0/cpufreq/phc_default_vids"
 PHC_FIDS = "/sys/devices/system/cpu/cpu0/cpufreq/phc_fids"
 PHC_FREQS = "/sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies"
 
+
 class Cpu(dbus.service.Object):
 	""" Handle CPU informations """
 	def __init__(self, conn = None, object_path = None, bus_name = None):

@@ -42,6 +42,7 @@ import dbus
 DBUS_METHOD_INTERFACE = "org.freedesktop.Notifications"
 DBUS_METHOD_OBJECT = "/org/freedesktop/Notifications"
 
+
 class Notification():
 	""" Show user's notifications. """
 	def __init__(self, title = None, message = None, icon = None, urgency = "normal"):

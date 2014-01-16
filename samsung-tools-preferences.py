@@ -38,8 +38,9 @@ gettext.textdomain("samsung-tools")
 from backends.globals import *
 from backends.session.util.icons import *
 
-# Popup (based on code from compizconfig-settings-manager)
+
 class Popup (gtk.Window):
+	# Popup (based on code from compizconfig-settings-manager)
 	def __init__(self, text, title, parent = None):
 		gtk.Window.__init__(self, gtk.WINDOW_TOPLEVEL)
 		self.set_type_hint(gtk.gdk.WINDOW_TYPE_HINT_UTILITY)
@@ -56,8 +57,9 @@ class Popup (gtk.Window):
 		align.add(label)
 		self.add(align)
 
-# Key Grabber (based on code from compizconfig-settings-manager)
+
 class KeyGrabber(gtk.Button):
+	# Key Grabber (based on code from compizconfig-settings-manager)
 	__gsignals__ = {"changed": (gobject.SIGNAL_RUN_FIRST,
 								gobject.TYPE_NONE,
 								[gobject.TYPE_INT, gobject.TYPE_INT]),
@@ -144,6 +146,7 @@ class KeyGrabber(gtk.Button):
 			label = label.replace("Primary", "Control")
 		gtk.Button.set_label(self, label)
 
+
 class KernelParametersDialog():
 	def __init__(self, parent):
 		# Setup GUI
@@ -187,6 +190,7 @@ class KernelParametersDialog():
 		conn.SetSwappiness(self.swappinessSpinbuttonValue)
 		conn.ApplySettings()
 		self.mainDialog.destroy()
+
 
 class PowerManagementDialog():
 	def __init__(self, parent):
@@ -261,6 +265,7 @@ class PowerManagementDialog():
 
 	def quit(self, widget = None, event = None):
 		self.mainDialog.destroy()
+
 
 class PhcDialog():
 	def __init__(self, parent):
@@ -380,6 +385,7 @@ class PhcDialog():
 			conn.SetPHCVids("default")
 
 		self.mainDialog.destroy()
+
 
 class Main():
 	def __init__(self):

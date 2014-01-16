@@ -23,6 +23,7 @@ import dbus.service
 
 from backends.globals import *
 
+
 class SysCtl(dbus.service.Object):
 	""" Manage sysctl options """
 	def __init__(self, conn = None, object_path = None, bus_name = None):
@@ -143,6 +144,7 @@ class SysCtl(dbus.service.Object):
 		except:
 			systemlog.write("ERROR: 'SysCtl.ApplySettings()' - COMMAND: '" + command + "' - Exception thrown.")
 			return False
+
 
 class PowerManagement(dbus.service.Object):
 	""" Manage power save options """

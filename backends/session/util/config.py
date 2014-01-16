@@ -32,6 +32,7 @@ WEBCAM_HOTKEY_DEFAULT = "Alt+KP_Insert"
 WIRELESS_HOTKEY_DEFAULT = "XF86WLAN"
 USE_HOTKEYS_ACCEPTED_VALUES = ['true', 'false']
 
+
 class SessionConfig():
 	""" Manage session service configuration file """
 	def __init__(self, configfile):

@@ -34,6 +34,7 @@ DUMMY_HOTKEY = "Control+Alt+Shift+Mod4+F1+F2+F3"
 
 XBINDKEYS_CONFIG_FILE = os.path.join(os.getenv('HOME'), ".xbindkeysrc")
 
+
 class Hotkeys():
 	def __init__(self):
 		# Make sure the xindkeys configuration file exists
