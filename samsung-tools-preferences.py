@@ -40,7 +40,7 @@ from backends.session.util.icons import *
 
 # Popup (based on code from compizconfig-settings-manager)
 class Popup (gtk.Window):
-	def __init__ (self, text, title, parent = None):
+	def __init__(self, text, title, parent = None):
 		gtk.Window.__init__(self, gtk.WINDOW_TOPLEVEL)
 		self.set_type_hint(gtk.gdk.WINDOW_TYPE_HINT_UTILITY)
 		self.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
@@ -62,7 +62,7 @@ class KeyGrabber(gtk.Button):
 								gobject.TYPE_NONE,
 								[gobject.TYPE_INT, gobject.TYPE_INT]),
 					}
-	def __init__ (self, label = None, popup_title = None):
+	def __init__(self, label = None, popup_title = None):
 		"""Prepare widget"""
 		super(KeyGrabber, self).__init__()
 		self.key = 0
