@@ -24,6 +24,7 @@ import dbus.service
 
 from backends.globals import *
 
+
 class Webcam(dbus.service.Object):
 	""" Control webcam """
 	def __init__(self, conn = None, object_path = None, bus_name = None):

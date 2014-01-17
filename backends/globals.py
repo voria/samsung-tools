@@ -24,7 +24,7 @@ APP_NAME = "Samsung Tools"
 APP_VERSION = "2.3"
 WORK_DIRECTORY = "/usr/share/samsung-tools"
 
-AUTHORS_LIST = [ "Fortunato Ventre" ]
+AUTHORS_LIST = ["Fortunato Ventre"]
 ARTISTS_LIST = [
 				"Fortunato Ventre",
 				"Angelo Giovanni Giudice"
@@ -121,7 +121,7 @@ SYSTEM_OBJECT_PATH_WIRELESS = "/Device/Wireless"
 PM_DEVICES_POWER_MANAGEMENT = "/usr/lib/pm-utils/power.d/samsung-tools_devices-power-management"
 PM_USB_AUTOSUSPEND = "/usr/lib/pm-utils/power.d/samsung-tools_usb-autosuspend"
 PM_VM_WRITEBACK_TIME = "/usr/lib/pm-utils/power.d/samsung-tools_vm-writeback-time"
-PM_SCRIPTS = ( PM_DEVICES_POWER_MANAGEMENT, PM_USB_AUTOSUSPEND, PM_VM_WRITEBACK_TIME )
+PM_SCRIPTS = (PM_DEVICES_POWER_MANAGEMENT, PM_USB_AUTOSUSPEND, PM_VM_WRITEBACK_TIME)
 
 import sys, os.path
 ###

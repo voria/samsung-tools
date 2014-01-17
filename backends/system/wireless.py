@@ -28,6 +28,7 @@ from backends.globals import *
 
 # TODO: On systems with more wireless adapters, control them individually?
 
+
 class Wireless(dbus.service.Object):
 	""" Control wireless """
 	def __init__(self, conn = None, object_path = None, bus_name = None):
@@ -158,7 +159,6 @@ class Wireless(dbus.service.Object):
 			systemlog.write("WARNING: 'Wireless.Enable()' - Error while executing '" + SCRIPT_WIRELESS_ON + "'.")
 			pass
 		return True
-
 
 	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = 'b',
 						sender_keyword = 'sender', connection_keyword = 'conn')

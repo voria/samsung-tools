@@ -20,6 +20,7 @@
 
 from time import strftime
 
+
 class Log():
 	def __init__(self, logfile):
 		self.logfile = logfile

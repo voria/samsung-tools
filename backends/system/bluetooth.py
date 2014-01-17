@@ -24,6 +24,7 @@ import dbus.service
 
 from backends.globals import *
 
+
 class Bluetooth(dbus.service.Object):
 	""" Control bluetooth """
 	def __init__(self, conn = None, object_path = None, bus_name = None):

@@ -25,6 +25,7 @@ import dbus.service
 
 from backends.globals import *
 
+
 class Fan(dbus.service.Object):
 	""" Control CPU Fan """
 	def __init__(self, conn = None, object_path = None, bus_name = None):

@@ -38,9 +38,10 @@ gettext.textdomain("samsung-tools")
 from backends.globals import *
 from backends.session.util.icons import *
 
-# Popup (based on code from compizconfig-settings-manager)
+
 class Popup (gtk.Window):
-	def __init__ (self, text, title, parent = None):
+	# Popup (based on code from compizconfig-settings-manager)
+	def __init__(self, text, title, parent = None):
 		gtk.Window.__init__(self, gtk.WINDOW_TOPLEVEL)
 		self.set_type_hint(gtk.gdk.WINDOW_TYPE_HINT_UTILITY)
 		self.set_position(gtk.WIN_POS_CENTER_ON_PARENT)
@@ -56,13 +57,15 @@ class Popup (gtk.Window):
 		align.add(label)
 		self.add(align)
 
-# Key Grabber (based on code from compizconfig-settings-manager)
+
 class KeyGrabber(gtk.Button):
-	__gsignals__ = {"changed" : (gobject.SIGNAL_RUN_FIRST,
+	# Key Grabber (based on code from compizconfig-settings-manager)
+	__gsignals__ = {"changed": (gobject.SIGNAL_RUN_FIRST,
 								gobject.TYPE_NONE,
 								[gobject.TYPE_INT, gobject.TYPE_INT]),
 					}
-	def __init__ (self, label = None, popup_title = None):
+
+	def __init__(self, label = None, popup_title = None):
 		"""Prepare widget"""
 		super(KeyGrabber, self).__init__()
 		self.key = 0
@@ -143,6 +146,7 @@ class KeyGrabber(gtk.Button):
 			label = label.replace("Primary", "Control")
 		gtk.Button.set_label(self, label)
 
+
 class KernelParametersDialog():
 	def __init__(self, parent):
 		# Setup GUI
@@ -186,6 +190,7 @@ class KernelParametersDialog():
 		conn.SetSwappiness(self.swappinessSpinbuttonValue)
 		conn.ApplySettings()
 		self.mainDialog.destroy()
+
 
 class PowerManagementDialog():
 	def __init__(self, parent):
@@ -260,6 +265,7 @@ class PowerManagementDialog():
 
 	def quit(self, widget = None, event = None):
 		self.mainDialog.destroy()
+
 
 class PhcDialog():
 	def __init__(self, parent):
@@ -379,6 +385,7 @@ class PhcDialog():
 			conn.SetPHCVids("default")
 
 		self.mainDialog.destroy()
+
 
 class Main():
 	def __init__(self):
@@ -844,7 +851,6 @@ class Main():
 			new = gtk.accelerator_name(key, mods)
 		session = self.__connect_session_options()
 		session.SetBacklightHotkey(self.__convert_gtk_to_xbindkeys(new))
-
 
 	def on_bluetoothHotkeyButton_changed(self, button = None, key = None, mods = None):
 		if key == 0 and mods == 0:
