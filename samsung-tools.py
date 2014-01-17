@@ -47,7 +47,7 @@ class Backlight():
 		self.option = option
 		success = False
 		retry = 3
-		while retry > 0 and success == False:
+		while retry > 0 and not success:
 			try:
 				bus = dbus.SessionBus()
 				proxy = bus.get_object(SESSION_INTERFACE_NAME, SESSION_OBJECT_PATH_BACKLIGHT)
@@ -72,28 +72,28 @@ class Backlight():
 		return self.interface.Toggle()
 
 	def apply(self):
-		if self.option == None:
+		if self.option is None:
 			return
 		if self.option == "on":
 			result = self.__on()
 			if not quiet:
-				if result == True:
+				if result:
 					print BACKLIGHT_ENABLED
 				else:
 					print BACKLIGHT_ENABLING_ERROR
 		if self.option == "off":
 			result = self.__off()
 			if not quiet:
-				if result == True:
+				if result:
 					print BACKLIGHT_DISABLED
 				else:
 					print BACKLIGHT_DISABLING_ERROR
 		if self.option == "toggle":
 			result = self.__toggle()
 			if not quiet:
-				if result == True:
+				if result:
 					status = self.__status()
-					if status == True:
+					if status:
 						print BACKLIGHT_ENABLED
 					else:
 						print BACKLIGHT_DISABLED
@@ -111,7 +111,7 @@ class Backlight():
 					toggle = False
 			except:
 				pass
-			if toggle == True:
+			if toggle:
 				Backlight("toggle").apply()
 				try:
 					file = open(tempfile, "w").close() # create temp file
@@ -125,7 +125,7 @@ class Backlight():
 		if self.option == "status":
 			result = self.__status()
 			if not quiet:
-				if result == True:
+				if result:
 					print BACKLIGHT_STATUS_ENABLED
 				else:
 					print BACKLIGHT_STATUS_DISABLED
@@ -137,7 +137,7 @@ class Bluetooth():
 		self.use_notify = use_notify
 		success = False
 		retry = 3
-		while retry > 0 and success == False:
+		while retry > 0 and not success:
 			try:
 				bus = dbus.SessionBus()
 				proxy = bus.get_object(SESSION_INTERFACE_NAME, SESSION_OBJECT_PATH_BLUETOOTH)
@@ -165,7 +165,7 @@ class Bluetooth():
 		return self.interface.IsEnabled(self.use_notify)
 
 	def apply(self):
-		if self.option == None:
+		if self.option is None:
 			return
 		if not self.__is_available():
 			if not quiet:
@@ -175,28 +175,28 @@ class Bluetooth():
 		if self.option == "on":
 			result = self.__on()
 			if not quiet:
-				if result == True:
+				if result:
 					print BLUETOOTH_ENABLED
 				else:
 					print BLUETOOTH_ENABLING_ERROR
 		if self.option == "off":
 			result = self.__off()
 			if not quiet:
-				if result == True:
+				if result:
 					print BLUETOOTH_DISABLED
 				else:
 					print BLUETOOTH_DISABLING_ERROR
 		if self.option == "toggle":
 			result = self.__toggle()
 			if not quiet:
-				if result == True:
+				if result:
 					# Temporary disable notifications
 					n = self.use_notify
 					self.use_notify = False
 					status = self.__status()
 					self.use_notify = n
 					# Notification re-enabled
-					if status == True:
+					if status:
 						print BLUETOOTH_ENABLED
 					else:
 						print BLUETOOTH_DISABLED
@@ -214,7 +214,7 @@ class Bluetooth():
 					toggle = False
 			except:
 				pass
-			if toggle == True:
+			if toggle:
 				Bluetooth("toggle", self.use_notify).apply()
 				try:
 					file = open(tempfile, "w").close() # create temp file
@@ -228,7 +228,7 @@ class Bluetooth():
 		if self.option == "status":
 			result = self.__status()
 			if not quiet:
-				if result == True:
+				if result:
 					print BLUETOOTH_STATUS_ENABLED
 				else:
 					print BLUETOOTH_STATUS_DISABLED
@@ -240,7 +240,7 @@ class Cpu():
 		self.use_notify = use_notify
 		success = False
 		retry = 3
-		while retry > 0 and success == False:
+		while retry > 0 and not success:
 			try:
 				bus = dbus.SessionBus()
 				proxy = bus.get_object(SESSION_INTERFACE_NAME, SESSION_OBJECT_PATH_CPU)
@@ -277,7 +277,7 @@ class Cpu():
 		return self.interface.Status(self.use_notify)
 
 	def apply(self):
-		if self.option == None:
+		if self.option is None:
 			return
 		if self.__is_temperature_available() and self.option != "hotkey" and not quiet:
 			print CPU_TEMPERATURE + " " + self.__temp() + unicode(" °C", "utf8")
@@ -289,28 +289,28 @@ class Cpu():
 		if self.option == "normal":
 			result = self.__normal()
 			if not quiet:
-				if result == True:
+				if result:
 					print FAN_STATUS_NORMAL
 				else:
 					print FAN_SWITCHING_ERROR
 		if self.option == "silent":
 			result = self.__silent()
 			if not quiet:
-				if result == True:
+				if result:
 					print FAN_STATUS_SILENT
 				else:
 					print FAN_SWITCHING_ERROR
 		if self.option == "overclock":
 			result = self.__overclock()
 			if not quiet:
-				if result == True:
+				if result:
 					print FAN_STATUS_OVERCLOCK
 				else:
 					print FAN_SWITCHING_ERROR
 		if self.option == "cycle":
 			result = self.__cycle()
 			if not quiet:
-				if result == True:
+				if result:
 					# Temporary disable notifications
 					n = self.use_notify
 					self.use_notify = False
@@ -339,7 +339,7 @@ class Cpu():
 					hotkey = False
 			except:
 				pass
-			if hotkey == True:
+			if hotkey:
 				Cpu("hotkey2", self.use_notify).apply()
 				try:
 					file = open(tempfile, "w").close() # create temp file
@@ -391,7 +391,7 @@ class Webcam():
 		self.use_notify = use_notify
 		success = False
 		retry = 3
-		while retry > 0 and success == False:
+		while retry > 0 and not success:
 			try:
 				bus = dbus.SessionBus()
 				proxy = bus.get_object(SESSION_INTERFACE_NAME, SESSION_OBJECT_PATH_WEBCAM)
@@ -419,7 +419,7 @@ class Webcam():
 		return self.interface.IsEnabled(self.use_notify)
 
 	def apply(self):
-		if self.option == None:
+		if self.option is None:
 			return
 		if not self.__is_available():
 			if not quiet:
@@ -429,28 +429,28 @@ class Webcam():
 		if self.option == "on":
 			result = self.__on()
 			if not quiet:
-				if result == True:
+				if result:
 					print WEBCAM_ENABLED
 				else:
 					print WEBCAM_ENABLING_ERROR
 		if self.option == "off":
 			result = self.__off()
 			if not quiet:
-				if result == True:
+				if result:
 					print WEBCAM_DISABLED
 				else:
 					print WEBCAM_DISABLING_ERROR
 		if self.option == "toggle":
 			result = self.__toggle()
 			if not quiet:
-				if result == True:
+				if result:
 					# Temporary disable notifications
 					n = self.use_notify
 					self.use_notify = False
 					status = self.__status()
 					self.use_notify = n
 					# Notification re-enabled
-					if status == True:
+					if status:
 						print WEBCAM_ENABLED
 					else:
 						print WEBCAM_DISABLED
@@ -468,7 +468,7 @@ class Webcam():
 					toggle = False
 			except:
 				pass
-			if toggle == True:
+			if toggle:
 				Webcam("toggle", self.use_notify).apply()
 				try:
 					file = open(tempfile, "w").close() # create temp file
@@ -482,7 +482,7 @@ class Webcam():
 		if self.option == "status":
 			result = self.__status()
 			if not quiet:
-				if result == True:
+				if result:
 					print WEBCAM_STATUS_ENABLED
 				else:
 					print WEBCAM_STATUS_DISABLED
@@ -494,7 +494,7 @@ class Wireless():
 		self.use_notify = use_notify
 		success = False
 		retry = 3
-		while retry > 0 and success == False:
+		while retry > 0 and not success:
 			try:
 				bus = dbus.SessionBus()
 				proxy = bus.get_object(SESSION_INTERFACE_NAME, SESSION_OBJECT_PATH_WIRELESS)
@@ -522,7 +522,7 @@ class Wireless():
 		return self.interface.IsEnabled(self.use_notify)
 
 	def apply(self):
-		if self.option == None:
+		if self.option is None:
 			return
 		if not self.__is_available():
 			if not quiet:
@@ -532,28 +532,28 @@ class Wireless():
 		if self.option == "on":
 			result = self.__on()
 			if not quiet:
-				if result == True:
+				if result:
 					print WIRELESS_ENABLED
 				else:
 					print WIRELESS_ENABLING_ERROR
 		if self.option == "off":
 			result = self.__off()
 			if not quiet:
-				if result == True:
+				if result:
 					print WIRELESS_DISABLED
 				else:
 					print WIRELESS_DISABLING_ERROR
 		if self.option == "toggle":
 			result = self.__toggle()
 			if not quiet:
-				if result == True:
+				if result:
 					# Temporary disable notifications
 					n = self.use_notify
 					self.use_notify = False
 					status = self.__status()
 					self.use_notify = n
 					# Notification re-enabled
-					if status == True:
+					if status:
 						print WIRELESS_ENABLED
 					else:
 						print WIRELESS_DISABLED
@@ -571,7 +571,7 @@ class Wireless():
 					toggle = False
 			except:
 				pass
-			if toggle == True:
+			if toggle:
 				Wireless("toggle", self.use_notify).apply()
 				try:
 					file = open(tempfile, "w").close() # create temp file
@@ -585,7 +585,7 @@ class Wireless():
 		if self.option == "status":
 			result = self.__status()
 			if not quiet:
-				if result == True:
+				if result:
 					print WIRELESS_STATUS_ENABLED
 				else:
 					print WIRELESS_STATUS_DISABLED
@@ -701,7 +701,7 @@ def main():
 	global quiet
 	quiet = options.quiet
 
-	if options.status == True:
+	if options.status:
 		options.backlight = "status"
 		options.bluetooth = "status"
 		options.cpu = "status"
@@ -735,7 +735,7 @@ def main():
 	Webcam(options.webcam, options.show_notify).apply()
 	Wireless(options.wireless, options.show_notify).apply()
 
-	if options.interface == True and not quiet:
+	if options.interface and not quiet:
 		try:
 			bus = dbus.SystemBus()
 			proxy = bus.get_object(SYSTEM_INTERFACE_NAME, SYSTEM_OBJECT_PATH_OPTIONS)
@@ -752,7 +752,7 @@ def main():
 			print unicode(_("Control interface: unable to connect to system service!"), "utf-8")
 			pass
 
-	if options.stopsession == True:
+	if options.stopsession:
 		try:
 			bus = dbus.SessionBus()
 			proxy = bus.get_object(SESSION_INTERFACE_NAME, SESSION_OBJECT_PATH_GENERAL)
@@ -765,7 +765,7 @@ def main():
 				print unicode(_("Cannot stop session service"), "utf-8")
 			pass
 
-	if options.stopsystem == True:
+	if options.stopsystem:
 		try:
 			bus = dbus.SystemBus()
 			proxy = bus.get_object(SYSTEM_INTERFACE_NAME, SYSTEM_OBJECT_PATH_GENERAL)

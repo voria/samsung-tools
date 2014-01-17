@@ -67,7 +67,7 @@ class SysCtl(dbus.service.Object):
 						os.remove(file + ".new")
 						return False
 		oldfile.close()
-		if optionfound == False: # option not found in current config file, add it
+		if not optionfound: # option not found in current config file, add it
 			newfile.write(option + " = " + value + "\n")
 		newfile.close()
 		try:
@@ -131,7 +131,7 @@ class SysCtl(dbus.service.Object):
 		from subprocess import Popen, PIPE
 		try:
 			value = self.__read(SYSCTL_CONFIG_FILE, "vm.swappiness")
-			if value == None:
+			if value is None:
 				return False
 
 			command = COMMAND_SYSCTL + " vm.swappiness=" + value

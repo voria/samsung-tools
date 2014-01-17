@@ -47,7 +47,7 @@ class Wireless(dbus.service.Object):
 	def __not_available(self, show_notify = True):
 		""" If show_notify == True, inform the user that wireless is not available. """
 		""" Return always 'False'. """
-		if self.notify != None and show_notify:
+		if self.notify is not None and show_notify:
 			self.notify.setTitle(WIRELESS_TITLE)
 			self.notify.setMessage(WIRELESS_NOT_AVAILABLE)
 			self.notify.setIcon(STOP_ICON)
@@ -76,7 +76,7 @@ class Wireless(dbus.service.Object):
 		if not interface:
 			return False
 		enabled = interface.IsEnabled()
-		if self.notify != None and show_notify:
+		if self.notify is not None and show_notify:
 			self.notify.setTitle(WIRELESS_TITLE)
 			self.notify.setUrgency("critical")
 			if enabled:
@@ -99,10 +99,10 @@ class Wireless(dbus.service.Object):
 		if not interface:
 			return False
 		result = interface.Enable()
-		if self.notify != None and show_notify:
+		if self.notify is not None and show_notify:
 			self.notify.setTitle(WIRELESS_TITLE)
 			self.notify.setUrgency("critical")
-			if result == True:
+			if result:
 				self.notify.setIcon(WIRELESS_ENABLED_ICON)
 				self.notify.setMessage(WIRELESS_ENABLED)
 			else:
@@ -122,11 +122,11 @@ class Wireless(dbus.service.Object):
 		if not interface:
 			return False
 		result = interface.Disable()
-		if self.notify != None and show_notify:
+		if self.notify is not None and show_notify:
 			self.notify.setTitle(WIRELESS_TITLE)
 			self.notify.setIcon(WIRELESS_DISABLED_ICON)
 			self.notify.setUrgency("critical")
-			if result == True:
+			if result:
 				self.notify.setMessage(WIRELESS_DISABLED)
 			else:
 				self.notify.setMessage(WIRELESS_DISABLING_ERROR)

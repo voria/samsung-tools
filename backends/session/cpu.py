@@ -59,7 +59,7 @@ class Cpu(dbus.service.Object):
 
 	def __show_notify(self, title, message, icon, urgency = "critical"):
 		""" Show user notifications. """
-		if self.notify != None:
+		if self.notify is not None:
 			temp = self.GetTemperature()
 			if temp != "none":
 				message = CPU_TEMPERATURE + " " + temp + unicode(" °C", "utf8") + "\n" + message
@@ -144,7 +144,7 @@ class Cpu(dbus.service.Object):
 			return False
 		result = interface.SetNormal()
 		if show_notify:
-			if result == True:
+			if result:
 				self.__show_notify(CPU_TITLE, FAN_STATUS_NORMAL, FAN_NORMAL_ICON)
 			else:
 				self.__show_notify(CPU_TITLE, FAN_SWITCHING_ERROR, ERROR_ICON)
@@ -162,7 +162,7 @@ class Cpu(dbus.service.Object):
 			return False
 		result = interface.SetSilent()
 		if show_notify:
-			if result == True:
+			if result:
 				self.__show_notify(CPU_TITLE, FAN_STATUS_SILENT, FAN_SILENT_ICON)
 			else:
 				self.__show_notify(CPU_TITLE, FAN_SWITCHING_ERROR, ERROR_ICON)
@@ -180,7 +180,7 @@ class Cpu(dbus.service.Object):
 			return False
 		result = interface.SetOverclock()
 		if show_notify:
-			if result == True:
+			if result:
 				self.__show_notify(CPU_TITLE, FAN_STATUS_OVERCLOCK, FAN_OVERCLOCK_ICON)
 			else:
 				self.__show_notify(CPU_TITLE, FAN_SWITCHING_ERROR, ERROR_ICON)
@@ -199,7 +199,7 @@ class Cpu(dbus.service.Object):
 		result = interface.Cycle()
 		if show_notify:
 			title = CPU_TITLE
-			if result == True:
+			if result:
 				status = interface.Status()
 				if status == 0:
 					message = FAN_STATUS_NORMAL

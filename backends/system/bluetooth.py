@@ -33,7 +33,7 @@ class Bluetooth(dbus.service.Object):
 	def __save_last_status(self, status):
 		""" Save bluetooth last status. """
 		try:
-			if status == True:
+			if status:
 				if os.path.exists(LAST_DEVICE_STATUS_BLUETOOTH):
 					os.remove(LAST_DEVICE_STATUS_BLUETOOTH)
 			else:
@@ -55,7 +55,7 @@ class Bluetooth(dbus.service.Object):
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def RestoreLastStatus(self, sender = None, conn = None):
 		""" Restore last status for Bluetooth """
-		if self.LastStatus() == True:
+		if self.LastStatus():
 			self.Enable()
 		else:
 			self.Disable()

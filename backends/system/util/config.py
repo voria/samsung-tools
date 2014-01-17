@@ -144,9 +144,9 @@ class SystemConfig():
 						os.remove(self.configfile + ".new")
 						return False
 		oldfile.close()
-		if sectionfound == False: # probably an empty file, write section
+		if not sectionfound: # probably an empty file, write section
 			newfile.write("[Main]\n")
-		if optionfound == False: # option not found in current config file, add it
+		if not optionfound: # option not found in current config file, add it
 			newfile.write(option + "=" + value + "\n")
 		newfile.close()
 		try:
