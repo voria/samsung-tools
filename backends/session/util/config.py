@@ -41,6 +41,7 @@ class SessionConfig():
         self.config = ConfigParser.SafeConfigParser()
         # Avoid to lowercase options names, this fixes Turkish locale
         self.config.optionxform = str
+        self.config.optionxform = str
         self.configfile = configfile
         try:
             self.config.readfp(open(configfile, "r"))
@@ -129,7 +130,8 @@ class SessionConfig():
                 shutil.copy(SESSION_CONFIG_FILE, self.configfile)
             except:
                 sessionlog.write(
-                    "ERROR: 'SessionConfig.__write()' - Cannot find the global user configuration file. Creating an empty one.")
+                    "ERROR: 'SessionConfig.__write()' - Cannot find the global user configuration file. " +
+                    "Creating an empty one.")
                 try:
                     oldfile = open(self.configfile, "w").close()
                 except:
@@ -173,9 +175,9 @@ class SessionConfig():
                         os.remove(self.configfile + ".new")
                         return False
         oldfile.close()
-        if sectionfound == False:  # probably an empty file, write section
+        if not sectionfound:  # probably an empty file, write section
             newfile.write("[Main]\n")
-        if optionfound == False:  # option not found in current config file, add it
+        if not optionfound:  # option not found in current config file, add it
             newfile.write(option + "=" + value + "\n")
         newfile.close()
         try:
@@ -219,7 +221,7 @@ class SessionConfig():
         """ Return 'True' on success, 'False' otherwise. """
         if value == "default":  # set default
             value = USE_HOTKEYS_DEFAULT
-        if not value in USE_HOTKEYS_ACCEPTED_VALUES:
+        if value not in USE_HOTKEYS_ACCEPTED_VALUES:
             return False
         self.config.set("Main", "USE_HOTKEYS", value)
         return self.__write("USE_HOTKEYS")

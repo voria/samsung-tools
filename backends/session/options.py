@@ -72,7 +72,7 @@ class Options(dbus.service.Object):
     def SetUseHotkeys(self, value, sender=None, conn=None):
         """ Return 'True' on success, 'False' otherwise. """
         result = sessionconfig.setUseHotkeys(value)
-        if result == True:
+        if result:
             status = sessionconfig.getUseHotkeys()
             if status == "true":
                 self.hotkeys.setBacklightHotkey(
@@ -97,7 +97,7 @@ class Options(dbus.service.Object):
         """ Return 'True' on success, 'False' otherwise. """
         result = sessionconfig.setBacklightHotkey(hotkey)
         usehotkeys = sessionconfig.getUseHotkeys()
-        if result == True and usehotkeys == "true":
+        if result and usehotkeys == "true":
             self.hotkeys.setBacklightHotkey(hotkey)
         return result
 
@@ -107,7 +107,7 @@ class Options(dbus.service.Object):
         """ Return 'True' on success, 'False' otherwise. """
         result = sessionconfig.setBluetoothHotkey(hotkey)
         usehotkeys = sessionconfig.getUseHotkeys()
-        if result == True and usehotkeys == "true":
+        if result and usehotkeys == "true":
             self.hotkeys.setBluetoothHotkey(hotkey)
         return result
 
@@ -117,7 +117,7 @@ class Options(dbus.service.Object):
         """ Return 'True' on success, 'False' otherwise. """
         result = sessionconfig.setCpuHotkey(hotkey)
         usehotkeys = sessionconfig.getUseHotkeys()
-        if result == True and usehotkeys == "true":
+        if result and usehotkeys == "true":
             self.hotkeys.setCpuHotkey(hotkey)
         return result
 
@@ -127,7 +127,7 @@ class Options(dbus.service.Object):
         """ Return 'True' on success, 'False' otherwise. """
         result = sessionconfig.setWebcamHotkey(hotkey)
         usehotkeys = sessionconfig.getUseHotkeys()
-        if result == True and usehotkeys == "true":
+        if result and usehotkeys == "true":
             self.hotkeys.setWebcamHotkey(hotkey)
         return result
 
@@ -137,6 +137,6 @@ class Options(dbus.service.Object):
         """ Return 'True' on success, 'False' otherwise. """
         result = sessionconfig.setWirelessHotkey(hotkey)
         usehotkeys = sessionconfig.getUseHotkeys()
-        if result == True and usehotkeys == "true":
+        if result and usehotkeys == "true":
             self.hotkeys.setWirelessHotkey(hotkey)
         return result

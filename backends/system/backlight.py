@@ -48,7 +48,7 @@ class Backlight(dbus.service.Object):
         if self.method != "none":
             return
         try:
-            if status == False:
+            if not status:
                 file = open(LAST_DEVICE_STATUS_BACKLIGHT, "w")
                 file.close()
             else:

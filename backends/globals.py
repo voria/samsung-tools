@@ -20,6 +20,9 @@
 
 from backends.log import Log
 
+import sys
+import os.path
+
 APP_NAME = "Samsung Tools"
 APP_VERSION = "2.3.1"
 WORK_DIRECTORY = "/usr/share/samsung-tools"
@@ -129,8 +132,6 @@ PM_SCRIPTS = (PM_DEVICES_POWER_MANAGEMENT,
               PM_USB_AUTOSUSPEND,
               PM_VM_WRITEBACK_TIME)
 
-import sys
-import os.path
 ###
 # Stuff for session service only
 ###
