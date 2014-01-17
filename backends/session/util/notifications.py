@@ -67,7 +67,7 @@ class Notification():
                     "ERROR: 'Notification' - cannot use 'pynotify' method. Trying with 'dbus' one.")
                 method = "dbus"
         if method == "dbus":
-            if self.__connect() != None:
+            if self.__connect() is not None:
                 self.initialized = True
             else:
                 method = None

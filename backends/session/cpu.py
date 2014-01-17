@@ -151,7 +151,7 @@ class Cpu(dbus.service.Object):
             return False
         result = interface.SetNormal()
         if show_notify:
-            if result == True:
+            if result:
                 self.__show_notify(
                     CPU_TITLE, FAN_STATUS_NORMAL, FAN_NORMAL_ICON)
             else:
@@ -170,7 +170,7 @@ class Cpu(dbus.service.Object):
             return False
         result = interface.SetSilent()
         if show_notify:
-            if result == True:
+            if result:
                 self.__show_notify(
                     CPU_TITLE, FAN_STATUS_SILENT, FAN_SILENT_ICON)
             else:
@@ -189,7 +189,7 @@ class Cpu(dbus.service.Object):
             return False
         result = interface.SetOverclock()
         if show_notify:
-            if result == True:
+            if result:
                 self.__show_notify(
                     CPU_TITLE,
                     FAN_STATUS_OVERCLOCK,
@@ -211,7 +211,7 @@ class Cpu(dbus.service.Object):
         result = interface.Cycle()
         if show_notify:
             title = CPU_TITLE
-            if result == True:
+            if result:
                 status = interface.Status()
                 if status == 0:
                     message = FAN_STATUS_NORMAL
