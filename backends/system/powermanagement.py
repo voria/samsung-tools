@@ -18,7 +18,9 @@
 # See the GNU General Public License for more details.
 # <http://www.gnu.org/licenses/gpl.txt>
 
-import os, shutil, stat
+import os
+import shutil
+import stat
 import dbus.service
 
 from backends.globals import *

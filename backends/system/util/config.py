@@ -18,7 +18,8 @@
 # See the GNU General Public License for more details.
 # <http://www.gnu.org/licenses/gpl.txt>
 
-import os, shutil
+import os
+import shutil
 import ConfigParser
 
 from backends.globals import *
