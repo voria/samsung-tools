@@ -97,12 +97,12 @@ class Fan(dbus.service.Object):
 						self.__save_last_status("normal")
 					elif status == 1:
 						self.__save_last_status("silent")
-					else: # status == 2
+					else:  # status == 2
 						self.__save_last_status("overclock")
 			except:
 				systemlog.write("ERROR: 'Fan.Status()' - cannot read from '" + ESDM_PATH_PERFORMANCE + "'.")
 				status = 3
-		else: # self.method == "sl"
+		else:  # self.method == "sl"
 			try:
 				with open(SL_PATH_PERFORMANCE, 'r') as file:
 					s = file.read()[0:-1]
@@ -111,7 +111,7 @@ class Fan(dbus.service.Object):
 						status = 0
 					elif s == "silent":
 						status = 1
-					else: # s == "overclock"
+					else:  # s == "overclock"
 						status = 2
 			except:
 				systemlog.write("ERROR: 'Fan.Status()' - cannot read from '" + SL_PATH_PERFORMANCE + "'.")
@@ -132,7 +132,7 @@ class Fan(dbus.service.Object):
 			except:
 				systemlog.write("ERROR: 'Fan.SetNormal()' - cannot write to '" + ESDM_PATH_PERFORMANCE + "'.")
 				return False
-		else: # self.method == "sl"
+		else:  # self.method == "sl"
 			try:
 				with open(SL_PATH_PERFORMANCE, 'w') as file:
 					file.write("normal")
@@ -156,7 +156,7 @@ class Fan(dbus.service.Object):
 			except:
 				systemlog.write("ERROR: 'Fan.SetSilent()' - cannot write to '" + ESDM_PATH_PERFORMANCE + "'.")
 				return False
-		else: # self.method == "sl"
+		else:  # self.method == "sl"
 			try:
 				with open(SL_PATH_PERFORMANCE, 'w') as file:
 					file.write("silent")
@@ -180,7 +180,7 @@ class Fan(dbus.service.Object):
 			except:
 				systemlog.write("ERROR: 'Fan.Setoverclock()' - cannot write to '" + ESDM_PATH_PERFORMANCE + "'.")
 				return False
-		else: # self.method == "sl"
+		else:  # self.method == "sl"
 			try:
 				with open(SL_PATH_PERFORMANCE, 'w') as file:
 					file.write("overclock")

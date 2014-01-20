@@ -63,7 +63,7 @@ class Cpu(dbus.service.Object):
 			file = open(PHC_VIDS_CPU0, "w")
 			file.write(value)
 			file.close()
-			try: # try to write new values for cpu1 too
+			try:  # try to write new values for cpu1 too
 				file = open(PHC_VIDS_CPU1, "w")
 				file.write(value)
 				file.close()

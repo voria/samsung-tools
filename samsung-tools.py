@@ -114,7 +114,7 @@ class Backlight():
 			if toggle:
 				Backlight("toggle").apply()
 				try:
-					file = open(tempfile, "w").close() # create temp file
+					file = open(tempfile, "w").close()  # create temp file
 				except:
 					pass
 				sleep(0.5)
@@ -170,7 +170,7 @@ class Bluetooth():
 		if not self.__is_available():
 			if not quiet:
 				print BLUETOOTH_NOT_AVAILABLE
-			self.__status() # needed to show notification
+			self.__status()  # needed to show notification
 			return
 		if self.option == "on":
 			result = self.__on()
@@ -217,7 +217,7 @@ class Bluetooth():
 			if toggle:
 				Bluetooth("toggle", self.use_notify).apply()
 				try:
-					file = open(tempfile, "w").close() # create temp file
+					file = open(tempfile, "w").close()  # create temp file
 				except:
 					pass
 				sleep(0.5)
@@ -284,7 +284,7 @@ class Cpu():
 		if not self.__is_fan_available():
 			if not quiet:
 				print FAN_NOT_AVAILABLE
-			self.__status() # needed to show notification
+			self.__status()  # needed to show notification
 			return
 		if self.option == "normal":
 			result = self.__normal()
@@ -342,7 +342,7 @@ class Cpu():
 			if hotkey:
 				Cpu("hotkey2", self.use_notify).apply()
 				try:
-					file = open(tempfile, "w").close() # create temp file
+					file = open(tempfile, "w").close()  # create temp file
 				except:
 					pass
 				sleep(0.5)
@@ -364,7 +364,7 @@ class Cpu():
 				pass
 			Cpu(action, self.use_notify).apply()
 			try:
-				file = open(tempfile, "w").close() # create temp file
+				file = open(tempfile, "w").close()  # create temp file
 			except:
 				pass
 			sleep(9.5)
@@ -424,7 +424,7 @@ class Webcam():
 		if not self.__is_available():
 			if not quiet:
 				print WEBCAM_NOT_AVAILABLE
-			self.__status() # needed to show notification
+			self.__status()  # needed to show notification
 			return
 		if self.option == "on":
 			result = self.__on()
@@ -471,7 +471,7 @@ class Webcam():
 			if toggle:
 				Webcam("toggle", self.use_notify).apply()
 				try:
-					file = open(tempfile, "w").close() # create temp file
+					file = open(tempfile, "w").close()  # create temp file
 				except:
 					pass
 				sleep(0.5)
@@ -527,7 +527,7 @@ class Wireless():
 		if not self.__is_available():
 			if not quiet:
 				print WIRELESS_NOT_AVAILABLE
-			self.__status() # needed to show notification
+			self.__status()  # needed to show notification
 			return
 		if self.option == "on":
 			result = self.__on()
@@ -574,7 +574,7 @@ class Wireless():
 			if toggle:
 				Wireless("toggle", self.use_notify).apply()
 				try:
-					file = open(tempfile, "w").close() # create temp file
+					file = open(tempfile, "w").close()  # create temp file
 				except:
 					pass
 				sleep(0.5)

@@ -78,7 +78,7 @@ class Hotkeys():
 			else:
 				skipnextline = False
 			if line == '"' + command + '"\n':
-				newfile.write("  " + hotkey + "\n") # update hotkey
+				newfile.write("  " + hotkey + "\n")  # update hotkey
 				commandfound = True
 				skipnextline = True
 		if not commandfound:

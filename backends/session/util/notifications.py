@@ -46,7 +46,7 @@ DBUS_METHOD_OBJECT = "/org/freedesktop/Notifications"
 class Notification():
 	""" Show user's notifications. """
 	def __init__(self, title = None, message = None, icon = None, urgency = "normal"):
-		self.initialized = False # Is notification system initialized
+		self.initialized = False  # Is notification system initialized
 		global method
 		if method == "pynotify":
 			if pynotify.init("Samsung-Tools Notification System"):
@@ -96,7 +96,7 @@ class Notification():
 	def setUrgency(self, urgency):
 		""" Set notification's urgency. """
 		if method != "pynotify":
-			return # urgency's used only with pynotify method
+			return  # urgency's used only with pynotify method
 		if urgency == "low":
 			self.urgency = pynotify.URGENCY_LOW
 		elif urgency == "normal":

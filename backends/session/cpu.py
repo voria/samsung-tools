@@ -126,7 +126,7 @@ class Cpu(dbus.service.Object):
 			elif status == 2:
 				message = FAN_STATUS_OVERCLOCK
 				icon = FAN_OVERCLOCK_ICON
-			else: # status == 3
+			else:  # status == 3
 				self.__fan_not_available(show_notify)
 				return 3
 			self.__show_notify(title, message, icon)
@@ -210,10 +210,10 @@ class Cpu(dbus.service.Object):
 				elif status == 2:
 					message = FAN_STATUS_OVERCLOCK
 					icon = FAN_OVERCLOCK_ICON
-				else: # status == 3
+				else:  # status == 3
 					self.__fan_not_available(show_notify)
 					return False
-			else: # result == False
+			else:  # result == False
 				message = FAN_SWITCHING_ERROR
 				icon = ERROR_ICON
 			self.__show_notify(title, message, icon)

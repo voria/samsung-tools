@@ -56,7 +56,7 @@ class SysCtl(dbus.service.Object):
 				newfile.write(line)
 			else:
 				currentoption = line.split('=')[0].strip()
-				if currentoption != option: # not the option we are searching for
+				if currentoption != option:  # not the option we are searching for
 					newfile.write(line)
 				else:
 					optionfound = True
@@ -69,7 +69,7 @@ class SysCtl(dbus.service.Object):
 						os.remove(file + ".new")
 						return False
 		oldfile.close()
-		if not optionfound: # option not found in current config file, add it
+		if not optionfound:  # option not found in current config file, add it
 			newfile.write(option + " = " + value + "\n")
 		newfile.close()
 		try:

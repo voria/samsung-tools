@@ -82,7 +82,7 @@ class Backlight(dbus.service.Object):
 			except:
 				systemlog.write("ERROR: 'Backlight.IsEnabled()' - cannot read from '" + SL_PATH_BACKLIGHT + "'.")
 				return True
-		else: # self.method == "none":
+		else:  # self.method == "none":
 			if os.path.exists(LAST_DEVICE_STATUS_BACKLIGHT):
 				return False
 			else:
@@ -109,7 +109,7 @@ class Backlight(dbus.service.Object):
 			except:
 				systemlog.write("ERROR: 'Backlight.Enable()' - cannot write to '" + SL_PATH_BACKLIGHT + "'.")
 				return False
-		else: # self.method == "none"
+		else:  # self.method == "none"
 			command = COMMAND_VBETOOL + " dpms on"
 			try:
 				process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
@@ -145,7 +145,7 @@ class Backlight(dbus.service.Object):
 			except:
 				systemlog.write("ERROR: 'Backlight.Disable()' - cannot write to '" + SL_PATH_BACKLIGHT + "'.")
 				return False
-		else: # self.method == "none"
+		else:  # self.method == "none"
 			command = COMMAND_VBETOOL + " dpms off"
 			try:
 				process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
