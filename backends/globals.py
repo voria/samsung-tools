@@ -91,7 +91,9 @@ TRANSLATORS_LIST = [
 					"Volkan Gezer",
 					"Maurício Meneghini Fauth",
 					"Thambaru Wijesekara",
-					"පසිඳු කාවින්ද"
+					"පසිඳු කාවින්ද",
+					"Ikkan",
+					"Account Deactivated"
 					]
 
 # Interface/Objects for session service
