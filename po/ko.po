@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-01 14:09+0100\n"
+"POT-Creation-Date: 2014-05-07 12:30+0200\n"
 "PO-Revision-Date: 2012-10-27 14:24+0000\n"
 "Last-Translator: Kim Boram <boramism@gmail.com>\n"
 "Language-Team: Korean <ko@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2013-03-01 13:04+0000\n"
 "X-Generator: Launchpad (build 16514)\n"
 
-#: backends/session/util/locales.py:24 samsung-tools-preferences.py:410
+#: backends/session/util/locales.py:24 samsung-tools-preferences.py:417
 msgid "Backlight"
 msgstr "백라이트"
 
@@ -50,7 +50,7 @@ msgstr "백라이트를 사용할 수 없습니다."
 msgid "Backlight cannot be toggled"
 msgstr "백라이트를 켜고 끌 수 있습니다."
 
-#: backends/session/util/locales.py:33 samsung-tools-preferences.py:419
+#: backends/session/util/locales.py:33 samsung-tools-preferences.py:426
 msgid "Bluetooth"
 msgstr "블루투스"
 
@@ -86,7 +86,7 @@ msgstr "블루투스를 켜고 끌 수 없습니다."
 msgid "Bluetooth control is not available"
 msgstr "블루투스를 조정할 수 없습니다."
 
-#: backends/session/util/locales.py:43 samsung-tools-preferences.py:428
+#: backends/session/util/locales.py:43 samsung-tools-preferences.py:435
 msgid "CPU fan"
 msgstr "CPU 팬"
 
@@ -118,7 +118,7 @@ msgstr "팬 모드를 가져올 수 없습니다."
 msgid "CPU fan control is not available"
 msgstr "CPU 팬을 조정할 수 없습니다."
 
-#: backends/session/util/locales.py:52 samsung-tools-preferences.py:437
+#: backends/session/util/locales.py:52 samsung-tools-preferences.py:444
 msgid "Webcam"
 msgstr "웹 캠"
 
@@ -154,7 +154,7 @@ msgstr "웹 캠을 켜고 끌 수 없습니다."
 msgid "Webcam control is not available"
 msgstr "웹 캠을 조정할 수 없습니다."
 
-#: backends/session/util/locales.py:62 samsung-tools-preferences.py:446
+#: backends/session/util/locales.py:62 samsung-tools-preferences.py:453
 msgid "Wireless"
 msgstr "무선 네트워크"
 
@@ -190,197 +190,197 @@ msgstr "무선 네트워크를 켜고 끌 수 없습니다."
 msgid "Wireless control is not available"
 msgstr "무선 네트워크를 조정할 수 없습니다."
 
-#: samsung-tools.py:58
+#: samsung-tools.py:59
 msgid "Backlight control: unable to connect to session service!"
 msgstr "백라이트 조정: 세션 서비스에 접속할 수 없습니다!"
 
-#: samsung-tools.py:147
+#: samsung-tools.py:149
 msgid "Bluetooth control: unable to connect to session service!"
 msgstr "블루투스 조정: 세션 서비스에 접속할 수 없습니다!"
 
-#: samsung-tools.py:249
+#: samsung-tools.py:252
 msgid "CPU fan control: unable to connect to session service!"
 msgstr "CPU 팬 조정: 세션 서비스에 접속할 수 없습니다!"
 
-#: samsung-tools.py:399
+#: samsung-tools.py:403
 msgid "Webcam control: unable to connect to session service!"
 msgstr "웹 캠 조정: 세션 서비스에 접속할 수 없습니다!"
 
-#: samsung-tools.py:501
+#: samsung-tools.py:506
 msgid "Wireless control: unable to connect to session service!"
 msgstr "무선 네트워크 조정: 세션 서비스에 접속할 수 없습니다!"
 
-#: samsung-tools.py:590
+#: samsung-tools.py:596
 msgid "Command Line Utility"
 msgstr "터미널 도구"
 
-#: samsung-tools.py:592 samsung-tools.py:642
+#: samsung-tools.py:598 samsung-tools.py:649
 #, python-format
 msgid "Usage: %s <interface> <option> ..."
 msgstr "사용 방법: %s <인터페이스> <옵션> ..."
 
-#: samsung-tools.py:594 po/samsung-tools-preferences.glade.h:15
+#: samsung-tools.py:600 po/samsung-tools-preferences.glade.h:15
 msgid "Backlight:"
 msgstr "백라이트:"
 
-#: samsung-tools.py:595 samsung-tools.py:598 samsung-tools.py:601
-#: samsung-tools.py:604 samsung-tools.py:607
+#: samsung-tools.py:601 samsung-tools.py:604 samsung-tools.py:607
+#: samsung-tools.py:610 samsung-tools.py:613
 msgid "Interface"
 msgstr "인터페이스"
 
-#: samsung-tools.py:596 samsung-tools.py:599 samsung-tools.py:602
-#: samsung-tools.py:605 samsung-tools.py:608
+#: samsung-tools.py:602 samsung-tools.py:605 samsung-tools.py:608
+#: samsung-tools.py:611 samsung-tools.py:614
 msgid "Options"
 msgstr "옵션"
 
-#: samsung-tools.py:597 po/samsung-tools-preferences.glade.h:13
+#: samsung-tools.py:603 po/samsung-tools-preferences.glade.h:13
 msgid "Bluetooth:"
 msgstr "블루투스:"
 
-#: samsung-tools.py:600 po/samsung-tools-preferences.glade.h:11
+#: samsung-tools.py:606 po/samsung-tools-preferences.glade.h:11
 msgid "CPU fan:"
 msgstr "CPU 팬:"
 
-#: samsung-tools.py:603 po/samsung-tools-preferences.glade.h:9
+#: samsung-tools.py:609 po/samsung-tools-preferences.glade.h:9
 msgid "Webcam:"
 msgstr "웹 캠:"
 
-#: samsung-tools.py:606 po/samsung-tools-preferences.glade.h:19
+#: samsung-tools.py:612 po/samsung-tools-preferences.glade.h:19
 msgid "Wireless:"
 msgstr "무선 네트워크:"
 
-#: samsung-tools.py:610
+#: samsung-tools.py:616
 msgid "Other options:"
 msgstr "기타 옵션:"
 
-#: samsung-tools.py:611
+#: samsung-tools.py:617
 msgid "Show status for all devices."
 msgstr "모든 장치의 상태를 보입니다."
 
-#: samsung-tools.py:612
+#: samsung-tools.py:618
 msgid "Show graphical notifications."
 msgstr "화면에 알림을 보입니다."
 
-#: samsung-tools.py:613
+#: samsung-tools.py:619
 msgid "Do not print messages on standard output."
 msgstr "일반적인 출력 메시지는 출력하지 않습니다."
 
-#: samsung-tools.py:614
+#: samsung-tools.py:620
 msgid "Show the control interface currently in use."
 msgstr "현재 사용하지는 조정 인터페이스를 보입니다."
 
-#: samsung-tools.py:615
+#: samsung-tools.py:621
 msgid "Stop the session service."
 msgstr "세션 서비스를 멈춥니다."
 
-#: samsung-tools.py:616
+#: samsung-tools.py:622
 msgid "Stop the system service."
 msgstr "시스템 서비스를 멈춥니다."
 
-#: samsung-tools.py:618
+#: samsung-tools.py:624
 msgid "Examples of use:"
 msgstr "사용 예:"
 
-#: samsung-tools.py:619
+#: samsung-tools.py:625
 msgid " - Toggle backlight:"
 msgstr " - 백라이트 켜고 끄기:"
 
-#: samsung-tools.py:622
+#: samsung-tools.py:628
 msgid " - Toggle wireless and set CPU fan mode to 'silent':"
 msgstr " - 무선 네트워크를 켜고 끄며 CPU 팬을 '조용하게'로 설정합니다:"
 
-#: samsung-tools.py:625
+#: samsung-tools.py:631
 msgid " - Disable bluetooth, webcam and wireless:"
 msgstr " - 블루투스와 웹 캠 그리고 무선 네트워크를 사용하지 않습니다::"
 
-#: samsung-tools.py:628
+#: samsung-tools.py:634
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "자세한 정보는 'Linux On My Samsung' 포럼을 방문해 확인하십시오:"
 
-#: samsung-tools.py:633 samsung-tools-preferences.py:1018
+#: samsung-tools.py:639 samsung-tools-preferences.py:1025
 msgid "Released under GPLv3 license"
 msgstr "GPL 버전 3 리이선스로 배포"
 
-#: samsung-tools.py:638
+#: samsung-tools.py:645
 msgid "No action(s) specified."
 msgstr "지정한 동작이 없습니다."
 
-#: samsung-tools.py:639 samsung-tools.py:710
+#: samsung-tools.py:646 samsung-tools.py:717
 msgid "Use --help for instructions."
 msgstr "사용법은 --help 옵션을 이용하십시오."
 
-#: samsung-tools.py:705
+#: samsung-tools.py:712
 msgid "This program is intended to be used only by non-privileged users."
 msgstr "관리자 권한으로는 사용하지 않는 것을 전제로 한 프로그램입니다."
 
-#: samsung-tools.py:709
+#: samsung-tools.py:716
 msgid "Wrong argument(s)."
 msgstr "올바르지 않은 인수입니다."
 
-#: samsung-tools.py:722
+#: samsung-tools.py:729
 msgid "Unable to start a DBus daemon!"
 msgstr "DBUS 데몬을 시작할 수 없습니다!"
 
-#: samsung-tools.py:737 po/samsung-tools-preferences.glade.h:30
+#: samsung-tools.py:744 po/samsung-tools-preferences.glade.h:30
 msgid "Control interface:"
 msgstr "조정 인터페이스:"
 
-#: samsung-tools.py:745
+#: samsung-tools.py:752
 msgid "Control interface: unable to connect to system service!"
 msgstr "조정 인터페이스: 시스템 서비스에 접속할 수 없습니다!"
 
-#: samsung-tools.py:755
+#: samsung-tools.py:762
 msgid "Session service stopped"
 msgstr "세션 서비스 멈춤"
 
-#: samsung-tools.py:758
+#: samsung-tools.py:765
 msgid "Cannot stop session service"
 msgstr "세션 서비스를 멈출 수 없습니다."
 
-#: samsung-tools.py:768
+#: samsung-tools.py:775
 msgid "System service stopped"
 msgstr "시스템 서비스 멈춤"
 
-#: samsung-tools.py:771
+#: samsung-tools.py:778
 msgid "Cannot stop system service"
 msgstr "시스템 서비스를 시작할 수 없음"
 
-#: samsung-tools-preferences.py:79
+#: samsung-tools-preferences.py:82
 msgid "Please press the new hotkey"
 msgstr "새 키 바로 가기를 눌러주십시오"
 
-#: samsung-tools-preferences.py:121
+#: samsung-tools-preferences.py:124
 msgid "None"
 msgstr "없음"
 
-#: samsung-tools-preferences.py:177 samsung-tools-preferences.py:246
-#: samsung-tools-preferences.py:341 samsung-tools-preferences.py:353
-#: samsung-tools-preferences.py:715 samsung-tools-preferences.py:727
-#: samsung-tools-preferences.py:739
+#: samsung-tools-preferences.py:181 samsung-tools-preferences.py:251
+#: samsung-tools-preferences.py:347 samsung-tools-preferences.py:359
+#: samsung-tools-preferences.py:722 samsung-tools-preferences.py:734
+#: samsung-tools-preferences.py:746
 msgid "Unable to connect to system service!"
 msgstr "시스템 서비스에 접속할 수 없습니다!"
 
-#: samsung-tools-preferences.py:365
+#: samsung-tools-preferences.py:371
 msgid "Confirm"
 msgstr "확인"
 
-#: samsung-tools-preferences.py:366
+#: samsung-tools-preferences.py:372
 msgid "Apply the new VIDs?"
 msgstr "새 VID를 적용하시겠습니까?"
 
-#: samsung-tools-preferences.py:631
+#: samsung-tools-preferences.py:638
 msgid "You need a PHC enabled kernel to use this feature"
 msgstr "이 기능을 사용하려면 PHC 옵션을 사용하는 커널이 필요합니다."
 
-#: samsung-tools-preferences.py:655
+#: samsung-tools-preferences.py:662
 msgid "Unable to connect to session service!"
 msgstr "시스템 서비스에 접속할 수 없습니다!"
 
-#: samsung-tools-preferences.py:996
+#: samsung-tools-preferences.py:1002
 msgid "Caution!"
 msgstr "주의!"
 
-#: samsung-tools-preferences.py:997
+#: samsung-tools-preferences.py:1003
 msgid ""
 "CPU undervolting can lead to significant gains in terms of power energy "
 "saving, however <b>IT IS A RISKY PRACTICE</b> that might result in "
