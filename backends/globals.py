@@ -21,7 +21,7 @@
 from backends.log import Log
 
 APP_NAME = "Samsung Tools"
-APP_VERSION = "2.3"
+APP_VERSION = "2.3.1"
 WORK_DIRECTORY = "/usr/share/samsung-tools"
 
 AUTHORS_LIST = ["Fortunato Ventre"]
@@ -91,7 +91,9 @@ TRANSLATORS_LIST = [
 					"Volkan Gezer",
 					"Maurício Meneghini Fauth",
 					"Thambaru Wijesekara",
-					"පසිඳු කාවින්ද"
+					"පසිඳු කාවින්ද",
+					"Ikkan",
+					"Account Deactivated"
 					]
 
 # Interface/Objects for session service

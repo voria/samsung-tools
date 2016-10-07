@@ -1,3 +1,12 @@
+samsung-tools (2.3.1~ppa1~loms~trusty) trusty; urgency=low
+
+  * Fix bug LP #1216810
+  * pep8 fixes
+  * Update translations to latest versions from Launchpad
+  * Update translators credits list
+
+ -- Fortunato Ventre (voRia) <vorione@gmail.com>  Thu, 07 May 2014 11:24:23 +0100
+
 samsung-tools (2.3~ppa1~loms~saucy) saucy; urgency=low
 
   * Use own sysctl config file instead of the global one

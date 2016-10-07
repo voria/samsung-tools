@@ -2,7 +2,7 @@
 
 pkgname=samsung-tools-git
 _gitname=samsung-tools
-pkgver=20131114
+pkgver=20131117
 pkgrel=1
 pkgdesc="Tools for Samsung laptops - Development version"
 arch=('any')
@@ -30,16 +30,13 @@ pkgver() {
 
 build() {
   cd "$srcdir/$_gitname"
-
   # Append current git version to version string
   sed -i "s:\(APP_VERSION = \".*\)\":\1~git$pkgver\":" backends/globals.py
 }
 
 package() {
   cd "$srcdir/$_gitname"
-
   make DESTDIR="$pkgdir/" install || return 1
-
   # Use samsung-tools.install from git sources
   cat archlinux/samsung-tools.install > "$startdir/samsung-tools.install"
 }
