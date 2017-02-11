@@ -33,7 +33,7 @@ try:
 	if output.find("gnome-session") != -1:
 		method = "pynotify"
 		import pynotify
-	if method == None:
+	if method is None:
 		raise
 except:
 	method = "dbus"
@@ -46,7 +46,7 @@ DBUS_METHOD_OBJECT = "/org/freedesktop/Notifications"
 class Notification():
 	""" Show user's notifications. """
 	def __init__(self, title = None, message = None, icon = None, urgency = "normal"):
-		self.initialized = False # Is notification system initialized
+		self.initialized = False  # Is notification system initialized
 		global method
 		if method == "pynotify":
 			if pynotify.init("Samsung-Tools Notification System"):
@@ -62,7 +62,7 @@ class Notification():
 				sessionlog.write("ERROR: 'Notification' - cannot use 'pynotify' method. Trying with 'dbus' one.")
 				method = "dbus"
 		if method == "dbus":
-			if self.__connect() != None:
+			if self.__connect() is not None:
 				self.initialized = True
 			else:
 				method = None
@@ -96,7 +96,7 @@ class Notification():
 	def setUrgency(self, urgency):
 		""" Set notification's urgency. """
 		if method != "pynotify":
-			return # urgency's used only with pynotify method
+			return  # urgency's used only with pynotify method
 		if urgency == "low":
 			self.urgency = pynotify.URGENCY_LOW
 		elif urgency == "normal":
@@ -111,15 +111,15 @@ class Notification():
 		self.timeout = timeout
 
 	def show(self):
-		if not self.initialized or method == None or self.title == None or self.message == None:
+		if not self.initialized or method is None or self.title is None or self.message is None:
 			return
 		if method == "pynotify":
 			self.notify.update(self.title, self.message, self.icon)
-			if self.urgency != None:
+			if self.urgency is not None:
 				self.notify.set_urgency(self.urgency)
 			self.notify.set_timeout(self.timeout)
 			self.notify.show()
 		if method == "dbus":
 			interface = self.__connect()
-			if interface != None:
+			if interface is not None:
 				interface.Notify(APP_NAME, 0, self.icon, self.title, self.message, "", "", self.timeout)

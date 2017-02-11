@@ -35,7 +35,7 @@ class Log():
 
 	def __close(self):
 		""" Close log file. """
-		if self.log != None:
+		if self.log is not None:
 			self.log.close()
 
 	def __get_time(self):
@@ -44,7 +44,7 @@ class Log():
 
 	def write(self, message):
 		self.__open()
-		if self.log == None:
+		if self.log is None:
 			return
 		line = self.__get_time() + message + "\n"
 		self.log.write(line)

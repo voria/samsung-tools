@@ -18,7 +18,9 @@
 # See the GNU General Public License for more details.
 # <http://www.gnu.org/licenses/gpl.txt>
 
-import os, shutil, stat
+import os
+import shutil
+import stat
 import dbus.service
 
 from backends.globals import *
@@ -54,7 +56,7 @@ class SysCtl(dbus.service.Object):
 				newfile.write(line)
 			else:
 				currentoption = line.split('=')[0].strip()
-				if currentoption != option: # not the option we are searching for
+				if currentoption != option:  # not the option we are searching for
 					newfile.write(line)
 				else:
 					optionfound = True
@@ -67,7 +69,7 @@ class SysCtl(dbus.service.Object):
 						os.remove(file + ".new")
 						return False
 		oldfile.close()
-		if optionfound == False: # option not found in current config file, add it
+		if not optionfound:  # option not found in current config file, add it
 			newfile.write(option + " = " + value + "\n")
 		newfile.close()
 		try:
@@ -131,7 +133,7 @@ class SysCtl(dbus.service.Object):
 		from subprocess import Popen, PIPE
 		try:
 			value = self.__read(SYSCTL_CONFIG_FILE, "vm.swappiness")
-			if value == None:
+			if value is None:
 				return False
 
 			command = COMMAND_SYSCTL + " vm.swappiness=" + value

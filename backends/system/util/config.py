@@ -18,7 +18,8 @@
 # See the GNU General Public License for more details.
 # <http://www.gnu.org/licenses/gpl.txt>
 
-import os, shutil
+import os
+import shutil
 import ConfigParser
 
 from backends.globals import *
@@ -131,7 +132,7 @@ class SystemConfig():
 				sectionfound = True
 			else:
 				currentoption = line.split('=')[0].strip()
-				if currentoption != option: # not the option we are searching for
+				if currentoption != option:  # not the option we are searching for
 					newfile.write(line)
 				else:
 					optionfound = True
@@ -144,9 +145,9 @@ class SystemConfig():
 						os.remove(self.configfile + ".new")
 						return False
 		oldfile.close()
-		if sectionfound == False: # probably an empty file, write section
+		if not sectionfound:  # probably an empty file, write section
 			newfile.write("[Main]\n")
-		if optionfound == False: # option not found in current config file, add it
+		if not optionfound:  # option not found in current config file, add it
 			newfile.write(option + "=" + value + "\n")
 		newfile.close()
 		try:
@@ -181,7 +182,7 @@ class SystemConfig():
 	def setBluetoothInitialStatus(self, value):
 		""" Set the BLUETOOTH_INITIAL_STATUS option. """
 		""" Return 'True' on success, 'False' otherwise. """
-		if value == "default": # set default
+		if value == "default":  # set default
 			value = BLUETOOTH_INITIAL_STATUS_DEFAULT
 		if value not in BLUETOOTH_INITIAL_STATUS_ACCEPTED_VALUES:
 			return False
@@ -191,7 +192,7 @@ class SystemConfig():
 	def setWebcamInitialStatus(self, value):
 		""" Set the WEBCAM_INITIAL_STATUS option. """
 		""" Return 'True' on success, 'False' otherwise. """
-		if value == "default": # set default
+		if value == "default":  # set default
 			value = WEBCAM_INITIAL_STATUS_DEFAULT
 		if value not in WEBCAM_INITIAL_STATUS_ACCEPTED_VALUES:
 			return False
@@ -201,7 +202,7 @@ class SystemConfig():
 	def setWirelessInitialStatus(self, value):
 		""" Set the WIRELESS_INITIAL_STATUS option. """
 		""" Return 'True' on success, 'False' otherwise. """
-		if value == "default": # set default
+		if value == "default":  # set default
 			value = WIRELESS_INITIAL_STATUS_DEFAULT
 		if value not in WIRELESS_INITIAL_STATUS_ACCEPTED_VALUES:
 			return False
@@ -211,7 +212,7 @@ class SystemConfig():
 	def setCpufanInitialStatus(self, value):
 		""" Set the CPUFAN_INITIAL_STATUS option. """
 		""" Return 'True' on success, 'False' otherwise. """
-		if value == "default": # set default
+		if value == "default":  # set default
 			value = CPUFAN_INITIAL_STATUS_DEFAULT
 		if value not in CPUFAN_INITIAL_STATUS_ACCEPTED_VALUES:
 			return False
@@ -221,7 +222,7 @@ class SystemConfig():
 	def setPHCVids(self, value):
 		""" Set the PHC_VIDS option. """
 		""" Return 'True' on success, 'False' otherwise. """
-		if value == "default": # set default
+		if value == "default":  # set default
 			value = PHC_VIDS_DEFAULT
 		self.config.set("Main", "PHC_VIDS", "\"" + value + "\"")
 		return self.__write("PHC_VIDS")

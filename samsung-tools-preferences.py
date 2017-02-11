@@ -110,13 +110,13 @@ class KeyGrabber(gtk.Button):
 		self.set_label(key, mods)
 
 	def set_label(self, key = None, mods = None, valid = False):
-		if key != None and mods != None:
+		if key is not None and mods is not None:
 			# emit 'changed' signal only when key is validated (valid = True)
 			if valid:
 				self.key = key
 				self.mods = mods
 				self.emit("changed", self.key, self.mods)
-		if key == None and mods == None:
+		if key is None and mods is None:
 			key = self.key
 			mods = self.mods
 		label = gtk.accelerator_name(key, mods)
@@ -321,7 +321,7 @@ class PhcDialog():
 		frequencies = conn.GetFrequencies().split()
 		defaultvids = conn.GetDefaultVids().split()
 		currentvids = conn.GetCurrentVids().split()
-		self.freqsnum = len(frequencies) # How many frequencies/vids we have?
+		self.freqsnum = len(frequencies)  # How many frequencies/vids we have?
 		minvid = int(defaultvids[self.freqsnum - 1])
 		i = 0
 		while i < self.freqsnum:
@@ -379,7 +379,7 @@ class PhcDialog():
 			if response == gtk.RESPONSE_YES:
 				conn.SetCurrentVids(newvids)
 		conn = self.__connect_options()
-		if self.applyAtBootCheckbutton.get_active() == True:
+		if self.applyAtBootCheckbutton.get_active():
 			conn.SetPHCVids(newvids)
 		else:
 			conn.SetPHCVids("default")
@@ -518,7 +518,7 @@ class Main():
 			self.bluetoothInitialStatusCombobox.set_active(0)
 		elif status == "on":
 			self.bluetoothInitialStatusCombobox.set_active(1)
-		else: # status == "off"
+		else:  # status == "off"
 			self.bluetoothInitialStatusCombobox.set_active(2)
 		self.bluetoothInitialStatusCombobox.connect("changed", self.on_bluetoothInitialStatusCombobox_changed)
 		# Webcam initial status
@@ -532,7 +532,7 @@ class Main():
 			self.webcamInitialStatusCombobox.set_active(0)
 		elif status == "on":
 			self.webcamInitialStatusCombobox.set_active(1)
-		else: # status == "off"
+		else:  # status == "off"
 			self.webcamInitialStatusCombobox.set_active(2)
 		self.webcamInitialStatusCombobox.connect("changed", self.on_webcamInitialStatusCombobox_changed)
 		# Wireless initial status
@@ -546,7 +546,7 @@ class Main():
 			self.wirelessInitialStatusCombobox.set_active(0)
 		elif status == "on":
 			self.wirelessInitialStatusCombobox.set_active(1)
-		else: # status == "off"
+		else:  # status == "off"
 			self.wirelessInitialStatusCombobox.set_active(2)
 		self.wirelessInitialStatusCombobox.connect("changed", self.on_wirelessInitialStatusCombobox_changed)
 		# CPU fan initial status
@@ -562,7 +562,7 @@ class Main():
 			self.cpufanInitialStatusCombobox.set_active(1)
 		elif status == "overclock":
 			self.cpufanInitialStatusCombobox.set_active(2)
-		else: # status == "last"
+		else:  # status == "last"
 			self.cpufanInitialStatusCombobox.set_active(3)
 		self.cpufanInitialStatusCombobox.connect("changed", self.on_cpufanInitialStatusCombobox_changed)
 		# Set clean buttons
@@ -755,7 +755,7 @@ class Main():
 			if key == "Primary":
 				key = "Control"
 			result += key + "+"
-		result = result[0:len(result) - 1] # Remove the '+' at the end
+		result = result[0:len(result) - 1]  # Remove the '+' at the end
 		return result
 
 	def __convert_xbindkeys_to_gtk(self, hotkey):
@@ -837,9 +837,9 @@ class Main():
 		self.__set_webcam_hotkey_sensitiveness(checkbutton.get_active())
 		self.__set_wireless_hotkey_sensitiveness(checkbutton.get_active())
 
-		if toggle_widgets_only == False:
+		if not toggle_widgets_only:
 			session = self.__connect_session_options()
-			if checkbutton.get_active() == True:
+			if checkbutton.get_active():
 				session.SetUseHotkeys("true")
 			else:
 				session.SetUseHotkeys("false")

@@ -52,7 +52,7 @@ class Webcam(dbus.service.Object):
 	def __save_last_status(self, status):
 		""" Save webcam last status. """
 		try:
-			if status == True:
+			if status:
 				if os.path.exists(LAST_DEVICE_STATUS_WEBCAM):
 					os.remove(LAST_DEVICE_STATUS_WEBCAM)
 			else:
@@ -74,7 +74,7 @@ class Webcam(dbus.service.Object):
 						sender_keyword = 'sender', connection_keyword = 'conn')
 	def RestoreLastStatus(self, sender = None, conn = None):
 		""" Restore last status for webcam """
-		if self.LastStatus() == True:
+		if self.LastStatus():
 			self.Enable()
 		else:
 			self.Disable()

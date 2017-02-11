@@ -74,3 +74,5 @@ uninstall:
 	rm -rf $(DESTDIR)/usr/lib/systemd/system/samsung-tools.service
 	rm -rf $(DESTDIR)/etc/xdg/autostart/samsung-tools-session-service.desktop
 	rm -rf $(DESTDIR)/usr/share/applications/samsung-tools-preferences.desktop
+
+include make-includes/python.mk

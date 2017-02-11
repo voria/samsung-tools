@@ -18,7 +18,8 @@
 # See the GNU General Public License for more details.
 # <http://www.gnu.org/licenses/gpl.txt>
 
-import os, shutil
+import os
+import shutil
 import ConfigParser
 
 from backends.globals import *
@@ -37,7 +38,7 @@ class SessionConfig():
 	""" Manage session service configuration file """
 	def __init__(self, configfile):
 		self.config = ConfigParser.SafeConfigParser()
-		self.config.optionxform = str # Avoid to lowercase options names, this fixes Turkish locale
+		self.config.optionxform = str  # Avoid to lowercase options names, this fixes Turkish locale
 		self.configfile = configfile
 		try:
 			self.config.readfp(open(configfile, "r"))
@@ -128,7 +129,7 @@ class SessionConfig():
 				sectionfound = True
 			else:
 				currentoption = line.split('=')[0].strip()
-				if currentoption != option: # not the option we are searching for
+				if currentoption != option:  # not the option we are searching for
 					newfile.write(line)
 				else:
 					optionfound = True
@@ -141,9 +142,9 @@ class SessionConfig():
 						os.remove(self.configfile + ".new")
 						return False
 		oldfile.close()
-		if sectionfound == False: # probably an empty file, write section
+		if not sectionfound:  # probably an empty file, write section
 			newfile.write("[Main]\n")
-		if optionfound == False: # option not found in current config file, add it
+		if not optionfound:  # option not found in current config file, add it
 			newfile.write(option + "=" + value + "\n")
 		newfile.close()
 		try:
@@ -182,7 +183,7 @@ class SessionConfig():
 	def setUseHotkeys(self, value):
 		""" Set the USE_HOTKEYS option. """
 		""" Return 'True' on success, 'False' otherwise. """
-		if value == "default": # set default
+		if value == "default":  # set default
 			value = USE_HOTKEYS_DEFAULT
 		if not value in USE_HOTKEYS_ACCEPTED_VALUES:
 			return False
@@ -192,7 +193,7 @@ class SessionConfig():
 	def setBacklightHotkey(self, value):
 		""" Set the BACKLIGHT_HOTKEY option. """
 		""" Return 'True' on success, 'False' otherwise. """
-		if value == "default": # set default
+		if value == "default":  # set default
 			value = BACKLIGHT_HOTKEY_DEFAULT
 		self.config.set("Main", "BACKLIGHT_HOTKEY", value)
 		return self.__write("BACKLIGHT_HOTKEY")
@@ -200,7 +201,7 @@ class SessionConfig():
 	def setBluetoothHotkey(self, value):
 		""" Set the BLUETOOTH_HOTKEY option. """
 		""" Return 'True' on success, 'False' otherwise. """
-		if value == "default": # set default
+		if value == "default":  # set default
 			value = BLUETOOTH_HOTKEY_DEFAULT
 		self.config.set("Main", "BLUETOOTH_HOTKEY", value)
 		return self.__write("BLUETOOTH_HOTKEY")
@@ -208,7 +209,7 @@ class SessionConfig():
 	def setCpuHotkey(self, value):
 		""" Set the CPU_HOTKEY option. """
 		""" Return 'True' on success, 'False' otherwise. """
-		if value == "default": # set default
+		if value == "default":  # set default
 			value = CPU_HOTKEY_DEFAULT
 		self.config.set("Main", "CPU_HOTKEY", value)
 		return self.__write("CPU_HOTKEY")
@@ -216,7 +217,7 @@ class SessionConfig():
 	def setWebcamHotkey(self, value):
 		""" Set the WEBCAM_HOTKEY option. """
 		""" Return 'True' on success, 'False' otherwise. """
-		if value == "default": # set default
+		if value == "default":  # set default
 			value = WEBCAM_HOTKEY_DEFAULT
 		self.config.set("Main", "WEBCAM_HOTKEY", value)
 		return self.__write("WEBCAM_HOTKEY")
@@ -224,7 +225,7 @@ class SessionConfig():
 	def setWirelessHotkey(self, value):
 		""" Set the WIRELESS_HOTKEY option. """
 		""" Return 'True' on success, 'False' otherwise. """
-		if value == "default": # set default
+		if value == "default":  # set default
 			value = WIRELESS_HOTKEY_DEFAULT
 		self.config.set("Main", "WIRELESS_HOTKEY", value)
 		return self.__write("WIRELESS_HOTKEY")

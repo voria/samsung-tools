@@ -73,15 +73,15 @@ class Hotkeys():
 		commandfound = False
 		skipnextline = False
 		for line in oldfile:
-			if skipnextline == False:
+			if not skipnextline:
 				newfile.write(line)
 			else:
 				skipnextline = False
 			if line == '"' + command + '"\n':
-				newfile.write("  " + hotkey + "\n") # update hotkey
+				newfile.write("  " + hotkey + "\n")  # update hotkey
 				commandfound = True
 				skipnextline = True
-		if commandfound == False:
+		if not commandfound:
 			# command not found, add it
 			newfile.write('"' + command + '"\n')
 			newfile.write("  " + hotkey + "\n")
@@ -105,7 +105,7 @@ class Hotkeys():
 		commandfound = False
 		skipnextline = False
 		for line in oldfile:
-			if skipnextline != True:
+			if not skipnextline:
 				if line != '"' + command + '"\n':
 					newfile.write(line)
 				else:
@@ -115,7 +115,7 @@ class Hotkeys():
 				skipnextline = False
 		oldfile.close()
 		newfile.close()
-		if commandfound == True:
+		if commandfound:
 			try:
 				os.remove(XBINDKEYS_CONFIG_FILE)
 			except:

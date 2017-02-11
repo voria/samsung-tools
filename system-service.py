@@ -132,7 +132,7 @@ class General(dbus.service.Object):
 			bluetooth.Enable()
 		elif status == "off":
 			bluetooth.Disable()
-		else: # status == "last":
+		else:  # status == "last":
 			bluetooth.RestoreLastStatus()
 		# Webcam
 		status = systemconfig.getWebcamInitialStatus()
@@ -140,7 +140,7 @@ class General(dbus.service.Object):
 			webcam.Enable()
 		elif status == "off":
 			webcam.Disable()
-		else: # status == "last"
+		else:  # status == "last"
 			webcam.RestoreLastStatus()
 		# Wireless
 		status = systemconfig.getWirelessInitialStatus()
@@ -148,7 +148,7 @@ class General(dbus.service.Object):
 			wireless.Enable()
 		elif status == "off":
 			wireless.Disable()
-		else: # status == "last"
+		else:  # status == "last"
 			wireless.RestoreLastStatus()
 		# CPU fan
 		status = systemconfig.getCpufanInitialStatus()
@@ -158,7 +158,7 @@ class General(dbus.service.Object):
 			fan.SetSilent()
 		elif status == "overclock":
 			fan.SetOverclock()
-		else: # status == "last"
+		else:  # status == "last"
 			fan.RestoreLastStatus()
 		# PHC
 		status = systemconfig.getPHCVids()
