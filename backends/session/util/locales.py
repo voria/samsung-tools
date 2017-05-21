@@ -38,7 +38,8 @@ BLUETOOTH_DISABLED = unicode(_("Bluetooth disabled"), "utf-8")
 BLUETOOTH_ENABLING_ERROR = unicode(_("Bluetooth cannot be enabled"), "utf-8")
 BLUETOOTH_DISABLING_ERROR = unicode(_("Bluetooth cannot be disabled"), "utf-8")
 BLUETOOTH_TOGGLING_ERROR = unicode(_("Bluetooth cannot be toggled"), "utf-8")
-BLUETOOTH_NOT_AVAILABLE = unicode(_("Bluetooth control is not available"), "utf-8")
+BLUETOOTH_NOT_AVAILABLE = unicode(
+    _("Bluetooth control is not available"), "utf-8")
 
 CPU_TITLE = unicode(_("CPU fan"), "utf-8")
 CPU_TEMPERATURE = unicode(_("CPU Temperature:"), "utf-8")
@@ -67,4 +68,5 @@ WIRELESS_DISABLED = unicode(_("Wireless disabled"), "utf-8")
 WIRELESS_ENABLING_ERROR = unicode(_("Wireless cannot be enabled"), "utf-8")
 WIRELESS_DISABLING_ERROR = unicode(_("Wireless cannot be disabled"), "utf-8")
 WIRELESS_TOGGLING_ERROR = unicode(_("Wireless cannot be toggled"), "utf-8")
-WIRELESS_NOT_AVAILABLE = unicode(_("Wireless control is not available"), "utf-8")
+WIRELESS_NOT_AVAILABLE = unicode(
+    _("Wireless control is not available"), "utf-8")

@@ -48,145 +48,154 @@ wireless = None
 
 
 class General(dbus.service.Object):
-	def __init__(self, conn = None, object_path = None, bus_name = None):
-		dbus.service.Object.__init__(self, conn, object_path, bus_name)
-		# Make sure the directory for last devices status exists
-		if not os.path.exists(LAST_DEVICES_STATUS_DIRECTORY):
-			os.mkdir(LAST_DEVICES_STATUS_DIRECTORY)
-		# Select the interface we are going to use
-		if self.__check_for_esdm_module():
-			self.__set_control_interface("esdm")
-		elif self.__check_for_sl_module():
-			self.__set_control_interface("sl")
-		else:
-			systemlog.write("WARNING: 'General.__init__()' - Cannot find any usable interface! Many of the functionalities will not work.")
-			self.__set_control_interface("none")
 
-	def __set_control_interface(self, interface):
-		try:
-			file = open(CONTROL_INTERFACE, 'w')
-			file.write(interface)
-			file.close()
-		except:
-			systemlog.write("ERROR: Cannot write to file '" + CONTROL_INTERFACE + "'!")
-			self.Exit()
+    def __init__(self, conn=None, object_path=None, bus_name=None):
+        dbus.service.Object.__init__(self, conn, object_path, bus_name)
+        # Make sure the directory for last devices status exists
+        if not os.path.exists(LAST_DEVICES_STATUS_DIRECTORY):
+            os.mkdir(LAST_DEVICES_STATUS_DIRECTORY)
+        # Select the interface we are going to use
+        if self.__check_for_esdm_module():
+            self.__set_control_interface("esdm")
+        elif self.__check_for_sl_module():
+            self.__set_control_interface("sl")
+        else:
+            systemlog.write(
+                "WARNING: 'General.__init__()' - Cannot find any usable interface! Many of the functionalities will not work.")
+            self.__set_control_interface("none")
 
-	def __check_for_esdm_module(self):
-		""" Check for the 'easy-slow-down-manager' interface. """
-		""" Return 'True' if it can be used, 'False' otherwise. """
-		if os.path.exists(ESDM_PATH_PERFORMANCE):
-			# kernel module already loaded and ready to use
-			return True
-		try:
-			command = COMMAND_MODPROBE + " " + ESDM_MODULE
-			process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-			process.communicate()
-		except:
-			systemlog.write("WARNING: 'General.__check_for_esdm_module()' - COMMAND: '" + command + "' - Exception thrown.")
-			return False
-		if process.returncode != 0:
-			return False
-		else:
-			return True
+    def __set_control_interface(self, interface):
+        try:
+            file = open(CONTROL_INTERFACE, 'w')
+            file.write(interface)
+            file.close()
+        except:
+            systemlog.write(
+                "ERROR: Cannot write to file '" + CONTROL_INTERFACE + "'!")
+            self.Exit()
 
-	def __check_for_sl_module(self):
-		""" Check for the 'samsung-laptop' interface. """
-		""" Return 'True' if it can be used, 'False' otherwise. """
-		if os.path.exists(SL_PATH_PERFORMANCE):
-			# kernel module already loaded and ready to use
-			return True
-		try:
-			command = COMMAND_MODPROBE + " " + SL_MODULE
-			process = subprocess.Popen(command.split(), stdout = subprocess.PIPE, stderr = subprocess.PIPE)
-			process.communicate()
-		except:
-			systemlog.write("WARNING: 'General.__check_for_sl_module()' - COMMAND: '" + command + "' - Exception thrown.")
-			return False
-		if process.returncode != 0:
-			return False
-		else:
-			return True
+    def __check_for_esdm_module(self):
+        """ Check for the 'easy-slow-down-manager' interface. """
+        """ Return 'True' if it can be used, 'False' otherwise. """
+        if os.path.exists(ESDM_PATH_PERFORMANCE):
+            return True  # kernel module already loaded and ready to use
+        try:
+            command = COMMAND_MODPROBE + " " + ESDM_MODULE
+            process = subprocess.Popen(
+                command.split(),
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE)
+            process.communicate()
+        except:
+            systemlog.write(
+                "WARNING: 'General.__check_for_esdm_module()' - COMMAND: '" + command + "' - Exception thrown.")
+            return False
+        if process.returncode != 0:
+            return False
+        else:
+            return True
 
-	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = None,
-						sender_keyword = 'sender', connection_keyword = 'conn')
-	def RestoreDevicesLastStatus(self, sender = None, conn = None):
-		""" Restore last status for everything. """
-		""" Return nothing. """
-		bluetooth.RestoreLastStatus()
-		webcam.RestoreLastStatus()
-		wireless.RestoreLastStatus()
-		fan.RestoreLastStatus()
-		# Restore also PHC values, just in case they have been reset
-		status = systemconfig.getPHCVids()
-		if status != "":
-			cpu.SetCurrentVids(status)
+    def __check_for_sl_module(self):
+        """ Check for the 'samsung-laptop' interface. """
+        """ Return 'True' if it can be used, 'False' otherwise. """
+        if os.path.exists(SL_PATH_PERFORMANCE):
+            return True  # kernel module already loaded and ready to use
+        try:
+            command = COMMAND_MODPROBE + " " + SL_MODULE
+            process = subprocess.Popen(
+                command.split(),
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE)
+            process.communicate()
+        except:
+            systemlog.write(
+                "WARNING: 'General.__check_for_sl_module()' - COMMAND: '" + command + "' - Exception thrown.")
+            return False
+        if process.returncode != 0:
+            return False
+        else:
+            return True
 
-	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = None,
-						sender_keyword = 'sender', connection_keyword = 'conn')
-	def SetInitialDevicesStatus(self, sender = None, conn = None):
-		""" Set initial status for everything. """
-		""" Return nothing. """
-		# Bluetooth
-		status = systemconfig.getBluetoothInitialStatus()
-		if status == "on":
-			bluetooth.Enable()
-		elif status == "off":
-			bluetooth.Disable()
-		else: # status == "last":
-			bluetooth.RestoreLastStatus()
-		# Webcam
-		status = systemconfig.getWebcamInitialStatus()
-		if status == "on":
-			webcam.Enable()
-		elif status == "off":
-			webcam.Disable()
-		else: # status == "last"
-			webcam.RestoreLastStatus()
-		# Wireless
-		status = systemconfig.getWirelessInitialStatus()
-		if status == "on":
-			wireless.Enable()
-		elif status == "off":
-			wireless.Disable()
-		else: # status == "last"
-			wireless.RestoreLastStatus()
-		# CPU fan
-		status = systemconfig.getCpufanInitialStatus()
-		if status == "normal":
-			fan.SetNormal()
-		elif status == "silent":
-			fan.SetSilent()
-		elif status == "overclock":
-			fan.SetOverclock()
-		else: # status == "last"
-			fan.RestoreLastStatus()
-		# PHC
-		status = systemconfig.getPHCVids()
-		if status != "":
-			cpu.SetCurrentVids(status)
+    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature=None, out_signature=None,
+                         sender_keyword='sender', connection_keyword='conn')
+    def RestoreDevicesLastStatus(self, sender=None, conn=None):
+        """ Restore last status for everything. """
+        """ Return nothing. """
+        bluetooth.RestoreLastStatus()
+        webcam.RestoreLastStatus()
+        wireless.RestoreLastStatus()
+        fan.RestoreLastStatus()
+        # Restore also PHC values, just in case they have been reset
+        status = systemconfig.getPHCVids()
+        if status != "":
+            cpu.SetCurrentVids(status)
 
-	@dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature = None, out_signature = None,
-						sender_keyword = 'sender', connection_keyword = 'conn')
-	def Exit(self, sender = None, conn = None):
-		mainloop.quit()
+    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature=None, out_signature=None,
+                         sender_keyword='sender', connection_keyword='conn')
+    def SetInitialDevicesStatus(self, sender=None, conn=None):
+        """ Set initial status for everything. """
+        """ Return nothing. """
+        # Bluetooth
+        status = systemconfig.getBluetoothInitialStatus()
+        if status == "on":
+            bluetooth.Enable()
+        elif status == "off":
+            bluetooth.Disable()
+        else:  # status == "last":
+            bluetooth.RestoreLastStatus()
+        # Webcam
+        status = systemconfig.getWebcamInitialStatus()
+        if status == "on":
+            webcam.Enable()
+        elif status == "off":
+            webcam.Disable()
+        else:  # status == "last"
+            webcam.RestoreLastStatus()
+        # Wireless
+        status = systemconfig.getWirelessInitialStatus()
+        if status == "on":
+            wireless.Enable()
+        elif status == "off":
+            wireless.Disable()
+        else:  # status == "last"
+            wireless.RestoreLastStatus()
+        # CPU fan
+        status = systemconfig.getCpufanInitialStatus()
+        if status == "normal":
+            fan.SetNormal()
+        elif status == "silent":
+            fan.SetSilent()
+        elif status == "overclock":
+            fan.SetOverclock()
+        else:  # status == "last"
+            fan.RestoreLastStatus()
+        # PHC
+        status = systemconfig.getPHCVids()
+        if status != "":
+            cpu.SetCurrentVids(status)
+
+    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature=None, out_signature=None,
+                         sender_keyword='sender', connection_keyword='conn')
+    def Exit(self, sender=None, conn=None):
+        mainloop.quit()
 
 if __name__ == '__main__':
-	dbus.mainloop.glib.DBusGMainLoop(set_as_default = True)
+    dbus.mainloop.glib.DBusGMainLoop(set_as_default=True)
 
-	bus = dbus.SystemBus()
-	name = dbus.service.BusName(SYSTEM_INTERFACE_NAME, bus)
+    bus = dbus.SystemBus()
+    name = dbus.service.BusName(SYSTEM_INTERFACE_NAME, bus)
 
-	General(bus, SYSTEM_OBJECT_PATH_GENERAL)
-	Options(bus, SYSTEM_OBJECT_PATH_OPTIONS)
-	Backlight(bus, SYSTEM_OBJECT_PATH_BACKLIGHT)
-	SysCtl(bus, SYSTEM_OBJECT_PATH_SYSCTL)
-	PowerManagement(bus, SYSTEM_OBJECT_PATH_POWERMANAGEMENT)
-	# We need these objects for restoring last statuses
-	bluetooth = Bluetooth(bus, SYSTEM_OBJECT_PATH_BLUETOOTH)
-	cpu = Cpu(bus, SYSTEM_OBJECT_PATH_CPU)
-	fan = Fan(bus, SYSTEM_OBJECT_PATH_FAN)
-	webcam = Webcam(bus, SYSTEM_OBJECT_PATH_WEBCAM)
-	wireless = Wireless(bus, SYSTEM_OBJECT_PATH_WIRELESS)
+    General(bus, SYSTEM_OBJECT_PATH_GENERAL)
+    Options(bus, SYSTEM_OBJECT_PATH_OPTIONS)
+    Backlight(bus, SYSTEM_OBJECT_PATH_BACKLIGHT)
+    SysCtl(bus, SYSTEM_OBJECT_PATH_SYSCTL)
+    PowerManagement(bus, SYSTEM_OBJECT_PATH_POWERMANAGEMENT)
+    # We need these objects for restoring last statuses
+    bluetooth = Bluetooth(bus, SYSTEM_OBJECT_PATH_BLUETOOTH)
+    cpu = Cpu(bus, SYSTEM_OBJECT_PATH_CPU)
+    fan = Fan(bus, SYSTEM_OBJECT_PATH_FAN)
+    webcam = Webcam(bus, SYSTEM_OBJECT_PATH_WEBCAM)
+    wireless = Wireless(bus, SYSTEM_OBJECT_PATH_WIRELESS)
 
-	mainloop = gobject.MainLoop()
-	mainloop.run()
+    mainloop = gobject.MainLoop()
+    mainloop.run()

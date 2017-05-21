@@ -30,14 +30,14 @@ WEBCAM_ICON = "camera-web"
 
 # If notify-osd icons are not available, use the default ones
 if exists("/usr/share/notify-osd/icons/"):
-	BLUETOOTH_ICON = "bluetooth"
-	WIRELESS_ENABLED_ICON = "notification-network-wireless-none"
-	WIRELESS_DISABLED_ICON = "notification-network-wireless-disconnected"
-	ERROR_ICON = "error"
-	STOP_ICON = "stop"
+    BLUETOOTH_ICON = "bluetooth"
+    WIRELESS_ENABLED_ICON = "notification-network-wireless-none"
+    WIRELESS_DISABLED_ICON = "notification-network-wireless-disconnected"
+    ERROR_ICON = "error"
+    STOP_ICON = "stop"
 else:
-	BLUETOOTH_ICON = join(WORK_DIRECTORY, "gui/icons/bluetooth.png")
-	WIRELESS_ENABLED_ICON = "network-wireless"
-	WIRELESS_DISABLED_ICON = "network-wireless"
-	ERROR_ICON = "dialog-error"
-	STOP_ICON = "process-stop"
+    BLUETOOTH_ICON = join(WORK_DIRECTORY, "gui/icons/bluetooth.png")
+    WIRELESS_ENABLED_ICON = "network-wireless"
+    WIRELESS_DISABLED_ICON = "network-wireless"
+    ERROR_ICON = "dialog-error"
+    STOP_ICON = "process-stop"

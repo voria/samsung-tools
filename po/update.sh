@@ -15,7 +15,7 @@ mv desktop/*.desktop.in.h po/
 
 echo
 echo "*** Creating samsung-tools.pot..."
-xgettext -k_ -kN_ -o po/messages.pot `cat po/FILES` po/*.h 
+xgettext -k_ -kN_ -o po/messages.pot `cat po/FILES` po/*.h
 cat po/messages.pot | sed s:charset=CHARSET:charset=UTF-8: > po/samsung-tools.pot
 
 echo

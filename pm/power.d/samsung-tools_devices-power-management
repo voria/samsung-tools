@@ -9,7 +9,7 @@ cat <<EOF
 --------
 $0: Devices Power Management.
 
-This hook has 1 tuneable parameter. 
+This hook has 1 tuneable parameter.
 DPM = controls whether we will try to save power on battery.
 Defaults to true.
 
@@ -28,14 +28,13 @@ dpm() {
 		echo "$1" > $i
 	done
 	echo Done.
-	
 }
 
 case $1 in
-    true) dpm auto ;;
-    false) dpm on ;;
-    help) help;;
-    *) exit $NA
+	true) dpm auto ;;
+	false) dpm on ;;
+	help) help;;
+	*) exit $NA
 esac
 
 exit 0

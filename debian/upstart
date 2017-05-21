@@ -1,12 +1,12 @@
 # samsung-tools - Tools for Samsung laptops
 #
 # Set the initial status of devices on Samsung laptops
- 
-description     "Tools for Samsung laptops"
-author          "Fortunato Ventre (voRia) - <vorione@gmail.com>"
- 
+
+description "Tools for Samsung laptops"
+author "Fortunato Ventre (voRia) - <vorione@gmail.com>"
+
 start on (stopped rc and (started lightdm or started gdm or started kdm or started mdm))
- 
+
 task
 
 script

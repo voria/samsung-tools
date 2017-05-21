@@ -18,7 +18,7 @@ backup=(etc/samsung-tools/system.conf
 install=samsung-tools.install
 source=(http://launchpad.net/samsung-tools/trunk/$pkgver/+download/$pkgname-$pkgver.tar.gz)
 md5sums=('aaf2f0cf07000c826e5cae23dedf0999')
-         
+
 package() {
   cd "$srcdir/$pkgname-$pkgver"
   make DESTDIR="$pkgdir/" install || return 1

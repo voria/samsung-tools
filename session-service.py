@@ -44,52 +44,55 @@ mainloop = None
 
 
 class General(dbus.service.Object):
-	def __init__(self, conn = None, object_path = None, bus_name = None):
-		dbus.service.Object.__init__(self, conn, object_path, bus_name)
-		# Check if user's directory and config file exist
-		from os import mkdir
-		from os.path import exists
-		from shutil import copy
-		if not exists(USER_DIRECTORY):
-			mkdir(USER_DIRECTORY)
-		if not exists(USER_CONFIG_FILE):
-			try:
-				copy(SESSION_CONFIG_FILE, USER_CONFIG_FILE)
-			except:
-				sessionlog.write("ERROR: 'General' - Cannot create user configuration file starting from global one.")
-				try:
-					open(USER_CONFIG_FILE, "w").close()
-				except:
-					sessionlog.write("ERROR: 'General' - Cannot create an empty user configuration file.")
-					pass
 
-	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = None, out_signature = None,
-						sender_keyword = 'sender', connection_keyword = 'conn')
-	def Exit(self, sender = None, conn = None):
-		mainloop.quit()
+    def __init__(self, conn=None, object_path=None, bus_name=None):
+        dbus.service.Object.__init__(self, conn, object_path, bus_name)
+        # Check if user's directory and config file exist
+        from os import mkdir
+        from os.path import exists
+        from shutil import copy
+        if not exists(USER_DIRECTORY):
+            mkdir(USER_DIRECTORY)
+        if not exists(USER_CONFIG_FILE):
+            try:
+                copy(SESSION_CONFIG_FILE, USER_CONFIG_FILE)
+            except:
+                sessionlog.write(
+                    "ERROR: 'General' - Cannot create user configuration file starting from global one.")
+                try:
+                    open(USER_CONFIG_FILE, "w").close()
+                except:
+                    sessionlog.write(
+                        "ERROR: 'General' - Cannot create an empty user configuration file.")
+                    pass
+
+    @dbus.service.method(SESSION_INTERFACE_NAME, in_signature=None, out_signature=None,
+                         sender_keyword='sender', connection_keyword='conn')
+    def Exit(self, sender=None, conn=None):
+        mainloop.quit()
 
 if __name__ == '__main__':
-	dbus.mainloop.glib.DBusGMainLoop(set_as_default = True)
+    dbus.mainloop.glib.DBusGMainLoop(set_as_default=True)
 
-	# Disable session service for root user
-	if os.getuid() == 0:
-		import sys
-		sys.exit()
+    # Disable session service for root user
+    if os.getuid() == 0:
+        import sys
+        sys.exit()
 
-	# Initialize notification system
-	notify = Notification()
+    # Initialize notification system
+    notify = Notification()
 
-	# Start session service
-	session_bus = dbus.SessionBus()
-	name = dbus.service.BusName(SESSION_INTERFACE_NAME, session_bus)
+    # Start session service
+    session_bus = dbus.SessionBus()
+    name = dbus.service.BusName(SESSION_INTERFACE_NAME, session_bus)
 
-	General(session_bus, SESSION_OBJECT_PATH_GENERAL)
-	Backlight(session_bus, SESSION_OBJECT_PATH_BACKLIGHT)
-	Options(session_bus, SESSION_OBJECT_PATH_OPTIONS)
-	Bluetooth(notify, session_bus, SESSION_OBJECT_PATH_BLUETOOTH)
-	Cpu(notify, session_bus, SESSION_OBJECT_PATH_CPU)
-	Webcam(notify, session_bus, SESSION_OBJECT_PATH_WEBCAM)
-	Wireless(notify, session_bus, SESSION_OBJECT_PATH_WIRELESS)
+    General(session_bus, SESSION_OBJECT_PATH_GENERAL)
+    Backlight(session_bus, SESSION_OBJECT_PATH_BACKLIGHT)
+    Options(session_bus, SESSION_OBJECT_PATH_OPTIONS)
+    Bluetooth(notify, session_bus, SESSION_OBJECT_PATH_BLUETOOTH)
+    Cpu(notify, session_bus, SESSION_OBJECT_PATH_CPU)
+    Webcam(notify, session_bus, SESSION_OBJECT_PATH_WEBCAM)
+    Wireless(notify, session_bus, SESSION_OBJECT_PATH_WIRELESS)
 
-	mainloop = gobject.MainLoop()
-	mainloop.run()
+    mainloop = gobject.MainLoop()
+    mainloop.run()

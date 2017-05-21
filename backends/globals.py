@@ -24,77 +24,79 @@ APP_NAME = "Samsung Tools"
 APP_VERSION = "2.3.1"
 WORK_DIRECTORY = "/usr/share/samsung-tools"
 
-AUTHORS_LIST = ["Fortunato Ventre"]
+AUTHORS_LIST = [
+    "Fortunato Ventre"
+]
 ARTISTS_LIST = [
-				"Fortunato Ventre",
-				"Angelo Giovanni Giudice"
-				]
+    "Fortunato Ventre",
+    "Angelo Giovanni Giudice"
+]
 TRANSLATORS_LIST = [
-					"Fortunato Ventre",
-					"Lionel BASTET",
-					"miplou",
-					"sk",
-					"Jonathan Cragg",
-					"nanker",
-					"mysza-j",
-					"papukaija",
-					"ironfisher",
-					"joel morren",
-					"subiraj",
-					"Jonay",
-					"zeugma",
-					"Joshua Schroijen",
-					"Sukochev Roman (Leolik)",
-					"Andrey Kulakov",
-					"Dr. Alex Arutyunjan",
-					"Cezary Jackiewicz",
-					"Lars Karlsson",
-					"Krasznecz Zoltán",
-					"Sergiy Gavrylov",
-					"Dirk Roos",
-					"Michael Likholet",
-					"Kristian Gomes",
-					"Bruno Veilleux",
-					"zzz",
-					"Inox",
-					"Thibault Févry",
-					"Fitoschido",
-					"Adriano Steffler",
-					"taha",
-					"Piotr Sokół",
-					"Мирослав Николић",
-					"Giordano Bruno Barbosa",
-					"Benedict Etzel",
-					"Aiguanachein",
-					"simon",
-					"D3NMOH",
-					"Felipe Amaral",
-					"Baptiste Fontaine",
-					"Daniel Manrique",
-					"Stanislas Michalak",
-					"Виталий",
-					"SweX",
-					"František Zatloukal",
-					"abuyop",
-					"Hubert \"Schlussarz\" Ślósarski",
-					"Rafael Neri",
-					"André Drumond",
-					"Antoine Tonio",
-					"naitong",
-					"Dennis Baudys",
-					"Sascha Biermanns",
-					"Novikov Andrey",
-					"Juan Pablo",
-					"Praveen Illa",
-					"Adolfo Jayme Barrientos",
-					"Kim Boram",
-					"Volkan Gezer",
-					"Maurício Meneghini Fauth",
-					"Thambaru Wijesekara",
-					"පසිඳු කාවින්ද",
-					"Ikkan",
-					"Account Deactivated"
-					]
+    "Fortunato Ventre",
+    "Lionel BASTET",
+    "miplou",
+    "sk",
+    "Jonathan Cragg",
+    "nanker",
+    "mysza-j",
+    "papukaija",
+    "ironfisher",
+    "joel morren",
+    "subiraj",
+    "Jonay",
+    "zeugma",
+    "Joshua Schroijen",
+    "Sukochev Roman (Leolik)",
+    "Andrey Kulakov",
+    "Dr. Alex Arutyunjan",
+    "Cezary Jackiewicz",
+    "Lars Karlsson",
+    "Krasznecz Zoltán",
+    "Sergiy Gavrylov",
+    "Dirk Roos",
+    "Michael Likholet",
+    "Kristian Gomes",
+    "Bruno Veilleux",
+    "zzz",
+    "Inox",
+    "Thibault Févry",
+    "Fitoschido",
+    "Adriano Steffler",
+    "taha",
+    "Piotr Sokół",
+    "Мирослав Николић",
+    "Giordano Bruno Barbosa",
+    "Benedict Etzel",
+    "Aiguanachein",
+    "simon",
+    "D3NMOH",
+    "Felipe Amaral",
+    "Baptiste Fontaine",
+    "Daniel Manrique",
+    "Stanislas Michalak",
+    "Виталий",
+    "SweX",
+    "František Zatloukal",
+    "abuyop",
+    "Hubert \"Schlussarz\" Ślósarski",
+    "Rafael Neri",
+    "André Drumond",
+    "Antoine Tonio",
+    "naitong",
+    "Dennis Baudys",
+    "Sascha Biermanns",
+    "Novikov Andrey",
+    "Juan Pablo",
+    "Praveen Illa",
+    "Adolfo Jayme Barrientos",
+    "Kim Boram",
+    "Volkan Gezer",
+    "Maurício Meneghini Fauth",
+    "Thambaru Wijesekara",
+    "පසිඳු කාවින්ද",
+    "Ikkan",
+    "Account Deactivated"
+]
 
 # Interface/Objects for session service
 SESSION_INTERFACE_NAME = "org.voria.SamsungTools.Session"
@@ -123,65 +125,77 @@ SYSTEM_OBJECT_PATH_WIRELESS = "/Device/Wireless"
 PM_DEVICES_POWER_MANAGEMENT = "/usr/lib/pm-utils/power.d/samsung-tools_devices-power-management"
 PM_USB_AUTOSUSPEND = "/usr/lib/pm-utils/power.d/samsung-tools_usb-autosuspend"
 PM_VM_WRITEBACK_TIME = "/usr/lib/pm-utils/power.d/samsung-tools_vm-writeback-time"
-PM_SCRIPTS = (PM_DEVICES_POWER_MANAGEMENT, PM_USB_AUTOSUSPEND, PM_VM_WRITEBACK_TIME)
+PM_SCRIPTS = (PM_DEVICES_POWER_MANAGEMENT,
+              PM_USB_AUTOSUSPEND,
+              PM_VM_WRITEBACK_TIME)
 
-import sys, os.path
+import sys
+import os.path
 ###
-### Stuff for session service only
+# Stuff for session service only
 ###
 if os.path.basename(sys.argv[0]) == "session-service.py":
-	# Config/Log
-	SESSION_CONFIG_FILE = "/etc/samsung-tools/session.conf"
-	USER_DIRECTORY = os.path.join(os.getenv('HOME'), ".samsung-tools")
-	USER_CONFIG_FILE = os.path.join(USER_DIRECTORY, os.path.basename(SESSION_CONFIG_FILE))
-	SESSION_LOG_FILE = os.path.join(USER_DIRECTORY, "log")
-	sessionlog = Log(SESSION_LOG_FILE)
-	from backends.session.util.config import SessionConfig
-	sessionconfig = SessionConfig(USER_CONFIG_FILE)
+    # Config/Log
+    SESSION_CONFIG_FILE = "/etc/samsung-tools/session.conf"
+    USER_DIRECTORY = os.path.join(os.getenv('HOME'), ".samsung-tools")
+    USER_CONFIG_FILE = os.path.join(
+        USER_DIRECTORY,
+        os.path.basename(SESSION_CONFIG_FILE))
+    SESSION_LOG_FILE = os.path.join(USER_DIRECTORY, "log")
+    sessionlog = Log(SESSION_LOG_FILE)
+    from backends.session.util.config import SessionConfig
+    sessionconfig = SessionConfig(USER_CONFIG_FILE)
 
 ###
-### Stuff for system service only
+# Stuff for system service only
 ###
 if os.path.basename(sys.argv[0]) == "system-service.py":
-	# Config/Log
-	SYSTEM_CONFIG_FILE = "/etc/samsung-tools/system.conf"
-	SYSTEM_LOG_FILE = "/var/log/samsung-tools.log"
-	systemlog = Log(SYSTEM_LOG_FILE)
-	from backends.system.util.config import SystemConfig
-	systemconfig = SystemConfig(SYSTEM_CONFIG_FILE)
-	# Control interface
-	CONTROL_INTERFACE = os.path.join(WORK_DIRECTORY, "control_interface")
-	# Last devices' status files
-	LAST_DEVICES_STATUS_DIRECTORY = os.path.join(WORK_DIRECTORY, "devices-status")
-	LAST_DEVICE_STATUS_BACKLIGHT = os.path.join(LAST_DEVICES_STATUS_DIRECTORY, "backlight")
-	LAST_DEVICE_STATUS_BLUETOOTH = os.path.join(LAST_DEVICES_STATUS_DIRECTORY, "bluetooth")
-	LAST_DEVICE_STATUS_WEBCAM = os.path.join(LAST_DEVICES_STATUS_DIRECTORY, "webcam")
-	LAST_DEVICE_STATUS_WIRELESS = os.path.join(LAST_DEVICES_STATUS_DIRECTORY, "wireless")
-	LAST_DEVICE_STATUS_CPUFAN = os.path.join(LAST_DEVICES_STATUS_DIRECTORY, "cpufan")
-	# system service does not have a PATH specified, so we will specify one manually.
-	os.environ['PATH'] = "/sbin:/usr/sbin:/bin:/usr/bin"
-	# Commands
-	COMMAND_MODPROBE = "modprobe"
-	COMMAND_VBETOOL = "vbetool"
-	COMMAND_LSMOD = "lsmod"
-	COMMAND_DMESG = "dmesg"
-	COMMAND_RFKILL = "rfkill"
-	COMMAND_SYSCTL = "sysctl"
-	# Scripts
-	SCRIPT_BLUETOOTH_ON = "/etc/samsung-tools/scripts/bluetooth-on"
-	SCRIPT_BLUETOOTH_OFF = "/etc/samsung-tools/scripts/bluetooth-off"
-	SCRIPT_WIRELESS_ON = "/etc/samsung-tools/scripts/wireless-on"
-	SCRIPT_WIRELESS_OFF = "/etc/samsung-tools/scripts/wireless-off"
-	# easy-slow-down-manager interface
-	ESDM_MODULE = "easy_slow_down_manager"
-	ESDM_PATH_BACKLIGHT = "/proc/easy_backlight"
-	ESDM_PATH_PERFORMANCE = "/proc/easy_slow_down_manager"
-	ESDM_PATH_WIRELESS = "/proc/easy_wifi_kill"
-	# samsung-laptop interface
-	SL_MODULE = "samsung-laptop"
-	SL_PATH_BACKLIGHT = "/sys/devices/platform/samsung/backlight/samsung/bl_power"
-	SL_PATH_PERFORMANCE = "/sys/devices/platform/samsung/performance_level"
-	# Temperature
-	CPU_TEMPERATURE_PATH = "/sys/class/thermal/thermal_zone0/temp"
-	# sysctl configuration file
-	SYSCTL_CONFIG_FILE = "/etc/sysctl.d/30-samsung-tools.conf"
+    # Config/Log
+    SYSTEM_CONFIG_FILE = "/etc/samsung-tools/system.conf"
+    SYSTEM_LOG_FILE = "/var/log/samsung-tools.log"
+    systemlog = Log(SYSTEM_LOG_FILE)
+    from backends.system.util.config import SystemConfig
+    systemconfig = SystemConfig(SYSTEM_CONFIG_FILE)
+    # Control interface
+    CONTROL_INTERFACE = os.path.join(WORK_DIRECTORY, "control_interface")
+    # Last devices' status files
+    LAST_DEVICES_STATUS_DIRECTORY = os.path.join(
+        WORK_DIRECTORY, "devices-status")
+    LAST_DEVICE_STATUS_BACKLIGHT = os.path.join(
+        LAST_DEVICES_STATUS_DIRECTORY, "backlight")
+    LAST_DEVICE_STATUS_BLUETOOTH = os.path.join(
+        LAST_DEVICES_STATUS_DIRECTORY, "bluetooth")
+    LAST_DEVICE_STATUS_WEBCAM = os.path.join(
+        LAST_DEVICES_STATUS_DIRECTORY, "webcam")
+    LAST_DEVICE_STATUS_WIRELESS = os.path.join(
+        LAST_DEVICES_STATUS_DIRECTORY, "wireless")
+    LAST_DEVICE_STATUS_CPUFAN = os.path.join(
+        LAST_DEVICES_STATUS_DIRECTORY, "cpufan")
+    # system service does not have a PATH specified, so we will specify one
+    # manually.
+    os.environ['PATH'] = "/sbin:/usr/sbin:/bin:/usr/bin"
+    # Commands
+    COMMAND_MODPROBE = "modprobe"
+    COMMAND_VBETOOL = "vbetool"
+    COMMAND_LSMOD = "lsmod"
+    COMMAND_DMESG = "dmesg"
+    COMMAND_RFKILL = "rfkill"
+    COMMAND_SYSCTL = "sysctl"
+    # Scripts
+    SCRIPT_BLUETOOTH_ON = "/etc/samsung-tools/scripts/bluetooth-on"
+    SCRIPT_BLUETOOTH_OFF = "/etc/samsung-tools/scripts/bluetooth-off"
+    SCRIPT_WIRELESS_ON = "/etc/samsung-tools/scripts/wireless-on"
+    SCRIPT_WIRELESS_OFF = "/etc/samsung-tools/scripts/wireless-off"
+    # easy-slow-down-manager interface
+    ESDM_MODULE = "easy_slow_down_manager"
+    ESDM_PATH_BACKLIGHT = "/proc/easy_backlight"
+    ESDM_PATH_PERFORMANCE = "/proc/easy_slow_down_manager"
+    ESDM_PATH_WIRELESS = "/proc/easy_wifi_kill"
+    # samsung-laptop interface
+    SL_MODULE = "samsung-laptop"
+    SL_PATH_BACKLIGHT = "/sys/devices/platform/samsung/backlight/samsung/bl_power"
+    SL_PATH_PERFORMANCE = "/sys/devices/platform/samsung/performance_level"
+    # Temperature
+    CPU_TEMPERATURE_PATH = "/sys/class/thermal/thermal_zone0/temp"
+    # sysctl configuration file
+    SYSCTL_CONFIG_FILE = "/etc/sysctl.d/30-samsung-tools.conf"

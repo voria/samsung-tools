@@ -22,30 +22,31 @@ from time import strftime
 
 
 class Log():
-	def __init__(self, logfile):
-		self.logfile = logfile
-		self.log = None
 
-	def __open(self):
-		""" Open log file for writing. """
-		try:
-			self.log = open(self.logfile, "a+")
-		except:
-			self.log = None
+    def __init__(self, logfile):
+        self.logfile = logfile
+        self.log = None
 
-	def __close(self):
-		""" Close log file. """
-		if self.log != None:
-			self.log.close()
+    def __open(self):
+        """ Open log file for writing. """
+        try:
+            self.log = open(self.logfile, "a+")
+        except:
+            self.log = None
 
-	def __get_time(self):
-		""" Return current time string. """
-		return strftime("%a %d %H:%M:%S : ")
+    def __close(self):
+        """ Close log file. """
+        if self.log is not None:
+            self.log.close()
 
-	def write(self, message):
-		self.__open()
-		if self.log == None:
-			return
-		line = self.__get_time() + message + "\n"
-		self.log.write(line)
-		self.__close()
+    def __get_time(self):
+        """ Return current time string. """
+        return strftime("%a %d %H:%M:%S : ")
+
+    def write(self, message):
+        self.__open()
+        if self.log is None:
+            return
+        line = self.__get_time() + message + "\n"
+        self.log.write(line)
+        self.__close()

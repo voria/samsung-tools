@@ -26,124 +26,129 @@ from backends.session.util.icons import *
 
 
 class Bluetooth(dbus.service.Object):
-	""" Control bluetooth """
-	def __init__(self, notify = None, conn = None, object_path = None, bus_name = None):
-		dbus.service.Object.__init__(self, conn, object_path, bus_name)
-		self.notify = notify
+    """ Control bluetooth """
 
-	def __connect(self):
-		""" Enable connection to system backend """
-		retry = 3
-		while retry > 0:
-			try:
-				bus = dbus.SystemBus()
-				proxy = bus.get_object(SYSTEM_INTERFACE_NAME, SYSTEM_OBJECT_PATH_BLUETOOTH)
-				return dbus.Interface(proxy, SYSTEM_INTERFACE_NAME)
-			except:
-				retry = retry - 1
-		sessionlog.write("ERROR: 'Bluetooth.__connect()' - 3 attempts to connect to system bus failed.")
-		return None
+    def __init__(self, notify=None, conn=None,
+                 object_path=None, bus_name=None):
+        dbus.service.Object.__init__(self, conn, object_path, bus_name)
+        self.notify = notify
 
-	def __not_available(self, show_notify = True):
-		""" If show_notify == True, inform the user that bluetooth is not available. """
-		""" Return always 'False'. """
-		if self.notify != None and show_notify:
-			self.notify.setTitle(BLUETOOTH_TITLE)
-			self.notify.setMessage(BLUETOOTH_NOT_AVAILABLE)
-			self.notify.setIcon(STOP_ICON)
-			self.notify.setUrgency("critical")
-			self.notify.show()
-		return False
+    def __connect(self):
+        """ Enable connection to system backend """
+        retry = 3
+        while retry > 0:
+            try:
+                bus = dbus.SystemBus()
+                proxy = bus.get_object(
+                    SYSTEM_INTERFACE_NAME,
+                    SYSTEM_OBJECT_PATH_BLUETOOTH)
+                return dbus.Interface(proxy, SYSTEM_INTERFACE_NAME)
+            except:
+                retry = retry - 1
+        sessionlog.write(
+            "ERROR: 'Bluetooth.__connect()' - 3 attempts to connect to system bus failed.")
+        return None
 
-	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = None, out_signature = 'b',
-						sender_keyword = 'sender', connection_keyword = 'conn')
-	def IsAvailable(self, sender = None, conn = None):
-		""" Check if bluetooth is available. """
-		""" Return 'True' if available, 'False' if disabled or any error. """
-		interface = self.__connect()
-		if not interface:
-			return False
-		return interface.IsAvailable()
+    def __not_available(self, show_notify=True):
+        """ If show_notify == True, inform the user that bluetooth is not available. """
+        """ Return always 'False'. """
+        if self.notify is not None and show_notify:
+            self.notify.setTitle(BLUETOOTH_TITLE)
+            self.notify.setMessage(BLUETOOTH_NOT_AVAILABLE)
+            self.notify.setIcon(STOP_ICON)
+            self.notify.setUrgency("critical")
+            self.notify.show()
+        return False
 
-	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 'b', out_signature = 'b',
-						sender_keyword = 'sender', connection_keyword = 'conn')
-	def IsEnabled(self, show_notify = True, sender = None, conn = None):
-		""" Check if bluetooth is enabled. """
-		""" Return 'True' if enabled, 'False' if disabled or any error. """
-		if not self.IsAvailable():
-			return self.__not_available(show_notify)
-		interface = self.__connect()
-		if not interface:
-			return False
-		enabled = interface.IsEnabled()
-		if self.notify != None and show_notify:
-			self.notify.setTitle(BLUETOOTH_TITLE)
-			self.notify.setIcon(BLUETOOTH_ICON)
-			self.notify.setUrgency("critical")
-			if enabled:
-				self.notify.setMessage(BLUETOOTH_STATUS_ENABLED)
-			else:
-				self.notify.setMessage(BLUETOOTH_STATUS_DISABLED)
-			self.notify.show()
-		return enabled
+    @dbus.service.method(SESSION_INTERFACE_NAME, in_signature=None, out_signature='b',
+                         sender_keyword='sender', connection_keyword='conn')
+    def IsAvailable(self, sender=None, conn=None):
+        """ Check if bluetooth is available. """
+        """ Return 'True' if available, 'False' if disabled or any error. """
+        interface = self.__connect()
+        if not interface:
+            return False
+        return interface.IsAvailable()
 
-	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 'b', out_signature = 'b',
-						sender_keyword = 'sender', connection_keyword = 'conn')
-	def Enable(self, show_notify = True, sender = None, conn = None):
-		""" Enable bluetooth. """
-		""" Return 'True' on success, 'False' otherwise. """
-		if not self.IsAvailable():
-			return self.__not_available(show_notify)
-		interface = self.__connect()
-		if not interface:
-			return False
-		result = interface.Enable()
-		if self.notify != None and show_notify:
-			self.notify.setTitle(BLUETOOTH_TITLE)
-			self.notify.setUrgency("critical")
-			if result == True:
-				self.notify.setIcon(BLUETOOTH_ICON)
-				self.notify.setMessage(BLUETOOTH_ENABLED)
-			else:
-				self.notify.setIcon(BLUETOOTH_ICON)
-				self.notify.setMessage(BLUETOOTH_ENABLING_ERROR)
-			self.notify.show()
-		return result
+    @dbus.service.method(SESSION_INTERFACE_NAME, in_signature='b', out_signature='b',
+                         sender_keyword='sender', connection_keyword='conn')
+    def IsEnabled(self, show_notify=True, sender=None, conn=None):
+        """ Check if bluetooth is enabled. """
+        """ Return 'True' if enabled, 'False' if disabled or any error. """
+        if not self.IsAvailable():
+            return self.__not_available(show_notify)
+        interface = self.__connect()
+        if not interface:
+            return False
+        enabled = interface.IsEnabled()
+        if self.notify is not None and show_notify:
+            self.notify.setTitle(BLUETOOTH_TITLE)
+            self.notify.setIcon(BLUETOOTH_ICON)
+            self.notify.setUrgency("critical")
+            if enabled:
+                self.notify.setMessage(BLUETOOTH_STATUS_ENABLED)
+            else:
+                self.notify.setMessage(BLUETOOTH_STATUS_DISABLED)
+            self.notify.show()
+        return enabled
 
-	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 'b', out_signature = 'b',
-						sender_keyword = 'sender', connection_keyword = 'conn')
-	def Disable(self, show_notify = True, sender = None, conn = None):
-		""" Disable bluetooth. """
-		""" Return 'True' on success, 'False' otherwise. """
-		if not self.IsAvailable():
-			return self.__not_available(show_notify)
-		interface = self.__connect()
-		if not interface:
-			return False
-		result = interface.Disable()
-		if self.notify != None and show_notify:
-			self.notify.setTitle(BLUETOOTH_TITLE)
-			self.notify.setUrgency("critical")
-			if result == True:
-				self.notify.setIcon(BLUETOOTH_ICON)
-				self.notify.setMessage(BLUETOOTH_DISABLED)
-			else:
-				self.notify.setIcon(ERROR_ICON)
-				self.notify.setMessage(BLUETOOTH_DISABLING_ERROR)
-			self.notify.show()
-		return result
+    @dbus.service.method(SESSION_INTERFACE_NAME, in_signature='b', out_signature='b',
+                         sender_keyword='sender', connection_keyword='conn')
+    def Enable(self, show_notify=True, sender=None, conn=None):
+        """ Enable bluetooth. """
+        """ Return 'True' on success, 'False' otherwise. """
+        if not self.IsAvailable():
+            return self.__not_available(show_notify)
+        interface = self.__connect()
+        if not interface:
+            return False
+        result = interface.Enable()
+        if self.notify is not None and show_notify:
+            self.notify.setTitle(BLUETOOTH_TITLE)
+            self.notify.setUrgency("critical")
+            if result == True:
+                self.notify.setIcon(BLUETOOTH_ICON)
+                self.notify.setMessage(BLUETOOTH_ENABLED)
+            else:
+                self.notify.setIcon(BLUETOOTH_ICON)
+                self.notify.setMessage(BLUETOOTH_ENABLING_ERROR)
+            self.notify.show()
+        return result
 
-	@dbus.service.method(SESSION_INTERFACE_NAME, in_signature = 'b', out_signature = 'b',
-						sender_keyword = 'sender', connection_keyword = 'conn')
-	def Toggle(self, show_notify = True, sender = None, conn = None):
-		""" Toggle bluetooth. """
-		""" Return 'True' on success, 'False' otherwise. """
-		if not self.IsAvailable():
-			return self.__not_available(show_notify)
-		interface = self.__connect()
-		if not interface:
-			return False
-		if interface.IsEnabled():
-			return self.Disable(show_notify)
-		else:
-			return self.Enable(show_notify)
+    @dbus.service.method(SESSION_INTERFACE_NAME, in_signature='b', out_signature='b',
+                         sender_keyword='sender', connection_keyword='conn')
+    def Disable(self, show_notify=True, sender=None, conn=None):
+        """ Disable bluetooth. """
+        """ Return 'True' on success, 'False' otherwise. """
+        if not self.IsAvailable():
+            return self.__not_available(show_notify)
+        interface = self.__connect()
+        if not interface:
+            return False
+        result = interface.Disable()
+        if self.notify is not None and show_notify:
+            self.notify.setTitle(BLUETOOTH_TITLE)
+            self.notify.setUrgency("critical")
+            if result == True:
+                self.notify.setIcon(BLUETOOTH_ICON)
+                self.notify.setMessage(BLUETOOTH_DISABLED)
+            else:
+                self.notify.setIcon(ERROR_ICON)
+                self.notify.setMessage(BLUETOOTH_DISABLING_ERROR)
+            self.notify.show()
+        return result
+
+    @dbus.service.method(SESSION_INTERFACE_NAME, in_signature='b', out_signature='b',
+                         sender_keyword='sender', connection_keyword='conn')
+    def Toggle(self, show_notify=True, sender=None, conn=None):
+        """ Toggle bluetooth. """
+        """ Return 'True' on success, 'False' otherwise. """
+        if not self.IsAvailable():
+            return self.__not_available(show_notify)
+        interface = self.__connect()
+        if not interface:
+            return False
+        if interface.IsEnabled():
+            return self.Disable(show_notify)
+        else:
+            return self.Enable(show_notify)

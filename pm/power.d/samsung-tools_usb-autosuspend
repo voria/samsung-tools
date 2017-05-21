@@ -9,7 +9,7 @@ cat <<EOF
 --------
 $0: USB autosuspend.
 
-This hook has 1 tuneable parameter. 
+This hook has 1 tuneable parameter.
 USB_AUTOSUSPEND = controls whether we will try to save power on battery.
 Defaults to true.
 
@@ -30,14 +30,14 @@ usb_autosuspend() {
 		echo "2" > $i
 	done
 	echo Done.
-	
+
 }
 
 case $1 in
-    true) usb_autosuspend auto ;;
-    false) usb_autosuspend on ;;
-    help) help;;
-    *) exit $NA
+	true) usb_autosuspend auto ;;
+	false) usb_autosuspend on ;;
+	help) help;;
+	*) exit $NA
 esac
 
 exit 0
