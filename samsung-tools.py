@@ -3,10 +3,10 @@
 #
 # Samsung-Tools
 #
-# Part of the 'Linux On My Samsung' project - <http://www.voria.org/forum>
+# Part of the 'Linux On My Samsung' project - <http://loms.voria.org>
 #
 # Copyleft (C) 2010 by
-# Fortunato Ventre (voRia) - <vorione@gmail.com> - <http://www.voria.org>
+# Fortunato Ventre - <vorione@gmail.com> - <http://www.voria.org>
 #
 # 'Samsung-Tools' is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -654,9 +654,9 @@ def usage(option=None, opt=None, value=None, parser=None):
     print
     print unicode(_("For more informations, visit the 'Linux On My Samsung' forum:"), "utf-8")
     print
-    print " - http://www.voria.org/forum"
+    print " - http://loms.voria.org"
     print
-    print "Copyleft by: Fortunato Ventre (voRia) - vorione@gmail.com"
+    print "Copyleft by: Fortunato Ventre - vorione@gmail.com"
     print unicode(_("Released under GPLv3 license"), "utf-8") + "."
     sys.exit(0)
 

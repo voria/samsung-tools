@@ -3,12 +3,12 @@
 # This file is distributed under the same license as the samsung-tools package.
 #
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
-# Fortunato Ventre (voRia) <vorione@gmail.com>, 2011.
+# Fortunato Ventre <vorione@gmail.com>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-05-07 12:30+0200\n"
+"POT-Creation-Date: 2017-05-21 12:45+0200\n"
 "PO-Revision-Date: 2011-11-23 12:06+0000\n"
 "Last-Translator: Fortunato Ventre <vorione@gmail.com>\n"
 "Language-Team: Hungarian <kde-i18n-it@kde.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Launchpad-Export-Date: 2012-05-21 17:40+0000\n"
 "X-Generator: Launchpad (build 15275)\n"
 
-#: backends/session/util/locales.py:24 samsung-tools-preferences.py:417
+#: backends/session/util/locales.py:24 samsung-tools-preferences.py:440
 msgid "Backlight"
 msgstr "Háttérvilágítás"
 
@@ -51,7 +51,7 @@ msgstr "Háttérvilágítás nem kapcsolható ki"
 msgid "Backlight cannot be toggled"
 msgstr "Háttérvilágítás nem kapcsolható"
 
-#: backends/session/util/locales.py:33 samsung-tools-preferences.py:426
+#: backends/session/util/locales.py:33 samsung-tools-preferences.py:454
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
@@ -83,271 +83,271 @@ msgstr "Bluetooth nem kapcsolható ki"
 msgid "Bluetooth cannot be toggled"
 msgstr "Bluetooth nem kapcsolható"
 
-#: backends/session/util/locales.py:41
+#: backends/session/util/locales.py:42
 msgid "Bluetooth control is not available"
 msgstr "Bluetooth nem szabályozható"
 
-#: backends/session/util/locales.py:43 samsung-tools-preferences.py:435
+#: backends/session/util/locales.py:44 samsung-tools-preferences.py:468
 msgid "CPU fan"
 msgstr "CPU hűtő"
 
-#: backends/session/util/locales.py:44
+#: backends/session/util/locales.py:45
 msgid "CPU Temperature:"
 msgstr "CPU hőmérséklete"
 
-#: backends/session/util/locales.py:45
+#: backends/session/util/locales.py:46
 msgid "Fan mode cannot be changed"
 msgstr "Hűtésmód nem változtatható"
 
-#: backends/session/util/locales.py:46
+#: backends/session/util/locales.py:47
 msgid "Fan mode: Normal"
 msgstr "Hűtésmód: Normál"
 
-#: backends/session/util/locales.py:47
+#: backends/session/util/locales.py:48
 msgid "Fan mode: Silent"
 msgstr "Hűtésmód: Csendes"
 
-#: backends/session/util/locales.py:48
+#: backends/session/util/locales.py:49
 msgid "Fan mode: Overclock"
 msgstr "Hűtésmód: Overclock"
 
-#: backends/session/util/locales.py:49
+#: backends/session/util/locales.py:50
 msgid "Cannot get fan mode"
 msgstr "Hűtésmód nem érzékelhető"
 
-#: backends/session/util/locales.py:50
+#: backends/session/util/locales.py:51
 msgid "CPU fan control is not available"
 msgstr "CPU hűtése nem szabályozható"
 
-#: backends/session/util/locales.py:52 samsung-tools-preferences.py:444
+#: backends/session/util/locales.py:53 samsung-tools-preferences.py:481
 msgid "Webcam"
 msgstr "Webkamera"
 
-#: backends/session/util/locales.py:53
+#: backends/session/util/locales.py:54
 msgid "Webcam is enabled"
 msgstr "Webkamera bekapcsolva"
 
-#: backends/session/util/locales.py:54
+#: backends/session/util/locales.py:55
 msgid "Webcam is disabled"
 msgstr "Webkamera kikapcsolva"
 
-#: backends/session/util/locales.py:55
+#: backends/session/util/locales.py:56
 msgid "Webcam enabled"
 msgstr "Webkamera bekapcsolva"
 
-#: backends/session/util/locales.py:56
+#: backends/session/util/locales.py:57
 msgid "Webcam disabled"
 msgstr "Webkamera kikapcsolva"
 
-#: backends/session/util/locales.py:57
+#: backends/session/util/locales.py:58
 msgid "Webcam cannot be enabled"
 msgstr "Webkamera nem kapcsolható be"
 
-#: backends/session/util/locales.py:58
+#: backends/session/util/locales.py:59
 msgid "Webcam cannot be disabled"
 msgstr "Webkamera nem kapcsolható ki"
 
-#: backends/session/util/locales.py:59
+#: backends/session/util/locales.py:60
 msgid "Webcam cannot be toggled"
 msgstr "Webkamera nem kapcsolható"
 
-#: backends/session/util/locales.py:60
+#: backends/session/util/locales.py:61
 msgid "Webcam control is not available"
 msgstr "Webkamera nem szabályozható"
 
-#: backends/session/util/locales.py:62 samsung-tools-preferences.py:453
+#: backends/session/util/locales.py:63 samsung-tools-preferences.py:495
 msgid "Wireless"
 msgstr "Vezeték néküli hálózat"
 
-#: backends/session/util/locales.py:63
+#: backends/session/util/locales.py:64
 msgid "Wireless is enabled"
 msgstr "Vezeték néküli hálózat bekapcsolva"
 
-#: backends/session/util/locales.py:64
+#: backends/session/util/locales.py:65
 msgid "Wireless is disabled"
 msgstr "Vezeték néküli hálózat kikapcsolva"
 
-#: backends/session/util/locales.py:65
+#: backends/session/util/locales.py:66
 msgid "Wireless enabled"
 msgstr "Vezeték néküli hálózat bekapcsolva"
 
-#: backends/session/util/locales.py:66
+#: backends/session/util/locales.py:67
 msgid "Wireless disabled"
 msgstr "Vezeték néküli hálózat kikapcsolva"
 
-#: backends/session/util/locales.py:67
+#: backends/session/util/locales.py:68
 msgid "Wireless cannot be enabled"
 msgstr "Vezeték néküli hálózat nem kapcsolható be"
 
-#: backends/session/util/locales.py:68
+#: backends/session/util/locales.py:69
 msgid "Wireless cannot be disabled"
 msgstr "Vezeték néküli hálózat nem kapcsolható ki"
 
-#: backends/session/util/locales.py:69
+#: backends/session/util/locales.py:70
 msgid "Wireless cannot be toggled"
 msgstr "Vezeték néküli hálózat nem kapcsolható"
 
-#: backends/session/util/locales.py:70
+#: backends/session/util/locales.py:72
 msgid "Wireless control is not available"
 msgstr "Vezeték néküli hálózat nem szabályozható"
 
-#: samsung-tools.py:59
+#: samsung-tools.py:62
 msgid "Backlight control: unable to connect to session service!"
 msgstr "Háttérvilágítás-szabályozás: session service nem érhető el!"
 
-#: samsung-tools.py:149
+#: samsung-tools.py:156
 msgid "Bluetooth control: unable to connect to session service!"
 msgstr "Bluetooth-szabályozás: session service nem érhető el!"
 
-#: samsung-tools.py:252
+#: samsung-tools.py:263
 msgid "CPU fan control: unable to connect to session service!"
 msgstr "CPU-hűtés szabályozás: session service nem érhető el!"
 
-#: samsung-tools.py:403
+#: samsung-tools.py:419
 msgid "Webcam control: unable to connect to session service!"
 msgstr "Webkamera-szabályozás: session service nem érhető el!"
 
-#: samsung-tools.py:506
+#: samsung-tools.py:526
 msgid "Wireless control: unable to connect to session service!"
 msgstr "Vezeték nélküli hálózat szabályozás: session service nem érhető el!"
 
-#: samsung-tools.py:596
+#: samsung-tools.py:617
 msgid "Command Line Utility"
 msgstr ""
 
-#: samsung-tools.py:598 samsung-tools.py:649
+#: samsung-tools.py:619 samsung-tools.py:671
 #, python-format
 msgid "Usage: %s <interface> <option> ..."
 msgstr "Alkalmazás: %s <interfész> <opció> ..."
 
-#: samsung-tools.py:600 po/samsung-tools-preferences.glade.h:15
+#: samsung-tools.py:621 po/samsung-tools-preferences.glade.h:15
 msgid "Backlight:"
 msgstr "Háttérvilágítás"
 
-#: samsung-tools.py:601 samsung-tools.py:604 samsung-tools.py:607
-#: samsung-tools.py:610 samsung-tools.py:613
+#: samsung-tools.py:622 samsung-tools.py:625 samsung-tools.py:628
+#: samsung-tools.py:631 samsung-tools.py:634
 msgid "Interface"
 msgstr "Interfész"
 
-#: samsung-tools.py:602 samsung-tools.py:605 samsung-tools.py:608
-#: samsung-tools.py:611 samsung-tools.py:614
+#: samsung-tools.py:623 samsung-tools.py:626 samsung-tools.py:629
+#: samsung-tools.py:632 samsung-tools.py:635
 msgid "Options"
 msgstr "Beállítások"
 
-#: samsung-tools.py:603 po/samsung-tools-preferences.glade.h:13
+#: samsung-tools.py:624 po/samsung-tools-preferences.glade.h:13
 msgid "Bluetooth:"
 msgstr "Bluetooth:"
 
-#: samsung-tools.py:606 po/samsung-tools-preferences.glade.h:11
+#: samsung-tools.py:627 po/samsung-tools-preferences.glade.h:11
 msgid "CPU fan:"
 msgstr "CPU-hűtő:"
 
-#: samsung-tools.py:609 po/samsung-tools-preferences.glade.h:9
+#: samsung-tools.py:630 po/samsung-tools-preferences.glade.h:9
 msgid "Webcam:"
 msgstr "Webkamera:"
 
-#: samsung-tools.py:612 po/samsung-tools-preferences.glade.h:19
+#: samsung-tools.py:633 po/samsung-tools-preferences.glade.h:19
 msgid "Wireless:"
 msgstr "Vezeték nélküli hálózat:"
 
-#: samsung-tools.py:616
+#: samsung-tools.py:637
 msgid "Other options:"
 msgstr "Egyéb beállítások:"
 
-#: samsung-tools.py:617
+#: samsung-tools.py:638
 msgid "Show status for all devices."
 msgstr "Mutassa minden eszköz állapotát."
 
-#: samsung-tools.py:618
+#: samsung-tools.py:639
 msgid "Show graphical notifications."
 msgstr "Mutasson grafikai értesítéseket."
 
-#: samsung-tools.py:619
+#: samsung-tools.py:640
 msgid "Do not print messages on standard output."
 msgstr "Ne nyomtasson üzeneteket szabványos kimeneten."
 
-#: samsung-tools.py:620
+#: samsung-tools.py:641
 msgid "Show the control interface currently in use."
 msgstr ""
 
-#: samsung-tools.py:621
+#: samsung-tools.py:642
 msgid "Stop the session service."
 msgstr "Session service leállítása."
 
-#: samsung-tools.py:622
+#: samsung-tools.py:643
 msgid "Stop the system service."
 msgstr "System service leállítása."
 
-#: samsung-tools.py:624
+#: samsung-tools.py:645
 msgid "Examples of use:"
 msgstr "Alkalmazási példák:"
 
-#: samsung-tools.py:625
+#: samsung-tools.py:646
 msgid " - Toggle backlight:"
 msgstr " - Háttérvilágítás kapcsolása:"
 
-#: samsung-tools.py:628
+#: samsung-tools.py:649
 msgid " - Toggle wireless and set CPU fan mode to 'silent':"
 msgstr ""
 " - Vezeték nélküli hálózat kapcsolása és CPU-hűtés állítása \"csendes\" "
 "üzemmódra:"
 
-#: samsung-tools.py:631
+#: samsung-tools.py:652
 msgid " - Disable bluetooth, webcam and wireless:"
 msgstr " - Bluetooth, webkamera és vezeték nélküli hálózat kikapcsolása:"
 
-#: samsung-tools.py:634
+#: samsung-tools.py:655
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "További információért látogasson a \"Linux on My Samsung\" fórumra:"
 
-#: samsung-tools.py:639 samsung-tools-preferences.py:1025
+#: samsung-tools.py:660 samsung-tools-preferences.py:1159
 msgid "Released under GPLv3 license"
 msgstr "Kibocsátva GPLv3 licenc alatt"
 
-#: samsung-tools.py:645
+#: samsung-tools.py:666
 msgid "No action(s) specified."
 msgstr "Nincs megadva művelet."
 
-#: samsung-tools.py:646 samsung-tools.py:717
+#: samsung-tools.py:667 samsung-tools.py:741
 msgid "Use --help for instructions."
 msgstr "Útbaigazításhoz használja a --help opciót."
 
-#: samsung-tools.py:712
+#: samsung-tools.py:736
 msgid "This program is intended to be used only by non-privileged users."
 msgstr ""
 "Ez a program csak rendszergazda- és egyéb kiemelt jogok nélküli "
 "felhasználóként használandó."
 
-#: samsung-tools.py:716
+#: samsung-tools.py:740
 msgid "Wrong argument(s)."
 msgstr "Rossz argumentum(ok)."
 
-#: samsung-tools.py:729
+#: samsung-tools.py:757
 msgid "Unable to start a DBus daemon!"
 msgstr ""
 
-#: samsung-tools.py:744 po/samsung-tools-preferences.glade.h:30
+#: samsung-tools.py:774 po/samsung-tools-preferences.glade.h:30
 msgid "Control interface:"
 msgstr ""
 
-#: samsung-tools.py:752
+#: samsung-tools.py:782
 #, fuzzy
 msgid "Control interface: unable to connect to system service!"
 msgstr "System sevice nem érhető el!"
 
-#: samsung-tools.py:762
+#: samsung-tools.py:794
 msgid "Session service stopped"
 msgstr "Session service leállítva"
 
-#: samsung-tools.py:765
+#: samsung-tools.py:797
 msgid "Cannot stop session service"
 msgstr "Session service nem állítható le"
 
-#: samsung-tools.py:775
+#: samsung-tools.py:809
 msgid "System service stopped"
 msgstr "System service leállítva"
 
-#: samsung-tools.py:778
+#: samsung-tools.py:812
 msgid "Cannot stop system service"
 msgstr "System service nem állítható le"
 
@@ -355,38 +355,38 @@ msgstr "System service nem állítható le"
 msgid "Please press the new hotkey"
 msgstr "Nyomja meg az új billentyűkombinációt"
 
-#: samsung-tools-preferences.py:124
+#: samsung-tools-preferences.py:128
 msgid "None"
 msgstr "Semmi"
 
-#: samsung-tools-preferences.py:181 samsung-tools-preferences.py:251
-#: samsung-tools-preferences.py:347 samsung-tools-preferences.py:359
-#: samsung-tools-preferences.py:722 samsung-tools-preferences.py:734
-#: samsung-tools-preferences.py:746
+#: samsung-tools-preferences.py:190 samsung-tools-preferences.py:266
+#: samsung-tools-preferences.py:366 samsung-tools-preferences.py:379
+#: samsung-tools-preferences.py:845 samsung-tools-preferences.py:858
+#: samsung-tools-preferences.py:871
 msgid "Unable to connect to system service!"
 msgstr "System sevice nem érhető el!"
 
-#: samsung-tools-preferences.py:371
+#: samsung-tools-preferences.py:391
 msgid "Confirm"
 msgstr "Megerősít"
 
-#: samsung-tools-preferences.py:372
+#: samsung-tools-preferences.py:392
 msgid "Apply the new VIDs?"
 msgstr "Alkalmazza az új CPU-feszültségi értékeket (VID)?"
 
-#: samsung-tools-preferences.py:638
+#: samsung-tools-preferences.py:755
 msgid "You need a PHC enabled kernel to use this feature"
 msgstr "E tulajdonság használatához PHC-engedélyezett kernel-re van szüksége"
 
-#: samsung-tools-preferences.py:662
+#: samsung-tools-preferences.py:780
 msgid "Unable to connect to session service!"
 msgstr "Session service nem érhető el!"
 
-#: samsung-tools-preferences.py:1002
+#: samsung-tools-preferences.py:1136
 msgid "Caution!"
 msgstr "Figyelem!"
 
-#: samsung-tools-preferences.py:1003
+#: samsung-tools-preferences.py:1137
 msgid ""
 "CPU undervolting can lead to significant gains in terms of power energy "
 "saving, however <b>IT IS A RISKY PRACTICE</b> that might result in "

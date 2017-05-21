@@ -3,10 +3,10 @@
 #
 # Samsung-Tools
 #
-# Part of the 'Linux On My Samsung' project - <http://www.voria.org/forum>
+# Part of the 'Linux On My Samsung' project - <http://loms.voria.org>
 #
 # Copyleft (C) 2010 by
-# Fortunato Ventre (voRia) - <vorione@gmail.com> - <http://www.voria.org>
+# Fortunato Ventre - <vorione@gmail.com> - <http://www.voria.org>
 #
 # 'Samsung-Tools' is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -1157,9 +1157,9 @@ Are you sure you want to continue?"), "utf-8")
         dialog.set_name(APP_NAME)
         dialog.set_version(APP_VERSION)
         copyright = unicode(_("Released under GPLv3 license"), "utf-8") + \
-            "\n\nCopyleft by\nFortunato Ventre (voRia)\nvorione@gmail.com"
+            "\n\nCopyleft by\nFortunato Ventre\nvorione@gmail.com"
         dialog.set_copyright(copyright)
-        dialog.set_website("http://www.voria.org/forum")
+        dialog.set_website("http://loms.voria.org")
         dialog.set_website_label("Linux On My Samsung")
         dialog.set_authors(AUTHORS_LIST)
         dialog.set_artists(ARTISTS_LIST)

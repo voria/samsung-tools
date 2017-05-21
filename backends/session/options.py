@@ -2,10 +2,10 @@
 #
 # Samsung-Tools
 #
-# Part of the 'Linux On My Samsung' project - <http://www.voria.org/forum>
+# Part of the 'Linux On My Samsung' project - <http://loms.voria.org>
 #
 # Copyleft (C) 2010 by
-# Fortunato Ventre (voRia) - <vorione@gmail.com> - <http://www.voria.org>
+# Fortunato Ventre - <vorione@gmail.com> - <http://www.voria.org>
 #
 # 'Samsung-Tools' is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by

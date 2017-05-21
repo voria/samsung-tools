@@ -5,7 +5,7 @@ samsung-tools (2.3.1~ppa1~loms~trusty) trusty; urgency=low
   * Update translations to latest versions from Launchpad
   * Update translators credits list
 
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Thu, 07 May 2014 11:24:23 +0100
+ -- Fortunato Ventre <vorione@gmail.com>  Thu, 07 May 2014 11:24:23 +0100
 
 samsung-tools (2.3~ppa1~loms~saucy) saucy; urgency=low
 
@@ -16,7 +16,7 @@ samsung-tools (2.3~ppa1~loms~saucy) saucy; urgency=low
   * Update artists list
   * Minor fixes
 
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Thu, 14 Nov 2013 14:21:26 +0100
+ -- Fortunato Ventre <vorione@gmail.com>  Thu, 14 Nov 2013 14:21:26 +0100
 
 samsung-tools (2.2~ppa1~loms~raring) raring; urgency=low
 
@@ -34,25 +34,25 @@ samsung-tools (2.2~ppa1~loms~raring) raring; urgency=low
   * Update translators credits list.
   * Minor code fixes.
 
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Thu, 18 Jul 2013 19:04:05 +0100
+ -- Fortunato Ventre <vorione@gmail.com>  Thu, 18 Jul 2013 19:04:05 +0100
 
 samsung-tools (2.1~ppa1~loms~raring) raring; urgency=low
 
   * First upload for Raring Ringtail.
 
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Sun, 28 Apr 2013 15:54:16 +0200
+ -- Fortunato Ventre <vorione@gmail.com>  Sun, 28 Apr 2013 15:54:16 +0200
 
 samsung-tools (2.1~ppa1~loms~quantal) quantal; urgency=low
 
   * First upload for Quantal Quetzal.
 
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Tue, 23 Oct 2012 11:24:17 +0200
+ -- Fortunato Ventre <vorione@gmail.com>  Tue, 23 Oct 2012 11:24:17 +0200
 
 samsung-tools (2.1~ppa1~loms~precise) precise; urgency=low
 
   * First upload for Precise Pangolin.
 
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Wed, 14 Mar 2012 10:14:35 +0100
+ -- Fortunato Ventre <vorione@gmail.com>  Wed, 14 Mar 2012 10:14:35 +0100
 
 samsung-tools (2.1~ppa1~loms~oneiric) oneiric; urgency=low
 
@@ -63,7 +63,7 @@ samsung-tools (2.1~ppa1~loms~oneiric) oneiric; urgency=low
   * Update translations to latest versions from Launchpad.
   * Update translators credits list.
 
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Mon, 12 Mar 2012 15:48:49 +0100
+ -- Fortunato Ventre <vorione@gmail.com>  Mon, 12 Mar 2012 15:48:49 +0100
 
 samsung-tools (2.0~ppa1~loms~oneiric) oneiric; urgency=low
 
@@ -76,7 +76,7 @@ samsung-tools (2.0~ppa1~loms~oneiric) oneiric; urgency=low
   * Update translations to latest version from Launchpad.
   * Add support for lightdm in upstart service.
 
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Wed, 12 Oct 2011 16:12:16 +0200
+ -- Fortunato Ventre <vorione@gmail.com>  Wed, 12 Oct 2011 16:12:16 +0200
 
 samsung-tools (1.5~ppa1~loms~oneiric) oneiric; urgency=low
 
@@ -87,7 +87,7 @@ samsung-tools (1.5~ppa1~loms~oneiric) oneiric; urgency=low
   * Install pm hooks as disabled by default.
   * Update translations to latest version from Launchpad.
 
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Sat, 01 Oct 2011 09:35:08 +0200
+ -- Fortunato Ventre <vorione@gmail.com>  Sat, 01 Oct 2011 09:35:08 +0200
 
 samsung-tools (1.4~ppa1~loms~natty) natty; urgency=low
 
@@ -101,7 +101,7 @@ samsung-tools (1.4~ppa1~loms~natty) natty; urgency=low
   * Fix vboxes orientation in glade files.
   * Update translations to latest version from Launchpad.
 
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Fri, 05 May 2011 17:31:52 +0100
+ -- Fortunato Ventre <vorione@gmail.com>  Fri, 05 May 2011 17:31:52 +0100
 
 samsung-tools (1.3.2~ppa1~loms~maverick) maverick; urgency=low
 
@@ -109,7 +109,7 @@ samsung-tools (1.3.2~ppa1~loms~maverick) maverick; urgency=low
     Honor the --quiet option when it's used along with the --status option.
   * Read CPU temperature from /sys/ instead of deprecated /proc/acpi/.
 
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Fri, 04 Feb 2011 14:25:57 +0100
+ -- Fortunato Ventre <vorione@gmail.com>  Fri, 04 Feb 2011 14:25:57 +0100
 
 samsung-tools (1.3.1~ppa1~loms~maverick) maverick; urgency=low
 
@@ -117,7 +117,7 @@ samsung-tools (1.3.1~ppa1~loms~maverick) maverick; urgency=low
   * Properly show error and stop icons in notification messages when
     notify-osd is not available (ie, KDE environment).
 
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Sun, 19 Dec 2010 15:07:50 +0100
+ -- Fortunato Ventre <vorione@gmail.com>  Sun, 19 Dec 2010 15:07:50 +0100
 
 samsung-tools (1.3~ppa1~loms~maverick) maverick; urgency=low
 
@@ -126,8 +126,8 @@ samsung-tools (1.3~ppa1~loms~maverick) maverick; urgency=low
     custom commands when devices are toggled.
   * Update translations to latest version from Launchpad.
   * Update translators' credits list.
- 
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Fri, 10 Dec 2010 14:56:02 +0100
+
+ -- Fortunato Ventre <vorione@gmail.com>  Fri, 10 Dec 2010 14:56:02 +0100
 
 samsung-tools (1.2~ppa1~loms~maverick) maverick; urgency=low
 
@@ -139,7 +139,7 @@ samsung-tools (1.2~ppa1~loms~maverick) maverick; urgency=low
   * Update translations to latest version from Launchpad.
   * Update translators' credits list.
 
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Mon, 11 Oct 2010 13:13:44 +0200
+ -- Fortunato Ventre <vorione@gmail.com>  Mon, 11 Oct 2010 13:13:44 +0200
 
 samsung-tools (1.1.4~ppa1~loms~lucid) lucid; urgency=low
 
@@ -151,7 +151,7 @@ samsung-tools (1.1.4~ppa1~loms~lucid) lucid; urgency=low
   * Update translations to latest version from Launchpad.
   * Update translators' credits list.
 
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Thu, 23 Sep 2010 11:13:48 +0200
+ -- Fortunato Ventre <vorione@gmail.com>  Thu, 23 Sep 2010 11:13:48 +0200
 
 samsung-tools (1.1.3~ppa1~loms~lucid) lucid; urgency=low
 
@@ -159,27 +159,27 @@ samsung-tools (1.1.3~ppa1~loms~lucid) lucid; urgency=low
   * Update translations to latest version from Launchpad.
   * Add Michael Likholet to translators' credits list (thank you!).
   * Clean up 'copyright' file.
-  
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Tue, 14 Sep 2010 12:15:51 +0200
+
+ -- Fortunato Ventre <vorione@gmail.com>  Tue, 14 Sep 2010 12:15:51 +0200
 
 samsung-tools (1.1.2~ppa1~loms~lucid) lucid; urgency=low
 
   * Update translations to latest versions from Launchpad.
   * Update translators' credits list (thanks to Dirk Roos
-    for the new Dutch translation). 
+    for the new Dutch translation).
 
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Sat, 14 Aug 2010 18:05:51 +0200
+ -- Fortunato Ventre <vorione@gmail.com>  Sat, 14 Aug 2010 18:05:51 +0200
 
 samsung-tools (1.1.1~ppa1~loms~lucid) lucid; urgency=low
 
   * Add support for python 2.5.
   * Update translations to latest versions from Launchpad.
-  * Add Ukranian translation (thanks to Sergiy Gavrylov). 
+  * Add Ukranian translation (thanks to Sergiy Gavrylov).
 
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Thu, 01 Jul 2010 16:25:13 +0200
+ -- Fortunato Ventre <vorione@gmail.com>  Thu, 01 Jul 2010 16:25:13 +0200
 
 samsung-tools (1.1~ppa1~loms~lucid) lucid; urgency=low
-  
+
   * Specify a default $PATH for system service, so the commands' paths can be
     dynamically found at runtime, indipendently from the distro in use.
   * Search for 'laptop-mode' init script in '/etc/init.d/' and '/etc/rc.d/'
@@ -204,7 +204,7 @@ samsung-tools (1.1~ppa1~loms~lucid) lucid; urgency=low
   * Update translations to latest versions from Launchpad.
   * Update translators' credits list.
 
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Wed, 19 May 2010 10:50:32 +0200
+ -- Fortunato Ventre <vorione@gmail.com>  Wed, 19 May 2010 10:50:32 +0200
 
 samsung-tools (1.0.3~ppa1~loms~lucid) lucid; urgency=low
 
@@ -215,14 +215,14 @@ samsung-tools (1.0.3~ppa1~loms~lucid) lucid; urgency=low
   * Add new translations, Hungarian and Swedish.
   * Update translators credits list.
 
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Sun, 09 May 2010 17:51:02 +0200
+ -- Fortunato Ventre <vorione@gmail.com>  Sun, 09 May 2010 17:51:02 +0200
 
 samsung-tools (1.0.2~ppa1~loms~lucid) lucid; urgency=low
 
   * Fix applet icon.
   * Update turkish translation to latest version from Launchpad.
 
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Tue, 04 May 2010 12:52:07 +0200
+ -- Fortunato Ventre <vorione@gmail.com>  Tue, 04 May 2010 12:52:07 +0200
 
 samsung-tools (1.0.1~ppa1~loms~lucid) lucid; urgency=low
 
@@ -231,13 +231,13 @@ samsung-tools (1.0.1~ppa1~loms~lucid) lucid; urgency=low
   * Use '/etc/init.d/' scripts directly in order to completely drop
     upstart dependency.
 
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Sun, 02 May 2010 17:42:51 +0200
+ -- Fortunato Ventre <vorione@gmail.com>  Sun, 02 May 2010 17:42:51 +0200
 
 samsung-tools (1.0~ppa1~loms~lucid) lucid; urgency=low
 
   * Bump version to 1.0.
 
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Thu, 29 Apr 2010 17:53:01 +0200
+ -- Fortunato Ventre <vorione@gmail.com>  Thu, 29 Apr 2010 17:53:01 +0200
 
 samsung-tools (0.2~ppa7~loms~lucid) lucid; urgency=low
 
@@ -246,36 +246,36 @@ samsung-tools (0.2~ppa7~loms~lucid) lucid; urgency=low
     - Add 'laptop-mode-tools' and 'phc-intel' as suggestions.
     - Update package description.
 
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Thu, 22 Apr 2010 16:31:16 +0200
+ -- Fortunato Ventre <vorione@gmail.com>  Thu, 22 Apr 2010 16:31:16 +0200
 
 samsung-tools (0.2~ppa6~loms~lucid) lucid; urgency=low
 
   * Add alias for 'XF86TouchpadToggle'.
   * Update german translation to latest version from Launchpad.
 
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Wed, 21 Apr 2010 12:18:32 +0200
+ -- Fortunato Ventre <vorione@gmail.com>  Wed, 21 Apr 2010 12:18:32 +0200
 
 samsung-tools (0.2~ppa5~loms~lucid) lucid; urgency=low
 
   * Update translations to latest version from Launchpad.
   * Update translators credits list.
-  
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Tue, 20 Apr 2010 10:22:32 +0200
+
+ -- Fortunato Ventre <vorione@gmail.com>  Tue, 20 Apr 2010 10:22:32 +0200
 
 samsung-tools (0.2~ppa4~loms~lucid) lucid; urgency=low
 
   * Set lower available VID for all spinbuttons.
   * Update strings and translations.
 
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Thu, 15 Apr 2010 22:10:15 +0200
+ -- Fortunato Ventre <vorione@gmail.com>  Thu, 15 Apr 2010 22:10:15 +0200
 
 samsung-tools (0.2~ppa3~loms~lucid) lucid; urgency=low
 
   * Set the 'No' button as default response in the warning dialogs
     in the CPU undervolting section.
-  * Update french translation to latest version available on Launchpad. 
+  * Update french translation to latest version available on Launchpad.
 
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Wed, 14 Apr 2010 15:37:34 +0200
+ -- Fortunato Ventre <vorione@gmail.com>  Wed, 14 Apr 2010 15:37:34 +0200
 
 samsung-tools (0.2~ppa2~loms~lucid) lucid; urgency=low
 
@@ -283,35 +283,35 @@ samsung-tools (0.2~ppa2~loms~lucid) lucid; urgency=low
     working or not available.
   * Update strings and translations.
 
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Wed, 14 Apr 2010 13:22:28 +0200
+ -- Fortunato Ventre <vorione@gmail.com>  Wed, 14 Apr 2010 13:22:28 +0200
 
 samsung-tools (0.2~ppa1~loms~lucid) lucid; urgency=low
 
   * Add support to CPU undervolting.
   * Update strings and translations.
 
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Tue, 13 Apr 2010 16:50:37 +0200
+ -- Fortunato Ventre <vorione@gmail.com>  Tue, 13 Apr 2010 16:50:37 +0200
 
 samsung-tools (0.1~ppa18~loms~lucid) lucid; urgency=low
 
   * New application icon.
   * Add credits for artists.
 
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Mon, 12 Apr 2010 12:57:38 +0200
+ -- Fortunato Ventre <vorione@gmail.com>  Mon, 12 Apr 2010 12:57:38 +0200
 
 samsung-tools (0.1~ppa17~loms~lucid) lucid; urgency=low
 
   * Add new icons for cpu fan.
   * Update some log messages.
 
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Mon, 12 Apr 2010 11:10:58 +0200
+ -- Fortunato Ventre <vorione@gmail.com>  Mon, 12 Apr 2010 11:10:58 +0200
 
 samsung-tools (0.1~ppa16~loms~lucid) lucid; urgency=low
 
   * Add support for kernel parameters configuration.
   * Update strings and translations.
 
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Sun, 11 Apr 2010 17:14:15 +0200
+ -- Fortunato Ventre <vorione@gmail.com>  Sun, 11 Apr 2010 17:14:15 +0200
 
 samsung-tools (0.1~ppa15~loms~lucid) lucid; urgency=low
 
@@ -319,21 +319,21 @@ samsung-tools (0.1~ppa15~loms~lucid) lucid; urgency=low
   * Fix log messages in SystemConfig() class.
   * Update strings and translations.
 
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Sun, 11 Apr 2010 11:36:26 +0200
+ -- Fortunato Ventre <vorione@gmail.com>  Sun, 11 Apr 2010 11:36:26 +0200
 
 samsung-tools (0.1~ppa14~loms~lucid) lucid; urgency=low
 
   * Resize application's icon.
 
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Sat, 10 Apr 2010 12:05:46 +0200
+ -- Fortunato Ventre <vorione@gmail.com>  Sat, 10 Apr 2010 12:05:46 +0200
 
 samsung-tools (0.1~ppa13~loms~lucid) lucid; urgency=low
 
   * Remove old commands no more used.
   * Change the application's icon with a new one.
-  * Update to latest translations from Launchpad's rosetta.  
+  * Update to latest translations from Launchpad's rosetta.
 
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Fri, 09 Apr 2010 13:13:00 +0200
+ -- Fortunato Ventre <vorione@gmail.com>  Fri, 09 Apr 2010 13:13:00 +0200
 
 samsung-tools (0.1~ppa12~loms~lucid) lucid; urgency=low
 
@@ -347,13 +347,13 @@ samsung-tools (0.1~ppa12~loms~lucid) lucid; urgency=low
   * Update translations template.
   * Update italian translation.
 
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Fri, 09 Apr 2010 11:06:19 +0200
+ -- Fortunato Ventre <vorione@gmail.com>  Fri, 09 Apr 2010 11:06:19 +0200
 
 samsung-tools (0.1~ppa11~loms~lucid) lucid; urgency=low
 
-  * samsung-tools-applet: show CPU temperature as tooltip. 
+  * samsung-tools-applet: show CPU temperature as tooltip.
 
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Sat, 03 Apr 2010 20:21:25 +0200
+ -- Fortunato Ventre <vorione@gmail.com>  Sat, 03 Apr 2010 20:21:25 +0200
 
 samsung-tools (0.1~ppa10~loms~lucid) lucid; urgency=low
 
@@ -361,13 +361,13 @@ samsung-tools (0.1~ppa10~loms~lucid) lucid; urgency=low
   * Do not try to kill running services in debian/prerm, as it seems
     this causes troubles.
 
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Fri, 02 Apr 2010 12:41:08 +0200
+ -- Fortunato Ventre <vorione@gmail.com>  Fri, 02 Apr 2010 12:41:08 +0200
 
 samsung-tools (0.1~ppa9~loms~lucid) lucid; urgency=low
 
   * Add a new applet for gnome.
 
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Thu, 01 Apr 2010 14:41:46 +0200
+ -- Fortunato Ventre <vorione@gmail.com>  Thu, 01 Apr 2010 14:41:46 +0200
 
 samsung-tools (0.1~ppa8~loms~lucid) lucid; urgency=low
 
@@ -378,14 +378,14 @@ samsung-tools (0.1~ppa8~loms~lucid) lucid; urgency=low
   * Update translations.
   * debian/prerm: kill all running services when uninstalling.
 
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Thu, 01 Apr 2010 11:55:04 +0200
+ -- Fortunato Ventre <vorione@gmail.com>  Thu, 01 Apr 2010 11:55:04 +0200
 
 samsung-tools (0.1~ppa7~loms~lucid) lucid; urgency=low
 
   * Use 'esdm' as default wireless toggle method in 'samsung-tools-preferences'.
-  * Correctly use KDE notifications when pynotify is also available. 
+  * Correctly use KDE notifications when pynotify is also available.
 
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Wed, 31 Mar 2010 00:48:32 +0200
+ -- Fortunato Ventre <vorione@gmail.com>  Wed, 31 Mar 2010 00:48:32 +0200
 
 samsung-tools (0.1~ppa6~loms~lucid) lucid; urgency=low
 
@@ -396,16 +396,16 @@ samsung-tools (0.1~ppa6~loms~lucid) lucid; urgency=low
   * Update to latest translations from Launchpad.
   * Add a 'prerm' script to 'debian/' drectory, in order to remove
     all files created at runtime when package is uninstalled.
-  * debian/rules: remove all .pyc files when cleaning sources.   
+  * debian/rules: remove all .pyc files when cleaning sources.
 
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Tue, 30 Mar 2010 13:37:11 +0200
+ -- Fortunato Ventre <vorione@gmail.com>  Tue, 30 Mar 2010 13:37:11 +0200
 
 samsung-tools (0.1~ppa5~loms~lucid) lucid; urgency=low
 
   * Add ironfisher to the translators credits list.
   * Add a new option to 'samsung-tools', to show status for all devices.
 
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Fri, 26 Mar 2010 11:44:44 +0100
+ -- Fortunato Ventre <vorione@gmail.com>  Fri, 26 Mar 2010 11:44:44 +0100
 
 samsung-tools (0.1~ppa4~loms~lucid) lucid; urgency=low
 
@@ -414,10 +414,10 @@ samsung-tools (0.1~ppa4~loms~lucid) lucid; urgency=low
   * Sleep some time when restoring last status for devices on resume/thaw.
   * Update translations to latest versions from Launchpad's Rosetta.
 
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Fri, 26 Mar 2010 10:10:52 +0100
+ -- Fortunato Ventre <vorione@gmail.com>  Fri, 26 Mar 2010 10:10:52 +0100
 
 samsung-tools (0.1~ppa3~loms~lucid) lucid; urgency=low
 
   * Initial release.
 
- -- Fortunato Ventre (voRia) <vorione@gmail.com>  Sat, 20 Mar 2010 14:31:00 +0100
+ -- Fortunato Ventre <vorione@gmail.com>  Sat, 20 Mar 2010 14:31:00 +0100

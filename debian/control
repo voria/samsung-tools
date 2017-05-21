@@ -1,10 +1,10 @@
 Source: samsung-tools
 Section: misc
 Priority: extra
-Maintainer: Fortunato Ventre (voRia) <vorione@gmail.com>
+Maintainer: Fortunato Ventre <vorione@gmail.com>
 Build-Depends: debhelper (>= 9), gettext
 Standards-Version: 3.8.0
-Homepage: http://www.voria.org/forum
+Homepage: http://loms.voria.org
 
 Package: samsung-tools
 Architecture: all
