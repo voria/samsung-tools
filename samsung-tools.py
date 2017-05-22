@@ -667,10 +667,8 @@ def main():
         print unicode(_("Use --help for instructions."), "utf-8")
         sys.exit(1)
 
-    usage_string = unicode(
-        _("Usage: %s <interface> <option> ...") %
-        os.path.basename(
-            sys.argv[0]), "utf-8")
+    usage_string = unicode(_("Usage: %s <interface> <option> ...") %
+                           os.path.basename(sys.argv[0]), "utf-8")
     parser = OptionParser(usage_string, add_help_option=False)
     parser.add_option('-h', '--help',
                       action="callback",

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-21 12:45+0200\n"
+"POT-Creation-Date: 2017-05-22 10:01+0200\n"
 "PO-Revision-Date: 2012-05-21 12:48+0000\n"
 "Last-Translator: Dirk Roos <Unknown>\n"
 "Language-Team: Dutch <kde-i18n-it@kde.org>\n"
@@ -216,7 +216,7 @@ msgstr "Draadloos netwerk instellingen: kan niet verbinden met sessiedienst!"
 msgid "Command Line Utility"
 msgstr "Opdrachtregelinstructie"
 
-#: samsung-tools.py:619 samsung-tools.py:671
+#: samsung-tools.py:619 samsung-tools.py:670
 #, python-format
 msgid "Usage: %s <interface> <option> ..."
 msgstr "Gebruik: %s <interface> <optie>"
@@ -307,43 +307,43 @@ msgstr "Vrijgegeven onder de GPLv3 licentie"
 msgid "No action(s) specified."
 msgstr "Geen actie(s) opgegeven."
 
-#: samsung-tools.py:667 samsung-tools.py:741
+#: samsung-tools.py:667 samsung-tools.py:739
 msgid "Use --help for instructions."
 msgstr "Gebruik --help voor instructies."
 
-#: samsung-tools.py:736
+#: samsung-tools.py:734
 msgid "This program is intended to be used only by non-privileged users."
 msgstr "Dit programma is enkel voor niet-gepriviligieerde gebruikers bedoeld."
 
-#: samsung-tools.py:740
+#: samsung-tools.py:738
 msgid "Wrong argument(s)."
 msgstr "Verkeerd(e) argument(en)."
 
-#: samsung-tools.py:757
+#: samsung-tools.py:755
 msgid "Unable to start a DBus daemon!"
 msgstr "Kan de DBUS daemon niet starten!"
 
-#: samsung-tools.py:774 po/samsung-tools-preferences.glade.h:30
+#: samsung-tools.py:772 po/samsung-tools-preferences.glade.h:30
 msgid "Control interface:"
 msgstr "Controle-interface:"
 
-#: samsung-tools.py:782
+#: samsung-tools.py:780
 msgid "Control interface: unable to connect to system service!"
 msgstr "Controle-interface: kan niet verbinden met de systeemservice!"
 
-#: samsung-tools.py:794
+#: samsung-tools.py:792
 msgid "Session service stopped"
 msgstr "Sessiedienst gestopt."
 
-#: samsung-tools.py:797
+#: samsung-tools.py:795
 msgid "Cannot stop session service"
 msgstr "Kan de sessiedienst niet stoppen"
 
-#: samsung-tools.py:809
+#: samsung-tools.py:807
 msgid "System service stopped"
 msgstr "Systeemdienst gestopt"
 
-#: samsung-tools.py:812
+#: samsung-tools.py:810
 msgid "Cannot stop system service"
 msgstr "Kan de systeemdienst niet stoppen"
 

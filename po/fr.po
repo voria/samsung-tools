@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-21 12:45+0200\n"
+"POT-Creation-Date: 2017-05-22 10:01+0200\n"
 "PO-Revision-Date: 2013-08-26 22:03+0000\n"
 "Last-Translator: Antoine Tonio <4n701ne@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -220,7 +220,7 @@ msgstr ""
 msgid "Command Line Utility"
 msgstr "Utilitaire ligne de commande"
 
-#: samsung-tools.py:619 samsung-tools.py:671
+#: samsung-tools.py:619 samsung-tools.py:670
 #, python-format
 msgid "Usage: %s <interface> <option> ..."
 msgstr "Emploi: %s<interface> <option> ..."
@@ -313,44 +313,44 @@ msgstr "Publié sous licence GPLv3"
 msgid "No action(s) specified."
 msgstr "Pas d'action(s) spécifiée(s)"
 
-#: samsung-tools.py:667 samsung-tools.py:741
+#: samsung-tools.py:667 samsung-tools.py:739
 msgid "Use --help for instructions."
 msgstr "Utiliser --help pour obtenir de l'aide"
 
-#: samsung-tools.py:736
+#: samsung-tools.py:734
 msgid "This program is intended to be used only by non-privileged users."
 msgstr "Ce programme doit être exécuté par un utilisateur sans privilèges."
 
-#: samsung-tools.py:740
+#: samsung-tools.py:738
 msgid "Wrong argument(s)."
 msgstr "Mauvais argument(s)"
 
-#: samsung-tools.py:757
+#: samsung-tools.py:755
 msgid "Unable to start a DBus daemon!"
 msgstr "Impossible de démarrer le démon DBus !"
 
-#: samsung-tools.py:774 po/samsung-tools-preferences.glade.h:30
+#: samsung-tools.py:772 po/samsung-tools-preferences.glade.h:30
 msgid "Control interface:"
 msgstr "Interface de contrôle :"
 
-#: samsung-tools.py:782
+#: samsung-tools.py:780
 msgid "Control interface: unable to connect to system service!"
 msgstr ""
 "Interface de contrôle : impossible de se connecter au service système !"
 
-#: samsung-tools.py:794
+#: samsung-tools.py:792
 msgid "Session service stopped"
 msgstr "Service de session arrêté"
 
-#: samsung-tools.py:797
+#: samsung-tools.py:795
 msgid "Cannot stop session service"
 msgstr "Impossible d'arrêter le service de session"
 
-#: samsung-tools.py:809
+#: samsung-tools.py:807
 msgid "System service stopped"
 msgstr "Service système arrêté"
 
-#: samsung-tools.py:812
+#: samsung-tools.py:810
 msgid "Cannot stop system service"
 msgstr "Impossible d'arrêter le service système"
 
