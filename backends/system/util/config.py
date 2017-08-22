@@ -109,7 +109,8 @@ class SystemConfig():
                 "Main", "BLUETOOTH_INITIAL_STATUS") not in BLUETOOTH_INITIAL_STATUS_ACCEPTED_VALUES:
             # Option is invalid, set default value
             systemlog.write("WARNING: 'SystemConfig' - 'BLUETOOTH_INITIAL_STATUS' option specified in '" +
-                            configfile + "' is invalid. Using default value ('" + BLUETOOTH_INITIAL_STATUS_DEFAULT + "').")
+                            configfile + "' is invalid. Using default value ('" + BLUETOOTH_INITIAL_STATUS_DEFAULT +
+                            "').")
             self.config.set(
                 "Main",
                 "BLUETOOTH_INITIAL_STATUS",
@@ -186,15 +187,16 @@ class SystemConfig():
                         newfile.write(option + "=" + value + "\n")
                     except:
                         systemlog.write(
-                            "ERROR: 'SystemConfig.__write()' - cannot write the new value for '" + option + "' in the new config file.")
+                            "ERROR: 'SystemConfig.__write()' - cannot write the new value for '" + option +
+                            "' in the new config file.")
                         oldfile.close()
                         newfile.close()
                         os.remove(self.configfile + ".new")
                         return False
         oldfile.close()
-        if sectionfound == False:  # probably an empty file, write section
+        if not sectionfound:  # probably an empty file, write section
             newfile.write("[Main]\n")
-        if optionfound == False:  # option not found in current config file, add it
+        if not optionfound:  # option not found in current config file, add it
             newfile.write(option + "=" + value + "\n")
         newfile.close()
         try:

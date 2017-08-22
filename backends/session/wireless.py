@@ -107,7 +107,7 @@ class Wireless(dbus.service.Object):
         if self.notify is not None and show_notify:
             self.notify.setTitle(WIRELESS_TITLE)
             self.notify.setUrgency("critical")
-            if result == True:
+            if result:
                 self.notify.setIcon(WIRELESS_ENABLED_ICON)
                 self.notify.setMessage(WIRELESS_ENABLED)
             else:
@@ -131,7 +131,7 @@ class Wireless(dbus.service.Object):
             self.notify.setTitle(WIRELESS_TITLE)
             self.notify.setIcon(WIRELESS_DISABLED_ICON)
             self.notify.setUrgency("critical")
-            if result == True:
+            if result:
                 self.notify.setMessage(WIRELESS_DISABLED)
             else:
                 self.notify.setMessage(WIRELESS_DISABLING_ERROR)

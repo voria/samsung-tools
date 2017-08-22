@@ -67,13 +67,14 @@ class SysCtl(dbus.service.Object):
                         newfile.write(option + " = " + value + "\n")
                     except:
                         systemlog.write(
-                            "ERROR: 'SysCtl.__write()' - cannot write the new value for '" + option + "' in the new config file.")
+                            "ERROR: 'SysCtl.__write()' - cannot write the new value for '" + option +
+                            "' in the new config file.")
                         oldfile.close()
                         newfile.close()
                         os.remove(file + ".new")
                         return False
         oldfile.close()
-        if optionfound == False:  # option not found in current config file, add it
+        if not optionfound:  # option not found in current config file, add it
             newfile.write(option + " = " + value + "\n")
         newfile.close()
         try:

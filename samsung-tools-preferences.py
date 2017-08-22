@@ -24,19 +24,18 @@ import time
 import gtk
 import gobject
 import dbus
-
-WORK_DIRECTORY = "/usr/share/samsung-tools"
-
-import sys
-sys.path.append(WORK_DIRECTORY)
-
 import gettext
-_ = gettext.gettext
-gettext.bindtextdomain("samsung-tools")
-gettext.textdomain("samsung-tools")
+import sys
 
 from backends.globals import *
 from backends.session.util.icons import *
+
+WORK_DIRECTORY = "/usr/share/samsung-tools"
+sys.path.append(WORK_DIRECTORY)
+
+_ = gettext.gettext
+gettext.bindtextdomain("samsung-tools")
+gettext.textdomain("samsung-tools")
 
 
 class Popup (gtk.Window):
@@ -399,7 +398,7 @@ class PhcDialog():
             if response == gtk.RESPONSE_YES:
                 conn.SetCurrentVids(newvids)
         conn = self.__connect_options()
-        if self.applyAtBootCheckbutton.get_active() == True:
+        if self.applyAtBootCheckbutton.get_active():
             conn.SetPHCVids(newvids)
         else:
             conn.SetPHCVids("default")
@@ -963,9 +962,9 @@ class Main():
         self.__set_webcam_hotkey_sensitiveness(checkbutton.get_active())
         self.__set_wireless_hotkey_sensitiveness(checkbutton.get_active())
 
-        if toggle_widgets_only == False:
+        if not toggle_widgets_only:
             session = self.__connect_session_options()
-            if checkbutton.get_active() == True:
+            if checkbutton.get_active():
                 session.SetUseHotkeys("true")
             else:
                 session.SetUseHotkeys("false")

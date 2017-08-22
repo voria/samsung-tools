@@ -43,7 +43,7 @@ class Wireless(dbus.service.Object):
     def __save_last_status(self, status):
         """ Save wireless last status. """
         try:
-            if status == True:
+            if status:
                 if os.path.exists(LAST_DEVICE_STATUS_WIRELESS):
                     os.remove(LAST_DEVICE_STATUS_WIRELESS)
             else:
@@ -66,7 +66,7 @@ class Wireless(dbus.service.Object):
                          sender_keyword='sender', connection_keyword='conn')
     def RestoreLastStatus(self, sender=None, conn=None):
         """ Restore last status for wireless """
-        if self.LastStatus() == True:
+        if self.LastStatus():
             self.Enable()
         else:
             self.Disable()

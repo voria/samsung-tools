@@ -61,7 +61,8 @@ class General(dbus.service.Object):
             self.__set_control_interface("sl")
         else:
             systemlog.write(
-                "WARNING: 'General.__init__()' - Cannot find any usable interface! Many of the functionalities will not work.")
+                "WARNING: 'General.__init__()' - Cannot find any usable interface! " +
+                "Many of the functionalities will not work.")
             self.__set_control_interface("none")
 
     def __set_control_interface(self, interface):

@@ -106,7 +106,7 @@ class Webcam(dbus.service.Object):
         if self.notify is not None and show_notify:
             self.notify.setTitle(WEBCAM_TITLE)
             self.notify.setUrgency("critical")
-            if result == True:
+            if result:
                 self.notify.setIcon(WEBCAM_ICON)
                 self.notify.setMessage(WEBCAM_ENABLED)
             else:
@@ -129,7 +129,7 @@ class Webcam(dbus.service.Object):
         if self.notify is not None and show_notify:
             self.notify.setTitle(WEBCAM_TITLE)
             self.notify.setUrgency("critical")
-            if result == True:
+            if result:
                 self.notify.setIcon(WEBCAM_ICON)
                 self.notify.setMessage(WEBCAM_DISABLED)
             else:
