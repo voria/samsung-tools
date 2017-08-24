@@ -44,8 +44,12 @@ class Bluetooth(dbus.service.Object):
             systemlog.write(
                 "WARNING: 'Bluetooth.__save_last_status()' - Cannot save last status.")
 
-    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature=None, out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SYSTEM_INTERFACE_NAME,
+        in_signature=None,
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def LastStatus(self, sender=None, conn=None):
         """ Return 'True' if last status is on, 'False' if off. """
         if os.path.exists(LAST_DEVICE_STATUS_BLUETOOTH):
@@ -53,8 +57,12 @@ class Bluetooth(dbus.service.Object):
         else:
             return True
 
-    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature=None, out_signature=None,
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SYSTEM_INTERFACE_NAME,
+        in_signature=None,
+        out_signature=None,
+        sender_keyword='sender',
+        connection_keyword='conn')
     def RestoreLastStatus(self, sender=None, conn=None):
         """ Restore last status for Bluetooth """
         if self.LastStatus():
@@ -62,8 +70,12 @@ class Bluetooth(dbus.service.Object):
         else:
             self.Disable()
 
-    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature=None, out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SYSTEM_INTERFACE_NAME,
+        in_signature=None,
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def IsAvailable(self, sender=None, conn=None):
         """ Check if bluetooth is available. """
         """ Return 'True' if available, 'False' if disabled. """
@@ -76,7 +88,9 @@ class Bluetooth(dbus.service.Object):
             output = process.communicate()[0]
             if process.returncode != 0:
                 systemlog.write(
-                    "ERROR: 'Bluetooth.IsAvailable()' - COMMAND: '" + command + "' FAILED.")
+                    "ERROR: 'Bluetooth.IsAvailable()' - COMMAND: '" +
+                    command +
+                    "' FAILED.")
                 return False
             if "Bluetooth" in output:
                 return True
@@ -84,11 +98,17 @@ class Bluetooth(dbus.service.Object):
                 return False
         except:
             systemlog.write(
-                "ERROR: 'Bluetooth.IsAvailable()' - COMMAND: '" + command + "' - Exception thrown.")
+                "ERROR: 'Bluetooth.IsAvailable()' - COMMAND: '" +
+                command +
+                "' - Exception thrown.")
             return False
 
-    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature=None, out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SYSTEM_INTERFACE_NAME,
+        in_signature=None,
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def IsEnabled(self, sender=None, conn=None):
         """ Check if bluetooth is enabled. """
         """ Return 'True' if enabled, 'False' if disabled. """
@@ -103,7 +123,9 @@ class Bluetooth(dbus.service.Object):
             output = process.communicate()[0]
             if process.returncode != 0:
                 systemlog.write(
-                    "ERROR: 'Bluetooth.IsEnabled()' - COMMAND: '" + command + "' FAILED.")
+                    "ERROR: 'Bluetooth.IsEnabled()' - COMMAND: '" +
+                    command +
+                    "' FAILED.")
                 return False
             if output.split()[5] == "yes":
                 status = False
@@ -113,11 +135,17 @@ class Bluetooth(dbus.service.Object):
             return status
         except:
             systemlog.write(
-                "ERROR: 'Bluetooth.IsEnabled()' - COMMAND: '" + command + "' - Exception thrown.")
+                "ERROR: 'Bluetooth.IsEnabled()' - COMMAND: '" +
+                command +
+                "' - Exception thrown.")
             return False
 
-    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature=None, out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SYSTEM_INTERFACE_NAME,
+        in_signature=None,
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def Enable(self, sender=None, conn=None):
         """ Enable bluetooth. """
         """ Return 'True' on success, 'False' otherwise. """
@@ -135,11 +163,15 @@ class Bluetooth(dbus.service.Object):
             process.communicate()
             if process.returncode != 0:
                 systemlog.write(
-                    "ERROR: 'Bluetooth.Enable()' - COMMAND: '" + command + "' FAILED.")
+                    "ERROR: 'Bluetooth.Enable()' - COMMAND: '" +
+                    command +
+                    "' FAILED.")
                 return False
         except:
             systemlog.write(
-                "ERROR: 'Bluetooth.Enable()' - COMMAND: '" + command + "' - Exception thrown.")
+                "ERROR: 'Bluetooth.Enable()' - COMMAND: '" +
+                command +
+                "' - Exception thrown.")
             return False
         # Exec script
         try:
@@ -150,14 +182,20 @@ class Bluetooth(dbus.service.Object):
                 stderr=subprocess.PIPE)
         except:
             systemlog.write(
-                "WARNING: 'Bluetooth.Enable()' - Error while executing '" + SCRIPT_BLUETOOTH_ON + "'.")
+                "WARNING: 'Bluetooth.Enable()' - Error while executing '" +
+                SCRIPT_BLUETOOTH_ON +
+                "'.")
             pass
         # Save bluetooth status
         self.__save_last_status(True)
         return True
 
-    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature=None, out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SYSTEM_INTERFACE_NAME,
+        in_signature=None,
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def Disable(self, sender=None, conn=None):
         """ Disable bluetooth. """
         """ Return 'True' on success, 'False' otherwise. """
@@ -175,11 +213,15 @@ class Bluetooth(dbus.service.Object):
             process.communicate()
             if process.returncode != 0:
                 systemlog.write(
-                    "ERROR: 'Bluetooth.Disable()' - COMMAND: '" + command + "' FAILED.")
+                    "ERROR: 'Bluetooth.Disable()' - COMMAND: '" +
+                    command +
+                    "' FAILED.")
                 return False
         except:
             systemlog.write(
-                "ERROR: 'Bluetooth.Disable()' - COMMAND: '" + command + "' - Exception thrown.")
+                "ERROR: 'Bluetooth.Disable()' - COMMAND: '" +
+                command +
+                "' - Exception thrown.")
             return False
         # Exec script
         try:
@@ -190,14 +232,20 @@ class Bluetooth(dbus.service.Object):
                 stderr=subprocess.PIPE)
         except:
             systemlog.write(
-                "WARNING: 'Bluetooth.Disable()' - Error while executing '" + SCRIPT_BLUETOOTH_OFF + "'.")
+                "WARNING: 'Bluetooth.Disable()' - Error while executing '" +
+                SCRIPT_BLUETOOTH_OFF +
+                "'.")
             pass
         # Save bluetooth status
         self.__save_last_status(False)
         return True
 
-    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature=None, out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SYSTEM_INTERFACE_NAME,
+        in_signature=None,
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def Toggle(self, sender=None, conn=None):
         """ Toggle bluetooth. """
         """ Return 'True' on success, 'False' otherwise. """

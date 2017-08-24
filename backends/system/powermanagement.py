@@ -67,7 +67,8 @@ class SysCtl(dbus.service.Object):
                         newfile.write(option + " = " + value + "\n")
                     except:
                         systemlog.write(
-                            "ERROR: 'SysCtl.__write()' - cannot write the new value for '" + option +
+                            "ERROR: 'SysCtl.__write()' - cannot write the new value for '" +
+                            option +
                             "' in the new config file.")
                         oldfile.close()
                         newfile.close()
@@ -81,7 +82,9 @@ class SysCtl(dbus.service.Object):
             os.remove(file)
         except:
             systemlog.write(
-                "ERROR: 'SysCtl.__write()' - cannot replace old '" + file + "' with the new version.")
+                "ERROR: 'SysCtl.__write()' - cannot replace old '" +
+                file +
+                "' with the new version.")
             os.remove(file + ".new")
             return False
         shutil.move(file + ".new", file)
@@ -108,8 +111,12 @@ class SysCtl(dbus.service.Object):
         f.close()
         return None
 
-    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature=None, out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SYSTEM_INTERFACE_NAME,
+        in_signature=None,
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def IsAvailable(self, sender=None, conn=None):
         if not os.path.exists(SYSCTL_CONFIG_FILE):
             try:
@@ -120,23 +127,35 @@ class SysCtl(dbus.service.Object):
                 return False
         return True
 
-    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature=None, out_signature='i',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SYSTEM_INTERFACE_NAME,
+        in_signature=None,
+        out_signature='i',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def GetSwappiness(self, sender=None, conn=None):
         from subprocess import Popen, PIPE
         command = COMMAND_SYSCTL + " vm.swappiness"
         process = Popen(command.split(), stdout=PIPE, stderr=PIPE)
         return int(process.communicate()[0].split(" = ")[1])
 
-    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature='i', out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SYSTEM_INTERFACE_NAME,
+        in_signature='i',
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def SetSwappiness(self, value, sender=None, conn=None):
         if value < 0 or value > 100:
             return False
         return self.__write(SYSCTL_CONFIG_FILE, "vm.swappiness", str(value))
 
-    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature=None, out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SYSTEM_INTERFACE_NAME,
+        in_signature=None,
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def ApplySettings(self, sender=None, conn=None):
         from subprocess import Popen, PIPE
         try:
@@ -149,12 +168,16 @@ class SysCtl(dbus.service.Object):
             process.communicate()
             if process.returncode != 0:
                 systemlog.write(
-                    "ERROR: 'SysCtl.ApplySettings()' - COMMAND: '" + command + "' FAILED.")
+                    "ERROR: 'SysCtl.ApplySettings()' - COMMAND: '" +
+                    command +
+                    "' FAILED.")
                 return False
             return True
         except:
             systemlog.write(
-                "ERROR: 'SysCtl.ApplySettings()' - COMMAND: '" + command + "' - Exception thrown.")
+                "ERROR: 'SysCtl.ApplySettings()' - COMMAND: '" +
+                command +
+                "' - Exception thrown.")
             return False
 
 
@@ -164,8 +187,12 @@ class PowerManagement(dbus.service.Object):
     def __init__(self, conn=None, object_path=None, bus_name=None):
         dbus.service.Object.__init__(self, conn, object_path, bus_name)
 
-    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature=None, out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SYSTEM_INTERFACE_NAME,
+        in_signature=None,
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def IsValid(self, script, sender=None, conn=None):
         """ Check if the script exists and if it's one of the scripts we can manage. """
         """ Return "True" if it exists and we can work on it, "False" otherwise. """
@@ -175,8 +202,12 @@ class PowerManagement(dbus.service.Object):
             return os.access(script, os.F_OK)
         return False
 
-    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature=None, out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SYSTEM_INTERFACE_NAME,
+        in_signature=None,
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def IsEnabled(self, script, sender=None, conn=None):
         """ Check if the script has the executable bit set. """
         """ Return "True" if it's set, "False" otherwise. """
@@ -184,8 +215,12 @@ class PowerManagement(dbus.service.Object):
             return False
         return os.access(script, os.X_OK)
 
-    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature=None, out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SYSTEM_INTERFACE_NAME,
+        in_signature=None,
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def Enable(self, script, sender=None, conn=None):
         """ Set the executable bit on script. """
         """ Return 'True' on success, 'False' otherwise. """
@@ -197,8 +232,12 @@ class PowerManagement(dbus.service.Object):
         # Check if everything is ok and return the result
         return os.access(script, os.X_OK)
 
-    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature=None, out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SYSTEM_INTERFACE_NAME,
+        in_signature=None,
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def Disable(self, script, sender=None, conn=None):
         """ Unset the executable bit on script. """
         """ Return 'True' on success, 'False' otherwise. """
@@ -210,8 +249,12 @@ class PowerManagement(dbus.service.Object):
         # Check if everything is ok and return the result
         return not os.access(script, os.X_OK)
 
-    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature=None, out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SYSTEM_INTERFACE_NAME,
+        in_signature=None,
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def Toggle(self, script, sender=None, conn=None):
         """ Toggle the executable bit on script. """
         """ Return 'True' on success, 'False' otherwise. """

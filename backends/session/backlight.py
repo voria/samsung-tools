@@ -45,8 +45,12 @@ class Backlight(dbus.service.Object):
             "ERROR: 'Backlight.__connect()' - 3 attempts to connect to system bus failed.")
         return None
 
-    @dbus.service.method(SESSION_INTERFACE_NAME, in_signature=None, out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SESSION_INTERFACE_NAME,
+        in_signature=None,
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def IsEnabled(self, sender=None, conn=None):
         """ Check if backlight is enabled. """
         """ Return 'True' if enabled, 'False' if disabled or any error. """
@@ -55,8 +59,12 @@ class Backlight(dbus.service.Object):
             return False
         return interface.IsEnabled()
 
-    @dbus.service.method(SESSION_INTERFACE_NAME, in_signature=None, out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SESSION_INTERFACE_NAME,
+        in_signature=None,
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def Enable(self, sender=None, conn=None):
         """ Enable backlight. """
         """ Return 'True' on success, 'False' otherwise. """
@@ -65,8 +73,12 @@ class Backlight(dbus.service.Object):
             return False
         return interface.Enable()
 
-    @dbus.service.method(SESSION_INTERFACE_NAME, in_signature=None, out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SESSION_INTERFACE_NAME,
+        in_signature=None,
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def Disable(self, sender=None, conn=None):
         """ Disable backlight. """
         """ Return 'True' on success, 'False' otherwise. """
@@ -75,8 +87,12 @@ class Backlight(dbus.service.Object):
             return False
         return interface.Disable()
 
-    @dbus.service.method(SESSION_INTERFACE_NAME, in_signature=None, out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SESSION_INTERFACE_NAME,
+        in_signature=None,
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def Toggle(self, sender=None, conn=None):
         """ Toggle backlight. """
         """ Return 'True' on success, 'False' otherwise. """

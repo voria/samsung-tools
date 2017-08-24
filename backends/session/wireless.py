@@ -60,8 +60,12 @@ class Wireless(dbus.service.Object):
             self.notify.show()
         return False
 
-    @dbus.service.method(SESSION_INTERFACE_NAME, in_signature=None, out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SESSION_INTERFACE_NAME,
+        in_signature=None,
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def IsAvailable(self, sender=None, conn=None):
         """ Check if wireless is available. """
         """ Return 'True' if available, 'False' if disabled or any error. """
@@ -70,8 +74,12 @@ class Wireless(dbus.service.Object):
             return False
         return interface.IsAvailable()
 
-    @dbus.service.method(SESSION_INTERFACE_NAME, in_signature='b', out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SESSION_INTERFACE_NAME,
+        in_signature='b',
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def IsEnabled(self, show_notify=True, sender=None, conn=None):
         """ Check if wireless is enabled. """
         """ Return 'True' if enabled, 'False' if disabled or any error. """
@@ -93,8 +101,12 @@ class Wireless(dbus.service.Object):
             self.notify.show()
         return enabled
 
-    @dbus.service.method(SESSION_INTERFACE_NAME, in_signature='b', out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SESSION_INTERFACE_NAME,
+        in_signature='b',
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def Enable(self, show_notify=True, sender=None, conn=None):
         """ Enable wireless. """
         """ Return 'True' on success, 'False' otherwise. """
@@ -116,8 +128,12 @@ class Wireless(dbus.service.Object):
             self.notify.show()
         return result
 
-    @dbus.service.method(SESSION_INTERFACE_NAME, in_signature='b', out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SESSION_INTERFACE_NAME,
+        in_signature='b',
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def Disable(self, show_notify=True, sender=None, conn=None):
         """ Disable wireless. """
         """ Return 'True' on success, 'False' otherwise. """
@@ -138,8 +154,12 @@ class Wireless(dbus.service.Object):
             self.notify.show()
         return result
 
-    @dbus.service.method(SESSION_INTERFACE_NAME, in_signature='b', out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SESSION_INTERFACE_NAME,
+        in_signature='b',
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def Toggle(self, show_notify=True, sender=None, conn=None):
         """ Toggle wireless. """
         """ Return 'True' on success, 'False' otherwise. """

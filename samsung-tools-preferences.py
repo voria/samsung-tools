@@ -156,8 +156,10 @@ class KernelParametersDialog():
         # Setup GUI
         self.builder = gtk.Builder()
         self.builder.set_translation_domain("samsung-tools")
-        self.builder.add_from_file(os.path.join(
-            WORK_DIRECTORY, "gui/glade/samsung-tools-preferences-kernel-parameters.glade"))
+        self.builder.add_from_file(
+            os.path.join(
+                WORK_DIRECTORY,
+                "gui/glade/samsung-tools-preferences-kernel-parameters.glade"))
 
         self.mainDialog = self.builder.get_object("mainDialog")
         self.mainDialog.set_icon_from_file(SAMSUNG_TOOLS_ICON)
@@ -206,8 +208,10 @@ class PowerManagementDialog():
         # Setup GUI
         self.builder = gtk.Builder()
         self.builder.set_translation_domain("samsung-tools")
-        self.builder.add_from_file(os.path.join(
-            WORK_DIRECTORY, "gui/glade/samsung-tools-preferences-power-management.glade"))
+        self.builder.add_from_file(
+            os.path.join(
+                WORK_DIRECTORY,
+                "gui/glade/samsung-tools-preferences-power-management.glade"))
 
         self.mainDialog = self.builder.get_object("mainDialog")
         self.mainDialog.set_icon_from_file(SAMSUNG_TOOLS_ICON)
@@ -389,8 +393,12 @@ class PhcDialog():
         if conn.GetCurrentVids() != newvids:
             title = unicode(_("Confirm"), "utf-8")
             message = unicode(_("Apply the new VIDs?"), "utf-8")
-            dialog = gtk.MessageDialog(self.mainDialog, gtk.DIALOG_MODAL, gtk.MESSAGE_QUESTION,
-                                       gtk.BUTTONS_YES_NO, message)
+            dialog = gtk.MessageDialog(
+                self.mainDialog,
+                gtk.DIALOG_MODAL,
+                gtk.MESSAGE_QUESTION,
+                gtk.BUTTONS_YES_NO,
+                message)
             dialog.set_title(title)
             dialog.set_default_response(gtk.RESPONSE_NO)
             response = dialog.run()
@@ -751,7 +759,8 @@ class Main():
             self.phcButton.set_sensitive(False)
             self.phcButton.set_has_tooltip(True)
             tooltip = unicode(
-                _("You need a PHC enabled kernel to use this feature"), "utf-8")
+                _("You need a PHC enabled kernel to use this feature"),
+                "utf-8")
             self.phcButton.set_tooltip_text(tooltip)
         else:
             self.phcButton.set_sensitive(True)
@@ -1133,12 +1142,17 @@ class Main():
 
     def on_phcButton_clicked(self, button):
         title = unicode(_("Caution!"), "utf-8")
-        message = unicode(_("CPU undervolting can lead to significant gains in terms of power energy saving, \
+        message = unicode(
+            _("CPU undervolting can lead to significant gains in terms of power energy saving, \
 however <b>IT IS A RISKY PRACTICE</b> that might result in malfunctions \
 and loss of data. Please be sure to know what you are doing, prior to use these options.\n\n\
 Are you sure you want to continue?"), "utf-8")
         dialog = gtk.MessageDialog(
-            self.mainWindow, gtk.DIALOG_MODAL, gtk.MESSAGE_WARNING, gtk.BUTTONS_YES_NO, None)
+            self.mainWindow,
+            gtk.DIALOG_MODAL,
+            gtk.MESSAGE_WARNING,
+            gtk.BUTTONS_YES_NO,
+            None)
         dialog.set_title(title)
         dialog.set_markup(message)
         dialog.set_default_response(gtk.RESPONSE_NO)

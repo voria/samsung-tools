@@ -81,8 +81,12 @@ class Cpu(dbus.service.Object):
         if show_notify:
             self.__show_notify(CPU_TITLE, FAN_NOT_AVAILABLE, STOP_ICON)
 
-    @dbus.service.method(SESSION_INTERFACE_NAME, in_signature=None, out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SESSION_INTERFACE_NAME,
+        in_signature=None,
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def IsFanAvailable(self, sender=None, conn=None):
         """ Check if the fan control is available. """
         """ Return 'True' if available, 'False' if disabled or any error. """
@@ -91,8 +95,12 @@ class Cpu(dbus.service.Object):
             return False
         return interface.IsAvailable()
 
-    @dbus.service.method(SESSION_INTERFACE_NAME, in_signature=None, out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SESSION_INTERFACE_NAME,
+        in_signature=None,
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def IsTemperatureAvailable(self, sender=None, conn=None):
         """ Check if temperature reading is available. """
         """ Return 'True' if available, 'False' if disabled or any error. """
@@ -101,16 +109,24 @@ class Cpu(dbus.service.Object):
             return False
         return interface.IsTemperatureAvailable()
 
-    @dbus.service.method(SESSION_INTERFACE_NAME, in_signature=None, out_signature='s',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SESSION_INTERFACE_NAME,
+        in_signature=None,
+        out_signature='s',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def GetTemperature(self, sender=None, conn=None):
         """ Get the current CPU temperature. """
         """ Return 'none' if temperature reading is not available. """
         interface = self.__connect_cpu()
         return interface.GetTemperature()
 
-    @dbus.service.method(SESSION_INTERFACE_NAME, in_signature='b', out_signature='i',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SESSION_INTERFACE_NAME,
+        in_signature='b',
+        out_signature='i',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def Status(self, show_notify=True, sender=None, conn=None):
         """ Show current fan mode. """
         """Return 0 if 'normal', 1 if 'silent', 2 if 'overclock'. """
@@ -139,8 +155,12 @@ class Cpu(dbus.service.Object):
             self.__show_notify(title, message, icon)
         return status
 
-    @dbus.service.method(SESSION_INTERFACE_NAME, in_signature='b', out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SESSION_INTERFACE_NAME,
+        in_signature='b',
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def SetFanNormal(self, show_notify=True, sender=None, conn=None):
         """ Set fan to 'normal' mode. """
         """ Return 'True' on success, 'False' otherwise. """
@@ -158,8 +178,12 @@ class Cpu(dbus.service.Object):
                 self.__show_notify(CPU_TITLE, FAN_SWITCHING_ERROR, ERROR_ICON)
         return result
 
-    @dbus.service.method(SESSION_INTERFACE_NAME, in_signature='b', out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SESSION_INTERFACE_NAME,
+        in_signature='b',
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def SetFanSilent(self, show_notify=True, sender=None, conn=None):
         """ Set fan to 'silent' mode. """
         """ Return 'True' on success, 'False' otherwise. """
@@ -177,8 +201,12 @@ class Cpu(dbus.service.Object):
                 self.__show_notify(CPU_TITLE, FAN_SWITCHING_ERROR, ERROR_ICON)
         return result
 
-    @dbus.service.method(SESSION_INTERFACE_NAME, in_signature='b', out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SESSION_INTERFACE_NAME,
+        in_signature='b',
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def SetFanOverclock(self, show_notify=True, sender=None, conn=None):
         """ Set fan to 'overclock' mode. """
         """ Return 'True' on success, 'False' otherwise. """
@@ -198,8 +226,12 @@ class Cpu(dbus.service.Object):
                 self.__show_notify(CPU_TITLE, FAN_SWITCHING_ERROR, ERROR_ICON)
         return result
 
-    @dbus.service.method(SESSION_INTERFACE_NAME, in_signature='b', out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SESSION_INTERFACE_NAME,
+        in_signature='b',
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def Cycle(self, show_notify=True, sender=None, conn=None):
         """ Set the next fan mode in a cyclic way. """
         """ Return 'True' on success, 'False' otherwise. """

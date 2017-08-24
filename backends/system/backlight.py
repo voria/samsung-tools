@@ -57,8 +57,12 @@ class Backlight(dbus.service.Object):
             systemlog.write(
                 "WARNING: 'Backlight.__save_status()' - Cannot save new status.")
 
-    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature=None, out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SYSTEM_INTERFACE_NAME,
+        in_signature=None,
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def IsEnabled(self, sender=None, conn=None):
         """ Check if backlight is enabled. """
         """ Return 'True' if enabled, 'False' if disabled. """
@@ -72,7 +76,9 @@ class Backlight(dbus.service.Object):
                         return False
             except:
                 systemlog.write(
-                    "ERROR: 'Backlight.IsEnabled()' - cannot read from '" + ESDM_PATH_BACKLIGHT + "'.")
+                    "ERROR: 'Backlight.IsEnabled()' - cannot read from '" +
+                    ESDM_PATH_BACKLIGHT +
+                    "'.")
                 return True
         elif self.method == "sl":
             try:
@@ -84,7 +90,9 @@ class Backlight(dbus.service.Object):
                         return False
             except:
                 systemlog.write(
-                    "ERROR: 'Backlight.IsEnabled()' - cannot read from '" + SL_PATH_BACKLIGHT + "'.")
+                    "ERROR: 'Backlight.IsEnabled()' - cannot read from '" +
+                    SL_PATH_BACKLIGHT +
+                    "'.")
                 return True
         else:  # self.method == "none":
             if os.path.exists(LAST_DEVICE_STATUS_BACKLIGHT):
@@ -92,8 +100,12 @@ class Backlight(dbus.service.Object):
             else:
                 return True
 
-    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature=None, out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SYSTEM_INTERFACE_NAME,
+        in_signature=None,
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def Enable(self, sender=None, conn=None):
         """ Enable backlight. """
         """ Return 'True' on success, 'False' otherwise. """
@@ -104,7 +116,9 @@ class Backlight(dbus.service.Object):
                 return True
             except:
                 systemlog.write(
-                    "ERROR: 'Backlight.Enable()' - cannot write to '" + ESDM_PATH_BACKLIGHT + "'.")
+                    "ERROR: 'Backlight.Enable()' - cannot write to '" +
+                    ESDM_PATH_BACKLIGHT +
+                    "'.")
                 return False
         elif self.method == "sl":
             try:
@@ -113,7 +127,9 @@ class Backlight(dbus.service.Object):
                 return True
             except:
                 systemlog.write(
-                    "ERROR: 'Backlight.Enable()' - cannot write to '" + SL_PATH_BACKLIGHT + "'.")
+                    "ERROR: 'Backlight.Enable()' - cannot write to '" +
+                    SL_PATH_BACKLIGHT +
+                    "'.")
                 return False
         else:  # self.method == "none"
             command = COMMAND_VBETOOL + " dpms on"
@@ -125,18 +141,26 @@ class Backlight(dbus.service.Object):
                 process.communicate()
                 if process.returncode != 0:
                     systemlog.write(
-                        "ERROR: 'Backlight.Enable()' - COMMAND: '" + command + "' FAILED.")
+                        "ERROR: 'Backlight.Enable()' - COMMAND: '" +
+                        command +
+                        "' FAILED.")
                     return False
                 else:
                     self.__save_status(True)
                     return True
             except:
                 systemlog.write(
-                    "ERROR: 'Backlight.Enable()' - COMMAND: '" + command + "' - Exception thrown.")
+                    "ERROR: 'Backlight.Enable()' - COMMAND: '" +
+                    command +
+                    "' - Exception thrown.")
                 return False
 
-    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature=None, out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SYSTEM_INTERFACE_NAME,
+        in_signature=None,
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def Disable(self, sender=None, conn=None):
         """ Disable backlight. """
         """ Return 'True' on success, 'False' otherwise. """
@@ -147,7 +171,9 @@ class Backlight(dbus.service.Object):
                 return True
             except:
                 systemlog.write(
-                    "ERROR: 'Backlight.Disable()' - cannot write to '" + ESDM_PATH_BACKLIGHT + "'.")
+                    "ERROR: 'Backlight.Disable()' - cannot write to '" +
+                    ESDM_PATH_BACKLIGHT +
+                    "'.")
                 return False
         elif self.method == "sl":
             try:
@@ -156,7 +182,9 @@ class Backlight(dbus.service.Object):
                 return True
             except:
                 systemlog.write(
-                    "ERROR: 'Backlight.Disable()' - cannot write to '" + SL_PATH_BACKLIGHT + "'.")
+                    "ERROR: 'Backlight.Disable()' - cannot write to '" +
+                    SL_PATH_BACKLIGHT +
+                    "'.")
                 return False
         else:  # self.method == "none"
             command = COMMAND_VBETOOL + " dpms off"
@@ -168,18 +196,26 @@ class Backlight(dbus.service.Object):
                 process.communicate()
                 if process.returncode != 0:
                     systemlog.write(
-                        "ERROR: 'Backlight.Disable()' - COMMAND: '" + command + "' FAILED.")
+                        "ERROR: 'Backlight.Disable()' - COMMAND: '" +
+                        command +
+                        "' FAILED.")
                     return False
                 else:
                     self.__save_status(False)
                     return True
             except:
                 systemlog.write(
-                    "ERROR: 'Backlight.Disable()' - COMMAND: '" + command + "' - Exception thrown.")
+                    "ERROR: 'Backlight.Disable()' - COMMAND: '" +
+                    command +
+                    "' - Exception thrown.")
                 return False
 
-    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature=None, out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SYSTEM_INTERFACE_NAME,
+        in_signature=None,
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def Toggle(self, sender=None, conn=None):
         """ Toggle backlight. """
         """ Return 'True' on success, 'False' otherwise. """

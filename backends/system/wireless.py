@@ -53,8 +53,12 @@ class Wireless(dbus.service.Object):
             systemlog.write(
                 "WARNING: 'Wireless.__save_last_status()' - Cannot save last status.")
 
-    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature=None, out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SYSTEM_INTERFACE_NAME,
+        in_signature=None,
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def LastStatus(self, sender=None, conn=None):
         """ Return 'True' if last status is on, 'False' if off. """
         if not os.path.exists(LAST_DEVICE_STATUS_WIRELESS):
@@ -62,8 +66,12 @@ class Wireless(dbus.service.Object):
         else:
             return False
 
-    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature=None, out_signature=None,
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SYSTEM_INTERFACE_NAME,
+        in_signature=None,
+        out_signature=None,
+        sender_keyword='sender',
+        connection_keyword='conn')
     def RestoreLastStatus(self, sender=None, conn=None):
         """ Restore last status for wireless """
         if self.LastStatus():
@@ -71,8 +79,12 @@ class Wireless(dbus.service.Object):
         else:
             self.Disable()
 
-    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature=None, out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SYSTEM_INTERFACE_NAME,
+        in_signature=None,
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def IsAvailable(self, sender=None, conn=None):
         """ Check if wireless control is available. """
         """ Return 'True' if available, 'False' if it's not. """
@@ -85,7 +97,9 @@ class Wireless(dbus.service.Object):
             output = process.communicate()[0]
             if process.returncode != 0:
                 systemlog.write(
-                    "ERROR: 'Wireless.IsAvailable()' - COMMAND: '" + command + "' FAILED.")
+                    "ERROR: 'Wireless.IsAvailable()' - COMMAND: '" +
+                    command +
+                    "' FAILED.")
                 return False
             if "Wireless" in output:
                 return True
@@ -93,11 +107,17 @@ class Wireless(dbus.service.Object):
                 return False
         except:
             systemlog.write(
-                "ERROR: 'Wireless.IsAvailable()' - COMMAND: '" + command + "' - Exception thrown.")
+                "ERROR: 'Wireless.IsAvailable()' - COMMAND: '" +
+                command +
+                "' - Exception thrown.")
             return False
 
-    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature=None, out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SYSTEM_INTERFACE_NAME,
+        in_signature=None,
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def IsEnabled(self, sender=None, conn=None):
         """ Check if wireless is enabled. """
         """ Return 'True' if enabled, 'False' if disabled. """
@@ -113,7 +133,9 @@ class Wireless(dbus.service.Object):
                         result = True
             except:
                 systemlog.write(
-                    "ERROR: 'Wireless.IsEnabled()' - cannot read from '" + ESDM_PATH_WIRELESS + "'.")
+                    "ERROR: 'Wireless.IsEnabled()' - cannot read from '" +
+                    ESDM_PATH_WIRELESS +
+                    "'.")
                 return False
         else:
             command = COMMAND_RFKILL + " list wifi"
@@ -125,7 +147,9 @@ class Wireless(dbus.service.Object):
                 output = process.communicate()[0]
                 if process.returncode != 0:
                     systemlog.write(
-                        "ERROR: 'Wireless.IsEnabled()' - COMMAND: '" + command + "' FAILED.")
+                        "ERROR: 'Wireless.IsEnabled()' - COMMAND: '" +
+                        command +
+                        "' FAILED.")
                     return False
                 if "yes" in output:
                     result = False
@@ -133,15 +157,21 @@ class Wireless(dbus.service.Object):
                     result = True
             except:
                 systemlog.write(
-                    "ERROR: 'Wireless.IsEnabled()' - COMMAND: '" + command + "' - Exception thrown.")
+                    "ERROR: 'Wireless.IsEnabled()' - COMMAND: '" +
+                    command +
+                    "' - Exception thrown.")
                 return False
         # Since this method is also used by Enable() and Disable(), we save
         # here the last status
         self.__save_last_status(result)
         return result
 
-    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature=None, out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SYSTEM_INTERFACE_NAME,
+        in_signature=None,
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def Enable(self, sender=None, conn=None):
         """ Enable wireless. """
         """ Return 'True' on success, 'False' otherwise. """
@@ -155,7 +185,9 @@ class Wireless(dbus.service.Object):
                     file.write('1')
             except:
                 systemlog.write(
-                    "ERROR: 'Wireless.Enable()' - cannot write to '" + ESDM_PATH_WIRELESS + "'.")
+                    "ERROR: 'Wireless.Enable()' - cannot write to '" +
+                    ESDM_PATH_WIRELESS +
+                    "'.")
                 return False
         # Then enable wireless through the rfkill interface
         try:
@@ -166,7 +198,9 @@ class Wireless(dbus.service.Object):
                 stderr=subprocess.PIPE)
         except:
             systemlog.write(
-                "ERROR: 'Wireless.Enable()' - COMMAND: '" + command + "' - Exception thrown.")
+                "ERROR: 'Wireless.Enable()' - COMMAND: '" +
+                command +
+                "' - Exception thrown.")
             return False
         if not self.IsEnabled():
             # Wireless has not been enabled
@@ -180,12 +214,18 @@ class Wireless(dbus.service.Object):
                 stderr=subprocess.PIPE)
         except:
             systemlog.write(
-                "WARNING: 'Wireless.Enable()' - Error while executing '" + SCRIPT_WIRELESS_ON + "'.")
+                "WARNING: 'Wireless.Enable()' - Error while executing '" +
+                SCRIPT_WIRELESS_ON +
+                "'.")
             pass
         return True
 
-    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature=None, out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SYSTEM_INTERFACE_NAME,
+        in_signature=None,
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def Disable(self, sender=None, conn=None):
         """ Disable wireless. """
         """ Return 'True' on success, 'False' otherwise. """
@@ -200,7 +240,9 @@ class Wireless(dbus.service.Object):
                 stderr=subprocess.PIPE)
         except:
             systemlog.write(
-                "ERROR: 'Wireless.Disable()' - COMMAND: '" + command + "' - Exception thrown.")
+                "ERROR: 'Wireless.Disable()' - COMMAND: '" +
+                command +
+                "' - Exception thrown.")
             return False
         if self.method == "esdm":
             # If 'esdm' interface is used, disable wireless through it too
@@ -209,7 +251,9 @@ class Wireless(dbus.service.Object):
                     file.write('0')
             except:
                 systemlog.write(
-                    "ERROR: 'Wireless.Disable()' - cannot write to '" + ESDM_PATH_WIRELESS + "'.")
+                    "ERROR: 'Wireless.Disable()' - cannot write to '" +
+                    ESDM_PATH_WIRELESS +
+                    "'.")
                 return False
         if self.IsEnabled():
             # Wireless has not been disabled
@@ -223,12 +267,18 @@ class Wireless(dbus.service.Object):
                 stderr=subprocess.PIPE)
         except:
             systemlog.write(
-                "WARNING: 'Wireless.Disable()' - Error while executing '" + SCRIPT_WIRELESS_OFF + "'.")
+                "WARNING: 'Wireless.Disable()' - Error while executing '" +
+                SCRIPT_WIRELESS_OFF +
+                "'.")
             pass
         return True
 
-    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature=None, out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SYSTEM_INTERFACE_NAME,
+        in_signature=None,
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def Toggle(self, sender=None, conn=None):
         """ Toggle wireless. """
         """ Return 'True' on success, 'False' otherwise. """

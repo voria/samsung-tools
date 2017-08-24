@@ -105,8 +105,12 @@ class SessionConfig():
         if self.config.get(
                 "Main", "USE_HOTKEYS") not in USE_HOTKEYS_ACCEPTED_VALUES:
             # Option is invalid, set default value
-            sessionlog.write("WARNING: 'SessionConfig' - 'USE_HOTKEYS' option specified in '" +
-                             configfile + "' is invalid. Using default value ('" + USE_HOTKEYS_DEFAULT + "').")
+            sessionlog.write(
+                "WARNING: 'SessionConfig' - 'USE_HOTKEYS' option specified in '" +
+                configfile +
+                "' is invalid. Using default value ('" +
+                USE_HOTKEYS_DEFAULT +
+                "').")
             self.config.set("Main", "USE_HOTKEYS", USE_HOTKEYS_DEFAULT)
 
     def __write(self, option):

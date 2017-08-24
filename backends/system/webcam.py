@@ -44,7 +44,9 @@ class Webcam(dbus.service.Object):
             output = process.communicate()[0].split('\n')
             if process.returncode != 0:
                 systemlog.write(
-                    "ERROR: 'Webcam.__is_available()' - COMMAND: '" + COMMAND_DMESG + "' FAILED.")
+                    "ERROR: 'Webcam.__is_available()' - COMMAND: '" +
+                    COMMAND_DMESG +
+                    "' FAILED.")
                 return False
             for line in output:
                 if len(line.split("uvcvideo: Found")) > 1:
@@ -52,7 +54,9 @@ class Webcam(dbus.service.Object):
             return False
         except:
             systemlog.write(
-                "ERROR: 'Webcam.__is_available()' - COMMAND: '" + COMMAND_DMESG + "' - Exception thrown.")
+                "ERROR: 'Webcam.__is_available()' - COMMAND: '" +
+                COMMAND_DMESG +
+                "' - Exception thrown.")
             return False
 
     def __save_last_status(self, status):
@@ -68,8 +72,12 @@ class Webcam(dbus.service.Object):
             systemlog.write(
                 "WARNING: 'Webcam.__save_last_status()' - Cannot save last status.")
 
-    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature=None, out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SYSTEM_INTERFACE_NAME,
+        in_signature=None,
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def LastStatus(self, sender=None, conn=None):
         """ Return 'True' if last status is on, 'False' if off. """
         if not os.path.exists(LAST_DEVICE_STATUS_WEBCAM):
@@ -77,8 +85,12 @@ class Webcam(dbus.service.Object):
         else:
             return False
 
-    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature=None, out_signature=None,
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SYSTEM_INTERFACE_NAME,
+        in_signature=None,
+        out_signature=None,
+        sender_keyword='sender',
+        connection_keyword='conn')
     def RestoreLastStatus(self, sender=None, conn=None):
         """ Restore last status for webcam """
         if self.LastStatus():
@@ -86,14 +98,22 @@ class Webcam(dbus.service.Object):
         else:
             self.Disable()
 
-    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature=None, out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SYSTEM_INTERFACE_NAME,
+        in_signature=None,
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def IsAvailable(self, sender=None, conn=None):
         """ Return 'True' if webcam control is available, 'False' otherwise. """
         return self.available
 
-    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature=None, out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SYSTEM_INTERFACE_NAME,
+        in_signature=None,
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def IsEnabled(self, sender=None, conn=None):
         """ Check if webcam is enabled. """
         """ Return 'True' if enabled, 'False' if disabled. """
@@ -107,7 +127,9 @@ class Webcam(dbus.service.Object):
             output = process.communicate()[0].split()
             if process.returncode != 0:
                 systemlog.write(
-                    "ERROR: 'Webcam.IsEnabled()' - COMMAND: '" + COMMAND_LSMOD + "' FAILED.")
+                    "ERROR: 'Webcam.IsEnabled()' - COMMAND: '" +
+                    COMMAND_LSMOD +
+                    "' FAILED.")
                 return False
             if "uvcvideo" in output:
                 status = True
@@ -117,11 +139,17 @@ class Webcam(dbus.service.Object):
             return status
         except:
             systemlog.write(
-                "ERROR: 'Webcam.IsEnabled()' - COMMAND: '" + COMMAND_LSMOD + "' - Exception thrown.")
+                "ERROR: 'Webcam.IsEnabled()' - COMMAND: '" +
+                COMMAND_LSMOD +
+                "' - Exception thrown.")
             return False
 
-    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature=None, out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SYSTEM_INTERFACE_NAME,
+        in_signature=None,
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def Enable(self, sender=None, conn=None):
         """ Enable webcam. """
         """ Return 'True' on success, 'False' otherwise. """
@@ -138,18 +166,26 @@ class Webcam(dbus.service.Object):
             process.communicate()
             if process.returncode != 0:
                 systemlog.write(
-                    "ERROR: 'Webcam.Enable()' - COMMAND: '" + command + "' FAILED.")
+                    "ERROR: 'Webcam.Enable()' - COMMAND: '" +
+                    command +
+                    "' FAILED.")
                 return False
             # Save webcam status
             self.__save_last_status(True)
             return True
         except:
             systemlog.write(
-                "ERROR: 'Webcam.Enable()' - COMMAND: '" + command + "' - Exception thrown.")
+                "ERROR: 'Webcam.Enable()' - COMMAND: '" +
+                command +
+                "' - Exception thrown.")
             return False
 
-    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature=None, out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SYSTEM_INTERFACE_NAME,
+        in_signature=None,
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def Disable(self, sender=None, conn=None):
         """ Disable webcam. """
         """ Return 'True' on success, 'False' otherwise. """
@@ -166,18 +202,26 @@ class Webcam(dbus.service.Object):
             process.communicate()
             if process.returncode != 0:
                 systemlog.write(
-                    "ERROR: 'Webcam.Disable()' - COMMAND: '" + command + "' FAILED.")
+                    "ERROR: 'Webcam.Disable()' - COMMAND: '" +
+                    command +
+                    "' FAILED.")
                 return False
             # Save webcam status
             self.__save_last_status(False)
             return True
         except:
             systemlog.write(
-                "ERROR: 'Webcam.Disable()' - COMMAND: '" + command + "' - Exception thrown.")
+                "ERROR: 'Webcam.Disable()' - COMMAND: '" +
+                command +
+                "' - Exception thrown.")
             return False
 
-    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature=None, out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SYSTEM_INTERFACE_NAME,
+        in_signature=None,
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def Toggle(self, sender=None, conn=None):
         """ Toggle webcam. """
         """ Return 'True' on success, 'False' otherwise. """

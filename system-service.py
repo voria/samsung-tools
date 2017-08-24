@@ -89,7 +89,9 @@ class General(dbus.service.Object):
             process.communicate()
         except:
             systemlog.write(
-                "WARNING: 'General.__check_for_esdm_module()' - COMMAND: '" + command + "' - Exception thrown.")
+                "WARNING: 'General.__check_for_esdm_module()' - COMMAND: '" +
+                command +
+                "' - Exception thrown.")
             return False
         if process.returncode != 0:
             return False
@@ -110,15 +112,21 @@ class General(dbus.service.Object):
             process.communicate()
         except:
             systemlog.write(
-                "WARNING: 'General.__check_for_sl_module()' - COMMAND: '" + command + "' - Exception thrown.")
+                "WARNING: 'General.__check_for_sl_module()' - COMMAND: '" +
+                command +
+                "' - Exception thrown.")
             return False
         if process.returncode != 0:
             return False
         else:
             return True
 
-    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature=None, out_signature=None,
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SYSTEM_INTERFACE_NAME,
+        in_signature=None,
+        out_signature=None,
+        sender_keyword='sender',
+        connection_keyword='conn')
     def RestoreDevicesLastStatus(self, sender=None, conn=None):
         """ Restore last status for everything. """
         """ Return nothing. """
@@ -131,8 +139,12 @@ class General(dbus.service.Object):
         if status != "":
             cpu.SetCurrentVids(status)
 
-    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature=None, out_signature=None,
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SYSTEM_INTERFACE_NAME,
+        in_signature=None,
+        out_signature=None,
+        sender_keyword='sender',
+        connection_keyword='conn')
     def SetInitialDevicesStatus(self, sender=None, conn=None):
         """ Set initial status for everything. """
         """ Return nothing. """
@@ -175,8 +187,12 @@ class General(dbus.service.Object):
         if status != "":
             cpu.SetCurrentVids(status)
 
-    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature=None, out_signature=None,
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SYSTEM_INTERFACE_NAME,
+        in_signature=None,
+        out_signature=None,
+        sender_keyword='sender',
+        connection_keyword='conn')
     def Exit(self, sender=None, conn=None):
         mainloop.quit()
 

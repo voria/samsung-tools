@@ -36,13 +36,21 @@ class Cpu(dbus.service.Object):
     def __init__(self, conn=None, object_path=None, bus_name=None):
         dbus.service.Object.__init__(self, conn, object_path, bus_name)
 
-    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature=None, out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SYSTEM_INTERFACE_NAME,
+        in_signature=None,
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def IsPHCAvailable(self, sender=None, conn=None):
         return os.path.exists(PHC_VIDS_CPU0)
 
-    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature=None, out_signature='s',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SYSTEM_INTERFACE_NAME,
+        in_signature=None,
+        out_signature='s',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def GetCurrentVids(self, sender=None, conn=None):
         if not self.IsPHCAvailable():
             return "none"
@@ -53,11 +61,17 @@ class Cpu(dbus.service.Object):
             return vids
         except:
             systemlog.write(
-                "ERROR: 'Cpu.GetCurrentVids()' - Cannot read from '" + PHC_VIDS_CPU0 + "'.")
+                "ERROR: 'Cpu.GetCurrentVids()' - Cannot read from '" +
+                PHC_VIDS_CPU0 +
+                "'.")
             return "none"
 
-    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature='s', out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SYSTEM_INTERFACE_NAME,
+        in_signature='s',
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def SetCurrentVids(self, value, sender=None, conn=None):
         if not self.IsPHCAvailable():
             return False
@@ -77,8 +91,12 @@ class Cpu(dbus.service.Object):
                 "ERROR: 'Cpu.SetCurrentVids()' - Cannot write new values.")
             return False
 
-    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature=None, out_signature='s',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SYSTEM_INTERFACE_NAME,
+        in_signature=None,
+        out_signature='s',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def GetDefaultVids(self, sender=None, conn=None):
         if not self.IsPHCAvailable():
             return "none"
@@ -89,11 +107,17 @@ class Cpu(dbus.service.Object):
             return vids
         except:
             systemlog.write(
-                "ERROR: 'Cpu.GetDefaultVids()' - Cannot read from '" + PHC_DEFAULT_VIDS + "'.")
+                "ERROR: 'Cpu.GetDefaultVids()' - Cannot read from '" +
+                PHC_DEFAULT_VIDS +
+                "'.")
             return "none"
 
-    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature=None, out_signature='s',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SYSTEM_INTERFACE_NAME,
+        in_signature=None,
+        out_signature='s',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def GetFrequencies(self, sender=None, conn=None):
         try:
             file = open(PHC_FREQS, "r")
@@ -105,17 +129,27 @@ class Cpu(dbus.service.Object):
             return result.strip()
         except:
             systemlog.write(
-                "ERROR: 'Cpu.GetFrequencies()' - Cannot read from '" + PHC_FREQS + "'.")
+                "ERROR: 'Cpu.GetFrequencies()' - Cannot read from '" +
+                PHC_FREQS +
+                "'.")
             return "none"
 
-    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature=None, out_signature='b',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SYSTEM_INTERFACE_NAME,
+        in_signature=None,
+        out_signature='b',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def IsTemperatureAvailable(self, sender=None, conn=None):
         """ Return 'True' if temperature reading is available, 'False' otherwise. """
         return os.path.exists(CPU_TEMPERATURE_PATH)
 
-    @dbus.service.method(SYSTEM_INTERFACE_NAME, in_signature=None, out_signature='s',
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SYSTEM_INTERFACE_NAME,
+        in_signature=None,
+        out_signature='s',
+        sender_keyword='sender',
+        connection_keyword='conn')
     def GetTemperature(self, sender=None, conn=None):
         """ Return current CPU temperature. """
         """ Return 'none' if any error. """
@@ -125,6 +159,8 @@ class Cpu(dbus.service.Object):
             file = open(CPU_TEMPERATURE_PATH, "r")
         except:
             systemlog.write(
-                "ERROR: 'Cpu.GetTemperature()' - Cannot read temperature from '" + CPU_TEMPERATURE_PATH + "'.")
+                "ERROR: 'Cpu.GetTemperature()' - Cannot read temperature from '" +
+                CPU_TEMPERATURE_PATH +
+                "'.")
             return "none"
         return str(float(file.read()) / 1000)

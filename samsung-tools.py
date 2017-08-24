@@ -683,10 +683,18 @@ def main():
                       dest="bluetooth",
                       type="choice",
                       choices=['on', 'off', 'toggle', 'hotkey', 'status'])
-    parser.add_option('-c', '--cpu',
-                      dest="cpu",
-                      type="choice",
-                      choices=['normal', 'silent', 'overclock', 'cycle', 'hotkey', 'status'])
+    parser.add_option(
+        '-c',
+        '--cpu',
+        dest="cpu",
+        type="choice",
+        choices=[
+            'normal',
+            'silent',
+            'overclock',
+            'cycle',
+            'hotkey',
+            'status'])
     parser.add_option('-w', '--webcam',
                       dest="webcam",
                       type="choice",

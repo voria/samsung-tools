@@ -67,8 +67,12 @@ class General(dbus.service.Object):
                         "ERROR: 'General' - Cannot create an empty user configuration file.")
                     pass
 
-    @dbus.service.method(SESSION_INTERFACE_NAME, in_signature=None, out_signature=None,
-                         sender_keyword='sender', connection_keyword='conn')
+    @dbus.service.method(
+        SESSION_INTERFACE_NAME,
+        in_signature=None,
+        out_signature=None,
+        sender_keyword='sender',
+        connection_keyword='conn')
     def Exit(self, sender=None, conn=None):
         mainloop.quit()
 
