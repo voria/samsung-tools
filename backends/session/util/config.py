@@ -41,7 +41,6 @@ class SessionConfig():
         self.config = ConfigParser.SafeConfigParser()
         # Avoid to lowercase options names, this fixes Turkish locale
         self.config.optionxform = str
-        self.config.optionxform = str
         self.configfile = configfile
         try:
             self.config.readfp(open(configfile, "r"))
