@@ -28,7 +28,7 @@ install:
 	dh_prep
 	dh_installchangelogs
 	dh_installdocs
-	dh_installinit --no-start --upstart-only
+	dh_installinit --no-start
 	dh_installdeb
 	$(MAKE) DESTDIR=$(CURDIR)/debian/samsung-tools install
 
