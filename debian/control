@@ -9,7 +9,7 @@ Homepage: http://loms.voria.org
 Package: samsung-tools
 Architecture: all
 Suggests: phc-intel
-Depends: pm-utils, python-gtk2, xbindkeys, rfkill, vbetool
+Depends: pm-utils, python-gtk2, xbindkeys, rfkill, vbetool, python-dbus
 Description: Tools for Samsung laptops.
  'Samsung Tools' is the successor of 'Samsung Scripts' provided by the
  'Linux On My Samsung' project.
