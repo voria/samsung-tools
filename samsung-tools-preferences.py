@@ -27,11 +27,11 @@ import dbus
 import gettext
 import sys
 
-from backends.globals import *
-from backends.session.util.icons import *
-
 WORK_DIRECTORY = "/usr/share/samsung-tools"
 sys.path.append(WORK_DIRECTORY)
+
+from backends.globals import *
+from backends.session.util.icons import *
 
 _ = gettext.gettext
 gettext.bindtextdomain("samsung-tools")

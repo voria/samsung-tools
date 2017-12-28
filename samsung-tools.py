@@ -28,11 +28,11 @@ import codecs
 
 import gettext
 
-from backends.globals import *
-from backends.session.util.locales import *
-
 WORK_DIRECTORY = "/usr/share/samsung-tools"
 sys.path.append(WORK_DIRECTORY)
+
+from backends.globals import *
+from backends.session.util.locales import *
 
 _ = gettext.gettext
 gettext.bindtextdomain("samsung-tools")
