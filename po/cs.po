@@ -7,18 +7,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-22 10:01+0200\n"
+"POT-Creation-Date: 2017-12-28 19:31+0100\n"
 "PO-Revision-Date: 2011-12-02 15:34+0000\n"
-"Last-Translator: František Zatloukal <Unknown>\n"
+"Last-Translator: František Zatloukal <Zatloukal.Frantisek@gmail.com>\n"
 "Language-Team: Czech <cs@li.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-05-21 17:40+0000\n"
-"X-Generator: Launchpad (build 15275)\n"
+"X-Launchpad-Export-Date: 2017-12-28 18:16+0000\n"
+"X-Generator: Launchpad (build 18521)\n"
 
-#: backends/session/util/locales.py:24 samsung-tools-preferences.py:440
+#: backends/session/util/locales.py:24 samsung-tools-preferences.py:447
 msgid "Backlight"
 msgstr "Podsvícení"
 
@@ -50,7 +50,7 @@ msgstr "Podsvícení nemůže být vypnuto"
 msgid "Backlight cannot be toggled"
 msgstr "Podsvícení nemůže být přepnuto"
 
-#: backends/session/util/locales.py:33 samsung-tools-preferences.py:454
+#: backends/session/util/locales.py:33 samsung-tools-preferences.py:461
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
@@ -86,7 +86,7 @@ msgstr "Bluetooth nemůže být přepnut"
 msgid "Bluetooth control is not available"
 msgstr "Ovládání Bluetooth není k dispozici"
 
-#: backends/session/util/locales.py:44 samsung-tools-preferences.py:468
+#: backends/session/util/locales.py:44 samsung-tools-preferences.py:475
 msgid "CPU fan"
 msgstr "Větráček CPU"
 
@@ -118,7 +118,7 @@ msgstr "Nemůžu zjistit režim větráčku"
 msgid "CPU fan control is not available"
 msgstr "Ovládání větráčku CPU není k dispozici"
 
-#: backends/session/util/locales.py:53 samsung-tools-preferences.py:481
+#: backends/session/util/locales.py:53 samsung-tools-preferences.py:488
 msgid "Webcam"
 msgstr "Webkamera"
 
@@ -154,7 +154,7 @@ msgstr "Webkamera nemůže být přepnuta"
 msgid "Webcam control is not available"
 msgstr "Ovládání webkamery není k dispozici"
 
-#: backends/session/util/locales.py:63 samsung-tools-preferences.py:495
+#: backends/session/util/locales.py:63 samsung-tools-preferences.py:502
 msgid "Wireless"
 msgstr "Bezdrátová síť"
 
@@ -190,197 +190,197 @@ msgstr "Bezdrátová síť nemůže být přepnuta"
 msgid "Wireless control is not available"
 msgstr "Ovládání bezdrátové sítě není k dispozici"
 
-#: samsung-tools.py:62
+#: samsung-tools.py:64
 msgid "Backlight control: unable to connect to session service!"
 msgstr "Ovládání podsvícení: nemůžu se připojit ke službě sezení!"
 
-#: samsung-tools.py:156
+#: samsung-tools.py:158
 msgid "Bluetooth control: unable to connect to session service!"
 msgstr "Ovládání bluetooth: nemůžu se připojit ke službě sezení!"
 
-#: samsung-tools.py:263
+#: samsung-tools.py:265
 msgid "CPU fan control: unable to connect to session service!"
 msgstr "Ovládání větráčku CPU: nemůžu se připojit ke službě sezení!"
 
-#: samsung-tools.py:419
+#: samsung-tools.py:421
 msgid "Webcam control: unable to connect to session service!"
 msgstr "Ovládání webkamery: nemůžu se připojit ke službě sezení!"
 
-#: samsung-tools.py:526
+#: samsung-tools.py:528
 msgid "Wireless control: unable to connect to session service!"
 msgstr "Ovládání bezdrátové sítě: nemůžu se připojit ke službě sezení!"
 
-#: samsung-tools.py:617
+#: samsung-tools.py:619
 msgid "Command Line Utility"
 msgstr "Nástroj příkazové řádky"
 
-#: samsung-tools.py:619 samsung-tools.py:670
+#: samsung-tools.py:621 samsung-tools.py:672
 #, python-format
 msgid "Usage: %s <interface> <option> ..."
 msgstr "Použití: %s <rozhraní> <volby>"
 
-#: samsung-tools.py:621 po/samsung-tools-preferences.glade.h:15
+#: samsung-tools.py:623 po/samsung-tools-preferences.glade.h:15
 msgid "Backlight:"
 msgstr "Podsvícení:"
 
-#: samsung-tools.py:622 samsung-tools.py:625 samsung-tools.py:628
-#: samsung-tools.py:631 samsung-tools.py:634
+#: samsung-tools.py:624 samsung-tools.py:627 samsung-tools.py:630
+#: samsung-tools.py:633 samsung-tools.py:636
 msgid "Interface"
 msgstr "Rozhraní"
 
-#: samsung-tools.py:623 samsung-tools.py:626 samsung-tools.py:629
-#: samsung-tools.py:632 samsung-tools.py:635
+#: samsung-tools.py:625 samsung-tools.py:628 samsung-tools.py:631
+#: samsung-tools.py:634 samsung-tools.py:637
 msgid "Options"
 msgstr "Možnosti"
 
-#: samsung-tools.py:624 po/samsung-tools-preferences.glade.h:13
+#: samsung-tools.py:626 po/samsung-tools-preferences.glade.h:13
 msgid "Bluetooth:"
 msgstr "Bluetooth:"
 
-#: samsung-tools.py:627 po/samsung-tools-preferences.glade.h:11
+#: samsung-tools.py:629 po/samsung-tools-preferences.glade.h:11
 msgid "CPU fan:"
 msgstr "Větráček CPU:"
 
-#: samsung-tools.py:630 po/samsung-tools-preferences.glade.h:9
+#: samsung-tools.py:632 po/samsung-tools-preferences.glade.h:9
 msgid "Webcam:"
 msgstr "Webkamera:"
 
-#: samsung-tools.py:633 po/samsung-tools-preferences.glade.h:19
+#: samsung-tools.py:635 po/samsung-tools-preferences.glade.h:19
 msgid "Wireless:"
 msgstr "Bezdrátová síť:"
 
-#: samsung-tools.py:637
+#: samsung-tools.py:639
 msgid "Other options:"
 msgstr "Další možnosti:"
 
-#: samsung-tools.py:638
+#: samsung-tools.py:640
 msgid "Show status for all devices."
 msgstr "Zobrazení stavu pro všechna zařízení."
 
-#: samsung-tools.py:639
+#: samsung-tools.py:641
 msgid "Show graphical notifications."
 msgstr "Zobrazení grafických úprav."
 
-#: samsung-tools.py:640
+#: samsung-tools.py:642
 msgid "Do not print messages on standard output."
 msgstr "Nezobrazovat zprávy ve standartním výstupu."
 
-#: samsung-tools.py:641
+#: samsung-tools.py:643
 msgid "Show the control interface currently in use."
 msgstr "Zobrazit rozhraní ovládání, které je aktuálně používáno."
 
-#: samsung-tools.py:642
+#: samsung-tools.py:644
 msgid "Stop the session service."
 msgstr "Zastavit službu sezení."
 
-#: samsung-tools.py:643
+#: samsung-tools.py:645
 msgid "Stop the system service."
 msgstr "Zastavit systémovou sliužbu."
 
-#: samsung-tools.py:645
+#: samsung-tools.py:647
 msgid "Examples of use:"
 msgstr "Příklady použití:"
 
-#: samsung-tools.py:646
+#: samsung-tools.py:648
 msgid " - Toggle backlight:"
 msgstr " Přepnout podsvícení:"
 
-#: samsung-tools.py:649
+#: samsung-tools.py:651
 msgid " - Toggle wireless and set CPU fan mode to 'silent':"
 msgstr " Přepnout bezdrátovou síť a nastavit režim větráčku CPU na 'tichý':"
 
-#: samsung-tools.py:652
+#: samsung-tools.py:654
 msgid " - Disable bluetooth, webcam and wireless:"
 msgstr " Vypnout bluetooth, webkameru a bezdrátovou síť:"
 
-#: samsung-tools.py:655
+#: samsung-tools.py:657
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr "Pro více informací navštiv fórum'Linux On My Samsung':"
 
-#: samsung-tools.py:660 samsung-tools-preferences.py:1159
+#: samsung-tools.py:662 samsung-tools-preferences.py:1172
 msgid "Released under GPLv3 license"
 msgstr "Vydáno pod licencí GPLv3"
 
-#: samsung-tools.py:666
+#: samsung-tools.py:668
 msgid "No action(s) specified."
 msgstr "Nebyla specifikována žádná akce."
 
-#: samsung-tools.py:667 samsung-tools.py:739
+#: samsung-tools.py:669 samsung-tools.py:749
 msgid "Use --help for instructions."
 msgstr "Použij --help pro instrukce."
 
-#: samsung-tools.py:734
+#: samsung-tools.py:744
 msgid "This program is intended to be used only by non-privileged users."
 msgstr "Tento program je určen pro použití pouze neprivilegovanými uživateli."
 
-#: samsung-tools.py:738
+#: samsung-tools.py:748
 msgid "Wrong argument(s)."
 msgstr "Špatné argumenty."
 
-#: samsung-tools.py:755
+#: samsung-tools.py:765
 msgid "Unable to start a DBus daemon!"
 msgstr "Nelze spustit DBus démona!"
 
-#: samsung-tools.py:772 po/samsung-tools-preferences.glade.h:30
+#: samsung-tools.py:782 po/samsung-tools-preferences.glade.h:30
 msgid "Control interface:"
 msgstr "Ovládací rozhraní:"
 
-#: samsung-tools.py:780
+#: samsung-tools.py:790
 msgid "Control interface: unable to connect to system service!"
 msgstr "Ovládací rozhraní: nelze se připojit k systémové službě!"
 
-#: samsung-tools.py:792
+#: samsung-tools.py:802
 msgid "Session service stopped"
 msgstr "Služba sezení vypnuta"
 
-#: samsung-tools.py:795
+#: samsung-tools.py:805
 msgid "Cannot stop session service"
 msgstr "Nelze vypnout službu sezení"
 
-#: samsung-tools.py:807
+#: samsung-tools.py:817
 msgid "System service stopped"
 msgstr "Systémová služba vypnuta"
 
-#: samsung-tools.py:810
+#: samsung-tools.py:820
 msgid "Cannot stop system service"
 msgstr "Nelze vypnout systémovou službu"
 
-#: samsung-tools-preferences.py:82
+#: samsung-tools-preferences.py:81
 msgid "Please press the new hotkey"
 msgstr "Prosím, zmáčkni novou zkratku"
 
-#: samsung-tools-preferences.py:128
+#: samsung-tools-preferences.py:127
 msgid "None"
 msgstr "Nic"
 
-#: samsung-tools-preferences.py:190 samsung-tools-preferences.py:266
-#: samsung-tools-preferences.py:366 samsung-tools-preferences.py:379
-#: samsung-tools-preferences.py:845 samsung-tools-preferences.py:858
-#: samsung-tools-preferences.py:871
+#: samsung-tools-preferences.py:191 samsung-tools-preferences.py:269
+#: samsung-tools-preferences.py:369 samsung-tools-preferences.py:382
+#: samsung-tools-preferences.py:853 samsung-tools-preferences.py:866
+#: samsung-tools-preferences.py:879
 msgid "Unable to connect to system service!"
 msgstr "Nelze se připojit k systémové službě!"
 
-#: samsung-tools-preferences.py:391
+#: samsung-tools-preferences.py:394
 msgid "Confirm"
 msgstr "Potvrzení"
 
-#: samsung-tools-preferences.py:392
+#: samsung-tools-preferences.py:395
 msgid "Apply the new VIDs?"
 msgstr "Použít nová nastavení VID?"
 
-#: samsung-tools-preferences.py:755
+#: samsung-tools-preferences.py:762
 msgid "You need a PHC enabled kernel to use this feature"
 msgstr "Potřebuješ povolené jádro s PHC pro použití této funkce"
 
-#: samsung-tools-preferences.py:780
+#: samsung-tools-preferences.py:788
 msgid "Unable to connect to session service!"
 msgstr "Nelze se připojit k službě sezení!"
 
-#: samsung-tools-preferences.py:1136
+#: samsung-tools-preferences.py:1144
 msgid "Caution!"
 msgstr "Výstraha!"
 
-#: samsung-tools-preferences.py:1137
+#: samsung-tools-preferences.py:1146
 msgid ""
 "CPU undervolting can lead to significant gains in terms of power energy "
 "saving, however <b>IT IS A RISKY PRACTICE</b> that might result in "

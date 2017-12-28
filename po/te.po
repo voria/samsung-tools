@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: samsung-tools\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-22 10:01+0200\n"
+"POT-Creation-Date: 2017-12-28 19:31+0100\n"
 "PO-Revision-Date: 2012-05-14 06:39+0000\n"
 "Last-Translator: Praveen Illa <mail2ipn@gmail.com>\n"
 "Language-Team: Telugu <te@li.org>\n"
@@ -15,49 +15,42 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-05-21 17:40+0000\n"
-"X-Generator: Launchpad (build 15275)\n"
+"X-Launchpad-Export-Date: 2017-12-28 18:16+0000\n"
+"X-Generator: Launchpad (build 18521)\n"
 
-#: backends/session/util/locales.py:24 samsung-tools-preferences.py:440
+#: backends/session/util/locales.py:24 samsung-tools-preferences.py:447
 msgid "Backlight"
 msgstr "వెనుకకాంతి"
 
 #: backends/session/util/locales.py:25
-#, fuzzy
 msgid "Backlight is enabled"
-msgstr "బ్లూటూత్ చేతనపరచబడింది"
+msgstr ""
 
 #: backends/session/util/locales.py:26
-#, fuzzy
 msgid "Backlight is disabled"
-msgstr "బ్లూటూత్ అచేతనపరచబడింది"
+msgstr ""
 
 #: backends/session/util/locales.py:27
-#, fuzzy
 msgid "Backlight enabled"
-msgstr "వెనుకకాంతి"
+msgstr ""
 
 #: backends/session/util/locales.py:28
-#, fuzzy
 msgid "Backlight disabled"
-msgstr "వెనుకకాంతి"
+msgstr ""
 
 #: backends/session/util/locales.py:29
-#, fuzzy
 msgid "Backlight cannot be enabled"
-msgstr "బ్లూటూత్ చేతనపరుచుట వీలుకాదు"
+msgstr ""
 
 #: backends/session/util/locales.py:30
-#, fuzzy
 msgid "Backlight cannot be disabled"
-msgstr "బ్లూటూత్ అచేతనపరుచలేము"
+msgstr ""
 
 #: backends/session/util/locales.py:31
-#, fuzzy
 msgid "Backlight cannot be toggled"
-msgstr "బ్లూటూత్ చేతనపరుచుట వీలుకాదు"
+msgstr ""
 
-#: backends/session/util/locales.py:33 samsung-tools-preferences.py:454
+#: backends/session/util/locales.py:33 samsung-tools-preferences.py:461
 msgid "Bluetooth"
 msgstr "బ్లూటూత్"
 
@@ -86,15 +79,14 @@ msgid "Bluetooth cannot be disabled"
 msgstr "బ్లూటూత్ అచేతనపరుచలేము"
 
 #: backends/session/util/locales.py:40
-#, fuzzy
 msgid "Bluetooth cannot be toggled"
-msgstr "బ్లూటూత్ చేతనపరుచుట వీలుకాదు"
+msgstr ""
 
 #: backends/session/util/locales.py:42
 msgid "Bluetooth control is not available"
 msgstr "బ్లూటూత్ నియంత్రణ అందుబాటులో లేదు"
 
-#: backends/session/util/locales.py:44 samsung-tools-preferences.py:468
+#: backends/session/util/locales.py:44 samsung-tools-preferences.py:475
 msgid "CPU fan"
 msgstr "సిపియు ఫ్యాను"
 
@@ -111,307 +103,284 @@ msgid "Fan mode: Normal"
 msgstr "ఫ్యాన్ రీతి: సాధారణం"
 
 #: backends/session/util/locales.py:48
-#, fuzzy
 msgid "Fan mode: Silent"
-msgstr "ఫ్యాన్ రీతి: సాధారణం"
+msgstr ""
 
 #: backends/session/util/locales.py:49
-#, fuzzy
 msgid "Fan mode: Overclock"
-msgstr "ఫ్యాన్ రీతి: సాధారణం"
+msgstr ""
 
 #: backends/session/util/locales.py:50
 msgid "Cannot get fan mode"
 msgstr ""
 
 #: backends/session/util/locales.py:51
-#, fuzzy
 msgid "CPU fan control is not available"
-msgstr "బ్లూటూత్ నియంత్రణ అందుబాటులో లేదు"
+msgstr ""
 
-#: backends/session/util/locales.py:53 samsung-tools-preferences.py:481
+#: backends/session/util/locales.py:53 samsung-tools-preferences.py:488
 msgid "Webcam"
 msgstr "వెబ్‌క్యామ్"
 
 #: backends/session/util/locales.py:54
-#, fuzzy
 msgid "Webcam is enabled"
-msgstr "బ్లూటూత్ చేతనపరచబడింది"
+msgstr ""
 
 #: backends/session/util/locales.py:55
-#, fuzzy
 msgid "Webcam is disabled"
-msgstr "బ్లూటూత్ అచేతనపరచబడింది"
+msgstr ""
 
 #: backends/session/util/locales.py:56
-#, fuzzy
 msgid "Webcam enabled"
-msgstr "వెబ్‌క్యామ్"
+msgstr ""
 
 #: backends/session/util/locales.py:57
-#, fuzzy
 msgid "Webcam disabled"
-msgstr "బ్లూటూత్ అచేతనపరచబడింది"
+msgstr ""
 
 #: backends/session/util/locales.py:58
-#, fuzzy
 msgid "Webcam cannot be enabled"
-msgstr "బ్లూటూత్ చేతనపరుచుట వీలుకాదు"
+msgstr ""
 
 #: backends/session/util/locales.py:59
-#, fuzzy
 msgid "Webcam cannot be disabled"
-msgstr "బ్లూటూత్ అచేతనపరుచలేము"
+msgstr ""
 
 #: backends/session/util/locales.py:60
 msgid "Webcam cannot be toggled"
 msgstr ""
 
 #: backends/session/util/locales.py:61
-#, fuzzy
 msgid "Webcam control is not available"
-msgstr "బ్లూటూత్ నియంత్రణ అందుబాటులో లేదు"
+msgstr ""
 
-#: backends/session/util/locales.py:63 samsung-tools-preferences.py:495
+#: backends/session/util/locales.py:63 samsung-tools-preferences.py:502
 msgid "Wireless"
 msgstr "వైరులేని అనుసంధానం"
 
 #: backends/session/util/locales.py:64
-#, fuzzy
 msgid "Wireless is enabled"
-msgstr "బ్లూటూత్ చేతనపరచబడింది"
+msgstr ""
 
 #: backends/session/util/locales.py:65
-#, fuzzy
 msgid "Wireless is disabled"
-msgstr "బ్లూటూత్ అచేతనపరచబడింది"
+msgstr ""
 
 #: backends/session/util/locales.py:66
-#, fuzzy
 msgid "Wireless enabled"
-msgstr "వైరులేని అనుసంధానం"
+msgstr ""
 
 #: backends/session/util/locales.py:67
-#, fuzzy
 msgid "Wireless disabled"
-msgstr "వైరులేని అనుసంధానం"
+msgstr ""
 
 #: backends/session/util/locales.py:68
-#, fuzzy
 msgid "Wireless cannot be enabled"
-msgstr "బ్లూటూత్ చేతనపరుచుట వీలుకాదు"
+msgstr ""
 
 #: backends/session/util/locales.py:69
-#, fuzzy
 msgid "Wireless cannot be disabled"
-msgstr "బ్లూటూత్ అచేతనపరుచలేము"
+msgstr ""
 
 #: backends/session/util/locales.py:70
-#, fuzzy
 msgid "Wireless cannot be toggled"
-msgstr "బ్లూటూత్ చేతనపరుచుట వీలుకాదు"
+msgstr ""
 
 #: backends/session/util/locales.py:72
-#, fuzzy
 msgid "Wireless control is not available"
-msgstr "బ్లూటూత్ నియంత్రణ అందుబాటులో లేదు"
+msgstr ""
 
-#: samsung-tools.py:62
+#: samsung-tools.py:64
 msgid "Backlight control: unable to connect to session service!"
 msgstr ""
 
-#: samsung-tools.py:156
+#: samsung-tools.py:158
 msgid "Bluetooth control: unable to connect to session service!"
 msgstr ""
 
-#: samsung-tools.py:263
+#: samsung-tools.py:265
 msgid "CPU fan control: unable to connect to session service!"
 msgstr ""
 
-#: samsung-tools.py:419
+#: samsung-tools.py:421
 msgid "Webcam control: unable to connect to session service!"
 msgstr ""
 
-#: samsung-tools.py:526
+#: samsung-tools.py:528
 msgid "Wireless control: unable to connect to session service!"
 msgstr ""
 
-#: samsung-tools.py:617
+#: samsung-tools.py:619
 msgid "Command Line Utility"
 msgstr ""
 
-#: samsung-tools.py:619 samsung-tools.py:670
+#: samsung-tools.py:621 samsung-tools.py:672
 #, python-format
 msgid "Usage: %s <interface> <option> ..."
 msgstr ""
 
-#: samsung-tools.py:621 po/samsung-tools-preferences.glade.h:15
-#, fuzzy
+#: samsung-tools.py:623 po/samsung-tools-preferences.glade.h:15
 msgid "Backlight:"
-msgstr "వెనుకకాంతి"
+msgstr ""
 
-#: samsung-tools.py:622 samsung-tools.py:625 samsung-tools.py:628
-#: samsung-tools.py:631 samsung-tools.py:634
+#: samsung-tools.py:624 samsung-tools.py:627 samsung-tools.py:630
+#: samsung-tools.py:633 samsung-tools.py:636
 msgid "Interface"
 msgstr ""
 
-#: samsung-tools.py:623 samsung-tools.py:626 samsung-tools.py:629
-#: samsung-tools.py:632 samsung-tools.py:635
+#: samsung-tools.py:625 samsung-tools.py:628 samsung-tools.py:631
+#: samsung-tools.py:634 samsung-tools.py:637
 msgid "Options"
 msgstr ""
 
-#: samsung-tools.py:624 po/samsung-tools-preferences.glade.h:13
-#, fuzzy
+#: samsung-tools.py:626 po/samsung-tools-preferences.glade.h:13
 msgid "Bluetooth:"
-msgstr "బ్లూటూత్"
-
-#: samsung-tools.py:627 po/samsung-tools-preferences.glade.h:11
-#, fuzzy
-msgid "CPU fan:"
-msgstr "సిపియు ఫ్యాను"
-
-#: samsung-tools.py:630 po/samsung-tools-preferences.glade.h:9
-#, fuzzy
-msgid "Webcam:"
-msgstr "వెబ్‌క్యామ్"
-
-#: samsung-tools.py:633 po/samsung-tools-preferences.glade.h:19
-#, fuzzy
-msgid "Wireless:"
-msgstr "వైరులేని అనుసంధానం"
-
-#: samsung-tools.py:637
-msgid "Other options:"
 msgstr ""
 
-#: samsung-tools.py:638
-msgid "Show status for all devices."
+#: samsung-tools.py:629 po/samsung-tools-preferences.glade.h:11
+msgid "CPU fan:"
+msgstr ""
+
+#: samsung-tools.py:632 po/samsung-tools-preferences.glade.h:9
+msgid "Webcam:"
+msgstr ""
+
+#: samsung-tools.py:635 po/samsung-tools-preferences.glade.h:19
+msgid "Wireless:"
 msgstr ""
 
 #: samsung-tools.py:639
-msgid "Show graphical notifications."
+msgid "Other options:"
 msgstr ""
 
 #: samsung-tools.py:640
-msgid "Do not print messages on standard output."
+msgid "Show status for all devices."
 msgstr ""
 
 #: samsung-tools.py:641
-msgid "Show the control interface currently in use."
+msgid "Show graphical notifications."
 msgstr ""
 
 #: samsung-tools.py:642
-msgid "Stop the session service."
+msgid "Do not print messages on standard output."
 msgstr ""
 
 #: samsung-tools.py:643
-msgid "Stop the system service."
+msgid "Show the control interface currently in use."
+msgstr ""
+
+#: samsung-tools.py:644
+msgid "Stop the session service."
 msgstr ""
 
 #: samsung-tools.py:645
+msgid "Stop the system service."
+msgstr ""
+
+#: samsung-tools.py:647
 msgid "Examples of use:"
 msgstr ""
 
-#: samsung-tools.py:646
+#: samsung-tools.py:648
 msgid " - Toggle backlight:"
 msgstr ""
 
-#: samsung-tools.py:649
+#: samsung-tools.py:651
 msgid " - Toggle wireless and set CPU fan mode to 'silent':"
 msgstr ""
 
-#: samsung-tools.py:652
+#: samsung-tools.py:654
 msgid " - Disable bluetooth, webcam and wireless:"
 msgstr ""
 
-#: samsung-tools.py:655
+#: samsung-tools.py:657
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr ""
 
-#: samsung-tools.py:660 samsung-tools-preferences.py:1159
+#: samsung-tools.py:662 samsung-tools-preferences.py:1172
 msgid "Released under GPLv3 license"
 msgstr ""
 
-#: samsung-tools.py:666
+#: samsung-tools.py:668
 msgid "No action(s) specified."
 msgstr ""
 
-#: samsung-tools.py:667 samsung-tools.py:739
+#: samsung-tools.py:669 samsung-tools.py:749
 msgid "Use --help for instructions."
 msgstr ""
 
-#: samsung-tools.py:734
+#: samsung-tools.py:744
 msgid "This program is intended to be used only by non-privileged users."
 msgstr ""
 
-#: samsung-tools.py:738
+#: samsung-tools.py:748
 msgid "Wrong argument(s)."
 msgstr ""
 
-#: samsung-tools.py:755
+#: samsung-tools.py:765
 msgid "Unable to start a DBus daemon!"
 msgstr ""
 
-#: samsung-tools.py:772 po/samsung-tools-preferences.glade.h:30
+#: samsung-tools.py:782 po/samsung-tools-preferences.glade.h:30
 msgid "Control interface:"
 msgstr ""
 
-#: samsung-tools.py:780
+#: samsung-tools.py:790
 msgid "Control interface: unable to connect to system service!"
 msgstr ""
 
-#: samsung-tools.py:792
+#: samsung-tools.py:802
 msgid "Session service stopped"
 msgstr ""
 
-#: samsung-tools.py:795
+#: samsung-tools.py:805
 msgid "Cannot stop session service"
 msgstr ""
 
-#: samsung-tools.py:807
+#: samsung-tools.py:817
 msgid "System service stopped"
 msgstr ""
 
-#: samsung-tools.py:810
+#: samsung-tools.py:820
 msgid "Cannot stop system service"
 msgstr ""
 
-#: samsung-tools-preferences.py:82
+#: samsung-tools-preferences.py:81
 msgid "Please press the new hotkey"
 msgstr ""
 
-#: samsung-tools-preferences.py:128
+#: samsung-tools-preferences.py:127
 msgid "None"
 msgstr ""
 
-#: samsung-tools-preferences.py:190 samsung-tools-preferences.py:266
-#: samsung-tools-preferences.py:366 samsung-tools-preferences.py:379
-#: samsung-tools-preferences.py:845 samsung-tools-preferences.py:858
-#: samsung-tools-preferences.py:871
+#: samsung-tools-preferences.py:191 samsung-tools-preferences.py:269
+#: samsung-tools-preferences.py:369 samsung-tools-preferences.py:382
+#: samsung-tools-preferences.py:853 samsung-tools-preferences.py:866
+#: samsung-tools-preferences.py:879
 msgid "Unable to connect to system service!"
 msgstr ""
 
-#: samsung-tools-preferences.py:391
+#: samsung-tools-preferences.py:394
 msgid "Confirm"
 msgstr ""
 
-#: samsung-tools-preferences.py:392
+#: samsung-tools-preferences.py:395
 msgid "Apply the new VIDs?"
 msgstr ""
 
-#: samsung-tools-preferences.py:755
+#: samsung-tools-preferences.py:762
 msgid "You need a PHC enabled kernel to use this feature"
 msgstr ""
 
-#: samsung-tools-preferences.py:780
+#: samsung-tools-preferences.py:788
 msgid "Unable to connect to session service!"
 msgstr ""
 
-#: samsung-tools-preferences.py:1136
+#: samsung-tools-preferences.py:1144
 msgid "Caution!"
 msgstr ""
 
-#: samsung-tools-preferences.py:1137
+#: samsung-tools-preferences.py:1146
 msgid ""
 "CPU undervolting can lead to significant gains in terms of power energy "
 "saving, however <b>IT IS A RISKY PRACTICE</b> that might result in "

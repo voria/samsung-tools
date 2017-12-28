@@ -6,18 +6,18 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-22 10:01+0200\n"
+"POT-Creation-Date: 2017-12-28 19:31+0100\n"
 "PO-Revision-Date: 2012-03-20 12:31+0000\n"
-"Last-Translator: Sascha Biermanns <Unknown>\n"
+"Last-Translator: Sascha <Unknown>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2012-05-21 17:40+0000\n"
-"X-Generator: Launchpad (build 15275)\n"
+"X-Launchpad-Export-Date: 2017-12-28 18:16+0000\n"
+"X-Generator: Launchpad (build 18521)\n"
 
-#: backends/session/util/locales.py:24 samsung-tools-preferences.py:440
+#: backends/session/util/locales.py:24 samsung-tools-preferences.py:447
 msgid "Backlight"
 msgstr "Hintergrundbeleuchtung"
 
@@ -49,7 +49,7 @@ msgstr "Hintergrundbeleuchtung kann nicht abgeschaltet werden"
 msgid "Backlight cannot be toggled"
 msgstr "Hintergrundbeleuchtung kann nicht ein-/augeschaltet werden"
 
-#: backends/session/util/locales.py:33 samsung-tools-preferences.py:454
+#: backends/session/util/locales.py:33 samsung-tools-preferences.py:461
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
@@ -85,7 +85,7 @@ msgstr "Bluetooth kann nicht ein-/ausgeschaltet werden"
 msgid "Bluetooth control is not available"
 msgstr "Bluetooth-Steuerung ist nicht verfügbar"
 
-#: backends/session/util/locales.py:44 samsung-tools-preferences.py:468
+#: backends/session/util/locales.py:44 samsung-tools-preferences.py:475
 msgid "CPU fan"
 msgstr "CPU-Lüfter"
 
@@ -117,7 +117,7 @@ msgstr "Lüftermodus kann nicht ermittelt werden"
 msgid "CPU fan control is not available"
 msgstr "CPU-Lüftersteuerung ist nicht verfügbar"
 
-#: backends/session/util/locales.py:53 samsung-tools-preferences.py:481
+#: backends/session/util/locales.py:53 samsung-tools-preferences.py:488
 msgid "Webcam"
 msgstr "Webcam"
 
@@ -153,7 +153,7 @@ msgstr "Webcam kann nicht ein-/ausgeschaltet werden"
 msgid "Webcam control is not available"
 msgstr "Webcam-Steuerung nicht verfügbar"
 
-#: backends/session/util/locales.py:63 samsung-tools-preferences.py:495
+#: backends/session/util/locales.py:63 samsung-tools-preferences.py:502
 msgid "Wireless"
 msgstr "WLAN-Karte"
 
@@ -189,204 +189,204 @@ msgstr "WLAN-Karte kann nicht ein-/ausgeschaltet werden"
 msgid "Wireless control is not available"
 msgstr "WLAN-Karte ist nicht verfügbar"
 
-#: samsung-tools.py:62
+#: samsung-tools.py:64
 msgid "Backlight control: unable to connect to session service!"
 msgstr ""
 "Hintergrundbeleuchtungssteuerung: Kann nicht mit SItzungsdienst verbinden"
 
-#: samsung-tools.py:156
+#: samsung-tools.py:158
 msgid "Bluetooth control: unable to connect to session service!"
 msgstr "Bluetooth-Steuerung: Kann nicht mit Sitzungsdienst verbinden!"
 
-#: samsung-tools.py:263
+#: samsung-tools.py:265
 msgid "CPU fan control: unable to connect to session service!"
 msgstr "CPU-Lüftersteuerung: Kann nicht mit Sitzungsdienst verbinden!"
 
-#: samsung-tools.py:419
+#: samsung-tools.py:421
 msgid "Webcam control: unable to connect to session service!"
 msgstr "Webcam-Steuerung: Kann nicht mit Sitzungsdienst verbinden"
 
-#: samsung-tools.py:526
+#: samsung-tools.py:528
 msgid "Wireless control: unable to connect to session service!"
 msgstr "WLAN-Karten-Steuerung: Kann nicht mit Sitzungsdienst verbinden"
 
-#: samsung-tools.py:617
+#: samsung-tools.py:619
 msgid "Command Line Utility"
 msgstr "Befehlszeilenwerkzeug"
 
-#: samsung-tools.py:619 samsung-tools.py:670
+#: samsung-tools.py:621 samsung-tools.py:672
 #, python-format
 msgid "Usage: %s <interface> <option> ..."
 msgstr "Verwendung: %s <Schnittstelle> <Option>"
 
-#: samsung-tools.py:621 po/samsung-tools-preferences.glade.h:15
+#: samsung-tools.py:623 po/samsung-tools-preferences.glade.h:15
 msgid "Backlight:"
 msgstr "Hintergrundbeleuchtung:"
 
-#: samsung-tools.py:622 samsung-tools.py:625 samsung-tools.py:628
-#: samsung-tools.py:631 samsung-tools.py:634
+#: samsung-tools.py:624 samsung-tools.py:627 samsung-tools.py:630
+#: samsung-tools.py:633 samsung-tools.py:636
 msgid "Interface"
 msgstr "Schnittstelle"
 
-#: samsung-tools.py:623 samsung-tools.py:626 samsung-tools.py:629
-#: samsung-tools.py:632 samsung-tools.py:635
+#: samsung-tools.py:625 samsung-tools.py:628 samsung-tools.py:631
+#: samsung-tools.py:634 samsung-tools.py:637
 msgid "Options"
 msgstr "Einstellungen"
 
-#: samsung-tools.py:624 po/samsung-tools-preferences.glade.h:13
+#: samsung-tools.py:626 po/samsung-tools-preferences.glade.h:13
 msgid "Bluetooth:"
 msgstr "Bluetooth:"
 
-#: samsung-tools.py:627 po/samsung-tools-preferences.glade.h:11
+#: samsung-tools.py:629 po/samsung-tools-preferences.glade.h:11
 msgid "CPU fan:"
 msgstr "CPU-Lüfter"
 
-#: samsung-tools.py:630 po/samsung-tools-preferences.glade.h:9
+#: samsung-tools.py:632 po/samsung-tools-preferences.glade.h:9
 msgid "Webcam:"
 msgstr "Webcam:"
 
-#: samsung-tools.py:633 po/samsung-tools-preferences.glade.h:19
+#: samsung-tools.py:635 po/samsung-tools-preferences.glade.h:19
 msgid "Wireless:"
 msgstr "WLAN-Karte"
 
-#: samsung-tools.py:637
+#: samsung-tools.py:639
 msgid "Other options:"
 msgstr "Weitere Einstellungen:"
 
-#: samsung-tools.py:638
+#: samsung-tools.py:640
 msgid "Show status for all devices."
 msgstr "Status für alle Geräte anzeigen"
 
-#: samsung-tools.py:639
+#: samsung-tools.py:641
 msgid "Show graphical notifications."
 msgstr "Zeige graphische Benachrichtigungen."
 
-#: samsung-tools.py:640
+#: samsung-tools.py:642
 msgid "Do not print messages on standard output."
 msgstr "Nachrichten nicht auf der Standardausgabe ausgeben."
 
-#: samsung-tools.py:641
+#: samsung-tools.py:643
 msgid "Show the control interface currently in use."
 msgstr "Die Schnittstelle zur Steuerung, die gerade benutzt wird, anzeigen."
 
-#: samsung-tools.py:642
+#: samsung-tools.py:644
 msgid "Stop the session service."
 msgstr "Sitzungsdienst beenden."
 
-#: samsung-tools.py:643
+#: samsung-tools.py:645
 msgid "Stop the system service."
 msgstr "Systemdient beenden."
 
-#: samsung-tools.py:645
+#: samsung-tools.py:647
 msgid "Examples of use:"
 msgstr "Beispiele:"
 
-#: samsung-tools.py:646
+#: samsung-tools.py:648
 msgid " - Toggle backlight:"
 msgstr " - Hintergrundbeleuchtung ein-/ausschalten"
 
-#: samsung-tools.py:649
+#: samsung-tools.py:651
 msgid " - Toggle wireless and set CPU fan mode to 'silent':"
 msgstr ""
 " - WLAN-Karte ein-/ausschalten und CPU-Lüfter in den Modus \"leise\"  "
 "versetzen:"
 
-#: samsung-tools.py:652
+#: samsung-tools.py:654
 msgid " - Disable bluetooth, webcam and wireless:"
 msgstr " - Bluetooth, Webcam und WLAN-Karte ausschalten"
 
-#: samsung-tools.py:655
+#: samsung-tools.py:657
 msgid "For more informations, visit the 'Linux On My Samsung' forum:"
 msgstr ""
 "Für weitere Informationen, besuche doch das Internetforum \"Linux On My "
 "Samsung\"."
 
-#: samsung-tools.py:660 samsung-tools-preferences.py:1159
+#: samsung-tools.py:662 samsung-tools-preferences.py:1172
 msgid "Released under GPLv3 license"
 msgstr "Veröffentlicht unter der GPLv3-Lizenz"
 
-#: samsung-tools.py:666
+#: samsung-tools.py:668
 msgid "No action(s) specified."
 msgstr "Keine Aktion angegeben"
 
-#: samsung-tools.py:667 samsung-tools.py:739
+#: samsung-tools.py:669 samsung-tools.py:749
 msgid "Use --help for instructions."
 msgstr "Verwende --help um Hilfe zu erhalten."
 
-#: samsung-tools.py:734
+#: samsung-tools.py:744
 msgid "This program is intended to be used only by non-privileged users."
 msgstr ""
 "Dieses Programm sollte nur von Benutzern ohne Rootrechten benutzt werden."
 
-#: samsung-tools.py:738
+#: samsung-tools.py:748
 msgid "Wrong argument(s)."
 msgstr "Falsche(r) Parameter."
 
-#: samsung-tools.py:755
+#: samsung-tools.py:765
 msgid "Unable to start a DBus daemon!"
 msgstr "D-Bus-Dienst konnte nicht gestartet werden!"
 
-#: samsung-tools.py:772 po/samsung-tools-preferences.glade.h:30
+#: samsung-tools.py:782 po/samsung-tools-preferences.glade.h:30
 msgid "Control interface:"
 msgstr "Schnittstelle zur Steuerung:"
 
-#: samsung-tools.py:780
+#: samsung-tools.py:790
 msgid "Control interface: unable to connect to system service!"
 msgstr "Schnittstelle zur Steuerung: Keine Verbindung zum Systemgerät möglich!"
 
-#: samsung-tools.py:792
+#: samsung-tools.py:802
 msgid "Session service stopped"
 msgstr "Sitzungsdienst beendet"
 
-#: samsung-tools.py:795
+#: samsung-tools.py:805
 msgid "Cannot stop session service"
 msgstr "Kann Sitzungsdienst nicht beenden"
 
-#: samsung-tools.py:807
+#: samsung-tools.py:817
 msgid "System service stopped"
 msgstr "Systemdienst beendet"
 
-#: samsung-tools.py:810
+#: samsung-tools.py:820
 msgid "Cannot stop system service"
 msgstr "Kann Systemdienst nicht beenden"
 
-#: samsung-tools-preferences.py:82
+#: samsung-tools-preferences.py:81
 msgid "Please press the new hotkey"
 msgstr "Bitte drücke die neue Tastenkombination"
 
-#: samsung-tools-preferences.py:128
+#: samsung-tools-preferences.py:127
 msgid "None"
 msgstr "Keine"
 
-#: samsung-tools-preferences.py:190 samsung-tools-preferences.py:266
-#: samsung-tools-preferences.py:366 samsung-tools-preferences.py:379
-#: samsung-tools-preferences.py:845 samsung-tools-preferences.py:858
-#: samsung-tools-preferences.py:871
+#: samsung-tools-preferences.py:191 samsung-tools-preferences.py:269
+#: samsung-tools-preferences.py:369 samsung-tools-preferences.py:382
+#: samsung-tools-preferences.py:853 samsung-tools-preferences.py:866
+#: samsung-tools-preferences.py:879
 msgid "Unable to connect to system service!"
 msgstr "Kann nicht mit Systemdienst verbinden"
 
-#: samsung-tools-preferences.py:391
+#: samsung-tools-preferences.py:394
 msgid "Confirm"
 msgstr "Bestätige"
 
-#: samsung-tools-preferences.py:392
+#: samsung-tools-preferences.py:395
 msgid "Apply the new VIDs?"
 msgstr "Die neuen  VIDs annehmen?"
 
-#: samsung-tools-preferences.py:755
+#: samsung-tools-preferences.py:762
 msgid "You need a PHC enabled kernel to use this feature"
 msgstr ""
 "In Ihrem Kernel muss PHC aktiviert sein, um diese Funktion nutzen zu können."
 
-#: samsung-tools-preferences.py:780
+#: samsung-tools-preferences.py:788
 msgid "Unable to connect to session service!"
 msgstr "Kann nicht mit Sitzungsdienst verbinden"
 
-#: samsung-tools-preferences.py:1136
+#: samsung-tools-preferences.py:1144
 msgid "Caution!"
 msgstr "Achtung!"
 
-#: samsung-tools-preferences.py:1137
+#: samsung-tools-preferences.py:1146
 msgid ""
 "CPU undervolting can lead to significant gains in terms of power energy "
 "saving, however <b>IT IS A RISKY PRACTICE</b> that might result in "
