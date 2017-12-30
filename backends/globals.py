@@ -24,7 +24,7 @@ import sys
 import os.path
 
 APP_NAME = "Samsung Tools"
-APP_VERSION = "2.3.1"
+APP_VERSION = "2.3.2"
 WORK_DIRECTORY = "/usr/share/samsung-tools"
 
 AUTHORS_LIST = [

@@ -1,3 +1,12 @@
+samsung-tools (2.3.2~ppa1~loms~artful) artful; urgency=medium
+
+  * Add python-dbus dependency
+  * Add a systemd service file
+  * Update translations to latest version from Launchpad
+  * All python code formatted with autopep8
+
+ -- Fortunato Ventre <vorione@gmail.com>  Sat, 30 Dec 2017 14:52:51 +0100
+
 samsung-tools (2.3.1~ppa1~loms~trusty) trusty; urgency=low
 
   * Fix bug LP #1216810
