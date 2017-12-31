@@ -20,22 +20,22 @@
 # <http://www.gnu.org/licenses/gpl.txt>
 
 import os
+import sys
 import time
 import gtk
 import gobject
 import dbus
+
 import gettext
-import sys
+_ = gettext.gettext
+gettext.bindtextdomain("samsung-tools")
+gettext.textdomain("samsung-tools")
 
 WORK_DIRECTORY = "/usr/share/samsung-tools"
 sys.path.append(WORK_DIRECTORY)
 
 from backends.globals import *
 from backends.session.util.icons import *
-
-_ = gettext.gettext
-gettext.bindtextdomain("samsung-tools")
-gettext.textdomain("samsung-tools")
 
 
 class Popup (gtk.Window):

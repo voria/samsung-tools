@@ -27,6 +27,9 @@ import dbus.service
 import dbus.mainloop.glib
 
 import gettext
+_ = gettext.gettext
+gettext.bindtextdomain("samsung-tools")
+gettext.textdomain("samsung-tools")
 
 from backends.globals import *
 from backends.session.options import Options
@@ -36,10 +39,6 @@ from backends.session.cpu import Cpu
 from backends.session.webcam import Webcam
 from backends.session.wireless import Wireless
 from backends.session.util.notifications import Notification
-
-_ = gettext.gettext
-gettext.bindtextdomain("samsung-tools")
-gettext.textdomain("samsung-tools")
 
 mainloop = None
 

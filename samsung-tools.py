@@ -21,12 +21,12 @@
 
 import os
 import sys
-
-from optparse import OptionParser
 import dbus
-import codecs
 
 import gettext
+_ = gettext.gettext
+gettext.bindtextdomain("samsung-tools")
+gettext.textdomain("samsung-tools")
 
 WORK_DIRECTORY = "/usr/share/samsung-tools"
 sys.path.append(WORK_DIRECTORY)
@@ -34,13 +34,10 @@ sys.path.append(WORK_DIRECTORY)
 from backends.globals import *
 from backends.session.util.locales import *
 
-_ = gettext.gettext
-gettext.bindtextdomain("samsung-tools")
-gettext.textdomain("samsung-tools")
-
 quiet = False
 
 # Fix encoding for piping
+import codecs
 sys.stdout = codecs.getwriter('utf-8')(sys.stdout)
 
 
@@ -669,6 +666,7 @@ def main():
         print unicode(_("Use --help for instructions."), "utf-8")
         sys.exit(1)
 
+    from optparse import OptionParser
     usage_string = unicode(_("Usage: %s <interface> <option> ...") %
                            os.path.basename(sys.argv[0]), "utf-8")
     parser = OptionParser(usage_string, add_help_option=False)
