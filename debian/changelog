@@ -1,3 +1,9 @@
+samsung-tools (2.3.3~ppa1~loms~artful) artful; urgency=medium
+
+  * Fix localization issues
+
+ -- Fortunato Ventre <vorione@gmail.com>  Sun, 31 Dec 2017 13:20:46 +0100
+
 samsung-tools (2.3.2~ppa1~loms~artful) artful; urgency=medium
 
   * Add python-dbus dependency
