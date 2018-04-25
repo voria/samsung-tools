@@ -1,3 +1,9 @@
+samsung-tools (2.3.3~ppa1~loms~bionic) bionic; urgency=medium
+
+  * Rebuild for Ubuntu 18.04
+
+ -- Fortunato Ventre <vorione@gmail.com>  Wed, 25 Apr 2018 22:32:37 +0200
+
 samsung-tools (2.3.3~ppa1~loms~artful) artful; urgency=medium
 
   * Fix localization issues
